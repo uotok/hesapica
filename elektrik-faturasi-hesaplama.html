@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elektrik Faturası Hesaplama 2026 | kWh, Tahmini Fatura, Skor ve Senaryo Analizi | Hesapica</title>
+<meta content="Aylık kWh tüketiminize göre tahmini elektrik faturasını; enerji bedeli, dağıtım bedeli, KDV, günlük maliyet, yıllık toplam, fatura baskı skoru ve senaryo analiziyle birlikte hesaplayın." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="elektrik faturası hesaplama, elektrik kwh hesaplama, elektrik tüketim hesaplama, tahmini elektrik faturası, aylık elektrik gideri" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/elektrik-faturasi-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Elektrik Faturası Hesaplama 2026 | kWh, Tahmini Fatura, Skor ve Senaryo Analizi | Hesapica" property="og:title"/>
+<meta content="Aylık kWh tüketiminize göre tahmini elektrik faturasını; enerji bedeli, dağıtım bedeli, KDV, günlük maliyet, yıllık toplam, fatura baskı skoru ve senaryo analiziyle birlikte hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/elektrik-faturasi-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="https://hesapica.com/og-image.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Elektrik Faturası Hesaplama 2026 | kWh, Tahmini Fatura, Skor ve Senaryo Analizi | Hesapica" name="twitter:title"/>
+<meta content="Aylık kWh tüketiminize göre tahmini elektrik faturasını; enerji bedeli, dağıtım bedeli, KDV, günlük maliyet, yıllık toplam, fatura baskı skoru ve senaryo analiziyle birlikte hesaplayın." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.jpg" name="twitter:image"/>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;padding:34px;border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .helper-box ul{margin:10px 0 0;padding-left:18px;color:#374151;font-size:14.5px}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease, background .2s ease}
+    input.with-prefix{padding-left:38px} input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:8px;font-size:13px;font-weight:700;color:var(--bad)}
+    .field.has-error input,.field.has-error select{border-color:#fca5a5;background:#fff7f7;box-shadow:0 0 0 4px rgba(185,28,28,.06)}
+    .field.has-error .error-text{display:block}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .micro-state{margin-top:14px;padding:12px 14px;border-radius:14px;background:#faf8ff;border:1px solid rgba(79,70,229,.10);font-size:14px;color:#4338ca;display:none}
+    .micro-state.show{display:block}
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:18px;font-weight:900;color:var(--primary);line-height:1.35}
+    .status-text{margin-top:8px;font-size:15.5px;color:#374151;line-height:1.75}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13.5px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10);scroll-margin-top:20px}
+    .highlight-label{font-size:14px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#9ca3af}
+    .highlight-sub{font-size:16px;color:#4b5563;line-height:1.7}
+    .highlight-card.ready .highlight-value{color:var(--text)}
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1;color:#9ca3af}
+    .scorebox.ready .score-value{color:var(--text)}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:15px;line-height:1.65}
+    .score-breakdown-row .name{color:#4b5563}.score-breakdown-row .val{font-weight:800}
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:16px;font-weight:800;color:#374151;line-height:1.45}
+    .mini-result .value{font-size:22px;font-weight:900;text-align:right;color:#9ca3af;line-height:1.2}
+    .mini-result .subline{font-size:15px;color:#4b5563;line-height:1.7;margin-top:6px}
+    .mini-result-grid.ready .value{color:var(--text)}
+    .comment-box{padding:18px 20px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16.5px;line-height:1.8}
+    .scenario-card{margin-top:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,.scorebox{padding:20px}.field-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.hero h1{font-size:32px}.highlight-value{font-size:31px}.status-title{font-size:18px}.status-text,.highlight-sub,.mini-result .subline,.score-breakdown-row,.comment-box{font-size:15.5px}.mini-result .label{font-size:15.5px}.badge,.pill,.highlight-label{font-size:13.5px}}
+    @media print{body{background:#fff}.topbar,.actions,.hero-chips,.btn,.micro-state{display:none !important}.hero,.card,.status-card,.highlight-card,.scorebox{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}.tool-layout,.content-grid{grid-template-columns:1fr !important}.results{position:static !important}}
+
+    .result-flash{animation:resultFlash 1.35s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,0),0 16px 40px rgba(79,70,229,.10)}25%{box-shadow:0 0 0 6px rgba(79,70,229,.12),0 20px 48px rgba(79,70,229,.18)}100%{box-shadow:0 0 0 0 rgba(79,70,229,0),0 16px 40px rgba(79,70,229,.10)}}
+  </style>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Elektrik Faturası Hesaplama",
+    "url":"https://hesapica.com/elektrik-faturasi-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Aylık elektrik tüketimine göre tahmini elektrik faturasını, skor ve senaryo analiziyle hesaplayan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+    {"@type":"ListItem","position":2,"name":"Fatura","item":"https://hesapica.com/#faturalar"},
+    {"@type":"ListItem","position":3,"name":"Elektrik Faturası Hesaplama","item":"https://hesapica.com/elektrik-faturasi-hesaplama"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Elektrik faturası nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Tahmini elektrik faturası genel olarak aylık kWh tüketimi ile enerji bedeli ve dağıtım bedelinin çarpılması, ardından diğer sabit giderler ve KDV eklenmesiyle bulunur."}},
+      {"@type":"Question","name":"Elektrik faturasını en çok ne artırır?","acceptedAnswer":{"@type":"Answer","text":"En büyük belirleyici toplam kWh tüketimidir. Klima, elektrikli ısıtıcı, termosifon ve eski verimsiz cihazlar faturayı belirgin biçimde yükseltebilir."}},
+      {"@type":"Question","name":"Bu araç gerçek faturayla birebir aynı sonucu verir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Bu araç tahmini sonuç üretir. Gerçek fatura tarife, bölge, vergi kalemleri ve dönemsel değişimlere göre farklılık gösterebilir."}}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/elektrik-faturasi-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript>
+<div style="margin:16px auto;max-width:1180px;padding:14px 16px;border:1px solid #fcd34d;background:#fffbeb;color:#92400e;border-radius:14px;font:600 14px/1.6 Inter,system-ui,sans-serif;">
+      Bu hesaplama aracını tam kullanabilmek için tarayıcınızda JavaScript açık olmalıdır.
+    </div>
+</noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#faturalar">Fatura</a>
+<span>/</span>
+<strong>Elektrik Faturası Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Fatura Aracı</span>
+<h1>Elektrik Faturası Hesaplama</h1>
+<p>Aylık kWh tüketimine göre tahmini toplam faturayı; <strong>enerji bedeli</strong>, <strong>dağıtım yükü</strong>, <strong>günlük maliyet</strong>, <strong>yıllık toplam etki</strong> ve <strong>fatura baskı seviyesi</strong> ile birlikte aynı ekranda gör.</p>
+<div class="hero-chips">
+<span class="hero-chip">Boş başlangıç</span>
+<span class="hero-chip">kWh odaklı hesap</span>
+<span class="hero-chip">Skor + karar</span>
+<span class="hero-chip">Senaryo analizi</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Ne gösterir?</div>
+<strong>Fatura tutarı + baskı düzeyi + aksiyon özeti</strong>
+<ul>
+<li>Aylık tahmini toplam fatura</li>
+<li>kWh başına efektif maliyet</li>
+<li>Düşük / orta / yüksek tüketim baskısı</li>
+<li>Zayıf / baz / yoğun senaryo görünümü</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Elektrik Faturası Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Temel tahmini görmek için aylık tüketim, gün sayısı ve birim bedelleri gir.</p>
+<div class="helper-box">
+<h3>Bu sonuç nasıl okunmalı?</h3>
+<p>Bu hesaplama bütçe planı için tahmini görünüm sunar. Gerçek faturada tarife sınıfı, dönemsel değişim, bölgesel dağıtım farkı ve ek kalemler sonucu değiştirebilir.</p>
+<ul>
+<li>En kritik girdi: aylık toplam kWh</li>
+<li>Enerji + dağıtım + KDV birlikte değerlendirilir</li>
+<li>Sonuçlar tasarruf planı için ön analiz sunar</li>
+</ul>
+</div>
+<div class="form-section">
+<div class="form-title">Temel veriler</div>
+<div class="field-grid">
+<div class="field" id="fieldMonthlyKwh">
+<label for="monthlyKwh">Aylık elektrik tüketimi (kWh)</label>
+<div class="input-wrap">
+<input id="monthlyKwh" inputmode="decimal" placeholder="Örn: 240" type="text"/>
+</div>
+<div class="hint">Sayaç veya önceki faturaya göre aylık yaklaşık tüketim.</div>
+<div class="error-text">Geçerli bir kWh değeri gir.</div>
+</div>
+<div class="field" id="fieldDaysInMonth">
+<label for="daysInMonth">Ay içindeki gün sayısı</label>
+<div class="input-wrap">
+<input class="with-suffix" id="daysInMonth" inputmode="numeric" placeholder="Örn: 30" type="text"/>
+<span class="suffix">gün</span>
+</div>
+<div class="hint">Genelde 28-31 gün aralığında girilir.</div>
+<div class="error-text">1 ile 31 arasında gün sayısı gir.</div>
+</div>
+<div class="field" id="fieldEnergyUnitPrice">
+<label for="energyUnitPrice">Enerji birim bedeli (TL / kWh)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="energyUnitPrice" inputmode="decimal" placeholder="Örn: 1,48" type="text"/>
+</div>
+<div class="hint">Sadece enerji kalemi için birim ücret.</div>
+<div class="error-text">Geçerli bir enerji birim bedeli gir.</div>
+</div>
+<div class="field" id="fieldDistributionUnitPrice">
+<label for="distributionUnitPrice">Dağıtım bedeli (TL / kWh)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="distributionUnitPrice" inputmode="decimal" placeholder="Örn: 0,88" type="text"/>
+</div>
+<div class="hint">Dağıtım kaleminin birim karşılığı.</div>
+<div class="error-text">Geçerli bir dağıtım bedeli gir.</div>
+</div>
+<div class="field" id="fieldVatRate">
+<label for="vatRate">KDV oranı (%)</label>
+<div class="input-wrap">
+<input class="with-suffix" id="vatRate" inputmode="decimal" placeholder="Örn: 10" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Tahmini KDV oranı.</div>
+<div class="error-text">Geçerli bir KDV oranı gir.</div>
+</div>
+<div class="field" id="fieldOtherFixedCost">
+<label for="otherFixedCost">Diğer sabit giderler (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="otherFixedCost" inputmode="decimal" placeholder="Örn: 12" type="text"/>
+</div>
+<div class="hint">Varsa ek sabit kalemleri buraya ekleyebilirsin.</div>
+<div class="error-text">Geçerli bir sabit gider değeri gir.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır seçimler</div>
+<div class="chip-row">
+<button class="chip" onclick="fillExample('dusuk')" type="button">Düşük tüketim örneği</button>
+<button class="chip" onclick="fillExample('orta')" type="button">Orta tüketim örneği</button>
+<button class="chip" onclick="fillExample('yuksek')" type="button">Yüksek tüketim örneği</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="resetBtn" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaşım Linki</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div class="micro-state" id="microState">Hesaplanıyor...</div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Durum Özeti</div>
+<div class="status-text" id="statusText">Girdilerini eklediğinde fatura seviyesi ve yorum burada görünecek.</div>
+</div>
+<div class="badge" id="statusBadge">Veri bekleniyor</div>
+</div>
+</div>
+<div class="highlight-card" id="highlightCard">
+<div class="highlight-label">Ana Sonuç</div>
+<div class="highlight-value" id="totalBillDisplay">—</div>
+<div class="highlight-sub" id="highlightSub">Tahmini toplam elektrik faturası burada görünecek.</div>
+</div>
+<div class="scorebox" id="scoreCard">
+<div class="score-row">
+<div>
+<div class="highlight-label" style="margin-bottom:4px">Fatura Baskı Skoru</div>
+<div class="score-value" id="scoreValue">—</div>
+</div>
+<div class="pill" id="scorePill">Hazır değil</div>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-breakdown">
+<div class="score-breakdown-row"><span class="name">Tüketim etkisi</span><span class="val" id="scoreConsumption">—</span></div>
+<div class="score-breakdown-row"><span class="name">Birim maliyet baskısı</span><span class="val" id="scoreUnitCost">—</span></div>
+<div class="score-breakdown-row"><span class="name">Sabit gider etkisi</span><span class="val" id="scoreFixed">—</span></div>
+</div>
+</div>
+<div class="comment-box" id="decisionBox">
+          Elektrik tüketimi ve maliyet verilerini girdiğinde, burada net karar özeti ve aksiyon önerisi göreceksin.
+        </div>
+<div class="mini-result-grid" id="miniResults">
+<div class="mini-result"><div><div class="label">Enerji bedeli</div><div class="subline">Tüketim × enerji birim fiyatı</div></div><div class="value" id="energyCostValue">—</div></div>
+<div class="mini-result"><div><div class="label">Dağıtım bedeli</div><div class="subline">Tüketim × dağıtım birim fiyatı</div></div><div class="value" id="distributionCostValue">—</div></div>
+<div class="mini-result"><div><div class="label">KDV tutarı</div><div class="subline">Ara toplam üzerinden vergi</div></div><div class="value" id="vatAmountValue">—</div></div>
+<div class="mini-result"><div><div class="label">Günlük ortalama</div><div class="subline">Aylık toplam / gün sayısı</div></div><div class="value" id="dailyAverageValue">—</div></div>
+<div class="mini-result"><div><div class="label">Yıllık tahmini toplam</div><div class="subline">Aynı tempoda 12 ay</div></div><div class="value" id="yearlyTotalValue">—</div></div>
+<div class="mini-result"><div><div class="label">1 kWh efektif maliyet</div><div class="subline">Tüm kalemler dahil birim maliyet</div></div><div class="value" id="effectiveUnitCostValue">—</div></div>
+</div>
+</aside>
+</section>
+<section class="card scenario-card">
+<h2>Senaryo Analizi</h2>
+<p class="section-note">Aynı birim bedellerle tüketim azaldığında veya arttığında tahmini fatura nasıl değişiyor?</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Senaryo</th>
+<th>Aylık Tüketim</th>
+<th>Tahmini Fatura</th>
+<th>Günlük Ortalama</th>
+<th>Karar</th>
+</tr>
+</thead>
+<tbody id="scenarioBody">
+<tr>
+<td>Baz veri bekleniyor</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Önce hesaplama yap</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-grid">
+<div class="card accordion-card">
+<h2>Elektrik faturası nasıl hesaplanır?</h2>
+<details open="">
+<summary>Temel mantık</summary>
+<p>Tahmini elektrik faturası için aylık kWh tüketimi enerji bedeli ve dağıtım bedeli ile ayrı ayrı çarpılır. Ardından diğer sabit giderler eklenir, KDV uygulanır ve toplam tutar bulunur.</p>
+</details>
+<details>
+<summary>En kritik kalem hangisi?</summary>
+<p>En güçlü belirleyici toplam kWh tüketimidir. Yüksek watt’lı cihazlar ve uzun kullanım süreleri faturayı en çok etkileyen kalemlerdir.</p>
+</details>
+<details>
+<summary>Bu sonuç ne işe yarar?</summary>
+<p>Bu araç, faturayı resmi belge gibi doğrulamak için değil; bütçe planı, tasarruf hedefi ve cihaz kullanım etkisini görmek için kullanılır.</p>
+</details>
+</div>
+<div class="card accordion-card">
+<h2>İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/dogalgaz-faturasi-hesaplama"><span class="small">Fatura</span><strong>Doğalgaz Faturası</strong><p>Isınma ve tüketim baskısını ayrıca analiz et.</p></a>
+<a class="related-card" href="/su-faturasi-hesaplama"><span class="small">Fatura</span><strong>Su Faturası</strong><p>Aylık su tüketiminin bütçeye etkisini gör.</p></a>
+<a class="related-card" href="/butce-hesaplama"><span class="small">Bütçe</span><strong>Bütçe ve Tasarruf</strong><p>Fatura giderlerinin tasarruf oranını nasıl etkilediğini analiz et.</p></a>
+</div>
+</div>
+</section>
+</main>
+<script>
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      touched: {}
+    };
+
+    const STORAGE_KEY = 'hesapica_elektrik_faturasi_v2';
+    let calcTimer = null;
+
+    const ids = [
+      'monthlyKwh','daysInMonth','energyUnitPrice','distributionUnitPrice','vatRate','otherFixedCost'
+    ];
+
+    const fieldMap = {
+      monthlyKwh:'fieldMonthlyKwh',
+      daysInMonth:'fieldDaysInMonth',
+      energyUnitPrice:'fieldEnergyUnitPrice',
+      distributionUnitPrice:'fieldDistributionUnitPrice',
+      vatRate:'fieldVatRate',
+      otherFixedCost:'fieldOtherFixedCost'
+    };
+
+    function $(id){ return document.getElementById(id); }
+
+    function parseTRNumber(value){
+      if(value == null) return NaN;
+      const cleaned = String(value).trim().replace(/\./g,'').replace(',', '.').replace(/[^0-9.-]/g,'');
+      return cleaned === '' ? NaN : Number(cleaned);
+    }
+
+    function formatTRInput(value, digits = 2){
+      if(value === '' || value === null || Number.isNaN(Number(value))) return '';
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      }).format(Number(value));
+    }
+
+    function formatCurrency(value){
+      return new Intl.NumberFormat('tr-TR', {
+        style:'currency', currency:'TRY', minimumFractionDigits:2, maximumFractionDigits:2
+      }).format(Number(value) || 0);
+    }
+
+    function formatNumber(value, digits = 2){
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: digits, maximumFractionDigits: digits
+      }).format(Number(value) || 0);
+    }
+
+    function roundValue(value, type = 'money'){
+      if(type === 'money') return Math.round((value + Number.EPSILON) * 100) / 100;
+      if(type === 'percent') return Math.round((value + Number.EPSILON) * 10) / 10;
+      return value;
+    }
+
+    function getInputs(){
+      return {
+        monthlyKwh: parseTRNumber($('monthlyKwh').value),
+        daysInMonth: parseTRNumber($('daysInMonth').value),
+        energyUnitPrice: parseTRNumber($('energyUnitPrice').value),
+        distributionUnitPrice: parseTRNumber($('distributionUnitPrice').value),
+        vatRate: parseTRNumber($('vatRate').value),
+        otherFixedCost: parseTRNumber($('otherFixedCost').value)
+      };
+    }
+
+    function validate(inputs){
+      const errors = {};
+      if(!(inputs.monthlyKwh > 0) || inputs.monthlyKwh > 100000) errors.monthlyKwh = 'Aylık tüketim 0 ile 100.000 kWh arasında olmalı';
+      if(!(inputs.daysInMonth >= 1 && inputs.daysInMonth <= 31)) errors.daysInMonth = 'Gün sayısı 1-31 aralığında olmalı';
+      if(!(inputs.energyUnitPrice > 0) || inputs.energyUnitPrice > 100) errors.energyUnitPrice = 'Enerji bedeli 0 ile 100 TL arasında olmalı';
+      if(!(inputs.distributionUnitPrice >= 0) || inputs.distributionUnitPrice > 100) errors.distributionUnitPrice = 'Dağıtım bedeli 0 ile 100 TL arasında olmalı';
+      if(!(inputs.vatRate >= 0 && inputs.vatRate <= 100)) errors.vatRate = 'KDV oranı 0-100 aralığında olmalı';
+      if(Number.isNaN(inputs.otherFixedCost) || inputs.otherFixedCost < 0 || inputs.otherFixedCost > 1000000) errors.otherFixedCost = 'Sabit gider 0 ile 1.000.000 TL arasında olmalı';
+      return { valid:Object.keys(errors).length === 0, errors };
+    }
+
+    function compute(inputs){
+      const energyCost = roundValue(inputs.monthlyKwh * inputs.energyUnitPrice, 'money');
+      const distributionCost = roundValue(inputs.monthlyKwh * inputs.distributionUnitPrice, 'money');
+      const subtotal = roundValue(energyCost + distributionCost + inputs.otherFixedCost, 'money');
+      const vatAmount = roundValue(subtotal * (inputs.vatRate / 100), 'money');
+      const totalBill = roundValue(subtotal + vatAmount, 'money');
+      const dailyAverage = roundValue(totalBill / inputs.daysInMonth, 'money');
+      const yearlyTotal = roundValue(totalBill * 12, 'money');
+      const effectiveUnitCost = roundValue(totalBill / inputs.monthlyKwh, 'money');
+
+      const consumptionScore = Math.max(0, 100 - (inputs.monthlyKwh / 6));
+      const unitCostScore = Math.max(0, 100 - ((effectiveUnitCost - 1.5) * 18));
+      const fixedRatio = subtotal > 0 ? (inputs.otherFixedCost / subtotal) * 100 : 0;
+      const fixedScore = Math.max(0, 100 - (fixedRatio * 4));
+      const totalScore = Math.round((consumptionScore * 0.5) + (unitCostScore * 0.35) + (fixedScore * 0.15));
+
+      const pressureLabel = totalBill < 350 ? 'Düşük baskı' : totalBill < 750 ? 'Orta baskı' : 'Yüksek baskı';
+      const confidence = inputs.monthlyKwh >= 50 ? 'Yüksek' : 'Orta';
+
+      return {
+        energyCost, distributionCost, subtotal, vatAmount, totalBill,
+        dailyAverage, yearlyTotal, effectiveUnitCost,
+        score: Math.max(0, Math.min(100, totalScore)),
+        breakdown: {
+          consumptionScore: Math.round(consumptionScore),
+          unitCostScore: Math.round(unitCostScore),
+          fixedScore: Math.round(fixedScore)
+        },
+        pressureLabel,
+        confidence
+      };
+    }
+
+    function getScoreMeta(score){
+      if(score >= 75) return { label:'Rahat', pill:'good' };
+      if(score >= 45) return { label:'Kontrollü', pill:'warn' };
+      return { label:'Baskılı', pill:'bad' };
+    }
+
+    function getDecision(results, inputs){
+      if(results.totalBill < 350){
+        return `Fatura seviyesi şu an düşük görünüyor. Bu tempo korunursa yıllık toplam ${formatCurrency(results.yearlyTotal)} civarında kalır. Büyük bir baskı görünmüyor.`;
+      }
+      if(results.totalBill < 750){
+        return `Fatura orta seviyede. Özellikle klima, termosifon veya yüksek watt'lı cihaz kullanımını kısarsan sonuç üzerinde anlamlı düşüş görebilirsin. ${formatNumber(inputs.monthlyKwh,1)} kWh bandı izlenmeli.`;
+      }
+      return `Fatura yüksek baskı oluşturuyor. Sadece “faturayı görmek” değil, tüketimi azaltacak net aksiyon almak mantıklı: yüksek tüketimli cihazları sınırlamak, ısıtma/soğutma süresini gözden geçirmek ve temel kWh hedefi belirlemek gerekiyor.`;
+    }
+
+    function buildStatus(results){
+      if(results.totalBill < 350){
+        return { text:'Tahmini fatura düşük seviyede. Temel kullanım ağırlıklı bir profil görünüyor.', badge:'Düşük', cls:'good' };
+      }
+      if(results.totalBill < 750){
+        return { text:'Tahmini fatura orta seviyede. Düzenli cihaz kullanımı bütçede hissedilir hale gelmiş olabilir.', badge:'Orta', cls:'warn' };
+      }
+      return { text:'Tahmini fatura yüksek seviyede. Özellikle yoğun klima/ısıtıcı ve yüksek wattlı cihazlar baskı yaratıyor olabilir.', badge:'Yüksek', cls:'bad' };
+    }
+
+    function buildScenarios(inputs){
+      const multipliers = [
+        { name:'Zayıf tüketim', factor:0.85 },
+        { name:'Baz senaryo', factor:1 },
+        { name:'Yoğun tüketim', factor:1.20 }
+      ];
+      return multipliers.map(item => {
+        const scenarioInputs = { ...inputs, monthlyKwh: roundValue(inputs.monthlyKwh * item.factor, 'percent') };
+        const res = compute(scenarioInputs);
+        const decision = res.totalBill < 350 ? 'Düşük baskı' : res.totalBill < 750 ? 'Orta baskı' : 'Yüksek baskı';
+        return { ...item, scenarioInputs, res, decision };
+      });
+    }
+
+    function applyErrors(errors){
+      Object.entries(fieldMap).forEach(([key, fieldId]) => {
+        const el = $(fieldId);
+        el.classList.toggle('has-error', Boolean(errors[key]));
+      });
+    }
+
+    function getVisibleErrors(errors, showErrors = false){
+      if(showErrors) return errors;
+      const filtered = {};
+      Object.entries(errors).forEach(([key, message]) => {
+        if(state.touched[key]){
+          filtered[key] = message;
+        }
+      });
+      return filtered;
+    }
+
+    function clearErrors(){ applyErrors({}); }
+
+    function setEmptyState(){
+      $('highlightCard').classList.remove('ready');
+      $('scoreCard').classList.remove('ready');
+      $('miniResults').classList.remove('ready');
+      $('totalBillDisplay').textContent = '—';
+      $('highlightSub').textContent = 'Tahmini toplam elektrik faturası burada görünecek.';
+      $('statusText').textContent = 'Girdilerini eklediğinde fatura seviyesi ve yorum burada görünecek.';
+      $('statusBadge').textContent = 'Veri bekleniyor';
+      $('statusBadge').className = 'badge';
+      $('scoreValue').textContent = '—';
+      $('scorePill').textContent = 'Hazır değil';
+      $('scorePill').className = 'pill';
+      $('scoreBar').style.width = '0%';
+      $('scoreConsumption').textContent = '—';
+      $('scoreUnitCost').textContent = '—';
+      $('scoreFixed').textContent = '—';
+      $('decisionBox').textContent = 'Elektrik tüketimi ve maliyet verilerini girdiğinde, burada net karar özeti ve aksiyon önerisi göreceksin.';
+      ['energyCostValue','distributionCostValue','vatAmountValue','dailyAverageValue','yearlyTotalValue','effectiveUnitCostValue'].forEach(id => $(id).textContent = '—');
+      $('scenarioBody').innerHTML = '<tr><td>Baz veri bekleniyor</td><td>—</td><td>—</td><td>—</td><td>Önce hesaplama yap</td></tr>';
+      $('microState').classList.remove('show');
+    }
+
+    function render(results, inputs){
+      const status = buildStatus(results);
+      const scoreMeta = getScoreMeta(results.score);
+      $('highlightCard').classList.add('ready');
+      $('scoreCard').classList.add('ready');
+      $('miniResults').classList.add('ready');
+
+      $('totalBillDisplay').textContent = formatCurrency(results.totalBill);
+      $('highlightSub').textContent = `${formatNumber(inputs.monthlyKwh,1)} kWh tüketim için tahmini toplam fatura.`;
+      $('statusText').textContent = `${status.text} Güven seviyesi: ${results.confidence}.`;
+      $('statusBadge').textContent = status.badge;
+      $('statusBadge').className = `badge ${status.cls}`;
+
+      $('scoreValue').textContent = results.score;
+      $('scorePill').textContent = scoreMeta.label;
+      $('scorePill').className = `pill ${scoreMeta.pill}`;
+      $('scoreBar').style.width = `${results.score}%`;
+      $('scoreConsumption').textContent = results.breakdown.consumptionScore;
+      $('scoreUnitCost').textContent = results.breakdown.unitCostScore;
+      $('scoreFixed').textContent = results.breakdown.fixedScore;
+
+      $('decisionBox').textContent = getDecision(results, inputs);
+
+      $('energyCostValue').textContent = formatCurrency(results.energyCost);
+      $('distributionCostValue').textContent = formatCurrency(results.distributionCost);
+      $('vatAmountValue').textContent = formatCurrency(results.vatAmount);
+      $('dailyAverageValue').textContent = formatCurrency(results.dailyAverage);
+      $('yearlyTotalValue').textContent = formatCurrency(results.yearlyTotal);
+      $('effectiveUnitCostValue').textContent = formatCurrency(results.effectiveUnitCost);
+
+      const scenarios = buildScenarios(inputs);
+      $('scenarioBody').innerHTML = scenarios.map(item => `
+        <tr>
+          <td>${item.name}</td>
+          <td>${formatNumber(item.scenarioInputs.monthlyKwh,1)} kWh</td>
+          <td>${formatCurrency(item.res.totalBill)}</td>
+          <td>${formatCurrency(item.res.dailyAverage)}</td>
+          <td>${item.decision}</td>
+        </tr>
+      `).join('');
+    }
+
+    function saveState(){
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.inputs));
+      }catch(e){}
+    }
+
+    function loadState(){
+      let raw = null;
+      try{ raw = localStorage.getItem(STORAGE_KEY); } catch(e){}
+      if(!raw) return;
+      try{
+        const saved = JSON.parse(raw);
+        ids.forEach(id => {
+          if(saved[id] !== undefined && saved[id] !== null && saved[id] !== '') {
+            $(id).value = saved[id];
+          }
+        });
+        applyInputFormattingForDisplay();
+      }catch(e){}
+    }
+
+    function clearSavedState(){
+      try{ localStorage.removeItem(STORAGE_KEY); } catch(e){}
+    }
+
+    function flashResultArea(){
+      const cards = [$('highlightCard'), $('scoreCard')];
+      cards.forEach(card => {
+        card.classList.remove('result-flash');
+        void card.offsetWidth;
+        card.classList.add('result-flash');
+      });
+    }
+
+    function focusResultArea(){
+      const target = $('highlightCard');
+      if(!target) return;
+      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      flashResultArea();
+    }
+
+    function runPrimaryAction(){
+      collectAndCalculate(true);
+      if(state.isCalculated && state.results){
+        focusResultArea();
+      }
+    }
+
+    function collectAndCalculate(showErrors = false, options = {}){
+      const { persist = true } = options;
+      state.inputs = {
+        monthlyKwh: $('monthlyKwh').value,
+        daysInMonth: $('daysInMonth').value,
+        energyUnitPrice: $('energyUnitPrice').value,
+        distributionUnitPrice: $('distributionUnitPrice').value,
+        vatRate: $('vatRate').value,
+        otherFixedCost: $('otherFixedCost').value || '0'
+      };
+      if(persist){
+        saveState();
+      }
+      const numericInputs = getInputs();
+      const validation = validate(numericInputs);
+      state.isValid = validation.valid;
+      const visibleErrors = getVisibleErrors(validation.errors, showErrors);
+      applyErrors(visibleErrors);
+      if(!validation.valid){
+        state.results = null;
+        state.isCalculated = false;
+        if(showErrors) $('microState').classList.remove('show');
+        setEmptyState();
+        return;
+      }
+      state.results = compute(numericInputs);
+      state.isCalculated = true;
+      render(state.results, numericInputs);
+    }
+
+    function debounceCalculate(showErrors = false, options = {}){
+      $('microState').textContent = 'Hesaplanıyor...';
+      $('microState').classList.add('show');
+      clearTimeout(calcTimer);
+      calcTimer = setTimeout(() => {
+        collectAndCalculate(showErrors, options);
+        if(state.isCalculated){
+          $('microState').textContent = 'Sonuçlar güncellendi.';
+        } else {
+          $('microState').classList.remove('show');
+        }
+      }, 180);
+    }
+
+    function setFormattedOnBlur(el, digits = 2){
+      el.addEventListener('blur', () => {
+        const value = parseTRNumber(el.value);
+        if(!Number.isNaN(value)) el.value = formatTRInput(value, digits);
+      });
+      el.addEventListener('focus', () => {
+        const value = parseTRNumber(el.value);
+        if(!Number.isNaN(value)) el.value = String(value).replace('.', ',');
+      });
+    }
+
+    function fillExample(type = 'orta'){
+      const examples = {
+        dusuk: { monthlyKwh: 120, daysInMonth: 30, energyUnitPrice: 1.48, distributionUnitPrice: 0.88, vatRate: 10, otherFixedCost: 8 },
+        orta: { monthlyKwh: 240, daysInMonth: 30, energyUnitPrice: 1.48, distributionUnitPrice: 0.88, vatRate: 10, otherFixedCost: 12 },
+        yuksek: { monthlyKwh: 520, daysInMonth: 30, energyUnitPrice: 1.48, distributionUnitPrice: 0.88, vatRate: 10, otherFixedCost: 20 }
+      };
+      const e = examples[type] || examples.orta;
+      Object.entries(e).forEach(([key, value]) => {
+        $(key).value = formatTRInput(value, 2);
+        state.touched[key] = true;
+      });
+      debounceCalculate(true, { persist:false });
+      clearSavedState();
+      setTimeout(() => {
+        if(state.isCalculated && state.results){
+          focusResultArea();
+        }
+      }, 260);
+    }
+
+    function resetForm(){
+      ids.forEach(id => $(id).value = '');
+      clearErrors();
+      state.inputs = {};
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      state.touched = {};
+      clearSavedState();
+      setEmptyState();
+    }
+
+    function copyResult(){
+      if(!state.isCalculated || !state.results){
+        $('microState').textContent = 'Önce hesaplama yap.';
+        $('microState').classList.add('show');
+        return;
+      }
+      const r = state.results;
+      const inputs = getInputs();
+      const text = [
+        'Hesapica - Elektrik Faturası Hesaplama',
+        `Aylık tüketim: ${formatNumber(inputs.monthlyKwh,1)} kWh`,
+        `Tahmini toplam fatura: ${formatCurrency(r.totalBill)}`,
+        `Enerji bedeli: ${formatCurrency(r.energyCost)}`,
+        `Dağıtım bedeli: ${formatCurrency(r.distributionCost)}`,
+        `KDV: ${formatCurrency(r.vatAmount)}`,
+        `Günlük ortalama: ${formatCurrency(r.dailyAverage)}`,
+        `Yıllık tahmini toplam: ${formatCurrency(r.yearlyTotal)}`,
+        `Skor: ${r.score}`,
+        `Karar: ${getDecision(r, inputs)}`,
+        `Sayfa: https://hesapica.com/elektrik-faturasi-hesaplama`
+      ].join('\n');
+      navigator.clipboard.writeText(text).then(() => {
+        $('microState').textContent = 'Sonuç panoya kopyalandı.';
+        $('microState').classList.add('show');
+      });
+    }
+
+    function shareLink(){
+      const url = 'https://hesapica.com/elektrik-faturasi-hesaplama';
+      navigator.clipboard.writeText(url).then(() => {
+        $('microState').textContent = 'Paylaşım linki panoya kopyalandı.';
+        $('microState').classList.add('show');
+      });
+    }
+
+    function applyInputFormattingForDisplay(){
+      const formatMap = {
+        monthlyKwh: 2,
+        daysInMonth: 0,
+        energyUnitPrice: 4,
+        distributionUnitPrice: 4,
+        vatRate: 2,
+        otherFixedCost: 2
+      };
+      Object.entries(formatMap).forEach(([id, digits]) => {
+        const value = parseTRNumber($(id).value);
+        if(!Number.isNaN(value)){
+          $(id).value = formatTRInput(value, digits);
+        }
+      });
+    }
+
+    function hydrateFromQuery(){
+      const params = new URLSearchParams(location.search);
+      let found = false;
+      ids.forEach(id => {
+        const val = params.get(id);
+        if(val !== null){
+          $(id).value = val;
+          found = true;
+        }
+      });
+      if(found) applyInputFormattingForDisplay();
+      return found;
+    }
+
+    ids.forEach(id => {
+      $(id).addEventListener('input', () => debounceCalculate(false));
+      $(id).addEventListener('change', () => {
+        state.touched[id] = true;
+        debounceCalculate(false);
+      });
+      $(id).addEventListener('blur', () => {
+        state.touched[id] = true;
+        debounceCalculate(false, { persist:false });
+      });
+      $(id).addEventListener('keydown', (e) => { if(e.key === 'Enter'){ e.preventDefault(); runPrimaryAction(); } });
+    });
+
+    setFormattedOnBlur($('monthlyKwh'), 2);
+    setFormattedOnBlur($('daysInMonth'), 0);
+    setFormattedOnBlur($('energyUnitPrice'), 4);
+    setFormattedOnBlur($('distributionUnitPrice'), 4);
+    setFormattedOnBlur($('vatRate'), 2);
+    setFormattedOnBlur($('otherFixedCost'), 2);
+
+    $('calculateBtn').addEventListener('click', runPrimaryAction);
+    $('exampleBtn').addEventListener('click', () => fillExample('orta'));
+    $('resetBtn').addEventListener('click', resetForm);
+    $('copyBtn').addEventListener('click', copyResult);
+    $('shareBtn').addEventListener('click', shareLink);
+
+    loadState();
+    const queryLoaded = hydrateFromQuery();
+    if(queryLoaded){
+      debounceCalculate(false, { persist:false });
+      clearSavedState();
+    } else if($('monthlyKwh').value || $('daysInMonth').value || $('energyUnitPrice').value || $('distributionUnitPrice').value || $('vatRate').value || $('otherFixedCost').value){
+      debounceCalculate(false);
+    } else {
+      setEmptyState();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Günlük Su İhtiyacı Hesaplama 2026 | Hesapica</title>
+<meta content="Günlük su ihtiyacı hesaplama aracı ile kilo, cinsiyet, aktivite, egzersiz ve hava sıcaklığına göre yaklaşık günlük su hedefini; litre, bardak, şişe, dağıtım planı ve senaryolarla birlikte analiz edin." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="günlük su ihtiyacı hesaplama, kaç litre su içmeliyim, su tüketimi hesaplama, günlük su miktarı, su hedefi" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/gunluk-su-ihtiyaci-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Günlük Su İhtiyacı Hesaplama 2026 | Hesapica" property="og:title"/>
+<meta content="Günlük su ihtiyacı hesaplama aracı ile kilo, cinsiyet, aktivite, egzersiz ve hava sıcaklığına göre yaklaşık günlük su hedefini; litre, bardak, şişe, dağıtım planı ve senaryolarla birlikte analiz edin." property="og:description"/>
+<meta content="https://hesapica.com/gunluk-su-ihtiyaci-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="https://hesapica.com/og-image.jpg" property="og:image"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Günlük Su İhtiyacı Hesaplama 2026 | Hesapica" name="twitter:title"/>
+<meta content="Günlük su ihtiyacı hesaplama aracı ile kilo, cinsiyet, aktivite, egzersiz ve hava sıcaklığına göre yaklaşık günlük su hedefini; litre, bardak, şişe, dağıtım planı ve senaryolarla birlikte analiz edin." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.jpg" name="twitter:image"/>
+<meta content="https://hesapica.com/gunluk-su-ihtiyaci-hesaplama" name="twitter:url"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap,.select-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+    input.with-suffix{padding-right:56px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .field.error input,.field.error select{border-color:#ef4444;background:#fff7f7;box-shadow:0 0 0 4px rgba(239,68,68,.08)}
+    .error-text{display:none;margin-top:8px;font-size:13px;color:var(--bad);font-weight:700}
+    .field.error .error-text{display:block}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .scenario-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+    .scenario-btn{border:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,#f8faff 100%);border-radius:16px;padding:15px 16px;text-align:left;cursor:pointer;font:inherit;transition:all .18s ease}
+    .scenario-btn strong{display:block;font-size:1rem;margin-bottom:4px}
+    .scenario-btn span{color:var(--muted);font-size:.9rem}
+    .scenario-btn:hover,.scenario-btn.active{border-color:rgba(124,58,237,.35);background:#f3edff;transform:translateY(-1px)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .status-inline{margin-top:18px;padding:14px 16px;border-radius:18px;background:#fbfcff;border:1px dashed rgba(79,70,229,.20);color:#4338ca;font-size:14px;font-weight:700}
+    .validation-box{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}
+    .validation-box.show{display:block}
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#9ca3af}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.ready .highlight-value{color:var(--text)}
+    .result-flash{animation:resultFlash 1.4s ease}
+    @keyframes resultFlash{
+      0%{box-shadow:0 0 0 0 rgba(79,70,229,0)}
+      15%{box-shadow:0 0 0 6px rgba(79,70,229,.12),0 16px 40px rgba(79,70,229,.16)}
+      100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    }
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1;color:#9ca3af}
+    .scorebox.ready .score-value{color:var(--text)}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right;color:#9ca3af}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .mini-result-grid.ready .mini-result .value{color:var(--text)}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .scenario-result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .scenario-card-result{padding:16px;border-radius:18px;border:1px solid var(--line);background:#fcfcfd}
+    .scenario-card-result .k{font-size:13px;color:var(--muted);font-weight:800;margin-bottom:6px}
+    .scenario-card-result .v{font-size:22px;font-weight:900;margin-bottom:6px}
+    .scenario-card-result .s{font-size:13px;color:#4b5563}
+    .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+    .content-block h2{margin-top:0;margin-bottom:14px;font-size:1.85rem;line-height:1.12;letter-spacing:-.02em}
+    .content-block p{margin:0 0 16px;color:#334155;font-size:1.02rem}
+    .formula-box{border-radius:16px;padding:16px 18px;background:#f8faff;border:1px solid var(--line);color:#334155;font-weight:700;margin-top:8px}
+    .faq-list{display:grid;gap:14px}
+    .faq-item{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+    .faq-question{width:100%;text-align:left;border:none;background:transparent;padding:18px 20px;font:inherit;font-weight:800;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+    .faq-answer{padding:0 20px 18px;color:#475569;display:none}
+    .faq-item.active .faq-answer{display:block}
+    .related-card-wrap{padding:24px}
+    .related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+    .related-link{display:block;border-radius:18px;padding:18px;color:#fff;background:radial-gradient(circle at top right,rgba(255,255,255,.18),transparent 34%),linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);box-shadow:0 16px 28px rgba(79,70,229,.18);border:1px solid rgba(255,255,255,.12)}
+    .related-link strong{display:block;font-size:1.05rem;margin-bottom:6px;color:#fff}
+    .related-link span{display:block;color:rgba(255,255,255,.88);font-size:.92rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.section-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .scenario-result-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.related-card-wrap{padding:20px}
+      .field-grid,.scenario-grid,.scenario-result-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.scenario-grid,.status-inline,.btn{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.related-card-wrap{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}
+      .tool-layout,.section-grid,.scenario-result-grid,.related-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Günlük Su İhtiyacı Hesaplama",
+    "url":"https://hesapica.com/gunluk-su-ihtiyaci-hesaplama",
+    "applicationCategory":"HealthApplication",
+    "operatingSystem":"Web",
+    "description":"Kilo, aktivite, egzersiz ve sıcaklığa göre yaklaşık günlük su hedefini litre, bardak, şişe ve senaryolarla hesaplayan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Bu araç tıbbi öneri yerine geçer mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Bu araç genel planlama için yaklaşık su hedefi üretir. Böbrek, kalp, tansiyon veya sıvı kısıtlaması gerektiren özel durumlarda doktor önerisi esas alınmalıdır."}},
+      {"@type":"Question","name":"Sonuç neden litre ve bardak olarak veriliyor?","acceptedAnswer":{"@type":"Answer","text":"Kullanıcıların hedefi günlük hayata çevirmesi için litre, 200 ml bardak ve 500 ml şişe karşılıkları birlikte gösterilir."}},
+      {"@type":"Question","name":"Egzersiz ve sıcak hava neden sonucu artırıyor?","acceptedAnswer":{"@type":"Answer","text":"Terleme ve sıvı kaybı arttıkça günlük su ihtiyacı da artabilir. Bu yüzden egzersiz süresi ve hava sıcaklığı sonuca ek katkı yapar."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Sağlık","item":"https://hesapica.com/#saglik"},
+      {"@type":"ListItem","position":3,"name":"Günlük Su İhtiyacı Hesaplama","item":"https://hesapica.com/gunluk-su-ihtiyaci-hesaplama"}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1180px;margin:12px auto 0;padding:12px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.5 Inter,system-ui,sans-serif;">Bu araç düzgün çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
+<div class="container">
+<div class="topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#saglik">Sağlık</a>
+<span>/</span>
+<strong>Günlük Su İhtiyacı Hesaplama</strong>
+</nav>
+</div>
+<header class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Sağlık Aracı</span>
+<h1>Günlük Su İhtiyacı Hesaplama</h1>
+<p>Bu araç yalnızca kaç litre su içmen gerektiğini değil; <strong>su ihtiyacı yoğunluğunu</strong>, <strong>pratik uygulama planını</strong>, <strong>bardak ve şişe karşılığını</strong> ve <strong>serin / baz / yoğun gün senaryolarını</strong> aynı ekranda göstermek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Boş başlangıç</span>
+<span class="hero-chip">Yaklaşık planlayıcı</span>
+<span class="hero-chip">Bardak / şişe çevrimi</span>
+<span class="hero-chip">Senaryo analizi</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Önemli not</div>
+<strong>Bu araç yaklaşık günlük içme suyu hedefi üretir</strong>
+<p>Genel referans tabloları “toplam suyu” yani içecek + gıdalardan gelen suyu birlikte ele alabilir. Buradaki sonuç, günlük su planını daha pratik hale getirmek için yaklaşık bir içme suyu hedefi olarak düşünülmelidir.</p>
+</aside>
+</div>
+</header>
+<main style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Su Hedefi Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Sonuç görmek için temel alanları doldur veya örnek veriyi yükle.</p>
+<div class="helper-box">
+<h3>Nasıl okumalıyım?</h3>
+<p>Sonuç “kesin tıbbi doz” değildir. Kilo, hareketlilik, egzersiz ve sıcaklığa göre yaklaşık bir günlük plan sunar. Özel sağlık durumlarında kişisel hekim önerisi daha önceliklidir.</p>
+</div>
+<form id="calculatorForm" novalidate="">
+<div class="form-section">
+<div class="form-title">Temel bilgiler</div>
+<div class="field-grid">
+<div class="field" id="fieldWeight">
+<label for="weight">Kilo</label>
+<div class="input-wrap">
+<input aria-describedby="weightHint weightError" aria-invalid="false" aria-required="true" class="with-suffix" id="weight" inputmode="decimal" max="300" min="20" placeholder="Örn: 78" required="" step="0.1" type="number"/>
+<span class="suffix">kg</span>
+</div>
+<div class="hint" id="weightHint">Kilo arttıkça taban sıvı ihtiyacı yükselir.</div>
+<div aria-live="polite" class="error-text" id="weightError" role="alert">20–300 kg aralığında geçerli bir kilo gir.</div>
+</div>
+<div class="field" id="fieldGender">
+<label for="gender">Cinsiyet</label>
+<div class="select-wrap">
+<select aria-describedby="genderHint genderError" aria-invalid="false" aria-required="true" id="gender" required="">
+<option value="">Seçiniz</option>
+<option value="erkek">Erkek</option>
+<option value="kadin">Kadın</option>
+</select>
+</div>
+<div class="hint" id="genderHint">Taban planı hafifçe etkiler.</div>
+<div aria-live="polite" class="error-text" id="genderError" role="alert">Lütfen bir cinsiyet seç.</div>
+</div>
+<div class="field" id="fieldActivity">
+<label for="activity">Günlük aktivite</label>
+<div class="select-wrap">
+<select aria-describedby="activityHint activityError" aria-invalid="false" aria-required="true" id="activity" required="">
+<option value="">Seçiniz</option>
+<option value="dusuk">Düşük · masa başı / az hareket</option>
+<option value="orta">Orta · gün içinde bir miktar hareket</option>
+<option value="yuksek">Yüksek · ayakta / aktif yaşam</option>
+</select>
+</div>
+<div class="hint" id="activityHint">Günlük hareketlilik su ihtiyacını artırabilir.</div>
+<div aria-live="polite" class="error-text" id="activityError" role="alert">Aktivite düzeyi seç.</div>
+</div>
+<div class="field" id="fieldExercise">
+<label for="exercise">Egzersiz süresi</label>
+<div class="input-wrap">
+<input aria-describedby="exerciseHint exerciseError" aria-invalid="false" class="with-suffix" id="exercise" inputmode="numeric" max="300" min="0" placeholder="Örn: 45" step="1" type="number"/>
+<span class="suffix">dk</span>
+</div>
+<div class="hint" id="exerciseHint">Egzersiz yapmıyorsan boş bırakabilir veya 0 yazabilirsin.</div>
+<div aria-live="polite" class="error-text" id="exerciseError" role="alert">0–300 dakika aralığında geçerli bir süre gir.</div>
+</div>
+<div class="field" id="fieldWeather">
+<label for="weather">Hava sıcaklığı</label>
+<div class="select-wrap">
+<select aria-describedby="weatherHint weatherError" aria-invalid="false" aria-required="true" id="weather" required="">
+<option value="">Seçiniz</option>
+<option value="serin">Serin / normal</option>
+<option value="ilik">Ilık / sıcak</option>
+<option value="coksicak">Çok sıcak</option>
+</select>
+</div>
+<div class="hint" id="weatherHint">Sıcaklık arttıkça terleme kaynaklı ihtiyaç artabilir.</div>
+<div aria-live="polite" class="error-text" id="weatherError" role="alert">Bir hava durumu seç.</div>
+</div>
+<div class="field" id="fieldGoal">
+<label for="goal">Hedef / dönem</label>
+<div class="select-wrap">
+<select aria-describedby="goalHint goalError" aria-invalid="false" aria-required="true" id="goal" required="">
+<option value="">Seçiniz</option>
+<option value="koruma">Mevcut düzen / koruma</option>
+<option value="zayiflama">Kilo verme dönemi</option>
+<option value="antrenman">Yoğun antrenman / kas yapma</option>
+</select>
+</div>
+<div class="hint" id="goalHint">Yoğun dönemlerde pratik hedef biraz yükselebilir.</div>
+<div aria-live="polite" class="error-text" id="goalError" role="alert">Bir hedef seç.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hızlı seçenekler</div>
+<div class="chip-row">
+<button class="chip" data-example="true" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="chip" onclick="applyQuickWeight(60)" type="button">60 kg</button>
+<button class="chip" onclick="applyQuickWeight(80)" type="button">80 kg</button>
+<button class="chip" onclick="applyQuickWeight(95)" type="button">95 kg</button>
+<button class="chip" onclick="applyQuickExercise(30)" type="button">30 dk egzersiz</button>
+<button class="chip" onclick="applyQuickExercise(60)" type="button">60 dk egzersiz</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="hint">Farklı gün profillerini tek tıkla doldurup sonucu kıyaslayabilirsin.</div>
+<div class="scenario-grid">
+<button class="scenario-btn" onclick="applyScenario('serin', this)" type="button">
+<strong>Serin Gün</strong>
+<span>Düşük terleme · daha sakin tempo</span>
+</button>
+<button class="scenario-btn" onclick="applyScenario('baz', this)" type="button">
+<strong>Normal Gün</strong>
+<span>Dengeli günlük hareketlilik</span>
+</button>
+<button class="scenario-btn" onclick="applyScenario('aktif', this)" type="button">
+<strong>Sıcak &amp; Aktif Gün</strong>
+<span>Yüksek hareket + egzersiz</span>
+</button>
+<button class="scenario-btn" onclick="applyScenario('antrenman', this)" type="button">
+<strong>Antrenman Günü</strong>
+<span>Yoğun antrenman odaklı profil</span>
+</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" type="submit">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="resetForm(true)" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-live="polite" class="status-inline" id="microStatus" role="status">Form boş başlar. İstersen örnek veri veya hazır senaryo ile hızlı başlangıç yapabilirsin.</div>
+<div aria-live="assertive" class="validation-box" id="validationBox" role="alert"></div>
+</form>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Durum Özeti</div>
+<div class="status-text" id="statusText">Veri bekleniyor. Sonuçlar, profilini girdikten sonra aktifleşir.</div>
+</div>
+<div class="badge" id="statusBadge">Bekleniyor</div>
+</div>
+</div>
+<div class="highlight-card" id="highlightCard">
+<div class="highlight-label">Günlük Su Hedefi</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultSub">Kişisel verilerine göre yaklaşık günlük içme suyu hedefi burada görünür.</div>
+</div>
+<div class="scorebox" id="scoreCard">
+<div class="score-row">
+<div>
+<div class="highlight-label" style="margin-bottom:6px">Su İhtiyacı Yoğunluk Skoru</div>
+<div class="score-value" id="scoreValue">—</div>
+</div>
+<div class="pill" id="scoreBadge">Hazır değil</div>
+</div>
+<div class="progress"><span id="scoreProgress"></span></div>
+<div class="score-explain" id="scoreExplain">Skor yükseldikçe gün içindeki su planı daha dikkatli yönetilmelidir.</div>
+<div class="score-breakdown">
+<div class="score-breakdown-row"><span class="name">Kilo etkisi</span><span class="val" id="scoreWeight">—</span></div>
+<div class="score-breakdown-row"><span class="name">Hareket / egzersiz</span><span class="val" id="scoreActivity">—</span></div>
+<div class="score-breakdown-row"><span class="name">Sıcaklık / hedef</span><span class="val" id="scoreClimate">—</span></div>
+</div>
+</div>
+<div class="comment-box" id="decisionBox">
+<strong id="decisionTitle">Karar Özeti</strong>
+<div id="decisionText">Önce temel verileri gir; sonra pratik su planı ve yorum burada oluşsun.</div>
+</div>
+<div class="mini-result-grid" id="miniGrid">
+<div class="mini-result">
+<div>
+<div class="label">Minimum hedef</div>
+<div class="subline">Daha sakin günler için alt eşik</div>
+</div>
+<div class="value" id="minTarget">—</div>
+</div>
+<div class="mini-result">
+<div>
+<div class="label">Yoğun gün hedefi</div>
+<div class="subline">Sıcak / aktif günler için üst aralık</div>
+</div>
+<div class="value" id="maxTarget">—</div>
+</div>
+<div class="mini-result">
+<div>
+<div class="label">200 ml bardak</div>
+<div class="subline">Günlük hedefin bardak karşılığı</div>
+</div>
+<div class="value" id="glassCount">—</div>
+</div>
+<div class="mini-result">
+<div>
+<div class="label">500 ml şişe</div>
+<div class="subline">Pratik taşıma karşılığı</div>
+</div>
+<div class="value" id="bottleCount">—</div>
+</div>
+<div class="mini-result">
+<div>
+<div class="label">Taban + ek ihtiyaç</div>
+<div class="subline">Base ve ek etkilerin toplam özeti</div>
+</div>
+<div class="value" id="summaryValue">—</div>
+</div>
+<div class="mini-result">
+<div>
+<div class="label">Dağıtım planı</div>
+<div class="subline">Sabah / gün içi / akşam / egzersiz</div>
+</div>
+<div class="value" id="planValue">—</div>
+</div>
+</div>
+</aside>
+</section>
+<section class="card" style="margin-bottom:24px">
+<h2>Senaryo Analizi</h2>
+<p class="section-note">Aynı kişinin farklı gün koşullarında hedefi nasıl değişiyor? Aşağıda serin, baz ve yoğun gün kıyasını görebilirsin.</p>
+<div class="scenario-result-grid">
+<div class="scenario-card-result">
+<div class="k">Serin Gün</div>
+<div class="v" id="scenarioCool">—</div>
+<div class="s" id="scenarioCoolSub">Düşük sıcaklık ve daha sakin gün varsayımı.</div>
+</div>
+<div class="scenario-card-result">
+<div class="k">Baz Gün</div>
+<div class="v" id="scenarioBase">—</div>
+<div class="s" id="scenarioBaseSub">Girilen verilerin baz sonucu.</div>
+</div>
+<div class="scenario-card-result">
+<div class="k">Yoğun Gün</div>
+<div class="v" id="scenarioHard">—</div>
+<div class="s" id="scenarioHardSub">Sıcak ve hareketli günlerde oluşan artış.</div>
+</div>
+</div>
+</section>
+<section class="section-grid">
+<div class="card content-block">
+<h2>Günlük su hedefi nasıl hesaplanır?</h2>
+<p>Bu araç, taban sıvı ihtiyacını kiloya göre yaklaşık bir çerçevede kurar; ardından hareketlilik, egzersiz, sıcaklık ve hedef durumuna göre ek ihtiyaçlar ekler. Amaç tıbbi teşhis vermek değil, gün içine yayılabilir pratik bir su planı oluşturmaktır.</p>
+<p>Sonuç litre, bardak ve şişe olarak birlikte verilir. Böylece “kaç litre?” sorusunun yanında “bunu gün içinde nasıl uygularım?” sorusuna da cevap üretilir.</p>
+<div class="formula-box">
+            Yaklaşık günlük hedef = taban ihtiyaç + aktivite etkisi + egzersiz katkısı + sıcaklık etkisi + dönem / hedef katkısı
+          </div>
+</div>
+<div class="card content-block">
+<h2>Bu araç ne için uygun?</h2>
+<p>Bu araç; günlük su planını pratikleştirmek, sıcak / egzersizli günlerde hedefi biraz yukarı taşımak ve su tüketimini “bardak / şişe” gibi daha uygulanabilir parçalara çevirmek için uygundur.</p>
+<p>Böbrek hastalığı, kalp yetmezliği, ileri tansiyon sorunları, doktorun sıvı kısıtlaması verdiği dönemler veya ciddi sağlık tablolarında bu araç yalnızca genel bilgilendirme olarak görülmelidir.</p>
+</div>
+</section>
+<section class="card" style="margin-bottom:24px">
+<h2>Sık Sorulan Sorular</h2>
+<div class="faq-list">
+<div class="faq-item active">
+<button class="faq-question" onclick="toggleFaq(this)" type="button">Bu araç tıbbi tavsiye yerine geçer mi?<span>+</span></button>
+<div class="faq-answer">Hayır. Bu araç yaklaşık günlük su planı üretir. Özellikle sıvı kısıtlaması gerektiren sağlık durumlarında kişisel doktor önerisi daha önceliklidir.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)" type="button">Neden sıcak hava ve egzersiz sonucu artırıyor?<span>+</span></button>
+<div class="faq-answer">Terleme ve sıvı kaybı artabildiği için sıcak ve aktif günlerde günlük plan biraz yukarı taşınabilir. Araç da bu etkiyi yaklaşık şekilde sonuca yansıtır.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)" type="button">Bardak ve şişe karşılığı ne işe yarar?<span>+</span></button>
+<div class="faq-answer">Litre hedefi çoğu kullanıcı için soyut kalabilir. Bardak ve şişe karşılığı, hedefi gün içinde daha kolay uygulamaya yardım eder.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)" type="button">Her gün aynı miktar içmek gerekir mi?<span>+</span></button>
+<div class="faq-answer">Genelde hayır. Daha serin ve sakin günlerle daha sıcak ve aktif günler arasında ihtiyaç değişebilir. Bu yüzden araç senaryo karşılaştırmasını da ayrıca gösterir.</div>
+</div>
+</div>
+</section>
+<section class="card related-card-wrap">
+<h2 style="margin:0">İlgili Hesaplama Araçları</h2>
+<p class="section-note" style="margin-top:8px">Sağlık ve günlük plan tarafında birlikte kullanabileceğin araçlar.</p>
+<div class="related-grid">
+<a class="related-link" href="/vucut-kitle-indeksi">
+<strong>Vücut Kitle İndeksi</strong>
+<span>Kilo değerlendirmesini ayrıca gör.</span>
+</a>
+<a class="related-link" href="/yas-hesaplama">
+<strong>Yaş Hesaplama</strong>
+<span>Yaş ve tarih odaklı günlük yaşam planını ayrıca gör.</span>
+</a>
+<a class="related-link" href="/ortalama-hesaplama">
+<strong>Ortalama Hesaplama</strong>
+<span>Ölçüm ve takip verilerini ortalama mantığıyla hızlıca analiz et.</span>
+</a>
+<a class="related-link" href="/yuzde-hesaplama">
+<strong>Yüzde Hesaplama</strong>
+<span>Su hedefindeki artış ve azalış oranlarını hızlıca karşılaştır.</span>
+</a>
+</div>
+</section>
+</main>
+</div>
+<script>
+    const STORAGE_KEY = 'hesapica_water_lock_v2';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      errors: {},
+      touched: {},
+      hasAttemptedSubmit: false,
+      source: 'empty',
+      confidence: 'Orta'
+    };
+
+    const refs = {
+      form: document.getElementById('calculatorForm'),
+      validationBox: document.getElementById('validationBox'),
+      microStatus: document.getElementById('microStatus'),
+      statusText: document.getElementById('statusText'),
+      statusBadge: document.getElementById('statusBadge'),
+      highlightCard: document.getElementById('highlightCard'),
+      mainResult: document.getElementById('mainResult'),
+      mainResultSub: document.getElementById('mainResultSub'),
+      scoreCard: document.getElementById('scoreCard'),
+      scoreValue: document.getElementById('scoreValue'),
+      scoreBadge: document.getElementById('scoreBadge'),
+      scoreProgress: document.getElementById('scoreProgress'),
+      scoreExplain: document.getElementById('scoreExplain'),
+      scoreWeight: document.getElementById('scoreWeight'),
+      scoreActivity: document.getElementById('scoreActivity'),
+      scoreClimate: document.getElementById('scoreClimate'),
+      decisionTitle: document.getElementById('decisionTitle'),
+      decisionText: document.getElementById('decisionText'),
+      resultsPanel: document.getElementById('resultsPanel'),
+      minTarget: document.getElementById('minTarget'),
+      maxTarget: document.getElementById('maxTarget'),
+      glassCount: document.getElementById('glassCount'),
+      bottleCount: document.getElementById('bottleCount'),
+      summaryValue: document.getElementById('summaryValue'),
+      planValue: document.getElementById('planValue'),
+      miniGrid: document.getElementById('miniGrid'),
+      scenarioCool: document.getElementById('scenarioCool'),
+      scenarioBase: document.getElementById('scenarioBase'),
+      scenarioHard: document.getElementById('scenarioHard'),
+      scenarioCoolSub: document.getElementById('scenarioCoolSub'),
+      scenarioBaseSub: document.getElementById('scenarioBaseSub'),
+      scenarioHardSub: document.getElementById('scenarioHardSub'),
+      inputs: {
+        weight: document.getElementById('weight'),
+        gender: document.getElementById('gender'),
+        activity: document.getElementById('activity'),
+        exercise: document.getElementById('exercise'),
+        weather: document.getElementById('weather'),
+        goal: document.getElementById('goal')
+      }
+    };
+
+    const fieldNodes = {
+      weight: document.getElementById('fieldWeight'),
+      gender: document.getElementById('fieldGender'),
+      activity: document.getElementById('fieldActivity'),
+      exercise: document.getElementById('fieldExercise'),
+      weather: document.getElementById('fieldWeather'),
+      goal: document.getElementById('fieldGoal')
+    };
+
+    const CONFIG = {
+      activity: { dusuk: 0, orta: 250, yuksek: 450 },
+      weather: { serin: 0, ilik: 250, coksicak: 500 },
+      goal: { koruma: 0, zayiflama: 200, antrenman: 320 }
+    };
+
+    function formatNumber(value, digits = 0){
+      return new Intl.NumberFormat('tr-TR',{
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      }).format(Number(value) || 0);
+    }
+
+    function formatL(value){
+      return `${formatNumber(value,2)} litre`;
+    }
+
+    function formatMl(value){
+      return `${formatNumber(value,0)} ml`;
+    }
+
+    function clamp(num, min, max){
+      return Math.min(Math.max(num, min), max);
+    }
+
+    function roundByUnit(value, type){
+      if(type === 'litre') return Math.round(value * 100) / 100;
+      if(type === 'score') return Math.round(value);
+      return Math.round(value);
+    }
+
+    function parseInputs(){
+      return {
+        weight: refs.inputs.weight.value ? Number(refs.inputs.weight.value) : null,
+        gender: refs.inputs.gender.value || '',
+        activity: refs.inputs.activity.value || '',
+        exercise: refs.inputs.exercise.value === '' ? 0 : Number(refs.inputs.exercise.value),
+        weather: refs.inputs.weather.value || '',
+        goal: refs.inputs.goal.value || ''
+      };
+    }
+
+    function validate(inputs){
+      const errors = {};
+      if(!inputs.weight || Number.isNaN(inputs.weight) || inputs.weight < 20 || inputs.weight > 300){
+        errors.weight = 'Kilo alanı gerekli.';
+      }
+      if(!inputs.gender) errors.gender = 'Cinsiyet alanı gerekli.';
+      if(!inputs.activity) errors.activity = 'Aktivite alanı gerekli.';
+      if(inputs.exercise === null || Number.isNaN(inputs.exercise) || inputs.exercise < 0 || inputs.exercise > 300){
+        errors.exercise = 'Egzersiz süresi 0–300 dakika olmalı.';
+      }
+      if(!inputs.weather) errors.weather = 'Hava sıcaklığı alanı gerekli.';
+      if(!inputs.goal) errors.goal = 'Hedef alanı gerekli.';
+      return errors;
+    }
+
+    function compute(input){
+      const baseMlPerKg = input.gender === 'erkek' ? 35 : 31;
+      const baseNeed = input.weight * baseMlPerKg;
+      const activityExtra = CONFIG.activity[input.activity];
+      const exerciseExtra = input.exercise * 10;
+      const weatherExtra = CONFIG.weather[input.weather];
+      const goalExtra = CONFIG.goal[input.goal];
+      const totalMl = roundByUnit(baseNeed + activityExtra + exerciseExtra + weatherExtra + goalExtra, 'ml');
+      const minMl = Math.max(totalMl - 450, input.weight * 28);
+      const intenseMl = totalMl + 500;
+      const litre = roundByUnit(totalMl / 1000, 'litre');
+      const minLitre = roundByUnit(minMl / 1000, 'litre');
+      const intenseLitre = roundByUnit(intenseMl / 1000, 'litre');
+      const glasses = roundByUnit(totalMl / 200, 'litre');
+      const bottles = roundByUnit(totalMl / 500, 'litre');
+
+      const weightScore = clamp(((input.weight - 45) / 55) * 35, 0, 35);
+      const activityScore = clamp((activityExtra / 450) * 20 + (exerciseExtra / 900) * 15, 0, 35);
+      const climateScore = clamp((weatherExtra / 500) * 20 + (goalExtra / 320) * 10, 0, 30);
+      const hydrationScore = roundByUnit(weightScore + activityScore + climateScore, 'score');
+
+      const scoreLabel = hydrationScore < 35 ? 'Düşük ihtiyaç yoğunluğu'
+        : hydrationScore < 65 ? 'Orta ihtiyaç yoğunluğu'
+        : 'Yüksek ihtiyaç yoğunluğu';
+
+      const confidence = 'Orta';
+      const distribution = {
+        morning: roundByUnit(totalMl * 0.25, 'ml'),
+        daytime: roundByUnit(totalMl * 0.35, 'ml'),
+        evening: roundByUnit(totalMl * 0.25, 'ml'),
+        workout: roundByUnit(totalMl * 0.15, 'ml')
+      };
+
+      return {
+        baseNeed, activityExtra, exerciseExtra, weatherExtra, goalExtra,
+        totalMl, minMl, intenseMl,
+        litre, minLitre, intenseLitre, glasses, bottles,
+        score: hydrationScore, scoreLabel, weightScore, activityScore, climateScore,
+        confidence, distribution
+      };
+    }
+
+    function buildDecision(results, inputs){
+      if(results.score < 35){
+        return {
+          badge:'good',
+          title:'Plan yönetilebilir görünüyor',
+          text:`Yaklaşık ${formatL(results.litre)} hedef, sakin veya orta tempolu bir gün için uygulanabilir seviyede. Günün başında ve öğün çevresinde su içmeyi düzenlemek çoğu zaman yeterli olur.`
+        };
+      }
+      if(results.score < 65){
+        return {
+          badge:'warn',
+          title:'Planı gün içine yaymak önemli',
+          text:`Yaklaşık ${formatL(results.litre)} hedef orta yoğunlukta bir su planına işaret ediyor. Özellikle ${inputs.exercise > 0 ? 'egzersiz öncesi ve sonrası' : 'öğünler ve gün içi aralarda'} daha planlı içmek hedefi rahatlatır.`
+        };
+      }
+      return {
+        badge:'bad',
+        title:'Yoğun gün planı gerekiyor',
+        text:`Yaklaşık ${formatL(results.litre)} hedef yüksek ihtiyaç yoğunluğu gösteriyor. Tek seferde çok içmek yerine suyu gün içine bölmek, yanında şişe taşımak ve sıcak / egzersizli zamanlarda ek içmek daha mantıklıdır.`
+      };
+    }
+
+    function buildStatus(results){
+      if(results.score < 35) return { badge:'good', text:'Düşük yoğunluk', desc:'Bugünkü su hedefin daha yönetilebilir görünüyor.' };
+      if(results.score < 65) return { badge:'warn', text:'Orta yoğunluk', desc:'Gün içine planlı yaymak önemli.' };
+      return { badge:'bad', text:'Yüksek yoğunluk', desc:'Sıcaklık ve hareket etkisi belirgin.' };
+    }
+
+    function buildScenarioResults(input){
+      const cool = compute({ ...input, weather:'serin', activity: input.activity === 'yuksek' ? 'orta' : input.activity, exercise: Math.max(0, input.exercise - 15), goal: 'koruma' });
+      const base = compute(input);
+      const hard = compute({ ...input, weather:'coksicak', activity:'yuksek', exercise: input.exercise + 30, goal: input.goal === 'antrenman' ? 'antrenman' : 'antrenman' });
+      return { cool, base, hard };
+    }
+
+    function applyEmptyState(){
+      refs.highlightCard.classList.remove('ready');
+      refs.scoreCard.classList.remove('ready');
+      refs.miniGrid.classList.remove('ready');
+      refs.mainResult.textContent = '—';
+      refs.mainResultSub.textContent = 'Kişisel verilerine göre yaklaşık günlük içme suyu hedefi burada görünür.';
+      refs.statusText.textContent = 'Veri bekleniyor. Sonuçlar, profilini girdikten sonra aktifleşir.';
+      refs.statusBadge.textContent = 'Bekleniyor';
+      refs.statusBadge.className = 'badge';
+      refs.scoreValue.textContent = '—';
+      refs.scoreBadge.textContent = 'Hazır değil';
+      refs.scoreBadge.className = 'pill';
+      refs.scoreProgress.style.width = '0%';
+      refs.scoreExplain.textContent = 'Skor yükseldikçe gün içindeki su planı daha dikkatli yönetilmelidir.';
+      refs.scoreWeight.textContent = '—';
+      refs.scoreActivity.textContent = '—';
+      refs.scoreClimate.textContent = '—';
+      refs.decisionTitle.textContent = 'Karar Özeti';
+      refs.decisionText.textContent = 'Önce temel verileri gir; sonra pratik su planı ve yorum burada oluşsun.';
+      refs.minTarget.textContent = '—';
+      refs.maxTarget.textContent = '—';
+      refs.glassCount.textContent = '—';
+      refs.bottleCount.textContent = '—';
+      refs.summaryValue.textContent = '—';
+      refs.planValue.textContent = '—';
+      refs.scenarioCool.textContent = '—';
+      refs.scenarioBase.textContent = '—';
+      refs.scenarioHard.textContent = '—';
+    }
+
+    function flashResults(){
+      refs.resultsPanel.classList.remove('result-flash');
+      void refs.resultsPanel.offsetWidth;
+      refs.resultsPanel.classList.add('result-flash');
+      window.setTimeout(() => refs.resultsPanel.classList.remove('result-flash'), 1500);
+    }
+
+    function focusResults(){
+      refs.resultsPanel.scrollIntoView({ behavior:'smooth', block:'start' });
+      flashResults();
+    }
+
+    function render(results, inputs){
+      const decision = buildDecision(results, inputs);
+      const status = buildStatus(results);
+      const scenarios = buildScenarioResults(inputs);
+
+      refs.highlightCard.classList.add('ready');
+      refs.scoreCard.classList.add('ready');
+      refs.miniGrid.classList.add('ready');
+
+      refs.mainResult.textContent = formatL(results.litre);
+      refs.mainResultSub.textContent = `${formatMl(results.totalMl)} günlük hedef. Güven seviyesi: ${results.confidence}.`;
+
+      refs.statusText.textContent = status.desc;
+      refs.statusBadge.textContent = status.text;
+      refs.statusBadge.className = `badge ${status.badge}`;
+
+      refs.scoreValue.textContent = formatNumber(results.score, 0);
+      refs.scoreBadge.textContent = results.scoreLabel;
+      refs.scoreBadge.className = `pill ${status.badge}`;
+      refs.scoreProgress.style.width = `${results.score}%`;
+      refs.scoreExplain.textContent = `Bu skor, kilo, günlük hareket, egzersiz ve sıcaklığın toplamda su planını ne kadar zorlaştırdığını gösterir. Yüksek skor, daha planlı içme ihtiyacı anlamına gelir.`;
+      refs.scoreWeight.textContent = `${formatNumber(results.weightScore,0)} / 35`;
+      refs.scoreActivity.textContent = `${formatNumber(results.activityScore,0)} / 35`;
+      refs.scoreClimate.textContent = `${formatNumber(results.climateScore,0)} / 30`;
+
+      refs.decisionTitle.textContent = decision.title;
+      refs.decisionText.textContent = decision.text;
+
+      refs.minTarget.textContent = formatL(results.minLitre);
+      refs.maxTarget.textContent = formatL(results.intenseLitre);
+      refs.glassCount.textContent = `${formatNumber(results.glasses,1)} bardak`;
+      refs.bottleCount.textContent = `${formatNumber(results.bottles,1)} şişe`;
+      refs.summaryValue.textContent = `${formatMl(results.baseNeed)} + ${formatMl(results.totalMl - results.baseNeed)}`;
+      refs.planValue.textContent = `${formatMl(results.distribution.morning)} / ${formatMl(results.distribution.daytime)} / ${formatMl(results.distribution.evening)} / ${formatMl(results.distribution.workout)}`;
+
+      refs.scenarioCool.textContent = formatL(scenarios.cool.litre);
+      refs.scenarioBase.textContent = formatL(scenarios.base.litre);
+      refs.scenarioHard.textContent = formatL(scenarios.hard.litre);
+      refs.scenarioCoolSub.textContent = `Daha sakin ve serin gün varsayımıyla yaklaşık ${formatMl(scenarios.cool.totalMl)}.`;
+      refs.scenarioBaseSub.textContent = `Girilen baz profil için yaklaşık ${formatMl(scenarios.base.totalMl)}.`;
+      refs.scenarioHardSub.textContent = `Daha sıcak ve aktif günde yaklaşık ${formatMl(scenarios.hard.totalMl)}.`;
+    }
+
+    function setInputA11y(key, isInvalid){
+      const input = refs.inputs[key];
+      if(!input) return;
+      input.setAttribute('aria-invalid', isInvalid ? 'true' : 'false');
+    }
+
+    function clearFieldErrors(){
+      Object.entries(fieldNodes).forEach(([key, node]) => {
+        node.classList.remove('error');
+        setInputA11y(key, false);
+      });
+      refs.validationBox.classList.remove('show');
+      refs.validationBox.textContent = '';
+    }
+
+    function markFieldTouched(key){
+      if(!key) return;
+      state.touched[key] = true;
+    }
+
+    function touchAllFields(){
+      Object.keys(fieldNodes).forEach(key => {
+        state.touched[key] = true;
+      });
+    }
+
+    function syncFieldErrors(errors, force = false){
+      clearFieldErrors();
+      const invalidKeys = Object.keys(errors);
+      if(!invalidKeys.length) return;
+
+      const visibleKeys = invalidKeys.filter(key => force || state.hasAttemptedSubmit || state.touched[key]);
+      visibleKeys.forEach(key => {
+        fieldNodes[key]?.classList.add('error');
+        setInputA11y(key, true);
+      });
+
+      if(force && invalidKeys.length){
+        refs.validationBox.textContent = 'Lütfen kırmızı işaretli alanları kontrol et.';
+        refs.validationBox.classList.add('show');
+      }
+    }
+
+    function focusFirstInvalid(errors){
+      const firstInvalid = Object.keys(errors).find(key => refs.inputs[key]);
+      if(firstInvalid){
+        refs.inputs[firstInvalid].focus();
+      }
+    }
+
+    function debounce(fn, wait = 180){
+      let t;
+      return (...args) => {
+        clearTimeout(t);
+        refs.microStatus.textContent = 'Hesaplanıyor...';
+        t = setTimeout(() => fn(...args), wait);
+      };
+    }
+
+    function saveManualState(){
+      if(state.source !== 'manual') return;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        version: 2,
+        source: 'manual',
+        inputs: state.inputs
+      }));
+    }
+
+    function clearSavedState(){
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function setFormValues(values, source = 'manual'){
+      refs.inputs.weight.value = values.weight ?? '';
+      refs.inputs.gender.value = values.gender ?? '';
+      refs.inputs.activity.value = values.activity ?? '';
+      refs.inputs.exercise.value = values.exercise ?? '';
+      refs.inputs.weather.value = values.weather ?? '';
+      refs.inputs.goal.value = values.goal ?? '';
+      state.source = source;
+    }
+
+    function handleCalculation(force = false, shouldFocus = false){
+      const inputs = parseInputs();
+      const errors = validate(inputs);
+      state.inputs = inputs;
+      state.errors = errors;
+      state.isValid = Object.keys(errors).length === 0;
+
+      if(force) state.hasAttemptedSubmit = true;
+
+      if(!state.isValid){
+        syncFieldErrors(errors, force);
+        state.results = null;
+        state.isCalculated = false;
+        applyEmptyState();
+
+        const hasAnyValue = Object.values(inputs).some(value => value !== '' && value !== null && value !== 0);
+        if(force){
+          refs.microStatus.textContent = 'Eksik veya hatalı alanları düzelt.';
+          if(shouldFocus) focusFirstInvalid(errors);
+        } else if(hasAnyValue){
+          refs.microStatus.textContent = 'Temel alanları tamamladığında sonuç oluşur.';
+        } else {
+          refs.microStatus.textContent = 'Form boş başlar. İstersen örnek veri veya hazır senaryo ile hızlı başlangıç yapabilirsin.';
+        }
+        return;
+      }
+
+      clearFieldErrors();
+      const results = compute(inputs);
+      state.results = results;
+      state.isCalculated = true;
+      state.confidence = results.confidence;
+      render(results, inputs);
+      refs.microStatus.textContent = 'Sonuç güncellendi.';
+      if(state.source === 'manual') saveManualState();
+      if(shouldFocus) focusResults();
+    }
+
+    const debouncedCalculation = debounce(() => handleCalculation(false), 180);
+
+    function markManualAndRecalculate(){
+      state.source = 'manual';
+      debouncedCalculation();
+    }
+
+    function resetForm(clearStorage = false){
+      setFormValues({ weight:'', gender:'', activity:'', exercise:'', weather:'', goal:'' }, 'empty');
+      state.touched = {};
+      state.hasAttemptedSubmit = false;
+      clearFieldErrors();
+      applyEmptyState();
+      document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
+      if(clearStorage) clearSavedState();
+      refs.microStatus.textContent = 'Form sıfırlandı. İstersen örnek veri veya manuel girişle devam et.';
+    }
+
+    function fillExample(){
+      setFormValues({
+        weight: 78,
+        gender: 'erkek',
+        activity: 'orta',
+        exercise: 40,
+        weather: 'ilik',
+        goal: 'koruma'
+      }, 'example');
+      state.touched = {};
+      state.hasAttemptedSubmit = false;
+      document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
+      handleCalculation(true, true);
+      refs.microStatus.textContent = 'Örnek veri yüklendi. Bu veri otomatik kaydedilmez.';
+    }
+
+    function applyScenario(name, button){
+      document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
+      if(button) button.classList.add('active');
+      const map = {
+        serin: { weight: 72, gender:'kadin', activity:'dusuk', exercise:15, weather:'serin', goal:'koruma' },
+        baz: { weight: 80, gender:'erkek', activity:'orta', exercise:30, weather:'ilik', goal:'koruma' },
+        aktif: { weight: 82, gender:'erkek', activity:'yuksek', exercise:60, weather:'coksicak', goal:'zayiflama' },
+        antrenman: { weight: 88, gender:'erkek', activity:'yuksek', exercise:90, weather:'ilik', goal:'antrenman' }
+      };
+      setFormValues(map[name], 'scenario');
+      state.touched = {};
+      state.hasAttemptedSubmit = false;
+      handleCalculation(true, true);
+      refs.microStatus.textContent = 'Hazır senaryo yüklendi. Bu veri otomatik kaydedilmez.';
+    }
+
+    function applyQuickWeight(value){
+      refs.inputs.weight.value = value;
+      state.source = 'manual';
+      markFieldTouched('weight');
+      debouncedCalculation();
+    }
+
+    function applyQuickExercise(value){
+      refs.inputs.exercise.value = value;
+      state.source = 'manual';
+      markFieldTouched('exercise');
+      debouncedCalculation();
+    }
+
+    function fallbackCopyText(text){
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      ta.style.pointerEvents = 'none';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      let ok = false;
+      try{ ok = document.execCommand('copy'); }catch{ ok = false; }
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    function copyTextSmart(text, successMessage, failMessage){
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(() => {
+          refs.microStatus.textContent = successMessage;
+        }).catch(() => {
+          refs.microStatus.textContent = fallbackCopyText(text) ? successMessage : failMessage;
+        });
+        return;
+      }
+      refs.microStatus.textContent = fallbackCopyText(text) ? successMessage : failMessage;
+    }
+
+    function copyResult(){
+      if(!state.results){
+        refs.microStatus.textContent = 'Önce geçerli bir sonuç oluştur.';
+        return;
+      }
+      const text = [
+        'Hesapica - Günlük Su İhtiyacı',
+        `Hedef: ${refs.mainResult.textContent}`,
+        `Minimum: ${refs.minTarget.textContent}`,
+        `Yoğun gün: ${refs.maxTarget.textContent}`,
+        `Bardak: ${refs.glassCount.textContent}`,
+        `Şişe: ${refs.bottleCount.textContent}`,
+        `Skor: ${refs.scoreValue.textContent} / 100`,
+        `Karar: ${refs.decisionText.textContent}`
+      ].join('\n');
+      copyTextSmart(text, 'Sonuç panoya kopyalandı.', 'Kopyalama başarısız oldu.');
+    }
+
+    function buildShareUrl(){
+      const url = new URL(window.location.href);
+      if(!state.isValid) return url.toString();
+      Object.entries(state.inputs).forEach(([k,v]) => url.searchParams.set(k, String(v ?? '')));
+      return url.toString();
+    }
+
+    function shareResult(){
+      if(!state.results){
+        refs.microStatus.textContent = 'Önce geçerli bir sonuç oluştur.';
+        return;
+      }
+      const url = buildShareUrl();
+      if(navigator.share){
+        navigator.share({ title:'Günlük Su İhtiyacı Hesaplama', text:'Su hedefimi hesapladım.', url })
+          .then(() => refs.microStatus.textContent = 'Paylaşım başlatıldı.')
+          .catch(() => copyTextSmart(url, 'Paylaşım bağlantısı panoya kopyalandı.', 'Paylaşım başarısız oldu.'));
+      } else {
+        copyTextSmart(url, 'Paylaşım bağlantısı panoya kopyalandı.', 'Paylaşım başarısız oldu.');
+      }
+    }
+
+    function printResult(){
+      if(!state.results){
+        refs.microStatus.textContent = 'Önce geçerli bir sonuç oluştur.';
+        return;
+      }
+      window.print();
+    }
+
+    function loadFromQuery(){
+      const params = new URLSearchParams(window.location.search);
+      if(!params.toString()) return false;
+      const values = {
+        weight: params.get('weight') || '',
+        gender: params.get('gender') || '',
+        activity: params.get('activity') || '',
+        exercise: params.get('exercise') || '',
+        weather: params.get('weather') || '',
+        goal: params.get('goal') || ''
+      };
+      setFormValues(values, 'shared');
+      state.touched = {};
+      state.hasAttemptedSubmit = false;
+      handleCalculation(true);
+      refs.microStatus.textContent = 'Paylaşılan sonuç yüklendi.';
+      return true;
+    }
+
+    function loadSavedState(){
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return false;
+      try{
+        const parsed = JSON.parse(raw);
+        if(parsed.version !== 2 || parsed.source !== 'manual' || !parsed.inputs) return false;
+        setFormValues(parsed.inputs, 'manual');
+        state.touched = {};
+        state.hasAttemptedSubmit = false;
+        handleCalculation(true);
+        refs.microStatus.textContent = 'Önceki manuel girişlerin geri yüklendi.';
+        return true;
+      }catch{
+        return false;
+      }
+    }
+
+    function toggleFaq(button){
+      const item = button.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    refs.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      touchAllFields();
+      state.source = state.source === 'empty' ? 'manual' : state.source;
+      if(state.source !== 'example' && state.source !== 'scenario' && state.source !== 'shared') state.source = 'manual';
+      handleCalculation(true, true);
+    });
+
+    Object.entries(refs.inputs).forEach(([key, el]) => {
+      el.addEventListener('input', () => {
+        markFieldTouched(key);
+        markManualAndRecalculate();
+      });
+      el.addEventListener('change', () => {
+        markFieldTouched(key);
+        markManualAndRecalculate();
+      });
+      el.addEventListener('blur', () => {
+        markFieldTouched(key);
+        syncFieldErrors(state.errors, false);
+      });
+      el.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter'){
+          e.preventDefault();
+          touchAllFields();
+          state.source = 'manual';
+          handleCalculation(true, true);
+        }
+      });
+    });
+
+    (function init(){
+      applyEmptyState();
+      clearFieldErrors();
+      if(loadFromQuery()) return;
+      if(loadSavedState()) return;
+      resetForm(false);
+    })();
+  </script>
+</body>
+</html>

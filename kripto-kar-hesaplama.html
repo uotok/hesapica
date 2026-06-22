@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kripto Kâr &amp; Tokenomics Analizi Hesaplama | Hesapica</title>
+<meta content="Kripto yatırım kârı, satın alınan dönem market cap, arz artışı, dilution ayarlı ATH, eski market cap'e dönse fiyat, planlı arz değişimleri, dilution etkisi ve hedef fiyat için gereken market cap analizini ücretsiz hesaplayın." name="description"/>
+<meta content="kripto kar hesaplama, tokenomics hesaplama, arz analizi, dilution calculator, market cap calculator, ath analizi, crypto profit calculator" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/kripto-kar-hesaplama" rel="canonical"/>
+<meta content="index,follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="Kripto Kâr &amp; Tokenomics Analizi Hesaplama | Hesapica" property="og:title"/>
+<meta content="Kripto yatırım kârı, satın alınan dönem market cap, arz artışı, dilution ayarlı ATH, eski market cap'e dönse fiyat, planlı arz değişimleri, dilution etkisi ve hedef fiyat için gereken market cap analizini ücretsiz hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/kripto-kar-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Kripto Kâr &amp; Tokenomics Analizi Hesaplama | Hesapica" name="twitter:title"/>
+<meta content="Kripto yatırım kârı, satın alınan dönem market cap, arz artışı, dilution ayarlı ATH, eski market cap'e dönse fiyat, planlı arz değişimleri, dilution etkisi ve hedef fiyat için gereken market cap analizini ücretsiz hesaplayın." name="twitter:description"/>
+<meta content="https://hesapica.com/kripto-kar-hesaplama" name="twitter:url"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800}
+    .lang-box{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.12)}
+    .lang-box label{margin:0;font-size:13px;font-weight:800;color:#4338ca}
+    .lang-select{height:40px;border-radius:12px;padding:0 12px;border:1px solid #d9def0;background:#fff;min-width:160px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p{font-size:15px;color:#4b5563;line-height:1.65}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .helper-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+   .helper-link{display:block;padding:14px;border-radius:16px;background:#fff;border:1px solid rgba(79,70,229,.10);cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .helper-link:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(79,70,229,.10);border-color:rgba(79,70,229,.24)}
+    .helper-link .title{font-weight:900;margin-bottom:6px}
+    .helper-link .desc,.small{font-size:14.5px;color:#4b5563;line-height:1.65}
+    .helper-link .action{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:800;color:#4f46e5}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .field.invalid input,.field.invalid select{border-color:#f2b8c5;background:#fff8fb;box-shadow:0 0 0 4px rgba(244,114,182,.10)}
+    .field.invalid label{color:#9f1239}
+    .field-error{display:none;margin-top:8px;font-size:13.5px;line-height:1.5;color:#b91c1c;font-weight:700}
+    .field.invalid .field-error{display:block}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .results-kicker{display:none;padding:14px 16px;border-radius:18px;background:#ffffff;border:1px solid rgba(79,70,229,.12);color:#4f46e5;font-size:14px;font-weight:800;box-shadow:var(--shadow)}
+    .results-kicker span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:4px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+   .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .score-breakdown-row .val.pos{color:var(--good)}
+    .score-breakdown-row .val.neg{color:var(--bad)}
+    .score-breakdown-row .val.neu{color:var(--muted)}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    #targetCard .value,#unlockCard .value,#targetCard .small,#unlockCard .small{color:var(--text)}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .bar-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:#fbfcff}
+    .bar-card.hidden{display:none}
+    .bar-row + .bar-row{margin-top:12px}
+    .bar-top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#374151;margin-bottom:7px}
+    .bar{height:10px;border-radius:999px;background:#eef2f7;overflow:hidden}
+    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0%;transition:width .35s ease}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{color:var(--primary);font-weight:800}
+    td{color:var(--text);font-weight:700}
+    details.block h3,.details-card h2,.accordion-card h2,.card h2{color:var(--primary)}
+    #targetCard .small,#unlockCard .small,#targetMcSub,#unlockPriceSub,#profitSub,#oldMcAutoSub,#oldMcPriceSub{color:#4b5563;font-weight:700}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    .status{display:inline-block;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .status.good{background:#ecfdf5;color:var(--good)}
+    .status.warn{background:#fff7ed;color:var(--warn)}
+    .status.bad{background:#fef2f2;color:var(--bad)}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .success{color:var(--good)} .warning{color:var(--warn)} .danger,.bad{color:var(--bad)} .good{color:var(--good)} .warn{color:var(--warn)} .neutral{color:var(--text)} .hide{display:none}
+    .results.result-spotlight{animation:resultsSpotlight 1.55s ease}
+    .results.result-spotlight .status-card,.results.result-spotlight .highlight-card{box-shadow:0 0 0 3px rgba(79,70,229,.14), 0 22px 46px rgba(79,70,229,.18)}
+    @keyframes resultsSpotlight{0%{transform:translateY(0)}30%{transform:translateY(-2px)}100%{transform:translateY(0)}}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .helper-links,.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.bar-card,details.block{padding:20px}
+      .helper-links,.field-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .hero{padding-bottom:24px}
+      .hero-chips{gap:8px}
+      .hero-chip:nth-child(n+3){display:none}
+      .flow-hint{margin-top:16px}
+      .results-kicker{display:block}
+      .lang-box{width:100%;justify-content:space-between}
+      .lang-select{min-width:0;flex:1}
+      .helper-box{display:none}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Kripto Kâr & Tokenomics Analizi Hesaplama",
+    "url":"https://hesapica.com/kripto-kar-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Kripto yatırım kârı, arz artışı, dilution ayarlı ATH, eski market cap'e dönse fiyat, unlock etkisi ve hedef fiyat için gereken market cap analizini yapan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Satın alınan dönem market cap nasıl hesaplanır?",
+        "acceptedAnswer":{"@type":"Answer","text":"Bu araç satın alınan dönem market cap değerini otomatik hesaplar. Genel formül alış fiyatı × satın alınan dönem dolaşımdaki arz şeklindedir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Dilution ayarlı ATH nedir?",
+        "acceptedAnswer":{"@type":"Answer","text":"Eski ATH fiyatının bugünkü dolaşımdaki arz ile düzeltilmiş halidir. Genelde eski ATH × eski arz / güncel arz formülüyle bulunur."}
+      },
+      {
+        "@type":"Question",
+        "name":"Hedef fiyat ve unlock alanları zorunlu mudur?",
+        "acceptedAnswer":{"@type":"Answer","text":"Hayır. Hedef fiyat ve unlock alanları opsiyoneldir. Boş bırakıldığında temel analizler çalışmaya devam eder."}
+      }
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Kripto","item":"https://hesapica.com/#yatirim"},
+      {"@type":"ListItem","position":3,"name":"Kripto Kâr & Tokenomics Analizi Hesaplama","item":"https://hesapica.com/kripto-kar-hesaplama"}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript>
+<div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">
+    Bu hesaplama aracının tüm özellikleri JavaScript ile çalışır. Sonuçları görmek için tarayıcınızda JavaScript açık olmalıdır.
+  </div>
+</noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#yatirim">Kripto</a>
+<span>/</span>
+<strong data-i="heroTitle">Kripto Kâr &amp; Tokenomics Analizi Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-top">
+<span class="eyebrow-pill" data-i="eyebrow">Hesapica • Kripto Analiz Aracı</span>
+<div class="lang-box">
+<label data-i="langLabel" for="languageSelect">Dil</label>
+<select class="lang-select" id="languageSelect" onchange="setLanguage(this.value)">
+<option value="tr">Türkçe</option>
+<option value="en">English</option>
+</select>
+</div>
+</div>
+<div class="hero-grid">
+<div>
+<h1 data-i="heroTitle">Kripto Kâr &amp; Tokenomics Analizi Hesaplama</h1>
+<p data-i="heroDesc">Bu araç yalnızca kâr değil; <strong>satın alınan dönem market cap</strong>, <strong>eski market cap'e dönse fiyat</strong>, <strong>dilution ayarlı gerçek ATH</strong>, <strong>ATH için gereken piyasa değeri</strong>, <strong>planlı arz değişimi etkisi</strong> ve <strong>hedef market cap senaryoları</strong> aynı ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip" data-i="chip1">Boş başlangıç net</span>
+<span class="hero-chip" data-i="chip2">Mobilde sade akış</span>
+<span class="hero-chip" data-i="chip3">Tokenomics odaklı</span>
+<span class="hero-chip" data-i="chip4">Katmanlı sonuç sistemi</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow" data-i="heroBoxEyebrow">Kripto yatırım değerlendirmesi</div>
+<strong data-i="heroBoxTitle">Kâr, dilution ve market cap baskısını tek ekranda gör</strong>
+<p data-i="heroBoxText">Alış dönemi market cap'i, dilution ayarlı ATH, hedef fiyat için gereken market cap ve planlı arz etkisini birlikte yorumla.</p>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2 data-i="panelTitle">Hesaplama Paneli</h2>
+<p class="section-note" data-i="panelNote">Tüm alanlar boş başlar. Temel sonuçları görmek için gerekli alanları doldur veya örnek veriyi yükle.</p>
+<div class="helper-box">
+<h3 data-i="helperTitle">Coin arzını nereden bulabilirim?</h3>
+<div data-i="helperDesc">Circulating supply, total supply, market cap ve unlock bilgileri için aşağıdaki kaynakları kullanabilirsin.</div>
+<div class="helper-links">
+<a class="helper-link" href="https://coinmarketcap.com/" rel="noopener" target="_blank">
+<div class="title">CoinMarketCap</div>
+<div class="desc" data-i="cmcDesc">Circulating supply, total supply, market cap ve temel proje verileri.</div>
+<div class="action" data-i="openSource">Kaynağı aç ↗</div>
+</a>
+<a class="helper-link" href="https://www.coingecko.com/" rel="noopener" target="_blank">
+<div class="title">CoinGecko</div>
+<div class="desc" data-i="cgDesc">Supply, market cap, FDV ve proje kıyasları için alternatif kaynak.</div>
+<div class="action" data-i="openSource">Kaynağı aç ↗</div>
+</a>
+<a class="helper-link" href="https://token.unlocks.app/" rel="noopener" target="_blank">
+<div class="title">Token Unlocks</div>
+<div class="desc" data-i="tuDesc">Unlock takvimi, vesting ve planlı arz değişimlerini görmek için.</div>
+<div class="action" data-i="openSource">Kaynağı aç ↗</div>
+</a>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i="groupCore">Temel işlem verileri</div>
+<div class="field-grid">
+<div class="field">
+<label data-i="buyPriceLabel" for="buyPrice">Alış fiyatı ($)</label>
+<input aria-describedby="buyPriceHint buyPriceError" aria-required="true" autocomplete="off" id="buyPrice" inputmode="decimal" required="" type="text"/>
+<div class="hint" data-i="buyPriceHint" id="buyPriceHint">Coini hangi fiyattan aldın?</div>
+<div class="field-error" id="buyPriceError" role="alert"></div>
+</div>
+<div class="field">
+<label data-i="currentPriceLabel" for="currentPrice">Satış / güncel fiyat ($)</label>
+<input aria-describedby="currentPriceHint currentPriceError" aria-required="true" autocomplete="off" id="currentPrice" inputmode="decimal" required="" type="text"/>
+<div class="hint" data-i="currentPriceHint" id="currentPriceHint">Satmayı düşündüğün veya mevcut fiyat.</div>
+<div class="field-error" id="currentPriceError" role="alert"></div>
+</div>
+<div class="field">
+<label data-i="coinAmountLabel" for="coinAmount">Coin miktarı</label>
+<input aria-describedby="coinAmountHint coinAmountError" aria-required="true" autocomplete="off" id="coinAmount" inputmode="decimal" required="" type="text"/>
+<div class="hint" data-i="coinAmountHint" id="coinAmountHint">Toplam elindeki coin/token miktarı.</div>
+<div class="field-error" id="coinAmountError" role="alert"></div>
+</div>
+<div class="field">
+<label data-i="feeLabel" for="feePercent">Toplam komisyon (%)</label>
+<input aria-describedby="feeHint feePercentError" autocomplete="off" id="feePercent" inputmode="decimal" type="text"/>
+<div class="hint" data-i="feeHint" id="feeHint">Alış + satış toplam ücret etkisi için kullanılabilir.</div>
+<div class="field-error" id="feePercentError" role="alert"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i="groupToken">Tokenomics verileri</div>
+<div class="field-grid">
+<div class="field">
+<label data-i="oldSupplyLabel" for="oldSupply">Satın alınan dönem dolaşımdaki arz</label>
+<input aria-describedby="oldSupplyHint oldSupplyError" aria-required="true" autocomplete="off" id="oldSupply" inputmode="numeric" required="" type="text"/>
+<div class="hint" data-i="oldSupplyHint" id="oldSupplyHint">Coini aldığın dönemdeki circulating supply. Örn: 150.000.000</div>
+<div class="field-error" id="oldSupplyError" role="alert"></div>
+</div>
+<div class="field">
+<label data-i="newSupplyLabel" for="newSupply">Güncel dolaşımdaki arz</label>
+<input aria-describedby="newSupplyHint newSupplyError" aria-required="true" autocomplete="off" id="newSupply" inputmode="numeric" required="" type="text"/>
+<div class="hint" data-i="newSupplyHint" id="newSupplyHint">Şimdiki circulating supply. Örn: 750.000.000</div>
+<div class="field-error" id="newSupplyError" role="alert"></div>
+</div>
+<div class="field">
+<label data-i="athLabel" for="athPrice">Eski ATH fiyatı ($)</label>
+<input aria-describedby="athHint athPriceError" aria-required="true" autocomplete="off" id="athPrice" inputmode="decimal" required="" type="text"/>
+<div class="hint" data-i="athHint" id="athHint">Geçmişte görülen en yüksek fiyat.</div>
+<div class="field-error" id="athPriceError" role="alert"></div>
+</div>
+<div class="field">
+<label data-i="currentMcLabel" for="currentMc">Güncel market cap ($)</label>
+<input id="currentMc" placeholder="Otomatik hesaplanır" readonly="" type="text"/>
+<div class="hint" data-i="currentMcHint">Güncel fiyat × güncel dolaşımdaki arz ile otomatik hesaplanır.</div>
+</div>
+<div class="field full">
+<label data-i="autoOldMcLabel">Satın alınan dönem market cap</label>
+<input id="autoOldMc" placeholder="Otomatik hesaplanır" readonly="" type="text"/>
+<div class="hint" data-i="autoOldMcHint">Alış fiyatı × satın alınan dönem dolaşımdaki arz ile otomatik hesaplanır.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i="groupOptional">İleri seviye opsiyonel alanlar</div>
+<div class="field-grid">
+<div class="field">
+<label for="targetPrice"><span data-i="targetPriceLabel">Hedef fiyat ($)</span> <span class="small" data-i="optionalText">(opsiyonel)</span></label>
+<input aria-describedby="targetPriceHint targetPriceError" autocomplete="off" id="targetPrice" inputmode="decimal" type="text"/>
+<div class="hint" data-i="targetPriceHint" id="targetPriceHint">Bu coin şu fiyata giderse ne kadar para gerekir analizi için.</div>
+<div class="field-error" id="targetPriceError" role="alert"></div>
+</div>
+<div class="field">
+<label for="eventType"><span data-i="eventTypeLabel">Planlı arz olayı tipi</span> <span class="small" data-i="optionalText2">(opsiyonel)</span></label>
+<select aria-describedby="eventTypeHint" id="eventType">
+<option value="none">Yok</option>
+<option value="increase">Arz artırımı</option>
+<option value="unlock">Unlock / dolaşıma giriş</option>
+<option value="burn">Yakım / arz azaltımı</option>
+</select>
+<div class="hint" data-i="eventTypeHint" id="eventTypeHint">İstersen yaklaşan arz artışı, unlock veya yakımı modele dahil edebilirsin.</div>
+</div>
+<div class="field">
+<label for="eventAmount"><span data-i="eventAmountLabel">Planlı arz miktarı</span> <span class="small" data-i="optionalText3">(opsiyonel)</span></label>
+<input aria-describedby="eventAmountHint eventAmountError" autocomplete="off" id="eventAmount" inputmode="numeric" type="text"/>
+<div class="hint" data-i="eventAmountHint" id="eventAmountHint">Olay tipi seçildiğinde miktarı buraya gir. Örn: 120.000.000</div>
+<div class="field-error" id="eventAmountError" role="alert"></div>
+</div>
+<div class="field full">
+<label data-i="totalSupplyLabel" for="totalSupply">Toplam arz</label>
+<input aria-describedby="totalSupplyHint totalSupplyError" autocomplete="off" id="totalSupply" inputmode="numeric" type="text"/>
+<div class="hint" data-i="totalSupplyHint" id="totalSupplyHint">Maksimum veya total supply bilgisi varsa gir. Örn: 1.500.000.000</div>
+<div class="field-error" id="totalSupplyError" role="alert"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i="presetTitle">Hazır kısayol senaryosu</div>
+<div class="chip-row">
+<button class="chip" data-i="exampleBtn" onclick="fillExample(this)" type="button">Örnek Veri</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" data-i="calcBtn" onclick="calculateAll({focusAfter:true,forceValidation:true})" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" data-i="fastTryBtn" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" data-i="clearBtn" onclick="clearAllFields()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" data-i="copyBtn" onclick="copyResults()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" data-i="shareBtn" onclick="shareResults()" type="button">Paylaş</button>
+<button class="btn btn-ghost" data-i="printBtn" onclick="handlePrint()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong data-i="flowStrong">Tüm detaylı analiz ve yorumlar aşağıda devam eder</strong>
+<span data-i="flowText">Mobilde ilk ekran sonrası kaydırarak ileri analiz tablolarını ve kıyas bloklarını görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="results-kicker" data-i="resultsKicker">Sonuçlar aşağıda başlıyor<span data-i="resultsKickerSub">Ana çıktı, ara sonuçlar ve yorum blokları bu bölümde yer alır.</span></div>
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title" data-i="statusTitle">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" data-i="statusWaiting" id="statusText">Sonuç görmek için gerekli alanları doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge" data-i="waitingBadge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label" data-i="mainResultLabel">Ana Sonuç</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" data-i="mainResultHint" id="mainResultText">Net kâr / zarar burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small" data-i="scoreTitle">ATH'ye Dönüş Gerçekçilik Skoru</div>
+<div class="score-value" id="realityScore">0/100</div>
+</div>
+<span class="pill" data-i="waitingBadge" id="difficultyBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="small" data-i="scoreTextDefault" id="scoreText" style="margin-top:10px">Bu skor, eski ATH seviyesinin mevcut arz ve market cap yapısıyla ne kadar ulaşılabilir göründüğünü anlatır.</div>
+<div class="score-explain">
+<strong data-i="scoreExplainTitle">Bu skor neyi ifade eder?</strong>
+<div class="small" data-i="scoreExplainText" id="scoreExplainText">0 zayıf, 100 güçlü görünüm demektir. Değer; arz değişimi, eski ATH için gereken market cap, unlock baskısı ve piyasaya girmesi gereken yeni para büyüklüğüne göre oluşur.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name" data-i="breakSupply">Arz etkisi</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name" data-i="breakAth">ATH market cap baskısı</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name" data-i="breakUnlock">Unlock etkisi</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name" data-i="breakCapital">Gerekli yeni para</span><span class="val neu">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1">
+<div class="label" data-i="r2">ROI</div>
+<div class="value" id="roiValue">—</div>
+</div>
+<div class="mini-result is-empty" id="mini2">
+<div class="label" data-i="r3">Arz artışı</div>
+<div class="value" id="supplyGrowthValue">—</div>
+</div>
+<div class="mini-result is-empty" id="mini3">
+<div class="label" data-i="r4">Dilution ayarlı ATH</div>
+<div class="value" id="adjustedAthValue">—</div>
+</div>
+<div class="mini-result is-empty" id="mini4">
+<div class="label" data-i="r7">ATH için gereken MC</div>
+<div class="value" id="athNeededMcValue">—</div>
+</div>
+<div class="mini-result is-empty hide" id="targetCard">
+<div>
+<div class="label" data-i="r8">Hedef fiyat için gereken MC</div>
+<div class="small" id="targetMcSub">Seçilen hedef fiyat bazlı</div>
+</div>
+<div class="value" id="targetMcValue">—</div>
+</div>
+<div class="mini-result is-empty hide" id="unlockCard">
+<div>
+<div class="label" data-i="r9">Planlı arz olayı sonrası teorik fiyat</div>
+<div class="small" id="unlockPriceSub">MC sabit kalırsa</div>
+</div>
+<div class="value" id="unlockPriceValue">—</div>
+</div>
+</div>
+<div class="bar-card hidden" id="barCard">
+<div class="bar-row">
+<div class="bar-top"><span data-i="bar1Label">Gider / baskı oranı</span><strong id="barText1">%0</strong></div>
+<div class="bar"><div class="bar-fill" id="bar1"></div></div>
+</div>
+<div class="bar-row">
+<div class="bar-top"><span data-i="bar2Label">Kalan potansiyel</span><strong id="barText2">%0</strong></div>
+<div class="bar"><div class="bar-fill" id="bar2"></div></div>
+</div>
+</div>
+<div class="card" style="padding:18px">
+<h2 data-i="healthTitle" style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı Durum Özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3 data-i="h1">Dilution</h3><div class="big" id="healthDilution">—</div><div class="small" id="healthDilutionSub">—</div></div>
+<div class="health-card"><h3 data-i="h2">ATH Baskısı</h3><div class="big" id="healthAth">—</div><div class="small" id="healthAthSub">—</div></div>
+<div class="health-card"><h3 data-i="h3">Unlock</h3><div class="big" id="healthUnlock">—</div><div class="small" id="healthUnlockSub">—</div></div>
+</div>
+</div>
+<div aria-live="polite" class="comment-box" data-i="insightDefault" id="smartInsight">Alanları doldurup hesapla. Sistem, arz büyümesi ve market cap baskısına göre otomatik yorum üretir.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span data-i="detailsCore">Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note" data-i="detailsCoreNote">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div>
+<table>
+<tbody>
+<tr><th data-i="r1">Net kâr / zarar</th><td id="profitValue">—</td></tr>
+<tr><th data-i="r5">Satın alınan dönem market cap</th><td id="oldMcAutoValue">—</td></tr>
+<tr><th data-i="r6">Eski MC'ye dönse fiyat</th><td id="oldMcPriceValue">—</td></tr>
+</tbody>
+</table>
+<div class="small" id="profitSub" style="margin-top:10px">Alış ve satış sonrası</div>
+</div>
+<div>
+<table>
+<tbody>
+<tr><th data-i="r8">Hedef fiyat için gereken MC</th><td id="targetMcValueTable">—</td></tr>
+<tr><th data-i="r9">Planlı arz olayı sonrası teorik fiyat</th><td id="unlockPriceValueTable">—</td></tr>
+<tr><th data-i="currentMcLabel">Güncel market cap ($)</th><td id="currentMcEcho">—</td></tr>
+</tbody>
+</table>
+<div class="small" id="oldMcAutoSub" style="margin-top:10px">Otomatik hesaplanır</div>
+<div class="small" id="oldMcPriceSub" style="margin-top:6px">Alış dönemindeki MC baz alınır</div>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span data-i="tablesTitle">Gelişmiş analiz tabloları</span>
+<span class="summary-note" data-i="detailsTableNote">Market cap senaryoları, zorluk analizi ve hedef merdiveni</span>
+</summary>
+<div class="details-inner table-grid">
+<div>
+<h3 data-i="mcScenarioTitle" style="color:var(--primary)">Market cap senaryoları</h3>
+<table>
+<thead><tr><th data-i="thScenario">Senaryo</th><th data-i="thMc">Market Cap</th><th data-i="thPrice">Teorik Fiyat</th></tr></thead>
+<tbody id="mcScenarioBody"><tr><td colspan="3" data-i="waitingRow">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+<div>
+<h3 data-i="difficultyTitle" style="color:var(--primary)">ATH geri dönüş zorluk analizi</h3>
+<table>
+<thead><tr><th data-i="thMetric">Metrik</th><th data-i="thValue">Değer</th><th data-i="thComment">Yorum</th></tr></thead>
+<tbody id="difficultyTableBody"><tr><td colspan="3" data-i="waitingRow3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+<div>
+<h3 data-i="ladderTitle" style="color:var(--primary)">Fiyat hedefi merdiveni</h3>
+<table>
+<thead><tr><th data-i="thTarget">Hedef Fiyat</th><th data-i="thNeed">Gerekli MC</th><th data-i="thVs">Bugüne göre</th></tr></thead>
+<tbody id="ladderTableBody"><tr><td colspan="3" data-i="waitingRow4">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<div class="card">
+<h2 data-i="howTitle">Bu araç neden farklı?</h2>
+<p data-i="howP1">Kripto piyasasında aynı fiyat, çok farklı market cap ve arz yapıları anlamına gelebilir. Bu araç; <strong>satın alınan dönem market cap</strong>, <strong>eski market cap'e dönse fiyat</strong>, <strong>arz büyümesi</strong>, <strong>unlock baskısı</strong> ve <strong>ATH'e dönüşün matematiksel zorluğu</strong> gibi metrikleri tek ekranda birleştirir.</p>
+<p data-i="howP2">Yani bu sayfa yalnızca “kâr kaç?” diye sormaz. Aynı zamanda “Bu coin geçmiş koşullara dönse fiyat ne olur?”, “Arz arttığı için eski ATH artık gerçekte neye denk geliyor?” ve “Belirli hedefler için ne kadar para gerekir?” sorularını da yanıtlar.</p>
+</div>
+<div class="card accordion-card">
+<h2 data-i="faqTitle">Sık Sorulan Sorular</h2>
+<details open=""><summary data-i="fq1">Satın alınan dönem market cap neden önemlidir?</summary><p data-i="fa1">Çünkü coinin alındığı dönemdeki piyasa değeri ile bugünkü arz yapısı aynı değildir. Bu fark, eski seviyelere dönüşte fiyatın teorik olarak nereye denk geldiğini anlamayı sağlar.</p></details>
+<details><summary data-i="fq2">Planlı arz olayı alanı zorunlu mu?</summary><p data-i="fa2">Hayır. Arz artırımı, unlock veya yakım alanı tamamen opsiyoneldir. Boş bırakıldığında temel analizler çalışmaya devam eder.</p></details>
+<details><summary data-i="fq3">Hedef fiyat alanı zorunlu mu?</summary><p data-i="fa3">Hayır. Hedef fiyat alanı opsiyoneldir. Yalnızca coin belirli bir fiyata giderse gereken market cap'i görmek için kullanılır.</p></details>
+<details><summary data-i="fq4">Gerçekçilik skoru nasıl okunmalı?</summary><p data-i="fa4">Bu skor bir fiyat tahmini değildir. 0 zayıf, 100 güçlü görünüm demektir; arz değişimi, eski ATH için gereken market cap, planlı arz olayı ve yeni para ihtiyacı birlikte değerlendirilir.</p></details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 data-i="relatedTitle">İlgili Hesaplama Araçları</h2>
+<div class="related-grid">
+<a class="related-card" href="/yatirim-getirisi-hesaplama?mod=roi"><span class="small">İlgili Araç</span><strong data-i="rel1t">ROI ve Yatırım Getirisi</strong><p data-i="rel1d">Toplam getiri, ROI ve yatırım performansını farklı senaryolarla aynı ekranda karşılaştır.</p></a>
+<a class="related-card" href="/borsa-kar-hesaplama"><span class="small">İlgili Araç</span><strong data-i="rel2t">Borsa Kâr Hesaplama</strong><p data-i="rel2d">Hisse senedi işlemlerinde alım, satım ve komisyon etkisini tek ekranda görün.</p></a>
+<a class="related-card" href="/varlik-getirisi-hesaplama"><span class="small">İlgili Araç</span><strong data-i="rel3t">Varlık Getirisi Hesaplama</strong><p data-i="rel3d">Altın, dolar ve euro gibi varlıklarda makas ve maliyet etkisini ayrı senaryoyla görün.</p></a>
+</div>
+</section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+
+const baseTr = {
+  title:"Kripto Kâr & Tokenomics Analizi Hesaplama | Hesapica",
+  eyebrow:"Hesapica • Kripto Analiz Aracı",
+  langLabel:"Dil",
+  heroTitle:"Kripto Kâr & Tokenomics Analizi Hesaplama",
+  heroDesc:"Bu araç yalnızca kâr değil; <strong>satın alınan dönem market cap</strong>, <strong>eski market cap'e dönse fiyat</strong>, <strong>dilution ayarlı gerçek ATH</strong>, <strong>ATH için gereken piyasa değeri</strong>, <strong>planlı arz değişimi etkisi</strong> ve <strong>hedef market cap senaryoları</strong> aynı ekranda analiz etmek için tasarlandı.",
+  chip1:"Boş başlangıç net", chip2:"Mobilde sade akış", chip3:"Tokenomics odaklı", chip4:"Katmanlı sonuç sistemi",
+  heroBoxEyebrow:"Kripto yatırım değerlendirmesi", heroBoxTitle:"Kâr, dilution ve market cap baskısını tek ekranda gör", heroBoxText:"Alış dönemi market cap'i, dilution ayarlı ATH, hedef fiyat için gereken market cap ve planlı arz etkisini birlikte yorumla.",
+  panelTitle:"Hesaplama Paneli", panelNote:"Tüm alanlar boş başlar. Temel sonuçları görmek için gerekli alanları doldur veya örnek veriyi yükle.",
+  helperTitle:"Coin arzını nereden bulabilirim?", helperDesc:"Circulating supply, total supply, market cap ve unlock bilgileri için aşağıdaki kaynakları kullanabilirsin.",
+  cmcDesc:"Circulating supply, total supply, market cap ve temel proje verileri.", cgDesc:"Supply, market cap, FDV ve proje kıyasları için alternatif kaynak.", tuDesc:"Unlock takvimi, vesting ve planlı arz değişimlerini görmek için.",
+  groupCore:"Temel işlem verileri", groupToken:"Tokenomics verileri", groupOptional:"İleri seviye opsiyonel alanlar", presetTitle:"Hazır kısayol senaryosu",
+  buyPriceLabel:"Alış fiyatı ($)", buyPriceHint:"Coini hangi fiyattan aldın?", currentPriceLabel:"Satış / güncel fiyat ($)", currentPriceHint:"Satmayı düşündüğün veya mevcut fiyat.", coinAmountLabel:"Coin miktarı", coinAmountHint:"Toplam elindeki coin/token miktarı.", feeLabel:"Toplam komisyon (%)", feeHint:"Alış + satış toplam ücret etkisi için kullanılabilir.",
+  oldSupplyLabel:"Satın alınan dönem dolaşımdaki arz", oldSupplyHint:"Coini aldığın dönemdeki circulating supply. Örn: 150.000.000", newSupplyLabel:"Güncel dolaşımdaki arz", newSupplyHint:"Şimdiki circulating supply. Örn: 750.000.000", athLabel:"Eski ATH fiyatı ($)", athHint:"Geçmişte görülen en yüksek fiyat.", currentMcLabel:"Güncel market cap ($)", currentMcHint:"Güncel fiyat × güncel dolaşımdaki arz ile otomatik hesaplanır.", targetPriceLabel:"Hedef fiyat ($)", targetPriceHint:"Bu coin şu fiyata giderse ne kadar para gerekir analizi için.", eventTypeLabel:"Planlı arz olayı tipi", eventTypeHint:"İstersen yaklaşan arz artışı, unlock veya yakımı modele dahil edebilirsin.", eventAmountLabel:"Planlı arz miktarı", eventAmountHint:"Olay tipi seçildiğinde miktarı buraya gir. Örn: 120.000.000", totalSupplyLabel:"Toplam arz", totalSupplyHint:"Maksimum veya total supply bilgisi varsa gir. Örn: 1.500.000.000", autoOldMcLabel:"Satın alınan dönem market cap", autoOldMcHint:"Alış fiyatı × satın alınan dönem dolaşımdaki arz ile otomatik hesaplanır.", optionalText:"(opsiyonel)", optionalText2:"(opsiyonel)", optionalText3:"(opsiyonel)",
+  calcBtn:"Sonucu Gör", exampleBtn:"Örnek Veri", fastTryBtn:"Örnek Veri", clearBtn:"Verileri Sıfırla", copyBtn:"Sonucu Kopyala", shareBtn:"Paylaş", printBtn:"Yazdır / PDF",
+  flowStrong:"Tüm detaylı analiz ve yorumlar aşağıda devam eder", flowText:"Mobilde ilk ekran sonrası kaydırarak ileri analiz tablolarını ve kıyas bloklarını görebilirsin.",
+  resultsKicker:"Sonuçlar aşağıda başlıyor", resultsKickerSub:"Ana çıktı, ara sonuçlar ve yorum blokları bu bölümde yer alır.",
+  statusTitle:"Sonuç alanı durumu", statusWaiting:"Sonuç görmek için gerekli alanları doldur veya örnek veri kullan.", mainResultLabel:"Ana Sonuç", mainResultHint:"Net kâr / zarar burada görünecek.",
+  bar1Label:"Risk / baskı oranı", bar2Label:"Mevcut baz oranı",
+  scoreTitle:"ATH'ye Dönüş Gerçekçilik Skoru", waitingBadge:"Veri bekleniyor", scoreTextDefault:"Bu skor, eski ATH seviyesinin mevcut arz ve market cap yapısıyla ne kadar ulaşılabilir göründüğünü anlatır.",
+  r1:"Net kâr / zarar", r1s:"Alış ve satış sonrası", r2:"ROI", r2s:"Yüzdesel getiri", r3:"Arz artışı", r3s:"Eski arz → yeni arz", r4:"Dilution ayarlı ATH", r4s:"Bugünkü arzla düzeltilmiş", r5:"Satın alınan dönem market cap", r5s:"Otomatik hesaplanır", r6:"Eski MC'ye dönse fiyat", r6s:"Alış dönemindeki MC baz alınır", r7:"ATH için gereken MC", r7s:"Bugünkü arz ile teorik gereksinim", r8:"Hedef fiyat için gereken MC", r8s:"Seçilen hedef fiyat bazlı", r9:"Planlı arz olayı sonrası teorik fiyat", r9s:"MC sabit kalırsa",
+  healthTitle:"Hızlı Durum Özeti", h1:"Dilution", h2:"ATH Baskısı", h3:"Planlı olay", insightDefault:"Alanları doldurup hesapla. Sistem, arz büyümesi ve market cap baskısına göre otomatik yorum üretir.",
+  detailsCore:"Temel sonuçlar ve ek metrikler", detailsCoreNote:"İlk bakışta gereken ana sayı seti", tablesTitle:"Gelişmiş analiz tabloları", detailsTableNote:"Market cap senaryoları, zorluk analizi ve hedef merdiveni", mcScenarioTitle:"Market cap senaryoları", difficultyTitle:"ATH geri dönüş zorluk analizi", ladderTitle:"Fiyat hedefi merdiveni", rankTitle:"Referans senaryoları", thScenario:"Senaryo", thMc:"Market Cap", thPrice:"Teorik Fiyat", thMetric:"Metrik", thValue:"Değer", thComment:"Yorum", thTarget:"Hedef Fiyat", thNeed:"Gerekli MC", thVs:"Bugüne göre", thScenario2:"Senaryo", thRef:"Referans MC", thPrice2:"Teorik Fiyat", waitingRow:"Hesaplama bekleniyor.", waitingRow3:"Hesaplama bekleniyor.", waitingRow4:"Hesaplama bekleniyor.",
+  howTitle:"Bu araç neden farklı?", howP1:"Kripto piyasasında aynı fiyat, çok farklı market cap ve arz yapıları anlamına gelebilir. Bu araç; <strong>satın alınan dönem market cap</strong>, <strong>eski market cap'e dönse fiyat</strong>, <strong>arz büyümesi veya azalması</strong>, <strong>planlı arz olaylarının etkisi</strong> ve <strong>ATH'e dönüşün matematiksel zorluğu</strong> gibi metrikleri tek ekranda birleştirir.", howP2:"Yani bu sayfa yalnızca “kâr kaç?” diye sormaz. Aynı zamanda “Bu coin geçmiş koşullara dönse fiyat ne olur?”, “Arz arttığı için eski ATH artık gerçekte neye denk geliyor?” ve “Belirli hedefler için ne kadar para gerekir?” sorularını da yanıtlar.",
+  faqTitle:"Sık Sorulan Sorular", fq1:"Satın alınan dönem market cap neden önemlidir?", fa1:"Çünkü coinin alındığı dönemdeki piyasa değeri ile bugünkü arz yapısı aynı değildir. Bu fark, eski seviyelere dönüşte fiyatın teorik olarak nereye denk geldiğini anlamayı sağlar.", fq2:"Planlı arz olayı alanı zorunlu mu?", fa2:"Hayır. Arz artırımı, unlock veya yakım alanı tamamen opsiyoneldir. Boş bırakıldığında temel analizler çalışmaya devam eder.", fq3:"Hedef fiyat alanı zorunlu mu?", fa3:"Hayır. Hedef fiyat alanı opsiyoneldir. Yalnızca coin belirli bir fiyata giderse gereken market cap'i görmek için kullanılır.", fq4:"Gerçekçilik skoru nasıl okunmalı?", fa4:"Bu skor istatistiksel fiyat tahmini değildir. 0 zayıf, 100 güçlü görünüm demektir; arz değişimi, eski ATH için gereken market cap, planlı arz olayı ve yeni para ihtiyacı birlikte değerlendirilir.",
+  relatedTitle:"İlgili Hesaplama Araçları", rel1t:"ROI ve Yatırım Getirisi", rel1d:"Toplam getiri, ROI ve yatırım performansını farklı senaryolarla aynı ekranda karşılaştır.", rel2t:"Borsa Kâr Hesaplama", rel2d:"Hisse senedi işlemlerinde alım, satım ve komisyon etkisini tek ekranda görün.", rel3t:"Varlık Getirisi Hesaplama", rel3d:"Altın, dolar ve euro gibi varlıklarda makas ve maliyet etkisini ayrı senaryoyla görün.",
+  autoPlaceholder:"Otomatik hesaplanır", noData:"Veri yok", autoCalc:"Otomatik hesaplandı", scoreEasy:"Güçlü görünüm", scoreMid:"Görece ulaşılabilir", scoreHard:"Zorlayıcı", scoreVeryHard:"Çok zayıf görünüm", scoreDefaultEasy:"Eski ATH seviyesi mevcut arz ve market cap yapısına göre güçlü görünüyor.", scoreDefaultMid:"Eski ATH seviyesi kolay değil ama hâlâ makul bir senaryoda ulaşılabilir görünüyor.", scoreDefaultHard:"Eski ATH seviyesi için anlamlı market cap büyümesi gerekir; senaryo zorlayıcı görünüyor.", scoreDefaultVeryHard:"Eski ATH seviyesi mevcut arz ve gereken yeni para büyüklüğü nedeniyle oldukça zayıf görünüyor.", waitTableSupply:"Güncel arz girildiğinde tablo oluşur.", waitLadder:"Fiyat hedefi tablosu için güncel arz ve en az bir fiyat verisi gir.", top10:"Top 10 coin seviyesi", top20:"Top 20 coin seviyesi", top50:"Top 50 coin seviyesi", healthLow:"Düşük", healthMedium:"Orta", healthHigh:"Yüksek", healthNone:"Yok", copySuccess:"Sonuçlar panoya kopyalandı.", copyFail:"Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.", shareSuccess:"Paylaşım özeti hazırlandı.", shareFail:"Paylaşım başarısız oldu.", needResultAlert:"Önce geçerli bir sonuç üret.", copyTitle:"Kripto Kar & Tokenomics Analizi Sonuçları", copyScore:"ATH'ye Dönüş Gerçekçilik Skoru", copyProfit:"Net Kâr/Zarar", copyRoi:"ROI", copySupply:"Arz Değişimi", copyAdj:"Dilution Ayarlı ATH", copyOldMc:"Satın Alınan Dönem MC", copyOldMcPrice:"Eski MC'ye Dönse Fiyat", copyAth:"ATH için Gereken MC", copyTarget:"Hedef Fiyat için Gereken MC", copyUnlock:"Unlock Sonrası Teorik Fiyat", copyInsight:"Akıllı Yorum", computedStatus:"Sonuçlar güncellendi. Ana çıktı ve temel metrikler hazır.", mainResultDesc:"Girdiğin verilere göre net kâr / zarar hesaplandı.", scoreExplainTitle:"Bu skor neyi ifade eder?", scoreExplainText:"0 zayıf, 100 güçlü görünüm demektir. Değer; arz değişimi, eski ATH için gereken market cap, unlock baskısı ve piyasaya girmesi gereken yeni para büyüklüğüne göre oluşur.", breakSupply:"Arz etkisi", breakAth:"ATH market cap baskısı", breakUnlock:"Planlı arz olayı", breakCapital:"Gerekli yeni para", openSource:"Kaynağı aç ↗", supplyIncreaseLabel:"Arz artışı", supplyDecreaseLabel:"Arz azalışı", supplyFlatLabel:"Arz değişimi yok", healthPositive:"Pozitif",
+};
+
+function translateDict(lang){
+  const custom = {
+    en:{
+      title:"Crypto Profit & Tokenomics Analysis Calculator | Hesapica",
+      eyebrow:"Hesapica • Crypto Profit & Tokenomics Analyzer",
+      langLabel:"Language",
+      heroTitle:"Crypto Profit & Tokenomics Analysis Calculator",
+      heroDesc:"This tool goes beyond simple profit. It analyzes the <strong>market cap at the time of purchase</strong>, <strong>price if it returned to the old market cap</strong>, <strong>dilution-adjusted real ATH</strong>, <strong>market cap required for the old ATH</strong>, <strong>unlock impact</strong>, and <strong>reference comparisons</strong> on one screen.",
+      chip1:"Starts clean", chip2:"Cleaner mobile flow", chip3:"Tokenomics focused", chip4:"Layered result system",
+      heroBoxEyebrow:"Crypto investment review",
+      heroBoxTitle:"See profit, dilution, and market cap pressure on one screen",
+      heroBoxText:"Review market cap at purchase, the dilution-adjusted ATH, the market cap needed for your target price, and planned supply impact together.",
+      panelTitle:"Calculation Panel",
+      panelNote:"All fields start empty. Fill in the required fields or load the sample data to see the core results.",
+      helperTitle:"Where can I find token supply data?",
+      helperDesc:"Use the sources below for circulating supply, total supply, market cap, and planned supply event data.",
+      cmcDesc:"Circulating supply, total supply, market cap, and core project data.",
+      cgDesc:"An alternative source for supply, market cap, FDV, and project comparisons.",
+      tuDesc:"Use it to see unlock schedules, vesting, and planned supply events.",
+      groupCore:"Core trade data",
+      groupToken:"Tokenomics data",
+      groupOptional:"Advanced optional fields",
+      presetTitle:"Quick sample scenario",
+      buyPriceLabel:"Buy price ($)", buyPriceHint:"The price where you bought the coin.",
+      currentPriceLabel:"Current / sell price ($)", currentPriceHint:"The current price or the level where you plan to sell.",
+      coinAmountLabel:"Coin amount", coinAmountHint:"Your total coin/token amount.",
+      feeLabel:"Total fee (%)", feeHint:"Can be used for the combined effect of buy + sell fees.",
+      oldSupplyLabel:"Circulating supply at purchase", oldSupplyHint:"The circulating supply when you bought the coin.",
+      newSupplyLabel:"Current circulating supply", newSupplyHint:"The current circulating supply.",
+      athLabel:"Old ATH price ($)", athHint:"The highest historical price.",
+      currentMcLabel:"Current market cap ($)", currentMcHint:"Calculated automatically as current price × current circulating supply.",
+      targetPriceLabel:"Target price ($)", targetPriceHint:"Use this to see how much market cap would be needed for a chosen target price.",
+      unlockLabel:"Upcoming unlock / added supply", unlockHint:"The amount of tokens that may be unlocked or added soon.",
+      totalSupplyLabel:"Total supply", totalSupplyHint:"Enter max supply or total supply if you know it.",
+      autoOldMcLabel:"Market cap at purchase", autoOldMcHint:"Calculated automatically as buy price × circulating supply at purchase.",
+      optionalText:"(optional)", optionalText2:"(optional)", optionalText3:"(optional)",
+      calcBtn:"Show Result", exampleBtn:"Sample Data", fastTryBtn:"Sample Data", clearBtn:"Reset Inputs", copyBtn:"Copy Result", shareBtn:"Share", printBtn:"Print / PDF",
+      flowStrong:"Detailed analysis and comments continue below",
+      flowText:"On mobile, keep scrolling after the first screen to see advanced tables and comparison blocks.",
+      resultsKicker:"Results begin below",
+      resultsKickerSub:"Primary output, supporting metrics, and comment blocks are shown in this area.",
+      statusTitle:"Result panel status",
+      statusWaiting:"Fill the required fields or use the sample data to see results.",
+      mainResultLabel:"Main Result",
+      mainResultHint:"Net profit / loss will appear here.",
+      mainResultDesc:"Net profit / loss has been calculated based on your inputs.", scoreExplainTitle:"What does this score mean?", scoreExplainText:"0 means weak outlook and 100 means strong outlook. The score is built from supply change, market cap needed for the old ATH, unlock pressure, and the amount of fresh capital required.", breakSupply:"Supply impact", breakAth:"ATH market cap pressure", breakUnlock:"Unlock impact", breakCapital:"Fresh capital needed", openSource:"Open source ↗", supplyIncreaseLabel:"Supply increase", supplyDecreaseLabel:"Supply decrease", supplyFlatLabel:"No supply change", healthPositive:"Positive",
+      bar1Label:"Pressure ratio",
+      bar2Label:"Base ratio",
+      scoreTitle:"ATH Return Realism Score",
+      waitingBadge:"Waiting for data",
+      scoreTextDefault:"This score explains how reachable the old ATH looks under the current supply and market cap structure.",
+      r1:"Net profit / loss", r1s:"After buy and sell calculation",
+      r2:"ROI", r2s:"Percentage return",
+      r3:"Supply growth", r3s:"Old supply → current supply",
+      r4:"Dilution-adjusted ATH", r4s:"Adjusted for today's supply",
+      r5:"Market cap at purchase", r5s:"Calculated automatically",
+      r6:"Price if it returned to old MC", r6s:"Based on the market cap at purchase",
+      r7:"Market cap needed for ATH", r7s:"Theoretical requirement with today's supply",
+      r8:"Market cap needed for target price", r8s:"Based on the chosen target price",
+      r9:"Theoretical price after unlock", r9s:"If market cap stays the same",
+      healthTitle:"Quick Status Summary", h1:"Dilution", h2:"ATH Pressure", h3:"Unlock",
+      insightDefault:"Fill in the fields and calculate. The system will generate an automatic interpretation based on supply growth and market cap pressure.",
+      detailsCore:"Core results and extra metrics",
+      detailsCoreNote:"The main number set you need at first glance",
+      tablesTitle:"Advanced analysis tables",
+      detailsTableNote:"Market cap scenarios, difficulty analysis, and target ladder",
+      mcScenarioTitle:"Market cap scenarios",
+      difficultyTitle:"ATH comeback difficulty analysis",
+      ladderTitle:"Target price ladder",
+      rankTitle:"Reference scenarios",
+      thScenario:"Scenario", thMc:"Market Cap", thPrice:"Theoretical Price",
+      thMetric:"Metric", thValue:"Value", thComment:"Comment",
+      thTarget:"Target Price", thNeed:"Required MC", thVs:"Vs today",
+      thScenario2:"Scenario", thRef:"Reference MC", thPrice2:"Theoretical Price",
+      waitingRow:"Waiting for calculation.", waitingRow3:"Waiting for calculation.", waitingRow4:"Waiting for calculation.",
+      howTitle:"Why is this tool different?",
+      howP1:"In crypto markets, the same price can represent very different market caps and supply structures. This tool brings together <strong>market cap at purchase</strong>, <strong>price if it returned to the old market cap</strong>, <strong>supply growth</strong>, <strong>unlock pressure</strong>, and <strong>the mathematical difficulty of returning to the ATH</strong> on a single screen.",
+      howP2:"So this page does not only ask “How much profit?” It also answers questions like “What price would this coin have if it returned to earlier conditions?”, “What does the old ATH really mean after supply expansion?”, and “How much capital would be needed for specific target prices?”",
+      faqTitle:"Frequently Asked Questions",
+      fq1:"Why is the market cap at purchase important?",
+      fa1:"Because the market value when the coin was bought and today's supply structure are not the same. This difference helps estimate where the price could theoretically be if the project returned to old levels.",
+      fq2:"Is the planned supply event field required?",
+      fa2:"No. It is not the core of the calculation. It is added mainly for reference comparisons and user perspective.",
+      fq3:"Is the target price field required?",
+      fa3:"No. Both are optional. The main calculation modules continue to work even if they are left empty.",
+      fq4:"How should the realism score be interpreted?",
+      fa4:"A lower score suggests that returning to the ATH is relatively easier based on the current data. A higher score suggests a more difficult path because of supply growth and the market cap required.",
+      relatedTitle:"Related Calculators",
+      rel1t:"Investment Return Calculator", rel1d:"Calculate total return, percentage gain, and investment performance with different scenarios.",
+      rel2t:"Stock Profit Calculator", rel2d:"See the impact of buying, selling, and fees on stock trades on one screen.",
+      rel3t:"Percentage Calculator", rel3d:"Quickly calculate percentage increase, decrease, discount, and profit rate.",
+      autoPlaceholder:"Calculated automatically", noData:"No data", autoCalc:"Calculated automatically",
+      scoreEasy:"Strong outlook", scoreMid:"Relatively reachable", scoreHard:"Challenging", scoreVeryHard:"Very weak outlook",
+      scoreDefaultEasy:"Supply and market cap pressure appear relatively limited.",
+      scoreDefaultMid:"A meaningful increase is required to revisit the ATH, but the picture does not look impossible.",
+      scoreDefaultHard:"Supply growth and the required market cap suggest a pressured comeback path.",
+      scoreDefaultVeryHard:"Because of supply expansion and the capital needed, returning to the old peak looks mathematically very difficult.",
+      waitTableSupply:"The table will appear when current supply is entered.",
+      waitLadder:"Enter current supply and at least one price anchor to build the target ladder.",
+      top10:"Top 10 coin level", top20:"Top 20 coin level", top50:"Top 50 coin level",
+      healthLow:"Low", healthMedium:"Medium", healthHigh:"High", healthNone:"None",
+      copySuccess:"Results copied to clipboard.", copyFail:"Copy failed. Please check browser permissions.", needResultAlert:"Generate a valid result first.",
+      copyTitle:"Crypto Profit & Tokenomics Analysis Results", copyScore:"ATH Return Realism Score", copyProfit:"Net Profit/Loss", copyRoi:"ROI", copySupply:"Supply Change", copyAdj:"Dilution-Adjusted ATH", copyOldMc:"Market Cap at Purchase", copyOldMcPrice:"Price if Returned to Old MC", copyAth:"MC Needed for ATH", copyTarget:"MC Needed for Target Price", copyUnlock:"Theoretical Price After Unlock", copyInsight:"Smart Insight",
+      computedStatus:"Results updated. Main output and essential metrics are ready."
+    }
+  };
+  return {...baseTr, ...(custom[lang]||{})};
+}
+
+let currentLang = 'tr';
+const STORAGE_KEY = 'hesapica:kripto-kar-tokenomics:v2';
+const state = { inputs:{}, results:null, isValid:false, isCalculated:false, source:'manual', touched:new Set(), hasAttemptedSubmit:false };
+let suppressPersistence = false;
+function dict(){ return translateDict(currentLang); }
+
+function setStateSource(source){
+  state.source = source;
+}
+
+function collectInputs(){
+  return {
+    buyPrice: $('buyPrice').value,
+    currentPrice: $('currentPrice').value,
+    coinAmount: $('coinAmount').value,
+    feePercent: $('feePercent').value,
+    oldSupply: $('oldSupply').value,
+    newSupply: $('newSupply').value,
+    athPrice: $('athPrice').value,
+    targetPrice: $('targetPrice').value,
+    eventType: $('eventType').value,
+    eventAmount: $('eventAmount').value,
+    totalSupply: $('totalSupply').value,
+    language: currentLang
+  };
+}
+
+function saveManualState(){
+  if(suppressPersistence || state.source !== 'manual') return;
+  try{
+    const payload = { _mode:'manual', ...collectInputs() };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+  }catch(e){}
+}
+
+function clearSavedState(){
+  try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+}
+
+function applySavedState(data){
+  if(!data || data._mode !== 'manual') return false;
+  suppressPersistence = true;
+  ['buyPrice','currentPrice','coinAmount','feePercent','oldSupply','newSupply','athPrice','targetPrice','eventAmount','totalSupply'].forEach(id => {
+    if(data[id] !== undefined && data[id] !== null) $(id).value = data[id];
+  });
+  if(data.eventType) $('eventType').value = data.eventType;
+  currentLang = data.language === 'en' ? 'en' : 'tr';
+  suppressPersistence = false;
+  setStateSource('manual');
+  applyI18n();
+  updateEventHints();
+  refreshGroupedFormattedInputs();
+  clearValidationState();
+  calculateAll();
+  return true;
+}
+
+function loadSavedState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return false;
+    const parsed = JSON.parse(raw);
+    return applySavedState(parsed);
+  }catch(e){
+    clearSavedState();
+    return false;
+  }
+}
+
+function handleManualInput(){
+  if(suppressPersistence) return;
+  setStateSource('manual');
+}
+
+const REQUIRED_CORE_IDS = ['buyPrice','currentPrice','coinAmount','oldSupply','newSupply','athPrice'];
+
+function fieldMessage(id){
+  const tr = currentLang === 'tr';
+  const labelMap = {
+    buyPrice: tr ? 'Alış fiyatı' : 'Buy price',
+    currentPrice: tr ? 'Satış / güncel fiyat' : 'Current / sell price',
+    coinAmount: tr ? 'Coin miktarı' : 'Coin amount',
+    oldSupply: tr ? 'Satın alınan dönem dolaşımdaki arz' : 'Circulating supply at purchase',
+    newSupply: tr ? 'Güncel dolaşımdaki arz' : 'Current circulating supply',
+    athPrice: tr ? 'Eski ATH fiyatı' : 'Previous ATH price',
+    feePercent: tr ? 'Toplam komisyon' : 'Total fee',
+    targetPrice: tr ? 'Hedef fiyat' : 'Target price',
+    eventAmount: tr ? 'Planlı arz miktarı' : 'Planned supply amount',
+    totalSupply: tr ? 'Toplam arz' : 'Total supply'
+  };
+  const label = labelMap[id] || id;
+  const raw = $(id) ? $(id).value.trim() : '';
+  const value = parseLooseNumber(raw);
+  const isEmpty = raw === '';
+
+  if(REQUIRED_CORE_IDS.includes(id)){
+    if(isEmpty) return tr ? `${label} gerekli.` : `${label} is required.`;
+    if(!Number.isFinite(value) || value <= 0) return tr ? `${label} sıfırdan büyük bir sayı olmalı.` : `${label} must be greater than zero.`;
+    return '';
+  }
+  if(id === 'feePercent'){
+    if(isEmpty) return '';
+    if(!Number.isFinite(value) || value < 0) return tr ? 'Komisyon negatif olamaz.' : 'Fee cannot be negative.';
+    if(value > 100) return tr ? "Toplam komisyon oranı %100'ü aşamaz." : 'Total fee rate cannot exceed 100%.';
+    return '';
+  }
+  if(id === 'targetPrice'){
+    if(isEmpty) return '';
+    if(!Number.isFinite(value) || value <= 0) return tr ? 'Hedef fiyat sıfırdan büyük olmalı.' : 'Target price must be greater than zero.';
+    return '';
+  }
+  if(id === 'eventAmount'){
+    if($('eventType').value === 'none' && isEmpty) return '';
+    if($('eventType').value !== 'none' && isEmpty) return tr ? 'Planlı olay seçildiyse arz miktarı gir.' : 'Enter a supply amount when an event is selected.';
+    if(!Number.isFinite(value) || value <= 0) return tr ? 'Planlı arz miktarı sıfırdan büyük olmalı.' : 'Planned supply amount must be greater than zero.';
+    return '';
+  }
+  if(id === 'totalSupply'){
+    if(isEmpty) return '';
+    if(!Number.isFinite(value) || value <= 0) return tr ? 'Toplam arz sıfırdan büyük olmalı.' : 'Total supply must be greater than zero.';
+    const newSupplyVal = parseLooseNumber($('newSupply').value);
+    if(Number.isFinite(newSupplyVal) && value < newSupplyVal) return tr ? 'Toplam arz, dolaşımdaki arzdan küçük olamaz.' : 'Total supply cannot be lower than circulating supply.';
+    return '';
+  }
+  return '';
+}
+
+function showErrorFor(id){
+  return state.hasAttemptedSubmit || state.touched.has(id);
+}
+
+function renderFieldState(id){
+  const input = $(id);
+  if(!input) return '';
+  const field = input.closest('.field');
+  const errorEl = $(id + 'Error');
+  const message = fieldMessage(id);
+  const shouldShow = !!message && showErrorFor(id);
+  if(field) field.classList.toggle('invalid', shouldShow);
+  input.setAttribute('aria-invalid', shouldShow ? 'true' : 'false');
+  if(errorEl) errorEl.textContent = shouldShow ? message : '';
+  return shouldShow ? message : '';
+}
+
+function renderValidation(){
+  ['buyPrice','currentPrice','coinAmount','feePercent','oldSupply','newSupply','athPrice','targetPrice','eventAmount','totalSupply'].forEach(renderFieldState);
+}
+
+function clearValidationState(){
+  state.touched = new Set();
+  state.hasAttemptedSubmit = false;
+  renderValidation();
+}
+
+function validateInputs(options = {}){
+  if(options.force) state.hasAttemptedSubmit = true;
+  const order = ['buyPrice','currentPrice','coinAmount','oldSupply','newSupply','athPrice','feePercent','targetPrice','eventAmount','totalSupply'];
+  let firstInvalid = null;
+  order.forEach(id => {
+    const message = fieldMessage(id);
+    if(message && !firstInvalid) firstInvalid = id;
+    renderFieldState(id);
+  });
+  return { valid: !firstInvalid, firstInvalid };
+}
+
+function focusFirstInvalid(id){
+  const el = id ? $(id) : null;
+  if(el){
+    try{ el.focus({preventScroll:true}); }catch(e){ el.focus(); }
+    el.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+}
+
+function applyI18n() {
+  const d = dict();
+  document.documentElement.lang = currentLang;
+  document.title = d.title;
+  document.body.dir = 'ltr';
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const key = el.getAttribute('data-i');
+    if (d[key] !== undefined) el.innerHTML = d[key];
+  });
+  $('autoOldMc').placeholder = d.autoPlaceholder;
+  $('languageSelect').value = currentLang;
+  const opts = $('eventType').options;
+  if(opts.length >= 4){
+    opts[0].text = currentLang==='tr' ? 'Yok' : 'None';
+    opts[1].text = currentLang==='tr' ? 'Arz artırımı' : 'Supply increase';
+    opts[2].text = currentLang==='tr' ? 'Unlock / dolaşıma giriş' : 'Unlock / new circulating supply';
+    opts[3].text = currentLang==='tr' ? 'Yakım / arz azaltımı' : 'Burn / supply reduction';
+  }
+  renderValidation();
+}
+
+function setLanguage(lang){
+  currentLang = lang;
+  if(!suppressPersistence) setStateSource('manual');
+  applyI18n();
+  calculateAll();
+}
+
+function localeCode(){
+  const map = {tr:'tr-TR',en:'en-US'};
+  return map[currentLang] || 'en-US';
+}
+
+const formattedIntegerIds = ['oldSupply','newSupply','eventAmount','totalSupply'];
+
+function parseLooseNumber(v){
+  if(v === null || v === undefined) return NaN;
+  if(typeof v !== 'string') v = String(v);
+  let s = v.trim();
+  if(!s) return NaN;
+  s = s.replace(/\s+/g,'');
+  if(/[a-zA-Z]$/.test(s)){
+    const suffix = s.slice(-1).toUpperCase();
+    const base = parseFloat(s.slice(0,-1).replace(/,/g,''));
+    if(!Number.isFinite(base)) return NaN;
+    if(suffix === 'M') return base * 1e6;
+    if(suffix === 'B') return base * 1e9;
+    if(suffix === 'T') return base * 1e12;
+  }
+  const hasComma = s.includes(',');
+  const hasDot = s.includes('.');
+  if(hasComma && hasDot){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(hasComma){
+    const parts = s.split(',');
+    if(parts.length === 2 && parts[1].length <= 6){
+      s = parts[0].replace(/\./g,'') + '.' + parts[1];
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(hasDot){
+    const parts = s.split('.');
+    if(parts.length > 2){
+      s = s.replace(/\./g,'');
+    } else if(parts.length === 2 && parts[1].length === 3 && /^\d+$/.test(parts[0]) && /^\d+$/.test(parts[1])){
+      s = s.replace(/\./g,'');
+    }
+  }
+  const n = parseFloat(s);
+  return Number.isFinite(n) ? n : NaN;
+}
+function num(v){ return parseLooseNumber(v); }
+function safeNum(v){ const n = parseLooseNumber(v); return Number.isFinite(n) ? n : 0; }
+function hasValue(id){ return $(id).value.trim() !== ''; }
+
+function formatGroupedInputValue(value){
+  const n = parseLooseNumber(value);
+  if(!Number.isFinite(n)) return '';
+  return new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(n);
+}
+function attachGroupedInputFormatting(id){
+  const el = $(id);
+  if(!el) return;
+  const applyFormat = () => {
+    const digits = el.value.replace(/\D/g,'');
+    if(!digits){ el.value = ''; return; }
+    el.value = new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(Number(digits));
+  };
+  el.addEventListener('blur', () => {
+    if(el.value.trim() !== '') applyFormat();
+    calculateAll();
+  });
+  el.addEventListener('focus', () => {
+    const raw = parseLooseNumber(el.value);
+    if(Number.isFinite(raw)) el.value = String(Math.round(raw));
+  });
+  el.addEventListener('input', () => {
+    applyFormat();
+  });
+}
+function refreshGroupedFormattedInputs(){
+  formattedIntegerIds.forEach(id => {
+    const el = $(id);
+    if(el && el.value.trim() !== '') el.value = formatGroupedInputValue(el.value);
+  });
+}
+
+function formatMoney(v){
+  if(!Number.isFinite(v)) return dict().noData;
+  const locale = localeCode();
+  const abs = Math.abs(v);
+  if(abs >= 1e12) return "$" + (v/1e12).toFixed(2) + "T";
+  if(abs >= 1e9) return "$" + (v/1e9).toFixed(2) + "B";
+  if(abs >= 1e6) return "$" + (v/1e6).toFixed(2) + "M";
+  if(abs >= 1e3) return "$" + v.toLocaleString(locale,{maximumFractionDigits:2});
+  if(abs >= 1) return "$" + v.toLocaleString(locale,{minimumFractionDigits:2,maximumFractionDigits:6});
+  if(abs === 0) return "$0";
+  return "$" + v.toLocaleString(locale,{maximumFractionDigits:10});
+}
+
+function formatPrice(v){
+  if(!Number.isFinite(v)) return dict().noData;
+  const locale = localeCode();
+  if(Math.abs(v) >= 1) return "$" + v.toLocaleString(locale,{minimumFractionDigits:2,maximumFractionDigits:6});
+  return "$" + v.toLocaleString(locale,{maximumFractionDigits:10});
+}
+
+function formatPercent(v){
+  if(!Number.isFinite(v)) return dict().noData;
+  return "%" + v.toLocaleString(localeCode(),{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function setValue(id, value, cls=""){
+  const el = $(id);
+  el.textContent = value;
+  el.className = (id.includes('Value') || id==='mainResult') ? ((id==='mainResult' ? 'highlight-value ' : 'value ') + cls).trim() : cls;
+}
+
+function markFilledState(){
+  ['highlightCard','mini1','mini2','mini3','mini4','targetCard','unlockCard'].forEach(id => { if($(id)) $(id).classList.remove('is-empty'); });
+  $('barCard').classList.remove('hidden');
+}
+function markEmptyState(){
+  ['highlightCard','mini1','mini2','mini3','mini4','targetCard','unlockCard'].forEach(id => { if($(id)) $(id).classList.add('is-empty'); });
+  $('barCard').classList.add('hidden');
+}
+
+function autoOldMcValue(){
+  const buy = num($('buyPrice').value);
+  const oldSupply = num($('oldSupply').value);
+  const oldMc = (Number.isFinite(buy) && Number.isFinite(oldSupply) && oldSupply > 0) ? buy * oldSupply : null;
+  $('autoOldMc').value = oldMc !== null ? formatMoney(oldMc) : "";
+  return oldMc;
+}
+
+function autoCurrentMcValue(){
+  const currentPrice = num($('currentPrice').value);
+  const newSupply = num($('newSupply').value);
+  const currentMc = (Number.isFinite(currentPrice) && Number.isFinite(newSupply) && currentPrice > 0 && newSupply > 0) ? currentPrice * newSupply : null;
+  $('currentMc').value = currentMc !== null ? formatMoney(currentMc) : '';
+  return currentMc;
+}
+
+function setStatusWaiting(){
+  $('statusBadge').textContent = dict().waitingBadge;
+  $('statusBadge').className = 'badge';
+  $('statusText').textContent = dict().statusWaiting;
+  $('mainResultText').textContent = dict().mainResultHint;
+}
+
+function fillExample(){
+  suppressPersistence = true;
+  setStateSource('demo');
+  $('buyPrice').value = "0.18";
+  $('currentPrice').value = "0.11";
+  $('coinAmount').value = "25000";
+  $('feePercent').value = "0.20";
+  $('oldSupply').value = "150000000";
+  $('newSupply').value = "750000000";
+  $('athPrice').value = "2.40";
+  $('targetPrice').value = "1";
+  $('eventType').value = 'unlock';
+  $('eventAmount').value = "120000000";
+  updateEventHints();
+  $('totalSupply').value = "1500000000";
+  refreshGroupedFormattedInputs();
+  suppressPersistence = false;
+  clearValidationState();
+  calculateAll({focusAfter:true});
+}
+
+function clearAllFields(clearInputs = true, preserveValidation = false){
+  suppressPersistence = true;
+  if(clearInputs){
+    document.querySelectorAll('input:not([readonly])').forEach(i => i.value = "");
+    if($('eventType')) $('eventType').value = 'none';
+  }
+  $('autoOldMc').value = "";
+  $('currentMc').value = "";
+  ['profitValue','roiValue','supplyGrowthValue','adjustedAthValue','oldMcAutoValue','oldMcPriceValue','athNeededMcValue','targetMcValue','unlockPriceValue','mainResult','targetMcValueTable','unlockPriceValueTable','currentMcEcho'].forEach(id => {
+    const el = $(id); if(el) el.textContent = '—';
+  });
+  $('profitSub').textContent = dict().r1s;
+  $('oldMcAutoSub').textContent = dict().r5s;
+  $('oldMcPriceSub').textContent = dict().r6s;
+  $('targetMcSub').textContent = dict().r8s;
+  $('unlockPriceSub').textContent = dict().r9s;
+    $('healthDilution').textContent = "—";
+  $('healthAth').textContent = "—";
+  $('healthUnlock').textContent = "—";
+  $('healthDilutionSub').textContent = "—";
+  $('healthAthSub').textContent = "—";
+  $('healthUnlockSub').textContent = currentLang==='tr' ? 'Opsiyonel alan boş' : 'Optional field empty';
+  $('smartInsight').textContent = dict().insightDefault;
+  $('realityScore').textContent = "0/100";
+  $('difficultyBadge').textContent = dict().waitingBadge;
+  $('difficultyBadge').className = 'pill';
+  $('scoreText').textContent = dict().scoreTextDefault;
+  $('scoreExplainText').textContent = dict().scoreExplainText;
+  $('scoreBreakdown').innerHTML = `<div class="score-breakdown-row"><span class="name">${dict().breakSupply}</span><span class="val neu">—</span></div><div class="score-breakdown-row"><span class="name">${dict().breakAth}</span><span class="val neu">—</span></div><div class="score-breakdown-row"><span class="name">${dict().breakUnlock}</span><span class="val neu">—</span></div><div class="score-breakdown-row"><span class="name">${dict().breakCapital}</span><span class="val neu">—</span></div>`;
+  $('scoreBar').style.width = '0%';
+  $('mcScenarioBody').innerHTML = `<tr><td colspan="3">${dict().waitingRow}</td></tr>`;
+    $('difficultyTableBody').innerHTML = `<tr><td colspan="3">${dict().waitingRow3}</td></tr>`;
+  $('ladderTableBody').innerHTML = `<tr><td colspan="3">${dict().waitingRow4}</td></tr>`;
+  $('targetCard').classList.add('hide');
+  $('unlockCard').classList.add('hide');
+  $('barText1').textContent = '%0';
+  $('barText2').textContent = '%0';
+  $('bar1').style.width = '0%';
+  $('bar2').style.width = '0%';
+  if(!preserveValidation) clearValidationState(); else renderValidation();
+  markEmptyState();
+  setStatusWaiting();
+  state.inputs = collectInputs();
+  state.results = null;
+  state.isValid = false;
+  state.isCalculated = false;
+  suppressPersistence = false;
+  if(clearInputs){ clearSavedState(); setStateSource('manual'); }
+}
+
+function resetOutputsOnly(){
+  clearAllFields(false, true);
+}
+
+function difficultyStrings(score){
+  const d = dict();
+  if(score >= 85) return [d.scoreEasy, "good", d.scoreDefaultEasy];
+  if(score >= 65) return [d.scoreMid, "warn", d.scoreDefaultMid];
+  if(score >= 40) return [d.scoreHard, "warn", d.scoreDefaultHard];
+  return [d.scoreVeryHard, "bad", d.scoreDefaultVeryHard];
+}
+
+function tableRow(a,b,c){ return `<tr><td>${a}</td><td>${b}</td><td>${c}</td></tr>`; }
+
+function updateEventHints(){
+  const type = $('eventType').value;
+  if(type === 'increase'){
+    $('eventTypeHint').textContent = currentLang==='tr' ? 'Planlı arz artırımı, ekip/treasury basımı veya benzeri yeni arz eklemeleri için kullan.' : 'Use this for planned supply increases such as treasury minting or additional token issuance.';
+    $('eventAmountHint').textContent = currentLang==='tr' ? 'Eklenecek yeni token miktarını gir.' : 'Enter the number of new tokens expected to be added.';
+  }else if(type === 'unlock'){
+    $('eventTypeHint').textContent = currentLang==='tr' ? 'Unlock, vesting açılımı veya dolaşıma girecek kilitli arz için kullan.' : 'Use this for unlocks, vesting releases, or locked supply entering circulation.';
+    $('eventAmountHint').textContent = currentLang==='tr' ? 'Dolaşıma girmesi beklenen token miktarını gir.' : 'Enter the number of tokens expected to enter circulation.';
+  }else if(type === 'burn'){
+    $('eventTypeHint').textContent = currentLang==='tr' ? 'Planlı yakım veya dolaşımdan kalıcı arz azaltımı için kullan.' : 'Use this for planned burns or permanent supply reductions.';
+    $('eventAmountHint').textContent = currentLang==='tr' ? 'Yakılması / dolaşımdan düşmesi beklenen token miktarını gir.' : 'Enter the number of tokens expected to be removed from circulation.';
+  }else{
+    $('eventTypeHint').textContent = dict().eventTypeHint;
+    $('eventAmountHint').textContent = dict().eventAmountHint;
+  }
+}
+
+function hasUsableResults(){
+  return !!(state && state.isCalculated && state.isValid && state.results);
+}
+
+function focusResultsPanel(){
+  const panel = $('resultsPanel');
+  if(!panel) return;
+  panel.scrollIntoView({ behavior:'smooth', block:'start' });
+  panel.classList.remove('result-spotlight');
+  void panel.offsetWidth;
+  panel.classList.add('result-spotlight');
+  window.setTimeout(() => panel.classList.remove('result-spotlight'), 1600);
+}
+
+function handlePrint(){
+  if(!hasUsableResults()){
+    alert(dict().needResultAlert);
+    return;
+  }
+  window.print();
+}
+
+function calculateAll(options = {}){
+  const d = dict();
+  const focusAfter = !!options.focusAfter;
+  const forceValidation = !!options.forceValidation || focusAfter;
+  if(forceValidation) state.hasAttemptedSubmit = true;
+  state.inputs = collectInputs();
+  const locale = localeCode();
+  const buyPrice = num($('buyPrice').value);
+  const currentPrice = num($('currentPrice').value);
+  const coinAmount = num($('coinAmount').value);
+  const feePercent = safeNum($('feePercent').value);
+  const oldSupply = num($('oldSupply').value);
+  const newSupply = num($('newSupply').value);
+  const athPrice = num($('athPrice').value);
+  const currentMc = autoCurrentMcValue();
+  const targetPrice = hasValue('targetPrice') ? num($('targetPrice').value) : null;
+  const eventType = $('eventType').value;
+  const eventAmount = hasValue('eventAmount') ? safeNum($('eventAmount').value) : null;
+  const totalSupply = num($('totalSupply').value);
+  const oldMc = autoOldMcValue();
+  updateEventHints();
+
+  const validation = validateInputs({ force: forceValidation });
+  const hasCore = Number.isFinite(buyPrice) && Number.isFinite(currentPrice) && Number.isFinite(coinAmount) && Number.isFinite(oldSupply) && Number.isFinite(newSupply) && Number.isFinite(athPrice) && Number.isFinite(currentMc);
+  if(!hasCore || !validation.valid){
+    state.results = null;
+    state.isValid = false;
+    state.isCalculated = false;
+    resetOutputsOnly();
+    $('smartInsight').textContent = d.statusWaiting;
+    if(forceValidation && validation.firstInvalid) focusFirstInvalid(validation.firstInvalid);
+    if(state.source === 'manual') saveManualState();
+    return false;
+  }
+
+  const feeRate = feePercent / 100;
+  const invested = buyPrice * coinAmount;
+  const grossNow = currentPrice * coinAmount;
+  const feeCost = grossNow * feeRate;
+  const netNow = grossNow - feeCost;
+  const profit = netNow - invested;
+  const roi = invested !== 0 ? (profit / invested) * 100 : null;
+  const supplyGrowthPct = oldSupply > 0 ? ((newSupply - oldSupply) / oldSupply) * 100 : null;
+  const adjustedAth = newSupply > 0 ? athPrice * (oldSupply / newSupply) : null;
+  const oldMcPrice = newSupply > 0 ? oldMc / newSupply : null;
+  const athNeededMc = newSupply > 0 ? athPrice * newSupply : null;
+  const targetMc = (Number.isFinite(targetPrice) && newSupply > 0) ? targetPrice * newSupply : null;
+  const fullyDilutedGapPct = Number.isFinite(totalSupply) && totalSupply > 0 && newSupply > 0 ? ((totalSupply - newSupply) / newSupply) * 100 : null;
+  const mcToAthMultiple = currentMc > 0 ? athNeededMc / currentMc : null;
+  const targetVsCurrentMcMultiple = (Number.isFinite(targetMc) && currentMc > 0) ? targetMc / currentMc : null;
+  const adjustedAthVsCurrent = currentPrice > 0 ? adjustedAth / currentPrice : null;
+
+  let futureSupply = null, eventPressurePct = null, theoreticalPostEventPrice = null, eventModeLabel = currentLang==='tr' ? 'Yok' : 'None';
+  if(eventType !== 'none' && Number.isFinite(eventAmount) && eventAmount > 0 && newSupply > 0){
+    if(eventType === 'burn'){
+      const effectiveBurn = Math.min(eventAmount, newSupply * 0.95);
+      futureSupply = newSupply - effectiveBurn;
+      eventPressurePct = -(effectiveBurn / newSupply) * 100;
+      eventModeLabel = currentLang==='tr' ? 'Yakım' : 'Burn';
+    } else if(eventType === 'increase'){
+      futureSupply = newSupply + eventAmount;
+      eventPressurePct = (eventAmount / newSupply) * 100;
+      eventModeLabel = currentLang==='tr' ? 'Arz artırımı' : 'Supply increase';
+    } else if(eventType === 'unlock'){
+      futureSupply = newSupply + eventAmount;
+      eventPressurePct = (eventAmount / newSupply) * 100;
+      eventModeLabel = currentLang==='tr' ? 'Unlock' : 'Unlock';
+    }
+    if(futureSupply > 0) theoreticalPostEventPrice = currentMc / futureSupply;
+  }
+
+  const supplyPenalty = Number.isFinite(supplyGrowthPct) && supplyGrowthPct > 0 ? Math.min(supplyGrowthPct * 0.18, 26) : 0;
+  const supplyBonus = Number.isFinite(supplyGrowthPct) && supplyGrowthPct < 0 ? Math.min(Math.abs(supplyGrowthPct) * 0.14, 16) : 0;
+  const athPenalty = Number.isFinite(mcToAthMultiple) ? Math.min(Math.max(mcToAthMultiple - 1, 0) * 8, 34) : 0;
+  const eventPenalty = Number.isFinite(eventPressurePct) && eventPressurePct > 0 ? Math.min(eventPressurePct * 0.42, 16) : 0;
+  const eventBonus = Number.isFinite(eventPressurePct) && eventPressurePct < 0 ? Math.min(Math.abs(eventPressurePct) * 0.25, 10) : 0;
+  const fdvPenalty = Number.isFinite(fullyDilutedGapPct) ? Math.min(Math.max(fullyDilutedGapPct, 0) * 0.05, 10) : 0;
+  const distancePenalty = Number.isFinite(adjustedAthVsCurrent) && adjustedAthVsCurrent > 1 ? Math.min((adjustedAthVsCurrent - 1) * 3.2, 14) : 0;
+  let score = 100 - supplyPenalty - athPenalty - eventPenalty - fdvPenalty - distancePenalty + supplyBonus + eventBonus;
+  score = Math.max(0, Math.min(100, score));
+
+  const [difficultyText,difficultyTone,difficultyDesc] = difficultyStrings(score);
+  $('difficultyBadge').textContent = difficultyText;
+  $('difficultyBadge').className = 'pill ' + difficultyTone;
+  $('realityScore').textContent = Math.round(score) + '/100';
+  $('scoreText').textContent = difficultyDesc;
+  $('scoreExplainText').textContent = d.scoreExplainText;
+  $('scoreBar').style.width = Math.round(score) + '%';
+
+  const supplyDirectionLabel = supplyGrowthPct > 0 ? d.supplyIncreaseLabel : supplyGrowthPct < 0 ? d.supplyDecreaseLabel : d.supplyFlatLabel;
+  $('scoreBreakdown').innerHTML = [
+    {name:d.breakSupply, value:Number.isFinite(supplyGrowthPct) ? ((supplyGrowthPct < 0 ? '+' : '-') + Math.round(supplyGrowthPct < 0 ? supplyBonus : supplyPenalty) + '/100') : '—', cls:Number.isFinite(supplyGrowthPct) ? (supplyGrowthPct < 0 ? 'pos' : (supplyPenalty > 0 ? 'neg' : 'neu')) : 'neu'},
+    {name:d.breakAth, value:'-' + Math.round(athPenalty) + '/100', cls:athPenalty > 0 ? 'neg' : 'neu'},
+    {name:d.breakUnlock, value:Number.isFinite(eventPressurePct) ? ((eventPressurePct < 0 ? '+' : '-') + Math.round(eventPressurePct < 0 ? eventBonus : eventPenalty) + '/100') : '—', cls:Number.isFinite(eventPressurePct) ? (eventPressurePct < 0 ? 'pos' : (eventPenalty > 0 ? 'neg' : 'neu')) : 'neu'},
+    {name:d.breakCapital, value:'-' + Math.round(fdvPenalty + distancePenalty) + '/100', cls:(fdvPenalty + distancePenalty) > 0 ? 'neg' : 'neu'}
+  ].map(row => `<div class="score-breakdown-row"><span class="name">${row.name}</span><span class="val ${row.cls}">${row.value}</span></div>`).join('');
+
+  $('mainResult').textContent = formatMoney(profit);
+  $(`mainResult`).className = 'highlight-value ' + (profit < 0 ? 'danger' : profit > 0 ? 'success' : 'neutral');
+  $('mainResultText').textContent = d.mainResultDesc;
+  $('roiValue').textContent = formatPercent(roi);
+  $(`roiValue`).className = 'value ' + (roi < 0 ? 'bad' : roi > 0 ? 'good' : 'neutral');
+  $('supplyGrowthValue').textContent = `${formatPercent(supplyGrowthPct)} • ${supplyDirectionLabel}`;
+  $('supplyGrowthValue').className = 'value ' + (supplyGrowthPct > 100 ? 'bad' : supplyGrowthPct > 25 ? 'warn' : supplyGrowthPct < 0 ? 'good' : 'warn');
+  $('adjustedAthValue').textContent = formatPrice(adjustedAth);
+  $('athNeededMcValue').textContent = formatMoney(athNeededMc);
+  $('profitValue').textContent = formatMoney(profit);
+  $('profitSub').textContent = `${formatMoney(invested)} → ${formatMoney(netNow)}`;
+  $('oldMcAutoValue').textContent = formatMoney(oldMc);
+  $('oldMcAutoSub').textContent = d.autoCalc;
+  $('oldMcPriceValue').textContent = formatPrice(oldMcPrice);
+  $('oldMcPriceSub').textContent = formatMoney(oldMc);
+  if($('currentMcEcho')) $('currentMcEcho').textContent = formatMoney(currentMc);
+
+  if(Number.isFinite(targetMc)){
+    $('targetCard').classList.remove('hide'); $('targetCard').classList.remove('is-empty');
+    $('targetMcValue').textContent = formatMoney(targetMc);
+    if($('targetMcValueTable')) $('targetMcValueTable').textContent = formatMoney(targetMc);
+    $('targetMcSub').textContent = Number.isFinite(targetVsCurrentMcMultiple) ? `${targetVsCurrentMcMultiple.toLocaleString(locale,{maximumFractionDigits:2})}x` : d.r8s;
+  } else { $('targetCard').classList.add('hide'); $('targetCard').classList.add('is-empty'); if($('targetMcValueTable')) $('targetMcValueTable').textContent='—'; }
+
+  if(Number.isFinite(theoreticalPostEventPrice)){
+    $('unlockCard').classList.remove('hide'); $('unlockCard').classList.remove('is-empty');
+    $('unlockPriceValue').textContent = formatPrice(theoreticalPostEventPrice);
+    if($('unlockPriceValueTable')) $('unlockPriceValueTable').textContent = formatPrice(theoreticalPostEventPrice);
+    $('unlockPriceSub').textContent = `${eventModeLabel} • ${formatPercent(eventPressurePct)}`;
+  } else { $('unlockCard').classList.add('hide'); $('unlockCard').classList.add('is-empty'); if($('unlockPriceValueTable')) $('unlockPriceValueTable').textContent='—'; }
+
+  $('healthDilution').textContent = supplyGrowthPct < 0 ? d.healthPositive : supplyGrowthPct > 100 ? d.healthHigh : supplyGrowthPct > 25 ? d.healthMedium : d.healthLow;
+  $('healthDilutionSub').textContent = `${formatPercent(supplyGrowthPct)} • ${supplyDirectionLabel}`;
+  $('healthAth').textContent = mcToAthMultiple > 8 ? d.healthHigh : mcToAthMultiple > 3 ? d.healthMedium : d.healthLow;
+  $('healthAthSub').textContent = `${mcToAthMultiple.toLocaleString(locale,{maximumFractionDigits:2})}x`;
+  $('healthUnlock').textContent = eventPressurePct === null ? d.healthNone : (eventPressurePct < 0 ? d.healthPositive : (eventPressurePct > 25 ? d.healthHigh : eventPressurePct > 5 ? d.healthMedium : d.healthLow));
+  $('healthUnlockSub').textContent = eventPressurePct === null ? (currentLang==='tr' ? 'Opsiyonel alan boş' : 'Optional field empty') : `${eventModeLabel} • ${formatPercent(eventPressurePct)}`;
+
+  const insight = [];
+  if(supplyGrowthPct > 200) insight.push(currentLang==='tr' ? `Arz satın alım döneminden bu yana ${formatPercent(supplyGrowthPct)} artmış; bu ciddi dilution anlamına gelir.` : `Supply has increased by ${formatPercent(supplyGrowthPct)} since purchase; this implies heavy dilution.`);
+  else if(supplyGrowthPct > 50) insight.push(currentLang==='tr' ? `Arz ${formatPercent(supplyGrowthPct)} artmış; eski fiyat seviyeleri artık daha yüksek market cap gerektirir.` : `Supply is up ${formatPercent(supplyGrowthPct)}; old price levels now require a much larger market cap.`);
+  else if(supplyGrowthPct < 0) insight.push(currentLang==='tr' ? `Arz ${formatPercent(Math.abs(supplyGrowthPct))} azalmış; bu durum eski ATH'ye dönüşü destekleyen pozitif bir faktördür.` : `Supply is down by ${formatPercent(Math.abs(supplyGrowthPct))}; this supports a return to the old ATH.`);
+  else insight.push(currentLang==='tr' ? `Arz değişimi ${formatPercent(supplyGrowthPct)} seviyesinde; dilution baskısı sınırlı ile orta arası.` : `Supply change is ${formatPercent(supplyGrowthPct)}; dilution pressure looks limited to moderate.`);
+  if(Number.isFinite(eventPressurePct)) insight.push(currentLang==='tr' ? `${eventModeLabel} etkisi ${formatPercent(eventPressurePct)} seviyesinde modele dahil edildi.` : `${eventModeLabel} impact of ${formatPercent(eventPressurePct)} is included in the model.`);
+  insight.push(currentLang==='tr' ? `Coin yalnızca satın alınan dönem market cap'ine dönse bile teorik fiyat ${formatPrice(oldMcPrice)} olabilir.` : `Even returning only to the market cap at purchase would imply a theoretical price of ${formatPrice(oldMcPrice)}.`);
+  insight.push(currentLang==='tr' ? `Eski ATH için gereken market cap ${formatMoney(athNeededMc)}; bu da bugünkü değerin yaklaşık ${mcToAthMultiple.toLocaleString(locale,{maximumFractionDigits:2})} katı.` : `The market cap needed for the old ATH is ${formatMoney(athNeededMc)}; about ${mcToAthMultiple.toLocaleString(locale,{maximumFractionDigits:2})}x today's value.`);
+  insight.push(currentLang==='tr' ? `Dilution ayarlı gerçek ATH yaklaşık ${formatPrice(adjustedAth)} seviyesinde.` : `The dilution-adjusted real ATH is approximately ${formatPrice(adjustedAth)}.`);
+  if(Number.isFinite(theoreticalPostEventPrice) && Number.isFinite(currentPrice)){
+    const change = ((theoreticalPostEventPrice - currentPrice) / currentPrice) * 100;
+    insight.push(currentLang==='tr' ? `Market cap sabit kalırsa planlı olay sonrası teorik fiyat ${formatPrice(theoreticalPostEventPrice)} olur (${formatPercent(change)} değişim).` : `If market cap stays flat, the theoretical post-event price becomes ${formatPrice(theoreticalPostEventPrice)} (${formatPercent(change)} change).`);
+  }
+  if(Number.isFinite(targetMc)) insight.push(currentLang==='tr' ? `Seçilen hedef fiyat için gereken market cap ${formatMoney(targetMc)} ve bu, bugünkü market cap'in ${targetVsCurrentMcMultiple.toLocaleString(locale,{maximumFractionDigits:2})} katına denk gelir.` : `The required market cap for the selected target price is ${formatMoney(targetMc)}, about ${targetVsCurrentMcMultiple.toLocaleString(locale,{maximumFractionDigits:2})}x the current market cap.`);
+  $('smartInsight').innerHTML = insight.map(x => '• ' + x).join('<br>');
+
+  const mcScenarios = [["1B MC",1_000_000_000],["5B MC",5_000_000_000],["10B MC",10_000_000_000],["50B MC",50_000_000_000],["100B MC",100_000_000_000]];
+  $('mcScenarioBody').innerHTML = mcScenarios.map(([name,mc]) => tableRow(name, formatMoney(mc), formatPrice(mc/newSupply))).join('');
+
+  const diffRows = [];
+  diffRows.push(tableRow(currentLang==='tr' ? 'Arz değişimi' : 'Supply change', `${formatPercent(supplyGrowthPct)} • ${supplyDirectionLabel}`, supplyGrowthPct < 0 ? `<span class="status good">${currentLang==='tr' ? 'Pozitif katkı' : 'Positive support'}</span>` : supplyGrowthPct > 100 ? `<span class="status bad">${currentLang==='tr' ? 'Yüksek dilution' : 'High dilution'}</span>` : supplyGrowthPct > 25 ? `<span class="status warn">${currentLang==='tr' ? 'Orta baskı' : 'Moderate pressure'}</span>` : `<span class="status good">${currentLang==='tr' ? 'Düşük/orta baskı' : 'Low/moderate pressure'}</span>`));
+  diffRows.push(tableRow(currentLang==='tr' ? 'ATH için gereken MC çarpanı' : 'MC multiple needed for ATH', `${mcToAthMultiple.toLocaleString(locale,{maximumFractionDigits:2})}x`, mcToAthMultiple > 8 ? `<span class="status bad">${currentLang==='tr' ? 'Zor' : 'Hard'}</span>` : mcToAthMultiple > 3 ? `<span class="status warn">${currentLang==='tr' ? 'Orta/Zor' : 'Moderate/Hard'}</span>` : `<span class="status good">${currentLang==='tr' ? 'Görece makul' : 'Relatively reasonable'}</span>`));
+  if(Number.isFinite(eventPressurePct)) diffRows.push(tableRow(currentLang==='tr' ? 'Planlı arz olayı' : 'Planned supply event', `${eventModeLabel} • ${formatPercent(eventPressurePct)}`, eventPressurePct < 0 ? `<span class="status good">${currentLang==='tr' ? 'Pozitif destek' : 'Positive support'}</span>` : eventPressurePct > 25 ? `<span class="status bad">${currentLang==='tr' ? 'Dikkat' : 'Caution'}</span>` : eventPressurePct > 5 ? `<span class="status warn">${currentLang==='tr' ? 'İzlenmeli' : 'Watch'}</span>` : `<span class="status good">${currentLang==='tr' ? 'Sınırlı' : 'Limited'}</span>`));
+  if(Number.isFinite(fullyDilutedGapPct)) diffRows.push(tableRow(currentLang==='tr' ? 'Dolaşıma girmemiş arz farkı' : 'Undistributed supply gap', formatPercent(fullyDilutedGapPct), fullyDilutedGapPct > 100 ? `<span class="status bad">${currentLang==='tr' ? 'Yüksek risk' : 'High risk'}</span>` : fullyDilutedGapPct > 25 ? `<span class="status warn">${currentLang==='tr' ? 'Orta risk' : 'Moderate risk'}</span>` : `<span class="status good">${currentLang==='tr' ? 'Sınırlı fark' : 'Limited gap'}</span>`));
+  diffRows.push(tableRow(currentLang==='tr' ? 'Gerçekçilik skoru' : 'Realism score', Math.round(score) + '/100', difficultyTone === 'good' ? `<span class="status good">${difficultyText}</span>` : difficultyTone === 'bad' ? `<span class="status bad">${difficultyText}</span>` : `<span class="status warn">${difficultyText}</span>`));
+  $('difficultyTableBody').innerHTML = diffRows.join('');
+
+  const ladderRows = [];
+  const anchors = [];
+  if(currentPrice > 0) anchors.push(currentPrice * 2, currentPrice * 3, currentPrice * 5);
+  if(Number.isFinite(targetPrice) && targetPrice > 0) anchors.push(targetPrice);
+  if(adjustedAth > 0) anchors.push(adjustedAth);
+  if(athPrice > 0) anchors.push(athPrice);
+  [...new Set(anchors.map(v => Number(v.toFixed(10))))].filter(v => v > 0).sort((a,b)=>a-b).slice(0,6).forEach(price => {
+    const needMc = price * newSupply;
+    const multiple = currentMc > 0 ? needMc / currentMc : null;
+    ladderRows.push(tableRow(formatPrice(price), formatMoney(needMc), multiple ? `${multiple.toLocaleString(locale,{maximumFractionDigits:2})}x` : '—'));
+  });
+  $('ladderTableBody').innerHTML = ladderRows.length ? ladderRows.join('') : `<tr><td colspan="3">${d.waitLadder}</td></tr>`;
+
+  $('statusBadge').textContent = currentLang==='tr' ? 'Hesaplandı' : 'Ready';
+  $('statusBadge').className = 'badge ' + (profit > 0 ? 'good' : profit < 0 ? 'bad' : 'warn');
+  $('statusText').textContent = d.computedStatus;
+  const pressure = Math.max(0, Math.min(100, score));
+  const baseShare = Math.max(0, Math.min(100, currentMc > 0 ? (oldMc / currentMc) * 100 : 0));
+  $('barText1').textContent = '%' + pressure.toLocaleString(locale,{maximumFractionDigits:0});
+  $('barText2').textContent = '%' + baseShare.toLocaleString(locale,{maximumFractionDigits:0});
+  $('bar1').style.width = pressure + '%';
+  $('bar2').style.width = Math.min(100, baseShare) + '%';
+  markFilledState();
+  state.results = { profit, roi, supplyGrowthPct, adjustedAth, oldMc, oldMcPrice, athNeededMc, targetMc, theoreticalPostEventPrice, score };
+  state.isValid = true;
+  state.isCalculated = true;
+  if(state.source === 'manual') saveManualState();
+  if(focusAfter) focusResultsPanel();
+  return true;
+}
+
+function fallbackCopyText(text){
+  const area = document.createElement('textarea');
+  area.value = text;
+  area.setAttribute('readonly','');
+  area.style.position = 'fixed';
+  area.style.opacity = '0';
+  area.style.pointerEvents = 'none';
+  document.body.appendChild(area);
+  area.focus();
+  area.select();
+  let ok = false;
+  try{ ok = document.execCommand('copy'); }catch(e){ ok = false; }
+  document.body.removeChild(area);
+  return ok;
+}
+
+async function shareResults(){
+  const d = dict();
+  if(!hasUsableResults()){
+    alert(d.needResultAlert);
+    return;
+  }
+  const text = [
+    d.copyTitle,
+    `${d.copyScore}: ${$('realityScore').textContent} (${ $('difficultyBadge').textContent })`,
+    `${d.copyProfit}: ${$('profitValue').textContent}`,
+    `${d.copyRoi}: ${$('roiValue').textContent}`,
+    `${d.copySupply}: ${$('supplyGrowthValue').textContent}`,
+    `${d.copyAdj}: ${$('adjustedAthValue').textContent}`,
+    `${d.copyAth}: ${$('athNeededMcValue').textContent}`,
+    `${d.copyInsight}: ${$('smartInsight').innerText.replaceAll('• ','- ')}`
+  ].join('\n');
+  const payload = `${text}\n\n${window.location.href}`;
+  try{
+    if(navigator.share){
+      await navigator.share({ title: d.copyTitle, text, url: window.location.href });
+      return;
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(payload);
+      alert(d.shareSuccess);
+      return;
+    }
+    if(fallbackCopyText(payload)){
+      alert(d.shareSuccess);
+      return;
+    }
+    alert(d.shareFail);
+  }catch(e){
+    if(e && e.name === 'AbortError') return;
+    if(fallbackCopyText(payload)) alert(d.shareSuccess);
+    else alert(d.shareFail);
+  }
+}
+
+async function copyResults(){
+  const d = dict();
+  if(!hasUsableResults()){
+    alert(d.needResultAlert);
+    return;
+  }
+  const lines = [
+    d.copyTitle,
+    '------------------------------',
+    `${d.copyScore}: ${$('realityScore').textContent} (${ $('difficultyBadge').textContent })`,
+    `${d.copyProfit}: ${$('profitValue').textContent}`,
+    `${d.copyRoi}: ${$('roiValue').textContent}`,
+    `${d.copySupply}: ${$('supplyGrowthValue').textContent}`,
+    `${d.copyAdj}: ${$('adjustedAthValue').textContent}`,
+    `${d.copyOldMc}: ${$('oldMcAutoValue').textContent}`,
+    `${d.copyOldMcPrice}: ${$('oldMcPriceValue').textContent}`,
+    `${d.copyAth}: ${$('athNeededMcValue').textContent}`,
+    `${d.copyTarget}: ${$('targetCard').classList.contains('hide') ? d.noData : $('targetMcValue').textContent}`,
+    `${d.copyUnlock}: ${$('unlockCard').classList.contains('hide') ? d.noData : $('unlockPriceValue').textContent}`,
+    '',
+    `${d.copyInsight}:`,
+    $('smartInsight').innerText.replaceAll('• ','- ')
+  ].join('\n');
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(lines);
+      alert(d.copySuccess);
+      return;
+    }
+    if(fallbackCopyText(lines)){
+      alert(d.copySuccess);
+      return;
+    }
+    alert(d.copyFail);
+  }catch(e){
+    if(fallbackCopyText(lines)) alert(d.copySuccess);
+    else alert(d.copyFail);
+  }
+}
+
+['buyPrice','currentPrice','coinAmount','feePercent','oldSupply','newSupply','athPrice','targetPrice','eventAmount','totalSupply'].forEach(id => {
+  $(id).addEventListener('input', () => {
+    handleManualInput();
+    if($(id).value.trim() !== '') state.touched.add(id);
+    calculateAll();
+    renderFieldState(id);
+    if(id === 'buyPrice' || id === 'oldSupply') autoOldMcValue();
+  });
+  $(id).addEventListener('blur', () => {
+    state.touched.add(id);
+    renderFieldState(id);
+  });
+  $(id).addEventListener('keydown', (e) => { if(e.key === 'Enter'){ e.preventDefault(); handleManualInput(); calculateAll({focusAfter:true, forceValidation:true}); } });
+});
+$('eventType').addEventListener('change', () => {
+  handleManualInput();
+  state.touched.add('eventType');
+  calculateAll();
+  renderFieldState('eventAmount');
+});
+['buyPrice','oldSupply'].forEach(id => $(id).addEventListener('input', autoOldMcValue));
+formattedIntegerIds.forEach(attachGroupedInputFormatting);
+
+applyI18n();
+updateEventHints();
+if(!loadSavedState()) clearAllFields();
+else renderValidation();
+</script>
+</body>
+</html>

@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Su Faturası Hesaplama 2026 | Hesapica</title>
+<meta content="Aylık su tüketiminize göre tahmini su faturanızı; su bedeli, atık su, sabit gider, KDV, kullanım skoru, karar özeti ve senaryo analiziyle birlikte hesaplayın." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="su faturası hesaplama, su tüketim hesaplama, su m3 hesaplama, su bedeli, atık su bedeli, tahmini su faturası" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/su-faturasi-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Su Faturası Hesaplama 2026 | Hesapica" property="og:title"/>
+<meta content="Aylık su tüketiminize göre tahmini su faturanızı; su bedeli, atık su, sabit gider, KDV, kullanım skoru, karar özeti ve senaryo analiziyle birlikte hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/su-faturasi-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="https://hesapica.com/og-image.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Su Faturası Hesaplama 2026 | Hesapica" name="twitter:title"/>
+<meta content="Aylık su tüketiminize göre tahmini su faturanızı; su bedeli, atık su, sabit gider, KDV, kullanım skoru, karar özeti ve senaryo analiziyle birlikte hesaplayın." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.jpg" name="twitter:image"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;padding:34px;border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:50px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:7px;font-size:13px;color:var(--bad);font-weight:700}
+    .field.has-error input,.field.has-error select{border-color:#fca5a5;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}
+    .field.has-error .error-text{display:block}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none!important;pointer-events:none}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10);transition:background-color .25s ease,border-color .25s ease}
+    .highlight-card.is-empty{background:linear-gradient(180deg,#fafafa 0%, #f5f6f8 100%);border-color:#e5e7eb}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value,.health-card.is-empty .big,.scorebox.is-empty .score-value,.scorebox.is-empty .score-breakdown-row .val{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .score-breakdown-row .val.pos{color:var(--good)}
+    .score-breakdown-row .val.neg{color:var(--bad)}
+    .score-breakdown-row .val.neu{color:var(--muted)}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .scenario-card{padding:16px;border-radius:18px;border:1px solid var(--line);background:#fcfcfd}
+    .scenario-card .eyebrow{font-size:12px;font-weight:900;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+    .scenario-card .big{font-size:24px;font-weight:900;line-height:1.1;margin-bottom:6px}
+    .scenario-card .small{font-size:13px;color:#4b5563;line-height:1.5}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .hide{display:none!important}
+    .result-flash{animation:resultFlash 1.15s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,0);border-color:rgba(79,70,229,.12)}35%{box-shadow:0 0 0 8px rgba(79,70,229,.12);border-color:rgba(79,70,229,.34)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10);border-color:rgba(79,70,229,.12)}}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid,.scenario-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.scenario-card{padding:20px}
+      .field-grid,.health-grid,.related-grid,.scenario-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn{display:none!important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.scenario-card{
+        box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.scenario-grid{grid-template-columns:1fr!important}
+      .results{position:static!important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Su Faturası Hesaplama",
+    "url":"https://hesapica.com/su-faturasi-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Aylık su tüketimine göre tahmini su faturasını, atık su bedelini, KDV etkisini ve tasarruf senaryolarını hesaplayan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Su faturası nasıl hesaplanır?",
+        "acceptedAnswer":{"@type":"Answer","text":"Su faturası temel olarak aylık metreküp tüketiminin su ve atık su birim fiyatlarıyla çarpılmasıyla başlar. Ardından sabit giderler ve KDV eklenerek tahmini toplam bulunur."}
+      },
+      {
+        "@type":"Question",
+        "name":"Atık su bedeli neden önemlidir?",
+        "acceptedAnswer":{"@type":"Answer","text":"Birçok belediyede toplam su faturasının önemli bir bölümü atık su bedelinden oluşur. Bu yüzden sadece su birim fiyatına bakmak toplam maliyeti eksik gösterir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Bu araç gerçek faturayla birebir aynı çıkar mı?",
+        "acceptedAnswer":{"@type":"Answer","text":"Hayır. Kademe yapısı, bölgesel tarifeler ve ek belediye uygulamaları nedeniyle sonuçlar yaklaşık tahmin olarak değerlendirilmelidir."}
+      }
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Fatura","item":"https://hesapica.com/#faturalar"},
+      {"@type":"ListItem","position":3,"name":"Su Faturası Hesaplama","item":"https://hesapica.com/su-faturasi-hesaplama"}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/su-faturasi-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;border-radius:16px;background:#fff1f2;color:#991b1b;font:600 15px/1.6 Inter,system-ui,sans-serif">Bu aracın çalışması için JavaScript açık olmalıdır.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#faturalar">Fatura</a>
+<span>/</span>
+<strong>Su Faturası Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Akıllı Fatura Aracı</span>
+<h1>Su Faturası Hesaplama</h1>
+<p>Bu araç yalnızca <strong>tahmini toplam fatura tutarını</strong> değil; <strong>su bedeli</strong>, <strong>atık su payı</strong>, <strong>KDV etkisi</strong>, <strong>hane başı kullanım baskısı</strong> ve <strong>tasarruf senaryolarını</strong> aynı ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Boş başlangıç</span>
+<span class="hero-chip">Atık su dahil</span>
+<span class="hero-chip">KDV etkisi</span>
+<span class="hero-chip">Senaryo analizi</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Akıllı analiz akışı</div>
+<strong>Ana sonuç üstte, karar ve tasarruf yönü hemen altında</strong>
+<p>Toplam tutarı gördükten sonra önce kullanım skorunu, sonra karar özetini, ardından detay kırılımı ve senaryo farklarını inceleyebilirsin.</p>
+<ul>
+<li>Hane kullanımı baskısı</li>
+<li>Atık su ve sabit gider etkisi</li>
+<li>Tasarruflu / baz / yoğun kullanım karşılaştırması</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Hesaplama Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Temel sonuçları görmek için su tüketimi ve birim fiyat bilgilerini girmen yeterli.</p>
+<div class="helper-box">
+<h3>Bu araç neyi iyi gösterir?</h3>
+<p>Su faturasında en sık gözden kaçan nokta, <strong>atık su bedeli + KDV + sabit giderlerin</strong> toplam tutarı beklenenden fazla büyütmesidir. Bu ekran, yalnızca m³ toplamını değil, hangi kalemin faturayı ne kadar şişirdiğini görmen için hazırlanmıştır.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Tüketim bilgileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="monthlyM3">Aylık su tüketimi (m³)</label>
+<div class="input-wrap">
+<input id="monthlyM3" inputmode="decimal" placeholder="Örn: 12" type="text"/>
+</div>
+<div class="hint">Ay boyunca kullanılan toplam su miktarı.</div>
+<div class="error-text">Geçerli bir tüketim değeri gir.</div>
+</div>
+<div class="field">
+<label for="daysInMonth">Ay içindeki gün sayısı</label>
+<div class="input-wrap">
+<input id="daysInMonth" inputmode="numeric" placeholder="Örn: 30" type="text"/>
+<span class="suffix">gün</span>
+</div>
+<div class="hint">Günlük ortalama maliyet ve tüketim hesabında kullanılır.</div>
+<div class="error-text">1 ile 31 arasında geçerli gün sayısı gir.</div>
+</div>
+<div class="field">
+<label for="householdSize">Hane kişi sayısı <span style="font-weight:600;color:#6b7280">(opsiyonel)</span></label>
+<div class="input-wrap">
+<input id="householdSize" inputmode="numeric" placeholder="Örn: 3" type="text"/>
+<span class="suffix">kişi</span>
+</div>
+<div class="hint">Kişi başı kullanım baskısını daha net görmek için faydalı.</div>
+<div class="error-text">Geçerli kişi sayısı gir.</div>
+</div>
+<div class="field">
+<label for="fixedCost">Diğer sabit giderler (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="fixedCost" inputmode="decimal" placeholder="Örn: 5" type="text"/>
+</div>
+<div class="hint">Sayaç, hizmet, çevre temizlik benzeri sabit kalemler.</div>
+<div class="error-text">Geçerli sabit gider gir.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Tarife bilgileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="waterUnitPrice">Su birim fiyatı (TL / m³)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="waterUnitPrice" inputmode="decimal" placeholder="Örn: 24" type="text"/>
+</div>
+<div class="hint">Bölgenizdeki su bedelini gir.</div>
+<div class="error-text">Geçerli su birim fiyatı gir.</div>
+</div>
+<div class="field">
+<label for="wasteUnitPrice">Atık su bedeli (TL / m³)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="wasteUnitPrice" inputmode="decimal" placeholder="Örn: 12" type="text"/>
+</div>
+<div class="hint">Atık su / kanalizasyon bedelini yaz.</div>
+<div class="error-text">Geçerli atık su bedeli gir.</div>
+</div>
+<div class="field">
+<label for="vatRate">KDV oranı (%)</label>
+<div class="input-wrap">
+<input class="with-suffix" id="vatRate" inputmode="decimal" placeholder="Örn: 10" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Tarifeye uygulanan vergi oranı.</div>
+<div class="error-text">Geçerli KDV oranı gir.</div>
+</div>
+<div class="field">
+<label>Hızlı senaryolar</label>
+<div class="chip-row" id="presetRow">
+<button class="chip" data-preset="single" type="button">Tek kişi</button>
+<button class="chip" data-preset="family" type="button">Aile</button>
+<button class="chip" data-preset="high" type="button">Yüksek tüketim</button>
+</div>
+<div class="hint">Örnek veri yüklemek için kullanabilirsin.</div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="resetBtn" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button>
+</div>
+<div class="flow-hint">
+<div class="flow-hint-text">
+<strong>Akış sırası sabit</strong>
+<span>Önce toplam tutar, sonra skor, ardından karar ve detaylar.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Durum</div>
+<div class="status-text" id="statusText">Veri bekleniyor. Sonuç alanları hesaplama sonrası aktifleşecek.</div>
+</div>
+<div class="badge" id="statusBadge">Hazır değil</div>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana Sonuç</div>
+<div class="highlight-value" id="totalBillResult">—</div>
+<div class="highlight-sub" id="totalBillSub">Aylık tahmini su faturası burada görünecek.</div>
+</div>
+<div class="scorebox is-empty" id="scoreCard">
+<div class="score-row">
+<div>
+<div class="highlight-label" style="margin-bottom:4px">Kullanım Skoru</div>
+<div class="score-value" id="scoreValue">—</div>
+</div>
+<div class="pill" id="scorePill">Veri bekleniyor</div>
+</div>
+<div class="progress"><span id="scoreProgress"></span></div>
+<div class="score-explain">
+<strong id="decisionTitle">Karar Özeti</strong>
+<span id="decisionText">Skor; kullanım yoğunluğu, atık su yükü ve sabit gider baskısına göre hesaplanır.</span>
+</div>
+<div class="score-breakdown">
+<div class="score-breakdown-row">
+<span class="name">Tüketim disiplini</span>
+<span class="val neu" id="scoreConsumption">—</span>
+</div>
+<div class="score-breakdown-row">
+<span class="name">Atık su yükü</span>
+<span class="val neu" id="scoreWaste">—</span>
+</div>
+<div class="score-breakdown-row">
+<span class="name">Sabit gider baskısı</span>
+<span class="val neu" id="scoreFixed">—</span>
+</div>
+</div>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="waterCostCard">
+<div>
+<div class="label">Su bedeli</div>
+<div class="subline">Tüketim × su birim fiyatı</div>
+</div>
+<div class="value" id="waterCostResult">—</div>
+</div>
+<div class="mini-result is-empty" id="wasteCostCard">
+<div>
+<div class="label">Atık su bedeli</div>
+<div class="subline">Tüketim × atık su birim fiyatı</div>
+</div>
+<div class="value" id="wasteCostResult">—</div>
+</div>
+<div class="mini-result is-empty" id="vatCard">
+<div>
+<div class="label">KDV toplamı</div>
+<div class="subline">Ara toplam üzerinden hesaplanır</div>
+</div>
+<div class="value" id="vatResult">—</div>
+</div>
+<div class="mini-result is-empty" id="effectiveUnitCard">
+<div>
+<div class="label">1 m³ gerçek maliyet</div>
+<div class="subline">Vergi ve sabit gider dahil</div>
+</div>
+<div class="value" id="effectiveUnitResult">—</div>
+</div>
+</div>
+<div class="health-grid">
+<div class="health-card is-empty" id="dailyCard">
+<h3>Günlük ortalama</h3>
+<div class="big" id="dailyAverageResult">—</div>
+</div>
+<div class="health-card is-empty" id="yearlyCard">
+<h3>Yıllık tahmin</h3>
+<div class="big" id="yearlyTotalResult">—</div>
+</div>
+<div class="health-card is-empty" id="personCard">
+<h3>Kişi başı</h3>
+<div class="big" id="perPersonResult">—</div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">
+          Su tüketimini ve tarife alanlarını girdiğinde burada hangi kalemin faturayı yukarı taşıdığını ve ilk nereden tasarruf aranması gerektiğini net yorumlayacağım.
+        </div>
+</aside>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>Senaryo Analizi</h2>
+<p class="section-note">Aynı tarife ile tüketim değiştiğinde fatura nasıl hareket ediyor, üç senaryoda yan yana gör.</p>
+<div class="scenario-grid">
+<div class="scenario-card">
+<div class="eyebrow">Tasarruflu</div>
+<div class="big" id="scenarioLowBill">—</div>
+<div class="small" id="scenarioLowText">Baz tüketime göre daha kontrollü kullanım sonucu burada görünecek.</div>
+</div>
+<div class="scenario-card">
+<div class="eyebrow">Baz</div>
+<div class="big" id="scenarioBaseBill">—</div>
+<div class="small" id="scenarioBaseText">Mevcut girilen veriye göre temel sonuç burada yer alır.</div>
+</div>
+<div class="scenario-card">
+<div class="eyebrow">Yoğun</div>
+<div class="big" id="scenarioHighBill">—</div>
+<div class="small" id="scenarioHighText">Tüketim arttığında toplam baskı nasıl büyüyor burada görünecek.</div>
+</div>
+</div>
+</section>
+<section class="content-grid">
+<div class="card">
+<h2>Su faturası nasıl hesaplanır?</h2>
+<p>Araç önce aylık su tüketimini alır, ardından su bedeli ve atık su bedelini ayrı ayrı hesaplar. Sabit giderler eklenir ve son aşamada KDV uygulanarak tahmini toplam fatura tutarı elde edilir.</p>
+<p>Bu yaklaşım, tek bir toplam rakam vermek yerine faturanın hangi bölümünün sudan, hangi bölümünün atık sudan, hangi bölümünün vergi ve sabit giderden geldiğini daha açık gösterir.</p>
+</div>
+<div class="card accordion-card">
+<h2>Sık Sorulan Sorular</h2>
+<details open="">
+<summary>Atık su bedeli neden önemli?</summary>
+<p>Birçok bölgede toplam faturanın önemli bir kısmı atık su kaleminden gelir. Sadece su birim fiyatına bakmak gerçek toplam maliyeti eksik yorumlamana neden olabilir.</p>
+</details>
+<details>
+<summary>Bu araç gerçek faturayla birebir aynı çıkar mı?</summary>
+<p>Hayır. Kademe sistemi, bölgesel farklar ve belediye bazlı ek uygulamalar nedeniyle bu ekran tahmini analiz üretir. Yine de doğru birim fiyat girildiğinde aylık yükü oldukça faydalı biçimde gösterir.</p>
+</details>
+<details>
+<summary>Su tüketimini azaltmak için nereden başlamalı?</summary>
+<p>Genelde önce kaçak/sızıntı kontrolü, uzun duş süresini kısaltma ve gereksiz akışı azaltma en hızlı fark yaratan alanlardır. Yorum motoru da ilk bakılacak yeri sonuçta belirtir.</p>
+</details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>İlgili Araçlar</h2>
+<p class="section-note">Fatura ve bütçe etkisini daha geniş çerçevede görmek için bunlara da bakabilirsin.</p>
+<div class="related-grid">
+<a class="related-card" href="/elektrik-faturasi-hesaplama">
+<span class="small">Fatura</span>
+<strong>Elektrik Faturası Hesaplama</strong>
+<p>kWh tüketiminin aylık bütçe etkisini analiz et.</p>
+</a>
+<a class="related-card" href="/dogalgaz-faturasi-hesaplama">
+<span class="small">Fatura</span>
+<strong>Doğalgaz Faturası Hesaplama</strong>
+<p>Mevsimsel doğalgaz baskısını karşılaştırmalı gör.</p>
+</a>
+<a class="related-card" href="/butce-hesaplama">
+<span class="small">Finans</span>
+<strong>Bütçe ve Tasarruf Hesaplama</strong>
+<p>Faturaların aylık tasarruf oranını nasıl etkilediğini incele.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica_su_faturasi_v2';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      activeSource: 'manual',
+      suppressPersist: false
+    };
+
+    const els = {
+      monthlyM3: document.getElementById('monthlyM3'),
+      daysInMonth: document.getElementById('daysInMonth'),
+      householdSize: document.getElementById('householdSize'),
+      waterUnitPrice: document.getElementById('waterUnitPrice'),
+      wasteUnitPrice: document.getElementById('wasteUnitPrice'),
+      vatRate: document.getElementById('vatRate'),
+      fixedCost: document.getElementById('fixedCost'),
+      calculateBtn: document.getElementById('calculateBtn'),
+      exampleBtn: document.getElementById('exampleBtn'),
+      resetBtn: document.getElementById('resetBtn'),
+      copyBtn: document.getElementById('copyBtn'),
+      shareBtn: document.getElementById('shareBtn'),
+      printBtn: document.getElementById('printBtn')
+    };
+
+    const resultEls = {
+      statusText: document.getElementById('statusText'),
+      statusBadge: document.getElementById('statusBadge'),
+      highlightCard: document.getElementById('highlightCard'),
+      totalBillResult: document.getElementById('totalBillResult'),
+      totalBillSub: document.getElementById('totalBillSub'),
+      scoreCard: document.getElementById('scoreCard'),
+      scoreValue: document.getElementById('scoreValue'),
+      scorePill: document.getElementById('scorePill'),
+      scoreProgress: document.getElementById('scoreProgress'),
+      decisionTitle: document.getElementById('decisionTitle'),
+      decisionText: document.getElementById('decisionText'),
+      scoreConsumption: document.getElementById('scoreConsumption'),
+      scoreWaste: document.getElementById('scoreWaste'),
+      scoreFixed: document.getElementById('scoreFixed'),
+      waterCostResult: document.getElementById('waterCostResult'),
+      wasteCostResult: document.getElementById('wasteCostResult'),
+      vatResult: document.getElementById('vatResult'),
+      effectiveUnitResult: document.getElementById('effectiveUnitResult'),
+      dailyAverageResult: document.getElementById('dailyAverageResult'),
+      yearlyTotalResult: document.getElementById('yearlyTotalResult'),
+      perPersonResult: document.getElementById('perPersonResult'),
+      smartComment: document.getElementById('smartComment'),
+      scenarioLowBill: document.getElementById('scenarioLowBill'),
+      scenarioBaseBill: document.getElementById('scenarioBaseBill'),
+      scenarioHighBill: document.getElementById('scenarioHighBill'),
+      scenarioLowText: document.getElementById('scenarioLowText'),
+      scenarioBaseText: document.getElementById('scenarioBaseText'),
+      scenarioHighText: document.getElementById('scenarioHighText')
+    };
+
+    const presetData = {
+      single: { monthlyM3: 7, daysInMonth: 30, householdSize: 1, waterUnitPrice: 24, wasteUnitPrice: 12, vatRate: 10, fixedCost: 5 },
+      family: { monthlyM3: 14, daysInMonth: 30, householdSize: 3, waterUnitPrice: 24, wasteUnitPrice: 12, vatRate: 10, fixedCost: 8 },
+      high: { monthlyM3: 24, daysInMonth: 30, householdSize: 4, waterUnitPrice: 24, wasteUnitPrice: 12, vatRate: 10, fixedCost: 10 }
+    };
+
+    function parseLocaleNumber(value){
+      if (typeof value !== 'string') return Number(value) || 0;
+      const normalized = value.replace(/\./g,'').replace(',', '.').replace(/[^\d.-]/g,'').trim();
+      return normalized === '' || normalized === '-' || normalized === '.' ? NaN : Number(normalized);
+    }
+
+    function formatLocaleInput(value, digits = 2){
+      if (value === '' || value == null || Number.isNaN(value)) return '';
+      return Number(value).toLocaleString('tr-TR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      });
+    }
+
+    function formatTRY(value){
+      return new Intl.NumberFormat('tr-TR', {
+        style:'currency',
+        currency:'TRY',
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }).format(Number(value) || 0);
+    }
+
+    function formatNumber(value, digits = 2){
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits:digits,
+        maximumFractionDigits:digits
+      }).format(Number(value) || 0);
+    }
+
+    function clamp(num, min, max){
+      return Math.min(Math.max(num, min), max);
+    }
+
+    function roundValue(value, digits = 2){
+      const factor = 10 ** digits;
+      return Math.round((Number(value) || 0) * factor) / factor;
+    }
+
+    function getInputs(){
+      return {
+        monthlyM3: parseLocaleNumber(els.monthlyM3.value),
+        daysInMonth: parseLocaleNumber(els.daysInMonth.value),
+        householdSize: els.householdSize.value.trim() === '' ? null : parseLocaleNumber(els.householdSize.value),
+        waterUnitPrice: parseLocaleNumber(els.waterUnitPrice.value),
+        wasteUnitPrice: parseLocaleNumber(els.wasteUnitPrice.value),
+        vatRate: parseLocaleNumber(els.vatRate.value),
+        fixedCost: els.fixedCost.value.trim() === '' ? 0 : parseLocaleNumber(els.fixedCost.value)
+      };
+    }
+
+    function validate(inputs){
+      const errors = {};
+      if (!(inputs.monthlyM3 > 0 && inputs.monthlyM3 <= 10000)) errors.monthlyM3 = 'Tüketim 0 ile 10.000 m³ arasında olmalı';
+      if (!(inputs.daysInMonth >= 1 && inputs.daysInMonth <= 31)) errors.daysInMonth = 'Gün sayısı 1-31 olmalı';
+      if (inputs.householdSize !== null && !(inputs.householdSize >= 1 && inputs.householdSize <= 20)) errors.householdSize = 'Kişi sayısı 1-20 olmalı';
+      if (!(inputs.waterUnitPrice > 0 && inputs.waterUnitPrice <= 100)) errors.waterUnitPrice = 'Su bedeli 0 ile 100 TL arasında olmalı';
+      if (!(inputs.wasteUnitPrice >= 0 && inputs.wasteUnitPrice <= 100)) errors.wasteUnitPrice = 'Atık su bedeli 0 ile 100 TL arasında olmalı';
+      if (!(inputs.vatRate >= 0 && inputs.vatRate <= 100)) errors.vatRate = 'KDV 0-100 olmalı';
+      if (!(inputs.fixedCost >= 0 && inputs.fixedCost <= 1000000)) errors.fixedCost = 'Sabit gider 0 ile 1.000.000 TL arasında olmalı';
+      return { valid: Object.keys(errors).length === 0, errors };
+    }
+
+    function compute(inputs){
+      const waterCost = inputs.monthlyM3 * inputs.waterUnitPrice;
+      const wasteCost = inputs.monthlyM3 * inputs.wasteUnitPrice;
+      const subtotal = waterCost + wasteCost + inputs.fixedCost;
+      const vatAmount = subtotal * (inputs.vatRate / 100);
+      const totalBill = subtotal + vatAmount;
+      const dailyAverage = inputs.daysInMonth > 0 ? totalBill / inputs.daysInMonth : 0;
+      const yearlyTotal = totalBill * 12;
+      const effectiveUnitCost = inputs.monthlyM3 > 0 ? totalBill / inputs.monthlyM3 : 0;
+      const perPerson = inputs.householdSize ? totalBill / inputs.householdSize : null;
+      const litersPerDay = inputs.daysInMonth > 0 ? (inputs.monthlyM3 * 1000) / inputs.daysInMonth : 0;
+      const litersPerPersonPerDay = inputs.householdSize ? litersPerDay / inputs.householdSize : null;
+      const wasteShare = subtotal > 0 ? (wasteCost / subtotal) * 100 : 0;
+      const fixedShare = subtotal > 0 ? (inputs.fixedCost / subtotal) * 100 : 0;
+
+      let consumptionScore;
+      if (inputs.householdSize && litersPerPersonPerDay !== null){
+        if (litersPerPersonPerDay <= 100) consumptionScore = 92;
+        else if (litersPerPersonPerDay <= 140) consumptionScore = 80;
+        else if (litersPerPersonPerDay <= 180) consumptionScore = 65;
+        else consumptionScore = 42;
+      } else {
+        if (inputs.monthlyM3 <= 8) consumptionScore = 90;
+        else if (inputs.monthlyM3 <= 15) consumptionScore = 75;
+        else if (inputs.monthlyM3 <= 22) consumptionScore = 58;
+        else consumptionScore = 38;
+      }
+
+      const wasteScore = clamp(100 - wasteShare * 1.2, 30, 96);
+      const fixedScore = clamp(100 - fixedShare * 3.5, 25, 98);
+      const totalScore = roundValue(consumptionScore * 0.55 + wasteScore * 0.25 + fixedScore * 0.20, 0);
+
+      let level = 'Dengeli';
+      let badge = 'good';
+      if (totalScore < 55){ level = 'Baskılı'; badge = 'bad'; }
+      else if (totalScore < 75){ level = 'İzlenmeli'; badge = 'warn'; }
+
+      const scenarios = [-0.15, 0, 0.20].map((delta) => {
+        const adjustedM3 = roundValue(inputs.monthlyM3 * (1 + delta), 2);
+        const water = adjustedM3 * inputs.waterUnitPrice;
+        const waste = adjustedM3 * inputs.wasteUnitPrice;
+        const sub = water + waste + inputs.fixedCost;
+        const vat = sub * (inputs.vatRate / 100);
+        return {
+          delta,
+          monthlyM3: adjustedM3,
+          total: roundValue(sub + vat, 2)
+        };
+      });
+
+      return {
+        waterCost: roundValue(waterCost),
+        wasteCost: roundValue(wasteCost),
+        vatAmount: roundValue(vatAmount),
+        totalBill: roundValue(totalBill),
+        dailyAverage: roundValue(dailyAverage),
+        yearlyTotal: roundValue(yearlyTotal),
+        effectiveUnitCost: roundValue(effectiveUnitCost),
+        perPerson: perPerson === null ? null : roundValue(perPerson),
+        litersPerDay: roundValue(litersPerDay, 1),
+        litersPerPersonPerDay: litersPerPersonPerDay === null ? null : roundValue(litersPerPersonPerDay, 1),
+        subtotal: roundValue(subtotal),
+        wasteShare: roundValue(wasteShare, 1),
+        fixedShare: roundValue(fixedShare, 1),
+        scores: {
+          total: totalScore,
+          consumption: roundValue(consumptionScore, 0),
+          waste: roundValue(wasteScore, 0),
+          fixed: roundValue(fixedScore, 0)
+        },
+        level,
+        badge,
+        scenarios
+      };
+    }
+
+    function buildDecision(results){
+      if (results.scores.total >= 75){
+        return {
+          title: 'Karar Özeti',
+          text: 'Fatura yükü görece dengeli. Öncelikli odağın, bu seviyeyi korumak ve atık su/sabit gider etkisini izlemek olmalı.'
+        };
+      }
+      if (results.scores.total >= 55){
+        return {
+          title: 'Karar Özeti',
+          text: 'Fatura orta baskı bölgesinde. İlk tasarruf alanı genelde toplam m³ tüketimi; ikinci odak ise gereksiz akışı ve sabit giderleri kontrol etmek.'
+        };
+      }
+      return {
+        title: 'Karar Özeti',
+        text: 'Fatura baskısı yüksek görünüyor. Kaçak kontrolü, duş süresi, yoğun kullanım günleri ve atık su etkisi ilk incelenmesi gereken alanlar.'
+      };
+    }
+
+    function buildComment(inputs, results){
+      const personPart = inputs.householdSize && results.litersPerPersonPerDay !== null
+        ? ` Kişi başı günlük kullanım yaklaşık ${formatNumber(results.litersPerPersonPerDay, 1)} litre seviyesinde.`
+        : '';
+      const wastePart = results.wasteShare >= 28
+        ? ` Atık su kalemi ara toplamın yaklaşık %${formatNumber(results.wasteShare, 1)} kısmını oluşturduğu için faturada belirgin rol oynuyor.`
+        : ' Atık su kalemi mevcut senaryoda toplamı artırıyor ama ana baskı tek başına buradan gelmiyor.';
+      const fixedPart = results.fixedShare >= 10
+        ? ` Sabit giderlerin payı da %${formatNumber(results.fixedShare, 1)} bandında; yani yalnızca tüketim değil sabit kalemler de etkili.`
+        : ' Sabit gider payı görece sınırlı olduğu için ana farkı tüketim miktarı oluşturuyor.';
+      return `Aylık toplam tahmini fatura ${formatTRY(results.totalBill)} seviyesinde. Günlük ortalama maliyet ${formatTRY(results.dailyAverage)} ve 1 m³ gerçek maliyet ${formatTRY(results.effectiveUnitCost)} görünüyor.${personPart}${wastePart}${fixedPart}`;
+    }
+
+    function applyErrorState(errors){
+      document.querySelectorAll('.field').forEach((field) => field.classList.remove('has-error'));
+      Object.keys(errors).forEach((key) => {
+        const el = document.getElementById(key);
+        if (!el) return;
+        const field = el.closest('.field');
+        if (field) field.classList.add('has-error');
+      });
+    }
+
+    function clearErrorState(){
+      document.querySelectorAll('.field').forEach((field) => field.classList.remove('has-error'));
+    }
+
+    function hasMeaningfulInput(inputs = getInputs()){
+      return Object.values(inputs).some((value) => value !== null && value !== '' && !Number.isNaN(value) && value !== 0);
+    }
+
+    function hasCoreInputs(inputs = getInputs()){
+      return ['monthlyM3','daysInMonth','waterUnitPrice','wasteUnitPrice','vatRate'].every((key) => {
+        const value = inputs[key];
+        return value !== null && value !== '' && !Number.isNaN(value);
+      });
+    }
+
+    function updateActionButtons(){
+      const enabled = !!(state.isCalculated && state.results);
+      ['copyBtn','shareBtn','printBtn'].forEach((key) => {
+        if (els[key]) els[key].disabled = !enabled;
+      });
+    }
+
+    function setEmptyState(){
+      resultEls.statusText.textContent = 'Veri bekleniyor. Sonuç alanları hesaplama sonrası aktifleşecek.';
+      resultEls.statusBadge.textContent = 'Hazır değil';
+      resultEls.statusBadge.className = 'badge';
+      resultEls.highlightCard.classList.add('is-empty');
+      resultEls.scoreCard.classList.add('is-empty');
+      document.querySelectorAll('.mini-result').forEach((el) => el.classList.add('is-empty'));
+      document.querySelectorAll('.health-card').forEach((el) => el.classList.add('is-empty'));
+
+      resultEls.totalBillResult.textContent = '—';
+      resultEls.totalBillSub.textContent = 'Aylık tahmini su faturası burada görünecek.';
+      resultEls.scoreValue.textContent = '—';
+      resultEls.scorePill.textContent = 'Veri bekleniyor';
+      resultEls.scorePill.className = 'pill';
+      resultEls.scoreProgress.style.width = '0%';
+      resultEls.decisionTitle.textContent = 'Karar Özeti';
+      resultEls.decisionText.textContent = 'Skor; kullanım yoğunluğu, atık su yükü ve sabit gider baskısına göre hesaplanır.';
+      resultEls.scoreConsumption.textContent = '—';
+      resultEls.scoreWaste.textContent = '—';
+      resultEls.scoreFixed.textContent = '—';
+
+      resultEls.waterCostResult.textContent = '—';
+      resultEls.wasteCostResult.textContent = '—';
+      resultEls.vatResult.textContent = '—';
+      resultEls.effectiveUnitResult.textContent = '—';
+      resultEls.dailyAverageResult.textContent = '—';
+      resultEls.yearlyTotalResult.textContent = '—';
+      resultEls.perPersonResult.textContent = '—';
+      resultEls.smartComment.textContent = 'Su tüketimini ve tarife alanlarını girdiğinde burada hangi kalemin faturayı yukarı taşıdığını ve ilk nereden tasarruf aranması gerektiğini net yorumlayacağım.';
+
+      resultEls.scenarioLowBill.textContent = '—';
+      resultEls.scenarioBaseBill.textContent = '—';
+      resultEls.scenarioHighBill.textContent = '—';
+      resultEls.scenarioLowText.textContent = 'Baz tüketime göre daha kontrollü kullanım sonucu burada görünecek.';
+      resultEls.scenarioBaseText.textContent = 'Mevcut girilen veriye göre temel sonuç burada yer alır.';
+      resultEls.scenarioHighText.textContent = 'Tüketim arttığında toplam baskı nasıl büyüyor burada görünecek.';
+      updateActionButtons();
+    }
+
+    function render(results){
+      const decision = buildDecision(results);
+
+      resultEls.statusText.textContent = results.badge === 'good'
+        ? 'Fatura yükü görece dengeli. Ayrıntılarda tüketim ve atık su dengesini görebilirsin.'
+        : results.badge === 'warn'
+        ? 'Fatura orta baskı seviyesinde. Tasarruf alanlarını karar kutusundan kontrol et.'
+        : 'Fatura baskısı yüksek görünüyor. Öncelikli inceleme alanları ve senaryo farkları aşağıda.';
+      resultEls.statusBadge.textContent = results.level;
+      resultEls.statusBadge.className = `badge ${results.badge}`;
+
+      resultEls.highlightCard.classList.remove('is-empty');
+      resultEls.scoreCard.classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach((el) => el.classList.remove('is-empty'));
+      document.querySelectorAll('.health-card').forEach((el) => el.classList.remove('is-empty'));
+
+      resultEls.totalBillResult.textContent = formatTRY(results.totalBill);
+      resultEls.totalBillSub.textContent = `${formatNumber(state.inputs.monthlyM3, 2)} m³ tüketim için tahmini aylık toplam su gideri.`;
+
+      resultEls.scoreValue.textContent = formatNumber(results.scores.total, 0);
+      resultEls.scorePill.textContent = results.level;
+      resultEls.scorePill.className = `pill ${results.badge}`;
+      resultEls.scoreProgress.style.width = `${clamp(results.scores.total, 0, 100)}%`;
+      resultEls.decisionTitle.textContent = decision.title;
+      resultEls.decisionText.textContent = decision.text;
+
+      setScoreCell(resultEls.scoreConsumption, results.scores.consumption);
+      setScoreCell(resultEls.scoreWaste, results.scores.waste);
+      setScoreCell(resultEls.scoreFixed, results.scores.fixed);
+
+      resultEls.waterCostResult.textContent = formatTRY(results.waterCost);
+      resultEls.wasteCostResult.textContent = formatTRY(results.wasteCost);
+      resultEls.vatResult.textContent = formatTRY(results.vatAmount);
+      resultEls.effectiveUnitResult.textContent = formatTRY(results.effectiveUnitCost);
+
+      resultEls.dailyAverageResult.textContent = formatTRY(results.dailyAverage);
+      resultEls.yearlyTotalResult.textContent = formatTRY(results.yearlyTotal);
+      resultEls.perPersonResult.textContent = results.perPerson === null ? '—' : formatTRY(results.perPerson);
+
+      resultEls.smartComment.textContent = buildComment(state.inputs, results);
+
+      const [low, base, high] = results.scenarios;
+      resultEls.scenarioLowBill.textContent = formatTRY(low.total);
+      resultEls.scenarioLowText.textContent = `%15 daha düşük kullanımda ${formatNumber(low.monthlyM3, 2)} m³ ile oluşan tahmini tutar.`;
+      resultEls.scenarioBaseBill.textContent = formatTRY(base.total);
+      resultEls.scenarioBaseText.textContent = `Şu an girilen ${formatNumber(base.monthlyM3, 2)} m³ kullanımın baz sonucu.`;
+      resultEls.scenarioHighBill.textContent = formatTRY(high.total);
+      resultEls.scenarioHighText.textContent = `%20 daha yoğun kullanımda ${formatNumber(high.monthlyM3, 2)} m³ ile oluşan tahmini tutar.`;
+      updateActionButtons();
+    }
+
+    function setScoreCell(el, value){
+      el.textContent = formatNumber(value, 0);
+      el.classList.remove('pos', 'neg', 'neu');
+      if (value >= 75) el.classList.add('pos');
+      else if (value >= 55) el.classList.add('neu');
+      else el.classList.add('neg');
+    }
+
+    function normalizeDisplayInputs(){
+      const formatPlan = {
+        monthlyM3: 2,
+        daysInMonth: 0,
+        householdSize: 0,
+        waterUnitPrice: 2,
+        wasteUnitPrice: 2,
+        vatRate: 2,
+        fixedCost: 2
+      };
+      Object.entries(formatPlan).forEach(([key, digits]) => {
+        const el = els[key];
+        if (!el) return;
+        const raw = el.value.trim();
+        if (raw === '') return;
+        const parsed = parseLocaleNumber(raw);
+        if (!Number.isNaN(parsed)) el.value = formatLocaleInput(parsed, digits);
+      });
+    }
+
+    function focusResults(){
+      const target = resultEls.highlightCard;
+      if (!target) return;
+      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      target.classList.remove('result-flash');
+      void target.offsetWidth;
+      target.classList.add('result-flash');
+      setTimeout(() => target.classList.remove('result-flash'), 1200);
+    }
+
+    function calculateAndRender(forceShowErrors = false){
+      state.inputs = getInputs();
+      const validation = validate(state.inputs);
+      state.isValid = validation.valid;
+      const meaningfulInput = hasMeaningfulInput(state.inputs);
+      const coreInputsReady = hasCoreInputs(state.inputs);
+
+      if (!validation.valid){
+        state.results = null;
+        state.isCalculated = false;
+        if (forceShowErrors) applyErrorState(validation.errors);
+        else clearErrorState();
+        setEmptyState();
+
+        if (!meaningfulInput){
+          return;
+        }
+
+        if (forceShowErrors || coreInputsReady){
+          resultEls.statusText.textContent = 'Bazı alanlarda geçersiz veya eksik veri var. Düzelttiğinde sonuçlar otomatik güncellenecek.';
+          resultEls.statusBadge.textContent = 'Eksik veri';
+          resultEls.statusBadge.className = 'badge bad';
+        } else {
+          resultEls.statusText.textContent = 'Girdiler tamamlandığında sonuç alanı otomatik güncellenecek.';
+          resultEls.statusBadge.textContent = 'Kısmi giriş';
+          resultEls.statusBadge.className = 'badge';
+        }
+        return;
+      }
+
+      clearErrorState();
+      state.results = compute(state.inputs);
+      state.isCalculated = true;
+      render(state.results);
+      if (!state.suppressPersist && state.activeSource === 'manual') persistState();
+    }
+
+    function persistState(){
+      const raw = {};
+      Object.keys(els).forEach((key) => {
+        if (els[key] && 'value' in els[key]) raw[key] = els[key].value;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(raw));
+    }
+
+    function loadState(){
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+      try{
+        const raw = JSON.parse(saved);
+        Object.keys(raw).forEach((key) => {
+          if (els[key] && 'value' in els[key]) els[key].value = raw[key];
+        });
+        state.activeSource = 'manual';
+      }catch(e){}
+    }
+
+    function resetForm(){
+      ['monthlyM3','daysInMonth','householdSize','waterUnitPrice','wasteUnitPrice','vatRate','fixedCost'].forEach((key) => els[key].value = '');
+      localStorage.removeItem(STORAGE_KEY);
+      clearErrorState();
+      state.inputs = {};
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      state.activeSource = 'manual';
+      state.suppressPersist = false;
+      document.querySelectorAll('#presetRow .chip').forEach((btn) => btn.classList.remove('active'));
+      setEmptyState();
+    }
+
+    function fillExample(){
+      const example = { monthlyM3: 12, daysInMonth: 30, householdSize: 3, waterUnitPrice: 24, wasteUnitPrice: 12, vatRate: 10, fixedCost: 5 };
+      applyPreset(example);
+      calculateAndRender(true);
+    }
+
+    function applyPreset(data){
+      Object.keys(data).forEach((key) => {
+        if (!els[key]) return;
+        const digits = ['daysInMonth','householdSize'].includes(key) ? 0 : 2;
+        els[key].value = formatLocaleInput(data[key], digits);
+      });
+      state.activeSource = 'demo';
+      state.suppressPersist = true;
+    }
+
+    function debounce(fn, wait = 180){
+      let timeout;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn(...args), wait);
+      };
+    }
+
+    const autoCalc = debounce(() => calculateAndRender(false), 180);
+
+    function fallbackCopyText(text){
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      textarea.style.pointerEvents = 'none';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(textarea);
+      return ok;
+    }
+
+    function copyResult(){
+      if (!state.isCalculated || !state.results) return;
+      const text = [
+        'Hesapica - Su Faturası Hesaplama',
+        `Tahmini toplam fatura: ${formatTRY(state.results.totalBill)}`,
+        `Su bedeli: ${formatTRY(state.results.waterCost)}`,
+        `Atık su bedeli: ${formatTRY(state.results.wasteCost)}`,
+        `KDV: ${formatTRY(state.results.vatAmount)}`,
+        `Kullanım skoru: ${formatNumber(state.results.scores.total, 0)}`,
+        `Karar: ${resultEls.decisionText.textContent}`
+      ].join('\n');
+      const successMessage = 'Sonuç özeti panoya kopyalandı. İstersen bunu bütçe planına veya paylaşım mesajına ekleyebilirsin.';
+      if (navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(() => {
+          resultEls.smartComment.textContent = successMessage;
+        }).catch(() => {
+          if (fallbackCopyText(text)) resultEls.smartComment.textContent = successMessage;
+          else alert('Sonuç panoya kopyalanamadı.');
+        });
+      } else if (fallbackCopyText(text)) {
+        resultEls.smartComment.textContent = successMessage;
+      } else {
+        alert('Sonuç panoya kopyalanamadı.');
+      }
+    }
+
+    function buildShareUrl(){
+      const params = new URLSearchParams();
+      ['monthlyM3','daysInMonth','householdSize','waterUnitPrice','wasteUnitPrice','vatRate','fixedCost'].forEach((key) => {
+        const val = els[key].value.trim();
+        if (val !== '') params.set(key, val);
+      });
+      return `${location.origin}${location.pathname}?${params.toString()}`;
+    }
+
+    function shareResult(){
+      if (!state.isCalculated || !state.results) return;
+      const url = buildShareUrl();
+      const text = `Su faturası tahmini: ${formatTRY(state.results.totalBill)}`;
+      if (navigator.share){
+        navigator.share({ title:'Su Faturası Hesaplama', text, url }).then(() => {
+          resultEls.smartComment.textContent = 'Sonuç paylaşım için hazırlandı.';
+        }).catch(() => {});
+      } else if (navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(url).then(() => {
+          resultEls.smartComment.textContent = 'Paylaşım bağlantısı panoya kopyalandı.';
+        }).catch(() => {
+          if (fallbackCopyText(url)) resultEls.smartComment.textContent = 'Paylaşım bağlantısı panoya kopyalandı.';
+          else alert('Paylaşım bağlantısı kopyalanamadı.');
+        });
+      } else if (fallbackCopyText(url)) {
+        resultEls.smartComment.textContent = 'Paylaşım bağlantısı panoya kopyalandı.';
+      } else {
+        alert('Paylaşım bağlantısı kopyalanamadı.');
+      }
+    }
+
+    function printResult(){
+      if (!state.isCalculated || !state.results) return;
+      window.print();
+    }
+
+    function hydrateFromUrl(){
+      const params = new URLSearchParams(location.search);
+      if ([...params.keys()].length === 0) return false;
+      ['monthlyM3','daysInMonth','householdSize','waterUnitPrice','wasteUnitPrice','vatRate','fixedCost'].forEach((key) => {
+        if (params.has(key) && els[key]) els[key].value = params.get(key);
+      });
+      state.activeSource = 'share';
+      state.suppressPersist = true;
+      return true;
+    }
+
+    Object.values(els).forEach((el) => {
+      if (!el || !('addEventListener' in el) || !('value' in el)) return;
+      el.addEventListener('input', () => {
+        state.activeSource = 'manual';
+        state.suppressPersist = false;
+        autoCalc();
+      });
+      el.addEventListener('blur', () => {
+        normalizeDisplayInputs();
+        if (state.activeSource === 'manual' && !state.suppressPersist) persistState();
+      });
+    });
+
+    els.calculateBtn.addEventListener('click', () => {
+      state.activeSource = 'manual';
+      state.suppressPersist = false;
+      calculateAndRender(true);
+      if (state.isCalculated && state.results) focusResults();
+    });
+    els.exampleBtn.addEventListener('click', () => {
+      state.activeSource = 'demo';
+      state.suppressPersist = true;
+      fillExample();
+      if (state.isCalculated && state.results) focusResults();
+    });
+    els.resetBtn.addEventListener('click', resetForm);
+    els.copyBtn.addEventListener('click', copyResult);
+    els.shareBtn.addEventListener('click', shareResult);
+    els.printBtn.addEventListener('click', printResult);
+
+    document.querySelectorAll('#presetRow .chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#presetRow .chip').forEach((chip) => chip.classList.remove('active'));
+        btn.classList.add('active');
+        applyPreset(presetData[btn.dataset.preset]);
+        calculateAndRender(true);
+        if (state.isCalculated && state.results) focusResults();
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && !['TEXTAREA', 'BUTTON'].includes(document.activeElement.tagName)){
+        event.preventDefault();
+        calculateAndRender(true);
+        if (state.isCalculated && state.results) focusResults();
+      }
+    });
+
+    setEmptyState();
+    updateActionButtons();
+    const fromUrl = hydrateFromUrl();
+    if (!fromUrl) loadState();
+    normalizeDisplayInputs();
+    if (Object.values(getInputs()).some((v) => v !== null && v !== '' && !Number.isNaN(v) && v !== 0)){
+      calculateAndRender(false);
+    }
+  </script>
+</body>
+</html>

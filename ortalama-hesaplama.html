@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ortalama Hesaplama | Average Calculator - Hesapica</title>
+<meta content="Aritmetik ortalama, ağırlıklı ortalama, medyan, mod, standart sapma, varyans, çeyrekler, aykırı değer analizi ve daha fazlasını tek araçta hesaplayın. English support included." name="description"/>
+<meta content="ortalama hesaplama, average calculator, aritmetik ortalama, weighted average, medyan, mod, standart sapma" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/ortalama-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Ortalama Hesaplama | Average Calculator - Hesapica" property="og:title"/>
+<meta content="Aritmetik ortalama, ağırlıklı ortalama, medyan, mod, standart sapma, varyans, çeyrekler, aykırı değer analizi ve daha fazlasını tek araçta hesaplayın. English support included." property="og:description"/>
+<meta content="https://hesapica.com/ortalama-hesaplama" property="og:url"/>
+<meta content="https://hesapica.com/assets/og-image.png" property="og:image"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ortalama Hesaplama | Average Calculator - Hesapica" name="twitter:title"/>
+<meta content="Aritmetik ortalama, ağırlıklı ortalama, medyan, mod, standart sapma, varyans, çeyrekler, aykırı değer analizi ve daha fazlasını tek araçta hesaplayın. English support included." name="twitter:description"/>
+<meta content="https://hesapica.com/assets/og-image.png" name="twitter:image"/>
+<meta content="https://hesapica.com/ortalama-hesaplama" name="twitter:url"/>
+<meta content="index,follow" name="robots"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --info:#2563eb;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .toprow{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .lang-switch{display:flex;gap:8px}
+    .lang-btn{
+      border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:800;transition:.18s ease;
+    }
+    .lang-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .hero{
+      margin-top:8px;padding:34px;border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.06fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    textarea,input,select{
+      width:100%;border:1px solid #d9def0;border-radius:16px;background:#fff;color:var(--text);outline:none;
+      font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    textarea{padding:16px;min-height:190px;resize:vertical;line-height:1.55}
+    input,select{height:56px;padding:0 16px}
+    textarea:focus,input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    textarea::placeholder,input::placeholder{color:#98a2b3;font-size:15px;line-height:1.5;opacity:1}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error{display:none;margin-top:7px;font-size:14px;color:var(--bad);font-weight:700}
+    .field.has-error .error{display:block}
+    .field.has-error textarea,.field.has-error input,.field.has-error select{border-color:rgba(185,28,28,.55);box-shadow:0 0 0 4px rgba(185,28,28,.08)}
+
+    .mode-switch{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .mode-btn{
+      border:none;cursor:pointer;padding:14px 16px;border-radius:16px;background:#f3f4f6;color:#111827;font-weight:800;transition:.18s ease;
+    }
+    .mode-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;transition:.18s ease}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn:disabled{cursor:not-allowed;opacity:.52;transform:none!important;box-shadow:none}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px;min-width:0}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .badge.info,.pill.info{background:#eff6ff;color:var(--info);border-color:#bfdbfe}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .health-card{padding:18px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10);min-width:0}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+
+    .mini-result-grid{display:grid;gap:12px;min-width:0}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:18px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd;min-width:0}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151;line-height:1.45}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right;min-width:0;overflow-wrap:anywhere}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .table-card{margin-top:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .content-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .content-card h2{margin:0 0 14px;font-size:24px;color:var(--primary)}
+    .content-card p,.content-card li{color:#374151}
+    .faq-item{border-top:1px solid #edf0f7;padding:18px 0}
+    .faq-item:first-of-type{border-top:0;padding-top:0}
+    .faq-item h3{margin:0 0 8px;font-size:18px}
+
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+
+    .validation-box{
+      margin:16px 0 0;padding:14px 16px;border-radius:18px;
+      background:#fff7ed;border:1px solid #fdba74;color:#9a3412;
+    }
+    .validation-box strong{display:block;margin-bottom:6px;font-size:14px}
+
+    .flash-focus{animation:resultPulse 1.35s ease}
+    @keyframes resultPulse{
+      0%{box-shadow:0 16px 40px rgba(79,70,229,.10),0 0 0 0 rgba(79,70,229,.26)}
+      35%{box-shadow:0 16px 40px rgba(79,70,229,.14),0 0 0 10px rgba(79,70,229,0)}
+      100%{box-shadow:0 16px 40px rgba(79,70,229,.10),0 0 0 0 rgba(79,70,229,0)}
+    }
+
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+    .hidden{display:none!important}
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.content-card,.highlight-card,.scorebox,.status-card{padding:20px}
+      .field-grid,.health-grid,.related-grid,.toprow,.mode-switch{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row,.toprow{flex-direction:column;align-items:flex-start}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Ortalama Hesaplama",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "inLanguage":["tr","en"],
+    "description":"Aritmetik ortalama, ağırlıklı ortalama, medyan, mod, standart sapma, varyans, çeyrekler ve aykırı değer analizini tek araçta hesaplayan Hesapica aracı."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"Aritmetik ortalamada her değer eşit önemdedir. Ağırlıklı ortalamada ise her değer kendi ağırlığı kadar etki eder."}},
+      {"@type":"Question","name":"Mod neden bazen yok çıkıyor?","acceptedAnswer":{"@type":"Answer","text":"Listede tekrar eden bir değer bulunmuyorsa mod anlamlı değildir."}},
+      {"@type":"Question","name":"Aykırı değer sinyali ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Veri setini bozan veya dağılımı çarpıtan değerleri fark etmeye yardımcı olur."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Genel Hesaplamalar","item":"https://hesapica.com/#ogrenci"},
+      {"@type":"ListItem","position":3,"name":"Ortalama Hesaplama","item":"https://hesapica.com/ortalama-hesaplama"}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;width:min(1180px,calc(100% - 32px));padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fdba74;color:#9a3412;font:600 14px/1.6 Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">Bu aracın tam çalışması için JavaScript etkin olmalıdır.</div></noscript>
+<div class="container topbar">
+<div class="toprow">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a data-i18n="crumbHome" href="/">Ana Sayfa</a><span>/</span>
+<a data-i18n="crumbCat" href="/#ogrenci">Genel Hesaplamalar</a><span>/</span>
+<strong data-i18n="crumbCurrent">Ortalama Hesaplama</strong>
+</nav>
+<div class="lang-switch">
+<button class="lang-btn active" id="langTr" onclick="setLanguage('tr')" type="button">TR</button>
+<button class="lang-btn" id="langEn" onclick="setLanguage('en')" type="button">EN</button>
+</div>
+</div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill" data-i18n="eyebrow">Hesapica • Gelişmiş Matematik Aracı</span>
+<h1 data-i18n="heroTitle">Ortalama Hesaplama</h1>
+<p data-i18n="heroDesc">Aritmetik ortalama, ağırlıklı ortalama, medyan, mod, toplam, minimum, maksimum, standart sapma, varyans, çeyrekler ve aykırı değer analizini tek araçta hesaplayın.</p>
+<div class="hero-chips">
+<span class="hero-chip" data-i18n="chip1">Aritmetik + ağırlıklı ortalama</span>
+<span class="hero-chip" data-i18n="chip2">Standart sapma + varyans</span>
+<span class="hero-chip" data-i18n="chip3">Çeyrekler + IQR</span>
+<span class="hero-chip" data-i18n="chip4">TR / EN destek</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow" data-i18n="heroBoxEyebrow">Gelişmiş analiz yaklaşımı</div>
+<strong data-i18n="heroBoxTitle">Sadece ortalamayı değil, verinin davranışını da göster</strong>
+<p data-i18n="heroBoxDesc">Bu araç yalnızca bir ortalama üretmez. Dağılım, merkez, tekrar, yayılım ve aykırı değer görünümünü de birlikte sunar. Böylece veri listesini daha doğru yorumlayabilirsin.</p>
+<ul>
+<li data-i18n="heroLi1">Temel özet istatistikler</li>
+<li data-i18n="heroLi2">Ağırlıklı katkı görünümü</li>
+<li data-i18n="heroLi3">Dağılım ve aykırı değer sinyali</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2 data-i18n="panelTitle">Hesaplama Paneli</h2>
+<p class="section-note" data-i18n="panelNote">Aracı boş başlar. İster düz sayı listesiyle ister değer-ağırlık çiftleriyle çalış. Sonuç alanında ortalama ile birlikte veri yapısının özeti de oluşur.</p>
+<div class="helper-box">
+<h3 data-i18n="helperTitle">Kısa not</h3>
+<p data-i18n="helperDesc">Bazı veri setlerinde tek başına ortalama yanıltıcı olabilir. Özellikle uç değerler, tekrar eden değerler veya dengesiz ağırlıklar olduğunda medyan, mod, standart sapma ve aykırı değer sinyali daha anlamlı hale gelir.</p>
+</div>
+<div aria-live="polite" class="validation-box hidden" id="validationBox" role="alert">
+<strong data-i18n="validationTitle" id="validationTitle">Kontrol etmen gereken alan var</strong>
+<div data-i18n="validationText" id="validationText">Hesaplama için geçerli veri gir.</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="modeTitle">Hesaplama modu</div>
+<div class="mode-switch">
+<button class="mode-btn active" data-i18n="modeSimple" id="simpleModeBtn" onclick="setMode('simple')" type="button">Aritmetik Ortalama</button>
+<button class="mode-btn" data-i18n="modeWeighted" id="weightedModeBtn" onclick="setMode('weighted')" type="button">Ağırlıklı Ortalama</button>
+</div>
+</div>
+<div class="form-section" id="simpleWrap">
+<div class="form-title" data-i18n="simpleTitle">Sayı listesi</div>
+<div class="field full">
+<label data-i18n="labelNumbers" for="numberInput">Sayılar</label>
+<textarea data-i18n-placeholder="numbersPlaceholder" id="numberInput" placeholder="Örn. 10, 20, 30 veya her satıra bir sayı"></textarea>
+<div class="hint" data-i18n="hintNumbers">Virgülle, boşlukla, noktalı virgülle veya satır satır girebilirsin.</div>
+<div class="error" data-i18n="errorNumbers">En az bir geçerli sayı gir.</div>
+</div>
+</div>
+<div class="form-section hidden" id="weightedWrap">
+<div class="form-title" data-i18n="weightedTitle">Değer ve ağırlık listesi</div>
+<div class="field full">
+<label data-i18n="labelWeighted" for="weightedInput">Değer,ağırlık satırları</label>
+<textarea data-i18n-placeholder="weightedPlaceholder" id="weightedInput" placeholder="Örn. 70;3 veya her satıra değer;ağırlık"></textarea>
+<div class="hint" data-i18n="hintWeighted">Her satıra bir değer ve ağırlık gir. Ağırlıklar pozitif olmalıdır.</div>
+<div class="error" data-i18n="errorWeighted">En az bir geçerli değer ve ağırlık çifti gir.</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="scenarioTitle">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" data-i18n="scenario1" onclick="fillScenario('simple1')" type="button">Dengeli sayı listesi</button>
+<button class="chip" data-i18n="scenario2" onclick="fillScenario('simple2')" type="button">Aykırı değer örneği</button>
+<button class="chip" data-i18n="scenario3" onclick="fillScenario('weighted1')" type="button">Ağırlıklı not örneği</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" data-i18n="btnCalc" onclick="calculateStats()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" data-i18n="btnExample" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" data-i18n="btnShare" id="shareBtn" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" data-i18n="btnCopy" id="copyBtn" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" data-i18n="btnClear" onclick="resetForm()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" data-i18n="btnPrint" id="printBtn" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong data-i18n="flowStrong">Sonuç özeti sağ panelde görünür</strong>
+<span data-i18n="flowSpan">Ortalama, dağılım, aykırı değer sinyali ve veri kalite yorumu birlikte gösterilir.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title" data-i18n="statusTitle">Sonuç alanı durumu</div>
+<div class="status-text" data-i18n="statusWait" id="statusText">Sonuç görmek için verileri doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge info" data-i18n="badgeWait" id="resultBadge">Bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label" data-i18n="mainLabel">Ana Sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" data-i18n="mainSub" id="mainSubtext">Ortalama sonucu burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small" data-i18n="scoreLabel">Veri Denge Skoru</div>
+<div class="score-value" id="balanceScore">0/100</div>
+</div>
+<span class="pill info" data-i18n="badgeScoreWait" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong data-i18n="scoreExplainTitle">Bu skor neyi ifade eder?</strong>
+<div class="small" data-i18n="scoreExplainText" id="scoreExplain">Skor; medyan-ortalama yakınlığı, standart sapma ve aykırı değer baskısına göre verinin ne kadar dengeli göründüğünü ifade eder. Daha yüksek skor, daha dengeli dağılım anlamına gelir.</div>
+</div>
+</section>
+<div class="health-grid">
+<div class="health-card">
+<h3 data-i18n="card1Title">Medyan</h3>
+<div class="big" id="medianResult">—</div>
+<div class="small" data-i18n="card1Sub" id="medianSub">Merkezi değer görünümü</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card2Title">Standart sapma</h3>
+<div class="big" id="stdResult">—</div>
+<div class="small" data-i18n="card2Sub" id="stdSub">Dağılım seviyesi görünümü</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card3Title">Karar</h3>
+<div class="big" id="healthDecision">—</div>
+<div class="small" data-i18n="card3Sub" id="healthDecisionSub">Yorum için veri bekleniyor</div>
+</div>
+</div>
+<div class="mini-result-grid" style="margin-top:16px">
+<div class="mini-result is-empty" id="mini1"><div class="label" data-i18n="mini1">Toplam</div><div class="value" id="sumResult">—</div></div>
+<div class="mini-result is-empty" id="mini2"><div class="label" data-i18n="mini2">Adet</div><div class="value" id="countResult">—</div></div>
+<div class="mini-result is-empty" id="mini3"><div class="label" data-i18n="mini3">Mod</div><div class="value" id="modeResult">—</div></div>
+<div class="mini-result is-empty" id="mini4"><div class="label" data-i18n="mini4">Aykırı değer</div><div class="value" id="outlierResult">—</div></div>
+</div>
+<div class="comment-box" data-i18n="commentWait" id="smartComment" style="margin-top:16px">Verilerini girdikten sonra hesaplama özeti ve kısa yorum burada gösterilecek.</div>
+</aside>
+</section>
+<section class="table-card card">
+<h2 data-i18n="tableTitle">Detaylı sonuç tablosu</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th data-i18n="th1">#</th>
+<th data-i18n="th2">Değer</th>
+<th data-i18n="th3" id="weightHeader">Ağırlık</th>
+<th data-i18n="th4" id="contribHeader">Katkı</th>
+<th data-i18n="th5">Not</th>
+</tr>
+</thead>
+<tbody id="resultTableBody">
+<tr><td colspan="5" data-i18n="tableWait">Henüz veri hesaplanmadı.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-grid">
+<article class="content-card">
+<h2 data-i18n="content1Title">Ortalama neden tek başına yeterli olmayabilir?</h2>
+<p data-i18n="content1P1">Aritmetik ortalama faydalı bir merkez ölçüsüdür; ancak veri setinde uç değerler varsa tek başına yanıltıcı olabilir. Bu yüzden medyan, mod, standart sapma ve çeyrekler birlikte değerlendirilmelidir.</p>
+<p data-i18n="content1P2">Bu araç tam olarak bunu yapar: sadece ortalamayı değil, verinin ne kadar düzenli, dengesiz veya aykırı değer içerdiğini de görünür hale getirir.</p>
+</article>
+<article class="content-card">
+<h2 data-i18n="faqTitle">Sık Sorulan Sorular</h2>
+<div class="faq-item">
+<h3 data-i18n="faq1q">Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?</h3>
+<p data-i18n="faq1a">Aritmetik ortalamada her değer eşit önemdedir. Ağırlıklı ortalamada ise her değer kendi ağırlığı kadar etki eder.</p>
+</div>
+<div class="faq-item">
+<h3 data-i18n="faq2q">Mod neden bazen “yok” çıkıyor?</h3>
+<p data-i18n="faq2a">Çünkü listede tekrar eden bir değer bulunmayabilir. Bu durumda mod anlamlı değildir.</p>
+</div>
+<div class="faq-item">
+<h3 data-i18n="faq3q">Aykırı değer sinyali ne işe yarar?</h3>
+<p data-i18n="faq3a">Veri setini bozan veya dağılımı çarpıtan değerleri fark etmeye yardımcı olur. Özellikle analiz yaparken çok faydalıdır.</p>
+</div>
+</article>
+</section>
+<section class="content-card" style="margin-top:24px">
+<h2 data-i18n="relatedTitle">İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/not-ortalamasi-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related1t">Not Ortalaması Hesaplama</strong><p data-i18n="related1d">Ağırlıklı ders notu mantığıyla daha özel ortalama hesapla.</p></a>
+<a class="related-card" href="/yuzde-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related2t">Yüzde Hesaplama</strong><p data-i18n="related2d">Oran ve değişim hesabını ayrıca analiz et.</p></a>
+<a class="related-card" href="/iki-tarih-arasi-gun-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related3t">İki Tarih Arası Gün Hesaplama</strong><p data-i18n="related3d">Süre, fark ve zaman aralığı hesaplarını ayrı bir araçla incele.</p></a>
+</div>
+</section>
+<div class="footer-note" data-i18n="footerNote">Hesapica · Ortalama Hesaplama aracı, temel ve ileri özet istatistikleri tek ekranda göstermeyi hedefler.</div>
+</main>
+<script>
+    const translations = {
+      tr: {
+        pageTitle:"Ortalama Hesaplama | Average Calculator - Hesapica",
+        crumbHome:"Ana Sayfa", crumbCat:"Genel Hesaplamalar", crumbCurrent:"Ortalama Hesaplama",
+        eyebrow:"Hesapica • Gelişmiş Matematik Aracı", heroTitle:"Ortalama Hesaplama",
+        heroDesc:"Aritmetik ortalama, ağırlıklı ortalama, medyan, mod, toplam, minimum, maksimum, standart sapma, varyans, çeyrekler ve aykırı değer analizini tek araçta hesaplayın.",
+        chip1:"Aritmetik + ağırlıklı ortalama", chip2:"Standart sapma + varyans", chip3:"Çeyrekler + IQR", chip4:"TR / EN destek",
+        heroBoxEyebrow:"Gelişmiş analiz yaklaşımı", heroBoxTitle:"Sadece ortalamayı değil, verinin davranışını da göster",
+        heroBoxDesc:"Bu araç yalnızca bir ortalama üretmez. Dağılım, merkez, tekrar, yayılım ve aykırı değer görünümünü de birlikte sunar. Böylece veri listesini daha doğru yorumlayabilirsin.",
+        heroLi1:"Temel özet istatistikler", heroLi2:"Ağırlıklı katkı görünümü", heroLi3:"Dağılım ve aykırı değer sinyali",
+        panelTitle:"Hesaplama Paneli", panelNote:"Araç boş başlar. İster düz sayı listesiyle ister değer-ağırlık çiftleriyle çalış. Sonuç alanında ortalama ile birlikte veri yapısının özeti de oluşur.",
+        helperTitle:"Kısa not", helperDesc:"Bazı veri setlerinde tek başına ortalama yanıltıcı olabilir. Özellikle uç değerler, tekrar eden değerler veya dengesiz ağırlıklar olduğunda medyan, mod, standart sapma ve aykırı değer sinyali daha anlamlı hale gelir.",
+        modeTitle:"Hesaplama modu", modeSimple:"Aritmetik Ortalama", modeWeighted:"Ağırlıklı Ortalama",
+        simpleTitle:"Sayı listesi", weightedTitle:"Değer ve ağırlık listesi",
+        labelNumbers:"Sayılar", labelWeighted:"Değer,ağırlık satırları",
+        numbersPlaceholder:"Sayıları virgülle, boşlukla veya satır satır gir.\nÖrnek:\n10, 20, 30, 40\nveya\n10\n20\n30\n40",
+        weightedPlaceholder:"Her satıra değer,ağırlık yaz.\nÖrnek:\n70,3\n85,4\n90,2\n60,1",
+        hintNumbers:"Virgülle, boşlukla, noktalı virgülle veya satır satır girebilirsin.",
+        hintWeighted:"Her satıra bir değer ve ağırlık gir. Ağırlıklar pozitif olmalıdır.",
+        errorNumbers:"En az bir geçerli sayı gir.", errorWeighted:"En az bir geçerli değer ve ağırlık çifti gir.",
+        scenarioTitle:"Hazır senaryolar", scenario1:"Dengeli sayı listesi", scenario2:"Aykırı değer örneği", scenario3:"Ağırlıklı not örneği",
+        btnCalc:"Sonucu Gör", btnExample:"Örnek Veri", btnClear:"Verileri Sıfırla", btnCopy:"Sonucu Kopyala", btnShare:"Paylaş", btnPrint:"Yazdır / PDF", validationTitle:"Kontrol etmen gereken alan var", validationText:"Hesaplama için geçerli veri gir.", validationTextSimple:"En az bir geçerli sayı gir.", validationTextWeighted:"En az bir geçerli değer ve ağırlık çifti gir.", shareSuccess:"Sonuç paylaşım için hazırlandı.", shareFallback:"Paylaşım desteklenmiyor. Sonuç panoya kopyalandı.", resultNeeded:"Önce geçerli bir sonuç oluştur.", exampleLoadedSimple:"Örnek sayı listesi yüklendi.", exampleLoadedWeighted:"Örnek ağırlıklı veri yüklendi.",
+        flowStrong:"Sonuç özeti sağ panelde görünür", flowSpan:"Ortalama, dağılım, aykırı değer sinyali ve veri kalite yorumu birlikte gösterilir.",
+        statusTitle:"Sonuç alanı durumu", statusWait:"Sonuç görmek için verileri doldur veya örnek veri kullan.", badgeWait:"Bekleniyor",
+        mainLabel:"Ana Sonuç", mainSub:"Ortalama sonucu burada görünecek.",
+        scoreLabel:"Veri Denge Skoru", badgeScoreWait:"Veri bekleniyor",
+        scoreExplainTitle:"Bu skor neyi ifade eder?", scoreExplainText:"Skor; medyan-ortalama yakınlığı, standart sapma ve aykırı değer baskısına göre verinin ne kadar dengeli göründüğünü ifade eder. Daha yüksek skor, daha dengeli dağılım anlamına gelir.",
+        card1Title:"Medyan", card1Sub:"Merkezi değer görünümü", card2Title:"Standart sapma", card2Sub:"Dağılım seviyesi görünümü", card3Title:"Karar", card3Sub:"Yorum için veri bekleniyor",
+        mini1:"Toplam", mini2:"Adet", mini3:"Mod", mini4:"Aykırı değer",
+        commentWait:"Verilerini girdikten sonra hesaplama özeti ve kısa yorum burada gösterilecek.",
+        tableTitle:"Detaylı sonuç tablosu", th1:"#", th2:"Değer", th3:"Ağırlık", th4:"Katkı", th5:"Not", tableWait:"Henüz veri hesaplanmadı.",
+        content1Title:"Ortalama neden tek başına yeterli olmayabilir?", content1P1:"Aritmetik ortalama faydalı bir merkez ölçüsüdür; ancak veri setinde uç değerler varsa tek başına yanıltıcı olabilir. Bu yüzden medyan, mod, standart sapma ve çeyrekler birlikte değerlendirilmelidir.", content1P2:"Bu araç tam olarak bunu yapar: sadece ortalamayı değil, verinin ne kadar düzenli, dengesiz veya aykırı değer içerdiğini de görünür hale getirir.",
+        faqTitle:"Sık Sorulan Sorular", faq1q:"Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?", faq1a:"Aritmetik ortalamada her değer eşit önemdedir. Ağırlıklı ortalamada ise her değer kendi ağırlığı kadar etki eder.", faq2q:"Mod neden bazen “yok” çıkıyor?", faq2a:"Çünkü listede tekrar eden bir değer bulunmayabilir. Bu durumda mod anlamlı değildir.", faq3q:"Aykırı değer sinyali ne işe yarar?", faq3a:"Veri setini bozan veya dağılımı çarpıtan değerleri fark etmeye yardımcı olur. Özellikle analiz yaparken çok faydalıdır.",
+        relatedTitle:"İlgili Araçlar", relatedSmall:"İlgili Araç", related1t:"Not Ortalaması Hesaplama", related1d:"Ağırlıklı ders notu mantığıyla daha özel ortalama hesapla.", related2t:"Yüzde Hesaplama", related2d:"Oran ve değişim hesabını ayrıca analiz et.", related3t:"İki Tarih Arası Gün Hesaplama", related3d:"Süre, fark ve zaman aralığı hesaplarını ayrı bir araçla incele.",
+        footerNote:"Hesapica · Ortalama Hesaplama aracı, temel ve ileri özet istatistikleri tek ekranda göstermeyi hedefler.",
+        stateReady:"Analiz hazır", stateMissing:"Eksik veri", stateBalanced:"Dengeli", stateBorder:"Sınırda", stateSkewed:"Dağınık",
+        decisionBalanced:"Dengeli", decisionWatch:"İzlenmeli", decisionAttention:"Dikkat",
+        modeNone:"Yok", outlierNone:"Yok", outlierOne:"1 adet", outlierMany:"adet",
+        noteNormal:"Normal satır", noteOutlier:"Aykırı sinyal", noteHighWeight:"Yüksek ağırlık",
+        modeSimpleDesc:"Aritmetik ortalama, sayıların toplamının adet sayısına bölünmesiyle hesaplandı.",
+        modeWeightedDesc:"Ağırlıklı ortalama, değer × ağırlık katkılarının toplamının toplam ağırlığa bölünmesiyle hesaplandı.",
+        invalidSimple:"Hesaplama için en az bir geçerli sayı girmelisin.",
+        invalidWeighted:"Ağırlıklı hesaplama için en az bir geçerli değer ve ağırlık çifti girmelisin.", tooManySimple:"Aynı anda en fazla 1000 sayı analiz edebilirsin.", tooManyWeighted:"Aynı anda en fazla 500 ağırlıklı satır analiz edebilirsin.", valueTooLarge:"Sayıların mutlak değeri 1 milyarı aşmamalı.", weightTooLarge:"Ağırlıklar 1.000.000 değerini aşmamalı.", weightedRowIssue:"Her satırda geçerli bir değer ve pozitif bir ağırlık bulunmalı.",
+        smartBalanced:"Veri seti dengeli görünüyor. Ortalama ile medyan birbirine yakın ve yayılım aşırı yüksek değil.",
+        smartBorder:"Veri setinde bir miktar dağılma var. Ortalama kullanılabilir ama medyanı da birlikte okumak daha güvenli olur.",
+        smartSkewed:"Veri seti belirgin şekilde dağınık veya aykırı değer içeriyor. Tek başına ortalama yanıltıcı olabilir.",
+        copySuccess:"Sonuç panoya kopyalandı.",
+        resultAvg:"Ortalama", resultSum:"Toplam", resultCount:"Adet", resultMedian:"Medyan", resultMode:"Mod", resultStd:"Standart Sapma", resultVariance:"Varyans", resultOutlier:"Aykırı Değer", resultComment:"Yorum",
+        detailValue:"Değer", detailWeight:"Ağırlık", detailContribution:"Katkı", detailNote:"Not",
+        extraQ1:"Q1", extraQ3:"Q3", extraIqr:"IQR", extraRange:"Aralık", extraMin:"Minimum", extraMax:"Maksimum", extraWeightTotal:"Toplam ağırlık"
+      },
+      en: {
+        pageTitle:"Average Calculator | Hesapica",
+        crumbHome:"Home", crumbCat:"General Calculators", crumbCurrent:"Average Calculator",
+        eyebrow:"Hesapica • Gelişmiş Matematik Aracı", heroTitle:"Average Calculator",
+        heroDesc:"Calculate arithmetic mean, weighted average, median, mode, sum, minimum, maximum, standard deviation, variance, quartiles and outlier analysis in one tool.",
+        chip1:"Arithmetic + weighted average", chip2:"Standard deviation + variance", chip3:"Quartiles + IQR", chip4:"TR / EN support",
+        heroBoxEyebrow:"Advanced analysis approach", heroBoxTitle:"Show not only the average, but also how the data behaves",
+        heroBoxDesc:"This tool does not produce only one average. It also shows distribution, center, repetition, spread and outlier visibility, so you can interpret the data list more accurately.",
+        heroLi1:"Core summary statistics", heroLi2:"Weighted contribution view", heroLi3:"Distribution and outlier signal",
+        panelTitle:"Calculation Panel", panelNote:"The tool starts empty. Work either with a plain number list or value-weight pairs. The result area will show both the average and the structure of the data.",
+        helperTitle:"Quick note", helperDesc:"In some datasets, the average alone can be misleading. Especially when there are extreme values, repeated values or imbalanced weights, median, mode, standard deviation and outlier signals become more meaningful.",
+        modeTitle:"Calculation mode", modeSimple:"Arithmetic Average", modeWeighted:"Weighted Average",
+        simpleTitle:"Number list", weightedTitle:"Value and weight list",
+        labelNumbers:"Numbers", labelWeighted:"Value,weight rows",
+        numbersPlaceholder:"Enter numbers separated by commas, spaces or lines.\nExample:\n10, 20, 30, 40\nor\n10\n20\n30\n40",
+        weightedPlaceholder:"Write value,weight on each line.\nExample:\n70,3\n85,4\n90,2\n60,1",
+        hintNumbers:"You can enter values separated by commas, spaces, semicolons or line breaks.",
+        hintWeighted:"Enter one value and one weight per line. Weights must be positive.",
+        errorNumbers:"Enter at least one valid number.", errorWeighted:"Enter at least one valid value-weight pair.",
+        scenarioTitle:"Quick scenarios", scenario1:"Balanced list", scenario2:"Outlier example", scenario3:"Weighted grade example",
+        btnCalc:"See Result", btnExample:"Sample Data", btnClear:"Reset Inputs", btnCopy:"Copy Result", btnShare:"Share", btnPrint:"Print / PDF", validationTitle:"There is a field to review", validationText:"Enter valid data for calculation.", validationTextSimple:"Enter at least one valid number.", validationTextWeighted:"Enter at least one valid value-weight pair.", shareSuccess:"The result is ready to share.", shareFallback:"Sharing is not supported. The result was copied to the clipboard.", resultNeeded:"Create a valid result first.", exampleLoadedSimple:"Sample number list loaded.", exampleLoadedWeighted:"Sample weighted data loaded.",
+        flowStrong:"Result summary appears on the right panel", flowSpan:"Average, spread, outlier signal and data quality interpretation are shown together.",
+        statusTitle:"Result status", statusWait:"Fill in the values or use sample data to see results.", badgeWait:"Waiting",
+        mainLabel:"Main Result", mainSub:"The average result will appear here.",
+        scoreLabel:"Data Balance Score", badgeScoreWait:"Waiting for data",
+        scoreExplainTitle:"What does this score mean?", scoreExplainText:"The score expresses how balanced the dataset looks based on the closeness of median and average, standard deviation and outlier pressure. A higher score means a more balanced distribution.",
+        card1Title:"Median", card1Sub:"Central value view", card2Title:"Standard deviation", card2Sub:"Spread level view", card3Title:"Decision", card3Sub:"Waiting for interpretation",
+        mini1:"Sum", mini2:"Count", mini3:"Mode", mini4:"Outliers",
+        commentWait:"After calculation, a short smart interpretation will appear here.",
+        tableTitle:"Detailed results table", th1:"#", th2:"Value", th3:"Weight", th4:"Contribution", th5:"Note", tableWait:"No data calculated yet.",
+        content1Title:"Why may average alone be insufficient?", content1P1:"Arithmetic mean is a useful center measure, but if the dataset contains extreme values it can be misleading on its own. That is why median, mode, standard deviation and quartiles should be evaluated together.", content1P2:"This tool does exactly that: it makes visible not only the average, but also whether the dataset is regular, imbalanced or contains outliers.",
+        faqTitle:"Frequently Asked Questions", faq1q:"What is the difference between arithmetic and weighted average?", faq1a:"In arithmetic average each value matters equally. In weighted average, each value affects the result according to its weight.", faq2q:"Why does mode sometimes return “none”?", faq2a:"Because there may be no repeating value in the list. In that case, mode is not meaningful.", faq3q:"What is the outlier signal useful for?", faq3a:"It helps detect values that distort the dataset or skew the distribution. It is especially helpful in analysis.",
+        relatedTitle:"Related Tools", relatedSmall:"Related Tool", related1t:"Grade Average Calculator", related1d:"Calculate a more specific average with weighted course-grade logic.", related2t:"Percentage Calculator", related2d:"Analyze ratio and change separately.", related3t:"Days Between Dates Calculator", related3d:"Review duration, difference and date interval calculations in a separate tool.",
+        footerNote:"Hesapica · The Average Calculator aims to show basic and advanced summary statistics on a single screen.",
+        stateReady:"Analysis ready", stateMissing:"Missing data", stateBalanced:"Balanced", stateBorder:"Borderline", stateSkewed:"Scattered",
+        decisionBalanced:"Balanced", decisionWatch:"Watch", decisionAttention:"Attention",
+        modeNone:"None", outlierNone:"None", outlierOne:"1 item", outlierMany:"items",
+        noteNormal:"Normal row", noteOutlier:"Outlier signal", noteHighWeight:"High weight",
+        modeSimpleDesc:"The arithmetic average was calculated by dividing the sum of values by the number of values.",
+        modeWeightedDesc:"The weighted average was calculated by dividing the total of value × weight contributions by the total weight.",
+        invalidSimple:"You need to enter at least one valid number to calculate.",
+        invalidWeighted:"You need to enter at least one valid value and weight pair for weighted calculation.", tooManySimple:"You can analyze at most 1000 numbers at once.", tooManyWeighted:"You can analyze at most 500 weighted rows at once.", valueTooLarge:"Absolute values must stay below 1 billion.", weightTooLarge:"Weights must not exceed 1,000,000.", weightedRowIssue:"Each row must contain a valid value and a positive weight.",
+        smartBalanced:"The dataset looks balanced. Mean and median are close to each other and the spread is not excessively high.",
+        smartBorder:"There is some dispersion in the dataset. The average is usable, but it is safer to read it together with the median.",
+        smartSkewed:"The dataset is clearly scattered or contains outliers. The average alone may be misleading.",
+        copySuccess:"Result copied to clipboard.",
+        resultAvg:"Average", resultSum:"Sum", resultCount:"Count", resultMedian:"Median", resultMode:"Mode", resultStd:"Standard Deviation", resultVariance:"Variance", resultOutlier:"Outliers", resultComment:"Comment",
+        detailValue:"Value", detailWeight:"Weight", detailContribution:"Contribution", detailNote:"Note",
+        extraQ1:"Q1", extraQ3:"Q3", extraIqr:"IQR", extraRange:"Range", extraMin:"Minimum", extraMax:"Maximum", extraWeightTotal:"Total weight"
+      }
+    };
+
+    const STORAGE_KEY = 'hesapica_ortalama_lock_v4';
+    const DEFAULT_STATE = {
+      lang:'tr',
+      mode:'simple',
+      numberInput:'',
+      weightedInput:'',
+      isCalculated:false,
+      isValid:false,
+      dataMode:'manual'
+    };
+
+    const state = { ...DEFAULT_STATE };
+
+    const LIMITS = {
+      maxSimpleValues: 1000,
+      maxWeightedRows: 500,
+      maxAbsValue: 1_000_000_000,
+      maxWeight: 1_000_000
+    };
+
+    const numberInput = document.getElementById('numberInput');
+    const weightedInput = document.getElementById('weightedInput');
+    const validationBox = document.getElementById('validationBox');
+    const validationText = document.getElementById('validationText');
+    const shareBtn = document.getElementById('shareBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const printBtn = document.getElementById('printBtn');
+
+    let autoCalcTimer = null;
+    let suppressSave = false;
+
+    function t(key){ return translations[state.lang][key] || key; }
+
+    function saveState(){
+      if (suppressSave || state.dataMode !== 'manual') return;
+      const payload = {
+        lang: state.lang,
+        mode: state.mode,
+        numberInput: numberInput.value,
+        weightedInput: weightedInput.value,
+        isCalculated: state.isCalculated,
+        isValid: state.isValid,
+        dataMode: 'manual'
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function loadState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        const parsed = JSON.parse(raw);
+        if(parsed && typeof parsed === 'object'){
+          Object.assign(state, DEFAULT_STATE, parsed);
+        }
+      }catch(err){}
+    }
+
+    function clearSavedState(){
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function showValidation(message){
+      validationText.textContent = message || t('validationText');
+      validationBox.classList.remove('hidden');
+    }
+
+    function hideValidation(){
+      validationBox.classList.add('hidden');
+      validationText.textContent = t('validationText');
+    }
+
+    function updateActionButtons(isEnabled){
+      [shareBtn, copyBtn, printBtn].forEach(btn => {
+        if (!btn) return;
+        btn.disabled = !isEnabled;
+        btn.setAttribute('aria-disabled', String(!isEnabled));
+      });
+    }
+
+    function queueAutoCalculate(){
+      clearTimeout(autoCalcTimer);
+      autoCalcTimer = setTimeout(() => {
+        if ((state.mode === 'simple' && numberInput.value.trim()) || (state.mode === 'weighted' && weightedInput.value.trim())){
+          calculateStats({auto:true});
+        } else {
+          state.isCalculated = false;
+          state.isValid = false;
+          saveState();
+          resetResultOnly();
+        }
+      }, 280);
+    }
+
+    function revealResultPanel(){
+      const panel = document.getElementById('resultPanel');
+      if (panel){
+        panel.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+      const highlight = document.getElementById('highlightCard');
+      if (highlight){
+        highlight.classList.remove('flash-focus');
+        void highlight.offsetWidth;
+        highlight.classList.add('flash-focus');
+        clearTimeout(revealResultPanel._timer);
+        revealResultPanel._timer = setTimeout(() => highlight.classList.remove('flash-focus'), 1500);
+      }
+    }
+
+    function getShareText(){
+      return [
+        t('resultAvg') + ': ' + document.getElementById('mainResult').textContent,
+        t('resultSum') + ': ' + document.getElementById('sumResult').textContent,
+        t('resultCount') + ': ' + document.getElementById('countResult').textContent,
+        t('resultMedian') + ': ' + document.getElementById('medianResult').textContent,
+        t('resultMode') + ': ' + document.getElementById('modeResult').textContent,
+        t('resultStd') + ': ' + document.getElementById('stdResult').textContent,
+        t('resultOutlier') + ': ' + document.getElementById('outlierResult').textContent,
+        '',
+        t('resultComment') + ':',
+        document.getElementById('smartComment').textContent
+      ].join('\n');
+    }
+
+    function flashComment(message){
+      const old = document.getElementById('smartComment').textContent;
+      document.getElementById('smartComment').textContent = message;
+      setTimeout(() => {
+        if (document.getElementById('smartComment').textContent === message){
+          document.getElementById('smartComment').textContent = old;
+        }
+      }, 1600);
+    }
+
+    function formatNum(value, digits = 2){
+      return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      }).format(Number(value || 0));
+    }
+
+    function setLanguage(lang){
+      state.lang = lang;
+      document.documentElement.lang = lang;
+      document.title = t('pageTitle');
+      document.getElementById('langTr').classList.toggle('active', lang === 'tr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.querySelectorAll('[data-i18n]').forEach(el => el.textContent = t(el.dataset.i18n));
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => el.placeholder = t(el.dataset.i18nPlaceholder));
+      if (state.isCalculated) calculateStats({skipSave:true});
+      else resetResultOnly();
+      saveState();
+    }
+
+    function setMode(mode){
+      state.mode = mode;
+      document.getElementById('simpleModeBtn').classList.toggle('active', mode === 'simple');
+      document.getElementById('weightedModeBtn').classList.toggle('active', mode === 'weighted');
+      document.getElementById('simpleWrap').classList.toggle('hidden', mode !== 'simple');
+      document.getElementById('weightedWrap').classList.toggle('hidden', mode !== 'weighted');
+      document.getElementById('weightHeader').classList.toggle('hidden', mode !== 'weighted');
+      document.getElementById('contribHeader').classList.toggle('hidden', mode !== 'weighted');
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+      hideValidation();
+      resetResultOnly();
+      saveState();
+    }
+
+    function clearErrors(){ document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error')); }
+
+    function normalizeNumberish(raw){
+      if (raw === null || raw === undefined) return NaN;
+      let value = String(raw).trim();
+      if (!value) return NaN;
+      value = value
+        .replace(/ /g, '')
+        .replace(/\s+/g, '')
+        .replace(/[−–—]/g, '-');
+
+      if (!/^[+-]?[\d.,]+$/.test(value)) return NaN;
+
+      const sign = value.startsWith('-') ? -1 : 1;
+      value = value.replace(/^[+-]/, '');
+
+      const commaCount = (value.match(/,/g) || []).length;
+      const dotCount = (value.match(/\./g) || []).length;
+
+      if (commaCount && dotCount){
+        const lastComma = value.lastIndexOf(',');
+        const lastDot = value.lastIndexOf('.');
+        const decimalSep = lastComma > lastDot ? ',' : '.';
+        const thousandSep = decimalSep === ',' ? '.' : ',';
+        value = value.split(thousandSep).join('');
+        if (decimalSep === ',') value = value.replace(',', '.');
+      } else if (commaCount || dotCount){
+        const sep = commaCount ? ',' : '.';
+        const parts = value.split(sep);
+
+        if (parts.length > 2){
+          const last = parts.pop();
+          const head = parts.join('');
+          const decimalLike = last && last.length !== 3;
+          value = decimalLike ? `${head}.${last}` : `${head}${last}`;
+        } else if (parts.length === 2){
+          const [left, right] = parts;
+          const thousandLike = right.length === 3 && left.length >= 1 && /^\d+$/.test(right) && (
+            (state.lang === 'tr' && sep === '.') || (state.lang === 'en' && sep === ',')
+          );
+          value = thousandLike ? `${left}${right}` : `${left}.${right}`;
+        }
+      }
+
+      const parsed = sign * Number(value);
+      return Number.isFinite(parsed) ? parsed : NaN;
+    }
+
+    function splitSimpleTokens(text){
+      const raw = String(text || '').replace(/\r/g, '').trim();
+      if (!raw) return [];
+
+      if (/[;\n|]/.test(raw)){
+        return raw
+          .split(/[;\n|]+/)
+          .flatMap(part => part.split(/,\s+|\t+|\s{2,}/))
+          .map(item => item.trim())
+          .filter(Boolean);
+      }
+
+      if (/\d,\s+[-+]?\d/.test(raw)){
+        return raw
+          .split(/,\s+/)
+          .flatMap(part => part.split(/\s+/))
+          .map(item => item.trim())
+          .filter(Boolean);
+      }
+
+      if ((raw.match(/,/g) || []).length > 1 && !raw.includes('.') && !raw.includes(' ')){
+        return raw.split(',').map(item => item.trim()).filter(Boolean);
+      }
+
+      return raw.split(/\s+/).map(item => item.trim()).filter(Boolean);
+    }
+
+    function parseSimpleNumbers(text){
+      return splitSimpleTokens(text)
+        .map(token => normalizeNumberish(token))
+        .filter(item => !Number.isNaN(item));
+    }
+
+    function parseWeightedLine(line){
+      let parts = null;
+
+      if (line.includes(';')){
+        parts = line.split(';');
+      } else if (line.includes('|')){
+        parts = line.split('|');
+      } else if (/\t+/.test(line)){
+        parts = line.split(/\t+/);
+      } else if (/^\s*[^,]+,\s+[^,]+\s*$/.test(line)){
+        parts = line.split(/,\s+/);
+      } else if (/\s{2,}/.test(line)){
+        parts = line.split(/\s{2,}/);
+      } else {
+        const matches = line.match(/[+-]?(?:\d[\d.,]*|\.\d+)/g);
+        if (matches && matches.length >= 2){
+          parts = [matches[0], matches[1]];
+        } else if ((line.match(/,/g) || []).length === 1){
+          parts = line.split(',');
+        }
+      }
+
+      if (!parts || parts.length < 2) return null;
+
+      const value = normalizeNumberish(parts[0]);
+      const weight = normalizeNumberish(parts[1]);
+
+      if (Number.isNaN(value) || Number.isNaN(weight) || weight <= 0) return null;
+      return { value, weight };
+    }
+
+    function parseWeightedNumbers(text){
+      return String(text || '')
+        .split('\n')
+        .map(line => line.trim())
+        .filter(Boolean)
+        .map(parseWeightedLine)
+        .filter(Boolean);
+    }
+
+    function validate(){
+      clearErrors();
+      hideValidation();
+      if (state.mode === 'simple'){
+        const nums = parseSimpleNumbers(numberInput.value);
+        if (!nums.length){
+          numberInput.closest('.field').classList.add('has-error');
+          showValidation(t('validationTextSimple'));
+          return false;
+        }
+        if (nums.length > LIMITS.maxSimpleValues){
+          numberInput.closest('.field').classList.add('has-error');
+          showValidation(t('tooManySimple'));
+          return false;
+        }
+        if (nums.some(num => Math.abs(num) > LIMITS.maxAbsValue)){
+          numberInput.closest('.field').classList.add('has-error');
+          showValidation(t('valueTooLarge'));
+          return false;
+        }
+      } else {
+        const rawLines = String(weightedInput.value || '').split('\n').map(line => line.trim()).filter(Boolean);
+        const rows = parseWeightedNumbers(weightedInput.value);
+        if (!rows.length){
+          weightedInput.closest('.field').classList.add('has-error');
+          showValidation(t('validationTextWeighted'));
+          return false;
+        }
+        if (rawLines.length > LIMITS.maxWeightedRows){
+          weightedInput.closest('.field').classList.add('has-error');
+          showValidation(t('tooManyWeighted'));
+          return false;
+        }
+        if (rows.length !== rawLines.length){
+          weightedInput.closest('.field').classList.add('has-error');
+          showValidation(t('weightedRowIssue'));
+          return false;
+        }
+        if (rows.some(row => Math.abs(row.value) > LIMITS.maxAbsValue)){
+          weightedInput.closest('.field').classList.add('has-error');
+          showValidation(t('valueTooLarge'));
+          return false;
+        }
+        if (rows.some(row => row.weight > LIMITS.maxWeight)){
+          weightedInput.closest('.field').classList.add('has-error');
+          showValidation(t('weightTooLarge'));
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function sorted(arr){ return [...arr].sort((a,b)=>a-b); }
+
+    function median(arr){
+      const s = sorted(arr);
+      const n = s.length;
+      const mid = Math.floor(n/2);
+      return n % 2 === 0 ? (s[mid-1] + s[mid]) / 2 : s[mid];
+    }
+
+    function quartile(arr, q){
+      const s = sorted(arr);
+      const pos = (s.length - 1) * q;
+      const base = Math.floor(pos);
+      const rest = pos - base;
+      if (s[base + 1] !== undefined) return s[base] + rest * (s[base + 1] - s[base]);
+      return s[base];
+    }
+
+    function mode(arr){
+      const freq = new Map();
+      arr.forEach(v => freq.set(v, (freq.get(v) || 0) + 1));
+      const max = Math.max(...freq.values());
+      if (max <= 1) return t('modeNone');
+      return [...freq.entries()].filter(([,count]) => count === max).map(([v]) => formatNum(v, 2)).join(', ');
+    }
+
+    function variance(arr, mean){
+      return arr.reduce((acc, v) => acc + Math.pow(v - mean, 2), 0) / arr.length;
+    }
+
+    function weightedVariance(items, mean, totalWeight){
+      return items.reduce((acc, item) => acc + item.weight * Math.pow(item.value - mean, 2), 0) / totalWeight;
+    }
+
+    function detectOutliers(arr){
+      const q1 = quartile(arr, 0.25);
+      const q3 = quartile(arr, 0.75);
+      const iqr = q3 - q1;
+      const lower = q1 - 1.5 * iqr;
+      const upper = q3 + 1.5 * iqr;
+      const outliers = arr.filter(v => v < lower || v > upper);
+      return { q1, q3, iqr, lower, upper, outliers };
+    }
+
+    function resetResultOnly(){
+      hideValidation();
+      document.getElementById('highlightCard').classList.add('is-empty');
+      document.getElementById('mainResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = t('mainSub');
+      document.getElementById('balanceScore').textContent = '0/100';
+      document.getElementById('scoreBadge').textContent = t('badgeScoreWait');
+      document.getElementById('scoreBadge').className = 'pill info';
+      document.getElementById('scoreBar').style.width = '0%';
+      document.getElementById('scoreExplain').textContent = t('scoreExplainText');
+      document.getElementById('medianResult').textContent = '—';
+      document.getElementById('stdResult').textContent = '—';
+      document.getElementById('healthDecision').textContent = '—';
+      document.getElementById('healthDecisionSub').textContent = t('card3Sub');
+      ['sumResult','countResult','modeResult','outlierResult'].forEach(id => document.getElementById(id).textContent = '—');
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('statusText').textContent = t('statusWait');
+      document.getElementById('resultBadge').textContent = t('badgeWait');
+      document.getElementById('resultBadge').className = 'badge info';
+      document.getElementById('smartComment').textContent = t('commentWait');
+      document.getElementById('resultTableBody').innerHTML = `<tr><td colspan="5">${t('tableWait')}</td></tr>`;
+      updateActionButtons(false);
+    }
+
+    function calculateStats(options = {}){
+      if (!validate()){
+        resetResultOnly();
+        state.isCalculated = false;
+        state.isValid = false;
+        const invalidMessage = state.mode === 'simple' ? t('invalidSimple') : t('invalidWeighted');
+        showValidation(state.mode === 'simple' ? t('validationTextSimple') : t('validationTextWeighted'));
+        document.getElementById('statusText').textContent = invalidMessage;
+        document.getElementById('resultBadge').textContent = t('stateMissing');
+        document.getElementById('resultBadge').className = 'badge bad';
+        if (!options.skipSave) saveState();
+        return;
+      }
+
+      let values = [];
+      let mean = 0;
+      let sum = 0;
+      let totalWeight = 0;
+      let rows = [];
+      let varianceValue = 0;
+
+      if (state.mode === 'simple'){
+        values = parseSimpleNumbers(numberInput.value);
+        sum = values.reduce((a,b) => a+b, 0);
+        mean = sum / values.length;
+        varianceValue = variance(values, mean);
+        rows = values.map((v, i) => ({ idx:i+1, value:v, weight:null, contribution:null }));
+      } else {
+        const items = parseWeightedNumbers(weightedInput.value);
+        values = items.map(item => item.value);
+        sum = values.reduce((a,b) => a+b, 0);
+        totalWeight = items.reduce((a,b) => a + b.weight, 0);
+        mean = items.reduce((acc, item) => acc + item.value * item.weight, 0) / totalWeight;
+        varianceValue = weightedVariance(items, mean, totalWeight);
+        rows = items.map((item, i) => ({ idx:i+1, value:item.value, weight:item.weight, contribution:item.value * item.weight }));
+      }
+
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      const med = median(values);
+      const modeText = mode(values);
+      const std = Math.sqrt(varianceValue);
+      const range = max - min;
+      const { q1, q3, iqr, outliers } = detectOutliers(values);
+      const outlierCount = outliers.length;
+
+      let score = 100;
+      score -= Math.min(35, Math.abs(mean - med) * 4);
+      score -= Math.min(35, std * 3);
+      score -= Math.min(30, outlierCount * 15);
+      score = Math.max(0, Math.min(100, Math.round(score)));
+
+      let scoreLabel = t('stateBalanced');
+      let scoreClass = 'good';
+      let decision = t('decisionBalanced');
+      let comment = t('smartBalanced');
+
+      if (score < 70 && score >= 40){
+        scoreLabel = t('stateBorder');
+        scoreClass = 'warn';
+        decision = t('decisionWatch');
+        comment = t('smartBorder');
+      } else if (score < 40){
+        scoreLabel = t('stateSkewed');
+        scoreClass = 'bad';
+        decision = t('decisionAttention');
+        comment = t('smartSkewed');
+      }
+
+      document.getElementById('highlightCard').classList.remove('is-empty');
+      document.getElementById('mainResult').textContent = formatNum(mean, 2);
+      document.getElementById('mainSubtext').textContent = state.mode === 'simple' ? t('modeSimpleDesc') : t('modeWeightedDesc');
+
+      document.getElementById('balanceScore').textContent = `${score}/100`;
+      document.getElementById('scoreBadge').textContent = scoreLabel;
+      document.getElementById('scoreBadge').className = `pill ${scoreClass}`;
+      document.getElementById('scoreBar').style.width = `${score}%`;
+      document.getElementById('scoreExplain').textContent = t('scoreExplainText');
+
+      document.getElementById('medianResult').textContent = formatNum(med, 2);
+      document.getElementById('stdResult').textContent = formatNum(std, 2);
+      document.getElementById('healthDecision').textContent = decision;
+      document.getElementById('healthDecisionSub').textContent = comment;
+
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.remove('is-empty'));
+      document.getElementById('sumResult').textContent = formatNum(sum, 2);
+      document.getElementById('countResult').textContent = formatNum(values.length, 0);
+      document.getElementById('modeResult').textContent = modeText;
+      document.getElementById('outlierResult').textContent = outlierCount === 0 ? t('outlierNone') : `${outlierCount} ${outlierCount === 1 ? t('outlierOne') : t('outlierMany')}`;
+
+      document.getElementById('statusText').textContent = t('stateReady');
+      document.getElementById('resultBadge').textContent = scoreLabel;
+      document.getElementById('resultBadge').className = `badge ${scoreClass}`;
+
+      const avgAbsWeight = rows.length && state.mode === 'weighted' ? totalWeight / rows.length : 0;
+
+      document.getElementById('resultTableBody').innerHTML = rows.map(row => {
+        const notes = [];
+        if (outliers.includes(row.value)) notes.push(t('noteOutlier'));
+        if (state.mode === 'weighted' && row.weight > avgAbsWeight * 1.5) notes.push(t('noteHighWeight'));
+        if (!notes.length) notes.push(t('noteNormal'));
+        return `
+          <tr>
+            <td>${row.idx}</td>
+            <td>${formatNum(row.value, 2)}</td>
+            <td>${state.mode === 'weighted' ? formatNum(row.weight, 2) : '—'}</td>
+            <td>${state.mode === 'weighted' ? formatNum(row.contribution, 2) : '—'}</td>
+            <td>${notes.join(' • ')}</td>
+          </tr>
+        `;
+      }).join('');
+
+      let extraSummary = `${t('extraMin')}: ${formatNum(min,2)} • ${t('extraMax')}: ${formatNum(max,2)} • ${t('extraRange')}: ${formatNum(range,2)} • ${t('extraQ1')}: ${formatNum(q1,2)} • ${t('extraQ3')}: ${formatNum(q3,2)} • ${t('extraIqr')}: ${formatNum(iqr,2)} • ${t('resultVariance')}: ${formatNum(varianceValue,2)}`;
+      if (state.mode === 'weighted') extraSummary += ` • ${t('extraWeightTotal')}: ${formatNum(totalWeight,2)}`;
+
+      document.getElementById('smartComment').textContent = `${comment} ${extraSummary}`;
+      state.isCalculated = true;
+      state.isValid = true;
+      updateActionButtons(true);
+      if (!options.skipSave) saveState();
+      if (!options.auto) revealResultPanel();
+    }
+
+    function fillScenario(type){
+      suppressSave = true;
+      state.dataMode = 'sample';
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+      if (type === 'simple1'){
+        setMode('simple');
+        numberInput.value = '12, 18, 20, 22, 25, 25, 27, 30';
+        document.querySelectorAll('#scenarioRow .chip')[0].classList.add('active');
+      } else if (type === 'simple2'){
+        setMode('simple');
+        numberInput.value = '12, 13, 14, 15, 16, 17, 18, 99';
+        document.querySelectorAll('#scenarioRow .chip')[1].classList.add('active');
+      } else {
+        setMode('weighted');
+        weightedInput.value = '70,3\n85,4\n90,2\n60,1';
+        document.querySelectorAll('#scenarioRow .chip')[2].classList.add('active');
+      }
+      calculateStats({skipSave:true});
+      suppressSave = false;
+      clearSavedState();
+      if (state.mode === 'weighted') {
+        weightedInput.focus();
+        flashComment(t('exampleLoadedWeighted'));
+      } else {
+        numberInput.focus();
+        flashComment(t('exampleLoadedSimple'));
+      }
+    }
+
+    function fillExample(){
+      fillScenario(state.mode === 'weighted' ? 'weighted1' : 'simple1');
+    }
+
+    function printResult(){
+      if (!state.isCalculated || !state.isValid){
+        showValidation(t('resultNeeded'));
+        return;
+      }
+      window.print();
+    }
+
+    function resetForm(){
+      suppressSave = true;
+      numberInput.value = '';
+      weightedInput.value = '';
+      state.isCalculated = false;
+      state.isValid = false;
+      state.dataMode = 'manual';
+      clearErrors();
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+      resetResultOnly();
+      suppressSave = false;
+      clearSavedState();
+    }
+
+    function legacyCopyText(text){
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly','');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      ta.style.pointerEvents = 'none';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try{ document.execCommand('copy'); }catch(err){}
+      document.body.removeChild(ta);
+    }
+
+    async function copyResult(){
+      if (!state.isCalculated || !state.isValid){
+        showValidation(t('resultNeeded'));
+        return;
+      }
+      const text = getShareText();
+      try{
+        if (navigator.clipboard && window.isSecureContext){
+          await navigator.clipboard.writeText(text);
+        } else {
+          legacyCopyText(text);
+        }
+        flashComment(t('copySuccess'));
+      }catch(err){
+        try{
+          legacyCopyText(text);
+          flashComment(t('copySuccess'));
+        }catch(error){}
+      }
+    }
+
+    async function shareResult(){
+      if (!state.isCalculated || !state.isValid){
+        showValidation(t('resultNeeded'));
+        return;
+      }
+      const text = getShareText();
+      if (navigator.share){
+        try{
+          await navigator.share({
+            title: document.title,
+            text
+          });
+          flashComment(t('shareSuccess'));
+          return;
+        }catch(err){}
+      }
+      try{
+        if (navigator.clipboard && window.isSecureContext){
+          await navigator.clipboard.writeText(text);
+        } else {
+          legacyCopyText(text);
+        }
+        flashComment(t('shareFallback'));
+      }catch(err){
+        try{
+          legacyCopyText(text);
+          flashComment(t('shareFallback'));
+        }catch(error){}
+      }
+    }
+
+    loadState();
+    suppressSave = true;
+    numberInput.value = state.numberInput || '';
+    weightedInput.value = state.weightedInput || '';
+    setLanguage(state.lang || 'tr');
+    setMode(state.mode || 'simple');
+    suppressSave = false;
+
+    numberInput.addEventListener('input', () => {
+      state.dataMode = 'manual';
+      state.numberInput = numberInput.value;
+      state.weightedInput = weightedInput.value;
+      saveState();
+      queueAutoCalculate();
+    });
+
+    weightedInput.addEventListener('input', () => {
+      state.dataMode = 'manual';
+      state.numberInput = numberInput.value;
+      state.weightedInput = weightedInput.value;
+      saveState();
+      queueAutoCalculate();
+    });
+
+    if ((numberInput.value.trim() || weightedInput.value.trim()) && state.isCalculated){
+      calculateStats({skipSave:true});
+    } else {
+      resetResultOnly();
+    }
+  </script>
+</body>
+</html>

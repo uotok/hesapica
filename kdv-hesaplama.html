@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica</title>
+<meta content="KDV hariç ve KDV dahil tutarı hızlıca hesaplayın. %1, %8, %10, %18, %20 ve özel oran ile KDV tutarı, net bedel ve toplam bedeli anında görün." name="description"/>
+<meta content="index,follow" name="robots">
+<meta content="kdv hesaplama, kdv dahil hesaplama, kdv hariç hesaplama, kdv tutarı hesaplama, yüzde 20 kdv hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color">
+<link href="https://hesapica.com/kdv-hesaplama" rel="canonical"/>
+<meta content="KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica" property="og:title"/>
+<meta content="KDV hariç ve KDV dahil tutarı hızlıca hesaplayın. %1, %8, %10, %18, %20 ve özel oran ile KDV tutarı, net bedel ve toplam bedeli anında görün." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://hesapica.com/kdv-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica" name="twitter:title"/>
+<meta content="KDV hariç ve KDV dahil tutarı hızlıca hesaplayın. %1, %8, %10, %18, %20 ve özel oran ile KDV tutarı, net bedel ve toplam bedeli anında görün." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800}
+    .hero h1{margin:14px 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p{font-size:15px;color:#4b5563;line-height:1.65}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .helper-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .helper-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.10);font-size:13px;font-weight:800;color:#4338ca}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+
+    input.has-error,select.has-error{
+      border-color:rgba(185,28,28,.55);
+      box-shadow:0 0 0 4px rgba(185,28,28,.08);
+    }
+    .field.has-error label{color:var(--bad)}
+    .field.has-error .hint{color:#7f1d1d}
+    .field-error{
+      display:none;
+      margin-top:8px;
+      font-size:13px;
+      font-weight:700;
+      line-height:1.5;
+      color:var(--bad);
+    }
+    .field.has-error .field-error{display:block}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .results-kicker{display:none;padding:14px 16px;border-radius:18px;background:#ffffff;border:1px solid rgba(79,70,229,.12);color:#4f46e5;font-size:14px;font-weight:800;box-shadow:var(--shadow)}
+    .results-kicker span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:4px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+    .highlight-card.result-flash{
+      animation:resultFlash 1.4s ease;
+    }
+    @keyframes resultFlash{
+      0%{transform:translateY(0);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+      20%{transform:translateY(-2px);box-shadow:0 0 0 3px rgba(79,70,229,.16),0 24px 48px rgba(79,70,229,.18)}
+      60%{transform:translateY(0);box-shadow:0 0 0 6px rgba(79,70,229,.08),0 18px 42px rgba(79,70,229,.14)}
+      100%{transform:translateY(0);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    }
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px;display:grid;gap:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card{padding:20px}
+      .field-grid,.health-grid,.related-grid,.content-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .results-kicker{display:block}
+      .hero-chip:nth-child(n+4){display:none}
+      .helper-box{display:none}
+    }
+
+    @media print{
+      body{background:#fff}
+      .hero{background:#fff;border:1px solid #ddd;box-shadow:none}
+      .actions,.flow-hint,.content-grid,.related-grid,.results-kicker,.helper-box{display:none !important}
+      .tool-layout{grid-template-columns:1fr 1fr}
+      .card,.status-card,.highlight-card{box-shadow:none;border:1px solid #ddd}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"KDV Hesaplama",
+    "url":"https://hesapica.com/kdv-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"KDV hariç ve KDV dahil tutarlara göre KDV bedelini, net tutarı ve toplam bedeli hesaplayan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"KDV Hesaplama","item":"https://hesapica.com/kdv-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"KDV hariç tutardan KDV dahil tutar nasıl hesaplanır?",
+        "acceptedAnswer":{"@type":"Answer","text":"KDV hariç tutar üzerine seçilen KDV oranı eklenir. Formül net tutar × oran / 100 ile KDV bedeli, net tutar + KDV ile toplam bedel bulunur."}
+      },
+      {
+        "@type":"Question",
+        "name":"KDV dahil tutardan KDV hariç tutar nasıl bulunur?",
+        "acceptedAnswer":{"@type":"Answer","text":"KDV dahil toplam bedel, 1 + KDV oranı / 100 sayısına bölünerek net tutar bulunur. Toplam bedelden net tutar çıkarıldığında KDV tutarı elde edilir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Bu araçta özel KDV oranı girilebilir mi?",
+        "acceptedAnswer":{"@type":"Answer","text":"Evet. Hazır oranlar dışında özel oran seçeneği ile kendi KDV yüzdesini girerek hesap yapabilirsin."}
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+</meta></meta><meta content="https://hesapica.com/kdv-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#finans">Finans</a>
+<span>/</span>
+<strong>KDV Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • LITE Aracı</span>
+<h1>KDV Hesaplama</h1>
+<p>KDV hariç veya KDV dahil tutardan vergi payını hızlıca ayır. Bu araç, <strong>tek ekranda net tutar</strong>, <strong>KDV bedeli</strong> ve <strong>toplam tutarı</strong> sade akışla verir.</p>
+<div class="hero-chips">
+<span class="hero-chip">Hızlı KDV hesabı</span>
+<span class="hero-chip">Boş başlangıç</span>
+<span class="hero-chip">Otomatik hesaplama</span>
+<span class="hero-chip">Mobilde tek kolon</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">LITE Standart</div>
+<strong>KDV dahil ve hariç tutarı anında gör</strong>
+<p>KDV hariç tutarı, KDV bedelini ve KDV dahil toplamı tek ekranda hızlıca hesaplayın. İster hazır oran seçin, ister özel oran girin. En alttaki hızlı oran seçiminden tek dokunuşla oran değiştirebilirsin.</p>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>KDV Giriş Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Tutarı ve oranı girdiğinde sonuçlar otomatik hesaplanır. KDV hariç tutardan toplamı bulabilir ya da KDV dahil tutarın içindeki vergi payını ayırabilirsin.</p>
+<div class="helper-box">
+<h3>KDV oranı ve yön seçimi</h3>
+<p>Aynı ekranda hem <strong>KDV hariçten KDV dahile</strong> geçebilir hem de <strong>KDV dahil tutarın içindeki vergi payını</strong> ayırabilirsin. Hazır oranlar hızlı kullanım sağlar; özel oran seçeneği ise farklı senaryolarda esneklik verir.</p>
+<div class="helper-chips">
+<span class="helper-chip">%1</span>
+<span class="helper-chip">%8</span>
+<span class="helper-chip">%10</span>
+<span class="helper-chip">%18</span>
+<span class="helper-chip">%20</span>
+<span class="helper-chip">Özel oran</span>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Temel alanlar</div>
+<div class="field-grid">
+<div class="field full">
+<label for="calcType">Hesaplama türü</label>
+<select id="calcType">
+<option value="haricten">KDV Hariç Tutar → KDV Dahil Tutar</option>
+<option value="dahilden">KDV Dahil Tutar → KDV Hariç Tutar</option>
+</select>
+<div class="hint">Net tutardan toplamı bulmak veya toplam tutarın içindeki KDV payını ayırmak için tür seç.</div>
+</div>
+<div class="field" id="amountField">
+<label for="amount">Tutar (₺)</label>
+<input aria-describedby="amountHint amountError" aria-required="true" autocomplete="off" id="amount" inputmode="decimal" placeholder="Örn: 250.000" required="" type="text"/>
+<div class="hint" id="amountHint">Büyük tutarlar okunabilir olması için otomatik olarak 250.000 gibi gösterilir.</div>
+<div class="field-error" id="amountError" role="alert"></div>
+</div>
+<div class="field" id="vatRateField">
+<label for="vatRate">KDV oranı</label>
+<select aria-describedby="vatRateHint" id="vatRate">
+<option value="1">%1</option>
+<option value="8">%8</option>
+<option value="10">%10</option>
+<option value="18">%18</option>
+<option selected="" value="20">%20</option>
+<option value="custom">Özel oran</option>
+</select>
+<div class="hint" id="vatRateHint">Hazır oranlardan birini seç veya özel oran kullan.</div>
+</div>
+<div class="field full" id="customRateField" style="display:none">
+<label for="customRate">Özel KDV oranı (%)</label>
+<input aria-describedby="customRateHint customRateError" autocomplete="off" id="customRate" inputmode="decimal" placeholder="Örn: 12,5" type="text"/>
+<div class="hint" id="customRateHint">Özel oran alanı sadece bu seçenek aktifken kullanılır.</div>
+<div class="field-error" id="customRateError" role="alert"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hızlı oran seçimi</div>
+<div class="chip-row" id="rateChips">
+<button class="chip" data-rate="1" type="button">%1</button>
+<button class="chip" data-rate="8" type="button">%8</button>
+<button class="chip" data-rate="10" type="button">%10</button>
+<button class="chip" data-rate="18" type="button">%18</button>
+<button class="chip active" data-rate="20" type="button">%20</button>
+<button class="chip" data-rate="custom" type="button">Özel</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="manualCalculateVAT()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="resetTool()" type="button">Temizle</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Sonucu Gör ile ana sonuca otomatik geçiş yap</strong>
+<span>Geçerli veri olduğunda sayfa sonuç paneline yumuşak şekilde kayar ve ana sonuç kısa süre vurgulanır.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultPanel">
+<div class="results-kicker">Sonuçlar aşağıda başlıyor<span>Ana çıktı, ara sonuçlar ve kısa özet bu bölümde yer alır.</span></div>
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" id="statusText">Tutar ve KDV oranı girildiğinde hesaplama otomatik çalışır.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana sonuç</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div aria-live="polite" class="highlight-sub" id="mainResultText">Hesaplama türüne göre en kritik değer burada görünür.</div>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1">
+<div>
+<div class="label">KDV hariç tutar</div>
+<div class="subline">Vergi eklenmemiş net bedel</div>
+</div>
+<div class="value" id="netAmount">—</div>
+</div>
+<div class="mini-result is-empty" id="mini2">
+<div>
+<div class="label">KDV tutarı</div>
+<div class="subline">Toplam içindeki vergi payı</div>
+</div>
+<div class="value" id="vatAmount">—</div>
+</div>
+<div class="mini-result is-empty" id="mini3">
+<div>
+<div class="label">KDV dahil tutar</div>
+<div class="subline">Vergi dahil toplam ödeme</div>
+</div>
+<div class="value" id="grossAmount">—</div>
+</div>
+<div class="mini-result is-empty" id="mini4">
+<div>
+<div class="label">Vergi payı</div>
+<div class="subline">Toplam tutar içindeki KDV oranı</div>
+</div>
+<div class="value" id="taxShare">—</div>
+</div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Mod</h3><div class="big" id="healthMode">—</div><div class="hint" id="healthModeSub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Oran</h3><div class="big" id="healthRate">—</div><div class="hint" id="healthRateSub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Çıktı</h3><div class="big" id="healthOutput">—</div><div class="hint" id="healthOutputSub" style="margin-top:6px">—</div></div>
+</div>
+</div>
+<div aria-live="polite" class="comment-box" id="smartInsight">Bu alan boş açılır. Hesaplama yapıldığında burada kısa ve net açıklama görünür.</div>
+</aside>
+</section>
+<section class="details-card">
+<div class="card">
+<h2>Temel sonuçlar</h2>
+<p class="section-note">KDV hariç ve dahil dönüşümün çekirdek sayı seti aşağıda özetlenir.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Metrik</th>
+<th>Değer</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody id="resultTableBody">
+<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="content-grid">
+<article class="card">
+<h2>KDV hesaplama nasıl yapılır?</h2>
+<p class="section-note">Bu araç iki yönlü çalışır:</p>
+<div class="accordion-card">
+<details open="">
+<summary>KDV hariç → KDV dahil</summary>
+<p>Net tutarın üzerine seçilen vergi oranı eklenir. Önce KDV bedeli hesaplanır, sonra net tutar ile toplanır.</p>
+</details>
+<details>
+<summary>KDV dahil → KDV hariç</summary>
+<p>Toplam bedel, 1 + oran/100 değerine bölünür. Böylece vergi öncesi net bedel ve içindeki KDV payı ayrıştırılır.</p>
+</details>
+<details>
+<summary>Hangi durumda hangisi kullanılır?</summary>
+<p>Teklif, sözleşme veya katalog fiyatı vergi hariçse ilk mod; faturadaki toplam tutarın içindeki vergi payını görmek istiyorsan ikinci mod kullanılır.</p>
+</details>
+</div>
+</article>
+<article class="card accordion-card">
+<h2>Sık sorulan sorular</h2>
+<details open="">
+<summary>KDV dahil ve KDV hariç farkı nedir?</summary>
+<p>KDV hariç tutar ürün veya hizmetin vergi eklenmemiş net fiyatıdır. KDV dahil tutar ise vergi eklendikten sonraki toplam bedeldir.</p>
+</details>
+<details>
+<summary>Özel KDV oranı girilebilir mi?</summary>
+<p>Evet. Hazır oranlar dışında özel oran seçip kendi yüzde değerini girerek hesap yapabilirsin.</p>
+</details>
+<details>
+<summary>Bu hesaplama resmî belge yerine geçer mi?</summary>
+<p>Hayır. Bu araç hızlı genel hesap içindir. Fatura, muhasebe ve resmî süreçlerde güncel mevzuat ve uzman görüşü ayrıca dikkate alınmalıdır.</p>
+</details>
+</article>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/yuzde-hesaplama">
+<span class="small">Hızlı araç</span>
+<strong>Yüzde Hesaplama</strong>
+<p>İndirim, artış ve oran farklarını hızlıca hesapla.</p>
+</a>
+<a class="related-card" href="/indirimli-fiyat-hesaplama">
+<span class="small">Fiyat analizi</span>
+<strong>İndirimli Fiyat Hesaplama</strong>
+<p>İskonto sonrası net satış fiyatını saniyeler içinde gör.</p>
+</a>
+<a class="related-card" href="/faiz-hesaplama">
+<span class="small">Finans</span>
+<strong>Faiz Hesaplama</strong>
+<p>Basit faiz, net getiri ve vade etkisini ayrı ekranda incele.</p>
+</a>
+</div>
+</section>
+</main>
+<noscript>
+<div class="container" style="padding:0 0 24px">
+<div class="card" style="border-color:#fde68a;background:#fffbeb;color:#78350f">
+        Bu hesaplama aracı JavaScript ile çalışır. Sonuçları görmek için tarayıcında JavaScript etkin olmalıdır.
+      </div>
+</div>
+</noscript>
+<script>
+    const amountInput = document.getElementById('amount');
+    const calcType = document.getElementById('calcType');
+    const vatRate = document.getElementById('vatRate');
+    const customRate = document.getElementById('customRate');
+    const customRateField = document.getElementById('customRateField');
+    const amountField = document.getElementById('amountField');
+    const vatRateField = document.getElementById('vatRateField');
+    const rateChips = document.getElementById('rateChips');
+    const resultPanel = document.getElementById('resultPanel');
+    const highlightCard = document.getElementById('highlightCard');
+
+    const STORAGE_KEY = 'hesapica:kdv-hesaplama:manual-v3';
+    const defaultStatusText = 'Tutar ve KDV oranı girildiğinde hesaplama otomatik çalışır.';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      isDemo: false,
+      touched: {
+        amount: false,
+        customRate: false
+      },
+      hasAttemptedSubmit: false
+    };
+
+    function formatTRY(value){
+      return new Intl.NumberFormat('tr-TR', {
+        style:'currency',
+        currency:'TRY',
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }).format(Number(value) || 0);
+    }
+
+    function formatPercent(value){
+      const number = Number(value) || 0;
+      return '%' + new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: number % 1 === 0 ? 0 : 2,
+        maximumFractionDigits: 2
+      }).format(number);
+    }
+
+    function sanitizeAmountInput(value){
+      if (!value) return '';
+      let sanitized = String(value).replace(/\s+/g, '').replace(/[^\d,.-]/g, '');
+      sanitized = sanitized.replace(/-/g, '');
+      const commaIndex = sanitized.indexOf(',');
+      if (commaIndex !== -1) {
+        const before = sanitized.slice(0, commaIndex + 1);
+        const after = sanitized.slice(commaIndex + 1).replace(/,/g, '');
+        sanitized = before + after;
+      }
+      sanitized = sanitized.replace(/\.(?=.*\.)/g, '');
+      return sanitized;
+    }
+
+    function formatTRNumericInput(value){
+      const sanitized = sanitizeAmountInput(value).replace(/\./g, '');
+      if (!sanitized) return '';
+      const parts = sanitized.split(',');
+      const integerPart = parts[0].replace(/^0+(\d)/, '$1');
+      const formattedInteger = (integerPart || '0').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      if (parts.length > 1) {
+        return formattedInteger + ',' + parts[1].slice(0,2);
+      }
+      return formattedInteger;
+    }
+
+    function parseTRNumber(value){
+      if (!value) return NaN;
+      const normalized = String(value).trim().replace(/\./g, '').replace(',', '.');
+      const number = Number(normalized);
+      return Number.isFinite(number) ? number : NaN;
+    }
+
+    function sanitizeRateInput(value){
+      if (!value) return '';
+      let sanitized = String(value).replace(/\s+/g, '').replace(/[^\d,.-]/g, '');
+      sanitized = sanitized.replace(/-/g, '');
+      const firstComma = sanitized.indexOf(',');
+      const firstDot = sanitized.indexOf('.');
+      const decimalIndex = firstComma !== -1 ? firstComma : firstDot;
+      if (decimalIndex !== -1) {
+        const before = sanitized.slice(0, decimalIndex);
+        const decimal = sanitized.charAt(decimalIndex) === '.' ? ',' : sanitized.charAt(decimalIndex);
+        const after = sanitized.slice(decimalIndex + 1).replace(/[.,]/g, '');
+        sanitized = before + decimal + after;
+      } else {
+        sanitized = sanitized.replace(/[.,]/g, '');
+      }
+      const parts = sanitized.split(',');
+      if (parts.length > 1) {
+        sanitized = parts[0] + ',' + parts.slice(1).join('');
+      }
+      return sanitized;
+    }
+
+    function formatRateInput(value){
+      const sanitized = sanitizeRateInput(value);
+      if (!sanitized) return '';
+      const parts = sanitized.split(',');
+      const integerPart = parts[0].replace(/^0+(\d)/, '$1') || '0';
+      if (parts.length > 1) {
+        return integerPart + ',' + parts[1].slice(0, 2);
+      }
+      return integerPart;
+    }
+
+    function focusResultPanel(){
+      if (!state.isCalculated || !state.results) return;
+      if (highlightCard) {
+        highlightCard.classList.remove('result-flash');
+        void highlightCard.offsetWidth;
+        highlightCard.classList.add('result-flash');
+      }
+      const target = highlightCard || resultPanel;
+      if (!target) return;
+      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      window.setTimeout(() => {
+        highlightCard && highlightCard.classList.remove('result-flash');
+      }, 1500);
+    }
+
+    function setStatus(text, type='default'){
+      const statusText = document.getElementById('statusText');
+      const statusBadge = document.getElementById('statusBadge');
+      statusText.textContent = text;
+      statusBadge.className = 'badge';
+      if (type === 'ready') {
+        statusBadge.textContent = 'Hazır';
+        statusBadge.classList.add('good');
+      } else if (type === 'warn') {
+        statusBadge.textContent = 'Kontrol et';
+        statusBadge.classList.add('warn');
+      } else {
+        statusBadge.textContent = 'Veri bekleniyor';
+      }
+    }
+
+    function resetTouchedState(){
+      state.touched.amount = false;
+      state.touched.customRate = false;
+      state.hasAttemptedSubmit = false;
+    }
+
+    function markTouched(key){
+      if (Object.prototype.hasOwnProperty.call(state.touched, key)) {
+        state.touched[key] = true;
+      }
+    }
+
+    function shouldShowError(key, force){
+      return !!force || !!state.hasAttemptedSubmit || !!state.touched[key];
+    }
+
+    function clearFieldError(fieldEl, inputEl){
+      if (fieldEl) fieldEl.classList.remove('has-error');
+      if (inputEl) {
+        inputEl.classList.remove('has-error');
+        inputEl.removeAttribute('aria-invalid');
+      }
+      const errorBox = fieldEl ? fieldEl.querySelector('.field-error') : null;
+      if (errorBox) errorBox.textContent = '';
+    }
+
+    function showFieldError(fieldEl, inputEl, message){
+      if (fieldEl) fieldEl.classList.add('has-error');
+      if (inputEl) {
+        inputEl.classList.add('has-error');
+        inputEl.setAttribute('aria-invalid', 'true');
+      }
+      const errorBox = fieldEl ? fieldEl.querySelector('.field-error') : null;
+      if (errorBox) errorBox.textContent = message;
+    }
+
+    function resetErrors(){
+      clearFieldError(amountField, amountInput);
+      clearFieldError(customRateField, customRate);
+    }
+
+    function clearResults(){
+      highlightCard.classList.add('is-empty');
+      document.getElementById('mainResult').textContent = '—';
+      document.getElementById('mainResultText').textContent = 'Hesaplama türüne göre en kritik değer burada görünür.';
+      ['netAmount','vatAmount','grossAmount','taxShare'].forEach(id => document.getElementById(id).textContent = '—');
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('healthMode').textContent = '—';
+      document.getElementById('healthModeSub').textContent = '—';
+      document.getElementById('healthRate').textContent = '—';
+      document.getElementById('healthRateSub').textContent = '—';
+      document.getElementById('healthOutput').textContent = '—';
+      document.getElementById('healthOutputSub').textContent = '—';
+      document.getElementById('smartInsight').textContent = 'Bu alan boş açılır. Hesaplama yapıldığında burada kısa ve net açıklama görünür.';
+      document.getElementById('resultTableBody').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+    }
+
+    function setIdleView(){
+      clearResults();
+      setStatus(defaultStatusText);
+    }
+
+    function getSelectedRate(){
+      if (vatRate.value === 'custom') {
+        const rate = parseTRNumber(customRate.value);
+        return Number.isFinite(rate) && rate >= 0 ? rate : NaN;
+      }
+      return parseFloat(vatRate.value);
+    }
+
+    function syncRateChips(){
+      const current = vatRate.value;
+      [...rateChips.querySelectorAll('.chip')].forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.rate === current);
+      });
+    }
+
+    function toggleCustomRate(){
+      const isCustom = vatRate.value === 'custom';
+      customRateField.style.display = isCustom ? 'block' : 'none';
+      customRate.toggleAttribute('required', isCustom);
+      customRate.setAttribute('aria-required', String(isCustom));
+      syncRateChips();
+      if (!isCustom) {
+        customRate.value = '';
+        clearFieldError(customRateField, customRate);
+        state.touched.customRate = false;
+      }
+    }
+
+    function getInputs(){
+      return {
+        type: calcType.value,
+        amount: parseTRNumber(amountInput.value),
+        rate: getSelectedRate(),
+        amountRaw: amountInput.value.trim(),
+        customRateRaw: customRate.value.trim(),
+        hasAnyInput: !!amountInput.value.trim() || (vatRate.value === 'custom' && !!customRate.value.trim())
+      };
+    }
+
+    function validate(inputs, options = {}){
+      const { force = false } = options;
+      resetErrors();
+
+      const isCustom = vatRate.value === 'custom';
+      const invalidElements = [];
+      let valid = true;
+
+      if (!inputs.hasAnyInput) {
+        setIdleView();
+        return { valid:false, invalidElements, silent:true };
+      }
+
+      if (!inputs.amountRaw || !Number.isFinite(inputs.amount) || inputs.amount <= 0) {
+        valid = false;
+        if (shouldShowError('amount', force)) {
+          showFieldError(amountField, amountInput, 'Lütfen 0’dan büyük geçerli bir tutar gir.');
+          invalidElements.push(amountInput);
+        }
+      }
+
+      if (isCustom && (!inputs.customRateRaw || !Number.isFinite(inputs.rate) || inputs.rate < 0 || inputs.rate > 1000)) {
+        valid = false;
+        if (shouldShowError('customRate', force)) {
+          showFieldError(customRateField, customRate, 'Özel oran için 0 ile 1000 arasında geçerli bir yüzde gir.');
+          invalidElements.push(customRate);
+        }
+      }
+
+      if (!valid) {
+        clearResults();
+        if (force || state.hasAttemptedSubmit) {
+          setStatus('Geçerli bir tutar ve KDV oranı gir.', 'warn');
+        } else {
+          setStatus('Eksik alanlar tamamlandığında sonuç otomatik güncellenecek.');
+        }
+      }
+
+      return { valid, invalidElements, silent:false };
+    }
+
+    function computeVAT(inputs){
+      let netAmount = 0;
+      let vatAmountValue = 0;
+      let grossAmount = 0;
+
+      if (inputs.type === 'haricten') {
+        netAmount = inputs.amount;
+        vatAmountValue = inputs.amount * inputs.rate / 100;
+        grossAmount = netAmount + vatAmountValue;
+      } else {
+        grossAmount = inputs.amount;
+        netAmount = grossAmount / (1 + inputs.rate / 100);
+        vatAmountValue = grossAmount - netAmount;
+      }
+
+      const share = grossAmount > 0 ? (vatAmountValue / grossAmount) * 100 : 0;
+
+      return {
+        type: inputs.type,
+        amount: inputs.amount,
+        rate: inputs.rate,
+        netAmount,
+        vatAmount: vatAmountValue,
+        grossAmount,
+        share
+      };
+    }
+
+    function updateResultTable(result){
+      const rows = [
+        ['KDV hariç tutar', formatTRY(result.netAmount), 'Vergi öncesi net bedel'],
+        ['KDV tutarı', formatTRY(result.vatAmount), 'Seçilen orana göre hesaplanan vergi'],
+        ['KDV dahil tutar', formatTRY(result.grossAmount), 'Vergi eklenmiş toplam bedel'],
+        ['KDV oranı', formatPercent(result.rate), 'Hesaplamada kullanılan oran'],
+        ['Hesaplama yönü', result.type === 'haricten' ? 'Hariçten dahile' : 'Dahilden hariçe', 'Hangi modda işlem yapıldığı']
+      ];
+      document.getElementById('resultTableBody').innerHTML = rows.map(row => `
+        <tr>
+          <td>${row[0]}</td>
+          <td>${row[1]}</td>
+          <td>${row[2]}</td>
+        </tr>`).join('');
+    }
+
+    function render(result){
+      const mainValue = result.type === 'haricten' ? formatTRY(result.grossAmount) : formatTRY(result.netAmount);
+      const mainText = result.type === 'haricten'
+        ? 'Bu girişe göre KDV dahil toplam ödeme tutarı.'
+        : 'Bu girişe göre KDV hariç net tutar.';
+
+      highlightCard.classList.remove('is-empty');
+      document.getElementById('mainResult').textContent = mainValue;
+      document.getElementById('mainResultText').textContent = mainText;
+      document.getElementById('netAmount').textContent = formatTRY(result.netAmount);
+      document.getElementById('vatAmount').textContent = formatTRY(result.vatAmount);
+      document.getElementById('grossAmount').textContent = formatTRY(result.grossAmount);
+      document.getElementById('taxShare').textContent = formatPercent(result.share);
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.remove('is-empty'));
+
+      document.getElementById('healthMode').textContent = result.type === 'haricten' ? 'Hariç → Dahil' : 'Dahil → Hariç';
+      document.getElementById('healthModeSub').textContent = result.type === 'haricten' ? 'Net bedelden toplam bedel bulunuyor.' : 'Toplam bedelin içindeki vergi ayrıştırılıyor.';
+      document.getElementById('healthRate').textContent = formatPercent(result.rate);
+      document.getElementById('healthRateSub').textContent = result.rate <= 8 ? 'Düşük oranlı KDV seçildi.' : result.rate <= 18 ? 'Orta seviye KDV oranı seçildi.' : 'Yüksek oranlı KDV seçildi.';
+      document.getElementById('healthOutput').textContent = result.type === 'haricten' ? formatTRY(result.grossAmount) : formatTRY(result.netAmount);
+      document.getElementById('healthOutputSub').textContent = result.type === 'haricten' ? 'Toplam tahsilat / ödeme' : 'Vergi hariç temel bedel';
+
+      const insight = result.type === 'haricten'
+        ? `${formatTRY(result.amount)} net tutara ${formatPercent(result.rate)} KDV eklendiğinde vergi payı ${formatTRY(result.vatAmount)} olur ve toplam ${formatTRY(result.grossAmount)} seviyesine çıkar.`
+        : `${formatTRY(result.amount)} KDV dahil toplam içinde ${formatTRY(result.vatAmount)} vergi bulunur. Vergi hariç net bedel ${formatTRY(result.netAmount)} seviyesindedir.`;
+      document.getElementById('smartInsight').textContent = insight;
+
+      updateResultTable(result);
+      setStatus('Sonuç hazır. Hesaplama güncellendi.', 'ready');
+    }
+
+    function saveManualState(){
+      if (state.isDemo || !state.isValid) return;
+      const payload = {
+        calcType: calcType.value,
+        amount: amountInput.value,
+        vatRate: vatRate.value,
+        customRate: customRate.value
+      };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch (error) {}
+    }
+
+    function removeSavedState(){
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (error) {}
+    }
+
+    function calculateVAT(options = {}){
+      const { save = false, focusResult = false, forceValidation = false } = options;
+      const inputs = getInputs();
+      state.inputs = inputs;
+
+      const validation = validate(inputs, { force: forceValidation });
+      state.isValid = validation.valid;
+
+      if (!validation.valid) {
+        state.results = null;
+        state.isCalculated = false;
+        if (save) removeSavedState();
+        if (forceValidation && validation.invalidElements.length) {
+          validation.invalidElements[0].focus();
+        }
+        return false;
+      }
+
+      const result = computeVAT(inputs);
+      state.results = result;
+      state.isCalculated = true;
+
+      render(result);
+      if (save) saveManualState();
+      if (focusResult) focusResultPanel();
+      return true;
+    }
+
+    function manualCalculateVAT(){
+      state.isDemo = false;
+      state.hasAttemptedSubmit = true;
+      calculateVAT({ save: true, focusResult: true, forceValidation: true });
+    }
+
+    function applyManualState(saved){
+      calcType.value = saved.calcType || 'haricten';
+      amountInput.value = saved.amount || '';
+      vatRate.value = saved.vatRate || '20';
+      customRate.value = saved.customRate || '';
+      state.isDemo = false;
+      resetTouchedState();
+      toggleCustomRate();
+      calculateVAT();
+    }
+
+    function loadSavedState(){
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const saved = JSON.parse(raw);
+        if (!saved || typeof saved !== 'object') return;
+        if (!saved.amount) return;
+        applyManualState(saved);
+      } catch (error) {}
+    }
+
+    function fillExample(){
+      state.isDemo = true;
+      resetTouchedState();
+      calcType.value = 'haricten';
+      amountInput.value = formatTRNumericInput('250000');
+      vatRate.value = '20';
+      customRate.value = '';
+      toggleCustomRate();
+      calculateVAT({ focusResult: true });
+    }
+
+    function resetTool(){
+      state.isDemo = false;
+      calcType.value = 'haricten';
+      amountInput.value = '';
+      vatRate.value = '20';
+      customRate.value = '';
+      resetTouchedState();
+      toggleCustomRate();
+      removeSavedState();
+      resetErrors();
+      setIdleView();
+      syncRateChips();
+    }
+
+    async function copyResult(){
+      if (!state.results) {
+        setStatus('Kopyalamadan önce hesaplama yap.', 'warn');
+        return;
+      }
+
+      const text = [
+        'HESAPICA - KDV HESAPLAMA SONUCU',
+        '',
+        `Hesaplama Türü: ${state.results.type === 'haricten' ? 'KDV Hariç → KDV Dahil' : 'KDV Dahil → KDV Hariç'}`,
+        `Girilen Tutar: ${formatTRY(state.results.amount)}`,
+        `KDV Oranı: ${formatPercent(state.results.rate)}`,
+        `KDV Hariç Tutar: ${formatTRY(state.results.netAmount)}`,
+        `KDV Tutarı: ${formatTRY(state.results.vatAmount)}`,
+        `KDV Dahil Tutar: ${formatTRY(state.results.grossAmount)}`,
+        `Vergi Payı: ${formatPercent(state.results.share)}`
+      ].join('\n');
+
+      try {
+        await navigator.clipboard.writeText(text);
+        setStatus('Sonuç panoya kopyalandı.', 'ready');
+      } catch (error) {
+        try {
+          const area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'absolute';
+          area.style.left = '-9999px';
+          document.body.appendChild(area);
+          area.select();
+          document.execCommand('copy');
+          document.body.removeChild(area);
+          setStatus('Sonuç panoya kopyalandı.', 'ready');
+        } catch (fallbackError) {
+          setStatus('Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.', 'warn');
+        }
+      }
+    }
+
+    async function shareResult(){
+      if (!state.results) {
+        setStatus('Paylaşmadan önce hesaplama yap.', 'warn');
+        return;
+      }
+
+      const shareText = `KDV hariç: ${formatTRY(state.results.netAmount)} | KDV: ${formatTRY(state.results.vatAmount)} | KDV dahil: ${formatTRY(state.results.grossAmount)} | Oran: ${formatPercent(state.results.rate)}`;
+      const sharePayload = `${shareText}\n${window.location.href}`;
+      const shareData = {
+        title: 'Hesapica KDV Hesaplama',
+        text: shareText,
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+          setStatus('Sonuç paylaşım penceresine gönderildi.', 'ready');
+        } else {
+          await navigator.clipboard.writeText(sharePayload);
+          setStatus('Paylaşım özeti panoya kopyalandı.', 'ready');
+        }
+      } catch (error) {
+        if (error && error.name === 'AbortError') return;
+        try {
+          await navigator.clipboard.writeText(sharePayload);
+          setStatus('Paylaşım özeti panoya kopyalandı.', 'ready');
+        } catch (fallbackError) {
+          setStatus('Paylaşım başarısız oldu.', 'warn');
+        }
+      }
+    }
+
+    function printResult(){
+      if (!state.results) {
+        setStatus('Yazdırmadan önce hesaplama yap.', 'warn');
+        return;
+      }
+      window.print();
+    }
+
+    let debounceTimer = null;
+    function handleUserInput(){
+      state.isDemo = false;
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => calculateVAT({ save: true }), 180);
+    }
+
+    amountInput.addEventListener('input', (event) => {
+      event.target.value = formatTRNumericInput(event.target.value);
+      markTouched('amount');
+      handleUserInput();
+    });
+
+    amountInput.addEventListener('blur', () => {
+      if (amountInput.value.trim()) {
+        markTouched('amount');
+        calculateVAT({ save: true });
+      }
+    });
+
+    calcType.addEventListener('change', handleUserInput);
+
+    vatRate.addEventListener('change', () => {
+      state.isDemo = false;
+      toggleCustomRate();
+      handleUserInput();
+    });
+
+    customRate.addEventListener('input', (event) => {
+      event.target.value = formatRateInput(event.target.value);
+      markTouched('customRate');
+      handleUserInput();
+    });
+
+    customRate.addEventListener('blur', () => {
+      if (customRate.value.trim()) {
+        markTouched('customRate');
+        calculateVAT({ save: true });
+      }
+    });
+
+    [amountInput, customRate].forEach(el => {
+      el.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          state.isDemo = false;
+          state.hasAttemptedSubmit = true;
+          calculateVAT({ save: true, focusResult: true, forceValidation: true });
+        }
+      });
+    });
+
+    rateChips.addEventListener('click', (event) => {
+      const chip = event.target.closest('.chip');
+      if (!chip) return;
+      state.isDemo = false;
+      vatRate.value = chip.dataset.rate;
+      toggleCustomRate();
+      if (chip.dataset.rate !== 'custom') {
+        calculateVAT({ save: true });
+      } else {
+        customRate.focus();
+      }
+    });
+
+    setIdleView();
+    toggleCustomRate();
+    loadSavedState();
+    syncRateChips();
+  </script>
+</body>
+</html>

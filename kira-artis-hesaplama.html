@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kira Artış Hesaplama 2026 | Yeni Kira, Yıllık Etki ve Bütçe Analizi | Hesapica</title>
+<meta content="Mevcut kira, artış oranı, yuvarlama ve depozito bilgilerine göre yeni kira tutarını, aylık artış farkını, yıllık ek yükü ve bütçe baskısını hesaplayın." name="description"/>
+<meta content="#4f46e5" name="theme-color"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://hesapica.com/kira-artis-hesaplama" rel="canonical"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Kira Artış Hesaplama 2026 | Yeni Kira, Yıllık Etki ve Bütçe Analizi | Hesapica" property="og:title"/>
+<meta content="Mevcut kira, artış oranı, yuvarlama ve depozito bilgilerine göre yeni kira tutarını, aylık artış farkını, yıllık ek yükü ve bütçe baskısını hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/kira-artis-hesaplama" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Kira Artış Hesaplama 2026 | Yeni Kira, Yıllık Etki ve Bütçe Analizi | Hesapica" name="twitter:title"/>
+<meta content="Mevcut kira, artış oranı, yuvarlama ve depozito bilgilerine göre yeni kira tutarını, aylık artış farkını, yıllık ek yükü ve bütçe baskısını hesaplayın." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+  s = s.replace(/\s+/g,'');
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --soft:#eef2ff;
+      --soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;padding:34px;border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em;color:#312e81}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px;color:#312e81}
+    .hero-box p{font-size:15px;color:#4b5563}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .info-banner{margin-bottom:18px;padding:14px 16px;border-radius:18px;background:#f8faff;border:1px solid #c7d2fe;color:#3730a3;font-size:14px}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;font-size:18px;font-weight:600;
+    }
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .field.is-invalid input,.field.is-invalid select{border-color:#f1a7b5;background:#fff7f9;box-shadow:0 0 0 4px rgba(244,114,182,.10)}
+    .field.is-invalid label{color:#9f1239}
+    .field-error{display:none;margin-top:8px;font-size:13px;line-height:1.5;color:#be123c;font-weight:700}
+    .field-error.show{display:block}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%);border:1px dashed rgba(79,70,229,.25);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:16px;font-weight:800;color:#312e81}
+    .status-text{margin-top:6px;font-size:14px;color:#4b5563}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:#4b5563;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:38px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#111827}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value,.health-card.is-empty .value{color:#9ca3af}
+    .highlight-card.result-flash{box-shadow:0 0 0 4px rgba(79,70,229,.10), 0 16px 40px rgba(79,70,229,.16);transform:translateY(-1px);transition:transform .18s ease, box-shadow .18s ease}
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .val{font-weight:800}
+    .pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .mini-result-grid,.health-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:14px;font-weight:600;color:#374151}
+    .mini-result .value{font-size:19px;font-weight:800;text-align:right;color:#111827}
+    .mini-result .subline{font-size:13px;color:#4b5563;margin-top:6px}
+    .health-grid{grid-template-columns:repeat(3,1fr)}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card .label{font-size:13px;font-weight:800;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    .health-card .value{font-size:22px;font-weight:900;margin-top:6px;color:#111827}
+    .health-card .sub{font-size:13px;color:#4b5563;margin-top:4px}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:15px}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:var(--primary);text-transform:uppercase;letter-spacing:.05em}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .good{color:var(--good)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:repeat(2,1fr)}.results{position:static}}
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.highlight-card,.status-card,.scorebox{padding:20px}
+      .field-grid,.health-grid,.related-grid,.content-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}.btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}
+      .hero h1{font-size:32px}.highlight-value{font-size:31px}.hero-chip:nth-child(n+3){display:none}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Kira Artış Hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Kira artış oranına göre yeni kira bedeli, artış tutarı, yıllık fark ve bütçe etkisini hesaplayan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Kira Artış Hesaplama","item":"https://hesapica.com/kira-artis-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Kira artışı nasıl hesaplanır?",
+        "acceptedAnswer":{"@type":"Answer","text":"Mevcut kira tutarı seçilen artış oranıyla artırılır. Çıkan yeni kira tercihe göre yuvarlanır, sonra aylık ve yıllık farklar hesaplanır."}
+      },
+      {
+        "@type":"Question",
+        "name":"Resmi oran ve özel oran farkı nedir?",
+        "acceptedAnswer":{"@type":"Answer","text":"Resmi oran kullanıldığında araçta tanımlı yüzde esas alınır. Özel oran seçildiğinde kullanıcı kendi belirlediği oranla hesaplama yapar."}
+      },
+      {
+        "@type":"Question",
+        "name":"12 aylık ek yük neyi gösterir?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yeni ve eski kira arasındaki aylık farkın 12 ile çarpılmış halidir. Böylece bütçeye yıllık toplam etkisi hızlıca görünür."}
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/kira-artis-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1180px;margin:12px auto 0;padding:12px 14px;border:1px solid #fecaca;border-radius:14px;background:#fef2f2;color:#991b1b;font:600 14px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif">Bu hesaplama aracını tam kullanabilmek için tarayıcınızda JavaScript etkin olmalıdır.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a><span>/</span><a href="/#emlak">Emlak</a><span>/</span><strong>Kira Artış Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<h1>Kira Artış Hesaplama</h1>
+<p>Mevcut kira, resmi veya özel artış oranı, yuvarlama tercihi ve depozito bilgisine göre <strong>yeni kira tutarını</strong>, <strong>12 aylık ek yükü</strong> ve <strong>bütçe baskısını</strong> tek ekranda analiz edin.</p>
+<div class="hero-chips">
+<span class="hero-chip">Boş başlangıç</span>
+<span class="hero-chip">TR para formatı</span>
+<span class="hero-chip">Bütçe etkisi görünür</span>
+<span class="hero-chip">Karar destekli sonuç</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">PRO Hesaplama</div>
+<strong>Yeni kira tutarını değil, artışın etkisini de gör</strong>
+<p>Bu araç yalnızca zamlı kira rakamını vermez. Aylık farkı, yıllık ek yükü, depozitoyla ilişkiyi ve artışın bütçe üzerindeki baskısını birlikte gösterir.</p>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Kira Girdi Paneli</h2>
+<p class="section-note">Araç bu sayfa için <strong>PRO</strong> seviyesinde hazırlandı. Çünkü hızlı kullanım önemli ama sonuç alanında güçlü analiz de gerekiyor. Tüm para alanları okunabilirlik için noktalı TR formatta gösterilir.</p>
+<div class="info-banner"><strong>Not:</strong> Resmi oran seçildiğinde artış yüzdesi kutusu otomatik dolar. Bu sürümde tanımlı resmi oran <strong>Nisan 2026 için %32,82</strong> olacak şekilde güncellenmiştir. Özel oran seçildiğinde aynı kutuya kendi yüzdenden girersin. Nihai hukuki değerlendirme için güncel mevzuat ve sözleşme şartları ayrıca kontrol edilmelidir.</div>
+<div class="form-section">
+<div class="form-title">Temel kira verileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="currentRent">Mevcut kira (TL)</label>
+<input aria-describedby="currentRentHint currentRentError" aria-required="true" id="currentRent" inputmode="numeric" placeholder="Örn. 15.000" required="" type="text"/>
+<div class="hint" id="currentRentHint">Mevcut aylık kira bedelini gir.</div>
+<div class="field-error" id="currentRentError" role="alert"></div>
+</div>
+<div class="field">
+<label for="increaseType">Artış türü</label>
+<select aria-describedby="increaseTypeHint" id="increaseType">
+<option value="official">Resmi oranı kullan</option>
+<option value="custom">Kendi oranımı gireceğim</option>
+</select>
+<div class="hint" id="increaseTypeHint">İstersen resmi oranı, istersen özel oranı seçebilirsin.</div>
+</div>
+<div class="field">
+<label for="rateInput">Artış oranı (%)</label>
+<input aria-describedby="rateHint rateInputError" aria-required="true" id="rateInput" inputmode="decimal" placeholder="Örn. 32,82" required="" type="text"/>
+<div class="hint" id="rateHint">Resmi oran seçildiğinde kutu otomatik dolar. Özel oran seçilirse aynı kutuya kendi yüzdende girersin.</div>
+<div class="field-error" id="rateInputError" role="alert"></div>
+</div>
+<div class="field">
+<label for="roundingType">Yuvarlama tercihi</label>
+<select aria-describedby="roundingHint" id="roundingType">
+<option value="none">Yuvarlama yok</option>
+<option value="1">1 TL'ye yuvarla</option>
+<option value="10">10 TL'ye yuvarla</option>
+<option value="50">50 TL'ye yuvarla</option>
+<option value="100">100 TL'ye yuvarla</option>
+</select>
+<div class="hint" id="roundingHint">Sonucun daha pratik görünmesi için yuvarlama uygulayabilirsin.</div>
+</div>
+<div class="field">
+<label for="depositAmount">Depozito (opsiyonel)</label>
+<input aria-describedby="depositHint" id="depositAmount" inputmode="numeric" placeholder="Örn. 30.000" type="text"/>
+<div class="hint" id="depositHint">Yeni kira ile depozitonun ilişkisini görmek için ekle.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hızlı senaryolar</div>
+<div class="chip-row" id="rateChips">
+<button class="chip" onclick="quickOfficial(25,this)" type="button">%25</button>
+<button class="chip active" id="officialRateChip" type="button">%32,82</button>
+<button class="chip" onclick="quickOfficial(45,this)" type="button">%45</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Hızlı dene (örnek veri)</button>
+<button class="btn btn-ghost" onclick="resetTool()" type="button">Temizle</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Detaylı sonuçlar ve senaryo tabloları aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak tüm analiz bloklarını görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" id="statusText">Sonuç görmek için mevcut kira ve artış oranı gir.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="mainCard">
+<div class="highlight-label">Yeni kira tutarı</div>
+<div aria-live="polite" class="highlight-value" id="newRentMain">—</div>
+<div class="highlight-sub" id="newRentMainSub">Artış sonrası yeni kira burada görünür.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="highlight-label" style="margin-bottom:4px">Kira artış baskı skoru</div>
+<div class="score-value" id="pressureScore">0/100</div>
+</div>
+<span aria-live="polite" class="pill" id="pressureBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+            Bu skor, artış oranı, aylık fark ve yıllık ek yükün birlikte okunmuş halidir. Skor yükseldikçe bütçe üzerindeki baskı artar.
+            <div class="score-breakdown">
+<div class="score-breakdown-row"><span>Oran baskısı</span><span class="val" id="breakRate">—</span></div>
+<div class="score-breakdown-row"><span>Aylık fark etkisi</span><span class="val" id="breakMonthly">—</span></div>
+<div class="score-breakdown-row"><span>Yıllık yük etkisi</span><span class="val" id="breakYearly">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="r1"><div class="label">Aylık artış farkı</div><div class="value" id="increaseAmount">—</div></div>
+<div class="mini-result is-empty" id="r2"><div class="label">Kullanılan oran</div><div class="value" id="usedRate">—</div></div>
+<div class="mini-result is-empty" id="r3"><div class="label">Yeni yıllık kira</div><div class="value" id="newYearly">—</div></div>
+<div class="mini-result is-empty" id="r4"><div class="label">12 aylık ek yük</div><div class="value" id="yearlyDiff">—</div></div>
+<div class="mini-result is-empty" id="r5">
+<div>
+<div class="label">Depozito karşılaştırması</div>
+<div class="subline">Yeni kira / depozito ilişkisi</div>
+</div>
+<div class="value" id="depositCompare">—</div>
+</div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card is-empty" id="h1"><div class="label">Artış seviyesi</div><div class="value" id="healthLevel">—</div><div class="sub" id="healthLevelSub">—</div></div>
+<div class="health-card is-empty" id="h2"><div class="label">Yıllık etki</div><div class="value" id="healthYear">—</div><div class="sub" id="healthYearSub">—</div></div>
+<div class="health-card is-empty" id="h3"><div class="label">Yuvarlama etkisi</div><div class="value" id="healthRound">—</div><div class="sub" id="healthRoundSub">—</div></div>
+</div>
+</div>
+<div aria-live="polite" class="comment-box" id="commentBox">Bu alan boş açılır. Hesaplama sonrası burada kısa, net ve karar destekleyici yorum görünür.</div>
+</aside>
+</section>
+<section class="content-grid">
+<div class="card">
+<h2>Temel sonuçlar</h2>
+<p class="section-note">Kira artışının ana çıktıları ve yıllık etkisini tek tabloda gör.</p>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Eski aylık kira</th><td id="oldRentTable">—</td></tr>
+<tr><th>Yeni aylık kira</th><td id="newRentTable">—</td></tr>
+<tr><th>Artış tutarı</th><td id="increaseTable">—</td></tr>
+<tr><th>Eski yıllık kira</th><td id="oldYearlyTable">—</td></tr>
+<tr><th>Yeni yıllık kira</th><td id="newYearlyTable">—</td></tr>
+<tr><th>12 aylık toplam ek yük</th><td id="yearlyDiffTable">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="card">
+<h2>Senaryo tablosu</h2>
+<p class="section-note">Aynı mevcut kira için farklı artış oranlarında yeni kira seviyesinin nasıl değişeceğini gör.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Oran</th><th>Yeni kira</th><th>Aylık fark</th></tr></thead>
+<tbody id="scenarioTable"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="content-grid" style="margin-top:24px">
+<div class="card">
+<h2>Bu araç nasıl çalışır?</h2>
+<div class="accordion-card">
+<details open="">
+<summary>Kira artışı nasıl hesaplanır?</summary>
+<p>Mevcut kira tutarı seçilen artış oranıyla artırılır. Çıkan yeni kira tercihe göre yuvarlanır, sonra aylık ve yıllık farklar hesaplanır.</p>
+</details>
+<details>
+<summary>Resmi oran ve özel oran farkı nedir?</summary>
+<p>Resmi oran kullanıldığında araçta tanımlı yüzde esas alınır. Özel oran seçildiğinde kullanıcı kendi belirlediği oranla hesaplama yapar.</p>
+</details>
+<details>
+<summary>12 aylık ek yük neyi gösterir?</summary>
+<p>Yeni ve eski kira arasındaki aylık farkın 12 ile çarpılmış halidir. Böylece bütçeye yıllık toplam etkisi hızlıca görünür.</p>
+</details>
+</div>
+</div>
+<div class="card">
+<h2>Sık sorulan sorular</h2>
+<div class="accordion-card">
+<details open="">
+<summary>Depozito karşılaştırması ne anlatır?</summary>
+<p>Yeni kira tutarının girilen depozitoya oranını gösterir. Bu, mevcut depozitonun kira seviyesine göre ne kadar büyük ya da küçük kaldığını anlamayı kolaylaştırır.</p>
+</details>
+<details>
+<summary>Yuvarlama neden önemli olabilir?</summary>
+<p>Pratikte kira bedelleri çoğu zaman tam rakama veya belli eşiklere yuvarlanır. Bu seçenek, sonucu daha gerçek hayata yakın göstermeye yardımcı olur.</p>
+</details>
+<details>
+<summary>Bu araç hukuki danışmanlık yerine geçer mi?</summary>
+<p>Hayır. Bu araç finansal ve pratik hesaplama desteği sağlar. Hukuki uyuşmazlıklarda güncel mevzuat ve uzman görüşü ayrıca değerlendirilmelidir.</p>
+</details>
+</div>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/ev-amortisman-hesaplama?mod=carpan">
+<span class="small">Emlak</span>
+<strong>Ev Amortisman ve Kira Çarpanı</strong>
+<p>Bir taşınmazın kira geri dönüş süresini hızlıca analiz et.</p>
+</a>
+<a class="related-card" href="/emlak-vergisi-hesaplama">
+<span class="small">Emlak</span>
+<strong>Emlak Vergisi Hesaplama</strong>
+<p>Taşınmazın yıllık vergi maliyetini tahmin et.</p>
+</a>
+<a class="related-card" href="/butce-hesaplama">
+<span class="small">Finans</span>
+<strong>Bütçe ve Tasarruf Hesaplama</strong>
+<p>Aylık gider baskısına karşı tasarruf kapasiteni gör.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const currentRentEl = document.getElementById('currentRent');
+    const increaseTypeEl = document.getElementById('increaseType');
+    const rateInputEl = document.getElementById('rateInput');
+    const rateHintEl = document.getElementById('rateHint');
+    const roundingTypeEl = document.getElementById('roundingType');
+    const depositAmountEl = document.getElementById('depositAmount');
+    const calculateBtn = document.getElementById('calculateBtn');
+
+    const fieldConfig = {
+      currentRent: { input: currentRentEl, wrapper: currentRentEl.closest('.field'), error: document.getElementById('currentRentError') },
+      rateInput: { input: rateInputEl, wrapper: rateInputEl.closest('.field'), error: document.getElementById('rateInputError') }
+    };
+
+    const moneyInputs = [currentRentEl, depositAmountEl];
+    const OFFICIAL_RENT_CONFIG = {
+      label: 'Nisan 2026',
+      rate: 32.82
+    };
+    const DEFAULT_SCENARIO_RATES = [25, OFFICIAL_RENT_CONFIG.rate, 45];
+    const officialRateChipEl = document.getElementById('officialRateChip');
+    let officialRateValue = OFFICIAL_RENT_CONFIG.rate;
+    let lastCustomRateValue = '';
+    let hasAttemptedSubmit = false;
+    const touchedFields = new Set();
+    let suppressPersistence = false;
+    let saveTimer = null;
+
+    const state = {
+      inputs: {
+        currentRent: '',
+        increaseType: 'official',
+        rateInput: '',
+        roundingType: 'none',
+        depositAmount: ''
+      },
+      results: null,
+      isValid: false,
+      isCalculated: false
+    };
+
+    function parseTrNumber(value){
+      if(value == null) return NaN;
+      const cleaned = String(value).replace(/\./g,'').replace(/,/g,'.').replace(/[^\d.-]/g,'').trim();
+      return cleaned === '' ? NaN : Number(cleaned);
+    }
+
+    function parsePercentNumber(value){
+      if(value == null) return NaN;
+      const raw = String(value).trim().replace(/\s+/g,'').replace('%','');
+      if(raw === '') return NaN;
+      const lastComma = raw.lastIndexOf(',');
+      const lastDot = raw.lastIndexOf('.');
+      const sepIndex = Math.max(lastComma, lastDot);
+      let normalized = raw.replace(/[^\d,.-]/g,'');
+
+      if(sepIndex !== -1){
+        const integerPart = normalized.slice(0, sepIndex).replace(/[.,]/g,'');
+        const decimalPart = normalized.slice(sepIndex + 1).replace(/[.,]/g,'');
+        normalized = `${integerPart}.${decimalPart}`;
+      } else {
+        normalized = normalized.replace(/[.,]/g,'');
+      }
+
+      return normalized === '' || normalized === '.' || normalized === '-' ? NaN : Number(normalized);
+    }
+
+    function formatRateInput(value){
+      if(value == null || value === '') return '';
+      const num = typeof value === 'number' ? value : parsePercentNumber(value);
+      if(Number.isNaN(num)) return '';
+      return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:0, maximumFractionDigits:2}).format(num);
+    }
+
+    function formatMoneyInput(value){
+      const num = parseTrNumber(value);
+      if(isNaN(num)) return '';
+      return new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(num);
+    }
+
+    function formatMoney(value, digits=2){
+      return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:0, maximumFractionDigits:digits}).format(value) + ' TL';
+    }
+
+    function formatPercent(value, digits=2){
+      return '%' + new Intl.NumberFormat('tr-TR',{minimumFractionDigits:0, maximumFractionDigits:digits}).format(value);
+    }
+
+    function roundValue(value, type){
+      if(type === 'none') return value;
+      const base = Number(type);
+      return Math.round(value / base) * base;
+    }
+
+    function setBadge(el, level, text){
+      el.className = 'badge ' + level;
+      el.textContent = text;
+    }
+
+    function activateResult(ids, active){
+      ids.forEach(id=>{
+        const el=document.getElementById(id);
+        if(!el) return;
+        el.classList.toggle('is-empty', !active);
+      });
+    }
+
+    function syncOfficialRateUI(){
+      if(officialRateChipEl){
+        officialRateChipEl.textContent = formatPercent(OFFICIAL_RENT_CONFIG.rate);
+      }
+    }
+
+    function setActiveRateChip(targetBtn){
+      [...document.querySelectorAll('#rateChips .chip')].forEach(c=>c.classList.remove('active'));
+      if(targetBtn){
+        targetBtn.classList.add('active');
+      }
+    }
+
+    function scoreMeta(score){
+      if(score < 35) return ['good','Düşük baskı'];
+      if(score < 70) return ['warn','Orta baskı'];
+      return ['bad','Yüksek baskı'];
+    }
+
+    function isElementMostlyVisible(el){
+      const rect = el.getBoundingClientRect();
+      const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, viewHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      return visibleHeight >= Math.min(rect.height * 0.7, viewHeight * 0.6);
+    }
+
+    function revealPrimaryResult(){
+      const card = document.getElementById('mainCard');
+      if(!card || !state.isCalculated || !state.isValid) return;
+      const shouldScroll = window.matchMedia('(max-width: 1040px)').matches || !isElementMostlyVisible(card);
+      if(shouldScroll){
+        card.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+      card.classList.add('result-flash');
+      setTimeout(()=>card.classList.remove('result-flash'), 1200);
+    }
+
+    function setFieldError(name, message){
+      const config = fieldConfig[name];
+      if(!config) return;
+      const shouldShow = Boolean(message) && (touchedFields.has(name) || hasAttemptedSubmit);
+      config.wrapper.classList.toggle('is-invalid', shouldShow);
+      config.input.setAttribute('aria-invalid', shouldShow ? 'true' : 'false');
+      config.error.textContent = shouldShow ? message : '';
+      config.error.classList.toggle('show', shouldShow);
+    }
+
+    function focusFirstError(errors){
+      const first = Object.keys(fieldConfig).find(name => errors[name]);
+      if(first){
+        fieldConfig[first].input.focus();
+      }
+    }
+
+    function validateInputs(){
+      const currentRent = parseTrNumber(currentRentEl.value);
+      const rate = parsePercentNumber(rateInputEl.value);
+      const errors = {};
+
+      if(Number.isNaN(currentRentEl.value.trim() === '' ? NaN : currentRent) || currentRentEl.value.trim() === ''){
+        errors.currentRent = 'Mevcut kira tutarını gir.';
+      } else if(currentRent <= 0){
+        errors.currentRent = 'Mevcut kira 0’dan büyük olmalı.';
+      }
+
+      if(rateInputEl.value.trim() === ''){
+        errors.rateInput = increaseTypeEl.value === 'official'
+          ? 'Artış oranı otomatik gelmediyse tekrar resmi oran seç ya da sayfayı yenile.'
+          : 'Artış oranını gir.';
+      } else if(Number.isNaN(rate)){
+        errors.rateInput = 'Geçerli bir artış oranı gir.';
+      } else if(rate < 0){
+        errors.rateInput = 'Artış oranı negatif olamaz.';
+      } else if(rate > 300){
+        errors.rateInput = 'Artış oranı mantıklı bir aralıkta olmalı.';
+      }
+
+      return { errors, currentRent, rate, depositAmount: parseTrNumber(depositAmountEl.value) };
+    }
+
+    function renderValidation(errors){
+      setFieldError('currentRent', errors.currentRent || '');
+      setFieldError('rateInput', errors.rateInput || '');
+    }
+
+    function emptyState(){
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      document.getElementById('newRentMain').textContent = '—';
+      document.getElementById('newRentMainSub').textContent = 'Artış sonrası yeni kira burada görünür.';
+      document.getElementById('pressureScore').textContent = '0/100';
+      document.getElementById('pressureBadge').className = 'pill';
+      document.getElementById('pressureBadge').textContent = 'Veri bekleniyor';
+      document.getElementById('scoreBar').style.width = '0%';
+      ['breakRate','breakMonthly','breakYearly','increaseAmount','usedRate','newYearly','yearlyDiff','depositCompare','oldRentTable','newRentTable','increaseTable','oldYearlyTable','newYearlyTable','yearlyDiffTable'].forEach(id=>document.getElementById(id).textContent='—');
+      document.getElementById('commentBox').textContent = 'Bu alan boş açılır. Hesaplama sonrası burada kısa, net ve karar destekleyici yorum görünür.';
+      document.getElementById('scenarioTable').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+      document.getElementById('statusText').textContent = 'Sonuç görmek için mevcut kira ve artış oranı gir.';
+      document.getElementById('statusBadge').className = 'badge';
+      document.getElementById('statusBadge').textContent = 'Veri bekleniyor';
+      ['healthLevel','healthLevelSub','healthYear','healthYearSub','healthRound','healthRoundSub'].forEach(id=>document.getElementById(id).textContent='—');
+      activateResult(['mainCard','r1','r2','r3','r4','r5','h1','h2','h3'], false);
+    }
+
+    function persistInputs(){
+      if(suppressPersistence) return;
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(()=>{
+        if(!state.inputs.currentRent && !state.inputs.depositAmount && state.inputs.increaseType === 'official' && state.inputs.roundingType === 'none' && !state.inputs.rateInput){
+          localStorage.removeItem('hesapica-kira-artis-inputs');
+          return;
+        }
+        localStorage.setItem('hesapica-kira-artis-inputs', JSON.stringify(state.inputs));
+      }, 120);
+    }
+
+    function syncStateInputs(){
+      state.inputs = {
+        currentRent: currentRentEl.value,
+        increaseType: increaseTypeEl.value,
+        rateInput: rateInputEl.value,
+        roundingType: roundingTypeEl.value,
+        depositAmount: depositAmountEl.value
+      };
+      persistInputs();
+    }
+
+    function calculateAll(options = {}){
+      const { submit = false } = options;
+      if(submit){
+        hasAttemptedSubmit = true;
+      }
+
+      const { errors, currentRent, rate, depositAmount } = validateInputs();
+      renderValidation(errors);
+      syncStateInputs();
+
+      const isValid = Object.keys(errors).length === 0;
+      if(!isValid){
+        emptyState();
+        if(submit){
+          focusFirstError(errors);
+        }
+        return false;
+      }
+
+      const roundingType = roundingTypeEl.value;
+      const rawIncrease = currentRent * rate / 100;
+      const rawNewRent = currentRent + rawIncrease;
+      const newRent = roundValue(rawNewRent, roundingType);
+      const increaseAmount = newRent - currentRent;
+      const oldYearly = currentRent * 12;
+      const newYearly = newRent * 12;
+      const yearlyDiff = newYearly - oldYearly;
+
+      const rateScore = Math.min(rate, 50) / 50 * 40;
+      const monthlyScore = Math.min((increaseAmount / Math.max(currentRent,1)) * 100, 50) / 50 * 30;
+      const yearlyScore = Math.min(yearlyDiff / Math.max(currentRent * 12,1) * 100, 50) / 50 * 30;
+      const score = Math.round(rateScore + monthlyScore + yearlyScore);
+
+      state.results = { currentRent, rate, depositAmount, roundingType, newRent, increaseAmount, oldYearly, newYearly, yearlyDiff, score, rateScore, monthlyScore, yearlyScore };
+      state.isValid = true;
+      state.isCalculated = true;
+
+      document.getElementById('newRentMain').textContent = formatMoney(newRent);
+      document.getElementById('newRentMainSub').textContent = `${formatMoney(currentRent)} mevcut kira için hesaplandı.`;
+
+      document.getElementById('pressureScore').textContent = `${score}/100`;
+      document.getElementById('scoreBar').style.width = `${score}%`;
+      const [badgeLevel, badgeText] = scoreMeta(score);
+      document.getElementById('pressureBadge').className = `pill ${badgeLevel}`;
+      document.getElementById('pressureBadge').textContent = badgeText;
+      document.getElementById('breakRate').textContent = `${Math.round(rateScore)}/40`;
+      document.getElementById('breakMonthly').textContent = `${Math.round(monthlyScore)}/30`;
+      document.getElementById('breakYearly').textContent = `${Math.round(yearlyScore)}/30`;
+
+      document.getElementById('increaseAmount').textContent = formatMoney(increaseAmount);
+      document.getElementById('usedRate').textContent = formatPercent(rate);
+      document.getElementById('newYearly').textContent = formatMoney(newYearly);
+      document.getElementById('yearlyDiff').textContent = formatMoney(yearlyDiff);
+
+      if(!Number.isNaN(depositAmount) && depositAmount > 0){
+        document.getElementById('depositCompare').textContent = formatPercent((newRent / depositAmount) * 100, 1);
+      } else {
+        document.getElementById('depositCompare').textContent = '—';
+      }
+
+      document.getElementById('oldRentTable').textContent = formatMoney(currentRent);
+      document.getElementById('newRentTable').textContent = formatMoney(newRent);
+      document.getElementById('increaseTable').textContent = formatMoney(increaseAmount);
+      document.getElementById('oldYearlyTable').textContent = formatMoney(oldYearly);
+      document.getElementById('newYearlyTable').textContent = formatMoney(newYearly);
+      document.getElementById('yearlyDiffTable').textContent = formatMoney(yearlyDiff);
+
+      let statusLevel='good', statusText='Hesaplama tamamlandı';
+      if(score >= 70){ statusLevel='bad'; statusText='Bütçe baskısı yüksek'; }
+      else if(score >= 35){ statusLevel='warn'; statusText='Orta düzey bütçe baskısı'; }
+      document.getElementById('statusText').textContent = `${formatPercent(rate)} artış oranı ile yeni kira ${formatMoney(newRent)} seviyesine çıkıyor.`;
+      setBadge(document.getElementById('statusBadge'), statusLevel, statusText);
+
+      document.getElementById('healthLevel').textContent = score >= 70 ? 'Yüksek' : score >= 35 ? 'Orta' : 'Düşük';
+      document.getElementById('healthLevelSub').textContent = `Artış oranı ${formatPercent(rate)}.`;
+      document.getElementById('healthYear').textContent = formatMoney(yearlyDiff,0);
+      document.getElementById('healthYearSub').textContent = 'Yıllık toplam ek maliyet.';
+      document.getElementById('healthRound').textContent = roundingType === 'none' ? 'Yok' : `${roundingType} TL`;
+      document.getElementById('healthRoundSub').textContent = roundingType === 'none' ? 'Ham sonuç gösteriliyor.' : 'Pratik görünüm için yuvarlandı.';
+
+      let comment = `Mevcut kira ${formatMoney(currentRent)} iken ${formatPercent(rate)} artışla yeni kira ${formatMoney(newRent)} oluyor. Aylık fark ${formatMoney(increaseAmount)}, 12 aylık toplam ek yük ise ${formatMoney(yearlyDiff)} seviyesinde.`;
+      if(roundingType !== 'none') comment += ` Sonuç ${roundingType} TL bazında yuvarlandı.`;
+      if(!Number.isNaN(depositAmount) && depositAmount > 0) comment += ` Yeni kira, girilen depozitonun yaklaşık ${formatPercent((newRent / depositAmount) * 100,1)} seviyesinde.`;
+      if(score >= 70) comment += ' Bu artış seviyesi belirgin bütçe baskısı oluşturabilir; yıllık maliyet planını ayrıca gözden geçirmek faydalı olur.';
+      else if(score >= 35) comment += ' Artış yönetilebilir görünse de yıllık toplam etkiyi göz ardı etmemek gerekir.';
+      else comment += ' Artış seviyesi görece sınırlı görünüyor.';
+      document.getElementById('commentBox').textContent = comment;
+
+      const rates = [rate - 10, rate, rate + 10].filter(v=>v>=0);
+      const uniqueRates = [...new Set([0, ...rates, ...DEFAULT_SCENARIO_RATES].filter(v=>v>=0).map(v=>Number(v.toFixed(2))))].sort((a,b)=>a-b);
+      document.getElementById('scenarioTable').innerHTML = uniqueRates.map(r=>{
+        const nr = roundValue(currentRent * (1 + r/100), roundingType);
+        const diff = nr - currentRent;
+        return `<tr><td>${formatPercent(r)}</td><td>${formatMoney(nr)}</td><td>${formatMoney(diff)}</td></tr>`;
+      }).join('');
+
+      activateResult(['mainCard','r1','r2','r3','r4','r5','h1','h2','h3'], true);
+      return true;
+    }
+
+    function debouncedCalculate(){
+      clearTimeout(window.__rentCalcTimer);
+      window.__rentCalcTimer = setTimeout(()=>calculateAll(), 140);
+    }
+
+    function markTouched(name){
+      touchedFields.add(name);
+    }
+
+    function attachMoneyFormatter(el, fieldName = null){
+      el.addEventListener('input',()=>{
+        if(fieldName){
+          markTouched(fieldName);
+        }
+        const num = parseTrNumber(el.value);
+        if(el.value.trim()===''){
+          if(fieldName){
+            setFieldError(fieldName, '');
+          }
+          debouncedCalculate();
+          return;
+        }
+        if(Number.isNaN(num)){
+          debouncedCalculate();
+          return;
+        }
+        el.value = new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(num);
+        debouncedCalculate();
+      });
+      el.addEventListener('blur',()=>{
+        if(fieldName){
+          markTouched(fieldName);
+        }
+        el.value = formatMoneyInput(el.value);
+        calculateAll();
+      });
+    }
+
+    attachMoneyFormatter(currentRentEl, 'currentRent');
+    attachMoneyFormatter(depositAmountEl);
+
+    function updateMode(options = {}){
+      const { preserveChip = false } = options;
+      const isCustom = increaseTypeEl.value === 'custom';
+      if(isCustom){
+        if(rateInputEl.value && rateInputEl.readOnly){
+          lastCustomRateValue = '';
+        }
+        rateInputEl.readOnly = false;
+        rateInputEl.placeholder = 'Örn. 25';
+        rateHintEl.textContent = 'Özel oran seçildi. Aynı kutuya kendi artış yüzdende gir.';
+        rateInputEl.value = lastCustomRateValue;
+        setActiveRateChip(null);
+      } else {
+        if(rateInputEl.value && !rateInputEl.readOnly){
+          lastCustomRateValue = rateInputEl.value;
+        }
+        if(!Number.isFinite(officialRateValue)){
+          officialRateValue = OFFICIAL_RENT_CONFIG.rate;
+        }
+        rateInputEl.readOnly = true;
+        rateInputEl.placeholder = 'Resmi oran otomatik gelir';
+        rateInputEl.value = formatRateInput(officialRateValue);
+        rateHintEl.textContent = `Resmi oran seçildi. ${OFFICIAL_RENT_CONFIG.label} için tanımlı resmi oran bu kutuya otomatik yazıldı.`;
+        if(!preserveChip && officialRateValue === OFFICIAL_RENT_CONFIG.rate){
+          setActiveRateChip(officialRateChipEl);
+        }
+      }
+      calculateAll();
+    }
+
+    function quickOfficial(rate, btn){
+      increaseTypeEl.value = 'official';
+      officialRateValue = Number(rate);
+      rateInputEl.value = formatRateInput(rate);
+      setActiveRateChip(btn);
+      updateMode({ preserveChip: true });
+      revealPrimaryResult();
+    }
+
+    function fillExample(){
+      suppressPersistence = true;
+      currentRentEl.value = '15.000';
+      increaseTypeEl.value = 'official';
+      officialRateValue = OFFICIAL_RENT_CONFIG.rate;
+      lastCustomRateValue = '';
+      rateInputEl.value = formatRateInput(officialRateValue);
+      roundingTypeEl.value = '10';
+      depositAmountEl.value = '30.000';
+      touchedFields.clear();
+      hasAttemptedSubmit = false;
+      renderValidation({});
+      setActiveRateChip(officialRateChipEl);
+      updateMode();
+      suppressPersistence = false;
+      localStorage.removeItem('hesapica-kira-artis-inputs');
+      revealPrimaryResult();
+    }
+
+    function resetTool(){
+      suppressPersistence = true;
+      currentRentEl.value = '';
+      increaseTypeEl.value = 'official';
+      officialRateValue = OFFICIAL_RENT_CONFIG.rate;
+      lastCustomRateValue = '';
+      rateInputEl.value = formatRateInput(officialRateValue);
+      roundingTypeEl.value = 'none';
+      depositAmountEl.value = '';
+      touchedFields.clear();
+      hasAttemptedSubmit = false;
+      renderValidation({});
+      setActiveRateChip(officialRateChipEl);
+      updateMode();
+      emptyState();
+      suppressPersistence = false;
+      localStorage.removeItem('hesapica-kira-artis-inputs');
+    }
+
+    function copyTextSafely(text){
+      if(navigator.clipboard && window.isSecureContext){
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise((resolve,reject)=>{
+        try{
+          const helper=document.createElement('textarea');
+          helper.value=text;
+          helper.setAttribute('readonly','');
+          helper.style.position='fixed';
+          helper.style.opacity='0';
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          const ok=document.execCommand('copy');
+          document.body.removeChild(helper);
+          ok ? resolve() : reject(new Error('copy-failed'));
+        }catch(err){ reject(err); }
+      });
+    }
+
+    function buildShareText(){
+      return `Kira Artış Hesaplama Sonucu
+Mevcut Kira: ${currentRentEl.value || '-'} TL
+Artış Türü: ${increaseTypeEl.options[increaseTypeEl.selectedIndex].text}
+Kullanılan Oran: ${rateInputEl.value || '-'}%
+Yuvarlama: ${roundingTypeEl.options[roundingTypeEl.selectedIndex].text}
+Depozito: ${depositAmountEl.value || '-'} TL
+
+Yeni Kira: ${document.getElementById('newRentMain').textContent}
+Aylık Artış Farkı: ${document.getElementById('increaseAmount').textContent}
+Yeni Yıllık Kira: ${document.getElementById('newYearly').textContent}
+12 Aylık Ek Yük: ${document.getElementById('yearlyDiff').textContent}
+Baskı Skoru: ${document.getElementById('pressureScore').textContent}
+
+Yorum:
+${document.getElementById('commentBox').textContent}`;
+    }
+
+    function ensureResultForAction(){
+      if(state.isCalculated && state.isValid && state.results){
+        return true;
+      }
+      hasAttemptedSubmit = true;
+      const ok = calculateAll({ submit: true });
+      if(!ok){
+        alert('Önce geçerli bir sonuç oluştur.');
+      }
+      return ok;
+    }
+
+    function copyResult(){
+      if(!ensureResultForAction()) return;
+      const text = buildShareText();
+      copyTextSafely(text)
+        .then(()=>alert('Sonuç kopyalandı.'))
+        .catch(()=>alert('Kopyalama başarısız oldu.'));
+    }
+
+    function shareResult(){
+      if(!ensureResultForAction()) return;
+      const text = buildShareText();
+      if(navigator.share){
+        navigator.share({
+          title: 'Kira Artış Hesaplama Sonucu',
+          text,
+          url: window.location.href
+        }).catch(()=>{});
+        return;
+      }
+      copyTextSafely(`${text}
+
+${window.location.href}`)
+        .then(()=>alert('Paylaşım için metin ve bağlantı kopyalandı.'))
+        .catch(()=>alert('Paylaşım metni kopyalanamadı.'));
+    }
+
+    function loadSavedInputs(){
+      try{
+        const raw = localStorage.getItem('hesapica-kira-artis-inputs');
+        if(!raw) return false;
+        const saved = JSON.parse(raw);
+        suppressPersistence = true;
+        currentRentEl.value = saved.currentRent || '';
+        increaseTypeEl.value = saved.increaseType === 'custom' ? 'custom' : 'official';
+        roundingTypeEl.value = saved.roundingType || 'none';
+        depositAmountEl.value = saved.depositAmount || '';
+        lastCustomRateValue = saved.increaseType === 'custom' ? (saved.rateInput || '') : '';
+        if(saved.increaseType === 'official'){
+          const savedRate = parsePercentNumber(saved.rateInput);
+          officialRateValue = Number.isFinite(savedRate) ? savedRate : OFFICIAL_RENT_CONFIG.rate;
+        } else {
+          officialRateValue = OFFICIAL_RENT_CONFIG.rate;
+        }
+        updateMode({ preserveChip: saved.increaseType === 'official' && officialRateValue !== OFFICIAL_RENT_CONFIG.rate });
+        if(saved.increaseType === 'official' && officialRateValue === OFFICIAL_RENT_CONFIG.rate){
+          setActiveRateChip(officialRateChipEl);
+        }
+        suppressPersistence = false;
+        calculateAll();
+        return true;
+      } catch (error) {
+        localStorage.removeItem('hesapica-kira-artis-inputs');
+        suppressPersistence = false;
+        return false;
+      }
+    }
+
+    function handleCalculateClick(){
+      const hasResult = calculateAll({ submit: true });
+      if(hasResult){
+        revealPrimaryResult();
+      }
+    }
+
+    increaseTypeEl.addEventListener('change', ()=>{
+      touchedFields.add('rateInput');
+      if(increaseTypeEl.value === 'official' && officialRateValue === OFFICIAL_RENT_CONFIG.rate){
+        setActiveRateChip(officialRateChipEl);
+      }
+      updateMode();
+    });
+
+    if(officialRateChipEl){
+      officialRateChipEl.addEventListener('click', ()=>quickOfficial(OFFICIAL_RENT_CONFIG.rate, officialRateChipEl));
+    }
+
+    calculateBtn.addEventListener('click', handleCalculateClick);
+
+    rateInputEl.addEventListener('input', ()=>{
+      markTouched('rateInput');
+      const raw = rateInputEl.value;
+      if(raw.trim()===''){
+        if(increaseTypeEl.value === 'custom'){
+          lastCustomRateValue = '';
+        }
+        debouncedCalculate();
+        return;
+      }
+      const normalized = raw.replace(/[^\d,.-]/g,'');
+      if(normalized !== raw){
+        rateInputEl.value = normalized;
+      }
+      if(increaseTypeEl.value === 'custom'){
+        lastCustomRateValue = rateInputEl.value;
+      }
+      debouncedCalculate();
+    });
+
+    rateInputEl.addEventListener('blur', ()=>{
+      markTouched('rateInput');
+      if(rateInputEl.value.trim()===''){
+        calculateAll();
+        return;
+      }
+      const parsed = parsePercentNumber(rateInputEl.value);
+      if(Number.isNaN(parsed)){
+        calculateAll();
+        return;
+      }
+      rateInputEl.value = formatRateInput(parsed);
+      if(increaseTypeEl.value === 'custom'){
+        lastCustomRateValue = rateInputEl.value;
+      }
+      calculateAll();
+    });
+
+    roundingTypeEl.addEventListener('change', ()=>{
+      syncStateInputs();
+      calculateAll();
+    });
+
+    [currentRentEl, rateInputEl, depositAmountEl].forEach(el=>{
+      el.addEventListener('keydown', event=>{
+        if(event.key === 'Enter'){
+          event.preventDefault();
+          handleCalculateClick();
+        }
+      });
+    });
+    [increaseTypeEl, roundingTypeEl].forEach(el=>{
+      el.addEventListener('keydown', event=>{
+        if(event.key === 'Enter'){
+          event.preventDefault();
+          handleCalculateClick();
+        }
+      });
+    });
+
+    syncOfficialRateUI();
+    if(!loadSavedInputs()){
+      setActiveRateChip(officialRateChipEl);
+      updateMode();
+      emptyState();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geri Sayım Hesaplama | Hesapica</title>
+<meta content="Belirlediğiniz tarihe kaç yıl, ay, hafta, gün, saat, dakika ve saniye kaldığını hesaplayın. Canlı geri sayım, sonuç paylaşımı ve senaryo farklarıyla özel günler, teslim tarihleri ve etkinlikler için net plan görünümü alın." name="description"/>
+<meta content="geri sayım hesaplama, kaç gün kaldı, tarihe kaç gün kaldı, sayaç hesaplama, gün saat dakika geri sayım" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/geri-sayim-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Geri Sayım Hesaplama | Hesapica" property="og:title"/>
+<meta content="Belirlediğiniz tarihe kaç yıl, ay, hafta, gün, saat, dakika ve saniye kaldığını hesaplayın. Canlı geri sayım, sonuç paylaşımı ve senaryo farklarıyla özel günler, teslim tarihleri ve etkinlikler için net plan görünümü alın." property="og:description"/>
+<meta content="https://hesapica.com/geri-sayim-hesaplama" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Geri Sayım Hesaplama | Hesapica" name="twitter:title"/>
+<meta content="Belirlediğiniz tarihe kaç yıl, ay, hafta, gün, saat, dakika ve saniye kaldığını hesaplayın. Canlı geri sayım, sonuç paylaşımı ve senaryo farklarıyla özel günler, teslim tarihleri ve etkinlikler için net plan görünümü alın." name="twitter:description"/>
+<meta content="https://hesapica.com/geri-sayim-hesaplama" name="twitter:url"/>
+<meta content="index,follow" name="robots"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Geri Sayım Hesaplama",
+    "url":"https://hesapica.com/geri-sayim-hesaplama",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web",
+    "description":"Hedef tarihe kalan süreyi yıl, ay, hafta, gün, saat, dakika ve saniye bazında hesaplayan ücretsiz geri sayım aracı."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Referans tarih girmezsem ne olur?","acceptedAnswer":{"@type":"Answer","text":"Referans tarih ve saat boş bırakılırsa sistem bugünün başlangıç anını yani 00:00 saatini baz alır."}},
+      {"@type":"Question","name":"Hedef saat girmezsem ne olur?","acceptedAnswer":{"@type":"Answer","text":"Hedef saat boş bırakılırsa seçilen günün başlangıcı yani 00:00 kabul edilir."}},
+      {"@type":"Question","name":"Geçmiş tarih girersem hesaplama yapılır mı?","acceptedAnswer":{"@type":"Answer","text":"Bu araç geri sayım odaklıdır. Hedef tarih referans tarihten önceyse uyarı verir ve sonuç üretmez."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Günlük Hayat Hesapları","item":"https://hesapica.com/#gunluk"},
+      {"@type":"ListItem","position":3,"name":"Geri Sayım Hesaplama","item":"https://hesapica.com/geri-sayim-hesaplama"}
+    ]
+  }
+  </script>
+<style>
+    :root{
+      --primary:#4f46e5; --secondary:#7c3aed; --bg:#f6f8fc; --surface:#ffffff; --surface-soft:#eef2ff;
+      --text:#1f2937; --muted:#6b7280; --line:#e5e7eb; --good:#059669; --warn:#b45309; --bad:#dc2626;
+      --shadow:0 18px 48px rgba(79,70,229,.08); --radius-xl:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:var(--text);
+      background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 30%), linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit} button,input{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px)); margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:24px;padding:34px;border-radius:30px;
+      border:1px solid rgba(79,70,229,.10);
+      background:linear-gradient(135deg, rgba(79,70,229,.08), rgba(124,58,237,.08)); box-shadow:var(--shadow);
+    }
+    .eyebrow-pill{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;
+      border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px
+    }
+    .hero h1{margin:0 0 14px;font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.02em}
+    .hero p{margin:0 0 18px;color:#4b5563;font-size:17px;max-width:760px}
+    .chip-list{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{
+      min-height:100%;padding:24px;border-radius:24px;background:rgba(255,255,255,.92);
+      border:1px solid rgba(79,70,229,.10);display:flex;flex-direction:column;justify-content:center
+    }
+    .hero-box .eyebrow{margin-bottom:8px;color:var(--secondary);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+    .hero-box strong{display:block;margin-bottom:8px;font-size:28px;line-height:1.15}
+    .hero-box p,.hero-box li{margin:0;font-size:15px;color:var(--muted)}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.12fr) 400px;gap:24px;align-items:start;margin-top:26px}
+    .card,.content-section,.faq-section,.related-section{
+      padding:28px;border-radius:var(--radius-xl);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)
+    }
+    .content-section,.faq-section,.related-section{margin-top:28px}
+    .card h2,.content-section h2,.faq-section h2,.related-section h2{margin:0 0 16px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:-4px 0 20px;color:var(--muted);font-size:15px}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .subhead{margin:22px 0 14px;font-size:18px;font-weight:900;color:var(--primary)}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    .helper{margin-top:8px;color:var(--muted);font-size:13px}
+    .action-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:0;cursor:pointer;font:inherit;transition:transform .18s ease;padding:14px 18px;border-radius:16px;font-size:15px;font-weight:800}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .validation-box{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}
+    .validation-box.show{display:block}
+    .field.has-error label{color:var(--bad)}
+    .field.has-error input{border-color:#fecaca;box-shadow:0 0 0 4px rgba(220,38,38,.08)}
+    .error-text{display:none;margin-top:8px;font-size:13px;font-weight:700;color:#b91c1c}
+    .field.has-error .error-text{display:block}
+
+    .score-box,.decision-box,.scenario-box{margin-top:16px;padding:18px;border-radius:20px;background:rgba(255,255,255,.82);border:1px solid rgba(79,70,229,.10)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+    .score-kicker{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .score-value{font-size:42px;line-height:1;font-weight:900;letter-spacing:-.03em;color:#9ca3af}
+    .score-box.ready .score-value{color:var(--text)}
+    .score-sub{font-size:14px;color:#4b5563;margin-top:6px}
+    .score-progress{height:12px;border-radius:999px;background:rgba(79,70,229,.10);overflow:hidden;margin-top:14px}
+    .score-progress > span{display:block;height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .35s ease}
+    .decision-box strong,.scenario-box strong{display:block;margin-bottom:8px;font-size:16px;color:var(--primary)}
+    .decision-box p{margin:0;color:#374151;font-size:15px;line-height:1.7}
+    .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .scenario-item{padding:14px;border-radius:16px;background:#fff;border:1px solid rgba(79,70,229,.08)}
+    .scenario-item .t{font-size:13px;font-weight:800;color:var(--primary);margin-bottom:6px}
+    .scenario-item .v{font-size:21px;font-weight:900;line-height:1.15;color:#9ca3af}
+    .scenario-item.ready .v{color:var(--text)}
+    .scenario-item .s{margin-top:6px;color:#4b5563;font-size:12px;line-height:1.45}
+
+    .result-card{
+      position:sticky;top:24px;padding:24px;border-radius:26px;border:1px solid rgba(79,70,229,.12);
+      background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%); box-shadow:0 18px 48px rgba(79,70,229,.10)
+    }
+    .status-card{padding:20px 22px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:rgba(255,255,255,.82);margin-bottom:16px}
+    .status-row{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:8px;font-size:15px;color:#374151;line-height:1.72}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .result-main{
+      padding:22px;border-radius:22px;background:rgba(255,255,255,.82);border:1px solid rgba(79,70,229,.08);margin-bottom:16px
+    }
+    .result-main .label{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+    .result-main .value{font-size:35px;line-height:1.14;font-weight:900;letter-spacing:-.03em;margin-bottom:12px;color:#9ca3af}
+    .result-main .subtext{color:#4b5563;font-size:15px;line-height:1.75}
+    .result-main.ready .value{color:var(--text)}
+
+    .result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:18px}
+    .result-item{padding:18px;border-radius:18px;background:rgba(255,255,255,.74);border:1px solid rgba(79,70,229,.08)}
+    .result-item .k{color:var(--muted);font-size:13px;margin-bottom:8px;font-weight:700;letter-spacing:.01em}
+    .result-item .v{font-size:22px;font-weight:800;line-height:1.25;color:#9ca3af}
+    .result-item.ready .v{color:var(--text)}
+    .result-item .s{margin-top:6px;color:#667085;font-size:12.5px;line-height:1.55}
+
+    .live-countdown-box{
+      position:relative;overflow:hidden;margin-bottom:18px;padding:20px;border-radius:24px;
+      background:linear-gradient(135deg, rgba(79,70,229,.14) 0%, rgba(124,58,237,.10) 38%, rgba(255,255,255,.96) 100%);
+      border:1px solid rgba(79,70,229,.16);box-shadow:0 22px 44px rgba(79,70,229,.12);backdrop-filter:blur(14px)
+    }
+    .live-countdown-box::before,
+    .live-countdown-box::after{
+      content:'';position:absolute;border-radius:999px;pointer-events:none;z-index:0;filter:blur(2px)
+    }
+    .live-countdown-box::before{
+      width:180px;height:180px;top:-88px;right:-62px;
+      background:radial-gradient(circle, rgba(124,58,237,.18) 0%, rgba(124,58,237,0) 72%)
+    }
+    .live-countdown-box::after{
+      width:150px;height:150px;bottom:-78px;left:-54px;
+      background:radial-gradient(circle, rgba(79,70,229,.14) 0%, rgba(79,70,229,0) 74%)
+    }
+    .live-top,.live-grid,.live-foot{position:relative;z-index:1}
+    .live-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:16px}
+    .live-title{
+      display:flex;align-items:center;gap:10px;font-size:16px;font-weight:900;color:var(--primary);margin:0
+    }
+    .live-title::before{
+      content:'';width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,#6366f1,#8b5cf6);
+      box-shadow:0 0 0 0 rgba(99,102,241,.28);animation:livePulse 2.1s ease infinite
+    }
+    .live-sub{margin:6px 0 0;color:#475467;font-size:14px;line-height:1.65;max-width:30ch}
+    .live-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .live-unit{
+      position:relative;overflow:hidden;padding:18px 14px;border-radius:20px;text-align:center;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(238,242,255,.92));
+      border:1px solid rgba(99,102,241,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 12px 24px rgba(79,70,229,.08)
+    }
+    .live-unit::before{
+      content:'';position:absolute;left:14px;right:14px;top:0;height:3px;border-radius:999px;
+      background:linear-gradient(90deg, rgba(99,102,241,.22), rgba(139,92,246,.55), rgba(99,102,241,.22))
+    }
+    .live-unit .n{display:block;font-size:34px;line-height:1.02;font-weight:900;letter-spacing:-.04em;color:#9ca3af;transition:color .2s ease, transform .2s ease}
+    .live-unit.ready .n{color:#312e81;transform:translateY(-1px)}
+    .live-unit .l{
+      display:inline-flex;align-items:center;justify-content:center;min-height:28px;margin-top:10px;padding:6px 10px;border-radius:999px;
+      font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5b5f72;background:rgba(79,70,229,.07)
+    }
+    .live-foot{
+      margin-top:16px;padding:13px 14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.08);
+      color:#4b5563;font-size:13.5px;line-height:1.65
+    }
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:18px}
+    .health-card{padding:18px;border-radius:18px;background:rgba(255,255,255,.74);border:1px solid rgba(79,70,229,.08)}
+    .health-card h3{margin:0 0 10px;font-size:15px;color:var(--primary);line-height:1.4}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em;color:#9ca3af;line-height:1.25}
+    .health-card.ready .big{color:var(--text)}
+
+    .bar-group{display:grid;gap:14px;margin-bottom:18px}
+    .bar-row .top{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:14px;font-weight:700;color:#4b5563;line-height:1.5}
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.9);overflow:hidden;border:1px solid rgba(79,70,229,.08)}
+    .bar>span{display:block;height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .35s ease}
+    .smart-note{padding:18px;border-radius:18px;background:rgba(255,255,255,.78);border:1px solid rgba(79,70,229,.08);color:#374151;font-size:15px;line-height:1.72}
+
+    .formula-box{margin-top:18px;padding:18px 20px;border-radius:20px;background:#f8f7ff;border:1px dashed rgba(79,70,229,.22);font-weight:800;color:#4338ca;font-size:18px}
+    .content-section p{margin:0 0 14px;color:#4b5563}.content-section ul{margin:0;padding-left:20px;color:#4b5563}
+    .faq-item{border-top:1px solid #edf0f7;padding:18px 0}.faq-item:first-of-type{border-top:0;padding-top:0}.faq-item h3{margin:0 0 8px;font-size:18px}.faq-item p{margin:0;color:#4b5563}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%,#8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86}.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .result-card,.result-grid,.result-item,.health-grid,.health-card,.scenario-grid,.scenario-item,.status-row,.score-row{min-width:0}
+    .result-item .v,.health-card .big,.scenario-item .v,.status-text,.decision-box p,.smart-note,.score-sub,.result-main .subtext,.live-sub,.live-foot{overflow-wrap:anywhere;word-break:break-word}
+    .result-flash{animation:resultFlash 1.35s ease}
+    @keyframes resultFlash{
+      0%{box-shadow:0 0 0 0 rgba(79,70,229,.28),0 18px 48px rgba(79,70,229,.10)}
+      100%{box-shadow:0 18px 48px rgba(79,70,229,.10)}
+    }
+    @keyframes livePulse{
+      0%{box-shadow:0 0 0 0 rgba(99,102,241,.28)}
+      70%{box-shadow:0 0 0 10px rgba(99,102,241,0)}
+      100%{box-shadow:0 0 0 0 rgba(99,102,241,0)}
+    }
+
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:1024px){.hero,.tool-layout{grid-template-columns:1fr}.related-grid,.health-grid,.scenario-grid{grid-template-columns:repeat(2,1fr)}.live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.result-card{position:static}}
+    @media (max-width:680px){.container{width:min(100% - 20px,100%)}.hero,.card,.content-section,.faq-section,.related-section,.result-card{padding:20px}.form-grid,.result-grid,.related-grid,.health-grid,.scenario-grid,.live-grid{grid-template-columns:1fr}.action-buttons .btn{width:100%}.result-main .value{font-size:30px}.live-countdown-box{padding:18px}.live-unit{padding:16px 12px}.live-unit .n{font-size:28px}.live-sub{max-width:none}}
+  </style>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;font:600 14px/1.6 Inter,Arial,sans-serif;">Bu hesaplama aracının doğru çalışması için tarayıcınızda JavaScript etkin olmalıdır.</div></noscript>
+<div class="container">
+<div class="topbar">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#gunluk">Günlük Hayat Hesapları</a>
+<span>/</span>
+<strong>Geri Sayım Hesaplama</strong>
+</nav>
+</div>
+<section class="hero">
+<div>
+<span class="eyebrow-pill">Hesapica • Lite Pro Tool</span>
+<h1>Geri Sayım Hesaplama</h1>
+<p>Belirlediğiniz tarihe kaç yıl, ay, hafta, gün, saat, dakika ve saniye kaldığını hesaplayın. Özel günler, teslim tarihleri ve etkinlikler için modern ve temiz geri sayım sonucu alın.</p>
+<div class="chip-list">
+<div class="chip">Yıl, ay ve hafta</div>
+<div class="chip">Gün, saat, dakika</div>
+<div class="chip">Canlı geri sayım</div>
+<div class="chip">Boş başlangıç</div>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Hızlı Hesap Mantığı</div>
+<strong>Hedef tarih − referans tarih = kalan süre</strong>
+<p>Bu araç hedef tarihe kalan süreyi farklı zaman birimlerinde sade ve anlaşılır şekilde gösterir.</p>
+<ul>
+<li>Toplam gün, saat, dakika ve saniye</li>
+<li>Yıl / ay / hafta görünümü</li>
+<li>Skor, yorum ve senaryo farkı</li>
+</ul>
+</aside>
+</section>
+<section class="tool-layout">
+<div class="card">
+<h2>Geri Sayımı Hesapla</h2>
+<p class="section-note">Temel kullanım için yalnızca hedef tarih yeterlidir. Tarihleri GG.AA.YYYY formatında yazabilirsin. Saat alanı boş bırakılırsa gün başlangıcı yani 00:00 baz alınır. Sonuçlar otomatik güncellenir; istersen <strong>Sonucu Gör</strong> ile anında yeniden hesaplayabilirsin.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Referans tarih ve saat boş bırakılırsa sistem bugünün başlangıç anını yani 00:00 saatini baz alır.</p>
+</div>
+<div class="form-grid">
+<div class="field">
+<label for="eventName">Etkinlik adı (isteğe bağlı)</label>
+<input id="eventName" placeholder="Örn. Tatil, Sınav, Doğum Günü" type="text"/>
+</div>
+<div class="field" id="targetDateField">
+<label for="targetDate">Hedef tarih</label>
+<input aria-describedby="targetDateHelp targetDateError" autocomplete="off" id="targetDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY" type="text"/>
+<div class="helper" id="targetDateHelp">Tarihi Türkiye formatında gir: GG.AA.YYYY</div>
+<div class="error-text" id="targetDateError"></div>
+</div>
+<div class="field" id="targetTimeField">
+<label for="targetTime">Hedef saat (isteğe bağlı)</label>
+<input id="targetTime" step="1" type="time"/>
+<div class="error-text" id="targetTimeError"></div>
+</div>
+<div class="field" id="referenceDateField">
+<label for="referenceDate">Referans tarih (isteğe bağlı)</label>
+<input aria-describedby="referenceDateHelp referenceDateError" autocomplete="off" id="referenceDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY" type="text"/>
+<div class="helper" id="referenceDateHelp">Boş bırakırsan sistem bugünün başlangıcını baz alır.</div>
+<div class="error-text" id="referenceDateError"></div>
+</div>
+<div class="field" id="referenceTimeField">
+<label for="referenceTime">Referans saat (isteğe bağlı)</label>
+<input id="referenceTime" step="1" type="time"/>
+<div class="error-text" id="referenceTimeError"></div>
+</div>
+<div class="field full">
+<div class="helper">Hedef saat boş bırakılırsa 00:00 alınır. Referans saat boşsa seçilen günün başlangıcı kabul edilir.</div>
+</div>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox"></div>
+<div class="action-buttons">
+<button class="btn btn-primary" onclick="calculateTool(true)" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="setTodayStart()" type="button">Bugünün Başlangıcı</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="clearForm()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+</div>
+<aside class="result-card" id="resultPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" id="statusText">Hedef tarih girildiğinde sonuçlar otomatik oluşur.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="result-main" id="mainBox">
+<div class="label">Kalan Süre</div>
+<div class="value" id="mainResult">—</div>
+<div class="subtext" id="mainSubtext">Hedef tarih girildiğinde detaylı geri sayım burada görünür.</div>
+</div>
+<div class="live-countdown-box" id="liveCountdownBox">
+<div class="live-top">
+<div>
+<div class="live-title">Canlı Geri Sayım</div>
+<p class="live-sub" id="liveCountdownSub">Geçerli hedef oluştuğunda sayaç şu ana göre her saniye güncellenir.</p>
+</div>
+<span class="badge" id="liveCountdownBadge">Bekleniyor</span>
+</div>
+<div class="live-grid">
+<div class="live-unit" id="liveUnitDays"><span class="n" id="liveDays">—</span><span class="l">Gün</span></div>
+<div class="live-unit" id="liveUnitHours"><span class="n" id="liveHours">—</span><span class="l">Saat</span></div>
+<div class="live-unit" id="liveUnitMinutes"><span class="n" id="liveMinutes">—</span><span class="l">Dakika</span></div>
+<div class="live-unit" id="liveUnitSeconds"><span class="n" id="liveSeconds">—</span><span class="l">Saniye</span></div>
+</div>
+<div class="live-foot" id="liveCountdownText">Canlı sayaç geçerli hedefle birlikte başlayacak.</div>
+</div>
+<div class="result-grid">
+<div class="result-item" id="item1"><div class="k">Yıl</div><div class="v" id="totalYears">—</div><div class="s" id="totalYearsText">Veri bekleniyor</div></div>
+<div class="result-item" id="item2"><div class="k">Ay</div><div class="v" id="totalMonths">—</div><div class="s" id="totalMonthsText">Veri bekleniyor</div></div>
+<div class="result-item" id="item3"><div class="k">Hafta</div><div class="v" id="totalWeeks">—</div><div class="s" id="totalWeeksText">Veri bekleniyor</div></div>
+<div class="result-item" id="item4"><div class="k">Toplam Gün</div><div class="v" id="plainDays">—</div><div class="s" id="plainDaysText">Veri bekleniyor</div></div>
+<div class="result-item" id="item5"><div class="k">Saat</div><div class="v" id="totalHours">—</div><div class="s" id="totalHoursText">Veri bekleniyor</div></div>
+<div class="result-item" id="item6"><div class="k">Dakika</div><div class="v" id="totalMinutes">—</div><div class="s" id="totalMinutesText">Veri bekleniyor</div></div>
+<div class="result-item" id="item7"><div class="k">Saniye</div><div class="v" id="totalSeconds">—</div><div class="s" id="totalSecondsText">Veri bekleniyor</div></div>
+<div class="result-item" id="item8"><div class="k">Referans modu</div><div class="v" id="referenceMode">—</div><div class="s" id="referenceModeText">Veri bekleniyor</div></div>
+</div>
+<div class="health-grid">
+<div class="health-card" id="health1"><h3>Ana süre</h3><div class="big" id="quickMain">—</div></div>
+<div class="health-card" id="health2"><h3>Toplam gün</h3><div class="big" id="quickDays">—</div></div>
+<div class="health-card" id="health3"><h3>Etkinlik</h3><div class="big" id="quickEvent">—</div></div>
+</div>
+<div class="score-box" id="scoreBox">
+<div class="score-row">
+<div>
+<div class="score-kicker">Zaman Baskısı Skoru</div>
+<div class="score-value" id="urgencyScore">—</div>
+</div>
+<span class="badge" id="scoreBadge">Bekleniyor</span>
+</div>
+<div aria-live="polite" class="score-sub" id="scoreSub">Hesaplama sonrası hedefe ne kadar yakın olduğun burada özetlenir.</div>
+<div class="score-progress"><span id="scoreBar"></span></div>
+</div>
+<div class="decision-box">
+<strong>Karar Özeti</strong>
+<p id="decisionText">Önce hedef tarihi gir. Sistem burada net ve kısa bir zaman planı yorumu üretecek.</p>
+</div>
+<div class="bar-group">
+<div class="bar-row"><div class="top"><span>Ay Ölçeğinde İlerleme</span><span id="monthRatioLabel">%0</span></div><div class="bar"><span id="monthBar"></span></div></div>
+<div class="bar-row"><div class="top"><span>Yıl Ölçeğinde İlerleme</span><span id="yearRatioLabel">%0</span></div><div class="bar"><span id="yearBar"></span></div></div>
+</div>
+<div aria-live="polite" class="smart-note" id="smartComment">Henüz veri girilmedi. Hesaplama sonrası burada kısa ve akıllı yorum gösterilir.</div>
+<div class="scenario-box">
+<strong>Senaryo Analizi</strong>
+<div class="scenario-grid">
+<div class="scenario-item" id="scenario1"><div class="t">1 Gün Erken</div><div class="v" id="scenarioEarly">—</div><div class="s" id="scenarioEarlyText">Hedef 1 gün erkene çekilirse kalan süre.</div></div>
+<div class="scenario-item" id="scenario2"><div class="t">Mevcut Hedef</div><div class="v" id="scenarioBase">—</div><div class="s" id="scenarioBaseText">Mevcut tarihe göre ana görünüm.</div></div>
+<div class="scenario-item" id="scenario3"><div class="t">1 Gün Geç</div><div class="v" id="scenarioLate">—</div><div class="s" id="scenarioLateText">Hedef 1 gün ileri alınırsa kalan süre.</div></div>
+</div>
+</div>
+</aside>
+</section>
+<section class="content-section">
+<h2>Bu araç ne işe yarar?</h2>
+<p>Geri Sayım Hesaplama aracı, hedeflediğiniz tarihe ne kadar zaman kaldığını yıl, ay, hafta, gün, saat, dakika ve saniye olarak gösterir. Böylece özel günler veya önemli tarihler için net bir zaman planı oluşturabilirsiniz.</p>
+<p>Özellikle sınav, düğün, doğum günü, tatil, proje teslimi veya seyahat tarihi gibi hedefler için geri kalan süreyi detaylı görmek isteyen kullanıcılar için oldukça kullanışlıdır. Ayrıca canlı geri sayım, sonuç kopyalama, paylaşma, referans modu ve senaryo farkı gibi yardımcı katmanlarla planlama kalitesini artırır.</p>
+<h2>Geri sayım nasıl hesaplanır?</h2>
+<p>Sistem referans an ile hedef tarih arasındaki farkı bulur. Bu fark önce toplam gün, saat ve dakika olarak hesaplanır; ardından yıl, ay ve hafta ölçeğinde ayrıştırılarak kullanıcıya sunulur.</p>
+<div class="formula-box">Kalan Süre = Hedef Tarih − Referans Tarih<br/>Canlı Sayaç = Hedef Tarih − Şu An<br/>Toplam Gün = İki tarih arasındaki toplam süre</div>
+</section>
+<section class="faq-section">
+<h2>Sık Sorulan Sorular</h2>
+<div class="faq-item"><h3>Referans tarih girmezsem ne olur?</h3><p>Referans tarih ve saat boş bırakılırsa sistem bugünün başlangıç anını yani 00:00 saatini baz alır.</p></div>
+<div class="faq-item"><h3>Hedef saat girmezsem ne olur?</h3><p>Hedef saat boş bırakılırsa seçilen günün başlangıcı yani 00:00 kabul edilir.</p></div>
+<div class="faq-item"><h3>Geçmiş tarih girersem hesaplama yapılır mı?</h3><p>Bu araç geri sayım odaklıdır. Hedef tarih referans tarihten önceyse uyarı verir.</p></div>
+<div class="faq-item"><h3>Canlı geri sayım hangi ana göre çalışır?</h3><p>Canlı sayaç referans tarih değil, şu anki gerçek zaman baz alınarak her saniye güncellenir. Böylece etkinliğe şu andan itibaren ne kadar kaldığını ayrı bir kutuda görebilirsiniz.</p></div>
+</section>
+<section class="related-section">
+<h2>İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/yas-hesaplama"><span class="small">İlgili Araç</span><strong>Yaş Hesaplama</strong><p>Doğum tarihine göre geçen süreyi detaylı hesapla.</p></a>
+<a class="related-card" href="/iki-tarih-arasi-gun-hesaplama"><span class="small">İlgili Araç</span><strong>İki Tarih Arası Gün Hesaplama</strong><p>İki tarih arasındaki farkı yıl, ay, hafta ve gün olarak gör.</p></a>
+<a class="related-card" href="/butce-hesaplama"><span class="small">İlgili Araç</span><strong>Bütçe Hesaplama</strong><p>Dönemsel planlama yaparken bütçe tarafını ayrıca hesapla.</p></a>
+</div>
+</section>
+<div class="footer-note">Hesapica · Geri Sayım Hesaplama aracı hızlı sonuç için tasarlanmıştır. Resmî zaman planlamalarında kurum veya etkinlik takvimi esas alınmalıdır.</div>
+</div>
+<script>
+    const STORAGE_KEY = 'hesapica_geri_sayim_lock_v2_manual';
+    const state = {
+      inputs: {},
+      errors: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      dataMode: 'manual',
+      suppressSave: false,
+      debounceTimer: null,
+      liveTimer: null
+    };
+
+    const fieldIds = ['eventName','targetDate','targetTime','referenceDate','referenceTime'];
+    const eventNameEl = document.getElementById('eventName');
+    const targetDateEl = document.getElementById('targetDate');
+    const targetTimeEl = document.getElementById('targetTime');
+    const referenceDateEl = document.getElementById('referenceDate');
+    const referenceTimeEl = document.getElementById('referenceTime');
+    const validationBox = document.getElementById('validationBox');
+
+    function el(id){ return document.getElementById(id); }
+    function formatInt(value){ return new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(Number(value || 0)); }
+    function formatDecimal(value, digits=1){ return new Intl.NumberFormat('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: digits }).format(Number(value || 0)); }
+    function hasAnyInput(inputs){ return Object.values(inputs).some(v => String(v || '').trim() !== ''); }
+    function formatDateTR(date){
+      const d = String(date.getDate()).padStart(2, '0');
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const y = date.getFullYear();
+      return `${d}.${m}.${y}`;
+    }
+    function getTodayLocalDateString(){
+      return formatDateTR(new Date());
+    }
+    function normalizeDateInput(value){
+      const raw = String(value || '').trim();
+      if(!raw) return '';
+      const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if(iso) return `${iso[3]}.${iso[2]}.${iso[1]}`;
+      const digits = raw.replace(/\D/g, '').slice(0, 8);
+      if(!digits) return '';
+      let out = digits.slice(0, 2);
+      if(digits.length > 2) out += '.' + digits.slice(2, 4);
+      if(digits.length > 4) out += '.' + digits.slice(4, 8);
+      return out;
+    }
+    function parseDateParts(dateStr){
+      const normalized = normalizeDateInput(dateStr);
+      const match = normalized.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      if(!match) return null;
+      const day = Number(match[1]);
+      const month = Number(match[2]);
+      const year = Number(match[3]);
+      if(day < 1 || month < 1 || month > 12 || year < 1) return null;
+      const test = new Date(year, month - 1, day);
+      if(test.getFullYear() !== year || test.getMonth() !== month - 1 || test.getDate() !== day) return null;
+      return { year, monthIndex: month - 1, day, normalized };
+    }
+    function parseTimeParts(timeStr){
+      if(!timeStr) return { hour: 0, minute: 0, second: 0 };
+      const parts = String(timeStr).split(':').map(Number);
+      if(parts.length < 2 || parts.some(Number.isNaN)) return null;
+      return { hour: parts[0], minute: parts[1], second: parts[2] || 0 };
+    }
+    function startOfToday(){
+      const now = new Date();
+      return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+    }
+    function combineDateTime(dateStr, timeStr, fallbackToTodayStart=false){
+      if(!dateStr){
+        return fallbackToTodayStart ? startOfToday() : null;
+      }
+      const date = parseDateParts(dateStr);
+      const time = parseTimeParts(timeStr || '00:00');
+      if(!date || !time) return null;
+      return new Date(date.year, date.monthIndex, date.day, time.hour, time.minute, time.second || 0, 0);
+    }
+    function addMonthsSafe(date, count){
+      const d = new Date(date.getTime());
+      const wantedDay = d.getDate();
+      d.setDate(1);
+      d.setMonth(d.getMonth() + count);
+      const lastDay = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+      d.setDate(Math.min(wantedDay, lastDay));
+      return d;
+    }
+    function addYearsSafe(date, count){
+      return addMonthsSafe(date, count * 12);
+    }
+    function getCalendarDiff(start, end){
+      let cursor = new Date(start.getTime());
+      let years = 0;
+      while(addYearsSafe(cursor, 1) <= end && years < 1000){
+        cursor = addYearsSafe(cursor, 1);
+        years += 1;
+      }
+      let months = 0;
+      while(addMonthsSafe(cursor, 1) <= end && months < 12000){
+        cursor = addMonthsSafe(cursor, 1);
+        months += 1;
+      }
+      let remainingMs = end - cursor;
+      const dayMs = 24 * 60 * 60 * 1000;
+      const hourMs = 60 * 60 * 1000;
+      const minuteMs = 60 * 1000;
+      const secondMs = 1000;
+      const days = Math.floor(remainingMs / dayMs);
+      remainingMs -= days * dayMs;
+      const hours = Math.floor(remainingMs / hourMs);
+      remainingMs -= hours * hourMs;
+      const minutes = Math.floor(remainingMs / minuteMs);
+      remainingMs -= minutes * minuteMs;
+      const seconds = Math.floor(remainingMs / secondMs);
+      return { years, months, days, hours, minutes, seconds };
+    }
+    function buildMainText(diff){
+      const parts = [];
+      if(diff.years) parts.push(`${formatInt(diff.years)} yıl`);
+      if(diff.months) parts.push(`${formatInt(diff.months)} ay`);
+      if(diff.days) parts.push(`${formatInt(diff.days)} gün`);
+      if(parts.length < 4 && (diff.hours || parts.length === 0)) parts.push(`${formatInt(diff.hours)} saat`);
+      if(parts.length < 4 && (diff.minutes || parts.length === 0)) parts.push(`${formatInt(diff.minutes)} dakika`);
+      if(parts.length < 4 && parts.length === 0) parts.push(`${formatInt(diff.seconds)} saniye`);
+      return parts.slice(0, 4).join(' ');
+    }
+    function summarizeLargeNumber(value, unit){
+      if(!Number.isFinite(Number(value))) return 'Veri bekleniyor';
+      const num = Number(value);
+      if(num >= 1000000000) return 'Yaklaşık ' + formatDecimal(num / 1000000000, 2) + ' milyar ' + unit;
+      if(num >= 1000000) return 'Yaklaşık ' + formatDecimal(num / 1000000, 2) + ' milyon ' + unit;
+      if(num >= 1000) return 'Yaklaşık ' + formatDecimal(num / 1000, 2) + ' bin ' + unit;
+      return formatInt(num) + ' ' + unit;
+    }
+    function formatDateTimeTR(date){
+      return date.toLocaleString('tr-TR', {
+        day:'2-digit',
+        month:'2-digit',
+        year:'numeric',
+        hour:'2-digit',
+        minute:'2-digit',
+        second:'2-digit'
+      });
+    }
+    function splitRemainingMs(ms){
+      const safeMs = Math.max(0, Math.floor(ms));
+      const totalSeconds = Math.floor(safeMs / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return { days, hours, minutes, seconds, totalSeconds };
+    }
+    function stopLiveCountdown(){
+      if(state.liveTimer){
+        clearInterval(state.liveTimer);
+        state.liveTimer = null;
+      }
+    }
+    function setLiveCountdownEmpty(message='Canlı sayaç geçerli hedefle birlikte başlayacak.'){
+      stopLiveCountdown();
+      ['liveDays','liveHours','liveMinutes','liveSeconds'].forEach(id => el(id).textContent = '—');
+      ['liveUnitDays','liveUnitHours','liveUnitMinutes','liveUnitSeconds'].forEach(id => el(id).classList.remove('ready'));
+      el('liveCountdownBadge').textContent = 'Bekleniyor';
+      el('liveCountdownBadge').className = 'badge';
+      el('liveCountdownSub').textContent = 'Geçerli hedef oluştuğunda sayaç şu ana göre her saniye güncellenir.';
+      el('liveCountdownText').textContent = message;
+    }
+    function renderLiveCountdown(targetDate, eventName=''){
+      const diffMs = targetDate.getTime() - Date.now();
+      if(diffMs <= 0){
+        ['liveDays','liveHours','liveMinutes','liveSeconds'].forEach(id => el(id).textContent = '0');
+        ['liveUnitDays','liveUnitHours','liveUnitMinutes','liveUnitSeconds'].forEach(id => el(id).classList.add('ready'));
+        el('liveCountdownBadge').textContent = 'Tamamlandı';
+        el('liveCountdownBadge').className = 'badge good';
+        el('liveCountdownSub').textContent = 'Hedef zamanına ulaşıldı. Canlı sayaç durduruldu.';
+        el('liveCountdownText').textContent = (eventName ? eventName + ' için ' : '') + 'hedef anı ' + formatDateTimeTR(targetDate) + ' itibarıyla tamamlandı.';
+        stopLiveCountdown();
+        return;
+      }
+      const live = splitRemainingMs(diffMs);
+      el('liveDays').textContent = formatInt(live.days);
+      el('liveHours').textContent = formatInt(live.hours);
+      el('liveMinutes').textContent = formatInt(live.minutes);
+      el('liveSeconds').textContent = formatInt(live.seconds);
+      ['liveUnitDays','liveUnitHours','liveUnitMinutes','liveUnitSeconds'].forEach(id => el(id).classList.add('ready'));
+      el('liveCountdownBadge').textContent = 'Canlı';
+      el('liveCountdownBadge').className = 'badge warn';
+      el('liveCountdownSub').textContent = 'Bu kutu referans tarihten bağımsız olarak şu ana göre her saniye güncellenir.';
+      el('liveCountdownText').textContent = (eventName ? eventName + ' için ' : '') + formatDateTimeTR(targetDate) + ' anına canlı olarak geri sayım yapılıyor.';
+    }
+    function startLiveCountdown(targetDate, eventName=''){
+      stopLiveCountdown();
+      renderLiveCountdown(targetDate, eventName);
+      if(targetDate.getTime() > Date.now()){
+        state.liveTimer = setInterval(() => renderLiveCountdown(targetDate, eventName), 1000);
+      }
+    }
+    function sanitizeDateField(node){
+      const normalized = normalizeDateInput(node.value);
+      if(node.value !== normalized) node.value = normalized;
+    }
+    function scrollToResultPanel(){
+      const panel = el('resultPanel');
+      if(!panel) return;
+      panel.scrollIntoView({ behavior:'smooth', block:'start' });
+      panel.classList.remove('result-flash');
+      void panel.offsetWidth;
+      panel.classList.add('result-flash');
+      setTimeout(() => panel.classList.remove('result-flash'), 1400);
+    }
+    function safeStorageRemove(key){
+      try{ localStorage.removeItem(key); } catch(error){}
+    }
+    function safeStorageSet(key, value){
+      try{ localStorage.setItem(key, value); } catch(error){}
+    }
+    function safeStorageGet(key){
+      try{ return localStorage.getItem(key); } catch(error){ return null; }
+    }
+    function getInputs(){
+      return {
+        eventName: eventNameEl.value.trim(),
+        targetDate: targetDateEl.value,
+        targetTime: targetTimeEl.value,
+        referenceDate: referenceDateEl.value,
+        referenceTime: referenceTimeEl.value
+      };
+    }
+    function applyInputs(inputs){
+      eventNameEl.value = inputs.eventName || '';
+      targetDateEl.value = normalizeDateInput(inputs.targetDate || '');
+      targetTimeEl.value = inputs.targetTime || '';
+      referenceDateEl.value = normalizeDateInput(inputs.referenceDate || '');
+      referenceTimeEl.value = inputs.referenceTime || '';
+      state.inputs = getInputs();
+    }
+    function clearFieldErrors(){
+      ['targetDate','targetTime','referenceDate','referenceTime'].forEach(name => {
+        const field = el(name + 'Field');
+        const error = el(name + 'Error');
+        if(field) field.classList.remove('has-error');
+        if(error) error.textContent = '';
+      });
+    }
+    function renderValidation(errors){
+      clearFieldErrors();
+      const messages = Object.values(errors);
+      if(messages.length){
+        validationBox.classList.add('show');
+        validationBox.innerHTML = messages.map(msg => `<div>${msg}</div>`).join('');
+      } else {
+        validationBox.classList.remove('show');
+        validationBox.textContent = '';
+      }
+      Object.entries(errors).forEach(([fieldName, message]) => {
+        const field = el(fieldName + 'Field');
+        const error = el(fieldName + 'Error');
+        if(field) field.classList.add('has-error');
+        if(error) error.textContent = message;
+      });
+    }
+    function setTodayStart(){
+      state.dataMode = 'manual';
+      referenceDateEl.value = getTodayLocalDateString();
+      referenceTimeEl.value = '00:00:00';
+      state.inputs = getInputs();
+      saveManualState();
+      calculateTool(true);
+    }
+    function validateInputs(inputs){
+      const errors = {};
+      if(!inputs.targetDate){
+        errors.targetDate = 'Hedef tarihi GG.AA.YYYY formatında girmen gerekiyor.';
+      }
+      if(inputs.referenceTime && !inputs.referenceDate){
+        errors.referenceDate = 'Referans saati kullanacaksan referans tarihi de girmelisin.';
+      }
+      const target = combineDateTime(inputs.targetDate, inputs.targetTime);
+      const reference = inputs.referenceDate ? combineDateTime(inputs.referenceDate, inputs.referenceTime) : combineDateTime('', '', true);
+      if(inputs.targetDate && (!target || Number.isNaN(target.getTime()))){
+        errors.targetDate = 'Hedef tarih GG.AA.YYYY formatında olmalı.';
+      }
+      if(inputs.referenceDate && (!reference || Number.isNaN(reference.getTime()))){
+        errors.referenceDate = 'Referans tarih GG.AA.YYYY formatında olmalı.';
+      }
+      if(target && reference && target < reference){
+        errors.targetDate = 'Hedef tarih referans tarihten önce olamaz.';
+      }
+      return { errors, target, reference };
+    }
+    function getUrgency(totalHours){
+      if(totalHours <= 24) return { score: 95, label: 'Çok yakın', badge: 'bad', text: 'Hedef çok yakın. Saatlik plan yapmak mantıklı olur.' };
+      if(totalHours <= 72) return { score: 82, label: 'Yakın', badge: 'warn', text: 'Kısa vadeli bir geri sayım. Gün ve saat takibi önemli.' };
+      if(totalHours <= 24 * 14) return { score: 64, label: 'Takipte', badge: 'warn', text: 'Orta kısa vadeli bir hedef. Haftalık plan yeterli olabilir.' };
+      if(totalHours <= 24 * 60) return { score: 42, label: 'Planlı', badge: 'good', text: 'Hedef için hâlâ rahat bir planlama alanı var.' };
+      return { score: 24, label: 'Uzun vade', badge: 'good', text: 'Uzun dönemli hedef. Ana takip metriği gün ve ay görünümü olmalı.' };
+    }
+    function buildDecision(totalHours, inputs, diff){
+      const refMode = inputs.referenceDate ? 'manuel referans' : 'bugünün başlangıcı';
+      if(totalHours === 0){
+        return `Hedef an şu anda veya hemen şimdi. ${refMode} baz alındı; kalan süre saniye düzeyinde takip edilebilir.`;
+      }
+      if(totalHours < 24){
+        return `Hedef bugün içinde. ${refMode} baz alındı; saat ve dakika düzeyinde plan yapman daha doğru olur.`;
+      }
+      if(totalHours < 24 * 7){
+        return `Hedef bir haftadan kısa sürede. Günlük kontrol yeterli ama son 24 saate girince saat bazına geçmek iyi olur.`;
+      }
+      if(diff.years > 0 || diff.months > 0){
+        return `Hedef orta-uzun vadede. Ana karar metriği toplam gün ile yıl/ay görünümü olmalı; saat ve dakika sadece yaklaşınca önem kazanır.`;
+      }
+      return `Hedef yakın ama aynı gün değil. Gün ve hafta görünümü planlama için en dengeli çerçeveyi verir.`;
+    }
+    function getReferenceLabel(inputs){
+      if(inputs.referenceDate){
+        return inputs.referenceTime ? 'Manuel tarih + saat' : 'Manuel tarih';
+      }
+      return 'Bugün 00:00';
+    }
+    function calculateScenario(reference, target){
+      if(target < reference){
+        return { value: 'Geçersiz', text: 'Bu senaryoda hedef referansın önüne düşüyor.' };
+      }
+      const diff = getCalendarDiff(reference, target);
+      return {
+        value: buildMainText(diff),
+        text: 'Toplam ' + formatInt(Math.floor((target - reference) / 86400000)) + ' gün görünümü'
+      };
+    }
+    function setEmptyState(){
+      state.results = null;
+      state.isCalculated = false;
+      state.isValid = false;
+      renderValidation({});
+
+      el('statusText').textContent = 'Hedef tarih girildiğinde sonuçlar otomatik oluşur.';
+      el('statusBadge').textContent = 'Veri bekleniyor';
+      el('statusBadge').className = 'badge';
+      el('mainResult').textContent = '—';
+      el('mainSubtext').textContent = 'Hedef tarih girildiğinde detaylı geri sayım burada görünür.';
+      el('mainBox').classList.remove('ready');
+
+      ['totalYears','totalMonths','totalWeeks','plainDays','totalHours','totalMinutes','totalSeconds','referenceMode'].forEach(id => el(id).textContent = '—');
+      ['totalYearsText','totalMonthsText','totalWeeksText','plainDaysText','totalHoursText','totalMinutesText','totalSecondsText','referenceModeText'].forEach(id => el(id).textContent = 'Veri bekleniyor');
+      ['item1','item2','item3','item4','item5','item6','item7','item8','health1','health2','health3','scenario1','scenario2','scenario3'].forEach(id => el(id).classList.remove('ready'));
+
+      el('quickMain').textContent = '—';
+      el('quickDays').textContent = '—';
+      el('quickEvent').textContent = '—';
+      el('monthRatioLabel').textContent = '%0';
+      el('yearRatioLabel').textContent = '%0';
+      el('monthBar').style.width = '0%';
+      el('yearBar').style.width = '0%';
+      el('urgencyScore').textContent = '—';
+      el('scoreBadge').textContent = 'Bekleniyor';
+      el('scoreBadge').className = 'badge';
+      el('scoreSub').textContent = 'Hesaplama sonrası hedefe ne kadar yakın olduğun burada özetlenir.';
+      el('scoreBar').style.width = '0%';
+      el('scoreBox').classList.remove('ready');
+      el('decisionText').textContent = 'Önce hedef tarihi gir. Sistem burada net ve kısa bir zaman planı yorumu üretecek.';
+      el('smartComment').textContent = 'Henüz veri girilmedi. Hesaplama sonrası burada kısa ve akıllı yorum gösterilir.';
+      el('scenarioEarly').textContent = '—';
+      el('scenarioBase').textContent = '—';
+      el('scenarioLate').textContent = '—';
+      el('scenarioEarlyText').textContent = 'Hedef 1 gün erkene çekilirse kalan süre.';
+      el('scenarioBaseText').textContent = 'Mevcut tarihe göre ana görünüm.';
+      el('scenarioLateText').textContent = 'Hedef 1 gün ileri alınırsa kalan süre.';
+      setLiveCountdownEmpty();
+    }
+    function saveManualState(){
+      if(state.suppressSave || state.dataMode !== 'manual') return;
+      const inputs = getInputs();
+      if(!hasAnyInput(inputs)){
+        safeStorageRemove(STORAGE_KEY);
+        return;
+      }
+      safeStorageSet(STORAGE_KEY, JSON.stringify(inputs));
+    }
+    function loadManualState(){
+      try{
+        const raw = JSON.parse(safeStorageGet(STORAGE_KEY) || '{}');
+        if(raw && hasAnyInput(raw)){
+          state.suppressSave = true;
+          applyInputs(raw);
+          state.suppressSave = false;
+          state.dataMode = 'manual';
+          calculateTool(false);
+        }
+      } catch(error){
+        safeStorageRemove(STORAGE_KEY);
+        state.suppressSave = false;
+      }
+    }
+    function calculateTool(forceShow=false){
+      const inputs = getInputs();
+      state.inputs = inputs;
+      if(!hasAnyInput(inputs)){
+        setEmptyState();
+        return;
+      }
+      const { errors, target, reference } = validateInputs(inputs);
+      state.errors = errors;
+      state.isValid = Object.keys(errors).length === 0;
+      renderValidation(errors);
+      if(!state.isValid){
+        state.isCalculated = false;
+        setEmptyState();
+        renderValidation(errors);
+        el('statusText').textContent = 'Eksik veya hatalı alanları düzeltmen gerekiyor.';
+        el('statusBadge').textContent = 'Hata';
+        el('statusBadge').className = 'badge bad';
+        el('decisionText').textContent = 'Önce işaretli alanları düzelt. Sonuç alanı geçerli veri gelince otomatik güncellenecek.';
+        return;
+      }
+
+      const totalMs = target - reference;
+      const totalSeconds = Math.floor(totalMs / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+      const totalWeeks = Math.floor(totalDays / 7);
+      const totalMonths = totalDays / 30.4375;
+      const totalYears = totalDays / 365.25;
+      const diff = getCalendarDiff(reference, target);
+      const monthRatio = totalDays > 0 ? Math.min(100, ((totalDays % 30.4375) / 30.4375) * 100) : 0;
+      const yearRatio = totalDays > 0 ? Math.min(100, ((totalDays % 365.25) / 365.25) * 100) : 0;
+      const urgency = getUrgency(totalHours);
+      const decision = buildDecision(totalHours, inputs, diff);
+      const referenceLabel = getReferenceLabel(inputs);
+      const mainText = buildMainText(diff);
+
+      state.results = { totalSeconds, totalMinutes, totalHours, totalDays, totalWeeks, totalMonths, totalYears, diff, monthRatio, yearRatio, urgency, decision, referenceLabel, mainText, targetTimeMs: target.getTime() };
+      state.isCalculated = true;
+
+      el('statusText').textContent = forceShow ? 'Sonuç isteğe bağlı hesaplama ile güncellendi.' : 'Sonuç geçerli verilere göre otomatik hesaplandı.';
+      el('statusBadge').textContent = urgency.label;
+      el('statusBadge').className = 'badge ' + urgency.badge;
+      el('mainResult').textContent = mainText;
+      el('mainSubtext').textContent = (inputs.eventName ? inputs.eventName + ' için ' : '') + 'toplam ' + formatInt(totalDays) + ' gün, ' + formatInt(totalHours) + ' saat ve ' + formatInt(totalMinutes) + ' dakika kaldı.';
+      el('mainBox').classList.add('ready');
+
+      el('totalYears').textContent = formatDecimal(totalYears, 2);
+      el('totalYearsText').textContent = 'Yaklaşık ' + formatDecimal(totalYears, 2) + ' yıl';
+      el('totalMonths').textContent = formatDecimal(totalMonths, 1);
+      el('totalMonthsText').textContent = 'Yaklaşık ' + formatDecimal(totalMonths, 1) + ' ay';
+      el('totalWeeks').textContent = formatInt(totalWeeks);
+      el('totalWeeksText').textContent = summarizeLargeNumber(totalWeeks, 'hafta');
+      el('plainDays').textContent = formatInt(totalDays);
+      el('plainDaysText').textContent = summarizeLargeNumber(totalDays, 'gün');
+      el('totalHours').textContent = formatInt(totalHours);
+      el('totalHoursText').textContent = summarizeLargeNumber(totalHours, 'saat');
+      el('totalMinutes').textContent = formatInt(totalMinutes);
+      el('totalMinutesText').textContent = summarizeLargeNumber(totalMinutes, 'dakika');
+      el('totalSeconds').textContent = formatInt(totalSeconds);
+      el('totalSecondsText').textContent = summarizeLargeNumber(totalSeconds, 'saniye');
+      el('referenceMode').textContent = referenceLabel;
+      el('referenceModeText').textContent = inputs.referenceDate ? 'Referans tarih kullanıcı tarafından girildi.' : 'Sistem bugünün başlangıcını baz aldı.';
+
+      ['item1','item2','item3','item4','item5','item6','item7','item8','health1','health2','health3'].forEach(id => el(id).classList.add('ready'));
+      el('quickMain').textContent = mainText;
+      el('quickDays').textContent = formatInt(totalDays);
+      el('quickEvent').textContent = inputs.eventName || 'Genel';
+      el('monthRatioLabel').textContent = '%' + formatInt(Math.round(monthRatio));
+      el('yearRatioLabel').textContent = '%' + formatInt(Math.round(yearRatio));
+      el('monthBar').style.width = monthRatio + '%';
+      el('yearBar').style.width = yearRatio + '%';
+
+      el('urgencyScore').textContent = formatInt(urgency.score);
+      el('scoreBadge').textContent = urgency.label;
+      el('scoreBadge').className = 'badge ' + urgency.badge;
+      el('scoreSub').textContent = urgency.text;
+      el('scoreBar').style.width = urgency.score + '%';
+      el('scoreBox').classList.add('ready');
+      el('decisionText').textContent = decision;
+
+      let comment = '';
+      if(!inputs.referenceDate && !inputs.referenceTime) comment += 'Referans tarihi boş bırakıldığı için bugünün başlangıcı yani 00:00 baz alındı. ';
+      else if(inputs.referenceDate && !inputs.referenceTime) comment += 'Referans saati boş bırakıldığı için seçilen günün başlangıcı yani 00:00 baz alındı. ';
+      if(totalHours < 24) comment += 'Bu görünümde saat ve dakika takibi ana karar metriği olmalı.';
+      else if(totalDays <= 7) comment += 'Kısa süreli geri sayımda toplam gün ve hafta görünümü en kullanışlı alanlar.';
+      else if(totalDays <= 31) comment += 'Yaklaşık bir aylık geri sayım hesaplandı; istersen hedefi 1 gün oynatıp senaryo kartlarına bak.';
+      else comment += 'Uzun dönemli geri sayımda ana takip metriği gün, ay ve karar özeti olmalı.';
+      el('smartComment').textContent = comment.trim();
+
+      const dayMs = 24 * 60 * 60 * 1000;
+      const earlyScenario = calculateScenario(reference, new Date(target.getTime() - dayMs));
+      const baseScenario = calculateScenario(reference, target);
+      const lateScenario = calculateScenario(reference, new Date(target.getTime() + dayMs));
+      el('scenarioEarly').textContent = earlyScenario.value;
+      el('scenarioEarlyText').textContent = earlyScenario.text;
+      el('scenarioBase').textContent = baseScenario.value;
+      el('scenarioBaseText').textContent = baseScenario.text;
+      el('scenarioLate').textContent = lateScenario.value;
+      el('scenarioLateText').textContent = lateScenario.text;
+      ['scenario1','scenario2','scenario3'].forEach(id => el(id).classList.add('ready'));
+
+      startLiveCountdown(target, inputs.eventName);
+      saveManualState();
+      if(forceShow) scrollToResultPanel();
+    }
+    function scheduleCalculate(){
+      clearTimeout(state.debounceTimer);
+      state.debounceTimer = setTimeout(() => calculateTool(false), 180);
+    }
+    function fillExample(){
+      state.dataMode = 'example';
+      state.suppressSave = true;
+      applyInputs({
+        eventName: 'Yaz Tatili',
+        targetDate: '01.07.2026',
+        targetTime: '09:00:00',
+        referenceDate: getTodayLocalDateString(),
+        referenceTime: '00:00:00'
+      });
+      calculateTool(true);
+      state.suppressSave = false;
+      state.dataMode = 'manual';
+    }
+    function clearForm(){
+      state.dataMode = 'manual';
+      state.suppressSave = false;
+      applyInputs({ eventName: '', targetDate: '', targetTime: '', referenceDate: '', referenceTime: '' });
+      safeStorageRemove(STORAGE_KEY);
+      setEmptyState();
+    }
+    function buildShareText(){
+      return [
+        'Geri Sayım Hesaplama Sonucu',
+        'Kalan Süre: ' + el('mainResult').textContent,
+        'Toplam Gün: ' + el('plainDays').textContent,
+        'Saat: ' + el('totalHours').textContent,
+        'Dakika: ' + el('totalMinutes').textContent,
+        'Saniye: ' + el('totalSeconds').textContent,
+        'Karar Özeti: ' + el('decisionText').textContent
+      ].join('\n');
+    }
+    function copyResult(){
+      if(!state.isCalculated){
+        validationBox.classList.add('show');
+        validationBox.textContent = 'Önce geçerli bir hedef tarih girip sonucu oluşturman gerekiyor.';
+        return;
+      }
+      const text = buildShareText();
+      if(!navigator.clipboard){
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try{ document.execCommand('copy'); } catch(error){}
+        document.body.removeChild(ta);
+        const oldText = el('smartComment').textContent;
+        el('smartComment').textContent = 'Sonuç panoya kopyalandı.';
+        setTimeout(() => { el('smartComment').textContent = oldText; }, 1800);
+        return;
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        const oldText = el('smartComment').textContent;
+        el('smartComment').textContent = 'Sonuç panoya kopyalandı.';
+        setTimeout(() => { el('smartComment').textContent = oldText; }, 1800);
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try{
+          document.execCommand('copy');
+          const oldText = el('smartComment').textContent;
+          el('smartComment').textContent = 'Sonuç panoya kopyalandı.';
+          setTimeout(() => { el('smartComment').textContent = oldText; }, 1800);
+        } catch(error){
+          alert('Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.');
+        }
+        document.body.removeChild(ta);
+      });
+    }
+    async function shareResult(){
+      if(!state.isCalculated){
+        validationBox.classList.add('show');
+        validationBox.textContent = 'Paylaşmak için önce geçerli bir sonuç üretmen gerekiyor.';
+        return;
+      }
+      const text = buildShareText();
+      if(navigator.share){
+        try{
+          await navigator.share({
+            title: 'Geri Sayım Hesaplama Sonucu',
+            text,
+            url: window.location.href
+          });
+          return;
+        } catch(error){
+          if(error && error.name === 'AbortError') return;
+        }
+      }
+      copyResult();
+    }
+
+    fieldIds.forEach(id => {
+      const node = el(id);
+      node.addEventListener('input', () => {
+        state.dataMode = 'manual';
+        if(id === 'targetDate' || id === 'referenceDate') sanitizeDateField(node);
+        state.inputs = getInputs();
+        saveManualState();
+        scheduleCalculate();
+      });
+      node.addEventListener('blur', () => {
+        if(id === 'targetDate' || id === 'referenceDate'){
+          sanitizeDateField(node);
+          state.inputs = getInputs();
+          saveManualState();
+          calculateTool(false);
+        }
+      });
+      node.addEventListener('change', () => {
+        state.dataMode = 'manual';
+        if(id === 'targetDate' || id === 'referenceDate') sanitizeDateField(node);
+        state.inputs = getInputs();
+        saveManualState();
+        calculateTool(false);
+      });
+      node.addEventListener('keydown', (event) => {
+        if(event.key === 'Enter'){
+          event.preventDefault();
+          state.dataMode = 'manual';
+          if(id === 'targetDate' || id === 'referenceDate') sanitizeDateField(node);
+          saveManualState();
+          calculateTool(true);
+        }
+      });
+    });
+
+    setEmptyState();
+    loadManualState();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vücut Kitle İndeksi (BMI) Hesaplama | BMI, Normal Kilo Aralığı, Kalori ve Yağ Oranı - Hesapica</title>
+<meta content="Yetişkinler için vücut kitle indeksi (BMI) hesaplama aracı ile boy, kilo, yaş, cinsiyet ve aktivite düzeyine göre BMI değerini, kilo durumunu, normal BMI kilo aralığını, günlük kalori ihtiyacını ve tahmini yağ oranını hesaplayın." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="bmi hesaplama, vücut kitle indeksi hesaplama, ideal kilo hesaplama, günlük kalori ihtiyacı, yağ oranı tahmini, bmi aralığı" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/vucut-kitle-indeksi" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Vücut Kitle İndeksi (BMI) Hesaplama | BMI, Normal Kilo Aralığı, Kalori ve Yağ Oranı - Hesapica" property="og:title"/>
+<meta content="Yetişkinler için vücut kitle indeksi (BMI) hesaplama aracı ile boy, kilo, yaş, cinsiyet ve aktivite düzeyine göre BMI değerini, kilo durumunu, normal BMI kilo aralığını, günlük kalori ihtiyacını ve tahmini yağ oranını hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/vucut-kitle-indeksi" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Vücut Kitle İndeksi (BMI) Hesaplama | BMI, Normal Kilo Aralığı, Kalori ve Yağ Oranı - Hesapica" name="twitter:title"/>
+<meta content="Yetişkinler için vücut kitle indeksi (BMI) hesaplama aracı ile boy, kilo, yaş, cinsiyet ve aktivite düzeyine göre BMI değerini, kilo durumunu, normal BMI kilo aralığını, günlük kalori ihtiyacını ve tahmini yağ oranını hesaplayın." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#16a34a;
+      --warn:#d97706;
+      --bad:#dc2626;
+      --info:#2563eb;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .toprow{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .lang-switch{display:flex;gap:8px}
+    .lang-btn{
+      border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:800;
+      transition:.18s ease;
+    }
+    .lang-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .hero{
+      margin-top:8px;padding:34px;border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error{display:none;margin-top:7px;font-size:14px;color:var(--bad);font-weight:700}
+    .field.has-error .error{display:block}
+    .field.has-error input,.field.has-error select{border-color:rgba(185,28,28,.55);box-shadow:0 0 0 4px rgba(185,28,28,.08)}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+    .btn:disabled:hover{opacity:.55;transform:none!important}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .badge.info,.pill.info{background:#eff6ff;color:var(--info);border-color:#bfdbfe}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .table-card{margin-top:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .content-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .content-card h2{margin:0 0 14px;font-size:24px;color:var(--primary)}
+    .content-card p,.content-card li{color:#374151}
+    .faq-item{border-top:1px solid #edf0f7;padding:18px 0}
+    .faq-item:first-of-type{border-top:0;padding-top:0}
+    .faq-item h3{margin:0 0 8px;font-size:18px}
+
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+    .hidden{display:none!important}
+    .result-flash{animation:resultFlash 1.15s ease}
+    @keyframes resultFlash{0%{transform:translateY(0);box-shadow:0 0 0 0 rgba(79,70,229,0)}35%{transform:translateY(-2px);box-shadow:0 0 0 8px rgba(79,70,229,.14)}100%{transform:translateY(0);box-shadow:0 16px 40px rgba(79,70,229,.10)}}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.content-card,.highlight-card,.scorebox,.status-card{padding:20px}
+      .field-grid,.health-grid,.related-grid,.toprow{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row,.toprow{flex-direction:column;align-items:flex-start}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .lang-switch{width:100%}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Vücut Kitle İndeksi (BMI) Hesaplama",
+    "url": "https://hesapica.com/vucut-kitle-indeksi",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Boy, kilo, yaş, cinsiyet ve aktivite düzeyine göre BMI, normal kilo aralığı, günlük kalori ihtiyacı ve tahmini yağ oranını hesaplayan araç.",
+    "inLanguage": ["tr", "en"],
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TRY"},
+    "publisher": {"@type": "Organization", "name": "Hesapica"}
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://hesapica.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Sağlık", "item": "https://hesapica.com/#saglik"},
+      {"@type": "ListItem", "position": 3, "name": "Vücut Kitle İndeksi", "item": "https://hesapica.com/vucut-kitle-indeksi"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "BMI sonucu tıbbi teşhis yerine geçer mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır. BMI hızlı bir tarama ölçüsüdür. Kesin sağlık değerlendirmesi için klinik muayene ve profesyonel görüş gerekir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Yağ oranı sonucu neden tahmini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Burada kullanılan formül yaş, cinsiyet ve BMI üzerinden yaklaşık sonuç üretir. Gerçek yağ oranı ölçümü için profesyonel cihazlar gerekir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kalori ihtiyacı ne işe yarar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Günlük enerji ihtiyacını yaklaşık görmek, kilo koruma, kilo alma veya kilo verme planında başlangıç referansı sağlar."
+        }
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/vucut-kitle-indeksi" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border:1px solid #fecaca;background:#fff7ed;color:#9a3412;border-radius:14px;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu araç JavaScript ile çalışır. Lütfen tarayıcınızda JavaScript'i etkinleştirip sayfayı yeniden yükleyin.</div></noscript>
+<div class="container topbar">
+<div class="toprow">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a data-i18n="breadcrumbHome" href="/">Ana Sayfa</a>
+<span>/</span>
+<a data-i18n="breadcrumbHealth" href="/#saglik">Sağlık</a>
+<span>/</span>
+<strong data-i18n="breadcrumbCurrent">Vücut Kitle İndeksi</strong>
+</nav>
+<div class="lang-switch">
+<button class="lang-btn active" id="langTr" onclick="setLanguage('tr')" type="button">TR</button>
+<button class="lang-btn" id="langEn" onclick="setLanguage('en')" type="button">EN</button>
+</div>
+</div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill" data-i18n="eyebrow">Hesapica • Sağlık Aracı</span>
+<h1 data-i18n="heroTitle">Vücut Kitle İndeksi (BMI) Hesaplama</h1>
+<p data-i18n="heroDesc">Boy, kilo, yaş, cinsiyet ve aktivite düzeyine göre BMI değerini, kilo durumunu, normal BMI kilo aralığını, günlük kalori ihtiyacını ve tahmini yağ oranını hesaplayın.</p>
+<div class="hero-chips">
+<span class="hero-chip" data-i18n="heroChip1">BMI sonucu</span>
+<span class="hero-chip" data-i18n="heroChip2">Normal kilo aralığı</span>
+<span class="hero-chip" data-i18n="heroChip3">Kalori ihtiyacı</span>
+<span class="hero-chip" data-i18n="heroChip4">Tahmini yağ oranı</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow" data-i18n="heroBoxEyebrow">Sağlık görünümü</div>
+<strong data-i18n="heroBoxTitle">BMI tek başına yeterli değildir; ama güçlü bir ilk tarama aracıdır</strong>
+<p data-i18n="heroBoxDesc">Bu sayfa sadece BMI sonucunu değil, normal aralık, tahmini yağ oranı ve günlük enerji ihtiyacı ile birlikte daha okunabilir bir sağlık özeti sunar.</p>
+<ul>
+<li data-i18n="heroBoxLi1">Boy ve kilo ile BMI</li>
+<li data-i18n="heroBoxLi2">Normal aralık için kilo bandı</li>
+<li data-i18n="heroBoxLi3">Aktiviteye göre kalori ihtiyacı</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2 data-i18n="panelTitle">Hesaplama Paneli</h2>
+<p class="section-note" data-i18n="panelNote">Araç boş başlar. Boy, kilo, yaş, cinsiyet ve aktivite düzeyini gir. Sonuç alanında BMI, durum, normal aralık ve kalori görünümü birlikte oluşur.</p>
+<div class="helper-box">
+<h3 data-i18n="helperTitle">Kısa not</h3>
+<p data-i18n="helperDesc">BMI hızlı bir tarama ölçüsüdür. Özellikle kas kütlesi yüksek kişilerde tek başına yeterli olmayabilir. Bu yüzden burada tahmini yağ oranı ve enerji ihtiyacı da eklenmiştir.</p>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="formTitle">Temel bilgiler</div>
+<div class="field-grid">
+<div class="field">
+<label data-i18n="labelHeight" for="height">Boy</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="height" inputmode="decimal" placeholder="Örn. 182" type="text"/>
+<span class="suffix" data-i18n="unitCm">cm</span>
+</div>
+<div class="hint" data-i18n="hintHeight">Boyunu santimetre cinsinden gir.</div>
+<div class="error" data-i18n="errorHeight">Geçerli bir boy gir.</div>
+</div>
+<div class="field">
+<label data-i18n="labelWeight" for="weight">Kilo</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="weight" inputmode="decimal" placeholder="Örn. 94" type="text"/>
+<span class="suffix" data-i18n="unitKg">kg</span>
+</div>
+<div class="hint" data-i18n="hintWeight">Kilonu kilogram cinsinden gir.</div>
+<div class="error" data-i18n="errorWeight">Geçerli bir kilo gir.</div>
+</div>
+<div class="field">
+<label data-i18n="labelAge" for="age">Yaş</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="age" inputmode="numeric" placeholder="Örn. 46" type="text"/>
+<span class="suffix" data-i18n="unitYears">yıl</span>
+</div>
+<div class="hint" data-i18n="hintAge">Tahmini yağ oranı ve kalori hesabında kullanılır.</div>
+<div class="error" data-i18n="errorAge">Geçerli bir yaş gir.</div>
+</div>
+<div class="field">
+<label data-i18n="labelGender" for="gender">Cinsiyet</label>
+<select id="gender">
+<option data-i18n="genderMale" value="male">Erkek</option>
+<option data-i18n="genderFemale" value="female">Kadın</option>
+</select>
+<div class="hint" data-i18n="hintGender">Yağ oranı ve kalori hesabında kullanılır.</div>
+<div class="error" data-i18n="errorGender">Cinsiyet seç.</div>
+</div>
+<div class="field full">
+<label data-i18n="labelActivity" for="activity">Aktivite düzeyi</label>
+<select id="activity">
+<option data-i18n="activity1" value="1.2">Hareketsiz / Masa başı</option>
+<option data-i18n="activity2" value="1.375">Hafif aktif</option>
+<option data-i18n="activity3" value="1.55">Orta aktif</option>
+<option data-i18n="activity4" value="1.725">Çok aktif</option>
+<option data-i18n="activity5" value="1.9">Yoğun aktif</option>
+</select>
+<div class="hint" data-i18n="hintActivity">Günlük kalori ihtiyacı hesabında kullanılır.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="scenarioTitle">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" data-i18n="scenario1" onclick="fillScenario('normal')" type="button">Dengeli örnek</button>
+<button class="chip" data-i18n="scenario2" onclick="fillScenario('over')" type="button">Fazla kilolu örnek</button>
+<button class="chip" data-i18n="scenario3" onclick="fillScenario('under')" type="button">Düşük kilolu örnek</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" data-i18n="btnCalc" id="primaryCalcBtn" onclick="handlePrimaryCalculate()" type="button">Hesapla</button>
+<button class="btn btn-secondary" data-i18n="btnExample" id="exampleBtn" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" data-i18n="btnClear" id="clearBtn" onclick="clearForm()" type="button">Temizle</button>
+<button class="btn btn-ghost" data-i18n="btnCopy" id="copyBtn" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" data-i18n="btnShare" id="shareBtn" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" data-i18n="btnPrint" id="printBtn" onclick="handlePrint()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong data-i18n="flowStrong">Sonuç özeti sağ panelde görünür</strong>
+<span data-i18n="flowSpan">BMI, durum, normal kilo aralığı ve kalori ihtiyacı birlikte değerlendirilir.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title" data-i18n="statusTitle">Sonuç alanı durumu</div>
+<div class="status-text" data-i18n="statusWait" id="statusText">Sonuç görmek için bilgileri doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge" data-i18n="badgeWait" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label" data-i18n="mainLabel">Ana Sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" data-i18n="mainSub" id="mainSubtext">BMI sonucu burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small" data-i18n="scoreLabel">Sağlık Denge Skoru</div>
+<div class="score-value" id="balanceScore">0/100</div>
+</div>
+<span class="pill" data-i18n="badgeWait" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong data-i18n="scoreExplainTitle">Bu skor neyi ifade eder?</strong>
+<div class="small" data-i18n="scoreExplainText" id="scoreExplain">BMI sonucu normal aralığa yaklaştıkça ve enerji dengesi daha makul göründükçe skor yükselir. Bu skor tıbbi tanı yerine geçmez.</div>
+</div>
+</section>
+<div class="health-grid">
+<div class="health-card">
+<h3 data-i18n="card1Title">BMI durumu</h3>
+<div class="big" id="healthBmi">—</div>
+<div class="small" data-i18n="card1Sub" id="healthBmiSub">BMI verisi bekleniyor</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card2Title">Kalori</h3>
+<div class="big" id="healthCalories">—</div>
+<div class="small" data-i18n="card2Sub" id="healthCaloriesSub">Enerji ihtiyacı bekleniyor</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card3Title">Karar</h3>
+<div class="big" id="healthDecision">—</div>
+<div class="small" data-i18n="card3Sub" id="healthDecisionSub">Yorum için veri bekleniyor</div>
+</div>
+</div>
+<div class="mini-result-grid" style="margin-top:16px">
+<div class="mini-result is-empty" id="mini1">
+<div class="label" data-i18n="mini1Label">Normal kilo aralığı</div>
+<div class="value" id="normalRangeResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini2">
+<div class="label" data-i18n="mini2Label">Tahmini yağ oranı</div>
+<div class="value" id="bodyFatResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini3">
+<div class="label" data-i18n="mini3Label">Bazal metabolizma</div>
+<div class="value" id="bmrResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini4">
+<div class="label" data-i18n="mini4Label">Günlük kalori ihtiyacı</div>
+<div class="value" id="tdeeResult">—</div>
+</div>
+</div>
+<div class="comment-box" data-i18n="commentWait" id="smartComment" style="margin-top:16px">
+          Henüz veri girilmedi. Hesaplama sonrası burada kısa ve akıllı yorum gösterilir.
+        </div>
+</aside>
+</section>
+<section class="table-card card">
+<h2 data-i18n="tableTitle">Detaylı sonuç tablosu</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th data-i18n="thMetric">Metrik</th>
+<th data-i18n="thValue">Değer</th>
+<th data-i18n="thDesc">Açıklama</th>
+</tr>
+</thead>
+<tbody id="detailTable">
+<tr><td data-i18n="row1m">BMI</td><td>—</td><td data-i18n="row1d">Hesaplama sonrası oluşur.</td></tr>
+<tr><td data-i18n="row2m">Kilo durumu</td><td>—</td><td data-i18n="row2d">BMI sınıfına göre yorumlanır.</td></tr>
+<tr><td data-i18n="row3m">Normal kilo aralığı</td><td>—</td><td data-i18n="row3d">18.5–24.9 BMI bandına göre hesaplanır.</td></tr>
+<tr><td data-i18n="row4m">Günlük kalori ihtiyacı</td><td>—</td><td data-i18n="row4d">Aktivite düzeyi ile birlikte oluşur.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-grid">
+<article class="content-card">
+<h2 data-i18n="content1Title">BMI neden tek başına yeterli değildir?</h2>
+<p data-i18n="content1P1">BMI, boy ve kilodan üretilen hızlı bir göstergedir. Ancak yağ-kas dağılımını doğrudan ölçmez. Bu nedenle sporcular, kas kütlesi yüksek bireyler veya bazı özel durumlar için tek başına sınırlı olabilir.</p>
+<p data-i18n="content1P2">Yine de toplum genelinde ilk tarama amacıyla oldukça faydalıdır. Bu araç da BMI sonucunu daha anlamlı hale getirmek için normal kilo aralığı, tahmini yağ oranı ve enerji ihtiyacı ile birlikte sunar.</p>
+</article>
+<article class="content-card">
+<h2 data-i18n="faqTitle">Sık Sorulan Sorular</h2>
+<div class="faq-item">
+<h3 data-i18n="faq1q">BMI sonucu tıbbi teşhis yerine geçer mi?</h3>
+<p data-i18n="faq1a">Hayır. BMI hızlı bir tarama ölçüsüdür. Kesin sağlık değerlendirmesi için klinik muayene ve profesyonel görüş gerekir.</p>
+</div>
+<div class="faq-item">
+<h3 data-i18n="faq2q">Yağ oranı sonucu neden tahmini?</h3>
+<p data-i18n="faq2a">Çünkü burada kullanılan formül yaş, cinsiyet ve BMI üzerinden yaklaşık sonuç üretir. Gerçek yağ oranı ölçümü için profesyonel cihazlar gerekir.</p>
+</div>
+<div class="faq-item">
+<h3 data-i18n="faq3q">Kalori ihtiyacı ne işe yarar?</h3>
+<p data-i18n="faq3a">Günlük enerji ihtiyacını yaklaşık görmek, kilo koruma, kilo alma veya kilo verme planında başlangıç referansı sağlar.</p>
+</div>
+</article>
+</section>
+<section class="content-card" style="margin-top:24px">
+<h2 data-i18n="relatedTitle">İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/gunluk-su-ihtiyaci-hesaplama">
+<span class="small" data-i18n="relatedSmall">İlgili Araç</span>
+<strong data-i18n="related1Title">Günlük Su İhtiyacı</strong>
+<p data-i18n="related1Desc">Kilo ve yaşam düzenine göre günlük su ihtiyacını hesapla.</p>
+</a>
+<a class="related-card" href="/yuzde-hesaplama">
+<span class="small" data-i18n="relatedSmall">İlgili Araç</span>
+<strong data-i18n="related2Title">Yüzde Hesaplama</strong>
+<p data-i18n="related2Desc">Değişim oranlarını, artış ve azalış yüzdelerini hızlıca hesapla.</p>
+</a>
+<a class="related-card" href="/ortalama-hesaplama">
+<span class="small" data-i18n="relatedSmall">İlgili Araç</span>
+<strong data-i18n="related3Title">Ortalama Hesaplama</strong>
+<p data-i18n="related3Desc">Çeşitli ölçümlerin ortalamasını hızlıca hesapla.</p>
+</a>
+</div>
+</section>
+<div class="footer-note" data-i18n="footerNote">Hesapica · Vücut Kitle İndeksi aracı hızlı sonuç üretir. Tıbbi teşhis veya tedavi yerine geçmez.</div>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica_bmi_manual_v2';
+    const state = {
+      lang: 'tr',
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      inputSource: 'manual',
+      debounceTimer: null
+    };
+
+    const translations = {
+      tr: {
+        pageTitle: "Vücut Kitle İndeksi (BMI) Hesaplama | BMI, Normal Kilo Aralığı, Kalori ve Yağ Oranı - Hesapica",
+        breadcrumbHome: "Ana Sayfa",
+        breadcrumbHealth: "Sağlık",
+        breadcrumbCurrent: "Vücut Kitle İndeksi",
+        eyebrow: "Hesapica • Sağlık Aracı",
+        heroTitle: "Vücut Kitle İndeksi (BMI) Hesaplama",
+        heroDesc: "Yetişkinler için boy, kilo, yaş, cinsiyet ve aktivite düzeyine göre BMI değerini, kilo durumunu, normal BMI kilo aralığını, günlük kalori ihtiyacını ve tahmini yağ oranını hesaplayın.",
+        heroChip1: "BMI sonucu",
+        heroChip2: "Normal kilo aralığı",
+        heroChip3: "Kalori ihtiyacı",
+        heroChip4: "Tahmini yağ oranı",
+        heroBoxEyebrow: "Sağlık görünümü",
+        heroBoxTitle: "BMI tek başına yeterli değildir; ama güçlü bir ilk tarama aracıdır",
+        heroBoxDesc: "Bu sayfa sadece BMI sonucunu değil, normal aralık, tahmini yağ oranı ve günlük enerji ihtiyacı ile birlikte daha okunabilir bir sağlık özeti sunar.",
+        heroBoxLi1: "Boy ve kilo ile BMI",
+        heroBoxLi2: "Normal aralık için kilo bandı",
+        heroBoxLi3: "Aktiviteye göre kalori ihtiyacı",
+        panelTitle: "Hesaplama Paneli",
+        panelNote: "Araç boş başlar. Boy, kilo, 18+ yaş, cinsiyet ve aktivite düzeyini gir. Sonuç alanında BMI, durum, normal aralık ve kalori görünümü birlikte oluşur.",
+        helperTitle: "Kısa not",
+        helperDesc: "BMI yetişkinler için hızlı bir tarama ölçüsüdür. Özellikle kas kütlesi yüksek kişilerde tek başına yeterli olmayabilir. Bu yüzden burada tahmini yağ oranı ve enerji ihtiyacı da eklenmiştir.",
+        formTitle: "Temel bilgiler",
+        labelHeight: "Boy",
+        labelWeight: "Kilo",
+        labelAge: "Yaş",
+        labelGender: "Cinsiyet",
+        labelActivity: "Aktivite düzeyi",
+        unitCm: "cm",
+        unitKg: "kg",
+        unitYears: "yıl",
+        hintHeight: "Boyunu santimetre cinsinden gir.",
+        hintWeight: "Kilonu kilogram cinsinden gir.",
+        hintAge: "Bu araç yetişkin odaklıdır; 18 yaş ve üzeri için kullan.",
+        hintGender: "Yağ oranı ve kalori hesabında kullanılır.",
+        hintActivity: "Günlük kalori ihtiyacı hesabında kullanılır.",
+        errorHeight: "Geçerli bir boy gir.",
+        errorWeight: "Geçerli bir kilo gir.",
+        errorAge: "18 ile 120 arasında geçerli bir yaş gir.",
+        errorGender: "Cinsiyet seç.",
+        genderMale: "Erkek",
+        genderFemale: "Kadın",
+        activity1: "Hareketsiz / Masa başı",
+        activity2: "Hafif aktif",
+        activity3: "Orta aktif",
+        activity4: "Çok aktif",
+        activity5: "Yoğun aktif",
+        scenarioTitle: "Hazır senaryolar",
+        scenario1: "Dengeli örnek",
+        scenario2: "Fazla kilolu örnek",
+        scenario3: "Düşük kilolu örnek",
+        btnCalc: "Sonucu Gör",
+        btnExample: "Örnek Veri",
+        btnClear: "Temizle",
+        btnCopy: "Sonucu Kopyala",
+        btnShare: "Paylaş",
+        btnPrint: "Yazdır / PDF",
+        flowStrong: "Sonuç özeti sağ panelde görünür",
+        flowSpan: "BMI, durum, normal kilo aralığı ve kalori ihtiyacı birlikte değerlendirilir.",
+        statusTitle: "Sonuç alanı durumu",
+        statusWait: "Sonucu görmek için bilgileri doldur veya örnek veri kullan.",
+        badgeWait: "Veri bekleniyor",
+        mainLabel: "Ana Sonuç",
+        mainSub: "BMI sonucu burada görünecek.",
+        scoreLabel: "Sağlık Denge Skoru",
+        scoreExplainTitle: "Bu skor neyi ifade eder?",
+        scoreExplainText: "BMI sonucu normal aralığa yaklaştıkça ve enerji dengesi daha makul göründükçe skor yükselir. Bu skor tıbbi tanı yerine geçmez.",
+        card1Title: "BMI durumu",
+        card1Sub: "BMI verisi bekleniyor",
+        card2Title: "Kalori",
+        card2Sub: "Enerji ihtiyacı bekleniyor",
+        card3Title: "Karar",
+        card3Sub: "Yorum için veri bekleniyor",
+        mini1Label: "Normal kilo aralığı",
+        mini2Label: "Tahmini yağ oranı",
+        mini3Label: "Bazal metabolizma",
+        mini4Label: "Günlük kalori ihtiyacı",
+        commentWait: "Henüz veri girilmedi. Sonuç sonrası burada kısa ve akıllı yorum gösterilir.",
+        tableTitle: "Detaylı sonuç tablosu",
+        thMetric: "Metrik",
+        thValue: "Değer",
+        thDesc: "Açıklama",
+        row1m: "BMI",
+        row1d: "Hesaplama sonrası oluşur.",
+        row2m: "Kilo durumu",
+        row2d: "BMI sınıfına göre yorumlanır.",
+        row3m: "Normal kilo aralığı",
+        row3d: "18.5–24.9 BMI bandına göre hesaplanır.",
+        row4m: "Günlük kalori ihtiyacı",
+        row4d: "Aktivite düzeyi ile birlikte oluşur.",
+        content1Title: "BMI neden tek başına yeterli değildir?",
+        content1P1: "BMI, boy ve kilodan üretilen hızlı bir göstergedir. Ancak yağ-kas dağılımını doğrudan ölçmez. Bu nedenle sporcular, kas kütlesi yüksek bireyler veya bazı özel durumlar için tek başına sınırlı olabilir.",
+        content1P2: "Yine de toplum genelinde ilk tarama amacıyla oldukça faydalıdır. Bu araç da BMI sonucunu daha anlamlı hale getirmek için normal kilo aralığı, tahmini yağ oranı ve enerji ihtiyacı ile birlikte sunar.",
+        faqTitle: "Sık Sorulan Sorular",
+        faq1q: "BMI sonucu tıbbi teşhis yerine geçer mi?",
+        faq1a: "Hayır. BMI hızlı bir yetişkin tarama ölçüsüdür. Kesin sağlık değerlendirmesi için klinik muayene ve profesyonel görüş gerekir.",
+        faq2q: "Yağ oranı sonucu neden tahmini?",
+        faq2a: "Çünkü burada kullanılan formül yaş, cinsiyet ve BMI üzerinden yaklaşık sonuç üretir. Gerçek yağ oranı ölçümü için profesyonel cihazlar gerekir.",
+        faq3q: "Kalori ihtiyacı ne işe yarar?",
+        faq3a: "Günlük enerji ihtiyacını yaklaşık görmek, kilo koruma, kilo alma veya kilo verme planında başlangıç referansı sağlar.",
+        relatedTitle: "İlgili Araçlar",
+        relatedSmall: "İlgili Araç",
+        related1Title: "Günlük Su İhtiyacı",
+        related1Desc: "Kilo ve yaşam düzenine göre günlük su ihtiyacını hesapla.",
+        related2Title: "Yüzde Hesaplama",
+        related2Desc: "Değişim oranlarını, artış ve azalış yüzdelerini hızlıca hesapla.",
+        related3Title: "Ortalama Hesaplama",
+        related3Desc: "Çeşitli ölçümlerin ortalamasını hızlıca hesapla.",
+        footerNote: "Hesapica · Vücut Kitle İndeksi aracı hızlı sonuç üretir. Tıbbi teşhis veya tedavi yerine geçmez.",
+        statusDone: "Sonuç üretildi",
+        scoreGood: "Dengeli",
+        scoreWarn: "Sınırda",
+        scoreBad: "Dengesiz",
+        bmiStatusUnder: "Düşük kilolu",
+        bmiStatusNormal: "Normal",
+        bmiStatusOver: "Fazla kilolu",
+        bmiStatusObese: "Obezite",
+        decisionGood: "Dengeli",
+        decisionWarn: "İzlenmeli",
+        decisionBad: "Dikkat",
+        resultSubDone: "BMI ve sağlık özeti hesaplandı.",
+        normalRangeText: "Normal BMI aralığı için tahmini kilo bandı",
+        bodyFatText: "Deurenberg formülüne göre tahmini değer",
+        bmrText: "Bazal metabolizma hızı",
+        tdeeText: "Aktivite düzeyine göre yaklaşık günlük ihtiyaç",
+        commentUnder: "BMI sonucuna göre kilo düzeyi düşük görünüyor. Enerji ve beslenme planı daha dikkatli ele alınabilir.",
+        commentNormal: "BMI sonucu normal aralıkta görünüyor. Bu tablo genel denge açısından olumlu bir ilk işarettir.",
+        commentOver: "BMI sonucu fazla kilolu aralığa yakın veya içinde görünüyor. Kalori dengesi ve aktivite düzeyi yeniden değerlendirilebilir.",
+        commentObese: "BMI sonucu obezite aralığında görünüyor. Bu durumda profesyonel destekle daha planlı bir yaklaşım düşünmek faydalı olabilir.",
+        copySuccess: "Sonuç panoya kopyalandı.",
+        shareSuccess: "Paylaşım bağlantısı kopyalandı.",
+        copyBlocked: "Kopyalama bu tarayıcıda engellendi.",
+        shareBlocked: "Paylaşım bağlantısı oluşturulamadı.",
+        noCalculatedResult: "Önce geçerli bir sonuç oluştur.",
+        waitResult: "BMI sonucu burada görünecek.",
+        statusPartial: "Boy, kilo ve 18+ yaş bilgileri tamamlandığında sonuç alanı otomatik güncellenecek.",
+        adultOnlyNote: "Bu araç yetişkin BMI mantığıyla çalışır; 18 yaş altı için uygun değildir.",
+        invalidMessage: "Geçerli boy, kilo ve 18+ yaş bilgisi girdiğinde sistem sağlık özetini oluşturacak."
+      },
+      en: {
+        pageTitle: "Body Mass Index (BMI) Calculator | BMI, Healthy Weight Range, Calories and Body Fat - Hesapica",
+        breadcrumbHome: "Home",
+        breadcrumbHealth: "Health",
+        breadcrumbCurrent: "Body Mass Index",
+        eyebrow: "Hesapica • Health Tool",
+        heroTitle: "Body Mass Index (BMI) Calculator",
+        heroDesc: "For adults, calculate your BMI value, weight status, healthy BMI weight range, daily calorie needs and estimated body fat percentage based on height, weight, age, gender and activity level.",
+        heroChip1: "BMI result",
+        heroChip2: "Healthy weight range",
+        heroChip3: "Calorie needs",
+        heroChip4: "Estimated body fat",
+        heroBoxEyebrow: "Health overview",
+        heroBoxTitle: "BMI is not enough on its own, but it is a strong first-screening tool",
+        heroBoxDesc: "This page does not only show BMI. It also gives you a more readable health summary with healthy range, estimated body fat and daily energy needs.",
+        heroBoxLi1: "BMI from height and weight",
+        heroBoxLi2: "Healthy weight band",
+        heroBoxLi3: "Calories by activity level",
+        panelTitle: "Calculation Panel",
+        panelNote: "The tool starts empty. Enter your height, weight, age 18+, gender and activity level. The result area will show BMI, status, healthy range and calorie outlook together.",
+        helperTitle: "Quick note",
+        helperDesc: "BMI is a fast adult screening metric. It may not be enough on its own, especially for people with high muscle mass. That is why estimated body fat and energy needs are also included here.",
+        formTitle: "Basic information",
+        labelHeight: "Height",
+        labelWeight: "Weight",
+        labelAge: "Age",
+        labelGender: "Gender",
+        labelActivity: "Activity level",
+        unitCm: "cm",
+        unitKg: "kg",
+        unitYears: "yrs",
+        hintHeight: "Enter your height in centimeters.",
+        hintWeight: "Enter your weight in kilograms.",
+        hintAge: "This tool is designed for adults aged 18 and over.",
+        hintGender: "Used in body fat and calorie calculation.",
+        hintActivity: "Used in daily calorie need calculation.",
+        errorHeight: "Enter a valid height.",
+        errorWeight: "Enter a valid weight.",
+        errorAge: "Enter a valid age between 18 and 120.",
+        errorGender: "Select gender.",
+        genderMale: "Male",
+        genderFemale: "Female",
+        activity1: "Sedentary / Desk job",
+        activity2: "Lightly active",
+        activity3: "Moderately active",
+        activity4: "Very active",
+        activity5: "Highly active",
+        scenarioTitle: "Quick scenarios",
+        scenario1: "Balanced example",
+        scenario2: "Overweight example",
+        scenario3: "Underweight example",
+        btnCalc: "See Result",
+        btnExample: "Sample Data",
+        btnClear: "Clear",
+        btnCopy: "Copy Result",
+        btnShare: "Share",
+        btnPrint: "Print / PDF",
+        flowStrong: "Result summary appears on the right panel",
+        flowSpan: "BMI, status, healthy weight range and calorie needs are evaluated together.",
+        statusTitle: "Result status",
+        statusWait: "Fill in the data or use sample values to see results.",
+        badgeWait: "Waiting for data",
+        mainLabel: "Main Result",
+        mainSub: "Your BMI result will appear here.",
+        scoreLabel: "Health Balance Score",
+        scoreExplainTitle: "What does this score mean?",
+        scoreExplainText: "The score rises as your BMI gets closer to the healthy range and your energy balance looks more reasonable. This score is not a medical diagnosis.",
+        card1Title: "BMI status",
+        card1Sub: "Waiting for BMI data",
+        card2Title: "Calories",
+        card2Sub: "Waiting for energy need",
+        card3Title: "Decision",
+        card3Sub: "Waiting for interpretation",
+        mini1Label: "Healthy weight range",
+        mini2Label: "Estimated body fat",
+        mini3Label: "Basal metabolism",
+        mini4Label: "Daily calorie need",
+        commentWait: "No data entered yet. A short smart interpretation will appear here after calculation.",
+        tableTitle: "Detailed results table",
+        thMetric: "Metric",
+        thValue: "Value",
+        thDesc: "Description",
+        row1m: "BMI",
+        row1d: "Appears after calculation.",
+        row2m: "Weight status",
+        row2d: "Interpreted by BMI category.",
+        row3m: "Healthy weight range",
+        row3d: "Calculated from the 18.5–24.9 BMI band.",
+        row4m: "Daily calorie need",
+        row4d: "Built with activity level.",
+        content1Title: "Why is BMI not enough on its own?",
+        content1P1: "BMI is a quick indicator built from height and weight. But it does not directly measure fat-muscle distribution. That is why it can be limited for athletes, muscular individuals or special cases.",
+        content1P2: "Still, it is quite useful as a first-screening tool for the general population. This tool makes the BMI result more meaningful by adding healthy weight range, estimated body fat and energy needs.",
+        faqTitle: "Frequently Asked Questions",
+        faq1q: "Does BMI replace a medical diagnosis?",
+        faq1a: "No. BMI is a fast adult screening measure. A clinical examination and professional opinion are needed for a full health assessment.",
+        faq2q: "Why is body fat only estimated?",
+        faq2a: "Because the formula used here provides an approximate result based on age, gender and BMI. Professional devices are needed for real body fat measurement.",
+        faq3q: "Why is calorie need useful?",
+        faq3a: "It gives you a rough daily energy reference for weight maintenance, weight gain or weight loss planning.",
+        relatedTitle: "Related Tools",
+        relatedSmall: "Related Tool",
+        related1Title: "Daily Water Intake Calculator",
+        related1Desc: "Estimate your daily water need based on body weight and lifestyle.",
+        related2Title: "Percentage Calculator",
+        related2Desc: "Quickly calculate percentage increases, decreases and rate changes.",
+        related3Title: "Average Calculator",
+        related3Desc: "Quickly calculate the average of different measurements.",
+        footerNote: "Hesapica · The Body Mass Index tool produces quick results. It does not replace medical diagnosis or treatment.",
+        statusDone: "Result generated",
+        scoreGood: "Balanced",
+        scoreWarn: "Borderline",
+        scoreBad: "Imbalanced",
+        bmiStatusUnder: "Underweight",
+        bmiStatusNormal: "Normal",
+        bmiStatusOver: "Overweight",
+        bmiStatusObese: "Obesity",
+        decisionGood: "Balanced",
+        decisionWarn: "Watch",
+        decisionBad: "Attention",
+        resultSubDone: "BMI and health overview calculated.",
+        normalRangeText: "Estimated weight band for the healthy BMI range",
+        bodyFatText: "Estimated with the Deurenberg formula",
+        bmrText: "Basal metabolic rate",
+        tdeeText: "Approximate daily need by activity level",
+        commentUnder: "Your BMI result looks underweight. Energy intake and nutrition planning may need more attention.",
+        commentNormal: "Your BMI result is within the normal range. This is a positive first sign for general balance.",
+        commentOver: "Your BMI result is close to or inside the overweight range. Calorie balance and activity level may need a closer look.",
+        commentObese: "Your BMI result is within the obesity range. In that case, a more structured approach with professional support may be helpful.",
+        copySuccess: "Result copied to clipboard.",
+        shareSuccess: "Share link copied to clipboard.",
+        copyBlocked: "Copying is blocked in this browser.",
+        shareBlocked: "The share link could not be created.",
+        noCalculatedResult: "Create a valid result first.",
+        waitResult: "Your BMI result will appear here.",
+        statusPartial: "Results will update automatically when height, weight and age 18+ are completed.",
+        adultOnlyNote: "This tool uses adult BMI logic and is not suitable for users under 18.",
+        invalidMessage: "The system will generate the health summary when valid height, weight and age 18+ values are entered."
+      }
+    };
+
+    const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
+    const ageInput = document.getElementById('age');
+    const genderInput = document.getElementById('gender');
+    const activityInput = document.getElementById('activity');
+    const manualFields = [heightInput, weightInput, ageInput, genderInput, activityInput];
+    const copyBtn = document.getElementById('copyBtn');
+    const shareBtn = document.getElementById('shareBtn');
+    const printBtn = document.getElementById('printBtn');
+
+    function t(key){ return translations[state.lang][key] || key; }
+    function formatKg(v){ return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v) + ' kg'; }
+    function formatKcal(v){ return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', { maximumFractionDigits: 0 }).format(v) + ' kcal'; }
+    function formatNum(v, digits = 1){ return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(v); }
+    function formatPercent(v){ return '%' + formatNum(v, 1); }
+
+    function parseLocaleNumber(value){
+      const raw = String(value ?? '').trim();
+      if (!raw) return NaN;
+      const normalized = raw
+        .replace(/\s+/g, '')
+        .replace(/\.(?=\d{3}(\D|$))/g, '')
+        .replace(',', '.');
+      const num = Number(normalized);
+      return Number.isFinite(num) ? num : NaN;
+    }
+
+    function getManualInputs(){
+      return { height: heightInput.value.trim(), weight: weightInput.value.trim(), age: ageInput.value.trim(), gender: genderInput.value, activity: activityInput.value };
+    }
+
+    function applyInputs(data = {}){
+      heightInput.value = data.height ?? '';
+      weightInput.value = data.weight ?? '';
+      ageInput.value = data.age ?? '';
+      genderInput.value = data.gender ?? 'male';
+      activityInput.value = data.activity ?? '1.2';
+      state.inputs = getManualInputs();
+    }
+
+    function saveManualState(){
+      if (state.inputSource !== 'manual') return;
+      const raw = getManualInputs();
+      const hasAny = Object.values(raw).some(v => String(v || '').trim() !== '');
+      if (!hasAny){ localStorage.removeItem(STORAGE_KEY); return; }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 2, source: 'manual', data: raw }));
+    }
+
+    function loadManualState(){
+      try {
+        const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        if (!parsed || parsed.source !== 'manual' || !parsed.data) return false;
+        applyInputs(parsed.data);
+        state.inputSource = 'manual';
+        return true;
+      } catch (e){
+        localStorage.removeItem(STORAGE_KEY);
+        return false;
+      }
+    }
+
+    function updateSelectTexts(){
+      genderInput.options[0].text = t('genderMale');
+      genderInput.options[1].text = t('genderFemale');
+      activityInput.options[0].text = t('activity1');
+      activityInput.options[1].text = t('activity2');
+      activityInput.options[2].text = t('activity3');
+      activityInput.options[3].text = t('activity4');
+      activityInput.options[4].text = t('activity5');
+    }
+
+    function clearErrors(){ document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error')); }
+
+    function hasCoreInputs(){
+      return [heightInput.value, weightInput.value, ageInput.value].every(v => String(v || '').trim() !== '');
+    }
+
+    function setActionButtons(enabled){
+      [copyBtn, shareBtn, printBtn].forEach(btn => {
+        if (!btn) return;
+        btn.disabled = !enabled;
+        btn.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+      });
+    }
+
+    function validate(showErrors = false){
+      clearErrors();
+      let ok = true;
+      let message = t('invalidMessage');
+      const height = parseLocaleNumber(heightInput.value);
+      const weight = parseLocaleNumber(weightInput.value);
+      const age = parseLocaleNumber(ageInput.value);
+      if (!(height >= 80 && height <= 260)){
+        if (showErrors) heightInput.closest('.field').classList.add('has-error');
+        ok = false;
+        message = 'Boy 80–260 cm arasında olmalı.';
+      }
+      if (!(weight >= 20 && weight <= 350)){
+        if (showErrors) weightInput.closest('.field').classList.add('has-error');
+        if (ok) message = 'Kilo 20–350 kg arasında olmalı.';
+        ok = false;
+      }
+      if (!(age >= 18 && age <= 120)){
+        if (showErrors) ageInput.closest('.field').classList.add('has-error');
+        if (ok) message = `${t('adultOnlyNote')} Yaş 18–120 aralığında olmalı.`;
+        ok = false;
+      }
+      state.validationMessage = message;
+      state.isValid = ok;
+      return ok;
+    }
+
+    function updateEmptyState(){
+      state.results = null;
+      state.isCalculated = false;
+      document.getElementById('highlightCard').classList.add('is-empty');
+      document.getElementById('mainResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = t('waitResult');
+      document.getElementById('balanceScore').textContent = '0/100';
+      document.getElementById('scoreBadge').textContent = t('badgeWait');
+      document.getElementById('scoreBadge').className = 'pill';
+      document.getElementById('scoreBar').style.width = '0%';
+      document.getElementById('scoreExplain').textContent = t('scoreExplainText');
+      document.getElementById('healthBmi').textContent = '—';
+      document.getElementById('healthBmiSub').textContent = t('card1Sub');
+      document.getElementById('healthCalories').textContent = '—';
+      document.getElementById('healthCaloriesSub').textContent = t('card2Sub');
+      document.getElementById('healthDecision').textContent = '—';
+      document.getElementById('healthDecisionSub').textContent = t('card3Sub');
+      ['normalRangeResult','bodyFatResult','bmrResult','tdeeResult'].forEach(id => document.getElementById(id).textContent = '—');
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('smartComment').textContent = t('commentWait');
+      document.getElementById('detailTable').innerHTML = `
+        <tr><td>${t('row1m')}</td><td>—</td><td>${t('row1d')}</td></tr>
+        <tr><td>${t('row2m')}</td><td>—</td><td>${t('row2d')}</td></tr>
+        <tr><td>${t('row3m')}</td><td>—</td><td>${t('row3d')}</td></tr>
+        <tr><td>${t('row4m')}</td><td>—</td><td>${t('row4d')}</td></tr>`;
+      document.getElementById('statusText').textContent = t('statusWait');
+      document.getElementById('statusBadge').textContent = t('badgeWait');
+      document.getElementById('statusBadge').className = 'badge info';
+      setActionButtons(false);
+    }
+
+    function setPartialState(message = t('statusPartial')){
+      clearErrors();
+      updateEmptyState();
+      document.getElementById('statusText').textContent = message;
+      document.getElementById('statusBadge').textContent = t('badgeWait');
+      document.getElementById('statusBadge').className = 'badge info';
+    }
+
+    function classifyBMI(bmi){
+      if (bmi < 18.5) return { key: 'bmiStatusUnder', badge: 'warn', decision: 'decisionWarn', comment: 'commentUnder' };
+      if (bmi < 25) return { key: 'bmiStatusNormal', badge: 'good', decision: 'decisionGood', comment: 'commentNormal' };
+      if (bmi < 30) return { key: 'bmiStatusOver', badge: 'warn', decision: 'decisionWarn', comment: 'commentOver' };
+      return { key: 'bmiStatusObese', badge: 'bad', decision: 'decisionBad', comment: 'commentObese' };
+    }
+
+    function computeBMIModel(data){
+      const heightM = data.heightCm / 100;
+      const bmi = data.weightKg / (heightM * heightM);
+      const normalMin = 18.5 * (heightM * heightM);
+      const normalMax = 24.9 * (heightM * heightM);
+      const bodyFat = (1.20 * bmi) + (0.23 * data.age) - (data.gender === 'male' ? 16.2 : 5.4);
+      const bmr = data.gender === 'male'
+        ? 10 * data.weightKg + 6.25 * data.heightCm - 5 * data.age + 5
+        : 10 * data.weightKg + 6.25 * data.heightCm - 5 * data.age - 161;
+      const tdee = bmr * data.activity;
+      const bmiClass = classifyBMI(bmi);
+      let score = 100 - Math.min(60, Math.abs(bmi - 22) * 8);
+      score = Math.max(0, Math.min(100, Math.round(score)));
+      return { bmi, normalMin, normalMax, bodyFat, bmr, tdee, bmiClass, score };
+    }
+
+    function renderResults(result){
+      document.getElementById('highlightCard').classList.remove('is-empty');
+      document.getElementById('mainResult').textContent = formatNum(result.bmi, 1);
+      document.getElementById('mainSubtext').textContent = t('resultSubDone');
+      document.getElementById('balanceScore').textContent = `${result.score}/100`;
+      document.getElementById('scoreBadge').textContent = result.score >= 75 ? t('scoreGood') : result.score >= 45 ? t('scoreWarn') : t('scoreBad');
+      document.getElementById('scoreBadge').className = `pill ${result.score >= 75 ? 'good' : result.score >= 45 ? 'warn' : 'bad'}`;
+      document.getElementById('scoreBar').style.width = `${result.score}%`;
+      document.getElementById('scoreExplain').textContent = t('scoreExplainText');
+      document.getElementById('healthBmi').textContent = t(result.bmiClass.key);
+      document.getElementById('healthBmiSub').textContent = `BMI: ${formatNum(result.bmi, 1)}`;
+      document.getElementById('healthCalories').textContent = formatKcal(result.tdee);
+      document.getElementById('healthCaloriesSub').textContent = t('tdeeText');
+      document.getElementById('healthDecision').textContent = t(result.bmiClass.decision);
+      document.getElementById('healthDecisionSub').textContent = t(result.bmiClass.comment);
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.remove('is-empty'));
+      document.getElementById('normalRangeResult').textContent = `${formatKg(result.normalMin)} - ${formatKg(result.normalMax)}`;
+      document.getElementById('bodyFatResult').textContent = formatPercent(result.bodyFat);
+      document.getElementById('bmrResult').textContent = formatKcal(result.bmr);
+      document.getElementById('tdeeResult').textContent = formatKcal(result.tdee);
+      document.getElementById('smartComment').textContent = t(result.bmiClass.comment);
+      document.getElementById('statusText').textContent = t('statusDone');
+      document.getElementById('statusBadge').textContent = t(result.bmiClass.key);
+      document.getElementById('statusBadge').className = `badge ${result.bmiClass.badge}`;
+      document.getElementById('detailTable').innerHTML = `
+        <tr><td>${t('row1m')}</td><td>${formatNum(result.bmi, 1)}</td><td>${t('row1d')}</td></tr>
+        <tr><td>${t('row2m')}</td><td>${t(result.bmiClass.key)}</td><td>${t('row2d')}</td></tr>
+        <tr><td>${t('row3m')}</td><td>${formatKg(result.normalMin)} - ${formatKg(result.normalMax)}</td><td>${t('row3d')}</td></tr>
+        <tr><td>${t('row4m')}</td><td>${formatKcal(result.tdee)}</td><td>${t('row4d')}</td></tr>`;
+      setActionButtons(true);
+    }
+
+    function focusResults(){
+      const target = document.getElementById('highlightCard');
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.classList.remove('result-flash');
+      void target.offsetWidth;
+      target.classList.add('result-flash');
+      setTimeout(() => target.classList.remove('result-flash'), 1300);
+    }
+
+    function showSmartMessage(message, restoreDelay = 1600){
+      const box = document.getElementById('smartComment');
+      const previous = box.textContent;
+      box.textContent = message;
+      if (state.results) {
+        setTimeout(() => { box.textContent = state.results ? t(state.results.bmiClass.comment) : previous; }, restoreDelay);
+      }
+    }
+
+    function handlePrimaryCalculate(){
+      state.inputSource = 'manual';
+      calculateBMI({ save: true, focus: true, revealErrors: true });
+    }
+
+    function calculateBMI({ save = true, focus = false, revealErrors = false } = {}){
+      state.inputs = getManualInputs();
+      const coreComplete = hasCoreInputs();
+      if (!coreComplete){
+        setPartialState();
+        if (save && state.inputSource === 'manual') saveManualState();
+        return;
+      }
+      if (!validate(revealErrors)){
+        if (revealErrors){
+          updateEmptyState();
+          document.getElementById('statusText').textContent = state.validationMessage || `${t('invalidMessage')} ${t('adultOnlyNote')}`;
+          document.getElementById('statusBadge').textContent = t('badgeWait');
+          document.getElementById('statusBadge').className = 'badge bad';
+        } else {
+          setPartialState(t('invalidMessage'));
+        }
+        if (save && state.inputSource === 'manual') saveManualState();
+        return;
+      }
+      const data = {
+        heightCm: parseLocaleNumber(heightInput.value),
+        weightKg: parseLocaleNumber(weightInput.value),
+        age: parseLocaleNumber(ageInput.value),
+        gender: genderInput.value,
+        activity: Number(activityInput.value)
+      };
+      const result = computeBMIModel(data);
+      state.results = result;
+      state.isCalculated = true;
+      renderResults(result);
+      if (focus) focusResults();
+      if (save && state.inputSource === 'manual') saveManualState();
+    }
+
+
+    function copyTextWithFallback(text){
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise((resolve, reject) => {
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          textarea.style.pointerEvents = 'none';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(textarea);
+          if (ok) resolve(); else reject(new Error('copy failed'));
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    function clearScenarioActive(){ document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active')); }
+
+    function fillScenario(type){
+      clearErrors();
+      clearScenarioActive();
+      state.inputSource = 'demo';
+      if (type === 'normal'){
+        applyInputs({ height: 182, weight: 81, age: 46, gender: 'male', activity: '1.55' });
+        document.querySelectorAll('#scenarioRow .chip')[0].classList.add('active');
+      } else if (type === 'over'){
+        applyInputs({ height: 170, weight: 92, age: 40, gender: 'female', activity: '1.375' });
+        document.querySelectorAll('#scenarioRow .chip')[1].classList.add('active');
+      } else if (type === 'under'){
+        applyInputs({ height: 176, weight: 56, age: 28, gender: 'male', activity: '1.2' });
+        document.querySelectorAll('#scenarioRow .chip')[2].classList.add('active');
+      }
+      calculateBMI({ save: false, focus: true });
+    }
+
+    function fillExample(){ fillScenario('normal'); }
+
+    function clearForm(){
+      clearErrors();
+      state.inputSource = 'manual';
+      applyInputs({});
+      clearScenarioActive();
+      localStorage.removeItem(STORAGE_KEY);
+      updateEmptyState();
+    }
+
+    function copyResult(){
+      if (!state.isCalculated || !state.results) {
+        showSmartMessage(t('noCalculatedResult'), 1500);
+        return;
+      }
+      const text = [
+        state.lang === 'tr' ? 'Vücut Kitle İndeksi Sonucu' : 'Body Mass Index Result',
+        `${t('row1m')}: ${document.getElementById('mainResult').textContent}`,
+        `${t('row2m')}: ${document.getElementById('healthBmi').textContent}`,
+        `${t('mini1Label')}: ${document.getElementById('normalRangeResult').textContent}`,
+        `${t('mini2Label')}: ${document.getElementById('bodyFatResult').textContent}`,
+        `${t('mini4Label')}: ${document.getElementById('tdeeResult').textContent}`
+      ].join('\n');
+      copyTextWithFallback(text).then(() => {
+        showSmartMessage(t('copySuccess'));
+      }).catch(() => {
+        showSmartMessage(t('copyBlocked'), 1800);
+      });
+    }
+
+    async function shareResult(){
+      if (!state.isCalculated || !state.results) {
+        showSmartMessage(t('noCalculatedResult'), 1500);
+        return;
+      }
+      const shareText = [
+        state.lang === 'tr' ? 'Vücut Kitle İndeksi Sonucu' : 'Body Mass Index Result',
+        `${t('row1m')}: ${document.getElementById('mainResult').textContent}`,
+        `${t('row2m')}: ${document.getElementById('healthBmi').textContent}`
+      ].join('\n');
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text: shareText, url: location.href });
+          return;
+        } catch (e) {}
+      }
+      copyTextWithFallback(`${shareText}\n${location.href}`).then(() => {
+        showSmartMessage(t('shareSuccess'));
+      }).catch(() => {
+        showSmartMessage(t('shareBlocked'), 1800);
+      });
+    }
+
+    function handlePrint(){
+      if (!state.isCalculated || !state.results) {
+        showSmartMessage(t('noCalculatedResult'), 1500);
+        return;
+      }
+      window.print();
+    }
+
+    function rerenderCurrent(){ if (state.results) renderResults(state.results); else updateEmptyState(); }
+
+    function setLanguage(lang){
+      state.lang = lang;
+      document.documentElement.lang = lang;
+      document.title = t('pageTitle');
+      document.getElementById('langTr').classList.toggle('active', lang === 'tr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+      updateSelectTexts();
+      rerenderCurrent();
+    }
+
+    function handleManualChange(){
+      state.inputSource = 'manual';
+      clearScenarioActive();
+      state.inputs = getManualInputs();
+      saveManualState();
+      clearTimeout(state.debounceTimer);
+      state.debounceTimer = setTimeout(() => calculateBMI({ save: true }), 180);
+    }
+
+    manualFields.forEach(field => {
+      const eventName = field.tagName === 'SELECT' ? 'change' : 'input';
+      field.addEventListener(eventName, handleManualChange);
+      field.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          state.inputSource = 'manual';
+          calculateBMI({ save: true, focus: true });
+        }
+      });
+    });
+
+    setLanguage('tr');
+    setActionButtons(false);
+    const restored = loadManualState();
+    if (restored) calculateBMI({ save: false });
+    else { applyInputs({}); updateEmptyState(); }
+  </script>
+</body>
+</html>

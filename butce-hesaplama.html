@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bütçe ve Tasarruf Hesaplama 2026 | Gelir Gider Analizi, Tasarruf Skoru ve Birikim Projeksiyonu</title>
+<meta content="Gelir, gider, borç ve güvenlik payını birlikte girerek aylık bütçenizi, net kalan tutarı, tasarruf oranınızı, tasarruf skorunuzu ve 1-5-10 yıllık birikim potansiyelinizi tek ekranda analiz edin." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="bütçe hesaplama, tasarruf hesaplama, gelir gider hesaplama, aylık bütçe analizi, tasarruf oranı hesaplama, birikim projeksiyonu" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/butce-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Bütçe ve Tasarruf Hesaplama 2026 | Gelir Gider Analizi, Tasarruf Skoru ve Birikim Projeksiyonu" property="og:title"/>
+<meta content="Gelir, gider, borç ve güvenlik payını birlikte girerek aylık bütçenizi, net kalan tutarı, tasarruf oranınızı, tasarruf skorunuzu ve 1-5-10 yıllık birikim potansiyelinizi tek ekranda analiz edin." property="og:description"/>
+<meta content="https://hesapica.com/butce-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bütçe ve Tasarruf Hesaplama 2026 | Gelir Gider Analizi, Tasarruf Skoru ve Birikim Projeksiyonu" name="twitter:title"/>
+<meta content="Gelir, gider, borç ve güvenlik payını birlikte girerek aylık bütçenizi, net kalan tutarı, tasarruf oranınızı, tasarruf skorunuzu ve 1-5-10 yıllık birikim potansiyelinizi tek ekranda analiz edin." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://hesapica.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Finans", "item": "https://hesapica.com/#finans"},
+      {"@type": "ListItem", "position": 3, "name": "Bütçe ve Tasarruf Hesaplama", "item": "https://hesapica.com/butce-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bütçem negatif veya açık veriyorsa ne olur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bu durum giderlerin geliri aştığını gösterir. Öncelik önce bütçe açığını kapatmak, ardından tasarruf için alan açmak ve özellikle borç yükünü azaltmak olmalıdır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Getiri oranı alanı ne işe yarıyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Birikimlerin değerlendirildiği varsayımsal senaryoda 1, 5 ve 10 yıllık potansiyeli daha gerçekçi görmek için kullanılır. Garanti sonuç vermez, yalnızca projeksiyon sunar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hedef farkı neyi gösterir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belirlenen tasarruf oranına göre şu an fazla mı verildiğini yoksa geride mi kalındığını gösterir. Böylece bütçeyi ne kadar optimize etmek gerektiği daha net anlaşılır."
+        }
+      }
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bütçe ve Tasarruf Hesaplama",
+    "url": "https://hesapica.com/butce-hesaplama",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "tr-TR",
+    "description": "Gelir ve giderlere göre aylık net kalan, tasarruf oranı, tasarruf skoru, finansal baskı ve 1-5-10 yıllık birikim projeksiyonu sunan ücretsiz araç."
+  }
+  </script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    button,input{font:inherit}
+
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .results-panel-flash{animation:resultPulse 1.2s ease}
+    @keyframes resultPulse{0%{box-shadow:0 0 0 0 rgba(79,70,229,.22)}40%{box-shadow:0 0 0 12px rgba(79,70,229,.08)}100%{box-shadow:0 0 0 0 rgba(79,70,229,0)}}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+
+    .validation-box{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:#fef2f2;
+      border:1px solid #fecaca;
+      color:#991b1b;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.55;
+    }
+    .validation-box.show{display:block}
+    .field input.input-error,
+    .field select.input-error{
+      border-color:#ef4444 !important;
+      background:#fff7f7 !important;
+      box-shadow:0 0 0 4px rgba(239,68,68,.12) !important;
+    }
+    .field-error{
+      display:none;
+      margin-top:8px;
+      font-size:13.5px;
+      font-weight:700;
+      color:#b91c1c;
+      line-height:1.45;
+    }
+    .field-error.show{display:block}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/butce-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç etkileşimli hesaplama için JavaScript gerektirir. Sonuçları görmek için lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#finans">Finans</a>
+<span>/</span>
+<strong>Bütçe ve Tasarruf Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Gelir, gider ve tasarruf analizi</span>
+<h1>Bütçe ve Tasarruf Hesaplama</h1>
+<p>Bu araç, <strong>ay sonunda ne kadar para kaldığını</strong>, <strong>toplam gider baskısını</strong>, <strong>tasarruf oranını</strong>, <strong>borç ve güvenlik payının bütçeyi nasıl etkilediğini</strong> ve <strong>1 / 5 / 10 yıllık birikim potansiyelini</strong> tek ekranda birlikte görmeni sağlar.</p>
+<div class="hero-chips">
+<span class="hero-chip">Tasarruf Skoru</span>
+<span class="hero-chip">Finansal baskı analizi</span>
+<span class="hero-chip">1 / 5 / 10 yıl projeksiyonu</span>
+<span class="hero-chip">Mobilde sade akış</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Öne çıkan yapı</div>
+<strong>Ana sonuç üstte, bütçe baskısı ve projeksiyon aşağıda</strong>
+<p>Gelirini, düzenli giderlerini ve istersen güvenlik payını girmen yeterli. Sistem kalan bütçeyi, tasarruf kapasitesini ve bütçenin kırılgan mı güçlü mü olduğunu otomatik yorumlar.</p>
+<ul>
+<li>Aylık net kalan ve tasarruf oranı</li>
+<li>Borç ve gider baskısı görünümü</li>
+<li>Uzun vadeli birikim potansiyeli</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Bütçe ve Tasarruf Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Gelir, gider ve opsiyonel hedef bilgileri girildiğinde kalan bütçe, tasarruf oranı ve birikim projeksiyonu birlikte hesaplanır.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Tasarruf oluşturmak sadece gelir yüksekliği ile ilgili değildir. Borç yükü, sabit gider baskısı ve küçük gibi görünen dağınık harcamalar net kalanı hızla düşürebilir. Bu ekran, o baskıyı görünür hale getirir.</p>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox" role="alert">
+          Gelir alanına 0’dan büyük bir değer girdiğinde sistem aylık tasarruf potansiyelini hesaplayacak.
+        </div>
+<div class="form-section">
+<div class="form-title">Temel bütçe ve tasarruf verileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="monthlyIncome">Aylık toplam gelir (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="monthlyIncome" inputmode="numeric" placeholder="Örn: 65.000" type="text"/>
+</div>
+<div class="hint">Maaş, ek gelir ve düzenli diğer gelirler dahil toplam aylık gelir.</div>
+<div class="field-error" id="monthlyIncomeError">Aylık toplam gelir alanına 0’dan büyük bir değer gir.</div>
+</div>
+<div class="field">
+<label for="targetRate">Hedef tasarruf oranı (%) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="targetRate" inputmode="decimal" placeholder="20" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Ulaşmak istediğin aylık tasarruf hedefi.</div>
+<div class="field-error" id="targetRateError">Hedef tasarruf oranı 0 ile 100 arasında olmalı.</div>
+</div>
+<div class="field">
+<label for="rentExpense">Kira / konut gideri (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="rentExpense" inputmode="numeric" placeholder="Örn: 18.000" type="text"/>
+</div>
+<div class="hint">Kira veya düzenli konut yükü.</div>
+</div>
+<div class="field">
+<label for="billExpense">Faturalar (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="billExpense" inputmode="numeric" placeholder="Örn: 4.500" type="text"/>
+</div>
+<div class="hint">Elektrik, su, internet, telefon, doğalgaz vb.</div>
+</div>
+<div class="field">
+<label for="foodExpense">Market / gıda (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="foodExpense" inputmode="numeric" placeholder="Örn: 12.000" type="text"/>
+</div>
+<div class="hint">Ev içi market ve temel gıda harcamaları.</div>
+</div>
+<div class="field">
+<label for="transportExpense">Ulaşım (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="transportExpense" inputmode="numeric" placeholder="Örn: 3.500" type="text"/>
+</div>
+<div class="hint">Yakıt, toplu taşıma, servis veya diğer ulaşım giderleri.</div>
+</div>
+<div class="field">
+<label for="debtExpense">Borç / kredi ödemeleri (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="debtExpense" inputmode="numeric" placeholder="Örn: 7.000" type="text"/>
+</div>
+<div class="hint">Kredi, kredi kartı veya diğer düzenli borç ödemeleri.</div>
+</div>
+<div class="field">
+<label for="otherExpense">Diğer giderler (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="otherExpense" inputmode="numeric" placeholder="Örn: 5.000" type="text"/>
+</div>
+<div class="hint">Giyim, sağlık, çocuk, eğlence veya diğer harcamalar.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Opsiyonel güvenlik ve büyüme ayarı</div>
+<div class="field-grid">
+<div class="field">
+<label for="safetyBuffer">Aylık güvenlik payı (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="safetyBuffer" inputmode="numeric" placeholder="Örn: 3.000" type="text"/>
+</div>
+<div class="hint">Acil durum veya sürpriz harcamalar için kenarda bırakmak istediğin tutar.</div>
+</div>
+<div class="field">
+<label for="annualReturn">Yıllık birikim getiri tahmini (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="annualReturn" inputmode="decimal" placeholder="0" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Paran değerlendirilirse yaklaşık yıllık getiri varsayımı. Boşsa 0 kabul edilir.</div>
+<div class="field-error" id="annualReturnError">Yıllık getiri tahmini 0 ile 100 arasında olmalı.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="loadScenario('balanced', this)" type="button">Dengeli</button>
+<button class="chip" onclick="loadScenario('strong', this)" type="button">Güçlü tasarruf</button>
+<button class="chip" onclick="loadScenario('fragile', this)" type="button">Kırılgan bütçe</button>
+<button class="chip" onclick="loadScenario('debtHeavy', this)" type="button">Borç baskılı</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateSavings({ forceValidation: true, scrollOnSuccess: true })" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="resetForm()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Skor breakdown, projeksiyon ve finansal yorum aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak bütçe baskısını ve birikim potansiyelini destekleyen detaylı blokları görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div class="status-text" id="statusText">Gelir ve gider bilgileri girildiğinde aylık net kalan ve tasarruf kalitesi otomatik görünür.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Aylık tasarrufa ayrılabilir net tutar burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" style="margin:0;color:#4f46e5;font-weight:800">Tasarruf Skoru</div>
+<div class="score-value" id="savingsScore">0/100</div>
+</div>
+<span class="pill" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+<div id="scoreText">Skor; tasarruf oranı, gider baskısı, borç yükü ve güvenlik payının gelir içindeki dengesine göre oluşur.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Tasarruf oranı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Gider baskısı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Borç yükü</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Güvenlik payı</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty"><div><div class="label">Toplam aylık gider</div><div class="subline">Gelire karşı ana yük</div></div><div class="value" id="result1">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Aylık net kalan</div><div class="subline">Gelir - toplam gider</div></div><div class="value" id="result2">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Tasarruf oranı</div><div class="subline">Gelire göre yüzde</div></div><div class="value" id="result3">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">1 yıllık birikim</div><div class="subline">Aylık tempoya göre</div></div><div class="value" id="result4">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">5 yıllık birikim</div><div class="subline">Getiri varsayımı dahil</div></div><div class="value" id="result5">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Hedef farkı</div><div class="subline">Hedefe uzaklık / fazlalık</div></div><div class="value" id="result6">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Bütçe seviyesi</h3><div class="big" id="health1">—</div><div class="hint" id="health1Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Baskı görünümü</h3><div class="big" id="health2">—</div><div class="hint" id="health2Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Karar özeti</h3><div class="big" id="health3">—</div><div class="hint" id="health3Sub" style="margin-top:6px">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Bilgileri girdiğinde sistem, bu bütçenin tasarruf üretme gücünü ve kırılganlığını yorumlayacak.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Toplam aylık gider</th><td id="stat1">—</td></tr>
+<tr><th>Aylık net kalan</th><td id="stat2">—</td></tr>
+<tr><th>Tasarruf oranı</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>1 yıllık birikim</th><td id="stat4">—</td></tr>
+<tr><th>10 yıllık birikim</th><td id="stat5">—</td></tr>
+<tr><th>Hedef farkı</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Finansal baskı ve projeksiyon</span>
+<span class="summary-note">Bütçe hangi alanda sıkışıyor?</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Analiz</th><th>Değer</th></tr></thead>
+<tbody>
+<tr><th>Konut gider oranı</th><td id="analysis1">—</td></tr>
+<tr><th>Borç baskısı</th><td id="analysis2">—</td></tr>
+<tr><th>Diğer gider payı</th><td id="analysis3">—</td></tr>
+<tr><th>Güvenlik payı etkisi</th><td id="analysis4">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Vade</th><th>Tahmini birikim</th><th>Not</th></tr></thead>
+<tbody id="projectionBody"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Aylık tasarruf nasıl okunmalı?</h2>
+<p class="section-note">Aylık tasarruf sadece ay sonunda para kalması değildir. Sağlıklı bir bütçede o kalan tutarın gelire göre anlamlı bir pay oluşturması, borç ve konut baskısının bütçeyi aşırı sıkıştırmaması beklenir.</p>
+<details open="">
+<summary>Tasarruf oranı neden önemli?</summary>
+<p>Tasarruf tutarı tek başına güçlü görünse bile gelire oranı düşükse bütçe hala kırılgan olabilir. Oran, sonucun ne kadar sürdürülebilir olduğunu daha net gösterir.</p>
+</details>
+<details>
+<summary>Borç baskısı niye ayrıca izleniyor?</summary>
+<p>Borç ödemeleri yüksekse gelir artsa bile net kalan hızla eriyebilir. Bu yüzden borç yükünün gelir içindeki payını ayrıca görmek faydalıdır.</p>
+</details>
+<details>
+<summary>Güvenlik payı neden önemli?</summary>
+<p>Acil durum veya düzensiz giderler için küçük bir tampon bırakmak, teorik tasarruf ile gerçekten sürdürülebilir tasarruf arasındaki farkı ortaya çıkarır.</p>
+</details>
+</div>
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Sık sorulan sorular</h2>
+<details open="">
+<summary>Bütçem negatif veya açık veriyorsa ne olur?</summary>
+<p>Bu durum giderlerinin geliri aştığını gösterir. Böyle bir tabloda öncelik tasarruftan önce bütçe açığını kapatmak ve özellikle borç yükünü azaltmaktır.</p>
+</details>
+<details>
+<summary>Getiri oranı alanı ne işe yarıyor?</summary>
+<p>Birikimlerinin değerlendirildiği varsayımsal senaryoda 1 / 5 / 10 yıllık potansiyeli daha gerçekçi görmek için kullanılır. Garanti sonuç vermez, yalnızca projeksiyon sunar.</p>
+</details>
+<details>
+<summary>Hedef farkı neyi gösterir?</summary>
+<p>Belirlediğin tasarruf oranına göre şu an fazla mı veriyorsun yoksa geride mi kalıyorsun onu gösterir. Bu da bütçeyi ne kadar optimize etmen gerektiğini anlamana yardım eder.</p>
+</details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 style="margin-bottom:12px">İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/borc-kapama-plani">
+<span class="small">Bütçe</span>
+<strong>Borç Kapama Planı</strong>
+<p>Borç yükünü azaltmak için daha güçlü bir geri ödeme planı kur.</p>
+</a>
+<a class="related-card" href="/kredi-hesaplama?mod=taksit">
+<span class="small">Finans</span>
+<strong>Kredi, Taksit ve Erken Kapatma</strong>
+<p>Yeni borcun bütçeni ne kadar zorlayacağını ayrıca gör.</p>
+</a>
+<a class="related-card" href="/faiz-hesaplama?mod=bilesik">
+<span class="small">Birikim</span>
+<strong>Faiz, Mevduat ve Bileşik Getiri</strong>
+<p>Tasarruflarını uzun vadede nasıl büyütebileceğini ayrıca hesapla.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const el = id => document.getElementById(id);
+    const STORAGE_KEY = 'hesapica_butce_tasarruf_merged_v1';
+    const LEGACY_STORAGE_KEY = 'hesapica_aylik_tasarruf_manual_v3';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      activeMode: 'manual'
+    };
+    let calcTimer = null;
+    const resultsPanelEl = el('resultsPanel');
+    const PAGE_URL = 'https://hesapica.com/butce-hesaplama';
+
+    function formatTRY(value){
+      return new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0}).format(Number(value)||0);
+    }
+    function formatPercent(value,digits=1){
+      return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number(value)||0) + '%';
+    }
+    function formatTrInput(value){
+      const num = Math.round(Number(value)||0);
+      return num ? new Intl.NumberFormat('tr-TR').format(num) : '';
+    }
+    function parseTrNumber(value){
+      if(value === null || value === undefined) return 0;
+      const cleaned = String(value).replace(/\./g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
+      return Number(cleaned) || 0;
+    }
+    function parseDecimal(value){
+      if(value === null || value === undefined) return NaN;
+      const cleaned = String(value).trim().replace(/\s+/g,'').replace(/%/g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
+      if(!cleaned || cleaned === '.' || cleaned === '-' || cleaned === '-.') return NaN;
+      return Number(cleaned);
+    }
+    function sanitizeDecimalText(value){
+      let cleaned = String(value || '').replace(/[^0-9,.-]/g, '');
+      cleaned = cleaned.replace(/(?!^)-/g, '');
+      const parts = cleaned.split(/[.,]/);
+      if(parts.length > 1){
+        const decimal = parts.slice(1).join('');
+        cleaned = parts[0] + ',' + decimal;
+      }
+      return cleaned;
+    }
+    function formatDecimalInput(value, digits = 2){
+      if(!Number.isFinite(value)) return '';
+      return Number(value).toLocaleString('tr-TR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      });
+    }
+    function clamp(n,min,max){ return Math.min(Math.max(n,min),max); }
+
+    function futureValueMonthly(monthlyContribution, annualRate, years){
+      const r = annualRate / 100 / 12;
+      const n = years * 12;
+      if(monthlyContribution <= 0) return 0;
+      if(r === 0) return monthlyContribution * n;
+      return monthlyContribution * ((Math.pow(1 + r, n) - 1) / r);
+    }
+
+    function getFieldIds(){
+      return ['monthlyIncome','targetRate','rentExpense','billExpense','foodExpense','transportExpense','debtExpense','otherExpense','safetyBuffer','annualReturn'];
+    }
+
+    function getInputData(){
+      return {
+        income: parseTrNumber(el('monthlyIncome').value),
+        targetRate: parseDecimal(el('targetRate').value) || 0,
+        rent: parseTrNumber(el('rentExpense').value),
+        bills: parseTrNumber(el('billExpense').value),
+        food: parseTrNumber(el('foodExpense').value),
+        transport: parseTrNumber(el('transportExpense').value),
+        debt: parseTrNumber(el('debtExpense').value),
+        other: parseTrNumber(el('otherExpense').value),
+        safety: parseTrNumber(el('safetyBuffer').value),
+        annualReturn: parseDecimal(el('annualReturn').value) || 0
+      };
+    }
+
+    function hasAnyMeaningfulInput(data){
+      return Object.values(data).some(value => Number(value) > 0);
+    }
+
+    function validateData(data){
+      const errors = [];
+      if(data.income <= 0) errors.push('Aylık toplam gelir alanına 0’dan büyük bir değer gir.');
+      if(data.targetRate < 0 || data.targetRate > 100) errors.push('Hedef tasarruf oranı 0 ile 100 arasında olmalı.');
+      if(data.annualReturn < 0 || data.annualReturn > 100) errors.push('Yıllık getiri tahmini 0 ile 100 arasında olmalı.');
+      const expenseChecks = [
+        ['rent','Kira / konut gideri negatif olamaz.'],
+        ['bills','Fatura gideri negatif olamaz.'],
+        ['food','Market / yemek gideri negatif olamaz.'],
+        ['transport','Ulaşım gideri negatif olamaz.'],
+        ['debt','Borç ödemesi negatif olamaz.'],
+        ['other','Diğer giderler negatif olamaz.'],
+        ['safety','Güvenlik payı negatif olamaz.']
+      ];
+      expenseChecks.forEach(([key,message]) => {
+        if(data[key] < 0) errors.push(message);
+      });
+      return { isValid: errors.length === 0, errors };
+    }
+
+    function computeSavings(data){
+      const totalExpense = data.rent + data.bills + data.food + data.transport + data.debt + data.other + data.safety;
+      const remaining = data.income - totalExpense;
+      const savingAmount = remaining > 0 ? remaining : 0;
+      const savingRate = data.income > 0 ? (savingAmount / data.income) * 100 : 0;
+      const targetAmount = data.targetRate > 0 ? data.income * (data.targetRate / 100) : 0;
+      const targetGap = savingAmount - targetAmount;
+
+      const oneYear = futureValueMonthly(savingAmount, data.annualReturn, 1);
+      const fiveYear = futureValueMonthly(savingAmount, data.annualReturn, 5);
+      const tenYear = futureValueMonthly(savingAmount, data.annualReturn, 10);
+
+      const pressureRatio = data.income > 0 ? (totalExpense / data.income) * 100 : 0;
+      const debtRatio = data.income > 0 ? (data.debt / data.income) * 100 : 0;
+      const rentRatio = data.income > 0 ? (data.rent / data.income) * 100 : 0;
+      const otherRatio = data.income > 0 ? (data.other / data.income) * 100 : 0;
+      const safetyRatio = data.income > 0 ? (data.safety / data.income) * 100 : 0;
+
+      let score = 50;
+      score += clamp((savingRate - 10) * 2.8, -30, 30);
+      score -= clamp((pressureRatio - 70) * 1.1, 0, 28);
+      score -= clamp((debtRatio - 10) * 1.5, 0, 20);
+      score += clamp(safetyRatio * 1.2, 0, 10);
+      if(remaining < 0) score -= 25;
+      score = Math.round(clamp(score, 0, 100));
+
+      let level = 'good';
+      if(remaining < 0 || savingRate < 10) level = 'bad';
+      else if(savingRate < 20 || pressureRatio > 85) level = 'warn';
+
+      const decision = getDecision({savingRate, remaining, debtRatio, pressureRatio});
+
+      return {
+        ...data,
+        totalExpense, remaining, savingAmount, savingRate, targetAmount, targetGap,
+        oneYear, fiveYear, tenYear, pressureRatio, debtRatio, rentRatio, otherRatio, safetyRatio,
+        score, level, decision
+      };
+    }
+
+    function flashResults(){
+      resultsPanelEl.classList.remove('results-panel-flash');
+      void resultsPanelEl.offsetWidth;
+      resultsPanelEl.classList.add('results-panel-flash');
+      window.setTimeout(() => resultsPanelEl.classList.remove('results-panel-flash'), 1300);
+    }
+
+    function scrollToResults(){
+      resultsPanelEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      flashResults();
+    }
+
+    function setMoneyInput(input){
+      input.addEventListener('input', () => {
+        markManualChange();
+        const raw = input.value.replace(/\D/g,'');
+        input.value = raw ? new Intl.NumberFormat('tr-TR').format(Number(raw)) : '';
+        queueCalculation();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseTrNumber(input.value);
+        input.value = val ? formatTrInput(val) : '';
+      });
+      input.addEventListener('keydown', handleEnterToCalculate);
+    }
+
+    function setDecimalInput(input, digits = 2){
+      input.addEventListener('input', () => {
+        markManualChange();
+        input.value = sanitizeDecimalText(input.value);
+        queueCalculation();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseDecimal(input.value);
+        input.value = Number.isFinite(val) && val !== 0 ? formatDecimalInput(val, digits) : (val === 0 ? '0' : '');
+      });
+      input.addEventListener('keydown', handleEnterToCalculate);
+    }
+
+    function clearScenarioActive(){
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+    }
+
+    function loadScenario(name, btn){
+      clearScenarioActive();
+      if(btn) btn.classList.add('active');
+      state.activeMode = 'scenario';
+      const scenarios = {
+        balanced:{income:'65.000', target:'20', rent:'18.000', bills:'4.500', food:'12.000', transport:'3.500', debt:'7.000', other:'5.000', safety:'3.000', annualReturn:'0'},
+        strong:{income:'85.000', target:'20', rent:'18.000', bills:'5.000', food:'14.000', transport:'4.000', debt:'3.000', other:'6.000', safety:'4.000', annualReturn:'12'},
+        fragile:{income:'52.000', target:'15', rent:'18.500', bills:'4.000', food:'11.000', transport:'3.000', debt:'6.000', other:'5.500', safety:'2.000', annualReturn:'0'},
+        debtHeavy:{income:'70.000', target:'20', rent:'17.000', bills:'4.500', food:'11.000', transport:'3.500', debt:'16.000', other:'5.000', safety:'3.000', annualReturn:'0'}
+      };
+      const s = scenarios[name];
+      el('monthlyIncome').value = s.income;
+      el('targetRate').value = s.target;
+      el('rentExpense').value = s.rent;
+      el('billExpense').value = s.bills;
+      el('foodExpense').value = s.food;
+      el('transportExpense').value = s.transport;
+      el('debtExpense').value = s.debt;
+      el('otherExpense').value = s.other;
+      el('safetyBuffer').value = s.safety;
+      el('annualReturn').value = s.annualReturn;
+      clearValidation();
+      calculateSavings({ forceValidation: true, scrollOnSuccess: true });
+    }
+
+    function fillExample(){
+      state.activeMode = 'example';
+      clearScenarioActive();
+      const example = {income:'65.000', target:'20', rent:'18.000', bills:'4.500', food:'12.000', transport:'3.500', debt:'7.000', other:'5.000', safety:'3.000', annualReturn:'0'};
+      el('monthlyIncome').value = example.income;
+      el('targetRate').value = example.target;
+      el('rentExpense').value = example.rent;
+      el('billExpense').value = example.bills;
+      el('foodExpense').value = example.food;
+      el('transportExpense').value = example.transport;
+      el('debtExpense').value = example.debt;
+      el('otherExpense').value = example.other;
+      el('safetyBuffer').value = example.safety;
+      el('annualReturn').value = example.annualReturn;
+      clearValidation();
+      calculateSavings({ forceValidation: true, scrollOnSuccess: true });
+    }
+
+    function resetForm(){
+      clearScenarioActive();
+      state.activeMode = 'manual';
+      getFieldIds().forEach(id => el(id).value = '');
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+      clearValidation();
+      setEmptyState();
+    }
+
+    function setEmptyState(){
+      state.inputs = {};
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      el('statusBadge').textContent = 'Veri bekleniyor';
+      el('statusBadge').className = 'badge';
+      el('statusText').textContent = 'Gelir ve gider bilgileri girildiğinde aylık net kalan ve tasarruf kalitesi otomatik görünür.';
+      el('highlightCard').classList.add('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.add('is-empty'));
+
+      el('mainResult').textContent = '—';
+      el('mainResult').style.color = 'var(--text)';
+      ['result2','result3','result6','stat2','stat3','stat6'].forEach(id => el(id).style.color = 'var(--text)');
+      el('mainResultText').textContent = 'Aylık tasarrufa ayrılabilir net tutar burada görünecek.';
+      el('savingsScore').textContent = '0/100';
+      el('scoreBadge').textContent = 'Veri bekleniyor';
+      el('scoreBadge').className = 'pill';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'Skor; tasarruf oranı, gider baskısı, borç yükü ve güvenlik payının gelir içindeki dengesine göre oluşur.';
+      el('scoreBreakdown').querySelectorAll('.val').forEach(v => v.textContent = '—');
+
+      ['result1','result2','result3','result4','result5','result6','stat1','stat2','stat3','stat4','stat5','stat6','analysis1','analysis2','analysis3','analysis4'].forEach(id => el(id).textContent = '—');
+      ['health1','health2','health3','health1Sub','health2Sub','health3Sub'].forEach(id => el(id).textContent = '—');
+      el('smartComment').textContent = 'Bilgileri girdiğinde sistem, bu bütçenin tasarruf üretme gücünü ve kırılganlığını yorumlayacak.';
+      el('projectionBody').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+    }
+
+    function setPassivePrompt(message = 'Önce aylık gelir alanını doldurduğunda sonuç paneli otomatik güncellenecek.'){
+      clearValidation();
+      setEmptyState();
+      el('statusBadge').textContent = 'Gelir gerekli';
+      el('statusBadge').className = 'badge warn';
+      el('statusText').textContent = message;
+    }
+
+    function showValidation(message){
+      el('validationBox').textContent = message;
+      el('validationBox').classList.add('show');
+      highlightInvalidFields();
+      setEmptyState();
+      el('statusBadge').textContent = 'Eksik veri';
+      el('statusBadge').className = 'badge bad';
+      el('statusText').textContent = message;
+    }
+
+    function clearValidation(){
+      el('validationBox').classList.remove('show');
+      document.querySelectorAll('.input-error').forEach(node => node.classList.remove('input-error'));
+      document.querySelectorAll('.field-error.show').forEach(node => node.classList.remove('show'));
+    }
+
+    function showFieldError(id, message){
+      const input = el(id);
+      const hint = el(id + 'Error');
+      if(input) input.classList.add('input-error');
+      if(hint){
+        if(message) hint.textContent = message;
+        hint.classList.add('show');
+      }
+    }
+
+    function highlightInvalidFields(){
+      ['monthlyIncome','targetRate','annualReturn','rentExpense','billExpense','foodExpense','transportExpense','debtExpense','otherExpense','safetyBuffer'].forEach(id => {
+        el(id).classList.remove('input-error');
+        const hint = el(id + 'Error');
+        if(hint) hint.classList.remove('show');
+      });
+      const data = getInputData();
+      if(data.income <= 0) showFieldError('monthlyIncome', 'Aylık toplam gelir alanına 0’dan büyük bir değer gir.');
+      if(data.targetRate < 0 || data.targetRate > 100) showFieldError('targetRate', 'Hedef tasarruf oranı 0 ile 100 arasında olmalı.');
+      if(data.annualReturn < 0 || data.annualReturn > 100) showFieldError('annualReturn', 'Yıllık getiri tahmini 0 ile 100 arasında olmalı.');
+      if(data.rent < 0) showFieldError('rentExpense', 'Kira / konut gideri negatif olamaz.');
+      if(data.bills < 0) showFieldError('billExpense', 'Fatura gideri negatif olamaz.');
+      if(data.food < 0) showFieldError('foodExpense', 'Market / yemek gideri negatif olamaz.');
+      if(data.transport < 0) showFieldError('transportExpense', 'Ulaşım gideri negatif olamaz.');
+      if(data.debt < 0) showFieldError('debtExpense', 'Borç ödemesi negatif olamaz.');
+      if(data.other < 0) showFieldError('otherExpense', 'Diğer giderler negatif olamaz.');
+      if(data.safety < 0) showFieldError('safetyBuffer', 'Güvenlik payı negatif olamaz.');
+    }
+
+    function getDecision({savingRate, remaining, debtRatio, pressureRatio}){
+      if(remaining < 0){
+        return { short:'Açık veriyor', sub:'Öncelik tasarruftan önce bütçe açığını kapatmak olmalı.' };
+      }
+      if(savingRate >= 20 && debtRatio < 15 && pressureRatio < 80){
+        return { short:'Güçlü', sub:'Tasarruf disiplini sağlıklı görünüyor.' };
+      }
+      if(savingRate >= 10 && pressureRatio < 90){
+        return { short:'Dengeli', sub:'Geliştirilebilir ama yönetilebilir seviyede.' };
+      }
+      return { short:'Kırılgan', sub:'Küçük sapmalar bütçeyi zorlayabilir.' };
+    }
+
+    function buildComment(d){
+      let comment = `Aylık gelir ${formatTRY(d.income)} ve toplam düzenli gider ${formatTRY(d.totalExpense)} seviyesinde görünüyor. `;
+      if(d.remaining < 0){
+        comment += `Bu nedenle bütçe yaklaşık ${formatTRY(Math.abs(d.remaining))} açık veriyor. `;
+      } else {
+        comment += `Bu tabloya göre aylık ${formatTRY(d.savingAmount)} tasarruf potansiyeli oluşuyor. `;
+      }
+      comment += `Tasarruf oranı ${formatPercent(d.savingRate,1)}, gider baskısı ise ${formatPercent(d.pressureRatio,1)} seviyesinde. `;
+      if(d.targetRate > 0){
+        if(d.targetGap >= 0){
+          comment += `Belirlenen ${formatPercent(d.targetRate,1)} hedefin üzerindesin. `;
+        } else {
+          comment += `Belirlenen ${formatPercent(d.targetRate,1)} hedefe ulaşmak için aylık yaklaşık ${formatTRY(Math.abs(d.targetGap))} daha alan açman gerekiyor. `;
+        }
+      }
+      if(d.savingAmount > 0){
+        comment += d.annualReturn > 0
+          ? `Yıllık ${formatPercent(d.annualReturn,1)} varsayımsal getiriyle 5 yılda yaklaşık ${formatTRY(d.fiveYear)}, 10 yılda yaklaşık ${formatTRY(d.tenYear)} potansiyel oluşabilir. `
+          : `Mevcut tempoyla 1 yılda yaklaşık ${formatTRY(d.oneYear)}, 5 yılda ${formatTRY(d.fiveYear)} birikim oluşabilir. `;
+      }
+      comment += `Kısa karar özeti: ${d.decision.short}. ${d.decision.sub}`;
+      return comment;
+    }
+
+    function buildProjection(savingAmount, annualReturn){
+      const rows = [
+        {label:'1 yıl', value:futureValueMonthly(savingAmount, annualReturn, 1), note:'Kısa vadeli görünüm'},
+        {label:'5 yıl', value:futureValueMonthly(savingAmount, annualReturn, 5), note:'Orta vadeli potansiyel'},
+        {label:'10 yıl', value:futureValueMonthly(savingAmount, annualReturn, 10), note:'Uzun vadeli birikim'}
+      ];
+      el('projectionBody').innerHTML = rows.map(r => `<tr><td>${r.label}</td><td>${formatTRY(r.value)}</td><td>${r.note}</td></tr>`).join('');
+    }
+
+    function renderResults(d){
+      el('statusBadge').textContent = d.level === 'good' ? 'Hesaplandı' : d.level === 'warn' ? 'Dikkat gerekli' : 'Baskı yüksek';
+      el('statusBadge').className = 'badge ' + d.level;
+      el('statusText').textContent = `Aylık net kalan ${formatTRY(d.remaining)} ve tasarruf oranı ${formatPercent(d.savingRate,1)} olarak güncellendi.`;
+
+      el('highlightCard').classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.remove('is-empty'));
+
+      el('mainResult').textContent = formatTRY(d.savingAmount);
+      el('mainResult').style.color = d.remaining < 0 ? 'var(--bad)' : d.level === 'warn' ? 'var(--warn)' : 'var(--good)';
+      el('mainResultText').textContent = d.remaining < 0
+        ? 'Bu bütçe yapısı şu an net tasarruf üretmiyor, açık veriyor.'
+        : 'Bu bütçe yapısı her ay düzenli olarak tasarrufa alan bırakıyor.';
+
+      el('result1').textContent = formatTRY(d.totalExpense);
+      el('result2').textContent = formatTRY(d.remaining);
+      el('result3').textContent = formatPercent(d.savingRate,1);
+      el('result4').textContent = formatTRY(d.oneYear);
+      el('result5').textContent = formatTRY(d.fiveYear);
+      el('result6').textContent = d.targetRate > 0
+        ? `${d.targetGap >= 0 ? '+' : '-'}${formatTRY(Math.abs(d.targetGap))}`
+        : '—';
+
+      el('stat1').textContent = formatTRY(d.totalExpense);
+      el('stat2').textContent = formatTRY(d.remaining);
+      el('stat3').textContent = formatPercent(d.savingRate,1);
+      el('stat4').textContent = formatTRY(d.oneYear);
+      el('stat5').textContent = formatTRY(d.tenYear);
+      el('stat6').textContent = d.targetRate > 0
+        ? `${d.targetGap >= 0 ? '+' : '-'}${formatTRY(Math.abs(d.targetGap))}`
+        : '—';
+
+      const savingRateColor = d.savingRate >= 20 ? 'var(--good)' : d.savingRate >= 10 ? 'var(--warn)' : 'var(--bad)';
+      const remainingColor = d.remaining < 0 ? 'var(--bad)' : 'var(--good)';
+      const targetGapColor = d.targetRate > 0 ? (d.targetGap >= 0 ? 'var(--good)' : 'var(--bad)') : 'var(--text)';
+      el('result2').style.color = remainingColor;
+      el('stat2').style.color = remainingColor;
+      el('result3').style.color = savingRateColor;
+      el('stat3').style.color = savingRateColor;
+      el('result6').style.color = targetGapColor;
+      el('stat6').style.color = targetGapColor;
+
+      el('analysis1').textContent = formatPercent(d.rentRatio,1);
+      el('analysis2').textContent = formatPercent(d.debtRatio,1);
+      el('analysis3').textContent = formatPercent(d.otherRatio,1);
+      el('analysis4').textContent = formatPercent(d.safetyRatio,1);
+
+      el('savingsScore').textContent = `${d.score}/100`;
+      el('scoreBar').style.width = `${d.score}%`;
+      if(d.score >= 75){
+        el('scoreBadge').textContent = 'Güçlü';
+        el('scoreBadge').className = 'pill good';
+      }else if(d.score >= 50){
+        el('scoreBadge').textContent = 'Orta';
+        el('scoreBadge').className = 'pill warn';
+      }else{
+        el('scoreBadge').textContent = 'Zayıf';
+        el('scoreBadge').className = 'pill bad';
+      }
+      el('scoreText').textContent = d.remaining < 0
+        ? 'Bütçe şu an açık verdiği için skor keskin şekilde düşer. Öncelik önce açığı kapatmak, sonra tasarruf oluşturmak olmalı.'
+        : 'Skor; tasarruf oranı, gider baskısı, borç yükü ve güvenlik payının gelir içindeki dengesine göre güncellendi.';
+
+      const vals = el('scoreBreakdown').querySelectorAll('.val');
+      vals[0].textContent = formatPercent(d.savingRate,1);
+      vals[1].textContent = formatPercent(d.pressureRatio,1);
+      vals[2].textContent = formatPercent(d.debtRatio,1);
+      vals[3].textContent = formatPercent(d.safetyRatio,1);
+
+      el('health1').textContent = d.remaining < 0 ? 'Açık' : d.savingRate < 10 ? 'Kırılgan' : d.savingRate < 20 ? 'Dengeli' : 'Güçlü';
+      el('health1Sub').textContent = `Tasarruf oranı ${formatPercent(d.savingRate,1)}`;
+      el('health2').textContent = d.pressureRatio < 75 ? 'Düşük' : d.pressureRatio < 90 ? 'Orta' : 'Yüksek';
+      el('health2Sub').textContent = `Gider baskısı ${formatPercent(d.pressureRatio,1)}`;
+      el('health3').textContent = d.decision.short;
+      el('health3Sub').textContent = d.decision.sub;
+
+      el('smartComment').textContent = buildComment(d);
+      buildProjection(d.savingAmount, d.annualReturn);
+    }
+
+    function saveManualState(){
+      if(state.activeMode !== 'manual' || !state.inputs || !state.inputs.income || state.inputs.income <= 0) return;
+      const payload = {
+        version: 3,
+        mode: 'manual',
+        fields: {
+          monthlyIncome: el('monthlyIncome').value,
+          targetRate: el('targetRate').value,
+          rentExpense: el('rentExpense').value,
+          billExpense: el('billExpense').value,
+          foodExpense: el('foodExpense').value,
+          transportExpense: el('transportExpense').value,
+          debtExpense: el('debtExpense').value,
+          otherExpense: el('otherExpense').value,
+          safetyBuffer: el('safetyBuffer').value,
+          annualReturn: el('annualReturn').value
+        }
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+    }
+
+    function loadSavedManualState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
+        if(!raw) return false;
+        const parsed = JSON.parse(raw);
+        if(!parsed || !parsed.mode || parsed.mode !== 'manual' || !parsed.fields) return false;
+        Object.entries(parsed.fields).forEach(([id, value]) => {
+          if(el(id)) el(id).value = value || '';
+        });
+        state.activeMode = 'manual';
+        return true;
+      }catch(e){
+        return false;
+      }
+    }
+
+    function markManualChange(){
+      state.activeMode = 'manual';
+      clearScenarioActive();
+    }
+
+    function queueCalculation(){
+      clearTimeout(calcTimer);
+      calcTimer = setTimeout(() => calculateSavings({ forceValidation: false, scrollOnSuccess: false }), 180);
+    }
+
+    function handleEnterToCalculate(event){
+      if(event.key === 'Enter'){
+        event.preventDefault();
+        calculateSavings({ forceValidation: true, scrollOnSuccess: true });
+      }
+    }
+
+    function calculateSavings(options = {}){
+      const { forceValidation = true, scrollOnSuccess = false } = options;
+      clearValidation();
+      const data = getInputData();
+      state.inputs = data;
+
+      if(!hasAnyMeaningfulInput(data)){
+        setEmptyState();
+        return;
+      }
+
+      const validation = validateData(data);
+      if(!validation.isValid){
+        state.isValid = false;
+        if(forceValidation){
+          showValidation(validation.errors[0]);
+        }else{
+          setPassivePrompt(validation.errors[0]);
+        }
+        return;
+      }
+
+      state.isValid = true;
+      const result = computeSavings(data);
+      state.results = result;
+      state.isCalculated = true;
+      renderResults(result);
+      saveManualState();
+      if(scrollOnSuccess){
+        scrollToResults();
+      }
+    }
+
+    async function shareResult(){
+      if(!state.results || !state.isValid){
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Önce geçerli bir sonuç oluştur, ardından paylaşım özeti hazırlanır.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+        return;
+      }
+      const summary = ['Bütçe ve Tasarruf Hesaplama', `Tasarrufa Ayrılabilir Tutar: ${el('mainResult').textContent}`, `Aylık Net Kalan: ${el('result2').textContent}`, `Tasarruf Oranı: ${el('result3').textContent}`, `Tasarruf Skoru: ${el('savingsScore').textContent}`].join('\n');
+      if(navigator.share){
+        try{
+          await navigator.share({ title:'Bütçe ve Tasarruf Hesaplama', text: summary, url: PAGE_URL });
+          return;
+        }catch(err){}
+      }
+      try{
+        await navigator.clipboard.writeText(`${summary}\n${location.href}`);
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Paylaşım özeti bağlantıyla birlikte panoya kopyalandı.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      }catch(err){
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Paylaşım kopyalanamadı. Tarayıcı izinlerini kontrol et.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      }
+    }
+
+    function copyResult(){
+      if(!state.results || !state.isValid){
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Önce geçerli bir sonuç oluştur, ardından özet panoya kopyalanır.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+        return;
+      }
+      const text = [
+        'Bütçe ve Tasarruf Hesaplama',
+        `Aylık Net Kalan: ${el('result2').textContent}`,
+        `Tasarrufa Ayrılabilir Tutar: ${el('mainResult').textContent}`,
+        `Tasarruf Oranı: ${el('result3').textContent}`,
+        `1 Yıllık Birikim: ${el('result4').textContent}`,
+        `5 Yıllık Birikim: ${el('result5').textContent}`,
+        `Tasarruf Skoru: ${el('savingsScore').textContent}`,
+        `Bağlantı: ${PAGE_URL}`
+      ].join('\n');
+
+      const onSuccess = () => {
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Sonuç özeti panoya kopyalandı.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      };
+      const onError = () => {
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Sonuç kopyalanamadı. Tarayıcı izinlerini kontrol et.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      };
+
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(onSuccess).catch(onError);
+        return;
+      }
+
+      try{
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', 'readonly');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        onSuccess();
+      }catch(err){
+        onError();
+      }
+    }
+
+    setMoneyInput(el('monthlyIncome'));
+    setMoneyInput(el('rentExpense'));
+    setMoneyInput(el('billExpense'));
+    setMoneyInput(el('foodExpense'));
+    setMoneyInput(el('transportExpense'));
+    setMoneyInput(el('debtExpense'));
+    setMoneyInput(el('otherExpense'));
+    setMoneyInput(el('safetyBuffer'));
+    setDecimalInput(el('targetRate'));
+    setDecimalInput(el('annualReturn'));
+
+    document.querySelectorAll('input').forEach(node => {
+      if(!['monthlyIncome','rentExpense','billExpense','foodExpense','transportExpense','debtExpense','otherExpense','safetyBuffer','targetRate','annualReturn'].includes(node.id)){
+        node.addEventListener('input', () => { markManualChange(); queueCalculation(); });
+      }
+      node.addEventListener('change', () => { markManualChange(); calculateSavings({ forceValidation: false, scrollOnSuccess: false }); });
+      node.addEventListener('keydown', handleEnterToCalculate);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setEmptyState();
+      const loaded = loadSavedManualState();
+      if(loaded){
+        calculateSavings({ forceValidation: false, scrollOnSuccess: false });
+      }
+    });
+  </script>
+</body>
+</html>

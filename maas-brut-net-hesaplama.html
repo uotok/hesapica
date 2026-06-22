@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica</title>
+<meta content="Maaş ve gelir hesaplama merkezi: brütten nete, netten brüte, maaş zammı ve saatlik ücret analizini tek sayfada gör. Bordro etkisi, reel zam, saatlik kazanç ve yorum katmanı birlikte çalışır." name="description"/>
+<meta content="maaş ve gelir hesaplama, maaş brüt net hesaplama, netten brüte hesaplama, maaş zam hesaplama, saatlik ücret hesaplama, bordro hesaplama" name="keywords"/>
+<link href="https://hesapica.com/maas-brut-net-hesaplama" rel="canonical"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<meta content="#4f46e5" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica" property="og:title"/>
+<meta content="Maaş ve gelir hesaplama merkezi: brütten nete, netten brüte, maaş zammı ve saatlik ücret analizini tek sayfada gör. Bordro etkisi, reel zam, saatlik kazanç ve yorum katmanı birlikte çalışır." property="og:description"/>
+<meta content="https://hesapica.com/maas-brut-net-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica" name="twitter:title"/>
+<meta content="Maaş ve gelir hesaplama merkezi: brütten nete, netten brüte, maaş zammı ve saatlik ücret analizini tek sayfada gör. Bordro etkisi, reel zam, saatlik kazanç ve yorum katmanı birlikte çalışır." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#0f172a;
+      --muted:#667085;
+      --border:#d9def1;
+      --border-strong:#c7cff6;
+      --danger:#dc2626;
+      --success:#047857;
+      --warning:#b45309;
+      --shadow:0 16px 40px rgba(79,70,229,.12);
+      --radius:24px;
+      --radius-sm:18px;
+      --radius-xs:14px;
+      --container:1240px;
+      --highlight:rgba(79,70,229,.18);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background:linear-gradient(180deg,#f7f8ff 0%, #eef2ff 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--container);margin:0 auto;padding:24px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--muted);margin-bottom:18px}
+    .breadcrumb a{color:#4b5563}
+    .hero{
+      padding:34px;
+      border-radius:32px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.12);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:24px;align-items:start}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.12);color:#4338ca;font-size:13px;font-weight:800;letter-spacing:.02em}
+    h1{margin:16px 0 12px;font-size:clamp(34px,4.2vw,52px);line-height:1.05;letter-spacing:-.03em}
+    .hero p{margin:0;font-size:18px;color:#475467;max-width:780px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);font-weight:700;color:#3730a3;font-size:14px}
+    .hero-side{display:grid;gap:14px}
+    .hero-metric{padding:20px;border-radius:22px;background:rgba(255,255,255,.9);border:1px solid rgba(79,70,229,.12)}
+    .hero-metric small{display:block;font-size:13px;font-weight:800;color:#4338ca;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .hero-metric strong{display:block;font-size:18px;line-height:1.3}
+    .hero-metric span{display:block;color:#667085;font-size:14px;margin-top:8px}
+
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:24px;margin-top:24px;align-items:start}
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .panel-pad{padding:28px}
+    .panel + .panel{margin-top:22px}
+    .section-title{margin:0 0 8px;font-size:16px;font-weight:800;letter-spacing:.04em;color:#4338ca;text-transform:uppercase}
+    .section-subtitle{margin:0 0 22px;color:#667085;font-size:15px}
+    .segmented{display:flex;gap:10px;flex-wrap:wrap}
+    .segmented button{
+      border:1px solid var(--border);
+      background:#fff;
+      color:#334155;
+      border-radius:16px;
+      padding:14px 16px;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.2s ease;
+      min-height:52px;
+    }
+    .segmented button.active{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-color:transparent;box-shadow:0 10px 20px rgba(79,70,229,.22)}
+    .segmented button:hover{transform:translateY(-1px)}
+    .segmented.two button{flex:1 1 220px}
+    .info-note,.scope-note{
+      background:linear-gradient(180deg,#f7f8ff 0%,#eef2ff 100%);
+      border:1px solid rgba(79,70,229,.18);
+      border-radius:22px;
+      padding:18px 18px 18px 20px;
+      color:#4338ca;
+      font-size:15px;
+      margin:18px 0 24px;
+    }
+    .info-note strong,.scope-note strong{color:#312e81}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
+    .field{display:flex;flex-direction:column;gap:8px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:15px;font-weight:800;color:#1f2937}
+    .hint{font-size:14px;color:#667085;line-height:1.5}
+    input[type="text"], input[type="number"], select, textarea{
+      width:100%;
+      min-height:56px;
+      border-radius:18px;
+      border:1px solid var(--border-strong);
+      background:#fff;
+      padding:16px 18px;
+      font-size:18px;
+      font-weight:600;
+      color:#0f172a;
+      outline:none;
+      transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+    }
+    input::placeholder, textarea::placeholder{color:#9ca3af;font-weight:600}
+    input:focus, select:focus, textarea:focus{border-color:#8b5cf6;box-shadow:0 0 0 4px rgba(139,92,246,.12)}
+    .field.error input,.field.error select{border-color:rgba(220,38,38,.65);box-shadow:0 0 0 4px rgba(220,38,38,.08)}
+    .error-text{font-size:13px;color:var(--danger);display:none}
+    .field.error .error-text{display:block}
+    .inline-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .quick-table{display:grid;gap:12px}
+    .month-table-wrap{overflow:auto;border:1px solid var(--border);border-radius:22px;background:#fff}
+    table{width:100%;border-collapse:collapse;min-width:900px}
+    th,td{padding:14px 12px;border-bottom:1px solid #edf2f7;text-align:left;vertical-align:middle}
+    th{background:#f8faff;font-size:13px;color:#4338ca;text-transform:uppercase;letter-spacing:.04em}
+    tbody tr:nth-child(even){background:#fcfdff}
+    .month-input{min-width:120px}
+    .month-days{min-width:84px}
+    .month-name{font-weight:800;color:#334155;white-space:nowrap}
+    .action-bar{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .btn{
+      min-height:52px;
+      border-radius:18px;
+      border:none;
+      padding:0 18px;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 12px 24px rgba(79,70,229,.24)}
+    .btn-secondary{background:#eef2ff;color:#4338ca;border:1px solid rgba(79,70,229,.12)}
+    .btn-ghost{background:#fff;color:#334155;border:1px solid var(--border)}
+    .flow-hint{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:16px;padding:14px 16px;border-radius:20px;background:#f8faff;border:1px dashed rgba(79,70,229,.28)}
+    .flow-hint strong{display:block;color:#312e81;font-size:15px}
+    .flow-hint span{display:block;color:#667085;font-size:14px}
+    .flow-cue{font-size:26px;font-weight:800;color:#4338ca}
+    .results-panel{position:sticky;top:24px}
+    .result-card{padding:22px;border-bottom:1px solid #eef2ff}
+    .result-card:last-child{border-bottom:none}
+    .result-label{display:block;font-size:13px;font-weight:800;color:#4338ca;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .result-value{font-size:56px;line-height:1.02;font-weight:900;letter-spacing:-.04em;margin:0 0 12px}
+    .result-value.small{font-size:36px}
+    .result-description{margin:0;color:#667085;font-size:15px}
+    .pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.16);font-size:14px;font-weight:800}
+    .pill.good{color:#047857;border-color:rgba(4,120,87,.18);background:rgba(4,120,87,.06)}
+    .pill.mid{color:#b45309;border-color:rgba(180,83,9,.20);background:rgba(180,83,9,.07)}
+    .pill.bad{color:#b91c1c;border-color:rgba(185,28,28,.20);background:rgba(185,28,28,.07)}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:22px}
+    .mini-card{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--border)}
+    .mini-card .mini-label{display:block;font-size:13px;font-weight:800;color:#667085;margin-bottom:8px}
+    .mini-card .mini-value{display:block;font-size:24px;font-weight:900;line-height:1.15;color:#111827}
+    .score-card{padding:22px;border-top:1px solid #eef2ff}
+    .score-top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+    .score-value{font-size:52px;font-weight:900;line-height:1;letter-spacing:-.04em}
+    .score-track{height:14px;border-radius:999px;background:#e4e7f8;overflow:hidden;margin:14px 0 18px}
+    .score-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:width .25s ease}
+    .breakdown-list{display:grid;gap:10px}
+    .breakdown-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:16px;background:#fff;border:1px solid var(--border)}
+    .breakdown-item span:first-child{color:#667085}
+    .breakdown-item span:last-child{font-weight:900;color:#334155}
+    .result-area{margin-top:24px;display:grid;gap:22px}
+    .summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .summary-box{background:#fff;border:1px solid var(--border);border-radius:22px;padding:20px}
+    .summary-box strong{display:block;font-size:28px;line-height:1.1;letter-spacing:-.03em;margin-top:8px}
+    .summary-box small{display:block;color:#4338ca;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+    .summary-box p{margin:10px 0 0;color:#667085;font-size:14px}
+    .result-table-card,.faq-card,.related-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+    .result-table-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .table-meta{display:flex;flex-wrap:wrap;gap:10px}
+    .table-meta .tag{padding:9px 12px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:13px;font-weight:800}
+    .details-table-wrap{overflow:auto;border:1px solid var(--border);border-radius:22px}
+    .details-table{min-width:1200px}
+    .details-table th{position:sticky;top:0;z-index:1}
+    .empty-state{padding:24px;border-radius:22px;background:#f8faff;border:1px dashed rgba(79,70,229,.24);color:#667085;font-size:15px}
+    .analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .analysis-card{padding:20px;border-radius:22px;background:#fff;border:1px solid var(--border)}
+    .analysis-card small{display:block;color:#4338ca;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+    .analysis-card strong{display:block;font-size:28px;line-height:1.1;margin-top:8px}
+    .analysis-card p{margin:10px 0 0;color:#667085}
+    .faq-grid{display:grid;gap:14px}
+    .faq-item{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--border)}
+    .faq-item strong{display:block;font-size:18px;margin-bottom:8px}
+    .faq-item p{margin:0;color:#667085}
+    .related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .related-link{padding:18px;border-radius:22px;background:linear-gradient(135deg, rgba(79,70,229,.08), rgba(124,58,237,.08));border:1px solid rgba(79,70,229,.12)}
+    .related-link strong{display:block;margin-bottom:6px;color:#312e81}
+    .related-link span{display:block;color:#667085;font-size:14px}
+    .highlight-target{transition:box-shadow .28s ease, transform .28s ease}
+    .highlight-target.flash{box-shadow:0 0 0 6px var(--highlight), var(--shadow);transform:translateY(-2px)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:1140px){
+      .layout{grid-template-columns:1fr}
+      .results-panel{position:relative;top:auto}
+      .hero-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:840px){
+      .container{padding:16px}
+      .panel-pad,.result-table-card,.faq-card,.related-card{padding:20px}
+      .form-grid,.summary-grid,.analysis-grid,.related-grid,.mini-grid{grid-template-columns:1fr}
+      .inline-grid{grid-template-columns:1fr}
+      .result-value{font-size:42px}
+      .score-value{font-size:42px}
+      .action-bar .btn{width:100%}
+      .segmented.two button{flex:1 1 100%}
+      .hero{padding:24px}
+    }
+  
+.family-switcher{margin-top:22px}
+.family-switcher .segmented button{flex:1 1 220px}
+.family-panel{margin-top:24px}
+.family-panel[hidden]{display:none !important}
+.family-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start}
+.metric-list{display:grid;gap:14px}
+.metric-box{padding:18px;border:1px solid var(--border);border-radius:22px;background:#fff}
+.metric-box strong{display:block;font-size:14px;color:#4338ca;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.metric-box span{display:block;font-size:32px;font-weight:900;letter-spacing:-.03em}
+.metric-box small{display:block;color:#667085;margin-top:8px;font-size:14px;line-height:1.5}
+.decision-card{padding:18px;border-radius:22px;border:1px solid var(--border);background:linear-gradient(180deg,#f8faff 0%,#eef2ff 100%)}
+.decision-card.good{border-color:rgba(4,120,87,.25);background:linear-gradient(180deg,rgba(4,120,87,.08),rgba(4,120,87,.04))}
+.decision-card.mid{border-color:rgba(180,83,9,.25);background:linear-gradient(180deg,rgba(245,158,11,.10),rgba(245,158,11,.04))}
+.decision-card.bad{border-color:rgba(220,38,38,.25);background:linear-gradient(180deg,rgba(220,38,38,.10),rgba(220,38,38,.04))}
+.decision-card h3{margin:0 0 8px;font-size:20px}
+.decision-card p{margin:0;color:#475467}
+.scenario-grid-lite{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.scenario-card-lite{padding:16px;border-radius:20px;background:#fff;border:1px solid var(--border)}
+.scenario-card-lite strong{display:block;font-size:13px;color:#4338ca;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.scenario-card-lite span{display:block;font-size:24px;font-weight:900;letter-spacing:-.03em}
+.scenario-card-lite small{display:block;color:#667085;margin-top:8px;font-size:13px;line-height:1.5}
+.empty-soft{padding:18px;border:1px dashed rgba(79,70,229,.28);border-radius:20px;background:#f8faff;color:#667085}
+.mini-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.mini-kpi{padding:14px 16px;border:1px solid var(--border);border-radius:18px;background:#fff}
+.mini-kpi strong{display:block;font-size:12px;color:#4338ca;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.mini-kpi span{display:block;font-size:24px;font-weight:900;letter-spacing:-.03em}
+.mini-kpi small{display:block;color:#667085;margin-top:8px;font-size:13px}
+@media (max-width:1100px){.family-grid{grid-template-columns:1fr}.results-panel{position:static}}
+@media (max-width:760px){.scenario-grid-lite,.mini-kpis{grid-template-columns:1fr}.family-switcher .segmented{flex-direction:column}}
+
+</style>
+<meta content="index,follow" name="robots"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Maaş Brüt Net Hesaplama",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "url": "https://hesapica.com/maas-brut-net-hesaplama.html",
+    "inLanguage": "tr-TR"
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/maas-brut-net-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<main class="container">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#maas">Maaş ve Çalışma</a>
+<span>/</span>
+<span>Maaş ve Gelir Hesaplama</span>
+</nav>
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow">Maaş, gelir ve ücret analizi merkezi</span>
+<h1>Maaş ve Gelir Hesaplama Merkezi</h1>
+<p>Tek sayfada <strong>brütten nete</strong>, <strong>netten brüte</strong>, <strong>maaş zammı analizi</strong> ve <strong>saatlik ücret hesabı</strong> yap. Bordro etkisini, reel zam gücünü ve çalışma gelirini aynı merkezde gör.</p>
+<div class="hero-chips">
+<span class="hero-chip">Brütten nete</span>
+<span class="hero-chip">Netten brüte</span>
+<span class="hero-chip">Maaş zammı analizi</span>
+<span class="hero-chip">Saatlik ücret</span>
+<span class="hero-chip">Aylık bordro tablosu</span>
+<span class="hero-chip">İşveren maliyeti</span>
+<span class="hero-chip">2025 ve 2026 desteği</span>
+</div>
+</div>
+<div class="hero-side">
+<div class="hero-metric">
+<small>Kapsam</small>
+<strong>Bordro + zam + saatlik ücret akışı</strong>
+<span>Bordro modülü 4A özel sektör mantığıyla çalışır; zam ve saatlik modları hızlı karar desteği için ayrı akış sunar.</span>
+</div>
+<div class="hero-metric">
+<small>Resmi omurga</small>
+<strong>Tek sayfada üç ayrı karar akışı</strong>
+<span>Brüt-net bordro, reel zam ve saatlik kazanç aynı merkeze bağlandı; böylece aynı kullanıcı niyeti parçalanmadan ilerler.</span>
+</div>
+</div>
+</div>
+</section>
+
+<div class="family-switcher panel panel-pad">
+  <h2 class="section-title">Birleşik maaş akışı</h2>
+  <p class="section-subtitle">Aynı kullanıcı niyetini taşıyan maaş araçlarını tek merkezde topladık. İhtiyacına göre mod değiştir.</p>
+  <div class="segmented" role="tablist" aria-label="Maaş ailesi modları">
+    <button type="button" class="active" id="familyModeBordro" data-family="bordro" aria-selected="true">Brüt-Net Bordro</button>
+    <button type="button" id="familyModeZam" data-family="zam" aria-selected="false">Maaş Zammı</button>
+    <button type="button" id="familyModeSaatlik" data-family="saatlik" aria-selected="false">Saatlik Ücret</button>
+  </div>
+</div>
+<section id="bordroFamilySection">
+<div class="layout">
+<section class="panel">
+<div class="panel-pad">
+<h2 class="section-title">Hesap türü</h2>
+<p class="section-subtitle">Aynı resmi bordro motorunun iki yönünü kullan. İstersen hızlı modda tek maaşla, istersen detaylı modda ay ay ilerle.</p>
+<div aria-label="Ana hesap modu" class="segmented two" role="tablist">
+<button aria-selected="true" class="active" data-mainmode="gross" id="modeGrossBtn" type="button">Brütten Nete</button>
+<button aria-selected="false" data-mainmode="net" id="modeNetBtn" type="button">Netten Brüte</button>
+</div>
+<div class="scope-note" id="scopeNote">
+<strong>Bu araç neyi çözer?</strong><br/>
+            Aylık maaşın çalışan tarafında ne kadar net kaldığını, işverene toplam maliyetini ve yıl içindeki vergi baskısını resmi 2025-2026 parametreleriyle görürsün.
+          </div>
+<div aria-label="Kullanım modu" class="segmented two" role="tablist" style="margin-bottom:20px">
+<button aria-selected="true" class="active" data-view="quick" id="viewQuickBtn" type="button">Hızlı Mod</button>
+<button aria-selected="false" data-view="detailed" id="viewDetailedBtn" type="button">Detaylı Bordro</button>
+</div>
+<div class="form-grid">
+<div class="field">
+<label for="yearSelect">Dönem</label>
+<select id="yearSelect">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+</select>
+<div class="hint">Vergi tarifesi, asgari ücret ve tavanlar seçilen yıla göre değişir.</div>
+</div>
+<div class="field">
+<label for="disabilitySelect">Engellilik indirimi</label>
+<select id="disabilitySelect">
+<option value="0">Yok</option>
+<option value="1">1. derece</option>
+<option value="2">2. derece</option>
+<option value="3">3. derece</option>
+</select>
+<div class="hint">Gelir vergisi matrahından aylık engellilik indirimi düşülür.</div>
+</div>
+<div class="field full">
+<label for="incentiveSelect">5510 / SGK işveren indirimi</label>
+<select id="incentiveSelect"></select>
+<div class="hint" id="incentiveHint">Bu seçim çalışan netini değiştirmez. İşveren SGK payı ve toplam maliyeti etkiler.</div>
+</div>
+</div>
+<div class="info-note">
+<strong>Resmi omurgaya uygun açıklama:</strong> Gelir vergisi kesintisi, seçilen yılın ücret tarifesine göre kümülatif ilerler. Asgari ücret istisnası ve damga vergisi istisnası ayrıca düşülür. Böylece özellikle yıl ortasında artan vergi baskısı daha gerçekçi görünür.
+          </div>
+<div id="quickModeSection">
+<h3 class="section-title">Hızlı hesap girişi</h3>
+<p class="section-subtitle">Aynı maaşı seçtiğin ay sayısı boyunca uygula. Bu mod, tek maaş ve tek gün sayısıyla temiz bir bordro görünümü üretir.</p>
+<div class="form-grid">
+<div class="field">
+<label for="quickAmount" id="quickAmountLabel">Aylık brüt ücret (TL)</label>
+<input aria-describedby="quickAmountHint" aria-invalid="false" aria-required="true" autocomplete="off" data-format="money" id="quickAmount" inputmode="decimal" placeholder="Örn. 45.000" required="" type="text"/>
+<div class="error-text">Tutar gir.</div>
+<div class="hint" id="quickAmountHint">Brütten nete modunda aylık brüt maaşı yaz.</div>
+</div>
+<div class="field">
+<label for="quickDays">Gün sayısı</label>
+<input aria-invalid="false" aria-required="true" autocomplete="off" data-format="int" id="quickDays" inputmode="numeric" placeholder="Örn. 30" required="" type="text"/>
+<div class="error-text">1 ile 30 arasında gün gir.</div>
+<div class="hint">Kısmi ay, ücretsiz izin veya eksik gün senaryosunda kullan.</div>
+</div>
+<div class="field">
+<label for="quickStartMonth">Başlangıç ayı</label>
+<select id="quickStartMonth"></select>
+<div class="hint">Kümülatif vergi hesabı seçtiğin aydan başlar.</div>
+</div>
+<div class="field">
+<label for="quickMonthCount">Kaç ay hesaplanacak?</label>
+<select id="quickMonthCount"></select>
+<div class="hint">Ocak’tan Aralık’a kadar kaç dönem simüle edeceğini seç.</div>
+</div>
+</div>
+</div>
+<div id="detailedModeSection" style="display:none">
+<h3 class="section-title">Detaylı bordro girişi</h3>
+<p class="section-subtitle" id="detailedSubtitle">Ay ay farklı brüt ücret veya hedef net girerek bordro tablosunu genişletebilirsin. Boş bıraktığın aylar hesaplamaya dahil edilmez.</p>
+<div class="month-table-wrap">
+<table aria-describedby="detailedSubtitle">
+<thead>
+<tr>
+<th>Ay</th>
+<th id="detailAmountHeader">Brüt ücret (TL)</th>
+<th>Gün</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody id="detailRows"></tbody>
+</table>
+</div>
+<div class="hint" style="margin-top:12px">Detaylı modda yalnızca tutarı ve günü girmen yeterli. Açıklama alanı bordro notu içindir ve sonuçları değiştirmez.</div>
+</div>
+<div class="action-bar">
+<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button>
+</div>
+<div class="flow-hint">
+<div>
+<strong id="calcStatusText">Sonuç alanı veri bekliyor</strong>
+<span id="calcStatusSub">Yazdıkça hesap güncellenir. Sonucu Gör butonu sonuç alanına kaydırır ve vurgular.</span>
+</div>
+<div aria-hidden="true" class="flow-cue">↓</div>
+</div>
+</div>
+</section>
+<aside class="panel results-panel highlight-target" id="resultArea">
+<div class="result-card">
+<span class="result-label" id="mainResultLabel">Ana sonuç</span>
+<div class="result-value" id="mainResultValue">—</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px">
+<span class="pill mid" id="decisionPill">Veri bekleniyor</span>
+<span class="pill" id="activeBracketPill">Vergi dilimi —</span>
+</div>
+<p class="result-description" id="mainResultDesc">Brütten nete veya netten brüte hesap için gerekli alanları doldur.</p>
+</div>
+<div class="mini-grid">
+<div class="mini-card"><span class="mini-label" id="mini1Label">Aylık net</span><span class="mini-value" id="mini1Value">—</span></div>
+<div class="mini-card"><span class="mini-label" id="mini2Label">Aylık brüt</span><span class="mini-value" id="mini2Value">—</span></div>
+<div class="mini-card"><span class="mini-label">İşçi SGK + işsizlik</span><span class="mini-value" id="mini3Value">—</span></div>
+<div class="mini-card"><span class="mini-label">Gelir + damga vergisi</span><span class="mini-value" id="mini4Value">—</span></div>
+<div class="mini-card"><span class="mini-label">İşveren maliyeti</span><span class="mini-value" id="mini5Value">—</span></div>
+<div class="mini-card"><span class="mini-label">Kümülatif matrah</span><span class="mini-value" id="mini6Value">—</span></div>
+</div>
+<div class="score-card">
+<div class="score-top">
+<div>
+<span class="result-label" style="margin-bottom:6px">Bordro görünüm skoru</span>
+<div class="score-value" id="scoreValue">—</div>
+</div>
+<span class="pill" id="scorePill">Analiz bekliyor</span>
+</div>
+<div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+<div class="breakdown-list">
+<div class="breakdown-item"><span>Net verim</span><span id="scoreNetEfficiency">—</span></div>
+<div class="breakdown-item"><span>Vergi baskısı</span><span id="scoreTaxPressure">—</span></div>
+<div class="breakdown-item"><span>İşveren maliyet farkı</span><span id="scoreCostGap">—</span></div>
+<div class="breakdown-item"><span>Teşvik / indirim etkisi</span><span id="scoreIncentiveImpact">—</span></div>
+</div>
+</div>
+</aside>
+</div>
+<section class="result-area" id="resultSection">
+<div class="summary-grid">
+<div class="summary-box">
+<small>Aylık çalışan tarafı</small>
+<strong id="summaryNet">—</strong>
+<p id="summaryNetDesc">Net veya hedef net değeri burada görünür.</p>
+</div>
+<div class="summary-box">
+<small>Aylık işveren maliyeti</small>
+<strong id="summaryEmployer">—</strong>
+<p id="summaryEmployerDesc">Seçilen SGK indirimi ile birlikte toplam işveren maliyeti.</p>
+</div>
+<div class="summary-box">
+<small>Yıllık toplam görünüm</small>
+<strong id="summaryAnnual">—</strong>
+<p id="summaryAnnualDesc">Aktif ayların toplam net / brüt / maliyet görünümü.</p>
+</div>
+</div>
+<div class="analysis-grid">
+<div class="analysis-card">
+<small>Teşvik etkisi</small>
+<strong id="analysisIncentive">—</strong>
+<p id="analysisIncentiveDesc">İşveren maliyetine etkisi hesaplandığında burada görünür.</p>
+</div>
+<div class="analysis-card">
+<small>Engellilik indirimi etkisi</small>
+<strong id="analysisDisability">—</strong>
+<p id="analysisDisabilityDesc">Gelir vergisindeki aylık ve toplam etki burada görünür.</p>
+</div>
+</div>
+<div class="result-table-card">
+<div class="result-table-head">
+<div>
+<h2 class="section-title" style="margin-bottom:6px">Aylık bordro tablosu</h2>
+<p class="section-subtitle" id="tableDescription" style="margin:0">Bu tablo her ay için brüt, net, SGK, işsizlik, gelir vergisi, damga vergisi, işveren payı ve toplam maliyeti ayrı satırda gösterir.</p>
+</div>
+<div class="table-meta">
+<span class="tag" id="metaYear">Yıl —</span>
+<span class="tag" id="metaMode">Mod —</span>
+<span class="tag" id="metaMonths">Ay —</span>
+</div>
+</div>
+<div class="details-table-wrap">
+<table aria-describedby="tableDescription" class="details-table">
+<thead>
+<tr>
+<th>Ay</th>
+<th>Brüt Ücret</th>
+<th>Net Ücret</th>
+<th>İşçi SGK</th>
+<th>İşçi İşsizlik</th>
+<th>Gelir Vergisi</th>
+<th>Damga Vergisi</th>
+<th>İşveren SGK</th>
+<th>İşveren İşsizlik</th>
+<th>Toplam Maliyet</th>
+<th>Kümülatif Matrah</th>
+<th>Vergi Dilimi</th>
+</tr>
+</thead>
+<tbody id="detailsBody">
+<tr><td colspan="12"><div class="empty-state">Henüz hesap yapılmadı. Sol panelden verileri girip Sonucu Gör butonuna bas.</div></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="faq-card">
+<h2 class="section-title">Sık sorulan sorular</h2>
+<div class="faq-grid">
+<div class="faq-item">
+<strong>Bu araç hangi bordro tipine göre hesap yapıyor?</strong>
+<p>Bu sayfa, 4A özel sektör ücretli çalışan bordrosu için tasarlandı. 2025 ve 2026 yılı asgari ücret, prime esas kazanç sınırı, ücret gelir vergisi tarifesi, damga vergisi oranı ve engellilik indirimi tutarları yıl seçimine göre uygulanır.</p>
+</div>
+<div class="faq-item">
+<strong>Neden yıl ortasında net maaş değişebilir?</strong>
+<p>Ücret gelirlerinde gelir vergisi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu nedenle aynı brüt maaşla bazı aylarda gelir vergisi artabilir ve net ele geçen tutar düşebilir.</p>
+</div>
+<div class="faq-item">
+<strong>Asgari ücret istisnası nasıl yansıtılıyor?</strong>
+<p>Asgari ücretin gelir vergisi ve damga vergisine isabet eden kısmı istisna olarak düşülür. Bu araç, seçilen yılın asgari ücret omurgasını kullanarak istisnayı aylık bordroya yansıtır.</p>
+</div>
+<div class="faq-item">
+<strong>Netten brüte hesap neden iteratif çalışıyor?</strong>
+<p>Netten brüte dönüş, vergi dilimi ve istisnalar nedeniyle doğrusal değildir. Bu yüzden araç hedef net ücret için uygun brütü resmi bordro mantığına yaklaşan iteratif çözümle bulur.</p>
+</div>
+</div>
+</div>
+<div class="related-card">
+<h2 class="section-title">İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-link" href="/maas-brut-net-hesaplama?mod=zam">
+<strong>Maaş Zam Hesaplama</strong>
+<span>Eski ve yeni maaş arasındaki farkı, oranı ve yıllık ek geliri karşılaştır.</span>
+</a>
+<a class="related-link" href="/gelir-vergisi-hesaplama">
+<strong>Gelir Vergisi Hesaplama</strong>
+<span>Gelir vergisi tarifesini ayrı görmek istediğinde bu aracı kullan.</span>
+</a>
+<a class="related-link" href="/damga-vergisi-hesaplama">
+<strong>Damga Vergisi Hesaplama</strong>
+<span>Damga vergisinin tutara etkisini ayrı olarak analiz et.</span>
+</a>
+</div>
+</div>
+</section>
+
+</section>
+<section class="family-panel" id="zamFamilySection" hidden>
+  <div class="family-grid">
+    <section class="panel">
+      <div class="panel-pad">
+        <h2 class="section-title">Maaş zam analizi</h2>
+        <p class="section-subtitle">Nominal zam ile reel artışı birlikte gör. Enflasyon baskısını, aylık farkı ve yıllık etkisini tek sonuç alanında değerlendir.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="raiseCurrentSalary">Mevcut maaş (TL)</label>
+            <input id="raiseCurrentSalary" type="text" inputmode="decimal" placeholder="Örn. 45.000" autocomplete="off">
+            <div class="hint">Brüt ya da net maaşını seçtiğin tipe göre yaz.</div>
+          </div>
+          <div class="field">
+            <label for="raiseInputType">Maaş tipi</label>
+            <select id="raiseInputType">
+              <option value="net">Net maaş</option>
+              <option value="gross">Brüt maaş</option>
+            </select>
+            <div class="hint">Sonuç metinleri seçtiğin maaş tipine göre güncellenir.</div>
+          </div>
+          <div class="field">
+            <label for="raisePercentInput">Nominal zam oranı (%)</label>
+            <input id="raisePercentInput" type="text" inputmode="decimal" placeholder="Örn. 25" autocomplete="off">
+            <div class="hint">Sözleşme, teklif veya beklenen zam oranını gir.</div>
+          </div>
+          <div class="field">
+            <label for="raiseExtraInput">Ek refah / ek artış (%)</label>
+            <input id="raiseExtraInput" type="text" inputmode="decimal" placeholder="Opsiyonel" autocomplete="off">
+            <div class="hint">Memur refah payı veya ekstra şirket artışını ayrıca ekleyebilirsin.</div>
+          </div>
+          <div class="field full">
+            <label for="raiseInflationInput">Beklenen enflasyon (%)</label>
+            <input id="raiseInflationInput" type="text" inputmode="decimal" placeholder="Örn. 20" autocomplete="off">
+            <div class="hint">Reel zam hesabı için beklenen enflasyonu gir. Boş bırakılırsa nominal etki gösterilir.</div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <button class="btn btn-primary" type="button" id="raiseCalcBtn">Sonucu Gör</button>
+          <button class="btn btn-secondary" type="button" id="raiseExampleBtn">Örnek Veri</button>
+          <button class="btn btn-ghost" type="button" id="raiseResetBtn">Temizle</button>
+          <button class="btn btn-ghost" type="button" id="raiseCopyBtn">Sonucu Kopyala</button>
+        </div>
+        <div class="flow-hint" style="margin-top:18px">
+          <div>
+            <strong>Ne zaman kullanılır?</strong>
+            <span>İş teklifi, dönemsel zam, toplu sözleşme ya da yıllık ücret görüşmesinde yeni maaş seviyesini anlamak için.</span>
+          </div>
+          <div class="flow-cue">%</div>
+        </div>
+      </div>
+    </section>
+    <aside class="panel results-panel">
+      <div class="panel-pad">
+        <h2 class="section-title">Zam sonucu</h2>
+        <p class="section-subtitle">Yeni maaş, reel etki ve karar yorumu burada görünür.</p>
+        <div class="empty-soft" id="raiseEmptyState">Mevcut maaş, zam oranı ve gerekiyorsa enflasyon verisini girerek sonucu başlat.</div>
+        <div id="raiseResults" hidden>
+          <div class="metric-list">
+            <div class="metric-box">
+              <strong id="raiseMainLabel">Yeni net maaş</strong>
+              <span id="raiseMainValue">—</span>
+              <small id="raiseMainSub">Aylık yeni ücret burada görünür.</small>
+            </div>
+            <div class="mini-kpis">
+              <div class="mini-kpi"><strong>Aylık fark</strong><span id="raiseDiffValue">—</span><small id="raiseDiffSub">Önceki maaşa göre artış</small></div>
+              <div class="mini-kpi"><strong>Yıllık etki</strong><span id="raiseAnnualValue">—</span><small id="raiseAnnualSub">12 ay toplam fark</small></div>
+              <div class="mini-kpi"><strong>Toplam zam</strong><span id="raiseNominalValue">—</span><small id="raiseNominalSub">Nominal artış oranı</small></div>
+              <div class="mini-kpi"><strong>Reel zam</strong><span id="raiseRealValue">—</span><small id="raiseRealSub">Enflasyon sonrası gerçek artış</small></div>
+            </div>
+            <div class="decision-card" id="raiseDecisionCard">
+              <h3 id="raiseDecisionTitle">Karar yorumu</h3>
+              <p id="raiseDecisionText">Sonuç üretildiğinde karar yorumu burada görünür.</p>
+            </div>
+            <div>
+              <h3 class="section-title" style="margin-top:0">Senaryo analizi</h3>
+              <div class="scenario-grid-lite" id="raiseScenarioGrid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="family-panel" id="saatlikFamilySection" hidden>
+  <div class="family-grid">
+    <section class="panel">
+      <div class="panel-pad">
+        <h2 class="section-title">Saatlik ücret analizi</h2>
+        <p class="section-subtitle">Aylık maaşını saatlik ve günlük değere çevir. Çalışma yoğunluğunu ve hedef saatlik ücretini birlikte kıyasla.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="hourlySalaryInput">Aylık maaş (TL)</label>
+            <input id="hourlySalaryInput" type="text" inputmode="decimal" placeholder="Örn. 38.000" autocomplete="off">
+            <div class="hint">Aylık net veya brüt maaşını temel tutar olarak gir.</div>
+          </div>
+          <div class="field">
+            <label for="hourlyBonusInput">Aylık ek ödeme (TL)</label>
+            <input id="hourlyBonusInput" type="text" inputmode="decimal" placeholder="Opsiyonel" autocomplete="off">
+            <div class="hint">Prim, ticket hariç nakit ek ödeme veya düzenli bonusu ekleyebilirsin.</div>
+          </div>
+          <div class="field">
+            <label for="hourlyWeeklyInput">Haftalık çalışma saati</label>
+            <input id="hourlyWeeklyInput" type="text" inputmode="decimal" placeholder="Örn. 45" autocomplete="off">
+            <div class="hint">Aylık saat hesabı için haftalık toplam saati gir.</div>
+          </div>
+          <div class="field">
+            <label for="hourlyWorkdaysInput">Haftalık çalışma günü</label>
+            <input id="hourlyWorkdaysInput" type="text" inputmode="decimal" placeholder="Örn. 5" autocomplete="off">
+            <div class="hint">Günlük gelir hesabını otomatik türetmek için kullanılır.</div>
+          </div>
+          <div class="field">
+            <label for="hourlyDailyOverrideInput">Manuel günlük saat</label>
+            <input id="hourlyDailyOverrideInput" type="text" inputmode="decimal" placeholder="Opsiyonel" autocomplete="off">
+            <div class="hint">Günlük saatini kendin belirlemek istersen haftalık gün hesabını override eder.</div>
+          </div>
+          <div class="field">
+            <label for="hourlyTargetInput">Hedef saatlik ücret (TL)</label>
+            <input id="hourlyTargetInput" type="text" inputmode="decimal" placeholder="Opsiyonel" autocomplete="off">
+            <div class="hint">Mevcut seviyeni hedeflediğin saatlik gelirle karşılaştırır.</div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <button class="btn btn-primary" type="button" id="hourlyCalcBtn">Sonucu Gör</button>
+          <button class="btn btn-secondary" type="button" id="hourlyExampleBtn">Örnek Veri</button>
+          <button class="btn btn-ghost" type="button" id="hourlyResetBtn">Temizle</button>
+          <button class="btn btn-ghost" type="button" id="hourlyCopyBtn">Sonucu Kopyala</button>
+        </div>
+        <div class="flow-hint" style="margin-top:18px">
+          <div>
+            <strong>Ne zaman kullanılır?</strong>
+            <span>Freelance karşılaştırması, iş teklifi analizi, fazla mesai hissi ya da mevcut maaşın saat bazındaki değerini ölçmek için.</span>
+          </div>
+          <div class="flow-cue">⏱</div>
+        </div>
+      </div>
+    </section>
+    <aside class="panel results-panel">
+      <div class="panel-pad">
+        <h2 class="section-title">Saatlik ücret sonucu</h2>
+        <p class="section-subtitle">Saatlik kazanç, günlük karşılık ve yorum burada görünür.</p>
+        <div class="empty-soft" id="hourlyEmptyState">Aylık maaş ve çalışma saatlerini girerek saatlik ücret analizini başlat.</div>
+        <div id="hourlyResults" hidden>
+          <div class="metric-list">
+            <div class="metric-box">
+              <strong>Saatlik ücret</strong>
+              <span id="hourlyMainValue">—</span>
+              <small id="hourlyMainSub">Aylık maaşın çalışma saatine bölünmüş karşılığı.</small>
+            </div>
+            <div class="mini-kpis">
+              <div class="mini-kpi"><strong>Günlük gelir</strong><span id="hourlyDailyValue">—</span><small id="hourlyDailySub">Yaklaşık günlük karşılık</small></div>
+              <div class="mini-kpi"><strong>Aylık çalışma saati</strong><span id="hourlyMonthHoursValue">—</span><small id="hourlyMonthHoursSub">4,33 hafta çarpanı ile</small></div>
+              <div class="mini-kpi"><strong>Haftalık gelir</strong><span id="hourlyWeeklyValue">—</span><small id="hourlyWeeklySub">Aylık ücretin haftalık karşılığı</small></div>
+              <div class="mini-kpi"><strong>Hedef farkı</strong><span id="hourlyTargetGapValue">—</span><small id="hourlyTargetGapSub">Hedef saatliğe göre fark</small></div>
+            </div>
+            <div class="decision-card" id="hourlyDecisionCard">
+              <h3 id="hourlyDecisionTitle">Karar yorumu</h3>
+              <p id="hourlyDecisionText">Sonuç üretildiğinde iş yükü ve ücret dengesi yorumlanır.</p>
+            </div>
+            <div>
+              <h3 class="section-title" style="margin-top:0">Yoğunluk senaryosu</h3>
+              <div class="scenario-grid-lite" id="hourlyScenarioGrid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Maaş ve Çalışma","item":"https://hesapica.com/#maas"},
+      {"@type":"ListItem","position":3,"name":"Maaş Brüt Net Hesaplama","item":"https://hesapica.com/maas-brut-net-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bu araç hangi bordro tipine göre hesap yapıyor?",
+        "acceptedAnswer": {"@type":"Answer","text":"Bu sayfa 4A özel sektör ücretli çalışan bordrosu için tasarlanmıştır ve 2025 ile 2026 yılı resmi temel parametrelerini uygular."}
+      },
+      {
+        "@type": "Question",
+        "name": "Neden yıl ortasında net maaş değişebilir?",
+        "acceptedAnswer": {"@type":"Answer","text":"Ücret gelirlerinde vergi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu durumda aynı brüt ücretle net tutar değişebilir."}
+      },
+      {
+        "@type": "Question",
+        "name": "Asgari ücret istisnası nasıl yansıtılıyor?",
+        "acceptedAnswer": {"@type":"Answer","text":"Araç, seçilen yılın asgari ücret omurgasını kullanarak gelir vergisi ve damga vergisi istisnasını bordroya aylık olarak yansıtır."}
+      },
+      {
+        "@type": "Question",
+        "name": "Netten brüte hesap neden iteratif çalışıyor?",
+        "acceptedAnswer": {"@type":"Answer","text":"Netten brüte dönüş doğrusal değildir; vergi dilimi ve istisnalar sebebiyle iteratif çözüm gerekir."}
+      }
+    ]
+  }
+  </script>
+<script>
+    const MONTHS = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+    const STORAGE_KEY = "hesapica_maas_bordro_v1";
+    const YEAR_CONFIG = {
+      2025: {
+        minGross: 26005.50,
+        pekCeiling: 195041.40,
+        stampRate: 0.00759,
+        disability: {0:0,1:9900,2:5700,3:2400},
+        brackets: [158000,330000,1200000,4300000],
+        rates: [0.15,0.20,0.27,0.35,0.40],
+        employerRates: {0:0.2075,4:0.1675,5:0.1575}
+      },
+      2026: {
+        minGross: 33030.00,
+        pekCeiling: 297270.00,
+        stampRate: 0.00759,
+        disability: {0:0,1:12000,2:7000,3:3000},
+        brackets: [190000,400000,1500000,5300000],
+        rates: [0.15,0.20,0.27,0.35,0.40],
+        employerRates: {0:0.2175,2:0.1975,5:0.1675}
+      }
+    };
+
+    const els = {
+      modeGrossBtn: document.getElementById('modeGrossBtn'),
+      modeNetBtn: document.getElementById('modeNetBtn'),
+      viewQuickBtn: document.getElementById('viewQuickBtn'),
+      viewDetailedBtn: document.getElementById('viewDetailedBtn'),
+      yearSelect: document.getElementById('yearSelect'),
+      disabilitySelect: document.getElementById('disabilitySelect'),
+      incentiveSelect: document.getElementById('incentiveSelect'),
+      incentiveHint: document.getElementById('incentiveHint'),
+      quickAmount: document.getElementById('quickAmount'),
+      quickDays: document.getElementById('quickDays'),
+      quickStartMonth: document.getElementById('quickStartMonth'),
+      quickMonthCount: document.getElementById('quickMonthCount'),
+      quickAmountLabel: document.getElementById('quickAmountLabel'),
+      quickAmountHint: document.getElementById('quickAmountHint'),
+      quickModeSection: document.getElementById('quickModeSection'),
+      detailedModeSection: document.getElementById('detailedModeSection'),
+      detailRows: document.getElementById('detailRows'),
+      detailAmountHeader: document.getElementById('detailAmountHeader'),
+      detailedSubtitle: document.getElementById('detailedSubtitle'),
+      calculateBtn: document.getElementById('calculateBtn'),
+      exampleBtn: document.getElementById('exampleBtn'),
+      clearBtn: document.getElementById('clearBtn'),
+      copyBtn: document.getElementById('copyBtn'),
+      shareBtn: document.getElementById('shareBtn'),
+      printBtn: document.getElementById('printBtn'),
+      calcStatusText: document.getElementById('calcStatusText'),
+      calcStatusSub: document.getElementById('calcStatusSub'),
+      scopeNote: document.getElementById('scopeNote'),
+      mainResultLabel: document.getElementById('mainResultLabel'),
+      mainResultValue: document.getElementById('mainResultValue'),
+      mainResultDesc: document.getElementById('mainResultDesc'),
+      decisionPill: document.getElementById('decisionPill'),
+      activeBracketPill: document.getElementById('activeBracketPill'),
+      mini1Label: document.getElementById('mini1Label'),
+      mini1Value: document.getElementById('mini1Value'),
+      mini2Label: document.getElementById('mini2Label'),
+      mini2Value: document.getElementById('mini2Value'),
+      mini3Value: document.getElementById('mini3Value'),
+      mini4Value: document.getElementById('mini4Value'),
+      mini5Value: document.getElementById('mini5Value'),
+      mini6Value: document.getElementById('mini6Value'),
+      scoreValue: document.getElementById('scoreValue'),
+      scorePill: document.getElementById('scorePill'),
+      scoreFill: document.getElementById('scoreFill'),
+      scoreNetEfficiency: document.getElementById('scoreNetEfficiency'),
+      scoreTaxPressure: document.getElementById('scoreTaxPressure'),
+      scoreCostGap: document.getElementById('scoreCostGap'),
+      scoreIncentiveImpact: document.getElementById('scoreIncentiveImpact'),
+      summaryNet: document.getElementById('summaryNet'),
+      summaryNetDesc: document.getElementById('summaryNetDesc'),
+      summaryEmployer: document.getElementById('summaryEmployer'),
+      summaryEmployerDesc: document.getElementById('summaryEmployerDesc'),
+      summaryAnnual: document.getElementById('summaryAnnual'),
+      summaryAnnualDesc: document.getElementById('summaryAnnualDesc'),
+      analysisIncentive: document.getElementById('analysisIncentive'),
+      analysisIncentiveDesc: document.getElementById('analysisIncentiveDesc'),
+      analysisDisability: document.getElementById('analysisDisability'),
+      analysisDisabilityDesc: document.getElementById('analysisDisabilityDesc'),
+      detailsBody: document.getElementById('detailsBody'),
+      metaYear: document.getElementById('metaYear'),
+      metaMode: document.getElementById('metaMode'),
+      metaMonths: document.getElementById('metaMonths'),
+      resultArea: document.getElementById('resultArea'),
+      resultSection: document.getElementById('resultSection')
+    };
+
+    const state = {
+      mainMode: 'gross',
+      view: 'quick',
+      manualOnly: true,
+      lastValidResult: null,
+      autoTimer: null,
+      hasAttemptedSubmit: false
+    };
+
+    function round2(v){ return Math.round((Number(v) + Number.EPSILON) * 100) / 100; }
+    function clamp(v,min,max){ return Math.min(Math.max(v,min),max); }
+    function formatCurrency(value){
+      if (!isFinite(value)) return '—';
+      return value.toLocaleString('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2});
+    }
+    function formatNumber(value, digits=2){
+      if (!isFinite(value)) return '—';
+      return value.toLocaleString('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits});
+    }
+    function formatInteger(value){
+      if (!isFinite(value)) return '—';
+      return value.toLocaleString('tr-TR',{maximumFractionDigits:0});
+    }
+    function formatPercent(value,digits=2){
+      if (!isFinite(value)) return '—';
+      return '%' + value.toLocaleString('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits});
+    }
+    function parseTRNumber(raw){
+      if (raw == null) return NaN;
+      let s = String(raw).trim();
+      if (!s) return NaN;
+      s = s
+        .replace(/₺|TL/gi,'')
+        .replace(/\s/g,'')
+        .replace(/[^\d,.-]/g,'');
+      if (!s) return NaN;
+
+      const hasComma = s.includes(',');
+      const hasDot = s.includes('.');
+
+      if (hasComma && hasDot) {
+        if (s.lastIndexOf(',') > s.lastIndexOf('.')) {
+          s = s.replace(/\./g,'').replace(',', '.');
+        } else {
+          s = s.replace(/,/g,'');
+        }
+      } else if (hasComma) {
+        if (/^-?\d{1,3}(,\d{3})+$/.test(s)) {
+          s = s.replace(/,/g,'');
+        } else {
+          s = s.replace(/\./g,'').replace(',', '.');
+        }
+      } else if (hasDot) {
+        if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) {
+          s = s.replace(/\./g,'');
+        } else if ((s.match(/\./g) || []).length > 1) {
+          s = s.replace(/\./g,'');
+        }
+      }
+
+      const num = Number(s);
+      return Number.isFinite(num) ? num : NaN;
+    }
+
+    function hasMeaningfulInput(){
+      if (els.quickAmount.value.trim() || els.quickDays.value.trim()) return true;
+      return Array.from(document.querySelectorAll('.detail-row')).some(row => {
+        return row.querySelector('.detail-amount').value.trim() || row.querySelector('.detail-days').value.trim() || row.querySelector('.detail-note').value.trim();
+      });
+    }
+    function resetQuickErrors(){
+      [els.quickAmount, els.quickDays].forEach(input => {
+        input.parentElement.classList.remove('error');
+        input.setAttribute('aria-invalid','false');
+      });
+    }
+    function resetDetailedErrors(){
+      document.querySelectorAll('.detail-row').forEach(row => {
+        row.classList.remove('row-error');
+        [row.querySelector('.detail-amount'), row.querySelector('.detail-days')].forEach(input => {
+          input.parentElement.classList.remove('error');
+          input.setAttribute('aria-invalid','false');
+        });
+      });
+    }
+    function focusFirstInvalidField(){
+      const first = document.querySelector('.field.error input, .field.error select');
+      if (first) first.focus({preventScroll:false});
+    }
+
+    function formatEditableMoney(input){
+      const val = parseTRNumber(input.value);
+      if (!Number.isFinite(val)) return;
+      input.value = val.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:2});
+    }
+    function formatEditableInteger(input){
+      const digits = (input.value || '').replace(/\D/g,'');
+      input.value = digits ? Number(digits).toLocaleString('tr-TR',{maximumFractionDigits:0}) : '';
+    }
+    function applyInputFormatters(){
+      document.querySelectorAll('[data-format="money"]').forEach(input => {
+        input.addEventListener('blur', () => formatEditableMoney(input));
+      });
+      document.querySelectorAll('[data-format="int"]').forEach(input => {
+        input.addEventListener('blur', () => formatEditableInteger(input));
+      });
+    }
+    function getConfig(){ return YEAR_CONFIG[Number(els.yearSelect.value)]; }
+    function getDisabilityAmount(){
+      const cfg = getConfig();
+      return cfg.disability[Number(els.disabilitySelect.value)] || 0;
+    }
+    function getEmployerRate(){
+      const cfg = getConfig();
+      return cfg.employerRates[Number(els.incentiveSelect.value)] || cfg.employerRates[0];
+    }
+
+    function updateIncentiveOptions(){
+      const year = Number(els.yearSelect.value);
+      const prev = els.incentiveSelect.value;
+      if (year === 2025) {
+        els.incentiveSelect.innerHTML = `
+          <option value="0">İndirim uygulanmasın</option>
+          <option value="4">4 puan işveren SGK indirimi</option>
+          <option value="5">5 puan işveren SGK indirimi (imalat)</option>`;
+        els.incentiveHint.textContent = '2025 için SGK işveren payı seçenekleri resmi 4 puan ve 5 puan indirim mantığına göre gösterilir.';
+      } else {
+        els.incentiveSelect.innerHTML = `
+          <option value="0">İndirim uygulanmasın</option>
+          <option value="2">2 puan işveren SGK indirimi</option>
+          <option value="5">5 puan işveren SGK indirimi</option>`;
+        els.incentiveHint.textContent = '2026 için 2 puan ve 5 puan işveren SGK indirimi seçenekleri ayrı hesaplanır.';
+      }
+      if ([...els.incentiveSelect.options].some(opt => opt.value === prev)) {
+        els.incentiveSelect.value = prev;
+      } else {
+        els.incentiveSelect.value = '0';
+      }
+    }
+
+    function currentBracketRate(cumulativeBase, cfg){
+      if (cumulativeBase <= 0) return cfg.rates[0];
+      if (cumulativeBase <= cfg.brackets[0]) return cfg.rates[0];
+      if (cumulativeBase <= cfg.brackets[1]) return cfg.rates[1];
+      if (cumulativeBase <= cfg.brackets[2]) return cfg.rates[2];
+      if (cumulativeBase <= cfg.brackets[3]) return cfg.rates[3];
+      return cfg.rates[4];
+    }
+    function cumulativeTax(base, cfg){
+      if (base <= 0) return 0;
+      const [b1,b2,b3,b4] = cfg.brackets;
+      const [r1,r2,r3,r4,r5] = cfg.rates;
+      if (base <= b1) return round2(base * r1);
+      if (base <= b2) return round2(b1*r1 + (base-b1)*r2);
+      if (base <= b3) return round2(b1*r1 + (b2-b1)*r2 + (base-b2)*r3);
+      if (base <= b4) return round2(b1*r1 + (b2-b1)*r2 + (b3-b2)*r3 + (base-b3)*r4);
+      return round2(b1*r1 + (b2-b1)*r2 + (b3-b2)*r3 + (b4-b3)*r4 + (base-b4)*r5);
+    }
+
+    function calcMonthFromGross({gross, days, cumulativeBase, cumulativeExemptBase}){
+      const cfg = getConfig();
+      const disabilityAmount = gross > 0 ? getDisabilityAmount() : 0;
+      const proratedMinGross = round2(cfg.minGross * (days / 30));
+      const proratedCeiling = round2(cfg.pekCeiling * (days / 30));
+      const primeBase = round2(Math.min(Math.max(gross, 0), proratedCeiling));
+      const empSgk = round2(primeBase * 0.14);
+      const empUnemp = round2(primeBase * 0.01);
+      const taxBaseBeforeDisability = round2(Math.max(gross - empSgk - empUnemp, 0));
+      const disabilityApplied = round2(Math.min(disabilityAmount, taxBaseBeforeDisability));
+      const taxableBase = round2(Math.max(taxBaseBeforeDisability - disabilityApplied, 0));
+      const taxableBefore = cumulativeTax(cumulativeBase, cfg);
+      const taxableAfter = cumulativeTax(cumulativeBase + taxableBase, cfg);
+      const grossIncomeTax = round2(Math.max(taxableAfter - taxableBefore, 0));
+      const exemptBase = round2(Math.min(taxBaseBeforeDisability, proratedMinGross * 0.85));
+      const exemptBefore = cumulativeTax(cumulativeExemptBase, cfg);
+      const exemptAfter = cumulativeTax(cumulativeExemptBase + exemptBase, cfg);
+      const incomeTaxExemption = round2(Math.max(exemptAfter - exemptBefore, 0));
+      const incomeTax = round2(Math.max(grossIncomeTax - incomeTaxExemption, 0));
+      const grossStampTax = round2(gross * cfg.stampRate);
+      const stampExemption = round2(Math.min(gross, proratedMinGross) * cfg.stampRate);
+      const stampTax = round2(Math.max(grossStampTax - stampExemption, 0));
+      const net = round2(gross - empSgk - empUnemp - incomeTax - stampTax);
+      const employerRate = getEmployerRate();
+      const employerSgk = round2(primeBase * employerRate);
+      const employerUnemployment = round2(primeBase * 0.02);
+      const employerCost = round2(gross + employerSgk + employerUnemployment);
+      const nextCumulativeBase = round2(cumulativeBase + taxableBase);
+      const nextExemptBase = round2(cumulativeExemptBase + exemptBase);
+      const marginalRate = currentBracketRate(nextCumulativeBase, cfg);
+      return {
+        gross: round2(gross), net, days,
+        empSgk, empUnemp, incomeTax, stampTax,
+        grossIncomeTax, incomeTaxExemption,
+        stampExemption, employerSgk, employerUnemployment,
+        employerCost, taxableBase, taxBaseBeforeDisability,
+        disabilityApplied, cumulativeBase: nextCumulativeBase,
+        cumulativeExemptBase: nextExemptBase, marginalRate,
+        primeBase
+      };
+    }
+
+    function solveGrossForTargetNet(targetNet, days, cumulativeBase, cumulativeExemptBase){
+      if (targetNet <= 0) return calcMonthFromGross({gross:0, days, cumulativeBase, cumulativeExemptBase});
+      let low = 0;
+      let high = Math.max(targetNet * 1.6, 1000, getConfig().minGross * (days / 30));
+      let guard = 0;
+      while (guard < 60) {
+        const probe = calcMonthFromGross({gross:high, days, cumulativeBase, cumulativeExemptBase});
+        if (probe.net >= targetNet) break;
+        high *= 1.5;
+        guard += 1;
+      }
+      let best = calcMonthFromGross({gross:high, days, cumulativeBase, cumulativeExemptBase});
+      for (let i = 0; i < 80; i++) {
+        const mid = (low + high) / 2;
+        const test = calcMonthFromGross({gross:mid, days, cumulativeBase, cumulativeExemptBase});
+        if (Math.abs(test.net - targetNet) < 0.01) {
+          best = test;
+          break;
+        }
+        if (test.net >= targetNet) {
+          best = test;
+          high = mid;
+        } else {
+          low = mid;
+        }
+      }
+      return best;
+    }
+
+    function buildMonthsToSimulate(){
+      resetQuickErrors();
+      resetDetailedErrors();
+      if (state.view === 'quick') {
+        const amount = parseTRNumber(els.quickAmount.value);
+        const days = parseTRNumber(els.quickDays.value);
+        const startIndex = Number(els.quickStartMonth.value);
+        const monthCount = Number(els.quickMonthCount.value);
+        const errors = [];
+        const hasAmount = els.quickAmount.value.trim() !== '';
+        const hasDays = els.quickDays.value.trim() !== '';
+        const shouldValidateAmount = state.hasAttemptedSubmit || hasAmount;
+        const shouldValidateDays = state.hasAttemptedSubmit || hasDays;
+        if (!Number.isFinite(amount) || amount <= 0) {
+          errors.push('Aylık tutar');
+          if (shouldValidateAmount) {
+            els.quickAmount.parentElement.classList.add('error');
+            els.quickAmount.setAttribute('aria-invalid','true');
+          }
+        }
+        if (!Number.isFinite(days) || days <= 0 || days > 30) {
+          errors.push('Gün sayısı');
+          if (shouldValidateDays) {
+            els.quickDays.parentElement.classList.add('error');
+            els.quickDays.setAttribute('aria-invalid','true');
+          }
+        }
+        if (errors.length) return {valid:false, errors};
+        const months = [];
+        const safeCount = Math.min(monthCount, 12 - startIndex);
+        for (let i = 0; i < safeCount; i++) {
+          months.push({monthIndex:startIndex + i, amount: round2(amount), days: round2(days), note: ''});
+        }
+        return {valid:true, months};
+      }
+
+      const months = [];
+      const errors = [];
+      document.querySelectorAll('.detail-row').forEach((row, idx) => {
+        const amountInput = row.querySelector('.detail-amount');
+        const daysInput = row.querySelector('.detail-days');
+        const noteInput = row.querySelector('.detail-note');
+        const amount = parseTRNumber(amountInput.value);
+        const days = parseTRNumber(daysInput.value);
+        const hasAmount = amountInput.value.trim() !== '';
+        const hasDays = daysInput.value.trim() !== '';
+        if (!hasAmount && !hasDays) return;
+        const shouldValidateAmount = state.hasAttemptedSubmit || hasAmount;
+        const shouldValidateDays = state.hasAttemptedSubmit || hasDays;
+        if (!Number.isFinite(amount) || amount <= 0) {
+          if (shouldValidateAmount) {
+            amountInput.parentElement.classList.add('error');
+            amountInput.setAttribute('aria-invalid','true');
+          }
+          errors.push(MONTHS[idx] + ' tutarı');
+        }
+        if (!Number.isFinite(days) || days <= 0 || days > 30) {
+          if (shouldValidateDays) {
+            daysInput.parentElement.classList.add('error');
+            daysInput.setAttribute('aria-invalid','true');
+          }
+          errors.push(MONTHS[idx] + ' günü');
+        }
+        if (Number.isFinite(amount) && amount > 0 && Number.isFinite(days) && days > 0 && days <= 30) {
+          months.push({monthIndex: idx, amount: round2(amount), days: round2(days), note: noteInput.value.trim()});
+        }
+      });
+      return {valid: months.length > 0 && errors.length === 0, months, errors};
+    }
+
+    function simulate(){
+      const input = buildMonthsToSimulate();
+      if (!input.valid) return {valid:false, errors: input.errors || ['Eksik veri']};
+      const rows = [];
+      let cumulativeBase = 0;
+      let cumulativeExemptBase = 0;
+      let totalNet = 0, totalGross = 0, totalEmpDeductions = 0, totalTax = 0, totalEmployerCost = 0, totalEmployerSgk = 0, totalEmployerUnemp = 0, totalDisability = 0;
+      input.months.forEach(item => {
+        const result = state.mainMode === 'gross'
+          ? calcMonthFromGross({gross:item.amount, days:item.days, cumulativeBase, cumulativeExemptBase})
+          : solveGrossForTargetNet(item.amount, item.days, cumulativeBase, cumulativeExemptBase);
+        cumulativeBase = result.cumulativeBase;
+        cumulativeExemptBase = result.cumulativeExemptBase;
+        totalNet += result.net;
+        totalGross += result.gross;
+        totalEmpDeductions += result.empSgk + result.empUnemp;
+        totalTax += result.incomeTax + result.stampTax;
+        totalEmployerCost += result.employerCost;
+        totalEmployerSgk += result.employerSgk;
+        totalEmployerUnemp += result.employerUnemployment;
+        totalDisability += result.disabilityApplied;
+        rows.push({...item, ...result});
+      });
+
+      const monthCount = rows.length;
+      const avgNet = round2(totalNet / monthCount);
+      const avgGross = round2(totalGross / monthCount);
+      const avgEmployerCost = round2(totalEmployerCost / monthCount);
+      const effectiveNetRatio = avgGross > 0 ? (avgNet / avgGross) * 100 : 0;
+      const taxPressure = avgGross > 0 ? ((totalTax / monthCount) / avgGross) * 100 : 0;
+      const costGap = avgEmployerCost > 0 ? ((avgEmployerCost - avgNet) / avgEmployerCost) * 100 : 0;
+      const noIncentiveEmployerRate = getConfig().employerRates[0];
+      const selectedRate = getEmployerRate();
+      const incentiveSavings = rows.reduce((sum,row) => sum + round2(row.primeBase * (noIncentiveEmployerRate - selectedRate)), 0);
+      const disabilityNoneTotals = rows.reduce((sum,row) => sum + row.incomeTaxExemption, 0); // placeholder baseline label below
+      const noDisabilityRows = []; // compute separately for comparison
+      let base2 = 0, exempt2 = 0;
+      input.months.forEach(item => {
+        const old = els.disabilitySelect.value;
+        els.disabilitySelect.value = '0';
+        const r = state.mainMode === 'gross'
+          ? calcMonthFromGross({gross: state.mainMode === 'gross' ? item.amount : 0, days:item.days, cumulativeBase:base2, cumulativeExemptBase:exempt2})
+          : solveGrossForTargetNet(item.amount, item.days, base2, exempt2);
+        els.disabilitySelect.value = old;
+        base2 = r.cumulativeBase;
+        exempt2 = r.cumulativeExemptBase;
+        noDisabilityRows.push(r);
+      });
+      const noDisabilityIncomeTax = round2(noDisabilityRows.reduce((sum,row) => sum + row.incomeTax, 0));
+      const currentIncomeTax = round2(rows.reduce((sum,row) => sum + row.incomeTax, 0));
+      const disabilityTaxSavings = round2(noDisabilityIncomeTax - currentIncomeTax);
+
+      const score = clamp(Math.round(
+        effectiveNetRatio * 0.7 +
+        Math.max(0, 100 - taxPressure * 2.8) * 0.15 +
+        Math.max(0, 100 - costGap * 1.4) * 0.10 +
+        Math.min(100, (incentiveSavings / Math.max(totalEmployerCost,1)) * 1200) * 0.05
+      ), 0, 100);
+      const decision = getDecision(score);
+
+      return {
+        valid:true,
+        rows,
+        monthCount,
+        totalNet: round2(totalNet),
+        totalGross: round2(totalGross),
+        totalEmpDeductions: round2(totalEmpDeductions),
+        totalTax: round2(totalTax),
+        totalEmployerCost: round2(totalEmployerCost),
+        totalEmployerSgk: round2(totalEmployerSgk),
+        totalEmployerUnemp: round2(totalEmployerUnemp),
+        totalDisability: round2(totalDisability),
+        avgNet, avgGross, avgEmployerCost,
+        cumulativeBase: round2(cumulativeBase),
+        effectiveNetRatio: round2(effectiveNetRatio),
+        taxPressure: round2(taxPressure),
+        costGap: round2(costGap),
+        incentiveSavings: round2(incentiveSavings),
+        disabilityTaxSavings,
+        score,
+        decision,
+        activeBracketRate: rows.length ? rows[rows.length - 1].marginalRate : getConfig().rates[0]
+      };
+    }
+
+    function getDecision(score){
+      if (score >= 80) return {text:'Görünüm güçlü', cls:'good', detail:'Netin brüte oranı ve maliyet dengesi görece güçlü.'};
+      if (score >= 65) return {text:'Dengeli görünüm', cls:'mid', detail:'Kesinti yükü yönetilebilir seviyede ama vergi baskısı izlenmeli.'};
+      if (score >= 50) return {text:'Vergi baskısı artıyor', cls:'mid', detail:'Yıl içi vergi dilimi veya düşük net verim dikkat çekiyor.'};
+      return {text:'Maliyet baskısı yüksek', cls:'bad', detail:'Nette kalan oran ve toplam maliyet farkı belirgin seviyede.'};
+    }
+
+    function updateQuickLabels(){
+      if (state.mainMode === 'gross') {
+        els.quickAmountLabel.textContent = 'Aylık brüt ücret (TL)';
+        els.quickAmountHint.textContent = 'Brütten nete modunda aylık brüt maaşı yaz.';
+        els.detailAmountHeader.textContent = 'Brüt ücret (TL)';
+        els.detailedSubtitle.textContent = 'Ay ay farklı brüt ücret ve gün girerek bordro tablosunu genişletebilirsin. Boş bıraktığın aylar hesaplamaya dahil edilmez.';
+        els.mainResultLabel.textContent = 'Ana sonuç · aylık net ücret';
+        els.mini1Label.textContent = 'Aylık net';
+        els.mini2Label.textContent = 'Aylık brüt';
+        els.scopeNote.innerHTML = '<strong>Brütten nete modu:</strong><br>Brüt ücret girilir. Araç çalışan kesintilerini, vergi etkisini ve işveren maliyetini resmi parametrelerle çözer.';
+      } else {
+        els.quickAmountLabel.textContent = 'Hedef net ücret (TL)';
+        els.quickAmountHint.textContent = 'Netten brüte modunda ele geçmesi istenen net tutarı yaz.';
+        els.detailAmountHeader.textContent = 'Hedef net ücret (TL)';
+        els.detailedSubtitle.textContent = 'Ay ay farklı hedef net ve gün girerek gerekli brüt ücret seviyesini bordro mantığıyla çözebilirsin. Boş bıraktığın aylar hesaplamaya dahil edilmez.';
+        els.mainResultLabel.textContent = 'Ana sonuç · aylık brüt ücret';
+        els.mini1Label.textContent = 'Aylık net';
+        els.mini2Label.textContent = 'Aylık brüt';
+        els.scopeNote.innerHTML = '<strong>Netten brüte modu:</strong><br>Hedef net ücret girilir. Araç aynı resmi parametrelerle bu nete karşılık gelen yaklaşık brütü iteratif olarak bulur.';
+      }
+    }
+
+    function renderEmpty(message='Brütten nete veya netten brüte hesap için gerekli alanları doldur.'){
+      state.lastValidResult = null;
+      els.mainResultValue.textContent = '—';
+      els.mainResultDesc.textContent = message;
+      els.decisionPill.textContent = 'Veri bekleniyor';
+      els.decisionPill.className = 'pill mid';
+      els.activeBracketPill.textContent = 'Vergi dilimi —';
+      [els.mini1Value,els.mini2Value,els.mini3Value,els.mini4Value,els.mini5Value,els.mini6Value,
+       els.summaryNet,els.summaryEmployer,els.summaryAnnual,els.analysisIncentive,els.analysisDisability].forEach(el=>el.textContent='—');
+      els.summaryNetDesc.textContent = 'Net veya hedef net değeri burada görünür.';
+      els.summaryEmployerDesc.textContent = 'Seçilen SGK indirimi ile birlikte toplam işveren maliyeti.';
+      els.summaryAnnualDesc.textContent = 'Aktif ayların toplam net / brüt / maliyet görünümü.';
+      els.analysisIncentiveDesc.textContent = 'İşveren maliyetine etkisi hesaplandığında burada görünür.';
+      els.analysisDisabilityDesc.textContent = 'Gelir vergisindeki aylık ve toplam etki burada görünür.';
+      els.scoreValue.textContent = '—';
+      els.scoreFill.style.width = '0%';
+      els.scorePill.textContent = 'Analiz bekliyor';
+      els.scorePill.className = 'pill';
+      [els.scoreNetEfficiency,els.scoreTaxPressure,els.scoreCostGap,els.scoreIncentiveImpact].forEach(el=>el.textContent='—');
+      els.metaYear.textContent = 'Yıl —';
+      els.metaMode.textContent = 'Mod —';
+      els.metaMonths.textContent = 'Ay —';
+      els.detailsBody.innerHTML = '<tr><td colspan="12"><div class="empty-state">Henüz hesap yapılmadı. Sol panelden verileri girip Sonucu Gör butonuna bas.</div></td></tr>';
+      els.calcStatusText.textContent = 'Sonuç alanı veri bekliyor';
+      els.calcStatusSub.textContent = 'Yazdıkça hesap güncellenir. Sonucu Gör butonu sonuç alanına kaydırır ve vurgular.';
+    }
+
+    function renderResult(result){
+      state.lastValidResult = result;
+      const firstRow = result.rows[0];
+      const lastRow = result.rows[result.rows.length-1];
+      const mainValue = state.mainMode === 'gross' ? result.avgNet : result.avgGross;
+      const mainDesc = state.mainMode === 'gross'
+        ? `${result.monthCount} ay için aylık ortalama net ücret ${formatCurrency(result.avgNet)} ve aylık ortalama işveren maliyeti ${formatCurrency(result.avgEmployerCost)} oldu.`
+        : `${result.monthCount} ay için hedef nete ulaşan aylık ortalama brüt ücret ${formatCurrency(result.avgGross)} seviyesinde oluştu.`;
+      els.mainResultValue.textContent = formatCurrency(mainValue);
+      els.mainResultDesc.textContent = mainDesc;
+      els.decisionPill.textContent = result.decision.text;
+      els.decisionPill.className = `pill ${result.decision.cls}`;
+      els.activeBracketPill.textContent = `Vergi dilimi ${formatPercent(result.activeBracketRate * 100,0)}`;
+      els.mini1Value.textContent = formatCurrency(result.avgNet);
+      els.mini2Value.textContent = formatCurrency(result.avgGross);
+      els.mini3Value.textContent = formatCurrency(round2(result.totalEmpDeductions / result.monthCount));
+      els.mini4Value.textContent = formatCurrency(round2(result.totalTax / result.monthCount));
+      els.mini5Value.textContent = formatCurrency(result.avgEmployerCost);
+      els.mini6Value.textContent = formatCurrency(result.cumulativeBase);
+
+      els.scoreValue.textContent = `${result.score}/100`;
+      els.scoreFill.style.width = `${result.score}%`;
+      els.scorePill.textContent = result.decision.text;
+      els.scorePill.className = `pill ${result.decision.cls}`;
+      els.scoreNetEfficiency.textContent = formatPercent(result.effectiveNetRatio,1);
+      els.scoreTaxPressure.textContent = formatPercent(result.taxPressure,1);
+      els.scoreCostGap.textContent = formatPercent(result.costGap,1);
+      els.scoreIncentiveImpact.textContent = result.incentiveSavings > 0 ? formatCurrency(result.incentiveSavings) : 'İndirim yok';
+
+      els.summaryNet.textContent = formatCurrency(result.avgNet);
+      els.summaryNetDesc.textContent = state.mainMode === 'gross'
+        ? `Aylık ortalama net ücret, brüte göre yaklaşık ${formatPercent(result.effectiveNetRatio,1)} elde kalma oranı gösterdi.`
+        : `Hedef net bazında çözülen aylık ortalama net tutar ${formatCurrency(result.avgNet)} oldu.`;
+      els.summaryEmployer.textContent = formatCurrency(result.avgEmployerCost);
+      els.summaryEmployerDesc.textContent = `Seçilen SGK indirimiyle aylık ortalama işveren maliyeti ${formatCurrency(result.avgEmployerCost)} seviyesinde.`;
+      els.summaryAnnual.textContent = state.mainMode === 'gross'
+        ? `${formatCurrency(result.totalNet)} net / ${formatCurrency(result.totalEmployerCost)} maliyet`
+        : `${formatCurrency(result.totalGross)} brüt / ${formatCurrency(result.totalEmployerCost)} maliyet`;
+      els.summaryAnnualDesc.textContent = `${result.monthCount} aktif ayın toplam görünümü. Toplam vergi ve damga etkisi ${formatCurrency(result.totalTax)} oldu.`;
+      els.analysisIncentive.textContent = result.incentiveSavings > 0 ? formatCurrency(result.incentiveSavings) : '—';
+      els.analysisIncentiveDesc.textContent = result.incentiveSavings > 0
+        ? `Seçilen işveren indirimi, toplam maliyeti teşviksiz senaryoya göre yaklaşık ${formatCurrency(result.incentiveSavings)} azalttı.`
+        : 'İşveren maliyeti teşviksiz bazda hesaplandı.';
+      els.analysisDisability.textContent = result.disabilityTaxSavings > 0 ? formatCurrency(result.disabilityTaxSavings) : '—';
+      els.analysisDisabilityDesc.textContent = result.disabilityTaxSavings > 0
+        ? `Seçilen engellilik indirimi toplam gelir vergisini yaklaşık ${formatCurrency(result.disabilityTaxSavings)} azalttı.`
+        : 'Engellilik indirimi seçilmedi veya gelir vergisine ek etki oluşmadı.';
+
+      els.metaYear.textContent = `Yıl ${els.yearSelect.value}`;
+      els.metaMode.textContent = state.mainMode === 'gross' ? 'Brütten nete' : 'Netten brüte';
+      els.metaMonths.textContent = `${result.monthCount} ay aktif`;
+      els.calcStatusText.textContent = result.decision.text;
+      els.calcStatusSub.textContent = result.decision.detail;
+
+      renderDetailsTable(result.rows);
+    }
+
+    function renderDetailsTable(rows){
+      els.detailsBody.innerHTML = rows.map(row => {
+        return `
+          <tr>
+            <td><strong>${MONTHS[row.monthIndex]}</strong>${row.note ? `<div class="hint" style="margin-top:4px">${escapeHtml(row.note)}</div>` : ''}</td>
+            <td>${formatCurrency(row.gross)}</td>
+            <td>${formatCurrency(row.net)}</td>
+            <td>${formatCurrency(row.empSgk)}</td>
+            <td>${formatCurrency(row.empUnemp)}</td>
+            <td>${formatCurrency(row.incomeTax)}</td>
+            <td>${formatCurrency(row.stampTax)}</td>
+            <td>${formatCurrency(row.employerSgk)}</td>
+            <td>${formatCurrency(row.employerUnemployment)}</td>
+            <td>${formatCurrency(row.employerCost)}</td>
+            <td>${formatCurrency(row.cumulativeBase)}</td>
+            <td>${formatPercent(row.marginalRate * 100,0)}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    function escapeHtml(str){
+      return String(str)
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;')
+        .replace(/'/g,'&#39;');
+    }
+
+    function triggerCalculate({focusResults=false, silent=false}={}){
+      const result = simulate();
+      if (!result.valid) {
+        if (silent && !state.hasAttemptedSubmit) {
+          renderEmpty();
+          return false;
+        }
+        renderEmpty(result.errors ? `${result.errors.join(', ')} alanlarını kontrol et.` : 'Gerekli alanları doldur.');
+        if (!silent) {
+          els.calcStatusText.textContent = 'Eksik veya hatalı veri var';
+          els.calcStatusSub.textContent = 'Gerekli alanları doldurunca sonuç otomatik güncellenir.';
+          focusFirstInvalidField();
+        }
+        return false;
+      }
+      renderResult(result);
+      if (focusResults) focusResultArea();
+      return true;
+    }
+
+    function focusResultArea(){
+      els.resultArea.scrollIntoView({behavior:'smooth',block:'start'});
+      els.resultArea.classList.add('flash');
+      setTimeout(() => els.resultArea.classList.remove('flash'), 1400);
+    }
+
+    function debounceAutoCalculate(){
+      clearTimeout(state.autoTimer);
+      state.autoTimer = setTimeout(() => triggerCalculate({focusResults:false, silent:true}), 240);
+    }
+
+    function buildStartMonthOptions(){
+      els.quickStartMonth.innerHTML = MONTHS.map((month, idx) => `<option value="${idx}">${month}</option>`).join('');
+      updateMonthCountOptions();
+    }
+    function updateMonthCountOptions(){
+      const start = Number(els.quickStartMonth.value || 0);
+      const current = Number(els.quickMonthCount.value || 1);
+      const max = 12 - start;
+      let options = '';
+      for (let i=1;i<=max;i++) options += `<option value="${i}">${i} ay</option>`;
+      els.quickMonthCount.innerHTML = options;
+      els.quickMonthCount.value = String(Math.min(current,max));
+    }
+
+    function buildDetailedRows(){
+      els.detailRows.innerHTML = MONTHS.map((month, idx) => `
+        <tr class="detail-row" data-month="${idx}">
+          <td class="month-name">${month}</td>
+          <td>
+            <div class="field" style="margin:0">
+              <input class="detail-amount month-input" data-format="money" type="text" inputmode="decimal" placeholder="Örn. 45.000" autocomplete="off" aria-invalid="false">
+              <div class="error-text">Tutar gir.</div>
+            </div>
+          </td>
+          <td>
+            <div class="field" style="margin:0">
+              <input class="detail-days month-days" data-format="int" type="text" inputmode="numeric" placeholder="30" autocomplete="off" aria-invalid="false">
+              <div class="error-text">1-30 gün gir.</div>
+            </div>
+          </td>
+          <td><input class="detail-note" type="text" placeholder="Opsiyonel not"></td>
+        </tr>
+      `).join('');
+    }
+
+    function setMainMode(mode){
+      state.mainMode = mode;
+      els.modeGrossBtn.classList.toggle('active', mode === 'gross');
+      els.modeNetBtn.classList.toggle('active', mode === 'net');
+      els.modeGrossBtn.setAttribute('aria-selected', mode === 'gross');
+      els.modeNetBtn.setAttribute('aria-selected', mode === 'net');
+      updateQuickLabels();
+      saveState();
+      debounceAutoCalculate();
+    }
+    function setView(view){
+      state.view = view;
+      els.viewQuickBtn.classList.toggle('active', view === 'quick');
+      els.viewDetailedBtn.classList.toggle('active', view === 'detailed');
+      els.quickModeSection.style.display = view === 'quick' ? '' : 'none';
+      els.detailedModeSection.style.display = view === 'detailed' ? '' : 'none';
+      saveState();
+      debounceAutoCalculate();
+    }
+
+    function collectManualState(){
+      return {
+        mainMode: state.mainMode,
+        view: state.view,
+        year: els.yearSelect.value,
+        disability: els.disabilitySelect.value,
+        incentive: els.incentiveSelect.value,
+        quickAmount: els.quickAmount.value,
+        quickDays: els.quickDays.value,
+        quickStartMonth: els.quickStartMonth.value,
+        quickMonthCount: els.quickMonthCount.value,
+        details: Array.from(document.querySelectorAll('.detail-row')).map(row => ({
+          amount: row.querySelector('.detail-amount').value,
+          days: row.querySelector('.detail-days').value,
+          note: row.querySelector('.detail-note').value
+        }))
+      };
+    }
+
+    function saveState(){
+      if (!state.manualOnly) return;
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(collectManualState()));
+      } catch(_) {}
+    }
+
+    function loadState(){
+      const params = new URLSearchParams(location.search);
+      const presetMode = params.get('yon') || params.get('mode');
+      const presetView = params.get('view');
+      const presetYear = params.get('year');
+      if (presetYear && YEAR_CONFIG[presetYear]) els.yearSelect.value = presetYear;
+      updateIncentiveOptions();
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed.year) els.yearSelect.value = parsed.year;
+          if (parsed.disability) els.disabilitySelect.value = parsed.disability;
+          updateIncentiveOptions();
+          if (parsed.incentive && [...els.incentiveSelect.options].some(opt => opt.value === parsed.incentive)) els.incentiveSelect.value = parsed.incentive;
+          if (parsed.quickAmount) els.quickAmount.value = parsed.quickAmount;
+          if (parsed.quickDays) els.quickDays.value = parsed.quickDays;
+          setMainMode(parsed.mainMode || 'gross');
+          setView(parsed.view || 'quick');
+          els.quickStartMonth.value = parsed.quickStartMonth || '0';
+          updateMonthCountOptions();
+          els.quickMonthCount.value = parsed.quickMonthCount || '12';
+          if (Array.isArray(parsed.details)) {
+            document.querySelectorAll('.detail-row').forEach((row, idx) => {
+              const item = parsed.details[idx] || {};
+              row.querySelector('.detail-amount').value = item.amount || '';
+              row.querySelector('.detail-days').value = item.days || '';
+              row.querySelector('.detail-note').value = item.note || '';
+            });
+          }
+        }
+      } catch(_) {}
+      if (presetMode === 'netten-brute' || presetMode === 'net') setMainMode('net');
+      if (presetMode === 'brutten-nete' || presetMode === 'gross') setMainMode('gross');
+      if (presetView === 'detailed' || presetView === 'quick') setView(presetView);
+      formatAllVisibleInputs();
+      if (hasMeaningfulInput()) {
+        debounceAutoCalculate();
+      } else {
+        renderEmpty();
+      }
+    }
+
+    function formatAllVisibleInputs(){
+      document.querySelectorAll('[data-format="money"]').forEach(input => { if (input.value.trim()) formatEditableMoney(input); });
+      document.querySelectorAll('[data-format="int"]').forEach(input => { if (input.value.trim()) formatEditableInteger(input); });
+    }
+
+    function setExampleData(){
+      state.manualOnly = false;
+      els.yearSelect.value = '2026';
+      els.disabilitySelect.value = '0';
+      updateIncentiveOptions();
+      els.incentiveSelect.value = '0';
+      setMainMode('gross');
+      setView('quick');
+      els.quickAmount.value = '45.000';
+      els.quickDays.value = '30';
+      els.quickStartMonth.value = '0';
+      updateMonthCountOptions();
+      els.quickMonthCount.value = '12';
+      document.querySelectorAll('.detail-row').forEach((row) => {
+        row.querySelector('.detail-amount').value = '';
+        row.querySelector('.detail-days').value = '';
+        row.querySelector('.detail-note').value = '';
+      });
+      state.hasAttemptedSubmit = false;
+      triggerCalculate({focusResults:true});
+      els.calcStatusText.textContent = 'Örnek veri yüklendi';
+      els.calcStatusSub.textContent = '45.000 TL brüt ücret ve 30 gün üzerinden 12 aylık bordro simülasyonu gösterildi.';
+      setTimeout(() => { state.manualOnly = true; }, 0);
+    }
+
+    function clearAll(){
+      state.manualOnly = true;
+      els.yearSelect.value = '2026';
+      els.disabilitySelect.value = '0';
+      updateIncentiveOptions();
+      els.incentiveSelect.value = '0';
+      setMainMode('gross');
+      setView('quick');
+      els.quickAmount.value = '';
+      els.quickDays.value = '';
+      els.quickStartMonth.value = '0';
+      updateMonthCountOptions();
+      els.quickMonthCount.value = '12';
+      document.querySelectorAll('.detail-row').forEach((row) => {
+        row.querySelector('.detail-amount').value = '';
+        row.querySelector('.detail-days').value = '';
+        row.querySelector('.detail-note').value = '';
+      });
+      try { localStorage.removeItem(STORAGE_KEY); } catch(_){}
+      state.hasAttemptedSubmit = false;
+      renderEmpty();
+    }
+
+    function createShareUrl(){
+      const url = new URL(location.href);
+      url.searchParams.set('yon', state.mainMode === 'gross' ? 'brutten-nete' : 'netten-brute');
+      url.searchParams.set('view', state.view);
+      url.searchParams.set('year', els.yearSelect.value);
+      return url.toString();
+    }
+
+    async function copyResult(){
+      if (!state.lastValidResult) {
+        alert('Önce geçerli bir sonuç üret.');
+        return;
+      }
+      const r = state.lastValidResult;
+      const text = [
+        'Hesapica Maaş Brüt Net Hesaplama',
+        `Yıl: ${els.yearSelect.value}`,
+        `Mod: ${state.mainMode === 'gross' ? 'Brütten Nete' : 'Netten Brüte'}`,
+        `Aylık ortalama brüt: ${formatCurrency(r.avgGross)}`,
+        `Aylık ortalama net: ${formatCurrency(r.avgNet)}`,
+        `Aylık ortalama işveren maliyeti: ${formatCurrency(r.avgEmployerCost)}`,
+        `Toplam vergi ve damga: ${formatCurrency(r.totalTax)}`,
+        `Toplam işçi SGK + işsizlik: ${formatCurrency(r.totalEmpDeductions)}`,
+        `Toplam işveren maliyeti: ${formatCurrency(r.totalEmployerCost)}`
+      ].join('\n');
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('Sonuç kopyalandı.');
+      } catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        alert('Sonuç kopyalandı.');
+      }
+    }
+
+    async function shareResult(){
+      if (!state.lastValidResult) {
+        alert('Önce geçerli bir sonuç üret.');
+        return;
+      }
+      const text = `${state.mainMode === 'gross' ? 'Brütten nete' : 'Netten brüte'} bordro sonucu: aylık ortalama net ${formatCurrency(state.lastValidResult.avgNet)}, aylık ortalama brüt ${formatCurrency(state.lastValidResult.avgGross)}.`;
+      const url = createShareUrl();
+      if (navigator.share) {
+        try {
+          await navigator.share({title:'Maaş Brüt Net Hesaplama', text, url});
+          return;
+        } catch (_) {}
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        alert('Paylaşım bağlantısı kopyalandı.');
+      } catch (_) {
+        window.prompt('Bağlantıyı kopyala:', url);
+      }
+    }
+
+    function printResult(){
+      if (!state.lastValidResult) {
+        alert('Önce geçerli bir sonuç üret.');
+        return;
+      }
+      window.print();
+    }
+
+    function attachEvents(){
+      els.modeGrossBtn.addEventListener('click', () => setMainMode('gross'));
+      els.modeNetBtn.addEventListener('click', () => setMainMode('net'));
+      els.viewQuickBtn.addEventListener('click', () => setView('quick'));
+      els.viewDetailedBtn.addEventListener('click', () => setView('detailed'));
+      [els.disabilitySelect, els.incentiveSelect, els.quickAmount, els.quickDays, els.quickMonthCount].forEach(el => {
+        el.addEventListener('input', () => { saveState(); debounceAutoCalculate(); });
+        el.addEventListener('change', () => { saveState(); debounceAutoCalculate(); });
+      });
+      els.yearSelect.addEventListener('change', () => { updateIncentiveOptions(); saveState(); debounceAutoCalculate(); });
+      els.quickStartMonth.addEventListener('change', () => { updateMonthCountOptions(); saveState(); debounceAutoCalculate(); });
+      document.addEventListener('input', (e) => {
+        if (e.target.closest('.detail-row')) { saveState(); debounceAutoCalculate(); }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey && !e.target.matches('textarea')) {
+          e.preventDefault();
+          state.hasAttemptedSubmit = true;
+          triggerCalculate({focusResults:true});
+        }
+      });
+      els.calculateBtn.addEventListener('click', () => {
+        state.hasAttemptedSubmit = true;
+        triggerCalculate({focusResults:true});
+      });
+      els.exampleBtn.addEventListener('click', setExampleData);
+      els.clearBtn.addEventListener('click', clearAll);
+      els.copyBtn.addEventListener('click', copyResult);
+      els.shareBtn.addEventListener('click', shareResult);
+      els.printBtn.addEventListener('click', printResult);
+    }
+
+    buildStartMonthOptions();
+    buildDetailedRows();
+    updateIncentiveOptions();
+    applyInputFormatters();
+    attachEvents();
+    loadState();
+    renderEmpty();
+  </script>
+
+<script>
+(function(){
+  const familyButtons = Array.from(document.querySelectorAll('[data-family]'));
+  const familySections = {
+    bordro: document.getElementById('bordroFamilySection'),
+    zam: document.getElementById('zamFamilySection'),
+    saatlik: document.getElementById('saatlikFamilySection')
+  };
+  const familyHero = {
+    eyebrow: document.querySelector('.eyebrow'),
+    title: document.querySelector('h1'),
+    desc: document.querySelector('.hero p')
+  };
+  const familyMeta = {
+    bordro: {
+      title: 'Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica',
+      eyebrow: 'Maaş, gelir ve ücret analizi merkezi',
+      heading: 'Maaş ve Gelir Hesaplama Merkezi',
+      desc: 'Tek sayfada brütten nete, netten brüte, maaş zammı analizi ve saatlik ücret hesabı yap. Bordro etkisini, reel zam gücünü ve çalışma gelirini aynı merkezde gör.'
+    },
+    zam: {
+      title: 'Maaş Zam Hesaplama | Reel Zam ve Yeni Maaş Analizi - Hesapica',
+      eyebrow: 'Reel zam ve ücret artış analizi',
+      heading: 'Maaş Zam Hesaplama ve Reel Etki Analizi',
+      desc: 'Nominal zam oranını, ek refah payını ve beklenen enflasyonu birlikte değerlendir. Yeni maaşını ve gerçek alım gücü değişimini tek ekranda gör.'
+    },
+    saatlik: {
+      title: 'Saatlik Ücret Hesaplama | Aylık Maaştan Saatlik ve Günlük Gelir - Hesapica',
+      eyebrow: 'Saatlik ve günlük gelir analizi',
+      heading: 'Saatlik Ücret Hesaplama ve Çalışma Geliri Analizi',
+      desc: 'Aylık maaşını saatlik, günlük ve haftalık gelire çevir. Çalışma yoğunluğunu ve hedef saatlik seviyeni aynı akışta değerlendir.'
+    }
+  };
+  const money = (v) => new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(v)||0);
+  const plain = (v,d=2) => (Number(v)||0).toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const pct = (v,d=2) => '%' + (Number(v)||0).toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const parseTR = (value) => {
+    if (value == null) return null;
+    const s = String(value).trim().replace(/\./g,'').replace(',', '.').replace(/[^\d.-]/g,'');
+    if (!s || s === '-' || s === '.') return null;
+    const n = Number(s);
+    return Number.isFinite(n) ? n : null;
+  };
+  const clamp = (v,min,max) => Math.min(max, Math.max(min, v));
+  function fallbackCopy(text){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  async function copyText(text){ try { await navigator.clipboard.writeText(text); } catch(_) { fallbackCopy(text); } }
+  function setFamilyMode(mode, push=true){
+    const safeMode = familySections[mode] ? mode : 'bordro';
+    familyButtons.forEach(btn => {
+      const active = btn.dataset.family === safeMode;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    Object.entries(familySections).forEach(([key,el]) => { if (el) el.hidden = key !== safeMode; });
+    const meta = familyMeta[safeMode];
+    if (meta){
+      document.title = meta.title;
+      if (familyHero.eyebrow) familyHero.eyebrow.textContent = meta.eyebrow;
+      if (familyHero.title) familyHero.title.textContent = meta.heading;
+      if (familyHero.desc) familyHero.desc.textContent = meta.desc;
+    }
+    if (push){
+      const url = new URL(window.location.href);
+      if (safeMode === 'bordro') {
+        url.searchParams.delete('mod');
+      } else {
+        url.searchParams.set('mod', safeMode);
+      }
+      history.replaceState({}, '', url.toString());
+    }
+  }
+  familyButtons.forEach(btn => btn.addEventListener('click', () => setFamilyMode(btn.dataset.family)));
+
+  const raiseEls = {
+    salary: document.getElementById('raiseCurrentSalary'), type: document.getElementById('raiseInputType'), nominal: document.getElementById('raisePercentInput'), extra: document.getElementById('raiseExtraInput'), infl: document.getElementById('raiseInflationInput'),
+    calc: document.getElementById('raiseCalcBtn'), example: document.getElementById('raiseExampleBtn'), reset: document.getElementById('raiseResetBtn'), copy: document.getElementById('raiseCopyBtn'),
+    empty: document.getElementById('raiseEmptyState'), results: document.getElementById('raiseResults'), mainLabel: document.getElementById('raiseMainLabel'), mainValue: document.getElementById('raiseMainValue'), mainSub: document.getElementById('raiseMainSub'),
+    diff: document.getElementById('raiseDiffValue'), annual: document.getElementById('raiseAnnualValue'), nominalOut: document.getElementById('raiseNominalValue'), real: document.getElementById('raiseRealValue'),
+    decisionCard: document.getElementById('raiseDecisionCard'), decisionTitle: document.getElementById('raiseDecisionTitle'), decisionText: document.getElementById('raiseDecisionText'), scenarioGrid: document.getElementById('raiseScenarioGrid')
+  };
+  let lastRaise = null;
+  function renderRaiseEmpty(){ raiseEls.empty.hidden = false; raiseEls.results.hidden = true; lastRaise = null; }
+  function calcRaise(){
+    const current = parseTR(raiseEls.salary.value); const nominal = parseTR(raiseEls.nominal.value); const extra = parseTR(raiseEls.extra.value) || 0; const infl = parseTR(raiseEls.infl.value) || 0;
+    if (!(current > 0) || nominal == null){ alert('Mevcut maaş ve zam oranını gir.'); return; }
+    const totalNominal = nominal + extra;
+    const newSalary = current * (1 + totalNominal / 100);
+    const monthlyDiff = newSalary - current;
+    const annualDiff = monthlyDiff * 12;
+    const realRaise = ((1 + totalNominal / 100) / (1 + infl / 100) - 1) * 100;
+    const score = Math.round(clamp(58 + realRaise * 4 + Math.min(totalNominal, 18), 0, 100));
+    let tone = 'mid', title='Dengeli görünüm', text='Nominal artış var; reel etkisi enflasyonla birlikte izlenmeli.';
+    if (realRaise >= 6) { tone='good'; title='Güçlü reel artış'; text='Zam enflasyonun anlamlı biçimde üstünde kalıyor ve alım gücü artıyor.'; }
+    else if (realRaise < 0) { tone='bad'; title='Reel kayıp riski'; text='Nominal artış olsa da enflasyon sonrası satın alma gücü geriliyor.'; }
+    const salaryLabel = raiseEls.type.value === 'gross' ? 'Yeni brüt maaş' : 'Yeni net maaş';
+    raiseEls.mainLabel.textContent = salaryLabel;
+    raiseEls.mainValue.textContent = money(newSalary);
+    raiseEls.mainSub.textContent = `${raiseEls.type.value === 'gross' ? 'Brüt' : 'Net'} maaş üzerinden toplam ${pct(totalNominal)} artış varsayıldı.`;
+    raiseEls.diff.textContent = money(monthlyDiff);
+    raiseEls.annual.textContent = money(annualDiff);
+    raiseEls.nominalOut.textContent = pct(totalNominal);
+    raiseEls.real.textContent = pct(realRaise);
+    raiseEls.decisionCard.className = 'decision-card ' + tone;
+    raiseEls.decisionTitle.textContent = `${title} · Skor ${score}/100`;
+    raiseEls.decisionText.textContent = text;
+    const scenarios = [
+      {name:'Düşük enflasyon', infl: Math.max(0, infl - 5)},
+      {name:'Baz senaryo', infl},
+      {name:'Yüksek enflasyon', infl: infl + 5}
+    ];
+    raiseEls.scenarioGrid.innerHTML = scenarios.map(item => {
+      const rr = ((1 + totalNominal / 100) / (1 + item.infl / 100) - 1) * 100;
+      const ns = current * (1 + totalNominal / 100);
+      return `<div class="scenario-card-lite"><strong>${item.name}</strong><span>${pct(rr)}</span><small>${pct(item.infl)} enflasyonda yeni maaş ${money(ns)} olur.</small></div>`;
+    }).join('');
+    raiseEls.empty.hidden = true; raiseEls.results.hidden = false;
+    lastRaise = {current, totalNominal, infl, newSalary, monthlyDiff, annualDiff, realRaise, score, salaryType: raiseEls.type.value};
+    raiseEls.results.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  function raiseExample(){ raiseEls.salary.value='45000'; raiseEls.nominal.value='25'; raiseEls.extra.value='5'; raiseEls.infl.value='22'; raiseEls.type.value='net'; calcRaise(); }
+  function raiseReset(){ ['salary','nominal','extra','infl'].forEach(k => raiseEls[k].value=''); raiseEls.type.value='net'; renderRaiseEmpty(); }
+  async function raiseCopy(){ if (!lastRaise) return alert('Önce sonuç üret.'); const t = [`Hesapica Maaş Zam Analizi`,`Mevcut maaş: ${money(lastRaise.current)}`,`Toplam zam: ${pct(lastRaise.totalNominal)}`,`Yeni maaş: ${money(lastRaise.newSalary)}`,`Aylık fark: ${money(lastRaise.monthlyDiff)}`,`Yıllık fark: ${money(lastRaise.annualDiff)}`,`Reel zam: ${pct(lastRaise.realRaise)}`].join('\n'); await copyText(t); alert('Sonuç kopyalandı.'); }
+  raiseEls.calc.addEventListener('click', calcRaise); raiseEls.example.addEventListener('click', raiseExample); raiseEls.reset.addEventListener('click', raiseReset); raiseEls.copy.addEventListener('click', raiseCopy);
+
+  const hourlyEls = {
+    salary: document.getElementById('hourlySalaryInput'), bonus: document.getElementById('hourlyBonusInput'), weekly: document.getElementById('hourlyWeeklyInput'), workdays: document.getElementById('hourlyWorkdaysInput'), daily: document.getElementById('hourlyDailyOverrideInput'), target: document.getElementById('hourlyTargetInput'),
+    calc: document.getElementById('hourlyCalcBtn'), example: document.getElementById('hourlyExampleBtn'), reset: document.getElementById('hourlyResetBtn'), copy: document.getElementById('hourlyCopyBtn'),
+    empty: document.getElementById('hourlyEmptyState'), results: document.getElementById('hourlyResults'), main: document.getElementById('hourlyMainValue'), mainSub: document.getElementById('hourlyMainSub'), dailyVal: document.getElementById('hourlyDailyValue'), monthHours: document.getElementById('hourlyMonthHoursValue'), weeklyVal: document.getElementById('hourlyWeeklyValue'), targetGap: document.getElementById('hourlyTargetGapValue'), targetGapSub: document.getElementById('hourlyTargetGapSub'),
+    decisionCard: document.getElementById('hourlyDecisionCard'), decisionTitle: document.getElementById('hourlyDecisionTitle'), decisionText: document.getElementById('hourlyDecisionText'), scenarioGrid: document.getElementById('hourlyScenarioGrid')
+  };
+  let lastHourly = null;
+  function renderHourlyEmpty(){ hourlyEls.empty.hidden=false; hourlyEls.results.hidden=true; lastHourly=null; }
+  function calcHourly(){
+    const salary = parseTR(hourlyEls.salary.value); const bonus = parseTR(hourlyEls.bonus.value) || 0; const weekly = parseTR(hourlyEls.weekly.value); const workdays = parseTR(hourlyEls.workdays.value); const dailyOverride = parseTR(hourlyEls.daily.value); const target = parseTR(hourlyEls.target.value);
+    if (!(salary > 0) || !(weekly > 0)) { alert('Aylık maaş ve haftalık çalışma saatini gir.'); return; }
+    const monthlyTotal = salary + bonus; const monthlyHours = weekly * 4.33; const hourly = monthlyTotal / monthlyHours; const weeklyIncome = monthlyTotal / 4.33; const dailyHours = dailyOverride > 0 ? dailyOverride : ((workdays > 0) ? (weekly / workdays) : null); const dailyIncome = dailyHours ? hourly * dailyHours : null; const targetGap = target ? (hourly - target) : null;
+    const loadPenalty = weekly > 45 ? (weekly - 45) * 1.4 : Math.max(0, (35 - weekly) * -0.2);
+    const targetBonus = target ? clamp((hourly / target) * 25, -20, 25) : 8;
+    const score = Math.round(clamp(62 + targetBonus - loadPenalty, 0, 100));
+    let tone='mid', title='Dengeli ücret', text='Saatlik kazanç ile çalışma yoğunluğu birbirine yakın görünüyor.';
+    if (target && targetGap >= 0) { tone='good'; title='Hedef üstü saatlik gelir'; text='Mevcut saatlik seviyen hedefinin üstünde ya da ona çok yakın.'; }
+    else if (weekly >= 50 || (target && targetGap < 0)) { tone='bad'; title='Saatlik baskı yüksek'; text='Çalışma saati yüksek veya hedef saatliğin altında kalıyorsun; ücret verimini gözden geçir.'; }
+    hourlyEls.main.textContent = money(hourly);
+    hourlyEls.mainSub.textContent = `${money(monthlyTotal)} aylık toplam gelir ve ${plain(monthlyHours,1)} saat varsayımıyla hesaplandı.`;
+    hourlyEls.dailyVal.textContent = dailyIncome != null ? money(dailyIncome) : '—';
+    hourlyEls.monthHours.textContent = plain(monthlyHours,1) + ' saat';
+    hourlyEls.weeklyVal.textContent = money(weeklyIncome);
+    hourlyEls.targetGap.textContent = targetGap != null ? money(targetGap) : '—';
+    hourlyEls.targetGapSub.textContent = targetGap == null ? 'Hedef saatlik girersen fark görünür.' : (targetGap >= 0 ? 'Hedefin üzerindesin.' : 'Hedefinin altındasın.');
+    hourlyEls.decisionCard.className = 'decision-card ' + tone;
+    hourlyEls.decisionTitle.textContent = `${title} · Skor ${score}/100`;
+    hourlyEls.decisionText.textContent = text;
+    const scenarios = [weekly - 5, weekly, weekly + 5].map(v => Math.max(1, v));
+    const labels = ['Daha hafif tempo','Baz tempo','Daha yoğun tempo'];
+    hourlyEls.scenarioGrid.innerHTML = scenarios.map((hours, i) => {
+      const mh = hours * 4.33; const hv = monthlyTotal / mh; return `<div class="scenario-card-lite"><strong>${labels[i]}</strong><span>${money(hv)}</span><small>Haftalık ${plain(hours,1)} saat çalışmada saatlik karşılık.</small></div>`;
+    }).join('');
+    hourlyEls.empty.hidden=false; hourlyEls.empty.hidden=true; hourlyEls.results.hidden=false;
+    lastHourly = {salary, bonus, weekly, monthlyTotal, monthlyHours, hourly, weeklyIncome, dailyIncome, target, targetGap, score};
+    hourlyEls.results.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  function hourlyExample(){ hourlyEls.salary.value='38000'; hourlyEls.bonus.value='2000'; hourlyEls.weekly.value='45'; hourlyEls.workdays.value='5'; hourlyEls.daily.value=''; hourlyEls.target.value='220'; calcHourly(); }
+  function hourlyReset(){ ['salary','bonus','weekly','workdays','daily','target'].forEach(k => hourlyEls[k].value=''); renderHourlyEmpty(); }
+  async function hourlyCopy(){ if (!lastHourly) return alert('Önce sonuç üret.'); const t = [`Hesapica Saatlik Ücret Analizi`,`Aylık toplam gelir: ${money(lastHourly.monthlyTotal)}`,`Haftalık saat: ${plain(lastHourly.weekly,1)}`,`Aylık saat: ${plain(lastHourly.monthlyHours,1)}`,`Saatlik ücret: ${money(lastHourly.hourly)}`,`Haftalık gelir: ${money(lastHourly.weeklyIncome)}`,`Günlük gelir: ${lastHourly.dailyIncome != null ? money(lastHourly.dailyIncome) : '—'}`].join('\n'); await copyText(t); alert('Sonuç kopyalandı.'); }
+  hourlyEls.calc.addEventListener('click', calcHourly); hourlyEls.example.addEventListener('click', hourlyExample); hourlyEls.reset.addEventListener('click', hourlyReset); hourlyEls.copy.addEventListener('click', hourlyCopy);
+
+  renderRaiseEmpty(); renderHourlyEmpty();
+  const params = new URLSearchParams(location.search);
+  const initial = params.get('mod');
+  if (initial === 'zam' || initial === 'saatlik') setFamilyMode(initial, false); else setFamilyMode('bordro', false);
+})();
+</script>
+
+</body>
+</html>

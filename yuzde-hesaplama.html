@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yüzde Hesaplama 2026 | Hesapica</title>
+<meta content="Bir sayının yüzdesini, yüzde artışını, yüzde azalışını ve iki sayı arasındaki yüzde değişimi hızlıca hesaplayın. Türkçe ve İngilizce destekli Hesapica yüzde hesaplama aracı." name="description"/>
+<meta content="yüzde hesaplama, percentage calculator, yüzde artış, yüzde azalış, yüzde değişim" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/yuzde-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Yüzde Hesaplama 2026 | Hesapica" property="og:title"/>
+<meta content="Bir sayının yüzdesini, yüzde artışını, yüzde azalışını ve iki sayı arasındaki yüzde değişimi hızlıca hesaplayın. Türkçe ve İngilizce destekli Hesapica yüzde hesaplama aracı." property="og:description"/>
+<meta content="https://hesapica.com/yuzde-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Yüzde Hesaplama 2026 | Hesapica" name="twitter:title"/>
+<meta content="Bir sayının yüzdesini, yüzde artışını, yüzde azalışını ve iki sayı arasındaki yüzde değişimi hızlıca hesaplayın. Türkçe ve İngilizce destekli Hesapica yüzde hesaplama aracı." name="twitter:description"/>
+<meta content="https://hesapica.com/yuzde-hesaplama" name="twitter:url"/>
+<meta content="index,follow" name="robots"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-deep:#eef4ff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --line-strong:#c7d2fe;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --good:#047857;
+      --warn:#b45309;
+      --danger:#b91c1c;
+      --danger-bg:#fef2f2;
+      --danger-line:#fecaca;
+      --radius-xl:24px;
+      --radius-lg:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1160px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center}
+    .eyebrow-pill{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+      background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px
+    }
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:24px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.02fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .lang-box{
+      display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;background:#fff;
+      border:1px solid rgba(79,70,229,.12);width:max-content;margin-left:auto
+    }
+    .lang-box label{margin:0;font-size:13px;font-weight:800;color:#4338ca}
+    .lang-select{height:40px;border-radius:12px;padding:0 12px;border:1px solid #d9def0;background:#fff;min-width:150px}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    .field.has-error input,.field.has-error select{border-color:var(--danger-line);background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}
+    .field label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .suffix{position:absolute;top:50%;transform:translateY(-50%);right:16px;color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-suffix{padding-right:42px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:7px;font-size:14px;color:var(--danger);font-weight:700;line-height:1.45}
+    .field.has-error .error-text{display:block}
+    .validation-box{display:none;margin-top:18px;padding:14px 16px;border-radius:18px;background:var(--danger-bg);border:1px solid var(--danger-line);color:#7f1d1d;font-size:14px;font-weight:700}
+    .validation-box.show{display:block}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn[disabled]{opacity:.55;cursor:not-allowed;pointer-events:none;transform:none !important}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca}
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .results > *{min-width:0}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-card.flash{animation:resultFlash 1.15s ease}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#9ca3af}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd;min-width:0;align-items:flex-start}
+    .mini-result > div{min-width:0}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right;color:#9ca3af}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .summary-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:#fff}
+    .summary-card h3{margin:0 0 8px;font-size:18px;color:var(--primary)}
+    .summary-card p{margin:0;color:#4b5563;font-size:14.5px;line-height:1.6}
+    .scenario-card{margin-top:24px}
+    .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .scenario-box{padding:16px;border-radius:18px;background:linear-gradient(180deg,#fbfcff 0%, #f3f6ff 100%);border:1px solid rgba(79,70,229,.10)}
+    .scenario-box .tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#4338ca}
+    .scenario-box strong{display:block;margin-top:8px;font-size:22px;line-height:1.15;color:#111827}
+    .scenario-box p{margin:8px 0 0;color:#4b5563;font-size:14px;line-height:1.55}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .content-card h2{margin:0 0 12px;font-size:22px;color:var(--primary)}
+    .content-card p,.content-card li{color:#374151;font-size:15px}
+    .content-card ul{margin:0;padding-left:18px}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .status-text,.highlight-sub,.summary-card p,.mini-result .label,.mini-result .value,.mini-result .subline,.scenario-box p,.scenario-box strong{overflow-wrap:anywhere;word-break:break-word}
+    @keyframes resultFlash{
+      0%{box-shadow:0 16px 40px rgba(79,70,229,.10)}
+      35%{box-shadow:0 0 0 8px rgba(79,70,229,.12),0 16px 40px rgba(79,70,229,.14)}
+      100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    }
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .related-grid{grid-template-columns:repeat(2,1fr)}
+      .lang-box{margin-left:0}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.summary-card{padding:20px}
+      .field-grid,.related-grid,.scenario-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}.highlight-value{font-size:31px}
+      .lang-box{width:100%;justify-content:space-between}
+      .lang-select{min-width:0;flex:1}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.lang-box{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.summary-card,.scenario-box{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}
+      .tool-layout,.content-grid,.scenario-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+    }
+  </style>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a><span>/</span><a href="/#matematik">Matematik</a><span>/</span><strong id="bcTitle">Yüzde Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="lang-box">
+<label for="languageSelect" id="langLabel">Dil</label>
+<select aria-label="Dil seçimi" class="lang-select" id="languageSelect">
+<option value="tr">Türkçe</option>
+<option value="en">English</option>
+</select>
+</div>
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill" id="eyebrow">Hesapica • Matematik Aracı</span>
+<h1 id="heroTitle">Yüzde Hesaplama</h1>
+<p id="heroDesc">Bir sayının yüzdesini, yüzde artışını, yüzde azalışını ve iki sayı arasındaki yüzde değişimi tek ekranda hızlıca hesaplayın. Bu araç hız ve netlik için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip" id="chip1">Anında hesaplama</span>
+<span class="hero-chip" id="chip2">TR + EN</span>
+<span class="hero-chip" id="chip3">Hızlı kullanım</span>
+<span class="hero-chip" id="chip4">Boş başlangıç</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow" id="heroBoxEyebrow">Hız odaklı kullanım</div>
+<strong id="heroBoxTitle">Bu araç temiz ve hızlı sonuç üretir</strong>
+<p id="heroBoxText">Yüzde işlemleri günlük hayatta çok sık kullanılır. Bu sayfa karar karmaşası yerine net giriş, hızlı hesap ve temiz sonuç deneyimi sunar.</p>
+<ul>
+<li id="heroLi1">Bir sayının yüzdesi</li>
+<li id="heroLi2">Artış ve azalış</li>
+<li id="heroLi3">İki sayı arası değişim</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<noscript><div class="card" style="margin-bottom:24px;border-color:#fecaca;background:#fff8f8;color:#7f1d1d">Bu araç doğru çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript’i etkinleştirin.</div></noscript>
+<section class="tool-layout">
+<div class="card">
+<h2 id="panelTitle">Hesaplama Paneli</h2>
+<p class="section-note" id="panelNote">Tüm alanlar boş başlar. Hesap türünü seçip değerleri girmen yeterli; sonuçlar otomatik güncellenir. Ana buton destekleyici olarak da çalışır.</p>
+<div class="form-section">
+<div class="form-title" id="modeTitle">İşlem türü</div>
+<div class="chip-row" id="modeChips">
+<button class="chip active" data-mode="basic" id="chipBasic" type="button">Bir sayının yüzdesi</button>
+<button class="chip" data-mode="increase" id="chipIncrease" type="button">Yüzde artış</button>
+<button class="chip" data-mode="decrease" id="chipDecrease" type="button">Yüzde azalış</button>
+<button class="chip" data-mode="change" id="chipChange" type="button">Yüzde değişim</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" id="inputTitle">Değerler</div>
+<div class="field-grid">
+<div class="field" id="field1">
+<label for="num1" id="label1">Sayı</label>
+<input aria-describedby="hint1 error1" autocomplete="off" id="num1" inputmode="decimal" placeholder="Örn: 1.000" type="text"/>
+<div class="hint" id="hint1">İşleme girecek ilk değer.</div>
+<div class="error-text" id="error1"></div>
+</div>
+<div class="field" id="field2">
+<label for="num2" id="label2">Yüzde (%)</label>
+<div class="input-wrap">
+<input aria-describedby="hint2 error2" autocomplete="off" class="with-suffix" id="num2" inputmode="decimal" placeholder="Örn: 18" type="text"/>
+<span class="suffix" id="suffix2">%</span>
+</div>
+<div class="hint" id="hint2">İşleme girecek ikinci değer.</div>
+<div class="error-text" id="error2"></div>
+</div>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox"></div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calcBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button>
+</div>
+<div class="flow-hint" id="flowHint">
+          Sonuçlar sağ tarafta otomatik güncellenir. Ana buton, otomatik hesap yerine elle tetiklemek isteyen kullanıcılar için destek amaçlıdır.
+        </div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title" id="statusTitle">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" id="statusText">Değerleri yazdığında sonuçlar otomatik görünecek.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card" id="resultPanel">
+<div class="highlight-label" id="mainLabel">Ana Sonuç</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainSub">Veri bekleniyor.</div>
+</div>
+<div class="summary-card">
+<h3 id="summaryTitle">Hızlı Yorum</h3>
+<p aria-live="polite" id="summaryText">İşlem türünü seçip iki alanı doldurduğunda burada kısa yorum görünecek.</p>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result">
+<div>
+<div class="label" id="extraLabel">Ek Bilgi</div>
+<div class="subline" id="extraSub">Hesap türüne göre burada yardımcı bilgi görünür.</div>
+</div>
+<div class="value" id="extraResult">—</div>
+</div>
+<div class="mini-result">
+<div>
+<div class="label" id="formulaLabel">Kısa Formül</div>
+<div class="subline" id="formulaSub">İşlem mantığını hızlı hatırlatır.</div>
+</div>
+<div class="value" id="formulaResult">—</div>
+</div>
+</div>
+</aside>
+</section>
+<section class="card scenario-card">
+<h2 id="scenarioTitle">Hızlı senaryo görünümü</h2>
+<p class="section-note" id="scenarioNote">Girilen sayı üzerinden sık kullanılan üç hızlı yüzde senaryosu burada görünür.</p>
+<div class="scenario-grid">
+<div class="scenario-box">
+<span class="tag" id="scTag1">Senaryo 1</span>
+<strong id="scValue1">—</strong>
+<p id="scText1">Veri bekleniyor.</p>
+</div>
+<div class="scenario-box">
+<span class="tag" id="scTag2">Senaryo 2</span>
+<strong id="scValue2">—</strong>
+<p id="scText2">Veri bekleniyor.</p>
+</div>
+<div class="scenario-box">
+<span class="tag" id="scTag3">Senaryo 3</span>
+<strong id="scValue3">—</strong>
+<p id="scText3">Veri bekleniyor.</p>
+</div>
+</div>
+</section>
+<section class="content-grid">
+<div class="card content-card">
+<h2 id="contentTitle1">Yüzde hesaplama nasıl yapılır?</h2>
+<p id="contentP1">Bir sayının yüzdesini bulmak için sayı ile yüzde oranı çarpılır ve sonuç 100’e bölünür.</p>
+<p id="contentP2">Örneğin 1.000 sayısının %18’i için işlem 1.000 × 18 / 100 şeklindedir ve sonuç 180 olur.</p>
+</div>
+<div class="card content-card">
+<h2 id="contentTitle2">Bu araç ne zaman kullanılır?</h2>
+<ul>
+<li id="contentLi1">İndirim ve zam hesaplarında</li>
+<li id="contentLi2">Oran ve değişim karşılaştırmalarında</li>
+<li id="contentLi3">Günlük matematik işlemlerinde</li>
+<li id="contentLi4">TR ve EN hızlı kullanım senaryolarında</li>
+</ul>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 id="relatedTitle">İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/kdv-hesaplama">
+<span class="small" id="relatedTag1">İlgili araç</span>
+<strong id="relatedName1">KDV Hesaplama</strong>
+<p id="relatedDesc1">Oran bazlı hesap mantığını benzer akışla kullan.</p>
+</a>
+<a class="related-card" href="/indirimli-fiyat-hesaplama">
+<span class="small" id="relatedTag2">İlgili araç</span>
+<strong id="relatedName2">İndirimli Fiyat Hesaplama</strong>
+<p id="relatedDesc2">Yüzde azalış mantığını fiyat üzerinden uygula.</p>
+</a>
+<a class="related-card" href="/ortalama-hesaplama">
+<span class="small" id="relatedTag3">İlgili araç</span>
+<strong id="relatedName3">Ortalama Hesaplama</strong>
+<p id="relatedDesc3">Sayı gruplarını hızlıca toplayıp ortalamasını al.</p>
+</a>
+</div>
+</section>
+</main>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Yüzde Hesaplama",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "description": "Bir sayının yüzdesini, yüzde artışını, yüzde azalışını ve yüzde değişimini hesaplayan web aracı.",
+    "url": "https://hesapica.com/yuzde-hesaplama",
+    "offers": {"@type":"Offer","price":"0","priceCurrency":"TRY"}
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://hesapica.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Matematik", "item": "https://hesapica.com/#matematik"},
+      {"@type": "ListItem", "position": 3, "name": "Yüzde Hesaplama", "item": "https://hesapica.com/yuzde-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bir sayının yüzdesi nasıl hesaplanır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bir sayının yüzdesini bulmak için sayı ile yüzde oranı çarpılır ve sonuç 100'e bölünür."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Yüzde artış ve azalış nasıl bulunur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Önce başlangıç değerinin belirli bir yüzdesi hesaplanır. Sonra bu değer başlangıç sayısına eklenir ya da çıkarılır."
+        }
+      }
+    ]
+  }
+  </script>
+<script>
+    const STORAGE_KEY = 'hesapica_percentage_lock_v3';
+    const state = {
+      mode: 'basic',
+      lang: 'tr',
+      inputs: { num1: '', num2: '' },
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      dataMode: 'manual',
+      suppressSave: false,
+      touched: { num1: false, num2: false },
+      errors: {}
+    };
+
+    const i18n = {
+      tr: {
+        bcTitle:'Yüzde Hesaplama', langLabel:'Dil', eyebrow:'Hesapica • Matematik Aracı',
+        heroTitle:'Yüzde Hesaplama',
+        heroDesc:'Bir sayının yüzdesini, yüzde artışını, yüzde azalışını ve iki sayı arasındaki yüzde değişimi tek ekranda hızlıca hesaplayın. Bu araç hız ve netlik için tasarlandı.',
+        chip1:'Anında hesaplama', chip2:'TR + EN', chip3:'Hızlı kullanım', chip4:'Boş başlangıç',
+        heroBoxEyebrow:'Hız odaklı kullanım', heroBoxTitle:'Bu araç temiz ve hızlı sonuç üretir',
+        heroBoxText:'Yüzde işlemleri günlük hayatta çok sık kullanılır. Bu sayfa karar karmaşası yerine net giriş, hızlı hesap ve temiz sonuç deneyimi sunar.',
+        heroLi1:'Bir sayının yüzdesi', heroLi2:'Artış ve azalış', heroLi3:'İki sayı arası değişim',
+        panelTitle:'Hesaplama Paneli', panelNote:'Tüm alanlar boş başlar. Hesap türünü seçip değerleri girmen yeterli; sonuçlar otomatik güncellenir. Ana buton destekleyici olarak da çalışır.',
+        modeTitle:'İşlem türü', inputTitle:'Değerler',
+        chipBasic:'Bir sayının yüzdesi', chipIncrease:'Yüzde artış', chipDecrease:'Yüzde azalış', chipChange:'Yüzde değişim',
+        calcBtn:'Sonucu Gör', exampleBtn:'Örnek Veri', clearBtn:'Verileri Sıfırla', printBtn:'Yazdır / PDF', copyBtn:'Sonucu Kopyala', shareBtn:'Paylaş',
+        flowHint:'Sonuçlar sağ tarafta otomatik güncellenir. Sonucu Gör düğmesi ise sonucu görünür alana kaydırıp kısa vurgu yapar.',
+        statusTitle:'Sonuç alanı durumu', statusWaiting:'Değerleri yazdığında sonuçlar otomatik görünecek.', waitingBadge:'Veri bekleniyor', readyBadge:'Hazır', invalidBadge:'Kontrol et',
+        mainLabel:'Ana Sonuç', extraLabel:'Ek Bilgi', formulaLabel:'Kısa Formül', summaryTitle:'Hızlı Yorum',
+        extraSub:'Hesap türüne göre burada yardımcı bilgi görünür.', formulaSub:'İşlem mantığını hızlı hatırlatır.',
+        summaryWaiting:'İşlem türünü seçip iki alanı doldurduğunda burada kısa yorum görünecek.',
+        scenarioTitle:'Hızlı senaryo görünümü', scenarioNote:'Girilen sayı üzerinden sık kullanılan üç hızlı yüzde senaryosu burada görünür.',
+        scTag1:'Senaryo 1', scTag2:'Senaryo 2', scTag3:'Senaryo 3',
+        contentTitle1:'Yüzde hesaplama nasıl yapılır?', contentP1:'Bir sayının yüzdesini bulmak için sayı ile yüzde oranı çarpılır ve sonuç 100’e bölünür.', contentP2:'Örneğin 1.000 sayısının %18’i için işlem 1.000 × 18 / 100 şeklindedir ve sonuç 180 olur.',
+        contentTitle2:'Bu araç ne zaman kullanılır?', contentLi1:'İndirim ve zam hesaplarında', contentLi2:'Oran ve değişim karşılaştırmalarında', contentLi3:'Günlük matematik işlemlerinde', contentLi4:'TR ve EN hızlı kullanım senaryolarında',
+        relatedTitle:'İlgili araçlar', relatedTag:'İlgili araç',
+        relatedName1:'KDV Hesaplama', relatedDesc1:'Oran bazlı hesap mantığını benzer akışla kullan.',
+        relatedName2:'İndirimli Fiyat Hesaplama', relatedDesc2:'Yüzde azalış mantığını fiyat üzerinden uygula.',
+        relatedName3:'Ortalama Hesaplama', relatedDesc3:'Sayı gruplarının ortalamasını hızlıca hesapla.',
+        modes:{
+          basic:{label1:'Sayı', label2:'Yüzde (%)', hint1:'İşleme girecek ilk değer.', hint2:'Yüzde oranını yaz.', ph1:'Örn: 1.000', ph2:'Örn: 18', suffix:'%', formula:'Sayı × Yüzde / 100'},
+          increase:{label1:'Başlangıç değeri', label2:'Artış oranı (%)', hint1:'Artıştan önceki değer.', hint2:'Eklenecek yüzde oranı.', ph1:'Örn: 1.000', ph2:'Örn: 25', suffix:'%', formula:'Başlangıç + (Başlangıç × Oran / 100)'},
+          decrease:{label1:'Başlangıç değeri', label2:'Azalış oranı (%)', hint1:'Azalıştan önceki değer.', hint2:'Düşecek yüzde oranı.', ph1:'Örn: 1.000', ph2:'Örn: 10', suffix:'%', formula:'Başlangıç - (Başlangıç × Oran / 100)'},
+          change:{label1:'Eski değer', label2:'Yeni değer', hint1:'Başlangıç değeri.', hint2:'Karşılaştırılacak yeni değer.', ph1:'Örn: 1.000', ph2:'Örn: 1.250', suffix:'', formula:'(Yeni - Eski) / Eski × 100'}
+        },
+        errors:{
+          required1:'İlk alanı doldur.', required2:'İkinci alanı doldur.', invalid1:'Geçerli bir sayı yaz.', invalid2:'Geçerli bir sayı yaz.',
+          percentNegative:'Bu alanda negatif yüzde kullanma.', oldZero:'Eski değer 0 olduğunda yüzde değişim hesaplanamaz.'
+        },
+        results:{
+          basic:(a,b,r)=>({main:fmt(r), sub:`${fmt(a)} sayısının %${fmt(b)} değeri`, extra:fmt(a+r), extraSub:'Bu yüzde değerinin sayıya eklenmiş hali', summary:`${fmt(a)} üzerinden %${fmt(b)} oranı ${fmt(r)} eder. Toplama kullanırsan yeni değer ${fmt(a+r)} olur.`}),
+          increase:(a,b,total,change)=>({main:fmt(total), sub:'Yüzde artış sonrası yeni değer', extra:`+${fmt(change)}`, extraSub:'Artış miktarı', summary:`${fmt(a)} değeri %${fmt(b)} arttığında ${fmt(change)} kadar yükselir ve yeni değer ${fmt(total)} olur.`}),
+          decrease:(a,b,total,change)=>({main:fmt(total), sub:'Yüzde azalış sonrası yeni değer', extra:`-${fmt(change)}`, extraSub:'Azalış miktarı', summary:`${fmt(a)} değeri %${fmt(b)} azaldığında ${fmt(change)} kadar düşer ve yeni değer ${fmt(total)} olur.`}),
+          change:(a,b,pct,diff)=>({main:`%${fmt(Math.abs(pct))}`, sub:`İki sayı arasında yüzde ${pct >= 0 ? 'artış' : 'azalış'}`, extra:fmt(diff), extraSub:'İki değer arasındaki sayısal fark', summary:`${fmt(a)} ile ${fmt(b)} arasında ${pct >= 0 ? 'pozitif' : 'negatif'} yönlü %${fmt(Math.abs(pct))} değişim var.`})
+        },
+        scenarios:{
+          basic:(a)=>[
+            {tag:'%10', value:fmt(a*0.10), text:`${fmt(a)} sayısının %10 değeri`},
+            {tag:'%25', value:fmt(a*0.25), text:`${fmt(a)} sayısının %25 değeri`},
+            {tag:'%50', value:fmt(a*0.50), text:`${fmt(a)} sayısının %50 değeri`}
+          ],
+          increase:(a)=>[
+            {tag:'+%10', value:fmt(a*1.10), text:`%10 artış sonrası yeni değer`},
+            {tag:'+%20', value:fmt(a*1.20), text:`%20 artış sonrası yeni değer`},
+            {tag:'+%50', value:fmt(a*1.50), text:`%50 artış sonrası yeni değer`}
+          ],
+          decrease:(a)=>[
+            {tag:'-%10', value:fmt(a*0.90), text:`%10 azalış sonrası yeni değer`},
+            {tag:'-%20', value:fmt(a*0.80), text:`%20 azalış sonrası yeni değer`},
+            {tag:'-%50', value:fmt(a*0.50), text:`%50 azalış sonrası yeni değer`}
+          ],
+          change:(a)=>[
+            {tag:'+%10', value:fmt(a*1.10), text:`Yeni değer %10 artarsa`},
+            {tag:'+%25', value:fmt(a*1.25), text:`Yeni değer %25 artarsa`},
+            {tag:'-%10', value:fmt(a*0.90), text:`Yeni değer %10 azalırsa`}
+          ]
+        },
+        messages:{ copied:'Sonuç kopyalandı.', copyFail:'Kopyalama başarısız oldu.', shared:'Paylaşım hazır.', shareFail:'Paylaşım başarısız oldu.', cleared:'Alanlar temizlendi.', needResult:'Önce sonuç oluştur.', shareCopied:'Bağlantı ve sonuç kopyalandı.' }
+      },
+      en: {
+        bcTitle:'Percentage Calculator', langLabel:'Language', eyebrow:'Hesapica • Math Tool',
+        heroTitle:'Percentage Calculator',
+        heroDesc:'Quickly calculate a percentage of a number, percentage increase, percentage decrease, and percentage change between two numbers on one screen. This tool is built for speed and clarity.',
+        chip1:'Instant calculation', chip2:'TR + EN', chip3:'Fast workflow', chip4:'Empty start',
+        heroBoxEyebrow:'Speed-focused usage', heroBoxTitle:'This tool delivers clean and fast results',
+        heroBoxText:'Percentage operations are used frequently in daily life. This page focuses on clear input, fast calculation, and a clean result flow.',
+        heroLi1:'Percentage of a number', heroLi2:'Increase and decrease', heroLi3:'Change between two numbers',
+        panelTitle:'Calculation Panel', panelNote:'All fields start empty. Choose the mode and enter values; results update automatically. The main button also works as a support action.',
+        modeTitle:'Calculation type', inputTitle:'Values',
+        chipBasic:'Percentage of a number', chipIncrease:'Percentage increase', chipDecrease:'Percentage decrease', chipChange:'Percentage change',
+        calcBtn:'Show Result', exampleBtn:'Sample Data', clearBtn:'Reset Inputs', printBtn:'Print / PDF', copyBtn:'Copy Result', shareBtn:'Share',
+        flowHint:'Results update automatically on the right. The Show Result button scrolls to the result area and highlights it briefly.',
+        statusTitle:'Result area status', statusWaiting:'Results will appear automatically when you enter values.', waitingBadge:'Waiting for data', readyBadge:'Ready', invalidBadge:'Check inputs',
+        mainLabel:'Main Result', extraLabel:'Extra Info', formulaLabel:'Quick Formula', summaryTitle:'Quick Note',
+        extraSub:'Helpful extra information appears here based on the selected mode.', formulaSub:'A quick reminder of the logic.',
+        summaryWaiting:'Once you choose a mode and fill both fields, a short note will appear here.',
+        scenarioTitle:'Quick scenario view', scenarioNote:'Three common quick percentage scenarios appear here based on the entered number.',
+        scTag1:'Scenario 1', scTag2:'Scenario 2', scTag3:'Scenario 3',
+        contentTitle1:'How do you calculate percentages?', contentP1:'To find a percentage of a number, multiply the number by the percentage rate and divide the result by 100.', contentP2:'For example, to find 18% of 1,000, use 1,000 × 18 / 100, which equals 180.',
+        contentTitle2:'When is this tool useful?', contentLi1:'Discount and price increase calculations', contentLi2:'Rate and change comparisons', contentLi3:'Everyday math operations', contentLi4:'Fast TR and EN usage scenarios',
+        relatedTitle:'Related tools', relatedTag:'Related tool',
+        relatedName1:'VAT Calculator', relatedDesc1:'Use similar percentage logic for tax-based calculations.',
+        relatedName2:'Discount Calculator', relatedDesc2:'Apply percentage decrease logic directly to prices.',
+        relatedName3:'Average Calculator', relatedDesc3:'Quickly calculate the average of number groups.',
+        modes:{
+          basic:{label1:'Number', label2:'Percentage (%)', hint1:'The first value used in the operation.', hint2:'Enter the percentage rate.', ph1:'Ex: 1,000', ph2:'Ex: 18', suffix:'%', formula:'Number × Percentage / 100'},
+          increase:{label1:'Starting value', label2:'Increase rate (%)', hint1:'The value before the increase.', hint2:'The percentage rate to add.', ph1:'Ex: 1,000', ph2:'Ex: 25', suffix:'%', formula:'Start + (Start × Rate / 100)'},
+          decrease:{label1:'Starting value', label2:'Decrease rate (%)', hint1:'The value before the decrease.', hint2:'The percentage rate to subtract.', ph1:'Ex: 1,000', ph2:'Ex: 10', suffix:'%', formula:'Start - (Start × Rate / 100)'},
+          change:{label1:'Old value', label2:'New value', hint1:'The starting value.', hint2:'The new value to compare.', ph1:'Ex: 1,000', ph2:'Ex: 1,250', suffix:'', formula:'(New - Old) / Old × 100'}
+        },
+        errors:{
+          required1:'Fill in the first field.', required2:'Fill in the second field.', invalid1:'Enter a valid number.', invalid2:'Enter a valid number.',
+          percentNegative:'Do not use a negative percentage here.', oldZero:'Percentage change cannot be calculated when the old value is 0.'
+        },
+        results:{
+          basic:(a,b,r)=>({main:fmt(r), sub:`${fmt(b)}% of ${fmt(a)}`, extra:fmt(a+r), extraSub:'Value after adding that percentage', summary:`${fmt(b)}% of ${fmt(a)} equals ${fmt(r)}. If you add it back, the new value becomes ${fmt(a+r)}.`}),
+          increase:(a,b,total,change)=>({main:fmt(total), sub:'New value after percentage increase', extra:`+${fmt(change)}`, extraSub:'Increase amount', summary:`When ${fmt(a)} increases by ${fmt(b)}%, it goes up by ${fmt(change)} and becomes ${fmt(total)}.`}),
+          decrease:(a,b,total,change)=>({main:fmt(total), sub:'New value after percentage decrease', extra:`-${fmt(change)}`, extraSub:'Decrease amount', summary:`When ${fmt(a)} decreases by ${fmt(b)}%, it drops by ${fmt(change)} and becomes ${fmt(total)}.`}),
+          change:(a,b,pct,diff)=>({main:`${pct >= 0 ? '+' : '-'}%${fmt(Math.abs(pct))}`, sub:`Percentage ${pct >= 0 ? 'increase' : 'decrease'} between two numbers`, extra:fmt(diff), extraSub:'Numeric difference between values', summary:`There is a ${pct >= 0 ? 'positive' : 'negative'} ${fmt(Math.abs(pct))}% change between ${fmt(a)} and ${fmt(b)}.`})
+        },
+        scenarios:{
+          basic:(a)=>[
+            {tag:'10%', value:fmt(a*0.10), text:`10% of ${fmt(a)}`},
+            {tag:'25%', value:fmt(a*0.25), text:`25% of ${fmt(a)}`},
+            {tag:'50%', value:fmt(a*0.50), text:`50% of ${fmt(a)}`}
+          ],
+          increase:(a)=>[
+            {tag:'+10%', value:fmt(a*1.10), text:'New value after 10% increase'},
+            {tag:'+20%', value:fmt(a*1.20), text:'New value after 20% increase'},
+            {tag:'+50%', value:fmt(a*1.50), text:'New value after 50% increase'}
+          ],
+          decrease:(a)=>[
+            {tag:'-10%', value:fmt(a*0.90), text:'New value after 10% decrease'},
+            {tag:'-20%', value:fmt(a*0.80), text:'New value after 20% decrease'},
+            {tag:'-50%', value:fmt(a*0.50), text:'New value after 50% decrease'}
+          ],
+          change:(a)=>[
+            {tag:'+10%', value:fmt(a*1.10), text:'If the new value is 10% higher'},
+            {tag:'+25%', value:fmt(a*1.25), text:'If the new value is 25% higher'},
+            {tag:'-10%', value:fmt(a*0.90), text:'If the new value is 10% lower'}
+          ]
+        },
+        messages:{ copied:'Result copied.', copyFail:'Copy failed.', shared:'Share sheet ready.', shareFail:'Sharing failed.', cleared:'Fields cleared.', needResult:'Create a result first.', shareCopied:'Link and result copied.' }
+      }
+    };
+
+    const els = {
+      languageSelect: document.getElementById('languageSelect'),
+      num1: document.getElementById('num1'),
+      num2: document.getElementById('num2'),
+      field1: document.getElementById('field1'),
+      field2: document.getElementById('field2'),
+      error1: document.getElementById('error1'),
+      error2: document.getElementById('error2'),
+      validationBox: document.getElementById('validationBox'),
+      mainResult: document.getElementById('mainResult'),
+      mainSub: document.getElementById('mainSub'),
+      extraResult: document.getElementById('extraResult'),
+      extraSub: document.getElementById('extraSub'),
+      formulaResult: document.getElementById('formulaResult'),
+      statusText: document.getElementById('statusText'),
+      statusBadge: document.getElementById('statusBadge'),
+      summaryText: document.getElementById('summaryText'),
+      scTag1: document.getElementById('scTag1'), scTag2: document.getElementById('scTag2'), scTag3: document.getElementById('scTag3'),
+      scValue1: document.getElementById('scValue1'), scValue2: document.getElementById('scValue2'), scValue3: document.getElementById('scValue3'),
+      scText1: document.getElementById('scText1'), scText2: document.getElementById('scText2'), scText3: document.getElementById('scText3'),
+      calcBtn: document.getElementById('calcBtn'),
+      exampleBtn: document.getElementById('exampleBtn'),
+      shareBtn: document.getElementById('shareBtn'),
+      copyBtn: document.getElementById('copyBtn'),
+      clearBtn: document.getElementById('clearBtn'),
+      printBtn: document.getElementById('printBtn')
+    };
+
+    let debounceTimer = null;
+
+    function currentLang(){ return state.lang; }
+    function t(){ return i18n[currentLang()]; }
+
+    function fmt(value){
+      const locale = currentLang() === 'tr' ? 'tr-TR' : 'en-US';
+      return new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value);
+    }
+
+    function parseLocaleNumber(str){
+      if (str === null || str === undefined) return NaN;
+      const raw = String(str).trim().replace(/\s+/g, '');
+      if (!raw) return NaN;
+      const hasDot = raw.includes('.');
+      const hasComma = raw.includes(',');
+      let normalized = raw;
+
+      if (hasDot && hasComma) {
+        const lastDot = raw.lastIndexOf('.');
+        const lastComma = raw.lastIndexOf(',');
+        const decimalSep = lastDot > lastComma ? '.' : ',';
+        const thousandSep = decimalSep === '.' ? ',' : '.';
+        const parts = raw.split(decimalSep);
+        const intPart = parts.shift().replace(new RegExp('\\' + thousandSep, 'g'), '');
+        const fracPart = parts.join('').replace(/[.,]/g, '');
+        normalized = fracPart ? `${intPart}.${fracPart}` : intPart;
+      } else if (hasComma) {
+        const commaParts = raw.split(',');
+        const looksLikeThousands = commaParts.length > 1 && commaParts.slice(1).every(part => part.length === 3);
+        normalized = looksLikeThousands ? raw.replace(/,/g, '') : raw.replace(/\./g, '').replace(',', '.');
+      } else if (hasDot) {
+        const dotParts = raw.split('.');
+        const looksLikeThousands = dotParts.length > 1 && dotParts.slice(1).every(part => part.length === 3);
+        normalized = looksLikeThousands ? raw.replace(/\./g, '') : raw;
+      }
+
+      const value = Number(normalized);
+      return Number.isFinite(value) ? value : NaN;
+    }
+
+    function formatInputValue(input){
+      const value = parseLocaleNumber(input.value);
+      if (!Number.isFinite(value)) return;
+      input.value = fmt(value);
+    }
+
+    function syncInputsFromState(){
+      els.num1.value = state.inputs.num1 || '';
+      els.num2.value = state.inputs.num2 || '';
+      els.languageSelect.value = state.lang;
+    }
+
+    function updateStateFromInputs(){
+      state.inputs.num1 = els.num1.value;
+      state.inputs.num2 = els.num2.value;
+    }
+
+    function clearErrors(){
+      state.errors = {};
+      els.field1.classList.remove('has-error');
+      els.field2.classList.remove('has-error');
+      els.error1.textContent = '';
+      els.error2.textContent = '';
+      els.validationBox.textContent = '';
+      els.validationBox.classList.remove('show');
+    }
+
+    function validate(showErrors = false){
+      clearErrors();
+      const tr = t();
+      const v1 = state.inputs.num1.trim();
+      const v2 = state.inputs.num2.trim();
+      const n1 = parseLocaleNumber(v1);
+      const n2 = parseLocaleNumber(v2);
+      const hasSomeInput = v1 !== '' || v2 !== '';
+
+      if (!hasSomeInput) {
+        state.isValid = false;
+        return { ok:false, reason:'empty', n1, n2 };
+      }
+
+      if (v1 === '') state.errors.num1 = tr.errors.required1;
+      else if (!Number.isFinite(n1)) state.errors.num1 = tr.errors.invalid1;
+
+      if (v2 === '') state.errors.num2 = tr.errors.required2;
+      else if (!Number.isFinite(n2)) state.errors.num2 = tr.errors.invalid2;
+
+      if (!state.errors.num2 && ['basic','increase','decrease'].includes(state.mode) && n2 < 0) {
+        state.errors.num2 = tr.errors.percentNegative;
+      }
+      if (!state.errors.num1 && state.mode === 'change' && n1 === 0 && Number.isFinite(n2)) {
+        state.errors.num1 = tr.errors.oldZero;
+      }
+
+      const ok = Object.keys(state.errors).length === 0;
+      state.isValid = ok;
+
+      if (showErrors && !ok) {
+        if (state.errors.num1) {
+          els.field1.classList.add('has-error');
+          els.error1.textContent = state.errors.num1;
+        }
+        if (state.errors.num2) {
+          els.field2.classList.add('has-error');
+          els.error2.textContent = state.errors.num2;
+        }
+        els.validationBox.textContent = Object.values(state.errors)[0];
+        els.validationBox.classList.add('show');
+      }
+
+      return { ok, reason: ok ? 'ok' : 'invalid', n1, n2 };
+    }
+
+    function setEmptyState(){
+      els.mainResult.textContent = '—';
+      els.mainResult.style.color = '#9ca3af';
+      els.extraResult.textContent = '—';
+      els.extraResult.style.color = '#9ca3af';
+      els.statusText.textContent = t().statusWaiting;
+      els.statusBadge.textContent = t().waitingBadge;
+      els.mainSub.textContent = currentLang() === 'tr' ? 'Veri bekleniyor.' : 'Waiting for data.';
+      els.extraSub.textContent = t().extraSub;
+      els.formulaResult.textContent = t().modes[state.mode].formula;
+      els.formulaResult.style.color = '#1f2937';
+      els.summaryText.textContent = t().summaryWaiting;
+      resetScenarioState();
+      state.results = null;
+      state.isCalculated = false;
+      updateActionButtons();
+    }
+
+    function renderScenarios(baseValue){
+      const items = t().scenarios[state.mode](baseValue);
+      els.scTag1.textContent = items[0].tag;
+      els.scTag2.textContent = items[1].tag;
+      els.scTag3.textContent = items[2].tag;
+      els.scValue1.textContent = items[0].value;
+      els.scValue2.textContent = items[1].value;
+      els.scValue3.textContent = items[2].value;
+      els.scText1.textContent = items[0].text;
+      els.scText2.textContent = items[1].text;
+      els.scText3.textContent = items[2].text;
+    }
+
+    function resetScenarioState(){
+      els.scTag1.textContent = t().scTag1;
+      els.scTag2.textContent = t().scTag2;
+      els.scTag3.textContent = t().scTag3;
+      els.scValue1.textContent = '—';
+      els.scValue2.textContent = '—';
+      els.scValue3.textContent = '—';
+      els.scText1.textContent = currentLang() === 'tr' ? 'Veri bekleniyor.' : 'Waiting for data.';
+      els.scText2.textContent = currentLang() === 'tr' ? 'Veri bekleniyor.' : 'Waiting for data.';
+      els.scText3.textContent = currentLang() === 'tr' ? 'Veri bekleniyor.' : 'Waiting for data.';
+    }
+
+    function calculate(showErrors = false){
+      updateStateFromInputs();
+      const check = validate(showErrors);
+
+      if (check.reason === 'empty') {
+        setEmptyState();
+        persistState();
+        return null;
+      }
+      if (!check.ok) {
+        els.statusBadge.textContent = t().invalidBadge;
+        els.statusText.textContent = Object.values(state.errors)[0];
+        els.mainResult.textContent = '—';
+        els.mainResult.style.color = '#9ca3af';
+        els.mainSub.textContent = Object.values(state.errors)[0];
+        els.extraResult.textContent = '—';
+        els.extraResult.style.color = '#9ca3af';
+        els.extraSub.textContent = t().extraSub;
+        els.formulaResult.textContent = t().modes[state.mode].formula;
+        els.formulaResult.style.color = '#1f2937';
+        els.summaryText.textContent = Object.values(state.errors)[0];
+        resetScenarioState();
+        state.results = null;
+        state.isCalculated = false;
+        updateActionButtons();
+        persistState();
+        return null;
+      }
+
+      const a = check.n1;
+      const b = check.n2;
+      let result;
+      if (state.mode === 'basic') {
+        const r = (a * b) / 100;
+        result = t().results.basic(a, b, r);
+      } else if (state.mode === 'increase') {
+        const change = (a * b) / 100;
+        result = t().results.increase(a, b, a + change, change);
+      } else if (state.mode === 'decrease') {
+        const change = (a * b) / 100;
+        result = t().results.decrease(a, b, a - change, change);
+      } else {
+        const diff = b - a;
+        const pct = (diff / a) * 100;
+        result = t().results.change(a, b, pct, diff);
+      }
+
+      state.results = result;
+      state.isCalculated = true;
+      updateActionButtons();
+      els.statusBadge.textContent = t().readyBadge;
+      els.statusText.textContent = currentLang() === 'tr' ? 'Sonuç güncel olarak hesaplandı.' : 'Result has been calculated instantly.';
+      els.mainResult.textContent = result.main;
+      els.mainResult.style.color = '#1f2937';
+      els.mainSub.textContent = result.sub;
+      els.extraResult.textContent = result.extra;
+      els.extraResult.style.color = '#1f2937';
+      els.extraSub.textContent = result.extraSub;
+      els.formulaResult.textContent = t().modes[state.mode].formula;
+      els.formulaResult.style.color = '#1f2937';
+      els.summaryText.textContent = result.summary;
+      renderScenarios(a);
+      persistState();
+      return result;
+    }
+
+    function updateModeUI(){
+      const modeText = t().modes[state.mode];
+      document.getElementById('label1').textContent = modeText.label1;
+      document.getElementById('label2').textContent = modeText.label2;
+      document.getElementById('hint1').textContent = modeText.hint1;
+      document.getElementById('hint2').textContent = modeText.hint2;
+      document.getElementById('suffix2').textContent = modeText.suffix;
+      els.num1.placeholder = modeText.ph1;
+      els.num2.placeholder = modeText.ph2;
+      els.formulaResult.textContent = modeText.formula;
+      document.querySelectorAll('.chip').forEach(ch => ch.classList.toggle('active', ch.dataset.mode === state.mode));
+    }
+
+    function updateStaticText(){
+      const langPack = t();
+      document.documentElement.lang = currentLang();
+      [
+        'bcTitle','langLabel','eyebrow','heroTitle','heroDesc','chip1','chip2','chip3','chip4',
+        'heroBoxEyebrow','heroBoxTitle','heroBoxText','heroLi1','heroLi2','heroLi3','panelTitle','panelNote',
+        'modeTitle','inputTitle','calcBtn','exampleBtn','clearBtn','printBtn','copyBtn','shareBtn','flowHint',
+        'statusTitle','mainLabel','extraLabel','formulaLabel','summaryTitle','scenarioTitle','scenarioNote',
+        'contentTitle1','contentP1','contentP2','contentTitle2','contentLi1','contentLi2','contentLi3','contentLi4',
+        'relatedTitle','relatedName1','relatedDesc1','relatedName2','relatedDesc2','relatedName3','relatedDesc3'
+      ].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && langPack[id]) el.textContent = langPack[id];
+      });
+      document.getElementById('relatedTag1').textContent = langPack.relatedTag;
+      document.getElementById('relatedTag2').textContent = langPack.relatedTag;
+      document.getElementById('relatedTag3').textContent = langPack.relatedTag;
+      document.getElementById('chipBasic').textContent = langPack.chipBasic;
+      document.getElementById('chipIncrease').textContent = langPack.chipIncrease;
+      document.getElementById('chipDecrease').textContent = langPack.chipDecrease;
+      document.getElementById('chipChange').textContent = langPack.chipChange;
+      updateModeUI();
+      clearErrors();
+      if (state.isCalculated) calculate(false);
+      else setEmptyState();
+    }
+
+    function flashStatus(text, badge){
+      els.statusText.textContent = text;
+      if (badge) els.statusBadge.textContent = badge;
+    }
+
+    function canUseStorage(){
+      try {
+        const testKey = '__hesapica_percentage_test__';
+        localStorage.setItem(testKey, '1');
+        localStorage.removeItem(testKey);
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function hasReadyResult(){
+      return state.isCalculated && !!state.results && els.mainResult.textContent.trim() !== '—';
+    }
+
+    function updateActionButtons(){
+      const ready = hasReadyResult();
+      [els.shareBtn, els.copyBtn, els.printBtn].forEach(btn => {
+        if (!btn) return;
+        btn.disabled = !ready;
+        btn.setAttribute('aria-disabled', String(!ready));
+        btn.style.opacity = ready ? '' : '0.55';
+        btn.style.cursor = ready ? '' : 'not-allowed';
+      });
+    }
+
+    function focusResultPanel(){
+      const panel = document.getElementById('resultPanel');
+      if (!panel) return;
+      panel.scrollIntoView({ behavior:'smooth', block:'start' });
+      panel.classList.remove('flash');
+      void panel.offsetWidth;
+      panel.classList.add('flash');
+      window.setTimeout(() => panel.classList.remove('flash'), 1250);
+    }
+
+    function persistState(){
+      if (state.suppressSave || state.dataMode !== 'manual' || !canUseStorage()) return;
+      const payload = {
+        mode: state.mode,
+        lang: state.lang,
+        inputs: state.inputs,
+        isCalculated: state.isCalculated
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function restoreState(){
+      if (!canUseStorage()) return;
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const saved = JSON.parse(raw);
+        if (saved.mode) state.mode = saved.mode;
+        if (saved.lang && i18n[saved.lang]) state.lang = saved.lang;
+        if (saved.inputs) {
+          state.inputs.num1 = saved.inputs.num1 || '';
+          state.inputs.num2 = saved.inputs.num2 || '';
+        }
+      } catch (err) {
+        console.error('restore error', err);
+      }
+    }
+
+    function setManualMode(){
+      state.dataMode = 'manual';
+      state.suppressSave = false;
+    }
+
+    function debounceCalculate(){
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => calculate(false), 180);
+    }
+
+    function fillExample(){
+      const examples = {
+        basic: ['1000','18'],
+        increase: ['1000','25'],
+        decrease: ['1000','10'],
+        change: ['1000','1250']
+      };
+      state.dataMode = 'example';
+      state.suppressSave = true;
+      els.num1.value = examples[state.mode][0];
+      els.num2.value = examples[state.mode][1];
+      updateStateFromInputs();
+      formatInputValue(els.num1);
+      formatInputValue(els.num2);
+      updateStateFromInputs();
+      clearErrors();
+      const result = calculate(true);
+      state.suppressSave = false;
+      if (result) focusResultPanel();
+      flashStatus(currentLang() === 'tr' ? 'Örnek veri yüklendi.' : 'Sample data loaded.', t().readyBadge);
+    }
+
+    function clearAll(){
+      clearTimeout(debounceTimer);
+      state.dataMode = 'manual';
+      state.suppressSave = true;
+      state.inputs = { num1:'', num2:'' };
+      els.num1.value = '';
+      els.num2.value = '';
+      state.touched = { num1:false, num2:false };
+      clearErrors();
+      setEmptyState();
+      state.suppressSave = false;
+      if (canUseStorage()) localStorage.removeItem(STORAGE_KEY);
+      flashStatus(t().messages.cleared, t().waitingBadge);
+    }
+
+    function legacyCopy(text){
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        return true;
+      } catch (err) {
+        document.body.removeChild(ta);
+        return false;
+      }
+    }
+
+    async function safeCopy(text){
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (err) {}
+      return legacyCopy(text);
+    }
+
+    async function copyResult(){
+      if (!hasReadyResult()) {
+        flashStatus(t().messages.needResult, t().invalidBadge);
+        return;
+      }
+      const text = [
+        currentLang() === 'tr' ? 'Yüzde Hesaplama Sonucu' : 'Percentage Calculation Result',
+        `${document.getElementById('label1').textContent}: ${els.num1.value || '—'}`,
+        `${document.getElementById('label2').textContent}: ${els.num2.value || '—'}`,
+        `${document.getElementById('mainLabel').textContent}: ${els.mainResult.textContent}`,
+        `${document.getElementById('extraLabel').textContent}: ${els.extraResult.textContent}`,
+        `${document.getElementById('formulaLabel').textContent}: ${els.formulaResult.textContent}`,
+        `${document.getElementById('summaryTitle').textContent}: ${els.summaryText.textContent}`
+      ].join('\n');
+      const ok = await safeCopy(text);
+      flashStatus(ok ? t().messages.copied : t().messages.copyFail, ok ? t().readyBadge : t().invalidBadge);
+    }
+
+    async function shareResult(){
+      if (!hasReadyResult()) {
+        flashStatus(t().messages.needResult, t().invalidBadge);
+        return;
+      }
+      const shareText = [
+        `${document.getElementById('mainLabel').textContent}: ${els.mainResult.textContent}`,
+        `${document.getElementById('extraLabel').textContent}: ${els.extraResult.textContent}`
+      ].join('\n');
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: document.title, text: shareText, url: window.location.href });
+          flashStatus(t().messages.shared, t().readyBadge);
+          return;
+        }
+        const ok = await safeCopy(`${shareText}\n${window.location.href}`);
+        flashStatus(ok ? t().messages.shareCopied : t().messages.shareFail, ok ? t().readyBadge : t().invalidBadge);
+      } catch (err) {
+        flashStatus(t().messages.shareFail, t().invalidBadge);
+      }
+    }
+
+    function handleInput(inputKey, el){
+      state.touched[inputKey] = true;
+      setManualMode();
+      clearErrors();
+      updateStateFromInputs();
+      debounceCalculate();
+    }
+
+    function handleFocus(el){
+      const value = parseLocaleNumber(el.value);
+      if (!Number.isFinite(value)) return;
+      el.value = currentLang() === 'tr' ? String(value).replace('.', ',') : String(value);
+    }
+
+    function bindEvents(){
+      document.querySelectorAll('.chip').forEach(ch => {
+        ch.addEventListener('click', () => {
+          state.mode = ch.dataset.mode;
+          setManualMode();
+          updateModeUI();
+          calculate(false);
+        });
+      });
+
+      els.languageSelect.addEventListener('change', () => {
+        state.lang = els.languageSelect.value;
+        setManualMode();
+        updateStaticText();
+        persistState();
+      });
+
+      els.num1.addEventListener('input', () => handleInput('num1', els.num1));
+      els.num2.addEventListener('input', () => handleInput('num2', els.num2));
+      els.num1.addEventListener('focus', () => handleFocus(els.num1));
+      els.num2.addEventListener('focus', () => handleFocus(els.num2));
+      els.num1.addEventListener('blur', () => { formatInputValue(els.num1); updateStateFromInputs(); calculate(false); });
+      els.num2.addEventListener('blur', () => { formatInputValue(els.num2); updateStateFromInputs(); calculate(false); });
+      [els.num1, els.num2].forEach(el => {
+        el.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            setManualMode();
+            calculate(true);
+          }
+        });
+      });
+
+      els.calcBtn.addEventListener('click', () => {
+        setManualMode();
+        const result = calculate(true);
+        if (result) focusResultPanel();
+      });
+      els.exampleBtn.addEventListener('click', fillExample);
+      els.shareBtn.addEventListener('click', shareResult);
+      els.copyBtn.addEventListener('click', copyResult);
+      els.clearBtn.addEventListener('click', clearAll);
+      els.printBtn.addEventListener('click', () => {
+        if (!hasReadyResult()) {
+          flashStatus(t().messages.needResult, t().invalidBadge);
+          return;
+        }
+        window.print();
+      });
+    }
+
+    restoreState();
+    syncInputsFromState();
+    updateStaticText();
+    bindEvents();
+    if (state.inputs.num1 || state.inputs.num2) calculate(false);
+    else setEmptyState();
+    updateActionButtons();
+  </script>
+</body>
+</html>

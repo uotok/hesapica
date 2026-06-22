@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Not Ortalaması Hesaplama | e-Okul Uyumlu 5-12. Sınıf Aracı | Hesapica</title>
+<meta content="5-12. sınıf için e-Okul uyumlu not ortalaması hesaplama aracı. 1. dönem veya 2. dönem ortalamasını, yıl sonu başarı puanını, sınıf geçme yorumunu ve takdir/teşekkür durumunu tek ekranda hesaplayın." name="description"/>
+<meta content="not ortalaması hesaplama, e-okul not hesaplama, ortaokul not ortalaması, lise not ortalaması, takdir teşekkür hesaplama, yıl sonu başarı puanı" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Not Ortalaması Hesaplama | e-Okul Uyumlu 5-12. Sınıf Aracı | Hesapica" name="twitter:title"/>
+<meta content="5-12. sınıf için e-Okul uyumlu not ortalaması hesaplama aracı. 1. dönem veya 2. dönem ortalamasını, yıl sonu başarı puanını, sınıf geçme yorumunu ve takdir/teşekkür durumunu tek ekranda hesaplayın." name="twitter:description"/>
+<meta content="https://hesapica.com/not-ortalamasi-hesaplama" name="twitter:url"/>
+<link href="https://hesapica.com/not-ortalamasi-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Not Ortalaması Hesaplama | e-Okul Uyumlu 5-12. Sınıf Aracı | Hesapica" property="og:title"/>
+<meta content="5-12. sınıf için e-Okul uyumlu not ortalaması hesaplama aracı. 1. dönem veya 2. dönem ortalamasını, yıl sonu başarı puanını, sınıf geçme yorumunu ve takdir/teşekkür durumunu tek ekranda hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/not-ortalamasi-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch">
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1240px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:24px;line-height:1.18;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:28px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .controls-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+    .field{display:flex;flex-direction:column;gap:8px}
+    label{display:block;font-size:15px;font-weight:800;color:#374151}
+    input,select{
+      width:100%;height:56px;border:1.5px solid #cfd8f6;border-radius:16px;padding:0 16px;background:linear-gradient(180deg,#ffffff 0%, #fbfcff 100%);color:var(--text);
+      outline:none;font-size:18px;font-weight:600;box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 1px 2px rgba(15,23,42,.03);
+      transition:border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .2s ease;
+    }
+    input.small-input{height:56px;font-size:18px;padding:0 16px;border-radius:14px}
+    input:hover,select:hover{border-color:#b8c4f2;background:#fff}
+    input:focus,select:focus{border-color:rgba(79,70,229,.54);box-shadow:0 0 0 4px rgba(79,70,229,.09), 0 10px 26px rgba(79,70,229,.08)}
+    input:disabled,select:disabled{background:#f3f5fb;color:#9ca3af;border-color:#dde3f7;box-shadow:none;cursor:not-allowed}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:6px;font-size:14px;color:#4b5563;line-height:1.6}
+    .compact-intro{margin:18px 0 20px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,#ffffff,#f8faff);border:1px solid #e4e8fb;box-shadow:0 10px 24px rgba(79,70,229,.06)}
+    .compact-intro strong{display:block;margin-bottom:8px;font-size:18px;color:#312e81}
+    .compact-intro p{margin:0;font-size:15px;color:#4b5563;line-height:1.75}
+    .toggle-item.emphasis{background:linear-gradient(135deg,#eef2ff,#f8faff);border-color:#dbe2ff;color:#312e81}
+    .toggle-item.soft{background:#fafbff}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .chip{display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;font-size:14px}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:15px 18px;font-weight:800;font-size:16px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn:disabled{opacity:.56;cursor:not-allowed;transform:none !important;box-shadow:none !important}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn-danger{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+    .toggle-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+    .toggle-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;font-size:15px;font-weight:700;color:#374151}
+    .toggle-item input{width:18px;height:18px;margin:0}
+    .table-shell{margin-top:20px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+    .table-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:linear-gradient(135deg,#eef2ff,#f8faff);border-bottom:1px solid var(--line)}
+    .table-head strong{font-size:18px;color:#312e81}
+    .table-head span{font-size:14px;color:#4b5563}
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:separate;border-spacing:0;min-width:1120px}
+    th,td{padding:14px 12px;border-bottom:1px solid #eef2f7;text-align:left;vertical-align:middle}
+    thead th{position:sticky;top:0;background:#fff;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:#6b7280;z-index:2}
+    tbody tr:hover>td{background:#fcfcff}
+    .lesson-name-input{min-width:200px}
+    .hours-input{width:88px}
+    .summary-score{font-weight:900;color:#111827;font-size:18px;letter-spacing:-.02em}
+    .status-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;font-size:14px;font-weight:800;background:#f3f4f6;color:#374151}
+    .status-pill.good{background:#ecfdf5;color:var(--good)}
+    .status-pill.warn{background:#fff7ed;color:var(--warn)}
+    .status-pill.bad{background:#fef2f2;color:var(--bad)}
+    .status-pill.info{background:#eef2ff;color:#4338ca}
+    .row-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .icon-btn{border:none;background:#eef2ff;color:#4338ca;border-radius:12px;padding:11px 14px;font-weight:800;font-size:14px;cursor:pointer}
+    .icon-btn.delete{background:#fef2f2;color:#b91c1c}
+    .detail-row{display:none}
+    .detail-row.show{display:table-row}
+    .detail-cell{padding:0;background:#fafbff}
+    .detail-inner{padding:18px;border-top:1px dashed #dbe2ff;border-bottom:1px dashed #dbe2ff}
+    .detail-actions{display:none}
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .term-box{background:#fff;border:1px solid #e7eaf7;border-radius:18px;padding:18px;transition:opacity .2s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+    .term-box.is-active-term{border-color:#c7d2fe;box-shadow:0 12px 28px rgba(79,70,229,.08)}
+    .term-box.is-secondary-term{background:#fafbff;border-style:dashed}
+    .term-box.hidden-term{display:none}
+    .term-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+    .term-head strong{font-size:17px;color:#312e81}
+    .term-score-badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#4338ca;font-weight:800;font-size:13px}
+    .mini-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .mini-grid.middle{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .mini-grid.high{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .mini-field label{font-size:15px;font-weight:800;color:#4b5563;margin-bottom:6px}
+    .term-help{margin-top:12px;font-size:13px;color:#6b7280}
+    .hidden{display:none !important}
+    .add-row-wrap{padding:16px 18px;background:#fff}
+    .sidebar{position:sticky;top:18px;display:grid;gap:16px;align-self:start}
+    .result-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:26px;min-width:0;overflow-wrap:anywhere}
+    .result-card h3{margin:0 0 14px;font-size:22px;color:var(--primary);letter-spacing:-.02em;line-height:1.25}
+    .main-number{font-size:46px;font-weight:900;letter-spacing:-.04em;line-height:1.04;word-break:break-word}
+    .main-sub{margin-top:12px;font-size:15px;color:#4b5563;line-height:1.78}
+    .result-list{display:grid;gap:14px;margin-top:16px}
+    .result-row{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:14px 0;border-top:1px solid #eef2f7;min-width:0}
+    .result-row:first-child{border-top:none;padding-top:0}
+    .result-row strong{font-size:16px;color:#374151;line-height:1.6;min-width:0}
+    .result-row span{font-weight:800;text-align:right;font-size:17px;letter-spacing:-.01em;line-height:1.55;min-width:0;word-break:break-word}
+    .decision-box{padding:16px;border-radius:18px;background:#f8faff;border:1px solid #e5e7eb}
+    .decision-box.good{background:#ecfdf5;border-color:#bbf7d0}
+    .decision-box.warn{background:#fff7ed;border-color:#fed7aa}
+    .decision-box.bad{background:#fef2f2;border-color:#fecaca}
+    .decision-title{font-size:17px;font-weight:900;margin-bottom:6px}
+    .decision-text{font-size:15px;color:#4b5563;line-height:1.78;overflow-wrap:anywhere}
+    .lesson-result-table{width:100%;min-width:unset}
+    .lesson-result-table th,.lesson-result-table td{padding:13px 10px;font-size:14px}
+    .info-card{margin-top:24px}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .info-block{padding:18px;border:1px solid var(--line);border-radius:20px;background:#fff}
+    .info-block h3{margin:0 0 8px;color:var(--primary);font-size:18px}
+    .info-block p,.info-block li{font-size:15px;color:#4b5563;line-height:1.7}
+    .info-block ul{margin:10px 0 0;padding-left:18px}
+    .empty-box{padding:18px;border-radius:18px;background:#f8fafc;border:1px dashed #cbd5e1;color:#475569;font-size:15px;line-height:1.7}
+    .input-error{border-color:#fca5a5 !important;background:#fff7f7 !important}
+    .helper-bar{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .helper-badge{display:inline-flex;align-items:center;padding:9px 12px;border-radius:999px;background:#fff;border:1px solid #e5e7eb;color:#374151;font-size:14px;font-weight:700}
+    .context-box{margin-top:16px;padding:14px 16px;border-radius:18px;background:linear-gradient(135deg,#eef2ff,#f8faff);border:1px solid #dbe2ff;color:#374151;font-size:15px;line-height:1.7}
+    .context-box strong{color:#312e81}
+    .result-card.result-flash{box-shadow:0 0 0 4px rgba(79,70,229,.10), var(--shadow);transform:translateY(-1px)}
+    .main-label{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:12px;font-weight:800}
+
+    .quick-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 20px}
+    .guide-card{padding:16px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px rgba(79,70,229,.06)}
+    .guide-card strong{display:block;margin-bottom:6px;font-size:17px;color:#312e81}
+    .guide-card span{display:block;font-size:14px;color:#4b5563;line-height:1.65}
+    .toolbar-note{margin-top:12px;font-size:14px;color:#4b5563;line-height:1.72}
+    .toolbar-note strong{color:#312e81}
+    .status-panel{padding:16px;border-radius:18px;background:linear-gradient(135deg,#eef2ff,#f8faff);border:1px solid #dbe2ff}
+    .toolbar .btn-primary{grid-column:1 / -1}
+    .status-panel .status-pill{margin-bottom:10px}
+    .status-panel p{margin:0;font-size:15px;color:#4b5563;line-height:1.8;overflow-wrap:anywhere}
+    .goal-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+    .goal-legend-item{min-width:0;padding:14px 15px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 18px rgba(79,70,229,.06)}
+    .goal-legend-item strong{display:block;margin-bottom:6px;font-size:18px;line-height:1.2;color:#111827}
+    .goal-legend-item span{display:block;font-size:14px;line-height:1.65;color:#4b5563;overflow-wrap:anywhere}
+    .goal-legend-note{grid-column:1 / -1;padding:14px 16px;border-radius:16px;background:#f8fafc;border:1px dashed #dbe2ff;font-size:14px;line-height:1.75;color:#4b5563}
+    .goal-highlight{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800}
+    .goal-highlight.good{background:#ecfdf5;color:#047857}
+    .goal-highlight.info{background:#eef2ff;color:#4338ca}
+    .goal-highlight.warn{background:#fff7ed;color:#b45309}
+    .goal-highlight.bad{background:#fef2f2;color:#b91c1c}
+
+    .seo-card{margin-top:24px}
+    .seo-columns{display:grid;grid-template-columns:1.08fr .92fr;gap:20px}
+    .formula-box{padding:18px;border:1px solid var(--line);border-radius:20px;background:#fff}
+    .formula-box h3{margin:0 0 8px;color:var(--primary);font-size:18px}
+    .formula-box p,.formula-box li{font-size:15px;color:#4b5563;line-height:1.75}
+    .formula-box ul{margin:10px 0 0;padding-left:18px}
+    .faq-list{display:grid;gap:14px}
+    .faq-item{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden}
+    .faq-item summary{cursor:pointer;list-style:none;padding:18px 20px;font-size:17px;font-weight:800;color:#1f2937;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:'+';font-size:24px;line-height:1;color:#4f46e5}
+    .faq-item[open] summary::after{content:'−'}
+    .faq-body{padding:0 20px 18px;color:#4b5563;font-size:15px;line-height:1.8}
+    .faq-body p{margin:0}
+    .trust-note{margin-top:14px;padding:14px 16px;border-radius:16px;background:#f8fafc;border:1px dashed #cbd5e1;color:#475569;font-size:14px;line-height:1.7}
+    .related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;box-shadow:0 16px 34px rgba(79,70,229,.18)}
+    .related-card strong{display:block;font-size:18px;line-height:1.25;margin-bottom:8px}
+    .related-card span{display:block;font-size:14px;line-height:1.7;color:rgba(255,255,255,.92)}
+    .related-card em{display:inline-flex;margin-top:14px;font-style:normal;font-weight:800;font-size:14px;opacity:.95}
+    .related-card:hover{transform:translateY(-2px);transition:transform .18s ease}
+    .related-card:focus-visible{outline:3px solid rgba(255,255,255,.85);outline-offset:3px}
+    .related-card small{display:block;margin-top:10px;font-size:13px;color:rgba(255,255,255,.88);line-height:1.65}
+    .section-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:13px;font-weight:800;margin-bottom:10px}
+    .section-intro{margin:0 0 18px;font-size:16px;line-height:1.8;color:#4b5563}
+    .related-grid .related-card{min-height:100%}
+
+    .footer-space{height:22px}
+    @media (max-width:1080px){
+      .hero-grid,.tool-layout,.info-grid,.detail-grid,.seo-columns{grid-template-columns:1fr}
+      .sidebar{position:static}
+    }
+    @media (max-width:900px){
+      .controls-grid,.quick-guide,.related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .mini-grid,.mini-grid.middle,.mini-grid.high{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.result-card{padding:20px}
+      .hero{border-radius:24px}
+      .card,.result-card,.table-shell{border-radius:20px}
+      .main-number{font-size:36px}
+      .table-wrap{overflow:visible}
+      .toolbar{gap:10px}
+    }
+    @media (max-width:760px){
+      .topbar{padding:12px 0 6px}
+      .breadcrumb{font-size:12px}
+      .hero h1{font-size:30px;line-height:1.12}
+      .hero p,.hero-box p,.hero-box li,.section-note,.toolbar-note,.context-box,.decision-text,.main-sub,.info-block p,.info-block li,.faq-body,.formula-box p,.formula-box li{font-size:16px;line-height:1.7}
+      .hero-box strong{font-size:21px}
+      .controls-grid,.quick-guide,.related-grid,.mini-grid,.mini-grid.middle,.mini-grid.high{grid-template-columns:1fr}
+      .toggle-row{flex-direction:column}
+      .toolbar{grid-template-columns:1fr 1fr}
+      .btn,.toggle-item{width:100%}
+      .goal-legend{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .table-shell{overflow:visible}
+      .table-head{align-items:flex-start;flex-direction:column;padding:16px}
+      .table-wrap{overflow:visible;padding:12px}
+      table{min-width:0;display:block;border-spacing:0}
+      thead{display:none}
+      tbody{display:block}
+      .lesson-summary,
+      .detail-row{display:block;width:100%}
+      .lesson-summary{margin-bottom:10px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(79,70,229,.08);overflow:hidden}
+      .lesson-summary td{display:block;padding:12px 14px;border-bottom:1px solid #eef2f7}
+      .lesson-summary td:last-child{border-bottom:none}
+      .lesson-summary td::before{content:attr(data-label);display:block;margin-bottom:6px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#6b7280}
+      .lesson-summary td[data-label="1. dönem"],
+      .lesson-summary td[data-label="2. dönem"],
+      .lesson-summary td[data-label="Yıl sonu"],
+      .lesson-summary td[data-label="Durum"],
+      .lesson-summary td[data-label="İşlemler"]{display:none}
+      .lesson-name-input{min-width:0}
+      .hours-input{width:100%}
+      .row-actions{display:flex;gap:8px;width:100%}
+      .row-actions .icon-btn{flex:1;justify-content:center}
+      .detail-row{margin:0 0 16px}
+      .detail-cell{display:block;padding:0;background:transparent}
+      .detail-inner{padding:0}
+      .detail-actions{display:flex;gap:10px;margin-top:16px}
+      .detail-actions .icon-btn{flex:1;justify-content:center}
+      .detail-options{margin-top:14px;padding:14px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0}
+      .detail-options-title{display:block;margin-bottom:10px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#64748b}
+      .term-box{padding:16px;border-radius:16px}
+      .term-head{align-items:flex-start;flex-direction:column}
+      .mini-field label{font-size:14px}
+      input,select,input.small-input{height:54px;font-size:17px}
+      label{font-size:14px}
+      .hint,.term-help,.toolbar-note,.helper-badge,.guide-card span,.faq-item summary,.faq-body,.trust-note,.context-box,.main-sub{font-size:15px}
+      .lesson-result-table{display:block}
+      .lesson-result-table thead{display:none}
+      .lesson-result-table tbody{display:grid;gap:12px}
+      .lesson-result-table tr{display:block;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.06)}
+      .lesson-result-table td{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:12px 14px;border-bottom:1px solid #eef2f7;font-size:14px}
+      .lesson-result-table td:last-child{border-bottom:none}
+      .lesson-result-table td::before{content:attr(data-label);font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#6b7280;flex:0 0 96px}
+    }
+    @media (max-width:520px){
+      .container{width:min(100% - 16px,100%)}
+      .hero,.card,.result-card{padding:18px}
+      .hero{border-radius:22px}
+      .card,.result-card,.table-shell{border-radius:18px}
+      .hero h1{font-size:28px}
+      .hero p{font-size:16px}
+      .eyebrow-pill,.hero-chip,.helper-badge,.goal-highlight,.main-label{font-size:12px}
+      .card h2,.result-card h3{font-size:20px}
+      .main-number{font-size:32px}
+      .table-wrap{padding:10px}
+      .lesson-summary td,.lesson-result-table td{padding:11px 12px}
+      .lesson-result-table td{flex-direction:column;gap:4px}
+      .lesson-result-table td::before{flex:0 0 auto}
+      .guide-card strong{font-size:16px}
+      .toggle-item{padding:11px 13px}
+      .toolbar{grid-template-columns:1fr}
+      .btn{padding:14px 16px;font-size:15px}
+      .goal-legend{grid-template-columns:1fr}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.toolbar,.add-row-wrap,.row-actions,.table-head button,.icon-btn{display:none !important}
+      .tool-layout,.hero-grid,.info-grid,.detail-grid{grid-template-columns:1fr !important}
+      .card,.result-card,.hero,.term-box,.info-block{box-shadow:none !important;border:1px solid #d1d5db !important}
+      .detail-row{display:table-row !important}
+      .detail-inner{padding:12px}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Not Ortalaması Hesaplama",
+    "url":"https://hesapica.com/not-ortalamasi-hesaplama",
+    "applicationCategory":"EducationalApplication",
+    "operatingSystem":"Web",
+    "description":"Türkiye'deki ortaokul ve lise öğrencileri için e-Okul uyumlu not ortalaması, yıl sonu başarı puanı ve belge durumu hesaplama aracı."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Öğrenciler","item":"https://hesapica.com/#ogrenci"},
+      {"@type":"ListItem","position":3,"name":"Not Ortalaması Hesaplama","item":"https://hesapica.com/not-ortalamasi-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Bu araç e-Okul ile birebir aynı sonucu verir mi?",
+        "acceptedAnswer":{"@type":"Answer","text":"Araç, MEB yönetmeliklerindeki standart ortaokul ve lise puanlama mantığına göre çalışır. Okulun özel kararı, nakil, telafi programı veya istisnai durumlar varsa e-Okul kaydı farklılık gösterebilir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Tek dönem not girince neden yıl sonu puanı görünmüyor?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yıl sonu puanı için aynı dersin hem 1. dönem hem 2. dönem puanının oluşması gerekir. Tek dönem girildiğinde araç seçili dönem ön izlemesini gösterir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Belge dönemi seçince neden diğer dönem kutuları kapanıyor?",
+        "acceptedAnswer":{"@type":"Answer","text":"Araç mobil karmaşayı azaltmak için varsayılan olarak yalnız seçilen dönemin giriş kutularını açık bırakır. Yıl sonu puanı görmek için iki dönemi birden düzenleme seçeneği açılabilir."}
+      },
+      {
+        "@type":"Question",
+        "name":"3. yazılı her derste açılır mı?",
+        "acceptedAnswer":{"@type":"Answer","text":"Hayır. Lise modunda haftalık ders saati 6 ve üzeri olan derslerde, zümre kararıyla üçüncü yazılı yapılabilen dersler için açılır. Ortaokul modunda standart iki yazılı yapısı esas alınır."}
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+</link><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1240px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;border-radius:16px;background:#fff1f2;color:#991b1b;font:600 15px/1.6 Inter,system-ui,sans-serif">Bu aracın çalışması için JavaScript açık olmalıdır.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#ogrenci">Öğrenciler</a>
+<span>/</span>
+<strong>Not Ortalaması Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • e-Okul uyumlu öğrenci aracı</span>
+<h1>Not ortalamanı, yıl sonu puanını ve belge durumunu tek ekranda gör</h1>
+<p>Bu araç Türkiye'deki <strong>5-8. sınıf ortaokul</strong> ve <strong>9-12. sınıf lise</strong> öğrencileri için e-Okul mantığına göre çalışır. Ders bazlı not girişiyle <strong>1. dönem veya 2. dönem ortalamasını</strong>, <strong>yıl sonu başarı puanını</strong>, <strong>sınıf geçme yorumunu</strong> ve <strong>takdir / teşekkür</strong> durumunu daha sade akışla gösterir. <strong>2025-2026 öğretim yılı için 12. sınıflarda kademeli geçiş hükmü</strong> ayrıca dikkate alınır.</p>
+<div class="hero-chips">
+<span class="hero-chip">5-8 ortaokul e-Okul mantığı</span>
+<span class="hero-chip">9-12 lise dönem ve yıl sonu</span>
+<span class="hero-chip">Takdir / teşekkür hesabı</span>
+<span class="hero-chip">Sınıf geçme yorumu</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Nasıl kullanılır?</div>
+<strong>Önce sınıfını seç, sonra derslerini tabloya tek tek ekle</strong>
+<ul>
+<li>Ders adını ve haftalık ders saatini gir.</li>
+<li>Detay açıp okul kademene göre yazılı, performans, katılım, proje ve gerekiyorsa uygulama puanlarını gir.</li>
+<li>Seçili dönem sonucu otomatik ön izlenir; tam yıl sonucu için aynı dersin iki dönem puanını da girmelisin.</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container">
+<div class="tool-layout">
+<section class="card">
+<h2>e-Okul uyumlu not giriş alanı</h2>
+<p class="section-note" id="introText">Önce sınıf düzeyini ve belge dönemini seç. Sonra derslerini tabloya ekleyip yalnız ihtiyacın olan dönem kutularını doldur. Tek dönem dolarsa seçili dönem ön izlemesi, aynı dersin iki dönemi de dolarsa yıl sonu sonucu oluşur. Belli bir ders sayısı zorunlu değildir; eksiksiz girilmiş her ders otomatik hesaba katılır.</p>
+<div aria-label="Kullanım özeti" class="compact-intro">
+<strong>En sade kullanım akışı</strong>
+<p>Önce sınıf düzeyini ve belge dönemini seç. Sonra dersi ekleyip yalnız seçtiğin dönemin kutularını doldur. Yıl sonu başarı puanı görmek istersen aşağıdaki <strong>İki dönemi birden düzenle</strong> seçeneğini açıp diğer dönemi de ekleyebilirsin.</p>
+</div>
+<div class="controls-grid">
+<div class="field">
+<label for="classLevel">Sınıf düzeyi</label>
+<select id="classLevel">
+<option selected="" value="5">5. sınıf</option>
+<option value="6">6. sınıf</option>
+<option value="7">7. sınıf</option>
+<option value="8">8. sınıf</option>
+<option value="9">9. sınıf</option>
+<option value="10">10. sınıf</option>
+<option value="11">11. sınıf</option>
+<option value="12">12. sınıf</option>
+</select>
+<div class="hint" id="stageHint">5-8. sınıflarda ortaokul hesaplama mantığı, 9-12. sınıflarda lise hesaplama mantığı kullanılır.</div>
+</div>
+<div class="field">
+<label for="activeTerm">Belge dönemi</label>
+<select id="activeTerm">
+<option value="1">1. dönem belgesi</option>
+<option value="2">2. dönem belgesi</option>
+</select>
+<div class="hint" id="activeTermHint">Takdir / teşekkür sonucu seçtiğin dönemin ağırlıklı ortalamasına göre gösterilir.</div>
+</div>
+</div>
+<div class="toggle-row" style="margin-top:14px">
+<label class="toggle-item emphasis" id="dualTermEditWrap">
+<input id="dualTermEdit" type="checkbox"/>
+<span>İki dönemi birden düzenle</span>
+</label>
+</div>
+<div class="chip-row" id="stageChips">
+<span class="chip active" id="chipMiddle">Ortaokul 5-8</span>
+<span class="chip" id="chipHigh">Lise 9-12</span>
+</div>
+<div class="toggle-row" id="globalToggles">
+<label class="toggle-item" id="termToggleWrap">
+<input checked="" id="certificateBarrier" type="checkbox"/>
+<span>Belgeyi engelleyen disiplin / devamsızlık durumu yok</span>
+</label>
+<label class="toggle-item hidden" id="behaviorToggleWrap">
+<input checked="" id="behavior100" type="checkbox"/>
+<span>Davranış puanı 100</span>
+</label>
+<div class="toggle-item hidden" id="carryWrap">
+<span>Alt sınıflardan gelen sorumlu ders</span>
+<input class="small-input" id="carryResponsibility" min="0" max="20" placeholder="0" step="1" style="width:88px" type="number"/>
+</div>
+</div>
+<div id="calculatorMode">
+<div class="helper-bar">
+<span class="helper-badge" id="formulaBadge">Ortaokul formülü: 2 yazılı + katılım ortalaması + varsa proje</span>
+<span class="helper-badge" id="editingModeBadge">Şu an yalnız 1. dönem giriş alanları açık</span>
+<span class="helper-badge" id="policyBadge">Ortaokul geçiş mantığı aktif</span>
+</div>
+<datalist id="lessonSuggestions">
+<option value="Türkçe"></option>
+<option value="Türk Dili ve Edebiyatı"></option>
+<option value="Matematik"></option>
+<option value="Fen Bilimleri"></option>
+<option value="Sosyal Bilgiler"></option>
+<option value="İngilizce"></option>
+<option value="Fizik"></option>
+<option value="Kimya"></option>
+<option value="Biyoloji"></option>
+<option value="Tarih"></option>
+<option value="Coğrafya"></option>
+<option value="Din Kültürü ve Ahlak Bilgisi"></option>
+<option value="Beden Eğitimi"></option>
+<option value="Görsel Sanatlar"></option>
+<option value="Müzik"></option>
+</datalist>
+<div class="table-shell">
+<div class="table-head">
+<div>
+<strong>Ders tablosu</strong>
+<span id="tableHeadText">Dersleri ekleyip puanlarını gir. Tek dönem doluysa dönem ön izlemesi, iki dönem doluysa yıl sonu sonucu oluşur. Sağ panel otomatik güncellenir.</span>
+</div>
+<span class="helper-badge">Araç otomatik hesaplar • Sonucu Gör sağ panele kaydırır</span>
+</div>
+<div class="table-wrap">
+<table aria-describedby="tableHeadText">
+<thead>
+<tr>
+<th>Ders adı</th>
+<th>Haftalık saat</th>
+<th>1. dönem</th>
+<th>2. dönem</th>
+<th>Yıl sonu</th>
+<th>Durum</th>
+<th>İşlem</th>
+</tr>
+</thead>
+<tbody id="lessonTableBody"></tbody>
+</table>
+</div>
+<div class="add-row-wrap">
+<button class="btn btn-secondary" id="addLessonBottomBtn" type="button">Ders Ekle</button>
+</div>
+</div>
+</div>
+<div class="toolbar">
+<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Yazdır</button>
+<button class="btn btn-ghost" id="pdfBtn" type="button">PDF Al</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Özeti Kopyala</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Verileri Sıfırla</button>
+</div>
+<div class="toolbar-note"><strong>İpucu:</strong> Araç sen yazarken otomatik hesaplar. <strong>Sonucu Gör</strong> ve <strong>Örnek Veri</strong> düğmeleri geçerli sonuç oluştuğunda sonucu vurgulayarak sağ panele kaydırır; dışa aktarma düğmelerini ise yalnız sonuç oluştuğunda kullanman en temiz akıştır.</div>
+<div aria-live="polite" class="context-box" id="resultStateBox"><strong>Başlangıç modu:</strong> Şu an yalnız seçtiğin dönemin kutuları açık. En az 1 dersi eksiksiz doldurduğunda dönem ön izlemesi oluşur; yıl sonu için iki dönemi de girebilirsin.</div>
+</section>
+<aside class="sidebar">
+<section class="result-card" id="resultPanel">
+<h3>Ana sonuç</h3>
+<div aria-live="polite" class="main-number" id="mainResult">—</div>
+<div aria-live="polite" class="main-sub" id="mainSub">Derslerini tabloya ekleyip puanlarını girdiğinde burada seçili dönem sonucu veya yıl sonu başarı puanı görünür.</div>
+<div class="main-label" id="mainResultLabel">Yıl sonu başarı puanı</div>
+</section>
+<section class="result-card">
+<h3>Belge durumu</h3>
+<div class="result-list">
+<div class="result-row"><strong>1. dönem</strong><span id="certificateTerm1">—</span></div>
+<div class="result-row"><strong>2. dönem</strong><span id="certificateTerm2">—</span></div>
+<div class="result-row"><strong>Seçili dönem</strong><span id="certificateSelected">—</span></div>
+</div>
+</section>
+<section class="result-card">
+<h3>Sınıf geçme yorumu</h3>
+<div class="decision-box" id="decisionBox">
+<div aria-live="polite" class="decision-title" id="decisionTitle">Veri bekleniyor</div>
+<div aria-live="polite" class="decision-text" id="decisionText">Sonuç üretmek için önce en az bir dersin gerekli alanlarını doldur.</div>
+</div>
+</section>
+<section class="result-card" id="summaryCard">
+<h3>Kısa durum</h3>
+<div class="result-list">
+<div class="result-row"><strong>Tam yıl hazır ders</strong><span id="summaryLessonCount">—</span></div>
+<div class="result-row"><strong>Seçili dönem hazır ders</strong><span id="summaryActiveLessonCount">—</span></div>
+<div class="result-row"><strong>Başarısız ders</strong><span id="summaryFailedCount">—</span></div>
+<div class="result-row"><strong>Seçili dönem ortalaması</strong><span id="summarySelectedAverage">—</span></div>
+<div class="result-row"><strong>Sonuç tipi</strong><span id="summaryResultType">—</span></div>
+</div>
+</section>
+<section class="result-card">
+<h3>Belge hedefi</h3>
+<div class="status-panel">
+<span aria-live="polite" class="goal-highlight info" id="goalBadge">Veri bekleniyor</span>
+<p aria-live="polite" id="goalText">Seçili dönem için ortalama oluştuktan sonra burada teşekkür / takdir hedefi yorumu görünür.</p>
+</div>
+<div aria-label="Belge eşikleri özeti" class="goal-legend">
+<div class="goal-legend-item">
+<strong>70,00+</strong>
+<span>Teşekkür aralığı burada başlar.</span>
+</div>
+<div class="goal-legend-item">
+<strong>85,00+</strong>
+<span>Takdir aralığı burada başlar.</span>
+</div>
+<div class="goal-legend-note">
+              Seçili dönem ortalaman yükselse bile eşik altında kalan dersler veya belgeyi engelleyen durum işaretleri sonucu değiştirebilir. Bu kutu yalnız hedef yorumunu gösterir; ana işlem düğmeleri üst taraftadır.
+            </div>
+</div>
+</section>
+</aside>
+</div>
+<section class="card info-card">
+<h2>Bu araç hangi mantıkla çalışır?</h2>
+<div class="info-grid">
+<div class="info-block">
+<h3>3. yazılı ne zaman açılır?</h3>
+<p>Bu araçta <strong>3. yazılı</strong> yalnızca lise modunda ve haftalık ders saati <strong>6 ve üzeri</strong> olan derslerde açılır. Ortaokul modunda standart iki yazılı yapısı esas alınır.</p>
+</div>
+<div class="info-block">
+<h3>Ortaokul 5-8</h3>
+<p>Ortaokul modunda dönem puanı; yazılı puanları ile ders etkinliklerine katılım ve varsa proje verisine göre oluşturulur. Türkçe için eşik 70, diğer dersler için 50 olarak değerlendirilir.</p>
+</div>
+<div class="info-block">
+<h3>Lise 9-12</h3>
+<p>Lise modunda yazılılar, performans puanları, varsa proje ve uygulama / temrin puanları kullanılır. <strong>2025-2026 yılı için 9-11. sınıflarda yeni sınıf geçme kuralı, 12. sınıflarda ise kademeli geçiş nedeniyle eski hüküm</strong> dikkate alınır.</p>
+</div>
+<div class="info-block">
+<h3>Belge sonucu</h3>
+<p>Takdir / teşekkür hesabı okul kademesine göre farklıdır. Araç seçtiğin dönemin ağırlıklı ortalamasını esas alır ve belgeyi engelleyen durum işaretliyse sonucu buna göre sınırlar.</p>
+</div>
+</div>
+</section>
+<section class="card info-card">
+<h2>Ders sonuç tablosu</h2>
+<p class="section-note">Bu tablo tek dönem girilmiş dersleri de gösterir. Yıl sonu sütunu yalnızca aynı dersin iki dönemi de doluysa oluşur.</p>
+<div class="empty-box" id="lessonResultsWrap">Henüz hesaplanmış ders sonucu yok.</div>
+</section>
+<section class="card seo-card">
+<h2>e-Okul not ortalaması nasıl hesaplanır?</h2>
+<div class="seo-columns">
+<div class="formula-box">
+<h3>Ortaokul 5-8 hesaplama mantığı</h3>
+<p>Ortaokul tarafında araç; yazılı puanları, ders etkinliklerine katılım puanları ve varsa proje verisini birlikte değerlendirir. Haftalık ders saati 2 ve altı olan derslerde 2, 2’den fazla olan derslerde 3 katılım puanı mantığı esas alınır. Yıl sonu başarı puanı ise derslerin ağırlıklı puanları toplamının toplam haftalık ders saatine bölünmesiyle oluşur.</p>
+<ul>
+<li>Türkçe için başarı eşiği: <strong>70</strong></li>
+<li>Diğer dersler için başarı eşiği: <strong>50</strong></li>
+<li>Teşekkür: <strong>70,00 - 84,99</strong></li>
+<li>Takdir: <strong>85,00 ve üzeri</strong></li>
+</ul>
+</div>
+<div class="formula-box">
+<h3>Lise 9-12 hesaplama mantığı</h3>
+<p>Lise tarafında dönem puanı; yazılı puanları, her dönemde verilen performans puanları, varsa proje puanı ve uygulamalı derslerde temrin / hizmet puanlarının aritmetik ortalamasıyla oluşur. Aynı dersin 1. ve 2. dönem puanları tamamlandığında yıl sonu puanı ve sınıf geçme yorumu da otomatik üretilir.</p>
+<ul>
+<li>Bir dersten başarılı sayılma: <strong>iki dönem ortalaması en az 50</strong> veya <strong>2. dönem puanı en az 70</strong></li>
+<li>Doğrudan geçme: <strong>tüm dersler başarılı</strong> veya <strong>en fazla 1 başarısız ders + yıl sonu başarı puanı en az 50</strong></li>
+<li>Belge hesabı: <strong>seçili dönemin ağırlıklı ortalaması</strong> üzerinden yapılır</li>
+</ul>
+</div>
+</div>
+<div class="trust-note">Bu araç standart ortaokul ve lise akışını hedefler. <strong>2025-2026 öğretim yılı için 12. sınıfta kademeli geçiş hükmü</strong> ayrıca dikkate alınmıştır. Nakil, telafi programı, işletmede beceri eğitimi, özel eğitim veya okulun özel kurul kararları gibi istisnai durumlarda e-Okul ekranındaki sonuç farklı olabilir.</div>
+</section>
+<section class="card seo-card">
+<h2>Sık sorulan sorular</h2>
+<div class="faq-list">
+<details class="faq-item" open="">
+<summary>Bu araç e-Okul ile birebir aynı sonucu verir mi?</summary>
+<div class="faq-body"><p>Araç, MEB yönetmeliklerindeki standart ortaokul ve lise puanlama mantığına göre çalışır. Okulun özel kararı, nakil, telafi programı veya istisnai durumlar varsa e-Okul ekranındaki sonuç farklılaşabilir.</p></div>
+</details>
+<details class="faq-item">
+<summary>Tek dönem not girince neden yıl sonu puanı görünmüyor?</summary>
+<div class="faq-body"><p>Yıl sonu puanı için aynı dersin hem 1. dönem hem 2. dönem puanının oluşması gerekir. Tek dönem verisiyle araç seçili dönem ön izlemesini ve belge yorumunu gösterir; tam yıl sonucu için ikinci dönemi de doldurmalı veya üstteki iki dönem modunu açmalısın.</p></div>
+</details>
+<details class="faq-item">
+<summary>Ortaokulda neden 3. yazılı alanı görünmüyor?</summary>
+<div class="faq-body"><p>Bu sürümde ortaokul için standart iki yazılı mantığı esas alınır. 3. yazılı seçeneği yalnızca lise modunda ve haftalık ders saati 6 ve üzeri olan derslerde, zümre kararıyla uygulanabilen dersler için açılır.</p></div>
+</details>
+<details class="faq-item">
+<summary>Belge dönemi seçince neden diğer dönem kutuları kapanıyor?</summary>
+<div class="faq-body"><p>Yeni sade giriş modunda araç, mobil karmaşayı azaltmak için varsayılan olarak yalnız seçtiğin dönemin kutularını açık bırakır. Yıl sonu puanı görmek istersen <strong>İki dönemi birden düzenle</strong> seçeneğini açabilir ve diğer dönemi de aynı tabloda girebilirsin.</p></div>
+</details>
+<details class="faq-item">
+<summary>12. sınıfta neden sınıf geçme yorumu farklı görünebilir?</summary>
+<div class="faq-body"><p>Bu araç 2025-2026 öğretim yılı için kademeli geçiş hükmünü dikkate alır. Bu yüzden <strong>12. sınıf öğrencilerinde eski geçiş kuralı</strong>, 9-11. sınıflarda ise yeni kural esas alınır. Son yorum yine okul yönetimi ve e-Okul kayıtlarıyla birlikte değerlendirilmelidir.</p></div>
+</details>
+<details class="faq-item">
+<summary>Ders saati neden önemli?</summary>
+<div class="faq-body"><p>Yıl sonu başarı puanı ve dönem ağırlıklı ortalama hesabında derslerin haftalık ders saatleri ağırlık olarak kullanılır. Bu yüzden özellikle ana derslerin saat bilgisini doğru girmek, sonucun e-Okul mantığına daha yakın çıkmasını sağlar.</p></div>
+</details>
+</div>
+</section>
+<section class="card">
+<span class="section-kicker">İlgili bağlantılar</span>
+<h2>İlgili Hesaplama Araçları</h2>
+<p class="section-intro">Not ortalamasını hesapladıktan sonra genel ortalama veya yüzde dönüşümleri için şu araçlara geçebilirsin. Bağlantılar özellikle öğrenci ve öğretmen kullanım akışına göre seçildi.</p>
+<div aria-label="İlgili hesaplama araçları" class="related-grid">
+<a class="related-card" href="/">
+<strong>Ana Sayfa</strong>
+<span>Hesapica içindeki diğer eğitim, finans ve günlük yaşam araçlarına hızlıca dön.</span>
+<small>Kategorilere göz at • yeni araç keşfet</small>
+<em>Ana sayfaya git →</em>
+</a>
+<a class="related-card" href="/ortalama-hesaplama">
+<strong>Ortalama Hesaplama</strong>
+<span>Sayı, sınav veya puan serilerinin temel ortalamasını hızlıca görmek için kullan.</span>
+<small>Basit ortalama • hızlı kontrol</small>
+<em>Ortalama aracına git →</em>
+</a>
+<a class="related-card" href="/yuzde-hesaplama">
+<strong>Yüzde Hesaplama</strong>
+<span>Artış, azalış, başarı oranı veya puan yüzdesi gibi dönüşümleri tek ekranda hesapla.</span>
+<small>Yüzde artış • yüzde düşüş • oran hesabı</small>
+<em>Yüzde aracına git →</em>
+</a>
+</div>
+</section>
+<div class="footer-space"></div>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica:not-ortalamasi-eokul:v11';
+    const state = { inputs:{}, results:null, isValid:false, isCalculated:false, source:'manual' };
+    let suppressPersistence = false;
+    let rowCounter = 0;
+
+    const $ = (id) => document.getElementById(id);
+    const body = $('lessonTableBody');
+
+    function hasMeaningfulResults(results = state.results){
+      if(!results) return false;
+      return Boolean((results.completeRows && results.completeRows.length) || (results.activeRows && results.activeRows.length));
+    }
+
+    function flashResultPanel(){
+      const panel = $('resultPanel');
+      if(!panel) return;
+      panel.classList.add('result-flash');
+      panel.scrollIntoView({ behavior:'smooth', block:'start' });
+      setTimeout(() => panel.classList.remove('result-flash'), 1200);
+    }
+
+    function setTransientButtonText(btn, successText, fallbackText = successText, delay = 1500){
+      if(!btn) return;
+      const original = btn.dataset.originalLabel || btn.textContent;
+      if(!btn.dataset.originalLabel) btn.dataset.originalLabel = original;
+      btn.textContent = successText;
+      setTimeout(() => { btn.textContent = fallbackText || original; }, delay);
+    }
+
+    function setStateSource(source){ state.source = source; }
+
+    function formatNumber(value, digits = 2){
+      if(!Number.isFinite(value)) return '—';
+      return value.toLocaleString('tr-TR', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    }
+
+    function round2(value){
+      if(!Number.isFinite(value)) return NaN;
+      return Math.round((value + Number.EPSILON) * 100) / 100;
+    }
+
+    function round4(value){
+      if(!Number.isFinite(value)) return NaN;
+      return Math.round((value + Number.EPSILON) * 10000) / 10000;
+    }
+
+    function num(value){
+      if(value === null || value === undefined) return NaN;
+      if(typeof value !== 'string') value = String(value);
+      const cleaned = value.replace(/\s+/g, '').replace(/\./g, '').replace(',', '.');
+      const parsed = parseFloat(cleaned);
+      return Number.isFinite(parsed) ? parsed : NaN;
+    }
+
+    function classLevelValue(){
+      const level = Number($('classLevel').value || 5);
+      return Number.isFinite(level) ? level : 5;
+    }
+
+    function stageFromClassLevel(){
+      const level = classLevelValue();
+      if(level >= 5 && level <= 8) return 'middle';
+      return 'high';
+    }
+
+    function highPolicyMeta(){
+      if(stageFromClassLevel() !== 'high'){
+        return { key:'middle', short:'Ortaokul kuralı', badge:'Ortaokul geçiş mantığı aktif', text:'Ortaokul yönetmeliği mantığına göre dönem, yıl sonu ve belge yorumu hesaplanır.' };
+      }
+      const level = classLevelValue();
+      if(level === 12){
+        return {
+          key:'legacy-12',
+          short:'2025-2026 • 12. sınıf geçiş hükmü',
+          badge:'2025-2026 • 12. sınıfta geçiş hükmü',
+          text:'2025-2026 öğretim yılında 12. sınıflar için kademeli geçiş nedeniyle eski doğrudan / sorumlu geçme yorumu uygulanır.'
+        };
+      }
+      return {
+        key:'current-9-11',
+        short:'2025-2026 • 9-11 yeni kural',
+        badge:'2025-2026 • 9-11 yeni kural',
+        text:'2025-2026 öğretim yılında 9-11. sınıflar için yeni sınıf geçme kuralı uygulanır: doğrudan geçiş için en fazla 1 başarısız ders ve yıl sonu başarı puanı en az 50 aranır.'
+      };
+    }
+
+    function activeTerm(){
+      return $('activeTerm').value === '2' ? 2 : 1;
+    }
+
+    function dualTermEditEnabled(){
+      return !!$('dualTermEdit') && $('dualTermEdit').checked;
+    }
+
+    function syncEditingModeUI(){
+      const term = activeTerm();
+      const termText = term === 1 ? '1. dönem' : '2. dönem';
+      const dualMode = dualTermEditEnabled();
+      const hint = dualMode
+        ? `${termText} seçili. İki dönemin giriş alanları da açık; yıl sonu sonucu için her iki dönemi de doldurabilirsin.`
+        : `${termText} seçili. Şu an yalnız ${termText} kutuları açık; diğer dönem gizli kalsa da girilmiş veriler korunur.`;
+      $('activeTermHint').textContent = `Takdir / teşekkür sonucu ${termText} ağırlıklı ortalamasına göre gösterilir. ${dualMode ? 'İki dönemin kutuları da açık.' : 'Diğer dönem kutuları şu an gizli.'}`;
+      if($('editingModeBadge')) $('editingModeBadge').textContent = dualMode ? `İki dönem giriş modu açık • ${termText} hâlâ belge dönemi olarak seçili` : `Şu an yalnız ${termText} giriş alanları açık`;
+      if($('resultStateBox') && !state.isCalculated){
+        $('resultStateBox').innerHTML = `<strong>Başlangıç modu:</strong> ${hint}`;
+      }
+    }
+
+    function syncRowToggleButton(rowId){
+      const detailRow = document.querySelector(`.detail-row[data-detail-for="${rowId}"]`);
+      const toggleBtn = $(`${rowId}-toggle`);
+      const toggleBtnMobile = $(`${rowId}-toggle-mobile`);
+      if(!detailRow) return;
+      const isOpen = detailRow.classList.contains('show');
+      if(toggleBtn) toggleBtn.textContent = isOpen ? 'Detayı Gizle' : 'Detay';
+      if(toggleBtnMobile) toggleBtnMobile.textContent = isOpen ? 'Detayı Gizle' : 'Detayı Aç';
+    }
+
+    function isTurkishCourse(name){
+      const n = (name || '').toLocaleLowerCase('tr-TR');
+      return n.includes('türkçe') || n.includes('turkce') || n.includes('türk dili') || n.includes('turk dili') || n.includes('edebiyat');
+    }
+
+    function createNumberField(id, label, placeholder = '0'){
+      return `
+        <div class="mini-field">
+          <label for="${id}">${label}</label>
+          <input id="${id}" class="small-input" inputmode="decimal" placeholder="${placeholder}">
+        </div>
+      `;
+    }
+
+    function createLessonRow(data = {}){
+      rowCounter += 1;
+      const rowId = `lesson-${rowCounter}`;
+      const summaryRow = document.createElement('tr');
+      summaryRow.className = 'lesson-summary';
+      summaryRow.dataset.rowId = rowId;
+      summaryRow.innerHTML = `
+        <td data-label="Ders adı">
+          <input id="${rowId}-name" class="small-input lesson-name-input" list="lessonSuggestions" placeholder="Örn: Türkçe" value="${escapeHtml(data.name || '')}">
+        </td>
+        <td data-label="Haftalık saat">
+          <input id="${rowId}-hours" class="small-input hours-input" inputmode="numeric" placeholder="5" value="${escapeHtml(String(data.hours || ''))}">
+        </td>
+        <td data-label="1. dönem"><span class="summary-score" id="${rowId}-term1">—</span></td>
+        <td data-label="2. dönem"><span class="summary-score" id="${rowId}-term2">—</span></td>
+        <td data-label="Yıl sonu"><span class="summary-score" id="${rowId}-year">—</span></td>
+        <td data-label="Durum"><span class="status-pill info" id="${rowId}-status">Bekleniyor</span></td>
+        <td data-label="İşlemler">
+          <div class="row-actions">
+            <button type="button" class="icon-btn" id="${rowId}-toggle">Detay</button>
+            <button type="button" class="icon-btn delete" id="${rowId}-delete">Sil</button>
+          </div>
+        </td>
+      `;
+
+      const detailRow = document.createElement('tr');
+      detailRow.className = 'detail-row';
+      detailRow.dataset.detailFor = rowId;
+      detailRow.innerHTML = `
+        <td colspan="7" class="detail-cell">
+          <div class="detail-inner">
+            <div class="detail-grid">
+              <div class="term-box is-active-term" data-row-id="${rowId}" data-term="1">
+                <div class="term-head">
+                  <strong>1. dönem detayları</strong>
+                  <span class="term-score-badge" id="${rowId}-term1-badge">Puan: —</span>
+                </div>
+                <div class="mini-grid">
+                  ${createNumberField(`${rowId}-t1-exam1`, 'Yazılı 1')}
+                  ${createNumberField(`${rowId}-t1-exam2`, 'Yazılı 2')}
+                  ${createNumberField(`${rowId}-t1-exam3`, 'Yazılı 3')}
+                  ${createNumberField(`${rowId}-t1-project`, 'Varsa proje')}
+                  ${createNumberField(`${rowId}-t1-act1`, 'Katılım 1')}
+                  ${createNumberField(`${rowId}-t1-act2`, 'Katılım 2')}
+                  ${createNumberField(`${rowId}-t1-act3`, 'Katılım 3')}
+                  ${createNumberField(`${rowId}-t1-perf1`, 'Performans 1')}
+                  ${createNumberField(`${rowId}-t1-perf2`, 'Performans 2')}
+                  ${createNumberField(`${rowId}-t1-practice`, 'Uygulama / temrin')}
+                </div>
+                <div class="term-help" id="${rowId}-t1-help">Haftalık ders saatine göre gerekli alanları doldur.</div>
+              </div>
+              <div class="term-box" data-row-id="${rowId}" data-term="2">
+                <div class="term-head">
+                  <strong>2. dönem detayları</strong>
+                  <span class="term-score-badge" id="${rowId}-term2-badge">Puan: —</span>
+                </div>
+                <div class="mini-grid">
+                  ${createNumberField(`${rowId}-t2-exam1`, 'Yazılı 1')}
+                  ${createNumberField(`${rowId}-t2-exam2`, 'Yazılı 2')}
+                  ${createNumberField(`${rowId}-t2-exam3`, 'Yazılı 3')}
+                  ${createNumberField(`${rowId}-t2-project`, 'Varsa proje')}
+                  ${createNumberField(`${rowId}-t2-act1`, 'Katılım 1')}
+                  ${createNumberField(`${rowId}-t2-act2`, 'Katılım 2')}
+                  ${createNumberField(`${rowId}-t2-act3`, 'Katılım 3')}
+                  ${createNumberField(`${rowId}-t2-perf1`, 'Performans 1')}
+                  ${createNumberField(`${rowId}-t2-perf2`, 'Performans 2')}
+                  ${createNumberField(`${rowId}-t2-practice`, 'Uygulama / temrin')}
+                </div>
+                <div class="term-help" id="${rowId}-t2-help">Haftalık ders saatine göre gerekli alanları doldur.</div>
+              </div>
+            </div>
+            <div class="detail-options">
+              <span class="detail-options-title">Gerekirse ek alanları aç</span>
+              <div class="toggle-row" style="margin-top:0;margin-bottom:0">
+                <label class="toggle-item" id="${rowId}-third-wrap">
+                  <input type="checkbox" id="${rowId}-third-exam" ${data.thirdExam ? 'checked' : ''}>
+                  <span>3. yazılı notu var</span>
+                </label>
+                <label class="toggle-item hidden ${stageFromClassLevel() === 'high' ? '' : 'hidden'}" id="${rowId}-practice-wrap">
+                  <input type="checkbox" id="${rowId}-practice" ${data.practice ? 'checked' : ''}>
+                  <span>Uygulama / temrin puanı var</span>
+                </label>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <button type="button" class="icon-btn" id="${rowId}-toggle-mobile">Detayı Gizle</button>
+              <button type="button" class="icon-btn delete" id="${rowId}-delete-mobile">Sil</button>
+            </div>
+          </div>
+        </td>
+      `;
+
+
+      body.appendChild(summaryRow);
+      body.appendChild(detailRow);
+
+      if(data.term1){ applyTermData(rowId, 1, data.term1); }
+      if(data.term2){ applyTermData(rowId, 2, data.term2); }
+
+      if(data.open){ detailRow.classList.add('show'); }
+
+      const nameInput = $(`${rowId}-name`);
+      const hoursInput = $(`${rowId}-hours`);
+      const thirdExam = $(`${rowId}-third-exam`);
+      const practice = $(`${rowId}-practice`);
+      const toggleBtn = $(`${rowId}-toggle`);
+      const deleteBtn = $(`${rowId}-delete`);
+      const toggleBtnMobile = $(`${rowId}-toggle-mobile`);
+      const deleteBtnMobile = $(`${rowId}-delete-mobile`);
+
+      nameInput.addEventListener('input', () => { onManualInput(); maybeOpenDetailsForEntry(rowId, false); });
+      hoursInput.addEventListener('input', () => { onManualInput(); syncRowVisibility(rowId); maybeOpenDetailsForEntry(rowId, true); });
+      thirdExam.addEventListener('change', () => { onManualInput(); syncRowVisibility(rowId); });
+      practice.addEventListener('change', () => { onManualInput(); syncRowVisibility(rowId); });
+      const handleToggleDetails = () => {
+        detailRow.classList.toggle('show');
+        syncRowToggleButton(rowId);
+      };
+      const handleDeleteRow = () => {
+        summaryRow.remove();
+        detailRow.remove();
+        onManualInput();
+      };
+      toggleBtn.addEventListener('click', handleToggleDetails);
+      if(toggleBtnMobile) toggleBtnMobile.addEventListener('click', handleToggleDetails);
+      deleteBtn.addEventListener('click', handleDeleteRow);
+      if(deleteBtnMobile) deleteBtnMobile.addEventListener('click', handleDeleteRow);
+
+      [
+        't1-exam1','t1-exam2','t1-exam3','t1-project','t1-act1','t1-act2','t1-act3','t1-perf1','t1-perf2','t1-practice',
+        't2-exam1','t2-exam2','t2-exam3','t2-project','t2-act1','t2-act2','t2-act3','t2-perf1','t2-perf2','t2-practice'
+      ].forEach(suffix => {
+        $(`${rowId}-${suffix}`).addEventListener('input', onManualInput);
+      });
+
+      syncRowVisibility(rowId);
+      syncRowToggleButton(rowId);
+      maybeOpenDetailsForEntry(rowId, false);
+      return rowId;
+    }
+
+    function escapeHtml(value){
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function applyTermData(rowId, termNumber, termData = {}){
+      const prefix = termNumber === 1 ? 't1' : 't2';
+      Object.entries(termData).forEach(([key, value]) => {
+        const el = $(`${rowId}-${prefix}-${key}`);
+        if(el && value !== undefined && value !== null) el.value = value;
+      });
+    }
+
+    function rowIds(){
+      return [...document.querySelectorAll('.lesson-summary')].map(row => row.dataset.rowId);
+    }
+
+    function syncStageUI(){
+      const stage = stageFromClassLevel();
+      $('chipMiddle').classList.toggle('active', stage === 'middle');
+      $('chipHigh').classList.toggle('active', stage === 'high');
+      $('behaviorToggleWrap').classList.toggle('hidden', stage !== 'high');
+      $('carryWrap').classList.toggle('hidden', stage !== 'high');
+
+      const policyMeta = highPolicyMeta();
+      if(stage === 'middle'){
+        $('introText').textContent = 'Ortaokul modunda ders bazlı yazılı, ders etkinliklerine katılım ve varsa proje puanlarıyla seçili dönem ve yıl sonu sonucu hesaplanır.';
+        $('stageHint').textContent = '5-8. sınıflarda ortaokul hesaplama mantığı kullanılır.';
+        $('formulaBadge').textContent = 'Ortaokul formülü: 2 yazılı + katılım ortalaması + varsa proje';
+        $('policyBadge').textContent = policyMeta.badge;
+        $('tableHeadText').textContent = 'Dersleri ekleyip puanlarını gir. Tek dönem doluysa dönem ön izlemesi, iki dönem doluysa yıl sonu sonucu oluşur. Sağ panel otomatik güncellenir.';
+        $('activeTermHint').textContent = 'Takdir / teşekkür sonucu seçtiğin dönemin ağırlıklı ortalamasına göre gösterilir.';
+      } else {
+        $('introText').textContent = 'Lise modunda yazılı, performans, varsa proje ve uygulama / temrin puanlarıyla seçili dönem ve yıl sonu sonucu hesaplanır. 2025-2026 öğretim yılı için 12. sınıflarda kademeli geçiş hükmü ayrıca dikkate alınır.';
+        $('stageHint').textContent = '9-12. sınıflarda lise hesaplama mantığı kullanılır.';
+        $('formulaBadge').textContent = 'Lise formülü: yazılı + performans + varsa proje / uygulama';
+        $('policyBadge').textContent = policyMeta.badge;
+        $('tableHeadText').textContent = 'Dersleri ekleyip puanlarını gir. 50 / 70 kuralı ve sınıf geçme yorumu, sınıf düzeyine ait güncel geçiş hükmüne göre değerlendirilir.';
+        $('activeTermHint').textContent = 'Takdir / teşekkür sonucu seçtiğin dönemin ağırlıklı ortalamasına göre gösterilir.';
+      }
+      syncEditingModeUI();
+      rowIds().forEach(syncRowVisibility);
+      calculateAll();
+    }
+
+    function syncRowVisibility(rowId){
+      const stage = stageFromClassLevel();
+      const hours = Math.max(0, Math.round(num($(`${rowId}-hours`).value) || 0));
+      const canHaveThird = stage === 'high' && hours >= 6;
+      if(!canHaveThird){
+        $(`${rowId}-third-exam`).checked = false;
+      }
+      const hasThird = canHaveThird && $(`${rowId}-third-exam`).checked;
+      const hasPractice = $(`${rowId}-practice`).checked;
+      const activityCount = hours > 2 ? 3 : 2;
+      const dualMode = dualTermEditEnabled();
+      const selectedTerm = activeTerm();
+
+      [1,2].forEach(termNumber => {
+        const prefix = termNumber === 1 ? 't1' : 't2';
+        const termBox = document.querySelector(`.term-box[data-row-id="${rowId}"][data-term="${termNumber}"]`);
+        const isActiveBox = termNumber === selectedTerm;
+        const shouldShow = dualMode || isActiveBox;
+
+        ['exam1','exam2','exam3','project','act1','act2','act3','perf1','perf2','practice'].forEach(key => {
+          const field = $(`${rowId}-${prefix}-${key}`);
+          if(field) field.disabled = !shouldShow;
+        });
+
+        if(termBox){
+          termBox.classList.toggle('hidden-term', !shouldShow);
+          termBox.classList.toggle('is-active-term', shouldShow && isActiveBox);
+          termBox.classList.toggle('is-secondary-term', shouldShow && !isActiveBox);
+        }
+
+        const exam3 = $(`${rowId}-${prefix}-exam3`);
+        const act1 = $(`${rowId}-${prefix}-act1`).closest('.mini-field');
+        const act2 = $(`${rowId}-${prefix}-act2`).closest('.mini-field');
+        const act3 = $(`${rowId}-${prefix}-act3`).closest('.mini-field');
+        const perf1 = $(`${rowId}-${prefix}-perf1`).closest('.mini-field');
+        const perf2 = $(`${rowId}-${prefix}-perf2`).closest('.mini-field');
+        const practice = $(`${rowId}-${prefix}-practice`).closest('.mini-field');
+        const project = $(`${rowId}-${prefix}-project`).closest('.mini-field');
+
+        exam3.closest('.mini-field').classList.toggle('hidden', !hasThird);
+        act1.classList.toggle('hidden', stage !== 'middle');
+        act2.classList.toggle('hidden', stage !== 'middle');
+        act3.classList.toggle('hidden', stage !== 'middle' || activityCount < 3);
+        perf1.classList.toggle('hidden', stage !== 'high');
+        perf2.classList.toggle('hidden', stage !== 'high');
+        practice.classList.toggle('hidden', stage !== 'high' || !hasPractice);
+        project.classList.toggle('hidden', false);
+
+        const help = $(`${rowId}-${prefix}-help`);
+        if(stage === 'middle'){
+          help.textContent = activityCount === 3
+            ? 'Bu ders haftada 2 saatten fazla olduğu için 3 katılım alanı gösteriliyor. Ortaokul modunda standart iki yazılı yapısı esas alınır.'
+            : 'Bu ders haftada 2 saat veya daha az olduğu için 2 katılım alanı yeterlidir. Ortaokul modunda standart iki yazılı yapısı esas alınır.';
+        } else {
+          help.textContent = canHaveThird
+            ? 'Lisede her dönemde 2 performans puanı esas alınır. Bu dersin haftalık saati 6 ve üzeri olduğu için istersen 3. yazılıyı açabilirsin.'
+            : 'Lisede her dönemde 2 performans puanı esas alınır. Haftalık saat 6 ve üzeri olmadıkça 3. yazılı alanı açılmaz.';
+        }
+      });
+
+      $(`${rowId}-third-wrap`).classList.toggle('hidden', stage !== 'high' || !canHaveThird);
+      $(`${rowId}-practice-wrap`).classList.toggle('hidden', stage !== 'high');
+    }
+
+    function rowHasBasicInfo(rowId){
+      return $(`${rowId}-name`).value.trim().length > 0 && num($(`${rowId}-hours`).value) > 0;
+    }
+
+    function rowHasAnyScore(rowId){
+      const suffixes = [
+        't1-exam1','t1-exam2','t1-exam3','t1-project','t1-act1','t1-act2','t1-act3','t1-perf1','t1-perf2','t1-practice',
+        't2-exam1','t2-exam2','t2-exam3','t2-project','t2-act1','t2-act2','t2-act3','t2-perf1','t2-perf2','t2-practice'
+      ];
+      return suffixes.some(suffix => String($(`${rowId}-${suffix}`).value || '').trim() !== '');
+    }
+
+    function getFirstActiveScoreField(rowId){
+      const selectedTerm = activeTerm();
+      const ordered = [];
+      if(dualTermEditEnabled()){
+        ordered.push(1,2);
+      } else {
+        ordered.push(selectedTerm);
+      }
+      for(const termNumber of ordered){
+        const prefix = termNumber === 1 ? 't1' : 't2';
+        for(const key of ['exam1','exam2','project','act1','act2','perf1']){
+          const field = $(`${rowId}-${prefix}-${key}`);
+          if(field && !field.disabled && field.closest('.mini-field') && !field.closest('.mini-field').classList.contains('hidden')){
+            return field;
+          }
+        }
+      }
+      return null;
+    }
+
+    function maybeOpenDetailsForEntry(rowId, shouldFocus = false){
+      const detailRow = document.querySelector(`.detail-row[data-detail-for="${rowId}"]`);
+      if(!detailRow) return;
+      if(!rowHasBasicInfo(rowId)) return;
+      if(rowHasAnyScore(rowId)) return;
+      if(!detailRow.classList.contains('show')){
+        detailRow.classList.add('show');
+        syncRowToggleButton(rowId);
+      }
+      if(shouldFocus){
+        const firstField = getFirstActiveScoreField(rowId);
+        if(firstField){
+          requestAnimationFrame(() => {
+            firstField.focus({preventScroll:true});
+            firstField.scrollIntoView({behavior:'smooth', block:'center'});
+          });
+        }
+      }
+    }
+
+    function collectRowData(rowId){
+      return {
+        id: rowId,
+        name: $(`${rowId}-name`).value.trim(),
+        hours: num($(`${rowId}-hours`).value),
+        thirdExam: $(`${rowId}-third-exam`).checked,
+        practice: $(`${rowId}-practice`).checked,
+        open: document.querySelector(`.detail-row[data-detail-for="${rowId}"]`).classList.contains('show'),
+        term1: collectTerm(rowId, 1),
+        term2: collectTerm(rowId, 2)
+      };
+    }
+
+    function collectTerm(rowId, termNumber){
+      const prefix = termNumber === 1 ? 't1' : 't2';
+      return {
+        exam1: $(`${rowId}-${prefix}-exam1`).value,
+        exam2: $(`${rowId}-${prefix}-exam2`).value,
+        exam3: $(`${rowId}-${prefix}-exam3`).value,
+        project: $(`${rowId}-${prefix}-project`).value,
+        act1: $(`${rowId}-${prefix}-act1`).value,
+        act2: $(`${rowId}-${prefix}-act2`).value,
+        act3: $(`${rowId}-${prefix}-act3`).value,
+        perf1: $(`${rowId}-${prefix}-perf1`).value,
+        perf2: $(`${rowId}-${prefix}-perf2`).value,
+        practice: $(`${rowId}-${prefix}-practice`).value
+      };
+    }
+
+    function average(values){
+      const valid = values.filter(v => Number.isFinite(v));
+      if(!valid.length) return NaN;
+      return valid.reduce((sum, value) => sum + value, 0) / valid.length;
+    }
+
+    function validScore(value){
+      return Number.isFinite(value) && value >= 0 && value <= 100;
+    }
+
+    function sanitizeScoreInputs(rowId){
+      const hoursEl = $(`${rowId}-hours`);
+      const hoursValue = num(hoursEl.value);
+      const hoursInvalid = hoursEl.value.trim() !== '' && (!Number.isFinite(hoursValue) || hoursValue <= 0 || hoursValue > 20);
+      hoursEl.classList.toggle('input-error', hoursInvalid);
+      const ids = [
+        't1-exam1','t1-exam2','t1-exam3','t1-project','t1-act1','t1-act2','t1-act3','t1-perf1','t1-perf2','t1-practice',
+        't2-exam1','t2-exam2','t2-exam3','t2-project','t2-act1','t2-act2','t2-act3','t2-perf1','t2-perf2','t2-practice'
+      ];
+      ids.forEach(suffix => {
+        const el = $(`${rowId}-${suffix}`);
+        const parsed = num(el.value);
+        if(el.value.trim() === ''){
+          el.classList.remove('input-error');
+          return;
+        }
+        el.classList.toggle('input-error', !validScore(parsed));
+      });
+    }
+
+    function computeMiddleTerm(rowData, termNumber){
+      const term = termNumber === 1 ? rowData.term1 : rowData.term2;
+      const exam1 = num(term.exam1);
+      const exam2 = num(term.exam2);
+      if(!validScore(exam1) || !validScore(exam2)) return NaN;
+
+      const act1 = num(term.act1);
+      const act2 = num(term.act2);
+      const act3 = num(term.act3);
+      if(!validScore(act1) || !validScore(act2)) return NaN;
+      if((rowData.hours || 0) > 2 && !validScore(act3)) return NaN;
+      const activityScores = (rowData.hours || 0) > 2 ? [act1, act2, act3] : [act1, act2];
+      const activityAverage = average(activityScores);
+
+      const projectScore = num(term.project);
+      const supportAverage = validScore(projectScore)
+        ? (activityAverage + projectScore) / 2
+        : activityAverage;
+
+      const raw = (exam1 + exam2 + supportAverage) / 3;
+      return Math.round(raw);
+    }
+
+    function computeHighTerm(rowData, termNumber){
+      const term = termNumber === 1 ? rowData.term1 : rowData.term2;
+      const exam1 = num(term.exam1);
+      const exam2 = num(term.exam2);
+      const exam3 = num(term.exam3);
+      const perf1 = num(term.perf1);
+      const perf2 = num(term.perf2);
+      if(!validScore(exam1) || !validScore(exam2) || !validScore(perf1) || !validScore(perf2)) return NaN;
+      if(rowData.thirdExam && !validScore(exam3)) return NaN;
+      const values = rowData.thirdExam ? [exam1, exam2, exam3, perf1, perf2] : [exam1, exam2, perf1, perf2];
+
+      const projectScore = num(term.project);
+      const practiceScore = num(term.practice);
+      if(validScore(projectScore)) values.push(projectScore);
+      if(rowData.practice){
+        if(!validScore(practiceScore)) return NaN;
+        values.push(practiceScore);
+      }
+      return round2(average(values));
+    }
+
+    function computeRowResult(rowData, stage){
+      const hours = Number.isFinite(rowData.hours) ? rowData.hours : NaN;
+      const hasName = !!rowData.name;
+      let term1 = NaN;
+      let term2 = NaN;
+
+      if(stage === 'middle'){
+        term1 = computeMiddleTerm(rowData, 1);
+        term2 = computeMiddleTerm(rowData, 2);
+      } else if(stage === 'high'){
+        term1 = computeHighTerm(rowData, 1);
+        term2 = computeHighTerm(rowData, 2);
+      }
+
+      const yearScore = (Number.isFinite(term1) && Number.isFinite(term2)) ? (stage === 'middle' ? Math.round((term1 + term2) / 2) : round2((term1 + term2) / 2)) : NaN;
+      let passed = false;
+      let threshold = stage === 'middle' && isTurkishCourse(rowData.name) ? 70 : 50;
+      let statusText = 'Eksik veri';
+      let statusClass = 'info';
+
+      if(stage === 'middle'){
+        if(Number.isFinite(yearScore)){
+          passed = yearScore >= threshold;
+          statusText = passed ? 'Tam yıl hazır · Başarılı' : 'Tam yıl hazır · Riskli';
+          statusClass = passed ? 'good' : 'bad';
+        } else if(Number.isFinite(term1) && !Number.isFinite(term2)){
+          statusText = 'Ön izleme · 1. dönem hazır';
+          statusClass = 'info';
+        } else if(!Number.isFinite(term1) && Number.isFinite(term2)){
+          statusText = 'Ön izleme · 2. dönem hazır';
+          statusClass = 'info';
+        }
+      }
+
+      if(stage === 'high'){
+        if(Number.isFinite(term1) && Number.isFinite(term2)){
+          passed = yearScore >= 50 || term2 >= 70;
+          statusText = passed ? 'Tam yıl hazır · Başarılı' : 'Tam yıl hazır · Başarısız';
+          statusClass = passed ? 'good' : 'bad';
+        } else if(Number.isFinite(term1) && !Number.isFinite(term2)){
+          statusText = 'Ön izleme · 1. dönem hazır';
+          statusClass = 'info';
+        } else if(!Number.isFinite(term1) && Number.isFinite(term2)){
+          statusText = 'Ön izleme · 2. dönem hazır';
+          statusClass = 'info';
+        }
+      }
+
+      if(!hasName || !Number.isFinite(hours) || hours <= 0 || hours > 20){
+        statusText = 'Ders bilgisi eksik';
+        statusClass = 'warn';
+      }
+
+      return {
+        ...rowData,
+        term1,
+        term2,
+        yearScore,
+        weightedYear: Number.isFinite(yearScore) && Number.isFinite(hours) ? round4(yearScore * hours) : NaN,
+        passed,
+        threshold,
+        statusText,
+        statusClass
+      };
+    }
+
+    function computeCertificateForTerm(stage, rows, termNumber){
+      const barrier = $('certificateBarrier').checked;
+      if(!barrier) return 'Belge engeli var';
+
+      const validRows = rows.filter(row => row.name && Number.isFinite(row.hours) && row.hours > 0 && row.hours <= 20 && Number.isFinite(termNumber === 1 ? row.term1 : row.term2));
+      if(!validRows.length) return '—';
+
+      const weightedSum = validRows.reduce((sum, row) => sum + ((termNumber === 1 ? row.term1 : row.term2) * row.hours), 0);
+      const totalHours = validRows.reduce((sum, row) => sum + row.hours, 0);
+      const periodAverage = totalHours > 0 ? weightedSum / totalHours : NaN;
+      if(!Number.isFinite(periodAverage)) return '—';
+
+      if(stage === 'middle'){
+        const allPass = validRows.every(row => {
+          const periodScore = termNumber === 1 ? row.term1 : row.term2;
+          const threshold = isTurkishCourse(row.name) ? 70 : 50;
+          return Number.isFinite(periodScore) && periodScore >= threshold;
+        });
+        if(!allPass) return 'Belge yok';
+        if(periodAverage >= 85) return 'Takdir';
+        if(periodAverage >= 70) return 'Teşekkür';
+        return 'Belge yok';
+      }
+
+      const behaviorOk = $('behavior100').checked;
+      const allPass = validRows.every(row => {
+        const periodScore = termNumber === 1 ? row.term1 : row.term2;
+        return Number.isFinite(periodScore) && periodScore >= 50;
+      });
+      if(!behaviorOk || !allPass) return 'Belge yok';
+      if(periodAverage >= 85) return 'Takdir';
+      if(periodAverage >= 70) return 'Teşekkür';
+      return 'Belge yok';
+    }
+
+    function calculateAll(){
+      const stage = stageFromClassLevel();
+      const rowsRaw = rowIds().map(collectRowData);
+      rowsRaw.forEach(row => sanitizeScoreInputs(row.id));
+
+
+      const computedRows = rowsRaw.map(row => computeRowResult(row, stage));
+      computedRows.forEach(updateSummaryRow);
+
+      const completeRows = computedRows.filter(row => row.name && Number.isFinite(row.hours) && row.hours > 0 && row.hours <= 20 && Number.isFinite(row.term1) && Number.isFinite(row.term2) && Number.isFinite(row.yearScore));
+      const activeRows = rowsWithValidTerm(computedRows, activeTerm());
+      const previewOnlyRows = computedRows.filter(row => row.name && Number.isFinite(row.hours) && row.hours > 0 && row.hours <= 20 && !Number.isFinite(row.yearScore) && (Number.isFinite(row.term1) || Number.isFinite(row.term2)));
+      const activeTotalHours = activeRows.reduce((sum, row) => sum + row.hours, 0);
+      const totalHours = completeRows.reduce((sum, row) => sum + row.hours, 0);
+      const weightedYearSum = completeRows.reduce((sum, row) => sum + row.weightedYear, 0);
+      const yearAverage = totalHours > 0 ? round2(weightedYearSum / totalHours) : NaN;
+      const failedRows = completeRows.filter(row => !row.passed);
+      const term1Certificate = computeCertificateForTerm(stage, computedRows, 1);
+      const term2Certificate = computeCertificateForTerm(stage, computedRows, 2);
+      const selectedCertificate = activeTerm() === 1 ? term1Certificate : term2Certificate;
+      const selectedAverage = computeSelectedTermAverage(computedRows, activeTerm());
+      const decision = buildDecision(stage, yearAverage, failedRows, completeRows, activeRows);
+      const policy = highPolicyMeta();
+
+      state.results = {
+        stage,
+        policy,
+        rows: computedRows,
+        completeRows,
+        activeRows,
+        previewOnlyRows,
+        activeTotalHours,
+        yearAverage,
+        totalHours,
+        failedRows,
+        term1Certificate,
+        term2Certificate,
+        selectedCertificate,
+        selectedAverage,
+        decision
+      };
+      state.isCalculated = true;
+      state.isValid = completeRows.length > 0;
+
+      renderResults();
+    }
+
+    function rowsWithValidTerm(rows, termNumber){
+      return rows.filter(row => row.name && Number.isFinite(row.hours) && row.hours > 0 && row.hours <= 20 && Number.isFinite(termNumber === 1 ? row.term1 : row.term2));
+    }
+
+    function computeSelectedTermAverage(rows, termNumber){
+      const validRows = rowsWithValidTerm(rows, termNumber);
+      if(!validRows.length) return NaN;
+      const weighted = validRows.reduce((sum, row) => sum + ((termNumber === 1 ? row.term1 : row.term2) * row.hours), 0);
+      const hours = validRows.reduce((sum, row) => sum + row.hours, 0);
+      return hours > 0 ? round2(weighted / hours) : NaN;
+    }
+
+    function selectedWeakRows(results){
+      const termNumber = activeTerm();
+      return (results.activeRows || []).filter(row => {
+        const score = termNumber === 1 ? row.term1 : row.term2;
+        if(!Number.isFinite(score)) return false;
+        if(results.stage === 'middle'){
+          const threshold = isTurkishCourse(row.name) ? 70 : 50;
+          return score < threshold;
+        }
+        return score < 50;
+      });
+    }
+
+    function buildFlowState(results){
+      if(!results){
+        return { badgeClass:'info', badgeText:'Bekleniyor', text:'Henüz yeterli veri yok. En az bir dersin gerekli alanlarını tamamladığında durum burada görünür.' };
+      }
+      if(Number.isFinite(results.yearAverage)){
+        return { badgeClass:'good', badgeText:'Tam yıl sonucu hazır', text:`${results.completeRows.length} dersin iki dönemi de tamamlandı. Yıl sonu başarı puanı ve sınıf geçme yorumu şu an hazır.` };
+      }
+      if(results.activeRows && results.activeRows.length){
+        return { badgeClass:'info', badgeText:'Seçili dönem ön izlemesi', text:`${results.activeRows.length} ders için seçili dönem sonucu hazır. Tam yıl sonucu için aynı derslerin iki dönemini de doldurmalısın.` };
+      }
+      return { badgeClass:'warn', badgeText:'Veri bekleniyor', text:'Önce en az bir dersin gerekli alanlarını doldur. Tek dönem dolduğunda ön izleme, iki dönem dolduğunda tam yıl sonucu oluşur.' };
+    }
+
+    function buildGoalState(results){
+      if(!results){
+        return { badgeClass:'info', badgeText:'Veri bekleniyor', text:'Seçili dönem için ortalama oluştuğunda teşekkür / takdir hedefi burada görünür.' };
+      }
+      if(!Number.isFinite(results.selectedAverage)){
+        return { badgeClass:'info', badgeText:'Veri bekleniyor', text:'Seçili dönem ortalaması oluştuktan sonra burada teşekkür / takdir hedefi görünür.' };
+      }
+      if(!$('certificateBarrier').checked){
+        return { badgeClass:'bad', badgeText:'Belge engeli açık', text:'Disiplin veya devamsızlık engeli açık işaretlendiği için ortalama yeterli olsa bile belge oluşmaz.' };
+      }
+      if(results.stage === 'high' && !$('behavior100').checked){
+        return { badgeClass:'warn', badgeText:'Davranış puanı kontrolü', text:'Lise tarafında davranış puanı 100 olmadığı için belge görünmeyebilir.' };
+      }
+
+      const avg = results.selectedAverage;
+      const weakRows = selectedWeakRows(results);
+      const current = results.selectedCertificate;
+      const needThanks = Math.max(0, round2(70 - avg));
+      const needTakdir = Math.max(0, round2(85 - avg));
+
+      if(current === 'Takdir'){
+        return { badgeClass:'good', badgeText:'Takdir hazır', text:`Seçili dönem ortalaman ${formatNumber(avg)}. Şu an takdir düzeyindesin.` };
+      }
+      if(current === 'Teşekkür'){
+        return { badgeClass:'info', badgeText:'Teşekkür hazır', text:`Seçili dönem ortalaman ${formatNumber(avg)}. Takdir için yaklaşık +${formatNumber(needTakdir)} puanlık ortalama artışı gerekir.` };
+      }
+      if(avg >= 70 && weakRows.length){
+        return { badgeClass:'warn', badgeText:'Ortalama iyi, ders eşiği eksik', text:`Ortalaman ${formatNumber(avg)} görünse de seçili dönemde eşik altında kalan ${weakRows.length} ders olduğu için belge oluşmuyor.` };
+      }
+      return { badgeClass:'warn', badgeText:'Belge için yükseltme gerekli', text:`Teşekkür için yaklaşık +${formatNumber(needThanks)} puan, takdir için yaklaşık +${formatNumber(needTakdir)} puanlık ortalama artışı gerekir.${weakRows.length ? ` Ayrıca seçili dönemde eşik altında görünen ${weakRows.length} ders var.` : ''}` };
+    }
+
+    function buildDecision(stage, yearAverage, failedRows, completeRows, activeRows){
+      if(!completeRows.length && !activeRows.length){
+        return {
+          className:'',
+          title:'Veri bekleniyor',
+          text:'Sonuç üretmek için en az bir dersi eksiksiz doldurmalısın.'
+        };
+      }
+
+      if(!completeRows.length && activeRows.length){
+        return {
+          className:'warn',
+          title:'Seçili dönem ön izlemesi hazır',
+          text:'Şu an seçtiğin dönem için ortalama ve belge sonucu üretilebiliyor. Yıl sonu başarı puanı için aynı derslerin iki dönem puanını da girmen gerekir.'
+        };
+      }
+
+      if(stage === 'middle'){
+        if(!failedRows.length){
+          return {
+            className:'good',
+            title:'Şu anki veriye göre ortaokul durumu iyi görünüyor',
+            text:'Girilen tüm dersler eşiklerin üzerinde. Türkçe için 70, diğer dersler için 50 şartı sağlanıyor.'
+          };
+        }
+        return {
+          className:'warn',
+          title:'Bazı dersler riskli görünüyor',
+          text:'Ortaokulda özellikle Türkçe dersi için 70, diğer dersler için 50 sınırı önemlidir. Eksik kalan dersleri yükseltmeye odaklan.'
+        };
+      }
+
+      const carry = Math.min(20, Math.max(0, Math.round(num($('carryResponsibility').value) || 0)));
+      const failedCount = failedRows.length;
+      const level = classLevelValue();
+      const usesLegacy12Rule = level === 12;
+
+      if(usesLegacy12Rule){
+        if(Number.isFinite(yearAverage) && yearAverage >= 50){
+          return {
+            className:'good',
+            title:'2025-2026 12. sınıf geçiş hükmüne göre doğrudan geçiş mümkün',
+            text:'12. sınıf için geçiş hükmünde yıl sonu başarı puanı 50 ve üzeriyse, başarısız ders bulunsa bile eski doğrudan geçiş yorumu esas alınır. Nihai değerlendirme okul kayıtlarıyla birlikte yapılır.'
+          };
+        }
+        if(failedCount <= 3 && (carry + failedCount) <= 6){
+          return {
+            className:'warn',
+            title:'2025-2026 12. sınıf geçiş hükmüne göre sorumlu geçme ihtimali görünüyor',
+            text:`12. sınıf geçiş hükmünde yıl sonu başarı puanı 50 altına inse bile, bu sınıfta en fazla 3 başarısız ders ve alt sınıflarla birlikte toplam ${carry + failedCount} sorumlu ders sınırı içinde kalınıyorsa sonuç sorumlu geçme yönünde olabilir.`
+          };
+        }
+        return {
+          className:'bad',
+          title:'12. sınıf için sınıf tekrarı / mezuniyet riski oluşuyor',
+          text:'Girilen veriye göre 2025-2026 12. sınıf geçiş hükmündeki yıl sonu başarı puanı veya sorumlu ders sınırları karşılanmıyor olabilir. Özellikle ikinci dönem puanlarını yükseltmek kritik olur.'
+        };
+      }
+
+      if(failedCount === 0 || (failedCount <= 1 && Number.isFinite(yearAverage) && yearAverage >= 50)){
+        return {
+          className:'good',
+          title:'Şu anki veriye göre doğrudan geçiş mümkün',
+          text:'9-11. sınıflarda güncel lise kuralına göre tüm derslerden başarılıysan veya en fazla 1 dersten başarısız olup yıl sonu başarı puanın 50 ve üzerindeyse doğrudan geçiş görünür.'
+        };
+      }
+      if(Number.isFinite(yearAverage) && yearAverage >= 50 && failedCount <= 3 && (carry + failedCount) <= 6){
+        return {
+          className:'warn',
+          title:'Sorumlu geçme ihtimali görünüyor',
+          text:`Bu sınıfta ${failedCount} başarısız ders görünüyor. 9-11. sınıflarda güncel kurala göre alt sınıflardan gelenlerle birlikte toplam ${carry + failedCount} ders sınırını aşmıyorsan sonuç sorumlu geçme yönünde olabilir.`
+        };
+      }
+      return {
+        className:'bad',
+        title:'Sınıf tekrarı riski oluşuyor',
+        text:'Girilen veriye göre yıl sonu başarı puanı veya başarısız ders sayısı güncel lise geçiş koşullarını karşılamıyor olabilir. Özellikle ikinci dönem puanlarını yükseltmek kritik olur.'
+      };
+    }
+
+    function updateSummaryRow(row){
+      $(`${row.id}-term1`).textContent = formatNumber(row.term1);
+      $(`${row.id}-term2`).textContent = formatNumber(row.term2);
+      $(`${row.id}-year`).textContent = formatNumber(row.yearScore);
+      $(`${row.id}-term1-badge`).textContent = `Puan: ${formatNumber(row.term1)}`;
+      $(`${row.id}-term2-badge`).textContent = `Puan: ${formatNumber(row.term2)}`;
+      const status = $(`${row.id}-status`);
+      status.textContent = row.statusText;
+      status.className = `status-pill ${row.statusClass}`;
+    }
+
+
+    function renderResults(){
+      const results = state.results;
+      if(!results){
+        return;
+      }
+
+      const currentTerm = activeTerm();
+      const termLabel = currentTerm === 1 ? '1. dönem ortalaması' : '2. dönem ortalaması';
+      if(Number.isFinite(results.yearAverage)){
+        $('mainResult').textContent = formatNumber(results.yearAverage);
+        $('mainResultLabel').textContent = 'Yıl sonu başarı puanı';
+        $('mainSub').textContent = 'Aynı derslerin iki dönem puanı tamamlandığı için yıl sonu başarı puanı hesaplandı.';
+      } else if(Number.isFinite(results.selectedAverage)){
+        $('mainResult').textContent = formatNumber(results.selectedAverage);
+        $('mainResultLabel').textContent = termLabel;
+        $('mainSub').textContent = 'Şu an yalnızca seçtiğin dönem için ortalama hazır. Yıl sonu başarı puanı için aynı derslerin iki dönem puanını da girmelisin.';
+      } else {
+        $('mainResult').textContent = '—';
+        $('mainResultLabel').textContent = 'Yıl sonu başarı puanı';
+        $('mainSub').textContent = 'En az bir dersi eksiksiz girdiğinde sonuç burada görünür.';
+      }
+
+      $('certificateTerm1').textContent = results.term1Certificate;
+      $('certificateTerm2').textContent = results.term2Certificate;
+      $('certificateSelected').textContent = results.selectedCertificate;
+      if($('summaryLessonCount')) $('summaryLessonCount').textContent = String(results.completeRows.length || 0);
+      if($('summaryActiveLessonCount')) $('summaryActiveLessonCount').textContent = String(results.activeRows.length || 0);
+      if($('summaryFailedCount')) $('summaryFailedCount').textContent = String(results.failedRows.length || 0);
+      if($('summarySelectedAverage')) $('summarySelectedAverage').textContent = formatNumber(results.selectedAverage);
+      if($('summaryResultType')) $('summaryResultType').textContent = Number.isFinite(results.yearAverage) ? 'Tam yıl sonucu' : (results.activeRows.length ? 'Seçili dönem ön izlemesi' : 'Bekleniyor');
+
+      const flowState = buildFlowState(results);
+      if($('resultStateBox')){
+        const policyNote = results.policy && results.stage === 'high' ? ` <br><strong>Geçiş kuralı:</strong> ${results.policy.text}` : '';
+        $('resultStateBox').innerHTML = `<strong>${flowState.badgeText}:</strong> ${flowState.text}${policyNote}`;
+      }
+      updateActionStates();
+
+      const goalState = buildGoalState(results);
+      $('goalBadge').className = `goal-highlight ${goalState.badgeClass}`;
+      $('goalBadge').textContent = goalState.badgeText;
+      $('goalText').textContent = goalState.text;
+
+      $('decisionBox').className = `decision-box ${results.decision.className}`.trim();
+      $('decisionTitle').textContent = results.decision.title;
+      $('decisionText').textContent = results.decision.text;
+
+      renderLessonResultsTable(results.rows, results.stage);
+    }
+
+    function renderLessonResultsTable(rows, stage){
+      const validRows = rows.filter(row => row.name && Number.isFinite(row.hours) && row.hours > 0 && (Number.isFinite(row.term1) || Number.isFinite(row.term2) || Number.isFinite(row.yearScore)));
+      if(!validRows.length){
+        $('lessonResultsWrap').className = 'empty-box';
+        $('lessonResultsWrap').textContent = 'Henüz hesaplanmış ders sonucu yok. En az bir dersin puanlarını girdiğinde tablo burada oluşur.';
+        return;
+      }
+
+      const table = document.createElement('table');
+      table.className = 'lesson-result-table';
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Ders</th>
+            <th>Saat</th>
+            <th>1. dönem</th>
+            <th>2. dönem</th>
+            <th>Yıl sonu</th>
+            <th>Eşik</th>
+            <th>Durum</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${validRows.map(row => `
+            <tr>
+              <td data-label="Ders">${escapeHtml(row.name)}</td>
+              <td data-label="Saat">${escapeHtml(String(row.hours))}</td>
+              <td data-label="1. dönem">${formatNumber(row.term1)}</td>
+              <td data-label="2. dönem">${formatNumber(row.term2)}</td>
+              <td data-label="Yıl sonu">${formatNumber(row.yearScore)}</td>
+              <td data-label="Eşik">${stage === 'middle' ? formatNumber(row.threshold) : '50 / 70 kuralı'}</td>
+              <td data-label="Durum">${escapeHtml(row.statusText)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      `;
+      $('lessonResultsWrap').className = '';
+      $('lessonResultsWrap').innerHTML = '';
+      $('lessonResultsWrap').appendChild(table);
+    }
+
+    function updateActionStates(){
+      const enabled = hasMeaningfulResults();
+      ['printBtn','pdfBtn','shareBtn','copyBtn'].forEach(id => {
+        const el = $(id);
+        if(el) el.disabled = !enabled;
+      });
+    }
+
+    function clearLessons(){
+      body.innerHTML = '';
+      rowCounter = 0;
+    }
+
+    function addLesson(data = {}){
+      createLessonRow(data);
+      calculateAll();
+    }
+
+    function fillExample(){
+      suppressPersistence = true;
+      setStateSource('demo');
+      clearLessons();
+      const stage = stageFromClassLevel();
+
+      const currentStage = stageFromClassLevel();
+      if(currentStage === 'middle'){
+        const lessons = [
+          {
+            name:'Türkçe', hours:6, open:true,
+            term1:{exam1:'82',exam2:'88',act1:'90',act2:'92',act3:'94',project:'91'},
+            term2:{exam1:'84',exam2:'86',act1:'91',act2:'93',act3:'95',project:'92'}
+          },
+          {
+            name:'Matematik', hours:5,
+            term1:{exam1:'76',exam2:'81',act1:'85',act2:'82',act3:'84',project:'80'},
+            term2:{exam1:'79',exam2:'83',act1:'86',act2:'84',act3:'88',project:'82'}
+          },
+          {
+            name:'Fen Bilimleri', hours:4,
+            term1:{exam1:'74',exam2:'78',act1:'80',act2:'82',act3:'81'},
+            term2:{exam1:'77',exam2:'80',act1:'83',act2:'85',act3:'84',project:'86'}
+          },
+          {
+            name:'Sosyal Bilgiler', hours:3,
+            term1:{exam1:'88',exam2:'90',act1:'92',act2:'90',act3:'93'},
+            term2:{exam1:'87',exam2:'91',act1:'93',act2:'92',act3:'94'}
+          }
+        ];
+        lessons.forEach(addLesson);
+      } else {
+        $('classLevel').value = '10';
+        syncStageUI();
+        const lessons = [
+          {
+            name:'Türk Dili ve Edebiyatı', hours:5, thirdExam:true, open:true,
+            term1:{exam1:'78',exam2:'82',exam3:'80',perf1:'88',perf2:'90',project:'86'},
+            term2:{exam1:'80',exam2:'84',exam3:'83',perf1:'89',perf2:'91',project:'88'}
+          },
+          {
+            name:'Matematik', hours:6, thirdExam:true,
+            term1:{exam1:'72',exam2:'76',exam3:'74',perf1:'82',perf2:'84'},
+            term2:{exam1:'75',exam2:'79',exam3:'77',perf1:'85',perf2:'87',project:'83'}
+          },
+          {
+            name:'Fizik', hours:2,
+            term1:{exam1:'68',exam2:'72',perf1:'80',perf2:'82'},
+            term2:{exam1:'71',exam2:'75',perf1:'83',perf2:'85'}
+          },
+          {
+            name:'Beden Eğitimi', hours:2, practice:true,
+            term1:{exam1:'90',exam2:'92',perf1:'95',perf2:'96',practice:'94'},
+            term2:{exam1:'91',exam2:'93',perf1:'96',perf2:'97',practice:'95'}
+          }
+        ];
+        lessons.forEach(addLesson);
+      }
+
+      $('activeTerm').value = '2';
+      $('dualTermEdit').checked = true;
+      $('certificateBarrier').checked = true;
+      $('behavior100').checked = true;
+      $('carryResponsibility').value = '0';
+      syncEditingModeUI();
+      rowIds().forEach(syncRowVisibility);
+      suppressPersistence = false;
+      calculateAll();
+      clearSavedState();
+    }
+
+    function clearAllFields(){
+      suppressPersistence = true;
+      clearLessons();
+      $('classLevel').value = '5';
+      $('activeTerm').value = '1';
+      $('dualTermEdit').checked = false;
+      $('certificateBarrier').checked = true;
+      $('behavior100').checked = true;
+      $('carryResponsibility').value = '0';
+      syncStageUI();
+      addLesson({ open:true });
+      suppressPersistence = false;
+      setStateSource('manual');
+      calculateAll();
+      clearSavedState();
+    }
+
+    function collectInputs(){
+      return {
+        classLevel:$('classLevel').value,
+        activeTerm:$('activeTerm').value,
+        dualTermEdit: dualTermEditEnabled(),
+        certificateBarrier:$('certificateBarrier').checked,
+        behavior100:$('behavior100').checked,
+        carryResponsibility:$('carryResponsibility').value,
+        lessons:rowIds().map(collectRowData)
+      };
+    }
+
+    function saveManualState(){
+      if(suppressPersistence || state.source !== 'manual') return;
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ _mode:'manual', ...collectInputs() }));
+      }catch(e){}
+    }
+
+    function clearSavedState(){
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+    }
+
+    function applySavedState(data){
+      if(!data || data._mode !== 'manual') return false;
+      suppressPersistence = true;
+      $('classLevel').value = (Number(data.classLevel) >= 5 ? data.classLevel : '5') || '5';
+      $('activeTerm').value = data.activeTerm || '1';
+      $('dualTermEdit').checked = data.dualTermEdit === true;
+      $('certificateBarrier').checked = data.certificateBarrier !== false;
+      $('behavior100').checked = data.behavior100 !== false;
+      $('carryResponsibility').value = data.carryResponsibility || '0';
+      clearLessons();
+      syncStageUI();
+      (Array.isArray(data.lessons) ? data.lessons : []).forEach(addLesson);
+      if(!(Array.isArray(data.lessons) && data.lessons.length)) addLesson({ open:true });
+      suppressPersistence = false;
+      setStateSource('manual');
+      calculateAll();
+      return true;
+    }
+
+    function loadSavedState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return false;
+        const parsed = JSON.parse(raw);
+        return applySavedState(parsed);
+      }catch(e){
+        clearSavedState();
+        return false;
+      }
+    }
+
+
+    function buildSummaryText(){
+      const results = state.results;
+      if(!results || !hasMeaningfulResults(results)){
+        return 'Henüz kopyalanabilir veya paylaşılabilir bir sonuç yok. Önce en az bir dersin gerekli alanlarını doldur.';
+      }
+      const termText = activeTerm() === 1 ? '1. dönem' : '2. dönem';
+      const lines = [
+        `Sınıf düzeyi: ${$('classLevel').value}. sınıf`,
+        `Seçili dönem: ${termText}`,
+        `Seçili dönem ortalaması: ${formatNumber(results.selectedAverage)}`,
+        `Seçili dönem belge durumu: ${results.selectedCertificate}`,
+        `Tam yıl dersi: ${results.completeRows.length}`,
+        `Seçili dönem dersi: ${results.activeRows.length}`,
+        `Ön izleme dersi: ${(results.previewOnlyRows || []).length}`,
+        `Sonuç tipi: ${Number.isFinite(results.yearAverage) ? 'Tam yıl sonucu' : (results.activeRows.length ? 'Seçili dönem ön izlemesi' : 'Bekleniyor')}`
+      ];
+      if(results.policy && results.stage === 'high'){
+        lines.push(`Sınıf geçme kuralı: ${results.policy.short}`);
+      }
+      if(Number.isFinite(results.yearAverage)){
+        lines.push(`Yıl sonu başarı puanı: ${formatNumber(results.yearAverage)}`);
+      }
+      if(Number.isFinite(results.totalHours)){
+        lines.push(`Toplam haftalık saat: ${results.totalHours}`);
+      }
+      if(results.decision && results.decision.title){
+        lines.push(`Karar: ${results.decision.title}`);
+      }
+      return lines.join('\n');
+    }
+
+    function triggerPrint(mode = 'print'){
+      const originalTitle = document.title;
+      if(mode === 'pdf'){
+        document.title = 'not-ortalamasi-sonuc';
+      }
+      window.print();
+      setTimeout(() => { document.title = originalTitle; }, 300);
+    }
+
+    async function copyTextSafe(text){
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      temp.setAttribute('readonly', '');
+      temp.style.position = 'absolute';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+      temp.select();
+      temp.setSelectionRange(0, temp.value.length);
+      let ok = false;
+      try{
+        ok = document.execCommand('copy');
+      }finally{
+        document.body.removeChild(temp);
+      }
+      if(!ok) throw new Error('copy-failed');
+      return true;
+    }
+
+    async function copySummary(targetBtn = $('copyBtn')){
+      const btn = targetBtn || $('copyBtn');
+      if(!hasMeaningfulResults()){
+        setTransientButtonText(btn, 'Önce sonuç oluştur', btn.dataset.originalLabel || btn.textContent, 1600);
+        return;
+      }
+      const original = btn.textContent;
+      try{
+        await copyTextSafe(buildSummaryText());
+        btn.textContent = 'Kopyalandı';
+        setTimeout(() => btn.textContent = original, 1400);
+      }catch(e){
+        btn.textContent = 'Kopyalanamadı';
+        setTimeout(() => btn.textContent = original, 1400);
+      }
+    }
+
+    async function shareSummary(targetBtn = $('shareBtn')){
+      const btn = targetBtn || $('shareBtn');
+      if(!hasMeaningfulResults()){
+        setTransientButtonText(btn, 'Önce sonuç oluştur', btn.dataset.originalLabel || btn.textContent, 1600);
+        return;
+      }
+      const original = btn.textContent;
+      const text = buildSummaryText();
+      try{
+        if(navigator.share){
+          await navigator.share({
+            title: 'Not Ortalaması Özeti',
+            text
+          });
+        }else{
+          await copyTextSafe(text);
+          btn.textContent = 'Özet Kopyalandı';
+          setTimeout(() => btn.textContent = original, 1600);
+          return;
+        }
+        btn.textContent = 'Paylaşıldı';
+        setTimeout(() => btn.textContent = original, 1400);
+      }catch(e){
+        if(e && e.name === 'AbortError') return;
+        try{
+          await copyTextSafe(text);
+          btn.textContent = 'Özet Kopyalandı';
+          setTimeout(() => btn.textContent = original, 1600);
+        }catch(err){
+          btn.textContent = 'Paylaşılamadı';
+          setTimeout(() => btn.textContent = original, 1400);
+        }
+      }
+    }
+
+    let saveTimer = null;
+    function onManualInput(){
+      if(suppressPersistence) return;
+      const carryEl = $('carryResponsibility');
+      if(carryEl){
+        const carryValue = num(carryEl.value);
+        const carryInvalid = carryEl.value.trim() !== '' && (!Number.isFinite(carryValue) || carryValue < 0 || carryValue > 20);
+        carryEl.classList.toggle('input-error', carryInvalid);
+      }
+      setStateSource('manual');
+      calculateAll();
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(saveManualState, 300);
+    }
+
+    $('classLevel').addEventListener('change', () => { setStateSource('manual'); syncStageUI(); onManualInput(); });
+    $('activeTerm').addEventListener('change', () => { syncEditingModeUI(); rowIds().forEach(syncRowVisibility); onManualInput(); });
+    $('dualTermEdit').addEventListener('change', () => { syncEditingModeUI(); rowIds().forEach(syncRowVisibility); onManualInput(); });
+    $('certificateBarrier').addEventListener('change', onManualInput);
+    $('behavior100').addEventListener('change', onManualInput);
+    $('carryResponsibility').addEventListener('input', onManualInput);
+    $('calculateBtn').addEventListener('click', () => { calculateAll(); flashResultPanel(); });
+    $('exampleBtn').addEventListener('click', () => { fillExample(); flashResultPanel(); });
+    $('printBtn').addEventListener('click', () => triggerPrint('print'));
+    $('pdfBtn').addEventListener('click', () => triggerPrint('pdf'));
+    $('shareBtn').addEventListener('click', () => shareSummary($('shareBtn')));
+    $('copyBtn').addEventListener('click', () => copySummary($('copyBtn')));
+    $('clearBtn').addEventListener('click', clearAllFields);
+    $('addLessonBottomBtn').addEventListener('click', () => addLesson({ open:true }));
+
+    syncStageUI();
+    if(!loadSavedState()){
+      addLesson({ open:true });
+      calculateAll();
+    }
+    updateActionStates();
+  </script>
+</body>
+</html>

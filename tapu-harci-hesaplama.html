@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tapu Harcı Hesaplama 2026 | Alıcı, Satıcı, Toplam Maliyet ve Opsiyonel Kredi Analizi</title>
+<meta content="Tapu harcı hesaplama aracı ile alıcı ve satıcı tapu harcını, toplam işlem maliyetini, ek giderleri ve opsiyonel kredi kullanımında peşin çıkışı tek ekranda analiz edin." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="tapu harcı hesaplama, tapu masrafı hesaplama, alıcı satıcı tapu harcı, tapu gideri, ev alım masrafı, tapu kredi analizi" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/tapu-harci-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Tapu Harcı Hesaplama 2026 | Alıcı, Satıcı, Toplam Maliyet ve Opsiyonel Kredi Analizi" property="og:title"/>
+<meta content="Tapu harcı hesaplama aracı ile alıcı ve satıcı tapu harcını, toplam işlem maliyetini, ek giderleri ve opsiyonel kredi kullanımında peşin çıkışı tek ekranda analiz edin." property="og:description"/>
+<meta content="https://hesapica.com/tapu-harci-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary" property="twitter:card"/>
+<meta content="Tapu Harcı Hesaplama" property="twitter:title"/>
+<meta content="Alıcı, satıcı, ek gider ve opsiyonel kredi etkisini tek ekranda analiz edin." property="twitter:description"/>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .toggle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .toggle-pill{
+      display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;
+      background:#fcfcfd;border:1px solid var(--line);font-weight:700;color:#374151
+    }
+    .toggle-pill input{width:18px;height:18px;accent-color:var(--primary)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+    .btn:disabled:hover{transform:none;opacity:.55}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .hide{display:none !important}
+
+    .validation-box{
+      margin-top:18px;padding:14px 16px;border-radius:18px;
+      background:#fef2f2;border:1px solid #fecaca;color:#991b1b;
+      font-size:14px;font-weight:700;line-height:1.65
+    }
+    .field-error{
+      border-color:#ef4444 !important;
+      box-shadow:0 0 0 4px rgba(239,68,68,.08) !important;
+      background:#fff8f8 !important;
+    }
+    .error-text{
+      min-height:18px;margin-top:6px;font-size:13px;font-weight:700;color:#b91c1c
+    }
+    .btn.is-calculating{opacity:.85;pointer-events:none}
+    .results.result-focus{animation:resultFocus 1.2s ease}
+    .highlight-card.result-flash{animation:resultFlash 1.35s ease}
+    @keyframes resultFocus{0%{transform:translateY(0)}35%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,0)}35%{box-shadow:0 0 0 10px rgba(79,70,229,.10),0 16px 40px rgba(79,70,229,.16)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.toggle-grid{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;
+        border:1px solid #d1d5db !important;
+        break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Tapu Harcı Hesaplama",
+    "url":"https://hesapica.com/tapu-harci-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Tapu harcı, ek giderler ve opsiyonel kredi kullanımında peşin çıkışı analiz eden ücretsiz araç."
+  }
+  const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Tapu harcı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Tapu harcı temel olarak beyan edilen satış bedeline oran uygulanarak hesaplanır. Bu araçta alıcı ve satıcı tarafı ayrı ayrı ya da toplam olarak görebilirsiniz."}},
+      {"@type":"Question","name":"Tapu harcını kim öder?","acceptedAnswer":{"@type":"Answer","text":"Uygulamada alıcı ve satıcı ayrı ayrı pay ödeyebilir. Ancak taraflar kendi aralarında farklı paylaşım yapabilir. Bu yüzden araçta farklı ödeme senaryoları bulunur."}},
+      {"@type":"Question","name":"Kredi kısmı zorunlu mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Kredi analizi tamamen opsiyoneldir. Açmazsanız araç sadece tapu harcı ve işlem maliyetini hesaplar."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Emlak","item":"https://hesapica.com/#emlak"},
+      {"@type":"ListItem","position":3,"name":"Tapu Harcı Hesaplama","item":"https://hesapica.com/tapu-harci-hesaplama"}
+    ]
+  }
+  </script>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Tapu Harcı Hesaplama 2026 | Alıcı, Satıcı, Toplam Maliyet ve Opsiyonel Kredi Analizi" name="twitter:title"/><meta content="Tapu harcı hesaplama aracı ile alıcı ve satıcı tapu harcını, toplam işlem maliyetini, ek giderleri ve opsiyonel kredi kullanımında peşin çıkışı tek ekranda analiz edin." name="twitter:description"/><meta content="https://hesapica.com/tapu-harci-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç, hesaplamaları ve etkileşimli sonuçları gösterebilmek için JavaScript gerektirir.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#emlak">Emlak</a>
+<span>/</span>
+<strong>Tapu Harcı Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Emlak işlem maliyeti aracı</span>
+<h1>Tapu Harcı Hesaplama</h1>
+<p>Bu araç yalnızca tapu harcını değil; <strong>alıcı ve satıcı tarafındaki gerçek ödeme yükünü</strong>, <strong>ek işlem giderlerini</strong>, <strong>toplam işlem maliyetini</strong> ve istersen <strong>opsiyonel kredi kullanımında peşin çıkış baskısını</strong> tek ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Alıcı / satıcı baskı analizi</span>
+<span class="hero-chip">Ek gider ve paylaşım senaryosu</span>
+<span class="hero-chip">Opsiyonel kredi görünümü</span>
+<span class="hero-chip">Mobilde sade akış</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Bu araç ne gösterir?</div>
+<strong>Ana sonuç üstte, maliyet kırılımı ve karar desteği aşağıda</strong>
+<p>Satış bedelini, oranları ve giderleri girmen yeterli. Sonuç alanı otomatik güncellenir; alıcının mı satıcının mı daha fazla baskı yaşadığını ve toplam yükün satış bedeline göre seviyesini anında görebilirsin.</p>
+<ul>
+<li>Alıcı ve satıcı için ayrı toplam ödeme</li>
+<li>Toplam tapu harcı ve işlem maliyeti</li>
+<li>Opsiyonel krediyle peşin çıkış etkisi</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Hesaplama Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Satış bedeli ve oranlar girildiğinde temel sonuçlar otomatik hesaplanır. Kredi bölümü tamamen opsiyoneldir.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Tapu sürecinde çoğu kişi sadece oranı bilir ama gerçek yükü geç görür. Oysa toplam maliyet; alıcı / satıcı paylaşımı, ek masraflar ve kredi kullanılıyorsa peşin çıkışla birlikte daha net anlaşılır. Satış işlemlerinde sık görülen örnek yapı alıcı ve satıcı için ayrı ayrı %2 olsa da, farklı işlem türleri ve istisnalarda oran değişebileceği için resmi durumu ayrıca kontrol etmek gerekir.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Temel işlem verileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="propertyType">Gayrimenkul tipi</label>
+<select id="propertyType">
+<option value="konut">Konut</option>
+<option value="arsa">Arsa</option>
+<option value="isyeri">İş yeri</option>
+<option value="diger">Diğer</option>
+</select>
+<div class="hint">Sadece yorum metninde kullanım kolaylığı sağlar; hesap mantığı asıl olarak oran alanlarına göre ilerler.</div>
+</div>
+<div class="field">
+<label for="salePrice">Satış / beyan bedeli (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" data-field="salePrice" id="salePrice" inputmode="numeric" placeholder="Örn: 2.500.000" type="text"/>
+<div class="error-text" id="salePriceError"></div>
+</div>
+<div class="hint">Büyük tutarlar otomatik olarak 2.500.000 gibi gösterilir.</div>
+</div>
+<div class="field">
+<label for="buyerRate">Alıcı harç oranı (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" data-field="buyerRate" id="buyerRate" inputmode="decimal" placeholder="2" type="text"/>
+<div class="error-text" id="buyerRateError"></div>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Satış işlemlerinde yaygın örnek oran alıcı için %2 seviyesidir. Farklı işlem türlerinde oran değişebilir.</div>
+</div>
+<div class="field">
+<label for="sellerRate">Satıcı harç oranı (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" data-field="sellerRate" id="sellerRate" inputmode="decimal" placeholder="2" type="text"/>
+<div class="error-text" id="sellerRateError"></div>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Satış işlemlerinde yaygın örnek oran satıcı için %2 seviyesidir. Farklı işlem türlerinde oran değişebilir.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Ek gider ve paylaşım</div>
+<div class="field-grid">
+<div class="field">
+<label for="extraCost">Ek işlem gideri (TL) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" data-field="extraCost" id="extraCost" inputmode="numeric" placeholder="Örn: 8.500" type="text"/>
+<div class="error-text" id="extraCostError"></div>
+</div>
+<div class="hint">Noter, döner sermaye, vekalet veya diğer ilave işlem giderleri için kullan.</div>
+</div>
+<div class="field">
+<label for="shareMode">Ek gideri kim ödüyor?</label>
+<select id="shareMode">
+<option value="half">Alıcı ve satıcı yarı yarıya</option>
+<option value="buyer">Tamamını alıcı ödüyor</option>
+<option value="seller">Tamamını satıcı ödüyor</option>
+</select>
+<div class="hint">Ek giderin hangi tarafa yüklendiğini senaryoya göre değiştirebilirsin.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="setScenario('standard', this)" type="button">Standart paylaşım</button>
+<button class="chip" onclick="setScenario('buyerAll', this)" type="button">Masrafı alıcı üstleniyor</button>
+<button class="chip" onclick="setScenario('sellerAll', this)" type="button">Masrafı satıcı üstleniyor</button>
+<button class="chip" onclick="fillExample()" type="button">Örnek veri</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Opsiyonel kredi görünümü</div>
+<div class="toggle-grid" style="margin-bottom:14px">
+<label class="toggle-pill"><input id="useCredit" type="checkbox"/> Kredi ile alım analizi aç</label>
+<label class="toggle-pill"><input checked="" id="includeTapuInCashOut" type="checkbox"/> Tapu giderlerini peşin çıkışa dahil et</label>
+</div>
+<div class="field-grid hide" id="creditFields">
+<div class="field">
+<label for="creditAmount">Kredi tutarı (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" data-field="creditAmount" id="creditAmount" inputmode="numeric" placeholder="Örn: 1.500.000" type="text"/>
+<div class="error-text" id="creditAmountError"></div>
+</div>
+<div class="hint">Kullanmayı düşündüğün kredi tutarı. Peşinatla birlikte girersen peşin çıkış analizi daha net oluşur.</div>
+</div>
+<div class="field">
+<label for="cashDown">Peşinat / nakit katkı (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" data-field="cashDown" id="cashDown" inputmode="numeric" placeholder="Örn: 1.000.000" type="text"/>
+<div class="error-text" id="cashDownError"></div>
+</div>
+<div class="hint">Kendi cebinden koyacağın peşin tutar. Tek başına da peşin çıkış görünümü üretebilir.</div>
+</div>
+</div>
+</div>
+<div aria-live="polite" class="validation-box hide" id="validationBox"></div>
+<div class="actions">
+<button class="btn btn-primary" id="calculateBtn" onclick="calculateAndReveal()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="resetTool()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" disabled="" id="shareBtn" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" disabled="" id="copyBtn" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" disabled="" id="printBtn" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Detaylı senaryolar, oran tablosu ve yorum blokları aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak toplam yük yüzdesini, alıcı / satıcı dengesini ve opsiyonel kredi etkisini görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div class="status-text" id="statusText">Satış bedeli ve oranlar girildiğinde tapu harcı ve toplam işlem maliyeti otomatik görünür.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Toplam tapu harcı burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" style="margin:0;color:#4f46e5;font-weight:800">İşlem Yük Skoru</div>
+<div class="score-value" id="loadScore">0/100</div>
+</div>
+<span class="pill" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+<div id="scoreText">Skor, toplam işlem maliyetinin satış bedeline oranı, ek gider yoğunluğu ve alıcı tarafındaki baskı dikkate alınarak oluşur.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Toplam maliyet oranı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Alıcı üzerindeki baskı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Ek gider etkisi</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Kredi peşin çıkışı</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty"><div><div class="label">Alıcı tapu harcı</div><div class="subline">Sadece harç tutarı</div></div><div class="value" id="buyerTax">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Satıcı tapu harcı</div><div class="subline">Sadece harç tutarı</div></div><div class="value" id="sellerTax">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Toplam işlem maliyeti</div><div class="subline">Harç + ek gider</div></div><div class="value" id="grandTotal">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Alıcının toplam çıkışı</div><div class="subline">Kendi yükü</div></div><div class="value" id="buyerTotal">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Satıcının toplam çıkışı</div><div class="subline">Kendi yükü</div></div><div class="value" id="sellerTotal">—</div></div>
+<div class="mini-result is-empty" id="creditCard"><div><div class="label">Opsiyonel peşin çıkış</div><div class="subline">Kredi senaryosu açıksa</div></div><div class="value" id="creditCashNeed">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Toplam yük</h3><div class="big" id="health1">—</div><div class="hint" id="health1Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Alıcı baskısı</h3><div class="big" id="health2">—</div><div class="hint" id="health2Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Kredi görünümü</h3><div class="big" id="health3">—</div><div class="hint" id="health3Sub" style="margin-top:6px">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Satış bedeli ve oranları girip hesapladığında sistem, işlem maliyetini ve alıcı / satıcı baskısını yorumlayacak.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Toplam tapu harcı</th><td id="stat1">—</td></tr>
+<tr><th>Ek gider</th><td id="stat2">—</td></tr>
+<tr><th>Toplam işlem maliyeti</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Alıcı toplam çıkışı</th><td id="stat4">—</td></tr>
+<tr><th>Satıcı toplam çıkışı</th><td id="stat5">—</td></tr>
+<tr><th>Satış bedeline oran</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Senaryo ve oran tabloları</span>
+<span class="summary-note">Farklı oran ve paylaşım görünümü</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Senaryo</th><th>Toplam harç</th><th>Toplam maliyet</th></tr></thead>
+<tbody id="scenarioBody"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Okuma</th><th>Değer</th></tr></thead>
+<tbody>
+<tr><th>Alıcı farkı</th><td id="analysis1">—</td></tr>
+<tr><th>Satıcı farkı</th><td id="analysis2">—</td></tr>
+<tr><th>Ek gider payı</th><td id="analysis3">—</td></tr>
+<tr><th>Kredi peşin çıkışı</th><td id="analysis4">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Tapu maliyeti nasıl okunmalı?</h2>
+<p class="section-note">Tapu harcı çoğu zaman satış bedelinin yanında küçük görünür; fakat ek giderler ve paylaşım şekli değiştikçe kimin üzerinde daha fazla baskı oluştuğu hızla değişebilir. Bu yüzden tek oran yerine toplam maliyeti okumak daha sağlıklıdır.</p>
+<details open="">
+<summary>Alıcı mı satıcı mı daha fazla etkilenir?</summary>
+<p>Harç oranları aynı olsa bile ek giderin kimin üzerinde kaldığı sonuca doğrudan etki eder. Özellikle bütün ek gider alıcıya yüklendiğinde peşin çıkış belirgin şekilde artabilir.</p>
+</details>
+<details>
+<summary>Kredi analizi neden opsiyonel?</summary>
+<p>Her işlem krediyle yapılmaz. Bu yüzden kredi bölümü zorunlu değildir. Açıldığında sadece peşin çıkış ve bütçe baskısını daha gerçekçi görmek için çalışır.</p>
+</details>
+<details>
+<summary>Toplam maliyet yüzdesi neden önemli?</summary>
+<p>İşlem maliyetinin satış bedeline oranı büyüdükçe, satın alma sırasında gözden kaçan ek yük daha görünür hale gelir. Bu oran bütçe planlamasında iyi bir hızlı referanstır.</p>
+</details>
+</div>
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Sık sorulan sorular</h2>
+<details open="">
+<summary>Tapu harcı nasıl hesaplanır?</summary>
+<p>Temel mantık, satış veya beyan edilen bedelin ilgili oranlarla çarpılmasıdır. Bu araç alıcı ve satıcı tarafını ayrı ayrı gösterir ve ek giderleri de toplama dahil edebilir.</p>
+</details>
+<details>
+<summary>Tapu harcını sadece alıcı mı öder?</summary>
+<p>Hayır. Uygulamada alıcı ve satıcı ayrı ayrı pay ödeyebilir. Taraflar kendi aralarında farklı paylaşım da yapabilir; bu yüzden araçta senaryo alanı vardır.</p>
+</details>
+<details>
+<summary>Opsiyonel kredi kısmı zorunlu mu?</summary>
+<p>Hayır. Kredi bölümü kapalıysa araç normal tapu harcı analizi olarak çalışır. Açıldığında sadece peşin çıkış baskısı ve kredi kullanım görünümü eklenir.</p>
+</details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 style="margin-bottom:12px">İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/ev-amortisman-hesaplama">
+<span class="small">Emlak</span>
+<strong>Ev Amortisman Hesaplama</strong>
+<p>Konutun kira ile kendini kaç yılda amorti ettiğini gör.</p>
+</a>
+<a class="related-card" href="/ev-amortisman-hesaplama?mod=carpan">
+<span class="small">Emlak</span>
+<strong>Ev Amortisman ve Kira Çarpanı</strong>
+<p>Fiyat ve yıllık kira ilişkisini hızlıca analiz et.</p>
+</a>
+<a class="related-card" href="/kredi-hesaplama">
+<span class="small">Finans</span>
+<strong>Kredi Hesaplama</strong>
+<p>Kredi kullanacaksan aylık yük ve toplam maliyeti ayrıca hesapla.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const el = id => document.getElementById(id);
+    const STORAGE_KEY = 'hesapica_tapu_harci_lock_state_v2';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      dataMode: 'manual',
+      suppressSave: false
+    };
+    let debounceTimer = null;
+
+    function formatTRY(value){
+      return new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(value)||0);
+    }
+    function formatPercent(value,digits=2){
+      return '%' + (Number(value)||0).toLocaleString('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits});
+    }
+    function formatRateInput(value){
+      if(value === null || value === undefined || value === '') return '';
+      const num = Number(value);
+      if(!Number.isFinite(num)) return '';
+      return num.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:2});
+    }
+    function sanitizeDecimalTyping(value){
+      const cleaned = String(value || '').replace(/[^0-9.,]/g,'');
+      let out = '';
+      let separatorUsed = false;
+      for(const ch of cleaned){
+        if(ch === '.' || ch === ','){
+          if(separatorUsed) continue;
+          separatorUsed = true;
+          out += ch;
+        }else{
+          out += ch;
+        }
+      }
+      return out;
+    }
+    function formatTrInput(value){
+      const num = Math.round(Number(value)||0);
+      return num ? new Intl.NumberFormat('tr-TR').format(num) : '';
+    }
+    function parseTrNumber(value){
+      if(value === null || value === undefined) return 0;
+      const cleaned = String(value).replace(/\./g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
+      return Number(cleaned) || 0;
+    }
+    function clamp(n,min,max){ return Math.min(Math.max(n,min),max); }
+
+    function readInputs(){
+      return {
+        propertyType: el('propertyType').value,
+        salePrice: parseTrNumber(el('salePrice').value),
+        buyerRate: parseTrNumber(el('buyerRate').value),
+        sellerRate: parseTrNumber(el('sellerRate').value),
+        extraCost: parseTrNumber(el('extraCost').value),
+        shareMode: el('shareMode').value,
+        useCredit: el('useCredit').checked,
+        includeTapuInCashOut: el('includeTapuInCashOut').checked,
+        creditAmount: parseTrNumber(el('creditAmount').value),
+        cashDown: parseTrNumber(el('cashDown').value)
+      };
+    }
+
+    function writeInputs(data = {}){
+      el('propertyType').value = data.propertyType || 'konut';
+      el('salePrice').value = data.salePrice ? formatTrInput(data.salePrice) : '';
+      el('buyerRate').value = data.buyerRate !== undefined && data.buyerRate !== null && data.buyerRate !== '' ? formatRateInput(data.buyerRate) : '';
+      el('sellerRate').value = data.sellerRate !== undefined && data.sellerRate !== null && data.sellerRate !== '' ? formatRateInput(data.sellerRate) : '';
+      el('extraCost').value = data.extraCost ? formatTrInput(data.extraCost) : '';
+      el('shareMode').value = data.shareMode || 'half';
+      el('useCredit').checked = !!data.useCredit;
+      el('includeTapuInCashOut').checked = data.includeTapuInCashOut !== false;
+      el('creditAmount').value = data.creditAmount ? formatTrInput(data.creditAmount) : '';
+      el('cashDown').value = data.cashDown ? formatTrInput(data.cashDown) : '';
+      updateCreditVisibility(false);
+    }
+
+    function saveState(){
+      if(state.suppressSave || state.dataMode !== 'manual' || !state.isValid) return;
+      const payload = {
+        inputs: state.inputs,
+        savedAt: Date.now()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function loadState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        const payload = JSON.parse(raw);
+        if(payload && payload.inputs){
+          state.suppressSave = true;
+          writeInputs(payload.inputs);
+          state.suppressSave = false;
+          state.dataMode = 'manual';
+          calculateAll({scroll:false, save:false});
+        }
+      }catch(_){}
+    }
+
+    function clearSavedState(){
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(_){}
+    }
+
+    function updateActionButtons(enabled){
+      ['shareBtn','copyBtn','printBtn'].forEach(id => {
+        const node = el(id);
+        if(node) node.disabled = !enabled;
+      });
+    }
+
+    function setPartialState(message='Temel alanlar tamamlandığında sonuçlar otomatik oluşur.'){
+      state.results = null;
+      state.isCalculated = false;
+      state.isValid = false;
+      clearFieldErrors();
+      showValidation([]);
+      updateStatus(false, '', message);
+      el('mainResult').textContent = '—';
+      el('mainResultText').textContent = 'Satış bedeli ve en az bir harç oranı tamamlandığında toplam tapu harcı burada görünecek.';
+      el('loadScore').textContent = '0/100';
+      el('scoreBadge').textContent = 'Kısmi giriş';
+      el('scoreBadge').className = 'pill';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'Temel alanlar tamamlandığında skor; toplam maliyet oranı, alıcı baskısı, ek gider etkisi ve kredi peşin çıkışını birlikte okuyacak.';
+      el('scoreBreakdown').querySelectorAll('.val').forEach(v => v.textContent = '—');
+      ['buyerTax','sellerTax','grandTotal','buyerTotal','sellerTotal','creditCashNeed','stat1','stat2','stat3','stat4','stat5','stat6','analysis1','analysis2','analysis3','analysis4'].forEach(id => el(id).textContent = '—');
+      ['health1','health2','health3','health1Sub','health2Sub','health3Sub'].forEach(id => el(id).textContent = '—');
+      el('smartComment').textContent = 'Temel satış bedeli ve harç oranı bilgileri tamamlandığında sistem, işlem maliyetini ve alıcı / satıcı baskısını burada yorumlayacak.';
+      el('scenarioBody').innerHTML = '<tr><td colspan="3">Temel alanlar tamamlandığında senaryo tablosu oluşur.</td></tr>';
+      updateActionButtons(false);
+    }
+
+    function showEphemeralStatus(message, duration = 2200){
+      const current = state.results ? `Güncel girişlerin için ${formatTRY(state.results.totalTax)} toplam tapu harcı ve ${formatTRY(state.results.grandTotalVal)} toplam işlem maliyeti hesaplandı.` : 'Satış bedeli ve oranlar girildiğinde tapu harcı ve toplam işlem maliyeti otomatik görünür.';
+      el('statusText').textContent = message;
+      clearTimeout(showEphemeralStatus._timer);
+      showEphemeralStatus._timer = setTimeout(() => {
+        el('statusText').textContent = current;
+      }, duration);
+    }
+
+    function showValidation(errors){
+      const box = el('validationBox');
+      if(!errors.length){
+        box.classList.add('hide');
+        box.innerHTML = '';
+        return;
+      }
+      box.classList.remove('hide');
+      box.innerHTML = `<strong>Lütfen şu alanları kontrol et:</strong><br>${errors.join('<br>')}`;
+    }
+
+    function clearFieldErrors(){
+      document.querySelectorAll('[data-field]').forEach(input => input.classList.remove('field-error'));
+      document.querySelectorAll('.error-text').forEach(node => node.textContent = '');
+    }
+
+    function markFieldError(field, message){
+      const input = document.querySelector(`[data-field="${field}"]`);
+      const node = el(`${field}Error`);
+      if(input) input.classList.add('field-error');
+      if(node) node.textContent = message;
+    }
+
+    function validateInputs(inputs){
+      const errors = [];
+      clearFieldErrors();
+
+      if(inputs.salePrice <= 0){
+        errors.push('• Satış / beyan bedeli 0’dan büyük olmalı.');
+        markFieldError('salePrice', 'Satış bedeli zorunludur.');
+      }
+      if(inputs.buyerRate < 0 || inputs.buyerRate > 10){
+        errors.push('• Alıcı harç oranı 0 ile 10 arasında olmalı.');
+        markFieldError('buyerRate', 'Geçerli bir oran gir.');
+      }
+      if(inputs.sellerRate < 0 || inputs.sellerRate > 10){
+        errors.push('• Satıcı harç oranı 0 ile 10 arasında olmalı.');
+        markFieldError('sellerRate', 'Geçerli bir oran gir.');
+      }
+      if(inputs.buyerRate <= 0 && inputs.sellerRate <= 0){
+        errors.push('• En az bir harç oranı 0’dan büyük olmalı.');
+        markFieldError('buyerRate', 'Oran bilgisi gerekli.');
+        markFieldError('sellerRate', 'Oran bilgisi gerekli.');
+      }
+      if(inputs.extraCost < 0){
+        errors.push('• Ek gider negatif olamaz.');
+        markFieldError('extraCost', 'Negatif değer kullanılamaz.');
+      }
+      if(inputs.useCredit){
+        if(inputs.creditAmount < 0){
+          errors.push('• Kredi tutarı negatif olamaz.');
+          markFieldError('creditAmount', 'Negatif değer kullanılamaz.');
+        }
+        if(inputs.cashDown < 0){
+          errors.push('• Peşinat / nakit katkı negatif olamaz.');
+          markFieldError('cashDown', 'Negatif değer kullanılamaz.');
+        }
+      }
+
+      state.isValid = errors.length === 0;
+      showValidation(errors);
+      return errors.length === 0;
+    }
+
+    function setMoneyInput(input){
+      input.addEventListener('input', () => {
+        const raw = input.value.replace(/\D/g,'');
+        input.value = raw ? new Intl.NumberFormat('tr-TR').format(Number(raw)) : '';
+        state.dataMode = 'manual';
+        scheduleCalculation();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseTrNumber(input.value);
+        input.value = val ? formatTrInput(val) : '';
+      });
+    }
+
+    function updateCreditVisibility(triggerCalc = true){
+      const active = el('useCredit').checked;
+      el('creditFields').classList.toggle('hide', !active);
+      if(triggerCalc) scheduleCalculation();
+    }
+
+    function updateStatus(isReady, level='', text=''){
+      if(!isReady){
+        el('statusBadge').textContent = 'Veri bekleniyor';
+        el('statusBadge').className = 'badge';
+        el('statusText').textContent = text || 'Satış bedeli ve oranlar girildiğinde tapu harcı ve toplam işlem maliyeti otomatik görünür.';
+        el('highlightCard').classList.add('is-empty');
+        document.querySelectorAll('.mini-result').forEach(x => x.classList.add('is-empty'));
+        return;
+      }
+      el('highlightCard').classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.remove('is-empty'));
+      const labels = {good:'Hesaplandı',warn:'Yük orta seviyede',bad:'Yük yükseldi'};
+      el('statusBadge').textContent = labels[level] || 'Hesaplandı';
+      el('statusBadge').className = 'badge ' + level;
+      el('statusText').textContent = text || 'Güncel girişlerinle sonuçlar hesaplandı.';
+    }
+
+    function clearScenarioActive(){
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+    }
+
+    function setScenario(type, btn){
+      clearScenarioActive();
+      if(btn) btn.classList.add('active');
+      state.dataMode = 'demo';
+      if(type === 'standard'){
+        el('buyerRate').value = '2';
+        el('sellerRate').value = '2';
+        el('shareMode').value = 'half';
+      }else if(type === 'buyerAll'){
+        el('buyerRate').value = '2';
+        el('sellerRate').value = '2';
+        el('shareMode').value = 'buyer';
+      }else if(type === 'sellerAll'){
+        el('buyerRate').value = '2';
+        el('sellerRate').value = '2';
+        el('shareMode').value = 'seller';
+      }
+      calculateAll({scroll:false, save:false});
+    }
+
+    function fillExample(){
+      clearScenarioActive();
+      state.dataMode = 'demo';
+      state.suppressSave = true;
+      writeInputs({
+        propertyType:'konut',
+        salePrice:3250000,
+        buyerRate:2,
+        sellerRate:2,
+        extraCost:8500,
+        shareMode:'half',
+        useCredit:true,
+        includeTapuInCashOut:true,
+        creditAmount:1900000,
+        cashDown:1350000
+      });
+      state.suppressSave = false;
+      calculateAll({scroll:true, save:false});
+    }
+
+    function resetTool(){
+      clearScenarioActive();
+      state.suppressSave = true;
+      writeInputs({
+        propertyType:'konut',
+        salePrice:'',
+        buyerRate:'',
+        sellerRate:'',
+        extraCost:'',
+        shareMode:'half',
+        useCredit:false,
+        includeTapuInCashOut:true,
+        creditAmount:'',
+        cashDown:''
+      });
+      state.suppressSave = false;
+      state.dataMode = 'manual';
+      state.inputs = readInputs();
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      clearSavedState();
+      clearFieldErrors();
+      showValidation([]);
+      setEmptyState('Tüm alanlar temizlendi. Yeni senaryo için veri girebilirsin.');
+    }
+
+    function setEmptyState(statusMessage='Satış bedeli ve oranlar girildiğinde tapu harcı ve toplam işlem maliyeti otomatik görünür.'){
+      updateStatus(false, '', statusMessage);
+      el('mainResult').textContent = '—';
+      el('mainResultText').textContent = 'Toplam tapu harcı burada görünecek.';
+      el('loadScore').textContent = '0/100';
+      el('scoreBadge').textContent = 'Veri bekleniyor';
+      el('scoreBadge').className = 'pill';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'Skor, toplam işlem maliyetinin satış bedeline oranı, ek gider yoğunluğu ve alıcı tarafındaki baskı dikkate alınarak oluşur.';
+      const breakdown = el('scoreBreakdown').querySelectorAll('.val');
+      breakdown.forEach(v => v.textContent = '—');
+      ['buyerTax','sellerTax','grandTotal','buyerTotal','sellerTotal','creditCashNeed','stat1','stat2','stat3','stat4','stat5','stat6','analysis1','analysis2','analysis3','analysis4'].forEach(id => el(id).textContent = '—');
+      ['health1','health2','health3','health1Sub','health2Sub','health3Sub'].forEach(id => el(id).textContent = '—');
+      el('smartComment').textContent = 'Satış bedeli ve oranları girip hesapladığında sistem, işlem maliyetini ve alıcı / satıcı baskısını yorumlayacak.';
+      el('scenarioBody').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+      updateActionButtons(false);
+    }
+
+    function scheduleCalculation(){
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => calculateAll({scroll:false, save:true}), 220);
+    }
+
+    function revealResults(){
+      const panel = el('resultsPanel');
+      const card = el('highlightCard');
+      panel.classList.remove('result-focus');
+      card.classList.remove('result-flash');
+      void panel.offsetWidth;
+      panel.scrollIntoView({behavior:'smooth', block:'start'});
+      panel.classList.add('result-focus');
+      card.classList.add('result-flash');
+      setTimeout(() => {
+        panel.classList.remove('result-focus');
+        card.classList.remove('result-flash');
+      }, 1500);
+    }
+
+    function calculateAndReveal(){
+      const btn = el('calculateBtn');
+      btn.classList.add('is-calculating');
+      calculateAll({scroll:true, save:true});
+      setTimeout(() => btn.classList.remove('is-calculating'), 220);
+    }
+
+    function calculateAll(options = {}){
+      const {scroll = false, save = true} = options;
+      const inputs = readInputs();
+      state.inputs = inputs;
+
+      const hasAnyMeaningfulInput = inputs.salePrice > 0 || inputs.buyerRate > 0 || inputs.sellerRate > 0 || inputs.extraCost > 0 || inputs.creditAmount > 0 || inputs.cashDown > 0;
+      const hasCoreReady = inputs.salePrice > 0 && (inputs.buyerRate > 0 || inputs.sellerRate > 0);
+
+      if(!hasAnyMeaningfulInput){
+        state.results = null;
+        state.isValid = false;
+        state.isCalculated = false;
+        clearFieldErrors();
+        showValidation([]);
+        setEmptyState();
+        return;
+      }
+
+      if(!hasCoreReady){
+        setPartialState('Satış bedeli ve en az bir harç oranı girildiğinde sonuçlar otomatik oluşur.');
+        return;
+      }
+
+      const isValid = validateInputs(inputs);
+      if(!isValid){
+        state.results = null;
+        state.isCalculated = false;
+        setPartialState('Bazı girişler geçersiz görünüyor. Düzeltince sonuçlar otomatik güncellenecek.');
+        showValidation(Array.from(new Set([
+          inputs.salePrice <= 0 ? '• Satış / beyan bedeli 0’dan büyük olmalı.' : null,
+          (inputs.buyerRate < 0 || inputs.buyerRate > 10) ? '• Alıcı harç oranı 0 ile 10 arasında olmalı.' : null,
+          (inputs.sellerRate < 0 || inputs.sellerRate > 10) ? '• Satıcı harç oranı 0 ile 10 arasında olmalı.' : null,
+          (inputs.buyerRate <= 0 && inputs.sellerRate <= 0) ? '• En az bir harç oranı 0’dan büyük olmalı.' : null,
+          (inputs.extraCost < 0) ? '• Ek gider negatif olamaz.' : null,
+          (inputs.useCredit && inputs.creditAmount < 0) ? '• Kredi tutarı negatif olamaz.' : null,
+          (inputs.useCredit && inputs.cashDown < 0) ? '• Peşinat / nakit katkı negatif olamaz.' : null
+        ].filter(Boolean))));
+        return;
+      }
+
+      const typeMap = {konut:'konut', arsa:'arsa', isyeri:'iş yeri', diger:'gayrimenkul'};
+      const buyerTaxVal = inputs.salePrice * (inputs.buyerRate / 100);
+      const sellerTaxVal = inputs.salePrice * (inputs.sellerRate / 100);
+      const totalTax = buyerTaxVal + sellerTaxVal;
+
+      let buyerExtra = 0;
+      let sellerExtra = 0;
+      if(inputs.shareMode === 'half'){
+        buyerExtra = inputs.extraCost / 2;
+        sellerExtra = inputs.extraCost / 2;
+      }else if(inputs.shareMode === 'buyer'){
+        buyerExtra = inputs.extraCost;
+      }else{
+        sellerExtra = inputs.extraCost;
+      }
+
+      const buyerTotalVal = buyerTaxVal + buyerExtra;
+      const sellerTotalVal = sellerTaxVal + sellerExtra;
+      const grandTotalVal = totalTax + inputs.extraCost;
+      const totalLoadPct = inputs.salePrice > 0 ? (grandTotalVal / inputs.salePrice) * 100 : 0;
+      const buyerPressurePct = inputs.salePrice > 0 ? (buyerTotalVal / inputs.salePrice) * 100 : 0;
+      const extraSharePct = grandTotalVal > 0 ? (inputs.extraCost / grandTotalVal) * 100 : 0;
+
+      let creditCashNeedVal = 0;
+      let creditGap = 0;
+      let financingStatus = 'Kapalı';
+      let hasCreditData = false;
+      if(inputs.useCredit){
+        hasCreditData = inputs.creditAmount > 0 || inputs.cashDown > 0;
+        if(hasCreditData){
+          creditGap = inputs.salePrice - inputs.creditAmount - inputs.cashDown;
+          creditCashNeedVal = inputs.cashDown + (inputs.includeTapuInCashOut ? buyerTotalVal : 0);
+          financingStatus = creditGap > 0 ? 'Eksik finansman var' : 'Finansman tamamlanıyor';
+        }else{
+          financingStatus = 'Kredi verisi bekleniyor';
+        }
+      }
+
+      let score = 100;
+      score -= clamp(totalLoadPct * 10, 0, 45);
+      score -= clamp(buyerPressurePct * 9, 0, 30);
+      score -= clamp(extraSharePct * 0.7, 0, 15);
+      if(inputs.useCredit && hasCreditData && creditCashNeedVal > 0){
+        const cashNeedPct = (creditCashNeedVal / inputs.salePrice) * 100;
+        score -= clamp(cashNeedPct * 0.3, 0, 10);
+      }
+      score = Math.round(clamp(score, 0, 100));
+
+      let level = 'good';
+      if(totalLoadPct >= 5 || buyerPressurePct >= 3 || (inputs.useCredit && creditGap > 0)) level = 'bad';
+      else if(totalLoadPct >= 4 || buyerPressurePct >= 2.2) level = 'warn';
+
+      state.results = {
+        buyerTaxVal, sellerTaxVal, totalTax, buyerExtra, sellerExtra, buyerTotalVal, sellerTotalVal,
+        grandTotalVal, totalLoadPct, buyerPressurePct, extraSharePct, creditCashNeedVal, creditGap,
+        financingStatus, hasCreditData, score, level, propertyLabel: typeMap[inputs.propertyType] || 'gayrimenkul'
+      };
+      state.isCalculated = true;
+
+      updateStatus(true, level, `Güncel girişlerin için ${formatTRY(totalTax)} toplam tapu harcı ve ${formatTRY(grandTotalVal)} toplam işlem maliyeti hesaplandı.`);
+
+      el('mainResult').textContent = formatTRY(totalTax);
+      el('mainResultText').textContent = `${state.results.propertyLabel} satışında toplam tapu harcı ${formatTRY(totalTax)} olarak görünüyor. Toplam işlem maliyeti ${formatTRY(grandTotalVal)} seviyesinde.`;
+      el('buyerTax').textContent = formatTRY(buyerTaxVal);
+      el('sellerTax').textContent = formatTRY(sellerTaxVal);
+      el('grandTotal').textContent = formatTRY(grandTotalVal);
+      el('buyerTotal').textContent = formatTRY(buyerTotalVal);
+      el('sellerTotal').textContent = formatTRY(sellerTotalVal);
+      el('creditCashNeed').textContent = inputs.useCredit ? (hasCreditData ? formatTRY(creditCashNeedVal) : 'Veri bekleniyor') : 'Kapalı';
+
+      el('stat1').textContent = formatTRY(totalTax);
+      el('stat2').textContent = formatTRY(inputs.extraCost);
+      el('stat3').textContent = formatTRY(grandTotalVal);
+      el('stat4').textContent = formatTRY(buyerTotalVal);
+      el('stat5').textContent = formatTRY(sellerTotalVal);
+      el('stat6').textContent = formatPercent(totalLoadPct, 3);
+
+      const diffBuyer = buyerTotalVal - sellerTotalVal;
+      el('analysis1').textContent = diffBuyer >= 0 ? `+ ${formatTRY(diffBuyer)}` : `- ${formatTRY(Math.abs(diffBuyer))}`;
+      el('analysis2').textContent = diffBuyer <= 0 ? `+ ${formatTRY(Math.abs(diffBuyer))}` : `- ${formatTRY(diffBuyer)}`;
+      el('analysis3').textContent = formatPercent(extraSharePct, 1);
+      el('analysis4').textContent = inputs.useCredit ? (hasCreditData ? `${formatTRY(creditCashNeedVal)} • ${financingStatus}` : financingStatus) : 'Kapalı';
+
+      el('loadScore').textContent = `${score}/100`;
+      el('scoreBar').style.width = `${score}%`;
+      const scoreBadge = el('scoreBadge');
+      if(score >= 75){
+        scoreBadge.textContent = 'Kontrollü';
+        scoreBadge.className = 'pill good';
+      }else if(score >= 50){
+        scoreBadge.textContent = 'Dikkat gerekli';
+        scoreBadge.className = 'pill warn';
+      }else{
+        scoreBadge.textContent = 'Baskı yüksek';
+        scoreBadge.className = 'pill bad';
+      }
+
+      const bd = el('scoreBreakdown').querySelectorAll('.val');
+      bd[0].textContent = formatPercent(totalLoadPct, 3);
+      bd[1].textContent = formatPercent(buyerPressurePct, 3);
+      bd[2].textContent = formatPercent(extraSharePct, 1);
+      bd[3].textContent = inputs.useCredit ? (hasCreditData ? formatTRY(creditCashNeedVal) : 'Veri bekleniyor') : 'Kapalı';
+
+      el('health1').textContent = totalLoadPct < 4 ? 'Daha kontrollü' : totalLoadPct < 5 ? 'Orta' : 'Belirgin';
+      el('health1Sub').textContent = `Toplam maliyet / satış bedeli: ${formatPercent(totalLoadPct, 3)}`;
+      el('health2').textContent = buyerTotalVal > sellerTotalVal ? 'Alıcı ağır' : buyerTotalVal < sellerTotalVal ? 'Satıcı ağır' : 'Dengeli';
+      el('health2Sub').textContent = `Alıcı yükü ${formatTRY(buyerTotalVal)}, satıcı yükü ${formatTRY(sellerTotalVal)}`;
+      el('health3').textContent = inputs.useCredit ? financingStatus : 'Kapalı';
+      el('health3Sub').textContent = inputs.useCredit
+        ? (hasCreditData ? (creditGap > 0 ? `Eksik finansman: ${formatTRY(creditGap)}` : `Peşin çıkış: ${formatTRY(creditCashNeedVal)}`) : 'Kredi tutarı veya peşinat girildiğinde peşin çıkış burada görünür')
+        : 'Kredi bölümü kullanılmıyor';
+
+      const decisionLabel =
+        score >= 75 ? 'Karar özeti: maliyet baskısı kontrollü.' :
+        score >= 50 ? 'Karar özeti: yük yönetilebilir ama dikkat gerekli.' :
+        'Karar özeti: toplam yük hissedilir seviyede.';
+      let comment = `${formatTRY(inputs.salePrice)} bedelli ${state.results.propertyLabel} için toplam işlem maliyeti ${formatTRY(grandTotalVal)} görünüyor. Bunun ${formatTRY(totalTax)} kısmı tapu harcı, ${formatTRY(inputs.extraCost)} kısmı ek giderlerden oluşuyor. `;
+      comment += buyerTotalVal > sellerTotalVal
+        ? 'Bu senaryoda baskı daha çok alıcı tarafında. '
+        : buyerTotalVal < sellerTotalVal
+          ? 'Bu senaryoda baskı daha çok satıcı tarafında. '
+          : 'Taraflar arasındaki yük daha dengeli görünüyor. ';
+      comment += totalLoadPct < 4
+        ? 'Toplam yük satış bedeline göre daha kontrollü seviyede. '
+        : totalLoadPct < 5
+          ? 'Toplam yük dikkate değer; bütçe planına mutlaka eklenmeli. '
+          : 'Toplam yük hissedilir seviyede; peşinat, kredi ve taşınma giderleriyle birlikte düşünmek önemli. ';
+      if(inputs.useCredit){
+        comment += hasCreditData
+          ? (creditGap > 0
+              ? `Girdiğin kredi + peşinat toplamı satış bedelini karşılamıyor; yaklaşık ${formatTRY(creditGap)} ek finansman ihtiyacı oluşuyor. `
+              : `Kredi senaryosunda tahmini peşin çıkış ${formatTRY(creditCashNeedVal)} seviyesinde görünüyor. `)
+          : 'Kredi görünümü açık ancak kredi tutarı veya peşinat henüz girilmediği için peşin çıkış analizi beklemede. ';
+      }
+      el('smartComment').textContent = `${decisionLabel} ${comment}`;
+
+      buildScenarioTable(inputs.salePrice, inputs.buyerRate, inputs.sellerRate, inputs.extraCost);
+      updateActionButtons(true);
+
+      if(save) saveState();
+      if(scroll){
+        revealResults();
+      }
+    }
+
+    function buildScenarioTable(salePrice, buyerRate, sellerRate, extraCost){
+      const rows = [
+        {name:'Standart paylaşım', share:'half', br:buyerRate, sr:sellerRate},
+        {name:'Masrafı alıcı üstleniyor', share:'buyer', br:buyerRate, sr:sellerRate},
+        {name:'Masrafı satıcı üstleniyor', share:'seller', br:buyerRate, sr:sellerRate},
+        {name:'Toplam oran +0,5 puan', share:'half', br:buyerRate + 0.5, sr:sellerRate + 0.5}
+      ];
+
+      el('scenarioBody').innerHTML = rows.map(r => {
+        const bt = salePrice * (r.br/100);
+        const st = salePrice * (r.sr/100);
+        const totalTax = bt + st;
+        const total = totalTax + extraCost;
+        return `<tr><td>${r.name}</td><td>${formatTRY(totalTax)}</td><td>${formatTRY(total)}</td></tr>`;
+      }).join('');
+    }
+
+
+    function copyTextWithFallback(text, successMessage, failMessage){
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(() => {
+          showEphemeralStatus(successMessage);
+        }).catch(() => fallbackCopy(text, successMessage, failMessage));
+        return;
+      }
+      fallbackCopy(text, successMessage, failMessage);
+    }
+
+    function fallbackCopy(text, successMessage, failMessage){
+      try{
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly','');
+        ta.style.position='fixed';
+        ta.style.opacity='0';
+        ta.style.pointerEvents='none';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        showEphemeralStatus(ok ? successMessage : failMessage);
+      }catch(_){
+        showEphemeralStatus(failMessage);
+      }
+    }
+
+    function copyResult(){
+      if(!state.isCalculated || !state.results){
+        updateStatus(false, '', 'Önce sonuç üretmelisin. Kopyalanacak özet henüz oluşmadı.');
+        return;
+      }
+      const text = [
+        'Tapu Harcı Hesaplama',
+        `Toplam Tapu Harcı: ${el('mainResult').textContent}`,
+        `Alıcı Toplam Çıkışı: ${el('buyerTotal').textContent}`,
+        `Satıcı Toplam Çıkışı: ${el('sellerTotal').textContent}`,
+        `Toplam İşlem Maliyeti: ${el('grandTotal').textContent}`,
+        `İşlem Yük Skoru: ${el('loadScore').textContent}`
+      ].join('\n');
+
+      copyTextWithFallback(
+        text,
+        'Sonuç özeti panoya kopyalandı.',
+        'Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.'
+      );
+    }
+
+    function shareResult(){
+      if(!state.isCalculated || !state.results){
+        updateStatus(false, '', 'Paylaşmak için önce sonuç üretmelisin.');
+        return;
+      }
+      const shareText = `Tapu Harcı Hesaplama sonucu: Toplam tapu harcı ${el('mainResult').textContent}, toplam işlem maliyeti ${el('grandTotal').textContent}, işlem yük skoru ${el('loadScore').textContent}.`;
+      if(navigator.share){
+        navigator.share({
+          title:'Tapu Harcı Hesaplama',
+          text:shareText,
+          url:window.location.href
+        }).catch(() => {});
+        return;
+      }
+      copyTextWithFallback(
+        `${shareText}\n${window.location.href}`,
+        'Paylaşım özeti ve sayfa linki panoya kopyalandı.',
+        'Paylaşım özeti kopyalanamadı. Tarayıcı izinlerini kontrol et.'
+      );
+    }
+
+    function printResult(){
+      if(!state.isCalculated || !state.results){
+        updateStatus(false, '', 'Yazdırmadan önce sonuç üretmelisin.');
+        return;
+      }
+      window.print();
+    }
+
+    function setRateInput(input){
+      input.addEventListener('input', () => {
+        input.value = sanitizeDecimalTyping(input.value);
+        state.dataMode = 'manual';
+        scheduleCalculation();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseTrNumber(input.value);
+        input.value = val ? formatRateInput(val) : '';
+      });
+    }
+
+    setMoneyInput(el('salePrice'));
+    setMoneyInput(el('extraCost'));
+    setMoneyInput(el('creditAmount'));
+    setMoneyInput(el('cashDown'));
+    setRateInput(el('buyerRate'));
+    setRateInput(el('sellerRate'));
+
+    el('useCredit').addEventListener('change', () => {
+      state.dataMode = 'manual';
+      updateCreditVisibility(true);
+    });
+    document.querySelectorAll('input,select').forEach(node => {
+      if(!['salePrice','extraCost','creditAmount','cashDown','buyerRate','sellerRate','useCredit'].includes(node.id)){
+        node.addEventListener('input', () => {
+          state.dataMode = 'manual';
+          scheduleCalculation();
+        });
+      }
+      node.addEventListener('change', () => {
+        state.dataMode = 'manual';
+        scheduleCalculation();
+      });
+    });
+
+    state.suppressSave = true;
+    updateActionButtons(false);
+    setEmptyState();
+    state.suppressSave = false;
+    loadState();
+  </script>
+</body>
+</html>

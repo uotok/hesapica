@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Varlık Getirisi Hesaplama 2026 | Altın, Dolar ve Euro için Kar / Zarar Analizi | Hesapica</title>
+<meta content="Varlık getirisi hesaplama aracı ile altın, dolar ve euro yatırımlarında alış fiyatı, satış fiyatı, miktar, makas ve maliyet etkisine göre net kar zarar, başa baş seviyesi ve hedef satış fiyatını tek ekranda analiz edin." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="varlık getirisi hesaplama, altın getirisi hesaplama, dolar getirisi hesaplama, euro getirisi hesaplama, döviz kar hesaplama, yatırım kar zarar hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/varlik-getirisi-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Varlık Getirisi Hesaplama 2026 | Altın, Dolar ve Euro için Kar / Zarar Analizi | Hesapica" property="og:title"/>
+<meta content="Varlık getirisi hesaplama aracı ile altın, dolar ve euro yatırımlarında alış fiyatı, satış fiyatı, miktar, makas ve maliyet etkisine göre net kar zarar, başa baş seviyesi ve hedef satış fiyatını tek ekranda analiz edin." property="og:description"/>
+<meta content="https://hesapica.com/varlik-getirisi-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Varlık Getirisi Hesaplama 2026 | Altın, Dolar ve Euro için Kar / Zarar Analizi | Hesapica" name="twitter:title"/>
+<meta content="Varlık getirisi hesaplama aracı ile altın, dolar ve euro yatırımlarında alış fiyatı, satış fiyatı, miktar, makas ve maliyet etkisine göre net kar zarar, başa baş seviyesi ve hedef satış fiyatını tek ekranda analiz edin." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:8px;font-size:13px;font-weight:700;color:#b91c1c;line-height:1.45}
+
+
+    .asset-mode-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+    .asset-mode-badge{padding:8px 12px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:13px;font-weight:800;border:1px solid #c7d2fe}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .toggle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .toggle-pill{
+      display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;
+      background:#fcfcfd;border:1px solid var(--line);font-weight:700;color:#374151
+    }
+    .toggle-pill input{width:18px;height:18px;accent-color:var(--primary)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+
+    .validation-box{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:#fef2f2;
+      border:1px solid #fecaca;
+      color:#991b1b;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.55;
+    }
+    .validation-box.show{display:block}
+    .field-error input,
+    .field-error select{
+      border-color:#dc2626 !important;
+      box-shadow:0 0 0 4px rgba(220,38,38,.10) !important;
+      background:#fff7f7;
+    }
+    .field-error .error-text{display:block}
+    .result-flash{
+      animation:resultFlash 1.2s ease;
+    }
+    @keyframes resultFlash{
+      0%{box-shadow:0 0 0 0 rgba(79,70,229,.28), var(--shadow)}
+      35%{box-shadow:0 0 0 10px rgba(79,70,229,.14), 0 20px 46px rgba(79,70,229,.18)}
+      100%{box-shadow:var(--shadow)}
+    }
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.toggle-grid{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;
+        border:1px solid #d1d5db !important;
+        break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Yatırım","item":"https://hesapica.com/#yatirim"},
+      {"@type":"ListItem","position":3,"name":"Varlık Getirisi Hesaplama","item":"https://hesapica.com/varlik-getirisi-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Break-even fiyat neden önemli?","acceptedAnswer":{"@type":"Answer","text":"Break-even fiyat, seçtiğiniz varlıkta zarar bölgesinden çıkmak için gereken minimum satış seviyesini gösterir. Makas ve maliyetler eklendiğinde başa baş noktası çoğu kullanıcının düşündüğünden daha yukarı çıkabilir."}},
+      {"@type":"Question","name":"Varlık Skoru ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Varlık Skoru; net getiri, makas baskısı, ek maliyet etkisi ve break-even uzaklığını birlikte yorumlayarak yatırımın kalitesini hızlıca görmeyi sağlar."}},
+      {"@type":"Question","name":"Bu araç hangi varlıklar için uygun?","acceptedAnswer":{"@type":"Answer","text":"Araç, altın, dolar ve euro gibi alış fiyatı, satış fiyatı ve miktar üzerinden takip edilen varlıklarda pratik kar zarar analizi yapmak için tasarlanmıştır."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Varlık Getirisi Hesaplama",
+    "url":"https://hesapica.com/varlik-getirisi-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"JavaScript gerekir",
+    "description":"Altın, dolar ve euro yatırımlarının net kar zararını, başa baş satış seviyesini, hedef fiyatını ve makas etkisini hesaplayan araç.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"TRY"
+    }
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/varlik-getirisi-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#yatirim">Yatırım</a>
+<span>/</span>
+<strong>Varlık Getirisi Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Varlık Analizi</span>
+<h1>Varlık Getirisi Hesaplama</h1>
+<p>Altın, dolar ve euro yatırımlarında oluşan <strong>net kar veya zararı</strong>, <strong>başa baş satış seviyesini</strong>, <strong>hedef kâr için gereken fiyatı</strong>, <strong>makas ve maliyet etkisini</strong> ve <strong>yatırım kalite skorunu</strong> tek ekranda görebilirsin.</p>
+<div class="hero-chips">
+<span class="hero-chip">Varlık Skoru</span>
+<span class="hero-chip">Break-even analizi</span>
+<span class="hero-chip">Hedef satış fiyatı</span>
+<span class="hero-chip">Mobilde sade akış</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Karar desteği</div>
+<strong>Ana sonuç üstte, satış kararı ve detaylar aşağıda</strong>
+<p>Varlık türünü seçip alış fiyatı, satış fiyatı, miktar ve varsa makas bilgini girmen yeterli. Araç; net sonucu, makasın getiriyi ne kadar aşındırdığını ve başa baş veya hedef kâr için gereken satış seviyesini otomatik hesaplar.</p>
+<ul>
+<li>Net kar / zarar ve yüzdesel getiri</li>
+<li>Break-even ve hedef fiyat</li>
+<li>Makas ve maliyet baskısı</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Hesaplama Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Varlık türünü seçip alış fiyatı, satış fiyatı ve miktarı girdiğinde temel sonuçlar otomatik hesaplanır. Hedef kâr ve maliyet alanları opsiyoneldir.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Altın ve döviz gibi varlıklarda yalnızca alış-satış farkına bakmak çoğu zaman yanıltıcı olur. Özellikle banka / platform makası ile küçük ek maliyetler net getiriyi hissedilir şekilde düşürebilir. Bu birleşik araç, o farkı da hesaba katarak daha gerçekçi bir sonuç verir.</p>
+</div>
+<div aria-label="Birleşen araçlar" class="asset-mode-row"><span class="asset-mode-badge">Altın</span><span class="asset-mode-badge">Dolar</span><span class="asset-mode-badge">Euro</span></div>
+<div class="form-section">
+<div class="form-title">Temel işlem verileri</div>
+<div class="field-grid">
+<div class="field full">
+<label for="assetType">Varlık türü</label>
+<select aria-describedby="assetTypeHint" id="assetType">
+<option value="altin">Altın</option>
+<option value="dolar">Dolar</option>
+<option value="euro">Euro</option>
+</select>
+<div class="hint" id="assetTypeHint">Eski altın, dolar ve euro araçları bu birleşik sayfada tek akışta toplandı.</div>
+</div>
+<div class="field">
+<label for="buyPrice" id="buyPriceLabel">Alış fiyatı (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="buyPrice" inputmode="decimal" placeholder="Örn: 2.450,50" type="text"/>
+</div>
+<div class="hint" id="buyPriceHint">Seçtiğin varlığı hangi birim fiyattan aldığını gir.</div>
+<div class="error-text">Geçerli bir alış fiyatı girmen gerekiyor.</div>
+</div>
+<div class="field">
+<label for="sellPrice" id="sellPriceLabel">Satış / güncel fiyat (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="sellPrice" inputmode="decimal" placeholder="Örn: 2.680,00" type="text"/>
+</div>
+<div class="hint" id="sellPriceHint">Satmayı düşündüğün veya mevcut birim fiyat.</div>
+<div class="error-text">Geçerli bir satış veya güncel fiyat girmen gerekiyor.</div>
+</div>
+<div class="field">
+<label for="gramAmount" id="amountLabel">Miktar</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="gramAmount" inputmode="decimal" placeholder="Örn: 25,5" type="text"/>
+<span class="suffix">gr</span>
+</div>
+<div class="hint" id="amountHint">Toplam sahip olduğun miktarı gir.</div>
+<div class="error-text" id="amountErrorText">Geçerli bir miktar girmen gerekiyor.</div>
+</div>
+<div class="field">
+<label for="makasRate" id="spreadLabel">Makas / işlem kaybı (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="makasRate" inputmode="decimal" placeholder="0,50" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Makas etkisini senaryo olarak dahil etmek için kullan.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">İleri seviye opsiyonel alanlar</div>
+<div class="field-grid">
+<div class="field">
+<label for="buyCost">Alış ek masrafı (TL) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="buyCost" inputmode="decimal" placeholder="Örn: 250,00" type="text"/>
+</div>
+<div class="hint">Alışta oluşan komisyon veya ek gider varsa ekle.</div>
+</div>
+<div class="field">
+<label for="sellCost">Satış ek masrafı (TL) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="sellCost" inputmode="decimal" placeholder="Örn: 250,00" type="text"/>
+</div>
+<div class="hint">Satışta kesilen işlem giderini buraya yaz.</div>
+</div>
+<div class="field">
+<label for="targetProfitRate">Hedef kar oranı (%) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="targetProfitRate" inputmode="decimal" placeholder="10,00" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Örneğin %10 yazarsan bu kâra ulaşmak için gereken satış fiyatı hesaplanır.</div>
+</div>
+<div class="field">
+<label for="sellDecisionMode">Satış yorumu modu</label>
+<select id="sellDecisionMode">
+<option value="balanced">Dengeli</option>
+<option value="strict">Daha temkinli</option>
+<option value="aggressive">Daha agresif</option>
+</select>
+<div class="hint">Karar yorumunun daha sıkı veya daha esnek üretilmesini sağlar.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="loadScenario('smallProfit', this)" type="button">Küçük kâr</button>
+<button class="chip" onclick="loadScenario('mediumProfit', this)" type="button">Orta getiri</button>
+<button class="chip" onclick="loadScenario('lossCase', this)" type="button">Zarar senaryosu</button>
+<button class="chip" onclick="loadScenario('makasHeavy', this)" type="button">Makas etkili</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Ek tercihler</div>
+<div class="toggle-grid">
+<label class="toggle-pill"><input checked="" id="applyMakasToSell" type="checkbox"/> Makası satışta uygula</label>
+<label class="toggle-pill"><input checked="" id="includeCosts" type="checkbox"/> Ek maliyetleri hesaba kat</label>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateAll('manual', true)" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="resetTool()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox" role="alert"></div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Break-even, hedef fiyat ve yorum blokları aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak makasın etkisini, satış kararını ve hedef seviyeleri detaylı görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div class="status-text" id="statusText">Varlık türü, alış fiyatı, satış fiyatı ve miktar girildiğinde net sonuç ve satış analizi otomatik görünür.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Net kar veya zarar burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" id="scoreTitle" style="margin:0;color:#4f46e5;font-weight:800">Varlık Skoru</div>
+<div class="score-value" id="goldScore">0/100</div>
+</div>
+<span class="pill" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+<div id="scoreText">Skor; net getiri oranı, makas baskısı, ek maliyet yoğunluğu ve break-even uzaklığına göre oluşur.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Net getiri</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Makas baskısı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Ek maliyet etkisi</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Break-even uzaklığı</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty"><div><div class="label">Toplam alış maliyeti</div><div class="subline">Ek maliyet dahil</div></div><div class="value" id="result1">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Net satış geliri</div><div class="subline">Makas ve gider sonrası</div></div><div class="value" id="result2">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Break-even satış fiyatı</div><div class="subline">Zararı sıfırlayan seviye</div></div><div class="value" id="result3">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Hedef fiyat</div><div class="subline">Seçilen kar oranı için</div></div><div class="value" id="result4">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Makas kaybı</div><div class="subline">Net sonucu aşağı çeken fark</div></div><div class="value" id="result5">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Getiri oranı</div><div class="subline">Toplam yatırıma göre</div></div><div class="value" id="result6">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Getiri seviyesi</h3><div class="big" id="health1">—</div><div class="hint" id="health1Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Makas etkisi</h3><div class="big" id="health2">—</div><div class="hint" id="health2Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Satış kararı</h3><div class="big" id="health3">—</div><div class="hint" id="health3Sub" style="margin-top:6px">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Varlık türü, alış, satış ve miktar bilgilerini girdiğinde sistem net sonucu ve makas etkisini yorumlayacak.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Net kar / zarar</th><td id="stat1">—</td></tr>
+<tr><th>Toplam yatırım</th><td id="stat2">—</td></tr>
+<tr><th>Net satış geliri</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Getiri oranı</th><td id="stat4">—</td></tr>
+<tr><th>Makas sonrası fark</th><td id="stat5">—</td></tr>
+<tr><th>Break-even fiyat</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Fiyat ve satış senaryoları</span>
+<span class="summary-note">Farklı fiyat seviyelerinde sonucu gör</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Senaryo</th><th>Satış fiyatı</th><th>Net sonuç</th></tr></thead>
+<tbody id="scenarioBody"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Karar okuması</th><th>Değer</th></tr></thead>
+<tbody>
+<tr><th>Başa baş seviye farkı</th><td id="analysis1">—</td></tr>
+<tr><th>Hedef fiyat farkı</th><td id="analysis2">—</td></tr>
+<tr><th>Makas yükü</th><td id="analysis3">—</td></tr>
+<tr><th>Toplam maliyet payı</th><td id="analysis4">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Varlık getirisi nasıl okunmalı?</h2>
+<p class="section-note">Altın ve döviz işlemlerinde yalnızca alış ve satış fiyatını kıyaslamak çoğu zaman yeterli değildir. Çünkü makas ve küçük maliyetler, özellikle kısa vadeli işlemlerde kârı ciddi biçimde aşındırabilir.</p>
+<details open="">
+<summary>Break-even fiyat neden önemli?</summary>
+<p>Bu seviye, zararı sıfırlayan minimum satış fiyatını gösterir. Özellikle makas varsa, çoğu yatırımcı düşündüğünden daha yüksek bir seviyede ancak başa başa gelir.</p>
+</details>
+<details>
+<summary>Kalite skoru ne işe yarar?</summary>
+<p>Bu skor, işlemin kalitesini hızlıca anlamanı sağlar. Yüksek makas, düşük getiri ve yüksek maliyet kombinasyonu skoru düşürür.</p>
+</details>
+<details>
+<summary>Hedef fiyat hesabı neden faydalı?</summary>
+<p>Örneğin %10 kârla çıkmak istiyorsan, o seviyeye ulaşmak için seçtiğin varlığın birim fiyatının kaç TL olması gerektiğini görmek satış planını daha net yapar.</p>
+</details>
+</div>
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Sık sorulan sorular</h2>
+<details open="">
+<summary>Makas neden bu kadar önemli?</summary>
+<p>Özellikle kısa vadeli al-satta makas, beklenen kârın büyük bölümünü silebilir. Bu yüzden yalnızca görünen satış fiyatı değil, eline net geçecek tutar önemlidir.</p>
+</details>
+<details>
+<summary>Bu araç hangi varlıklar için uygun?</summary>
+<p>Bu birleşik sürüm; altın, dolar ve euro gibi alış fiyatı, satış fiyatı ve miktar ile takip edilen varlıklarda pratik kar / zarar analizi için uygundur.</p>
+</details>
+<details>
+<summary>Zarar senaryosu da hesaplanır mı?</summary>
+<p>Evet. Satış fiyatı düşükse veya makas ve maliyetler yüksekse araç net zararı açık şekilde gösterir.</p>
+</details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 style="margin-bottom:12px">İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/yatirim-getirisi-hesaplama">
+<span class="small">Yatırım</span>
+<strong>Yatırım Getirisi Hesaplama</strong>
+<p>Uzun vadeli yatırım projeksiyonu ile karşılaştır.</p>
+</a>
+<a class="related-card" href="/yatirim-getirisi-hesaplama?mod=roi">
+<span class="small">Yatırım</span>
+<strong>Yatırım Getirisi ve ROI</strong>
+<p>Yüzdesel geri dönüş oranını ayrıca karşılaştır.</p>
+</a>
+<a class="related-card" href="/borsa-kar-hesaplama">
+<span class="small">Yatırım</span>
+<strong>Borsa Kâr Hesaplama</strong>
+<p>Lot ve komisyon etkisini net işlem sonucu ile kıyasla.</p>
+</a>
+<a class="related-card" href="/kripto-kar-hesaplama">
+<span class="small">Yatırım</span>
+<strong>Kripto Kâr Analizi</strong>
+<p>Token arzı ve market cap etkisini ayrı ekranda incele.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const el = id => document.getElementById(id);
+    const STORAGE_KEY = 'hesapica_varlik_getirisi_manual_v1';
+
+    const ASSET_CONFIG = {
+      altin: {
+        key:'altin',
+        label:'Altın',
+        noun:'altın yatırımı',
+        buyLabel:'Alış fiyatı (TL)',
+        sellLabel:'Satış / güncel fiyat (TL)',
+        amountLabel:'Gram miktarı',
+        buyPlaceholder:'Örn: 2.450,50',
+        sellPlaceholder:'Örn: 2.680,00',
+        amountPlaceholder:'Örn: 25,5',
+        buyHint:'Gram altını hangi birim fiyattan aldığını gir.',
+        sellHint:'Satmayı düşündüğün veya mevcut gram fiyatı.',
+        amountHint:'Toplam sahip olduğun gram miktarı.',
+        scoreLabel:'Altın Skoru',
+        example:{buyPrice:2450,sellPrice:2680,gramAmount:10,makasRate:0.30,buyCost:0,sellCost:0,targetProfitRate:10},
+        scenarios:{
+          smallProfit:{buyPrice:2450,sellPrice:2620,gramAmount:10,makasRate:0,buyCost:'',sellCost:'',targetProfitRate:10},
+          mediumProfit:{buyPrice:2280,sellPrice:2690,gramAmount:25,makasRate:0.5,buyCost:'',sellCost:'',targetProfitRate:15},
+          lossCase:{buyPrice:2720,sellPrice:2580,gramAmount:20,makasRate:0.5,buyCost:'',sellCost:'',targetProfitRate:8},
+          makasHeavy:{buyPrice:2400,sellPrice:2650,gramAmount:50,makasRate:1.5,buyCost:'100',sellCost:'100',targetProfitRate:12}
+        }
+      },
+      dolar: {
+        key:'dolar',
+        label:'Dolar',
+        noun:'dolar yatırımı',
+        buyLabel:'Alış fiyatı (USD/TRY)',
+        sellLabel:'Satış / güncel fiyat (USD/TRY)',
+        amountLabel:'Dolar miktarı',
+        buyPlaceholder:'Örn: 30,00',
+        sellPlaceholder:'Örn: 34,50',
+        amountPlaceholder:'Örn: 1.000',
+        buyHint:'Doları hangi kur seviyesinden aldığını gir.',
+        sellHint:'Satmak istediğin veya mevcut USD/TRY seviyesi.',
+        amountHint:'Toplam dolar miktarını gir.',
+        scoreLabel:'Dolar Skoru',
+        example:{buyPrice:30,sellPrice:34.5,gramAmount:1000,makasRate:0.15,buyCost:0,sellCost:0,targetProfitRate:8},
+        scenarios:{
+          smallProfit:{buyPrice:31,sellPrice:32.4,gramAmount:1000,makasRate:0.1,buyCost:'',sellCost:'',targetProfitRate:5},
+          mediumProfit:{buyPrice:28.8,sellPrice:33.9,gramAmount:1250,makasRate:0.15,buyCost:'',sellCost:'',targetProfitRate:10},
+          lossCase:{buyPrice:34.2,sellPrice:32.9,gramAmount:850,makasRate:0.2,buyCost:'',sellCost:'',targetProfitRate:6},
+          makasHeavy:{buyPrice:29.6,sellPrice:33.1,gramAmount:2500,makasRate:0.45,buyCost:'150',sellCost:'150',targetProfitRate:9}
+        }
+      },
+      euro: {
+        key:'euro',
+        label:'Euro',
+        noun:'euro yatırımı',
+        buyLabel:'Alış fiyatı (EUR/TRY)',
+        sellLabel:'Satış / güncel fiyat (EUR/TRY)',
+        amountLabel:'Euro miktarı',
+        buyPlaceholder:'Örn: 33,00',
+        sellPlaceholder:'Örn: 38,50',
+        amountPlaceholder:'Örn: 1.000',
+        buyHint:'Euroyu hangi kur seviyesinden aldığını gir.',
+        sellHint:'Satmak istediğin veya mevcut EUR/TRY seviyesi.',
+        amountHint:'Toplam euro miktarını gir.',
+        scoreLabel:'Euro Skoru',
+        example:{buyPrice:33,sellPrice:38.5,gramAmount:1000,makasRate:0.15,buyCost:0,sellCost:0,targetProfitRate:8},
+        scenarios:{
+          smallProfit:{buyPrice:35.1,sellPrice:36.2,gramAmount:1000,makasRate:0.1,buyCost:'',sellCost:'',targetProfitRate:4},
+          mediumProfit:{buyPrice:31.5,sellPrice:37.7,gramAmount:1200,makasRate:0.15,buyCost:'',sellCost:'',targetProfitRate:10},
+          lossCase:{buyPrice:39.1,sellPrice:37.4,gramAmount:700,makasRate:0.2,buyCost:'',sellCost:'',targetProfitRate:5},
+          makasHeavy:{buyPrice:32.3,sellPrice:38.0,gramAmount:2000,makasRate:0.45,buyCost:'150',sellCost:'150',targetProfitRate:9}
+        }
+      }
+    };
+    let currentAsset = 'altin';
+    function getAssetConfig(key){ return ASSET_CONFIG[key] || ASSET_CONFIG.altin; }
+    function updateAssetContent(){
+      const cfg = getAssetConfig(currentAsset);
+      document.getElementById('assetType').value = currentAsset;
+      document.getElementById('buyPriceLabel').textContent = cfg.buyLabel;
+      document.getElementById('sellPriceLabel').textContent = cfg.sellLabel;
+      document.getElementById('amountLabel').textContent = cfg.amountLabel;
+      document.getElementById('buyPrice').placeholder = cfg.buyPlaceholder;
+      document.getElementById('sellPrice').placeholder = cfg.sellPlaceholder;
+      document.getElementById('gramAmount').placeholder = cfg.amountPlaceholder;
+      document.getElementById('buyPriceHint').textContent = cfg.buyHint;
+      document.getElementById('sellPriceHint').textContent = cfg.sellHint;
+      document.getElementById('amountHint').textContent = cfg.amountHint;
+      document.getElementById('statusText').textContent = 'Varlık türü, alış fiyatı, satış fiyatı ve miktar girildiğinde net sonuç ve satış analizi otomatik görünür.';
+      const titleEl = document.querySelector('.hero h1');
+      if(titleEl) titleEl.textContent = 'Varlık Getirisi Hesaplama';
+      const comment = document.getElementById('smartComment');
+      if(comment && !state.results){
+        comment.textContent = `${cfg.label}, alış, satış ve miktar bilgilerini girdiğinde sistem net sonucu ve makas etkisini yorumlayacak.`;
+      }
+    }
+    function applyAssetMode(asset, options = {}){
+      currentAsset = getAssetConfig(asset).key;
+      updateAssetContent();
+      if(options.loadExample){
+        applyFormattedValues(getAssetConfig(currentAsset).example);
+        el('applyMakasToSell').checked = true;
+        el('includeCosts').checked = true;
+        calculateAll('example', true);
+      } else if(options.syncUrl !== false){
+        const url = new URL(window.location.href);
+        url.searchParams.set('varlik', currentAsset);
+        if(options.replace !== false) history.replaceState({}, '', url.toString());
+      }
+    }
+    function loadQueryState(){
+      const params = new URLSearchParams(window.location.search);
+      const asset = params.get('varlik') || params.get('asset');
+      if(asset && ASSET_CONFIG[asset]) currentAsset = asset;
+      updateAssetContent();
+      const possible = ['buyPrice','sellPrice','gramAmount','makasRate','buyCost','sellCost','targetProfitRate'];
+      let hasPrefill = false;
+      const queryData = {};
+      possible.forEach(key => {
+        if(params.get(key)){
+          queryData[key] = params.get(key).replace('.', ',');
+          hasPrefill = true;
+        }
+      });
+      if(hasPrefill){
+        applyFormattedValues(queryData);
+        state.lastInputSource = 'manual';
+        calculateAll('manual');
+      }
+    }
+
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      lastInputSource: 'manual'
+    };
+    const REQUIRED_FIELDS = ['buyPrice','sellPrice','gramAmount'];
+    const touchedRequired = new Set();
+    let calcTimer = null;
+
+    function formatTRY(value){
+      return new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(value)||0);
+    }
+    function formatPercent(value,digits=2){
+      return '%' + (Number(value)||0).toLocaleString('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits});
+    }
+    function formatTrNumber(value,maxDigits=2,minDigits=0){
+      const num = Number(value);
+      if(!Number.isFinite(num) || num === 0) return '';
+      return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:minDigits,maximumFractionDigits:maxDigits}).format(num);
+    }
+    function parseFlexibleNumber(value){
+      if(value === null || value === undefined) return 0;
+      let str = String(value).trim();
+      if(!str) return 0;
+      str = str.replace(/[₺%\s]|gr/gi,'');
+      const hasComma = str.includes(',');
+      const hasDot = str.includes('.');
+      if(hasComma && hasDot){
+        if(str.lastIndexOf(',') > str.lastIndexOf('.')){
+          str = str.replace(/\./g,'').replace(',', '.');
+        }else{
+          str = str.replace(/,/g,'');
+        }
+      }else if(hasComma){
+        str = str.replace(/\./g,'').replace(',', '.');
+      }else if(hasDot){
+        const parts = str.split('.');
+        if(parts.length > 2 || (parts.length === 2 && parts[1].length === 3)){
+          str = str.replace(/\./g,'');
+        }
+      }
+      str = str.replace(/[^0-9.\-]/g,'');
+      const num = Number(str);
+      return Number.isFinite(num) ? num : 0;
+    }
+    function clamp(n,min,max){ return Math.min(Math.max(n,min),max); }
+    function debounceCalculate(source='manual'){
+      clearTimeout(calcTimer);
+      calcTimer = setTimeout(() => calculateAll(source), 180);
+    }
+
+    function setFormattedInput(input, digits=2){
+      input.addEventListener('input', () => {
+        state.lastInputSource = 'manual';
+        if(input.id && parseFlexibleNumber(input.value) > 0){
+          clearFieldError(input.id);
+        }
+        debounceCalculate('manual');
+      });
+      input.addEventListener('blur', () => {
+        const val = parseFlexibleNumber(input.value);
+        input.value = val ? formatTrNumber(val, digits, 0) : '';
+        if(REQUIRED_FIELDS.includes(input.id)){
+          touchedRequired.add(input.id);
+          syncTouchedFieldState(input.id);
+        }
+      });
+    }
+
+    function applyFormattedValues(data={}){
+      el('buyPrice').value = data.buyPrice ? formatTrNumber(data.buyPrice, 2, 0) : '';
+      el('sellPrice').value = data.sellPrice ? formatTrNumber(data.sellPrice, 2, 0) : '';
+      el('gramAmount').value = data.gramAmount ? formatTrNumber(data.gramAmount, 3, 0) : '';
+      el('makasRate').value = data.makasRate ? formatTrNumber(data.makasRate, 2, 0) : '';
+      el('buyCost').value = data.buyCost ? formatTrNumber(data.buyCost, 2, 0) : '';
+      el('sellCost').value = data.sellCost ? formatTrNumber(data.sellCost, 2, 0) : '';
+      el('targetProfitRate').value = data.targetProfitRate ? formatTrNumber(data.targetProfitRate, 2, 0) : '';
+    }
+
+    function getInputData(){
+      return {
+        buyPrice: parseFlexibleNumber(el('buyPrice').value),
+        sellPrice: parseFlexibleNumber(el('sellPrice').value),
+        gramAmount: parseFlexibleNumber(el('gramAmount').value),
+        makasRate: parseFlexibleNumber(el('makasRate').value),
+        buyCost: parseFlexibleNumber(el('buyCost').value),
+        sellCost: parseFlexibleNumber(el('sellCost').value),
+        targetProfitRate: parseFlexibleNumber(el('targetProfitRate').value),
+        applyMakasToSell: el('applyMakasToSell').checked,
+        includeCosts: el('includeCosts').checked,
+        sellDecisionMode: el('sellDecisionMode').value,
+        assetType: currentAsset
+      };
+    }
+
+    function hasAnyInput(data){
+      return !!(
+        data.buyPrice || data.sellPrice || data.gramAmount || data.makasRate ||
+        data.buyCost || data.sellCost || data.targetProfitRate
+      );
+    }
+
+    function clearFieldErrors(){
+      document.querySelectorAll('.field').forEach(field => field.classList.remove('field-error'));
+      document.querySelectorAll('input,select').forEach(node => node.removeAttribute('aria-invalid'));
+    }
+
+    function clearFieldError(id){
+      const input = el(id);
+      const field = input?.closest('.field');
+      if(field) field.classList.remove('field-error');
+      if(input) input.removeAttribute('aria-invalid');
+    }
+
+    function markFieldError(id){
+      const input = el(id);
+      const field = input?.closest('.field');
+      if(field) field.classList.add('field-error');
+      if(input) input.setAttribute('aria-invalid', 'true');
+    }
+
+    function syncTouchedFieldState(id){
+      if(!REQUIRED_FIELDS.includes(id)) return;
+      const value = parseFlexibleNumber(el(id).value);
+      if(touchedRequired.has(id) && value <= 0){
+        markFieldError(id);
+      }else{
+        clearFieldError(id);
+      }
+    }
+
+    function showValidation(message, ids=[]){
+      const box = el('validationBox');
+      box.textContent = message;
+      box.classList.add('show');
+      clearFieldErrors();
+      ids.forEach(markFieldError);
+    }
+
+    function clearValidation(){
+      el('validationBox').classList.remove('show');
+      el('validationBox').textContent = '';
+      clearFieldErrors();
+    }
+
+    function validateInputs(data, showErrors=false){
+      if(!hasAnyInput(data)){
+        clearValidation();
+        return false;
+      }
+
+      const missingRequired = REQUIRED_FIELDS.filter(id => parseFlexibleNumber(el(id).value) <= 0);
+      if(missingRequired.length){
+        if(showErrors){
+          showValidation('Alış fiyatı, satış fiyatı ve miktar alanlarını geçerli biçimde doldurman gerekiyor.', missingRequired);
+        }
+        return false;
+      }
+
+      const invalidIds = [];
+      let message = '';
+      if(data.buyCost < 0 || data.sellCost < 0){
+        message = 'Alım ve satım maliyetleri negatif olamaz.';
+        if(data.buyCost < 0) invalidIds.push('buyCost');
+        if(data.sellCost < 0) invalidIds.push('sellCost');
+      } else if(data.targetProfitRate < 0){
+        message = 'Hedef kar oranı negatif olamaz.';
+        invalidIds.push('targetProfitRate');
+      } else if(data.makasRate < 0 || data.makasRate > 100){
+        message = 'Makas oranı %0 ile %100 arasında olmalı.';
+        invalidIds.push('makasRate');
+      }
+
+      if(invalidIds.length){
+        if(showErrors){
+          showValidation(message, invalidIds);
+        }
+        return false;
+      }
+
+      clearValidation();
+      data.makasRate = clamp(data.makasRate, 0, 100);
+      return true;
+    }
+
+    function compute(data){
+      const totalBuyRaw = data.buyPrice * data.gramAmount;
+      const grossSellRaw = data.sellPrice * data.gramAmount;
+      const makasLoss = data.applyMakasToSell ? grossSellRaw * (data.makasRate / 100) : 0;
+      const totalCosts = data.includeCosts ? (data.buyCost + data.sellCost) : 0;
+      const totalInvestment = totalBuyRaw + (data.includeCosts ? data.buyCost : 0);
+      const netSell = grossSellRaw - makasLoss - (data.includeCosts ? data.sellCost : 0);
+      const netProfit = netSell - totalInvestment;
+      const returnRate = totalInvestment > 0 ? (netProfit / totalInvestment) * 100 : 0;
+
+      const makasFactor = 1 - (data.applyMakasToSell ? data.makasRate / 100 : 0);
+      const breakEvenSellPrice = data.gramAmount > 0 && makasFactor > 0
+        ? (totalInvestment + (data.includeCosts ? data.sellCost : 0)) / (data.gramAmount * makasFactor)
+        : 0;
+
+      const targetNet = totalInvestment * (1 + data.targetProfitRate/100);
+      const targetSellPrice = data.targetProfitRate && data.gramAmount > 0 && makasFactor > 0
+        ? (targetNet + (data.includeCosts ? data.sellCost : 0)) / (data.gramAmount * makasFactor)
+        : 0;
+
+      const makasShare = grossSellRaw > 0 ? (makasLoss / grossSellRaw) * 100 : 0;
+      const costShare = totalInvestment > 0 ? (totalCosts / totalInvestment) * 100 : 0;
+      const breakEvenDistance = data.sellPrice > 0 ? ((data.sellPrice - breakEvenSellPrice) / data.sellPrice) * 100 : 0;
+
+      let score = 55;
+      score += clamp(returnRate * 2.2, -35, 35);
+      score -= clamp(makasShare * 6, 0, 20);
+      score -= clamp(costShare * 3, 0, 15);
+      score += clamp(breakEvenDistance * 1.5, -20, 15);
+      score = Math.round(clamp(score, 0, 100));
+
+      let level = 'good';
+      if(returnRate < 0 || makasShare > 1.5) level = 'bad';
+      else if(returnRate < 7 || makasShare > 0.7) level = 'warn';
+
+      const decision = getDecision(returnRate, breakEvenDistance, makasShare, data.sellDecisionMode);
+
+      return {
+        ...data,
+        totalBuyRaw,
+        grossSellRaw,
+        makasLoss,
+        totalCosts,
+        totalInvestment,
+        netSell,
+        netProfit,
+        returnRate,
+        breakEvenSellPrice,
+        targetSellPrice,
+        makasShare,
+        costShare,
+        breakEvenDistance,
+        score,
+        level,
+        decision
+      };
+    }
+
+    function clearScenarioActive(){
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+    }
+
+    function loadScenario(name, btn){
+      state.lastInputSource = 'example';
+      clearScenarioActive();
+      if(btn) btn.classList.add('active');
+      const scenarios = getAssetConfig(currentAsset).scenarios;
+      const s = scenarios[name];
+      if(!s) return;
+      applyFormattedValues(s);
+      el('applyMakasToSell').checked = true;
+      el('includeCosts').checked = true;
+      calculateAll('example', true);
+    }
+
+    function fillExample(){
+      state.lastInputSource = 'example';
+      clearScenarioActive();
+      applyFormattedValues(getAssetConfig(currentAsset).example);
+      el('applyMakasToSell').checked = true;
+      el('includeCosts').checked = true;
+      calculateAll('example', true);
+    }
+
+    function saveManualState(data){
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          source: 'manual',
+          version: 3,
+          data: {
+            buyPrice: data.buyPrice,
+            sellPrice: data.sellPrice,
+            gramAmount: data.gramAmount,
+            makasRate: data.makasRate,
+            buyCost: data.buyCost,
+            sellCost: data.sellCost,
+            targetProfitRate: data.targetProfitRate,
+            applyMakasToSell: data.applyMakasToSell,
+            includeCosts: data.includeCosts,
+            sellDecisionMode: data.sellDecisionMode
+          }
+        }));
+      }catch(err){}
+    }
+
+    function loadManualState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return false;
+        const parsed = JSON.parse(raw);
+        if(!parsed || parsed.source !== 'manual' || !parsed.data) return false;
+        const data = parsed.data;
+        if(!data.buyPrice && !data.sellPrice && !data.gramAmount) return false;
+        applyFormattedValues(data);
+        el('applyMakasToSell').checked = data.applyMakasToSell !== false;
+        el('includeCosts').checked = data.includeCosts !== false;
+        el('sellDecisionMode').value = data.sellDecisionMode || 'balanced';
+        state.lastInputSource = 'manual';
+        return true;
+      }catch(err){
+        return false;
+      }
+    }
+
+    function clearSavedState(){
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(err){}
+    }
+
+    function resetTool(){
+      state.lastInputSource = 'manual';
+      clearScenarioActive();
+      ['buyPrice','sellPrice','gramAmount','makasRate','buyCost','sellCost','targetProfitRate'].forEach(id => el(id).value = '');
+      el('applyMakasToSell').checked = true;
+      el('includeCosts').checked = true;
+      el('sellDecisionMode').value = 'balanced';
+      clearSavedState();
+      touchedRequired.clear();
+      state.inputs = {};
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      setEmptyState();
+    }
+
+    function setEmptyState(){
+      clearValidation();
+      el('statusBadge').textContent = 'Veri bekleniyor';
+      el('statusBadge').className = 'badge';
+      el('statusText').textContent = 'Varlık türü, alış fiyatı, satış fiyatı ve miktar girildiğinde net sonuç ve satış analizi otomatik görünür.';
+      el('highlightCard').classList.add('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.add('is-empty'));
+      el('mainResult').textContent = '—';
+      el('mainResult').style.color = '';
+      el('mainResultText').textContent = 'Net kar veya zarar burada görünecek.';
+      el('goldScore').textContent = '0/100';
+      el('scoreBadge').textContent = 'Veri bekleniyor';
+      el('scoreBadge').className = 'pill';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'Skor; net getiri oranı, makas baskısı, ek maliyet yoğunluğu ve break-even uzaklığına göre oluşur.';
+      el('scoreBreakdown').querySelectorAll('.val').forEach(v => v.textContent = '—');
+      ['result1','result2','result3','result4','result5','result6','stat1','stat2','stat3','stat4','stat5','stat6','analysis1','analysis2','analysis3','analysis4'].forEach(id => el(id).textContent = '—');
+      ['health1','health2','health3','health1Sub','health2Sub','health3Sub'].forEach(id => el(id).textContent = '—');
+      el('smartComment').textContent = 'Varlık türü, alış, satış ve miktar bilgilerini girdiğinde sistem net sonucu ve makasın etkisini yorumlayacak.';
+      el('scenarioBody').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+    }
+
+    function setIncompleteState(){
+      setEmptyState();
+      el('statusBadge').textContent = 'Eksik veri';
+      el('statusBadge').className = 'badge warn';
+      el('statusText').textContent = 'Sonuçların oluşması için alış fiyatı, satış fiyatı ve miktar alanlarını tamamlaman gerekiyor.';
+      el('mainResultText').textContent = 'Eksik temel veri olduğu için sonuç kartları beklemede tutuluyor.';
+      el('smartComment').textContent = 'Temel alanlar tamamlandığında net kar zarar, break-even seviyesi ve makas etkisi burada birlikte yorumlanacak.';
+    }
+
+    function calculateAll(source='manual', forceValidation=false){
+      state.lastInputSource = source || state.lastInputSource || 'manual';
+      const data = getInputData();
+      state.inputs = data;
+
+      const shouldShowErrors = !!forceValidation;
+      const isValid = validateInputs(data, shouldShowErrors);
+      state.isValid = isValid;
+
+      if(!isValid){
+        state.results = null;
+        state.isCalculated = false;
+        if(!hasAnyInput(data)) setEmptyState();
+        else setIncompleteState();
+        return;
+      }
+
+      const result = compute(data);
+      state.results = result;
+      state.isCalculated = true;
+      renderResults(result);
+      if(forceValidation){
+        focusResult();
+      }
+
+      if(state.lastInputSource === 'manual'){
+        saveManualState(data);
+      }
+    }
+
+    function renderResults(result){
+      el('statusBadge').textContent = result.level === 'good' ? 'Hazır' : result.level === 'warn' ? 'İzle' : 'Baskı yüksek';
+      el('statusBadge').className = 'badge ' + result.level;
+      el('statusText').textContent = 'Net kar, makas baskısı ve satış seviyesi birlikte değerlendirildi.';
+      el('highlightCard').classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.remove('is-empty'));
+
+      el('mainResult').textContent = formatTRY(result.netProfit);
+      el('mainResult').style.color = result.netProfit > 0 ? 'var(--good)' : result.netProfit < 0 ? 'var(--bad)' : 'var(--text)';
+      el('mainResultText').textContent = result.netProfit > 0
+        ? `Bu ${getAssetConfig(result.assetType || currentAsset).noun} senaryosu makas ve maliyetler sonrası net kârlı görünüyor.`
+        : result.netProfit < 0
+        ? `Bu ${getAssetConfig(result.assetType || currentAsset).noun} senaryosu makas ve maliyetler sonrası net zararlı görünüyor.`
+        : `Bu ${getAssetConfig(result.assetType || currentAsset).noun} senaryosu başa başa oldukça yakın görünüyor.`;
+
+      el('result1').textContent = formatTRY(result.totalInvestment);
+      el('result2').textContent = formatTRY(result.netSell);
+      el('result3').textContent = formatTRY(result.breakEvenSellPrice);
+      el('result4').textContent = result.targetProfitRate ? formatTRY(result.targetSellPrice) : '—';
+      el('result5').textContent = formatTRY(result.makasLoss);
+      el('result6').textContent = formatPercent(result.returnRate,2);
+
+      el('stat1').textContent = formatTRY(result.netProfit);
+      el('stat2').textContent = formatTRY(result.totalInvestment);
+      el('stat3').textContent = formatTRY(result.netSell);
+      el('stat4').textContent = formatPercent(result.returnRate,2);
+      el('stat5').textContent = formatTRY(result.makasLoss);
+      el('stat6').textContent = formatTRY(result.breakEvenSellPrice);
+
+      el('analysis1').textContent = formatPercent(result.breakEvenDistance,2);
+      el('analysis2').textContent = result.targetProfitRate ? formatTRY(result.targetSellPrice - result.sellPrice) : '—';
+      el('analysis3').textContent = formatPercent(result.makasShare,2);
+      el('analysis4').textContent = formatPercent(result.costShare,2);
+
+      el('goldScore').textContent = `${result.score}/100`;
+      const scoreTitle = document.getElementById('scoreTitle'); if(scoreTitle) scoreTitle.textContent = getAssetConfig(result.assetType || currentAsset).scoreLabel;
+      el('scoreBar').style.width = `${result.score}%`;
+      const scoreBadge = el('scoreBadge');
+      if(result.score >= 75){
+        scoreBadge.textContent = 'Güçlü';
+        scoreBadge.className = 'pill good';
+      }else if(result.score >= 50){
+        scoreBadge.textContent = 'Orta';
+        scoreBadge.className = 'pill warn';
+      }else{
+        scoreBadge.textContent = 'Zayıf';
+        scoreBadge.className = 'pill bad';
+      }
+
+      const vals = el('scoreBreakdown').querySelectorAll('.val');
+      vals[0].textContent = formatPercent(result.returnRate,2);
+      vals[1].textContent = formatPercent(result.makasShare,2);
+      vals[2].textContent = formatPercent(result.costShare,2);
+      vals[3].textContent = formatPercent(result.breakEvenDistance,2);
+
+      el('health1').textContent = result.returnRate < 0 ? 'Negatif' : result.returnRate < 7 ? 'Sınırlı' : result.returnRate < 15 ? 'İyi' : 'Güçlü';
+      el('health1Sub').textContent = `Net getiri ${formatPercent(result.returnRate,2)}`;
+      el('health2').textContent = result.makasShare < 0.5 ? 'Düşük' : result.makasShare < 1.2 ? 'Orta' : 'Yüksek';
+      el('health2Sub').textContent = `Makas kaybı ${formatTRY(result.makasLoss)}`;
+      el('health3').textContent = result.decision.short;
+      el('health3Sub').textContent = result.decision.sub;
+
+      el('scoreText').textContent = result.level === 'good'
+        ? 'Getiri tarafı makas ve maliyet baskısını tolere edecek kadar güçlü görünüyor.'
+        : result.level === 'warn'
+        ? 'Getiri var ama makas veya maliyet baskısı sonucu aşağı çekiyor.'
+        : 'Makas, maliyet veya negatif getiri bu işlemin kalitesini zayıflatıyor.';
+
+      el('smartComment').textContent = buildComment(result);
+      buildScenarioTable(result);
+    }
+
+    function focusResult(){
+      const target = el('highlightCard');
+      if(!target) return;
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      target.classList.remove('result-flash');
+      void target.offsetWidth;
+      target.classList.add('result-flash');
+    }
+
+    function printResult(){
+      if(!state.results){
+        showValidation('Yazdırmadan önce sonucu oluşturman gerekiyor.', ['buyPrice','sellPrice','gramAmount']);
+        return;
+      }
+      window.print();
+    }
+
+    function getDecision(returnRate, breakEvenDistance, makasShare, mode){
+      let sellThreshold = 8, waitThreshold = 2;
+      if(mode === 'strict'){ sellThreshold = 10; waitThreshold = 3; }
+      if(mode === 'aggressive'){ sellThreshold = 5; waitThreshold = 1; }
+
+      if(returnRate >= sellThreshold && makasShare < 1.2){
+        return { short:'Kâr al', sub:'Kâr realize etmek mantıklı görünüyor.' };
+      }
+      if(returnRate > waitThreshold && breakEvenDistance > 0){
+        return { short:'Takip et', sub:'Kâr var ama alan biraz daha izlenebilir.' };
+      }
+      if(returnRate <= 0 && breakEvenDistance < 0){
+        return { short:'Zarar bölgesi', sub:'Başa baş seviyesinin altında kalmış görünüyor.' };
+      }
+      return { short:'Nötr', sub:'Karar için seviye biraz daha netleşebilir.' };
+    }
+
+    function buildComment(result){
+      const cfg = getAssetConfig(result.assetType || currentAsset);
+      let text = `${cfg.label} için toplam yatırım ${formatTRY(result.totalInvestment)} ve net sonuç ${formatTRY(result.netProfit)} seviyesinde görünüyor. Bu da yaklaşık ${formatPercent(result.returnRate,2)} getiri anlamına geliyor. `;
+      text += result.netProfit > 0 ? 'Yatırım pozitif bölgede. ' : result.netProfit < 0 ? 'Yatırım şu an zarar bölgesinde. ' : 'Yatırım başa başa yakın. ';
+      if(result.makasLoss > 0){
+        text += `Makas etkisi sonucu yaklaşık ${formatTRY(result.makasLoss)} aşağı çekmiş. `;
+      } else {
+        text += 'Makas etkisi bu senaryoda kullanılmadı veya sıfır kaldı. ';
+      }
+      text += `Başa baş için gerekli satış fiyatı yaklaşık ${formatTRY(result.breakEvenSellPrice)}. `;
+      if(result.targetProfitRate){
+        text += `%${Number(result.targetProfitRate).toLocaleString('tr-TR')} hedef kâr için satış fiyatının yaklaşık ${formatTRY(result.targetSellPrice)} seviyesine gelmesi gerekir. `;
+      }
+      text += `Bu nedenle mevcut görünüm için kısa yorum: ${result.decision.short}. ${result.decision.sub}`;
+      return text;
+    }
+
+    function buildScenarioTable(result){
+      const scenarios = [
+        {name:'Zayıf senaryo', price: result.sellPrice * 0.95},
+        {name:'Baz senaryo', price: result.sellPrice},
+        {name:'Güçlü senaryo', price: result.sellPrice * 1.05},
+      ];
+      scenarios.push(result.targetProfitRate
+        ? {name:'Hedef seviye', price: result.targetSellPrice}
+        : {name:'Başa baş seviye', price: result.breakEvenSellPrice});
+
+      el('scenarioBody').innerHTML = scenarios.map(item => {
+        const grossSell = item.price * result.gramAmount;
+        const makasLoss = result.applyMakasToSell ? grossSell * (result.makasRate/100) : 0;
+        const totalInvestment = (result.buyPrice * result.gramAmount) + (result.includeCosts ? result.buyCost : 0);
+        const netSell = grossSell - makasLoss - (result.includeCosts ? result.sellCost : 0);
+        const net = netSell - totalInvestment;
+        return `<tr><td>${item.name}</td><td>${formatTRY(item.price)}</td><td>${formatTRY(net)}</td></tr>`;
+      }).join('');
+    }
+
+    function copyResult(){
+      if(!state.results){
+        showValidation('Kopyalamadan önce sonucu oluşturman gerekiyor.', ['buyPrice','sellPrice','gramAmount']);
+        return;
+      }
+      const cfg = getAssetConfig(state.results.assetType || currentAsset);
+      const text = [
+        `${cfg.label} Getirisi Hesaplama`,
+        `Net Kar / Zarar: ${el('mainResult').textContent}`,
+        `Toplam Yatırım: ${el('stat2').textContent}`,
+        `Net Satış Geliri: ${el('stat3').textContent}`,
+        `Getiri Oranı: ${el('stat4').textContent}`,
+        `Varlık Skoru: ${el('goldScore').textContent}`
+      ].join('\n');
+
+      const onSuccess = () => {
+        const oldText = el('statusText').textContent;
+        el('statusText').textContent = 'Sonuç özeti panoya kopyalandı.';
+        setTimeout(() => el('statusText').textContent = oldText, 1800);
+      };
+
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess));
+      }else{
+        fallbackCopy(text, onSuccess);
+      }
+    }
+
+    function fallbackCopy(text, onSuccess){
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try{
+        document.execCommand('copy');
+        if(typeof onSuccess === 'function') onSuccess();
+      }catch(error){
+        showValidation('Sonuç kopyalanırken bir sorun oluştu. Tarayıcı izinlerini kontrol et.');
+      }finally{
+        document.body.removeChild(textarea);
+      }
+    }
+
+    async function shareResult(){
+      if(!state.results){
+        showValidation('Paylaşmadan önce sonucu oluşturman gerekiyor.', ['buyPrice','sellPrice','gramAmount']);
+        return;
+      }
+      const params = new URLSearchParams({
+        buyPrice: state.inputs.buyPrice,
+        sellPrice: state.inputs.sellPrice,
+        gramAmount: state.inputs.gramAmount,
+        makasRate: state.inputs.makasRate,
+        targetProfitRate: state.inputs.targetProfitRate || ''
+      });
+      const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+      const cfg = getAssetConfig(state.inputs?.assetType || currentAsset);
+      const shareText = `${cfg.label} Getirisi sonucu: ${el('mainResult').textContent} · Getiri ${el('stat4').textContent}`;
+      try{
+        if(navigator.share){
+          await navigator.share({ title: `${cfg.label} Getirisi Hesaplama`, text: shareText, url: shareUrl });
+        } else {
+          await navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+          const old = el('statusText').textContent;
+          el('statusText').textContent = 'Paylaşım linki panoya kopyalandı.';
+          setTimeout(() => el('statusText').textContent = old, 1800);
+        }
+      }catch(err){}
+    }
+
+    ['buyPrice','sellPrice','gramAmount','makasRate','buyCost','sellCost','targetProfitRate'].forEach(id => {
+      setFormattedInput(el(id), id === 'gramAmount' ? 3 : 2);
+    });
+
+    document.getElementById('assetType').addEventListener('change', () => {
+      state.lastInputSource = 'manual';
+      applyAssetMode(document.getElementById('assetType').value);
+      resetTool();
+    });
+
+    document.querySelectorAll('select,input[type="checkbox"]').forEach(node => {
+      const eventName = node.tagName === 'SELECT' ? 'change' : 'change';
+      node.addEventListener(eventName, () => {
+        state.lastInputSource = 'manual';
+        debounceCalculate('manual');
+      });
+    });
+
+    document.addEventListener('keydown', event => {
+      if(event.key === 'Enter' && !['TEXTAREA','BUTTON'].includes(document.activeElement.tagName)){
+        event.preventDefault();
+        calculateAll('manual', true);
+      }
+    });
+
+    setEmptyState();
+    loadQueryState();
+    if(!window.location.search && loadManualState()){
+      calculateAll('manual');
+    } else {
+      applyAssetMode(currentAsset, {syncUrl:false, replace:false});
+    }
+  </script>
+</body>
+</html>

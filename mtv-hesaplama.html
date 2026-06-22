@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MTV Hesaplama 2026 | Motorlu Taşıtlar Vergisi Calculator - Hesapica</title>
+<meta content="2026 MTV hesaplama aracı ile otomobil ve motosikletler için yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizini hesaplayın. English support included." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="mtv hesaplama, motorlu taşıtlar vergisi, motor vehicle tax calculator, 2026 mtv" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/mtv-hesaplama" rel="canonical"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<meta content="website" property="og:type"/>
+<meta content="MTV Hesaplama 2026 | Motorlu Taşıtlar Vergisi Calculator - Hesapica" property="og:title"/>
+<meta content="2026 MTV hesaplama aracı ile otomobil ve motosikletler için yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizini hesaplayın. English support included." property="og:description"/>
+<meta content="https://hesapica.com/mtv-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="MTV Hesaplama 2026 | Motorlu Taşıtlar Vergisi Calculator - Hesapica" name="twitter:title"/>
+<meta content="2026 MTV hesaplama aracı ile otomobil ve motosikletler için yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizini hesaplayın. English support included." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<style>
+    :root{
+      --primary:#4f46e5; --secondary:#7c3aed; --bg:#f6f8fc; --surface:#ffffff; --surface-soft:#eef2ff;
+      --text:#1f2937; --muted:#6b7280; --line:#e5e7eb; --good:#047857; --warn:#b45309; --bad:#b91c1c; --info:#1d4ed8;
+      --shadow:0 16px 42px rgba(79,70,229,.10); --radius-xl:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text);
+      background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .toprow{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .lang-switch{display:flex;gap:8px}
+    .lang-btn{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:800;transition:.18s ease}
+    .lang-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease}
+    input.with-prefix{padding-left:38px} input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error{display:none;margin-top:7px;font-size:14px;color:var(--bad);font-weight:700}
+    .field.has-error .error{display:block}
+    .field.has-error input,.field.has-error select{border-color:rgba(185,28,28,.55);box-shadow:0 0 0 4px rgba(185,28,28,.08)}
+
+    .validation-box{margin:18px 0 0;padding:14px 16px;border-radius:18px;border:1px solid rgba(185,28,28,.18);background:#fef2f2;color:#7f1d1d}
+    .validation-box strong{display:block;font-size:15px;margin-bottom:8px}
+    .validation-box ul{margin:0;padding-left:18px}
+    .validation-box li{margin:4px 0;font-size:14px;line-height:1.55}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;transition:.18s ease}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px}
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .badge.info,.pill.info{background:#eff6ff;color:var(--info);border-color:#bfdbfe}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .table-card{margin-top:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .content-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .content-card h2{margin:0 0 14px;font-size:24px;color:var(--primary)}
+    .content-card p,.content-card li{color:#374151}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+
+    .results-target{scroll-margin-top:96px}
+    .result-flash{animation:resultFlash 1.15s ease}
+    @keyframes resultFlash{
+      0%{box-shadow:0 0 0 0 rgba(79,70,229,0)}
+      20%{box-shadow:0 0 0 6px rgba(79,70,229,.12)}
+      100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    }
+    .hidden{display:none!important}
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.content-card,.highlight-card,.scorebox,.status-card{padding:20px}.field-grid,.health-grid,.related-grid,.toprow{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row,.toprow{flex-direction:column;align-items:flex-start}.mini-result .value{text-align:left}.hero h1{font-size:32px}}
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"MTV Hesaplama 2026",
+    "url":"https://hesapica.com/mtv-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"2026 Motorlu Taşıtlar Vergisi için yıllık MTV, taksit tutarı, aylık karşılık ve vergi yükü analizini hesaplayan araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"MTV nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"MTV; araç türü, motor hacmi, yaş ve bazı otomobil kademelerinde taşıt değerine göre hesaplanır."}},
+      {"@type":"Question","name":"2018 sonrası otomobillerde taşıt değeri neden önemlidir?","acceptedAnswer":{"@type":"Answer","text":"2018 sonrası bazı otomobil kademelerinde aynı motor hacmine sahip araçların MTV tutarı taşıt değerine göre farklılaşabilir."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Araç Giderleri","item":"https://hesapica.com/#arac"},
+      {"@type":"ListItem","position":3,"name":"MTV Hesaplama","item":"https://hesapica.com/mtv-hesaplama"}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/mtv-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript>
+<div style="margin:12px auto;max-width:1180px;padding:14px 16px;border:1px solid #fecaca;border-radius:14px;background:#fef2f2;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif;">
+      Bu MTV hesaplama aracı JavaScript ile çalışır. Hesaplama sonuçlarını görmek için tarayıcınızda JavaScript’i etkinleştirin.
+    </div>
+</noscript>
+<div class="container topbar">
+<div class="toprow">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a data-i18n="crumbHome" href="/">Ana Sayfa</a><span>/</span>
+<a data-i18n="crumbCat" href="/#arac">Araç Giderleri</a><span>/</span>
+<strong data-i18n="crumbCurrent">MTV Hesaplama</strong>
+</nav>
+<div class="lang-switch">
+<button class="lang-btn active" id="langTr" onclick="setLanguage('tr')" type="button">TR</button>
+<button class="lang-btn" id="langEn" onclick="setLanguage('en')" type="button">EN</button>
+</div>
+</div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill" data-i18n="eyebrow">Hesapica • Otomotiv Aracı</span>
+<h1 data-i18n="heroTitle">MTV Hesaplama 2026</h1>
+<p data-i18n="heroDesc">Otomobil ve motosikletler için 2026 Motorlu Taşıtlar Vergisi tutarını; araç türü, yaş, motor hacmi, tescil dönemi ve gerekiyorsa taşıt değerine göre hesaplayın. Yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizi tek ekranda oluşsun.</p>
+<div class="hero-chips">
+<span class="hero-chip" data-i18n="chip1">2026 MTV tarifesi</span>
+<span class="hero-chip" data-i18n="chip2">Otomobil + motosiklet</span>
+<span class="hero-chip" data-i18n="chip3">2018 öncesi / sonrası</span>
+<span class="hero-chip" data-i18n="chip4">Taşıt değeri eşiği desteği</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow" data-i18n="heroBoxEyebrow">Vergi planı</div>
+<strong data-i18n="heroBoxTitle">Ana sonuç üstte, taksit ve bütçe etkisi aşağıda</strong>
+<p data-i18n="heroBoxDesc">Bu sayfa sadece yıllık MTV’yi göstermez; iki taksit tutarı, aylık karşılığı, haftalık karşılığı, araç değerine oranı ve bir sonraki yaş diliminde oluşabilecek farkı da görünür kılar.</p>
+<ul>
+<li data-i18n="heroLi1">Yıllık MTV + taksit yapısı</li>
+<li data-i18n="heroLi2">Aylık ve haftalık bütçe karşılığı</li>
+<li data-i18n="heroLi3">Yaş dilimi değişirse olası fark</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2 data-i18n="panelTitle">Hesaplama Paneli</h2>
+<p class="section-note" data-i18n="panelNote">Araç türünü ve teknik bilgileri gir. Sistem 2026 MTV tutarını, taksitleri ve aylık bütçe karşılığını otomatik oluştursun. 2018 sonrası otomobillerde taşıt değeri alanı önemlidir.</p>
+<div class="helper-box">
+<h3 data-i18n="helperTitle">Kısa not</h3>
+<p data-i18n="helperDesc">MTV sonucu özellikle 2018 sonrası otomobillerde sadece motor hacmiyle değil, bazı kademelerde taşıt değeriyle de değişir. Bu nedenle aynı motor hacmine sahip iki araç farklı MTV ödeyebilir. Bu sürüm, 2026 resmi tarife mantığına göre revize edilmiştir.</p>
+</div>
+<div aria-live="polite" class="validation-box hidden" id="validationBox">
+<strong data-i18n="validationTitle">Lütfen eksik alanları kontrol et</strong>
+<ul id="validationList"></ul>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="formTitle">Araç bilgileri</div>
+<div class="field-grid">
+<div class="field">
+<label data-i18n="labelType" for="vehicleType">Araç türü</label>
+<select id="vehicleType" onchange="handleVehicleTypeChange()"></select>
+<div class="hint" data-i18n="hintType">Bu sürümde en çok aranan iki MTV kategorisi destekleniyor.</div>
+<div class="error" data-i18n="errorType">Araç türünü seç.</div>
+</div>
+<div class="field" id="registrationField">
+<label data-i18n="labelReg" for="registrationType">Tescil dönemi</label>
+<select id="registrationType" onchange="handleVehicleTypeChange()"></select>
+<div class="hint" data-i18n="hintReg" id="registrationHint">2018 sonrası otomobillerde taşıt değeri bazı kademeleri etkiler.</div>
+<div class="error" data-i18n="errorReg">Tescil dönemini seç.</div>
+</div>
+<div class="field">
+<label data-i18n="labelAge" for="vehicleAge">Araç yaşı</label>
+<select id="vehicleAge"></select>
+<div class="hint" data-i18n="hintAge">MTV tablosunda kullanılan yaş aralığını seç.</div>
+<div class="error" data-i18n="errorAge">Araç yaşını seç.</div>
+</div>
+<div class="field" id="engineField">
+<label data-i18n="labelEngine" for="engineSize">Motor hacmi</label>
+<select id="engineSize"></select>
+<div class="hint" data-i18n="engineHint" id="engineHint">Araç türüne göre seçenekler değişir.</div>
+<div class="error" data-i18n="errorEngine">Motor hacmini seç.</div>
+</div>
+<div class="field full" id="vehicleValueField">
+<label data-i18n="labelValue" for="vehicleValue">Taşıt değeri</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix js-money" id="vehicleValue" inputmode="numeric" placeholder="Örn: 700.000" type="text"/>
+</div>
+<div class="hint" data-i18n="hintValue">2018 sonrası otomobillerde bazı motor hacimlerinde MTV kademesini etkiler.</div>
+<div class="error" data-i18n="errorValue">2018 sonrası otomobiller için geçerli bir taşıt değeri gir.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="scenarioTitle">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" data-i18n="scenario1" onclick="applyScenario('car1')" type="button">1.6 otomobil</button>
+<button class="chip" data-i18n="scenario2" onclick="applyScenario('car2')" type="button">2.0 otomobil</button>
+<button class="chip" data-i18n="scenario3" onclick="applyScenario('moto1')" type="button">250 cc motosiklet</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" data-i18n="btnCalc" onclick="calculateMTV({ scrollToResult:true, showValidation:true })" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" data-i18n="btnExample" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" data-i18n="btnClear" onclick="resetForm()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" data-i18n="btnCopy" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" data-i18n="btnShare" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" data-i18n="btnPrint" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong data-i18n="flowStrong">Detaylı vergi özeti sağ panelde görünür</strong>
+<span data-i18n="flowSpan">Yıllık MTV, iki taksit, aylık karşılık, araç değerine oran ve bir sonraki yaş dilimi etkisi birlikte değerlendirilir.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title" data-i18n="statusTitle">Sonuç alanı durumu</div>
+<div class="status-text" data-i18n="statusWait" id="statusText">Sonuç görmek için araç bilgilerini doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge info" data-i18n="badgeWait" id="resultBadge">Bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty results-target" id="highlightCard">
+<div class="highlight-label" data-i18n="mainLabel">Ana Sonuç</div>
+<div class="highlight-value" id="annualTaxResult">—</div>
+<div class="highlight-sub" data-i18n="mainSub" id="mainSubtext">Yıllık MTV burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small" data-i18n="scoreLabel">Vergi Yükü Skoru</div>
+<div class="score-value" id="taxScore">0/100</div>
+</div>
+<span class="pill info" data-i18n="badgeScoreWait" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong data-i18n="scoreExplainTitle">Bu skor neyi ifade eder?</strong>
+<div class="small" data-i18n="scoreExplain" id="scoreExplain">Skor, yıllık MTV tutarı, aylık karşılık ve araç değerine oran birlikte düşünülerek pratik bütçe baskısını göstermek için kullanılır. Düşük skor daha hafif, yüksek skor daha ağır vergi yükünü temsil eder.</div>
+</div>
+</section>
+<div class="health-grid">
+<div class="health-card">
+<h3 data-i18n="card1">1. taksit</h3>
+<div class="big" id="firstInstallmentResult">—</div>
+<div class="small" data-i18n="card1sub" id="firstInstallmentSub">Ocak taksiti görünümü</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card2">Aylık karşılık</h3>
+<div class="big" id="monthlyEquivalentResult">—</div>
+<div class="small" data-i18n="card2sub" id="monthlyEquivalentSub">Bütçe planı için fikir verir</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card3">Karar</h3>
+<div class="big" id="healthDecision">—</div>
+<div class="small" data-i18n="card3sub" id="healthDecisionSub">Yorum için veri bekleniyor</div>
+</div>
+</div>
+<div class="mini-result-grid" style="margin-top:16px">
+<div class="mini-result is-empty" id="mini1"><div class="label" data-i18n="mini1">2. taksit</div><div class="value" id="secondInstallmentResult">—</div></div>
+<div class="mini-result is-empty" id="mini2"><div class="label" data-i18n="mini2">Tarife</div><div class="value" id="tariffTypeResult">—</div></div>
+<div class="mini-result is-empty" id="mini3"><div class="label" data-i18n="mini3">Araç değeri oranı</div><div class="value" id="valueRatioResult">—</div></div>
+<div class="mini-result is-empty" id="mini4"><div class="label" data-i18n="mini4">Bir sonraki yaş dilimi</div><div class="value" id="nextAgePreview">—</div></div>
+</div>
+<div class="comment-box" data-i18n="commentWait" id="smartComment" style="margin-top:16px">Hesaplama yapmak için araç bilgilerini gir.</div>
+</aside>
+</section>
+<section class="table-card card">
+<h2 data-i18n="tableTitle">Detaylı sonuç tablosu</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th data-i18n="th1">Metrik</th><th data-i18n="th2">Değer</th><th data-i18n="th3">Açıklama</th></tr>
+</thead>
+<tbody id="detailTable">
+<tr><td data-i18n="row1m">Yıllık MTV</td><td>—</td><td data-i18n="row1d">Hesaplama sonrası oluşur.</td></tr>
+<tr><td data-i18n="row2m">1. taksit</td><td>—</td><td data-i18n="row2d">Genel pratikte ilk ödeme görünümü.</td></tr>
+<tr><td data-i18n="row3m">2. taksit</td><td>—</td><td data-i18n="row3d">Genel pratikte ikinci ödeme görünümü.</td></tr>
+<tr><td data-i18n="row4m">Aylık karşılık</td><td>—</td><td data-i18n="row4d">Yıllık tutarın aylık bütçeye çevrilmiş hali.</td></tr>
+<tr><td data-i18n="row5m">Haftalık karşılık</td><td>—</td><td data-i18n="row5d">Küçük bütçe planı için yardımcı görünüm.</td></tr>
+<tr><td data-i18n="row6m">Sonraki yaş etkisi</td><td>—</td><td data-i18n="row6d">Bir üst yaş bandına geçildiğinde değişim ön izlemesi.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-grid">
+<article class="content-card">
+<h2 data-i18n="content1Title">MTV nasıl hesaplanır?</h2>
+<p data-i18n="content1P1">MTV, araç türüne göre farklı tarifelerden hesaplanır. Otomobil ve motosikletlerde en temel değişkenler motor hacmi ve yaştır. 2018 sonrası otomobillerde bazı kademelerde buna taşıt değeri de eklenir.</p>
+<p data-i18n="content1P2">Bu nedenle aynı motor hacmine ve yaşa sahip iki otomobilin MTV’si taşıt değeri farkı nedeniyle değişebilir. Motosikletlerde ise hesap daha sade yapıdadır.</p>
+</article>
+<article class="content-card">
+<h2 data-i18n="content2Title">Bu sayfada ek olarak ne var?</h2>
+<p data-i18n="content2P1">Standart MTV araçları çoğu zaman sadece yıllık tutarı gösterir. Bu sürüm buna ek olarak iki taksit görünümü, aylık ve haftalık bütçe karşılığı, araç değerine oran ve bir sonraki yaş diliminde oluşabilecek muhtemel değişimi de gösterir.</p>
+<p data-i18n="content2P2">Bu özellikle araç maliyetini yıl içine yayarak düşünen kullanıcılar için daha faydalı bir karar desteği sunar.</p>
+</article>
+</section>
+<section class="content-card" style="margin-top:24px">
+<h2 data-i18n="relatedTitle">İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/arac-aylik-maliyet-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related1t">Araç Aylık Maliyet Hesaplama</strong><p data-i18n="related1d">MTV, yakıt, bakım ve sigorta dahil aylık araç bütçeni daha bütüncül gör.</p></a>
+<a class="related-card" href="/km-maliyet-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related2t">KM Maliyet Hesaplama</strong><p data-i18n="related2d">Kilometre başına gerçek sürüş maliyetini analiz et.</p></a>
+<a class="related-card" href="/yakit-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related3t">Yakıt Hesaplama</strong><p data-i18n="related3d">Yakıt tüketimi ve rota bütçesini ayrı hesapla.</p></a>
+</div>
+</section>
+<div class="footer-note" data-i18n="footerNote">Bu araç 2026 MTV tarifesine göre revize edilmiştir; nihai ödeme öncesinde resmi sorgu ekranıyla son kontrol yapmak gerekir.</div>
+</main>
+<script>
+const translations = {
+      tr: {
+        pageTitle:"MTV Hesaplama 2026 | Motorlu Taşıtlar Vergisi Calculator - Hesapica",
+        crumbHome:"Ana Sayfa", crumbCat:"Araç Giderleri", crumbCurrent:"MTV Hesaplama",
+        eyebrow:"Hesapica • Otomotiv Aracı", heroTitle:"MTV Hesaplama 2026",
+        heroDesc:"Otomobil ve motosikletler için 2026 Motorlu Taşıtlar Vergisi tutarını; araç türü, yaş, motor hacmi, tescil dönemi ve gerekiyorsa taşıt değerine göre hesaplayın. Yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizi tek ekranda oluşsun.",
+        chip1:"2026 MTV tarifesi", chip2:"Otomobil + motosiklet", chip3:"2018 öncesi / sonrası", chip4:"Taşıt değeri eşiği desteği",
+        heroBoxEyebrow:"Vergi planı", heroBoxTitle:"Ana sonuç üstte, taksit ve bütçe etkisi aşağıda",
+        heroBoxDesc:"Bu sayfa sadece yıllık MTV’yi göstermez; iki taksit tutarı, aylık karşılığı, haftalık karşılığı, araç değerine oranı ve bir sonraki yaş diliminde oluşabilecek farkı da görünür kılar.",
+        heroLi1:"Yıllık MTV + taksit yapısı", heroLi2:"Aylık ve haftalık bütçe karşılığı", heroLi3:"Yaş dilimi değişirse olası fark",
+        panelTitle:"Hesaplama Paneli", panelNote:"Araç türünü ve teknik bilgileri gir. Sistem 2026 MTV tutarını, taksitleri ve aylık bütçe karşılığını otomatik oluştursun. 2018 sonrası otomobillerde taşıt değeri alanı önemlidir.",
+        helperTitle:"Kısa not", helperDesc:"MTV sonucu özellikle 2018 sonrası otomobillerde sadece motor hacmiyle değil, bazı kademelerde taşıt değeriyle de değişir. Bu nedenle aynı motor hacmine sahip iki araç farklı MTV ödeyebilir. Bu sürüm, 2026 resmi tarife mantığına göre revize edilmiştir.",
+        formTitle:"Araç bilgileri", labelType:"Araç türü", labelReg:"Tescil dönemi", labelAge:"Araç yaşı", labelEngine:"Motor hacmi", labelValue:"Taşıt değeri",
+        hintType:"Bu sürümde en çok aranan iki MTV kategorisi destekleniyor.", hintReg:"2018 sonrası otomobillerde taşıt değeri bazı kademeleri etkiler.", hintAge:"MTV tablosunda kullanılan yaş aralığını seç.", engineHint:"Araç türüne göre seçenekler değişir.", engineHintSelectVehicle:"Önce araç türünü seç.", hintValue:"2018 sonrası otomobillerde bazı motor hacimlerinde MTV kademesini etkiler.",
+        errorType:"Araç türünü seç.", errorReg:"Tescil dönemini seç.", errorAge:"Araç yaşını seç.", errorEngine:"Motor hacmini seç.", errorValue:"2018 sonrası otomobiller için geçerli bir taşıt değeri gir.",
+        scenarioTitle:"Hazır senaryolar", scenario1:"1.6 otomobil", scenario2:"2.0 otomobil", scenario3:"250 cc motosiklet",
+        btnCalc:"Hesapla", btnExample:"Örnek Veri", btnClear:"Verileri Sıfırla", btnCopy:"Sonucu Kopyala", btnPrint:"Yazdır / PDF",
+        flowStrong:"Detaylı vergi özeti sağ panelde görünür", flowSpan:"Yıllık MTV, iki taksit, aylık karşılık, araç değerine oran ve bir sonraki yaş dilimi etkisi birlikte değerlendirilir.",
+        statusTitle:"Sonuç alanı durumu", statusWait:"Sonuç görmek için araç bilgilerini doldur veya örnek veri kullan.", badgeWait:"Bekleniyor",
+        mainLabel:"Ana Sonuç", mainSub:"Yıllık MTV burada görünecek.",
+        scoreLabel:"Vergi Yükü Skoru", badgeScoreWait:"Veri bekleniyor", scoreExplainTitle:"Bu skor neyi ifade eder?",
+        scoreExplain:"Skor, yıllık MTV tutarı, aylık karşılık ve araç değerine oran birlikte düşünülerek pratik bütçe baskısını göstermek için kullanılır. Düşük skor daha hafif, yüksek skor daha ağır vergi yükünü temsil eder.",
+        card1:"1. taksit", card1sub:"Ocak taksiti görünümü", card2:"Aylık karşılık", card2sub:"Bütçe planı için fikir verir", card3:"Karar", card3sub:"Yorum için veri bekleniyor",
+        mini1:"2. taksit", mini2:"Tarife", mini3:"Araç değeri oranı", mini4:"Bir sonraki yaş dilimi",
+        commentWait:"Hesaplama yapmak için araç bilgilerini gir.",
+        tableTitle:"Detaylı sonuç tablosu", th1:"Metrik", th2:"Değer", th3:"Açıklama",
+        row1m:"Yıllık MTV", row1d:"Hesaplama sonrası oluşur.", row2m:"1. taksit", row2d:"Genel pratikte ilk ödeme görünümü.", row3m:"2. taksit", row3d:"Genel pratikte ikinci ödeme görünümü.", row4m:"Aylık karşılık", row4d:"Yıllık tutarın aylık bütçeye çevrilmiş hali.", row5m:"Haftalık karşılık", row5d:"Küçük bütçe planı için yardımcı görünüm.", row6m:"Sonraki yaş etkisi", row6d:"Bir üst yaş bandına geçildiğinde değişim ön izlemesi.",
+        content1Title:"MTV nasıl hesaplanır?", content1P1:"MTV, araç türüne göre farklı tarifelerden hesaplanır. Otomobil ve motosikletlerde en temel değişkenler motor hacmi ve yaştır. 2018 sonrası otomobillerde bazı kademelerde buna taşıt değeri de eklenir.", content1P2:"Bu nedenle aynı motor hacmine ve yaşa sahip iki otomobilin MTV’si taşıt değeri farkı nedeniyle değişebilir. Motosikletlerde ise hesap daha sade yapıdadır.",
+        content2Title:"Bu sayfada ek olarak ne var?", content2P1:"Standart MTV araçları çoğu zaman sadece yıllık tutarı gösterir. Bu sürüm buna ek olarak iki taksit görünümü, aylık ve haftalık bütçe karşılığı, araç değerine oran ve bir sonraki yaş diliminde oluşabilecek muhtemel değişimi de gösterir.", content2P2:"Bu özellikle araç maliyetini yıl içine yayarak düşünen kullanıcılar için daha faydalı bir karar desteği sunar.",
+        relatedTitle:"İlgili Araçlar", relatedSmall:"İlgili Araç", related1t:"Araç Aylık Maliyet Hesaplama", related1d:"MTV, yakıt, bakım ve sigorta dahil aylık araç bütçeni daha bütüncül gör.", related2t:"KM Maliyet Hesaplama", related2d:"Kilometre başına gerçek sürüş maliyetini analiz et.", related3t:"Yakıt Hesaplama", related3d:"Yakıt tüketimi ve rota bütçesini ayrı hesapla.",
+        footerNote:"Bu araç 2026 MTV tarifesine göre revize edilmiştir; nihai ödeme öncesinde resmi sorgu ekranıyla son kontrol yapmak gerekir.",
+        vehicleCar:"Otomobil / benzeri", vehicleMoto:"Motosiklet", regPost:"01.01.2018 ve sonrası", regPre:"31.12.2017 ve öncesi", selectPlaceholder:"Seçiniz",
+        age13:"1 - 3 yaş", age46:"4 - 6 yaş", age711:"7 - 11 yaş", age1215:"12 - 15 yaş", age16:"16 ve üzeri",
+        engineCar_1300:"1300 cm³ ve aşağısı", engineCar_1301_1600:"1301 - 1600 cm³", engineCar_1601_1800:"1601 - 1800 cm³", engineCar_1801_2000:"1801 - 2000 cm³", engineCar_2001_2500:"2001 - 2500 cm³", engineCar_2501_3000:"2501 - 3000 cm³", engineCar_3001_3500:"3001 - 3500 cm³", engineCar_3501_4000:"3501 - 4000 cm³", engineCar_4001:"4001 cm³ ve yukarısı",
+        engineMoto_100_250:"100 - 250 cm³", engineMoto_251_650:"251 - 650 cm³", engineMoto_651_1200:"651 - 1200 cm³", engineMoto_1201:"1201 cm³ ve yukarısı",
+        tariffCarPost:"2018 sonrası otomobil tarifesi", tariffCarPre:"2017 ve öncesi otomobil tarifesi", tariffMoto:"Motosiklet tarifesi",
+        stateWaiting:"Bekleniyor", stateMissing:"Eksik veri", statePartial:"Alanları tamamla", stateDone:"Analiz tamamlandı",
+        low:"Düşük", medium:"Orta", high:"Yüksek", comfortable:"Rahat", controlled:"Kontrollü", attention:"Dikkat",
+        decisionWait:"Yorum için veri bekleniyor",
+        commentLow:"MTV yükü görece düşük seviyede görünüyor.", commentMid:"MTV yükü orta seviyede görünüyor.", commentHigh:"MTV yükü belirgin seviyede görünüyor.",
+        noMoreAge:"Son yaş dilimi", noMoreAgeDesc:"Aşağı yönlü ek yaş avantajı görünmüyor.", nextAgeDrop:"Sonraki yaş diliminde yaklaşık {amount} ({pct}) düşüş oluşabilir.", nextAgeRise:"Sonraki yaş diliminde yaklaşık {amount} ({pct}) artış oluşabilir.", nextAgeSame:"Sonraki yaş diliminde anlamlı bir fark görünmüyor.",
+        annualDesc:"2026 tarifesine göre oluşan yıllık MTV toplamı.", copySuccess:"Sonuç panoya kopyalandı.", statusInvalid:"Eksik alanlar tamamlanmadan sonuç üretilemez.", statusPartial:"Hesaplama için zorunlu alanları tamamla.",
+        autoDone:"Araç MTV analizi tamamlandı.", motoDone:"Motosiklet MTV analizi tamamlandı.",
+        mainComment1:"için", mainComment2:"yaş ve", mainComment3:"motor hacmi esas alındı.", mainComment4:"taşıt değeriyle seçilen kademe", mainComment5:"oldu.", mainComment6:"MTV'nin araç değerine oranı yaklaşık", mainComment7:"seviyesinde.", mainComment8:"Yıllık MTV", mainComment9:"taksit başına", mainComment10:"aylık karşılığı yaklaşık", mainComment11:"ve haftalık karşılığı yaklaşık", mainComment12:"seviyesinde görünüyor.",
+        resultYearly:"Yıllık MTV", resultFirst:"1. taksit", resultSecond:"2. taksit", resultMonthly:"Aylık Karşılık", resultRatio:"Araç Değeri Oranı", resultTariff:"Tarife", resultNext:"Bir Sonraki Yaş Etkisi", resultComment:"Yorum:"
+      },
+      en: {
+        pageTitle:"MTV Calculator 2026 | Motor Vehicle Tax Calculator - Hesapica",
+        crumbHome:"Home", crumbCat:"Vehicle Costs", crumbCurrent:"MTV Calculator",
+        eyebrow:"Hesapica • Vehicle Tax Tool", heroTitle:"MTV Calculator 2026",
+        heroDesc:"Calculate the 2026 Turkish Motor Vehicle Tax for cars and motorcycles based on vehicle type, age, engine size, registration period and, when needed, vehicle value. Annual MTV, installment amount, monthly equivalent and tax burden analysis appear on one screen.",
+        chip1:"2026 MTV tariff", chip2:"Car + motorcycle", chip3:"Before / after 2018", chip4:"Vehicle value threshold support",
+        heroBoxEyebrow:"Tax plan", heroBoxTitle:"Main result on top, installments and budget impact below",
+        heroBoxDesc:"This page does not only show annual MTV. It also shows two installments, monthly equivalent, weekly equivalent, ratio to vehicle value and the possible impact of the next age bracket.",
+        heroLi1:"Annual MTV + installments", heroLi2:"Monthly and weekly budget view", heroLi3:"Possible next age-bracket effect",
+        panelTitle:"Calculation Panel", panelNote:"Enter the vehicle type and technical details. The system will generate the 2026 MTV amount, installments and monthly budget equivalent. Vehicle value is important for post-2018 cars.",
+        helperTitle:"Quick note", helperDesc:"For post-2018 cars, the MTV amount may depend not only on engine size but also on vehicle value in certain bands. That is why two vehicles with the same engine size can have different MTV amounts. This version was revised according to the official 2026 tariff logic.",
+        formTitle:"Vehicle information", labelType:"Vehicle type", labelReg:"Registration period", labelAge:"Vehicle age", labelEngine:"Engine size", labelValue:"Vehicle value",
+        hintType:"This version supports the two most searched MTV categories.", hintReg:"For post-2018 cars, vehicle value affects some bands.", hintAge:"Select the age bracket used in the MTV table.", engineHint:"Options change by vehicle type.", engineHintSelectVehicle:"Select the vehicle type first.", hintValue:"For post-2018 cars, vehicle value may affect the MTV band in some engine brackets.",
+        errorType:"Select the vehicle type.", errorReg:"Select the registration period.", errorAge:"Select the vehicle age.", errorEngine:"Select the engine size.", errorValue:"Enter a valid vehicle value for post-2018 cars.",
+        scenarioTitle:"Quick scenarios", scenario1:"1.6 car", scenario2:"2.0 car", scenario3:"250 cc motorcycle",
+        btnCalc:"Calculate", btnExample:"Sample Data", btnClear:"Reset Data", btnCopy:"Copy Result", btnShare:"Share", btnPrint:"Print / PDF",
+        flowStrong:"Detailed tax summary appears on the right panel", flowSpan:"Annual MTV, two installments, monthly equivalent, vehicle value ratio and next age-bracket effect are evaluated together.",
+        statusTitle:"Result status", statusWait:"Fill in the vehicle details or use sample data to see results.", badgeWait:"Waiting",
+        mainLabel:"Main Result", mainSub:"Annual MTV will appear here.",
+        validationTitle:"Please review the missing fields", scoreLabel:"Tax Burden Score", badgeScoreWait:"Waiting for data", scoreExplainTitle:"What does this score mean?",
+        scoreExplain:"The score is used to show practical budget pressure by combining annual MTV amount, monthly equivalent and ratio to vehicle value. A lower score means lighter burden, a higher score means heavier burden.",
+        card1:"1st installment", card1sub:"January installment view", card2:"Monthly equivalent", card2sub:"Useful for budget planning", card3:"Decision", card3sub:"Waiting for interpretation",
+        mini1:"2nd installment", mini2:"Tariff", mini3:"Vehicle value ratio", mini4:"Next age bracket",
+        commentWait:"Enter vehicle details to calculate.",
+        tableTitle:"Detailed results table", th1:"Metric", th2:"Value", th3:"Description",
+        row1m:"Annual MTV", row1d:"Appears after calculation.", row2m:"1st installment", row2d:"Practical view of the first payment.", row3m:"2nd installment", row3d:"Practical view of the second payment.", row4m:"Monthly equivalent", row4d:"The annual amount converted into a monthly budget figure.", row5m:"Weekly equivalent", row5d:"Helpful smaller-budget planning view.", row6m:"Next age effect", row6d:"Preview of change when moving to the next age band.",
+        content1Title:"How is MTV calculated?", content1P1:"MTV is calculated from different tariffs depending on the vehicle type. For cars and motorcycles, the main variables are engine size and age. For post-2018 cars, vehicle value is added in some bands.", content1P2:"That is why two cars with the same engine size and age can still have different MTV due to vehicle value. Motorcycles have a simpler structure.",
+        content2Title:"What is additionally included on this page?", content2P1:"Standard MTV tools often show only the annual amount. This version also shows two installments, monthly and weekly budget equivalent, ratio to vehicle value and the possible change in the next age bracket.", content2P2:"This creates a more useful decision-support view for users who want to spread vehicle costs across the year.",
+        relatedTitle:"Related Tools", relatedSmall:"Related Tool", related1t:"Monthly Vehicle Cost Calculator", related1d:"See your monthly vehicle budget more holistically including MTV, fuel, maintenance and insurance.", related2t:"Cost per KM Calculator", related2d:"Analyze real driving cost per kilometer.", related3t:"Fuel Calculator", related3d:"Calculate fuel consumption and route budget separately.",
+        footerNote:"This tool was revised according to the 2026 MTV tariff; final confirmation should be made on the official query screen before payment.",
+        vehicleCar:"Car / similar", vehicleMoto:"Motorcycle", regPost:"01.01.2018 and after", regPre:"31.12.2017 and before", selectPlaceholder:"Select",
+        age13:"1 - 3 years", age46:"4 - 6 years", age711:"7 - 11 years", age1215:"12 - 15 years", age16:"16 and above",
+        engineCar_1300:"1300 cc and below", engineCar_1301_1600:"1301 - 1600 cc", engineCar_1601_1800:"1601 - 1800 cc", engineCar_1801_2000:"1801 - 2000 cc", engineCar_2001_2500:"2001 - 2500 cc", engineCar_2501_3000:"2501 - 3000 cc", engineCar_3001_3500:"3001 - 3500 cc", engineCar_3501_4000:"3501 - 4000 cc", engineCar_4001:"4001 cc and above",
+        engineMoto_100_250:"100 - 250 cc", engineMoto_251_650:"251 - 650 cc", engineMoto_651_1200:"651 - 1200 cc", engineMoto_1201:"1201 cc and above",
+        tariffCarPost:"Post-2018 car tariff", tariffCarPre:"Pre-2018 car tariff", tariffMoto:"Motorcycle tariff",
+        stateWaiting:"Waiting", stateMissing:"Missing data", statePartial:"Complete the fields", stateDone:"Analysis ready",
+        low:"Low", medium:"Medium", high:"High", comfortable:"Comfortable", controlled:"Manageable", attention:"Attention",
+        decisionWait:"Waiting for interpretation",
+        commentLow:"The MTV burden appears relatively low.", commentMid:"The MTV burden appears moderate.", commentHigh:"The MTV burden appears significant.",
+        noMoreAge:"Last age bracket", noMoreAgeDesc:"No further age-based advantage appears below this level.", nextAgeDrop:"In the next age bracket, a decrease of about {amount} ({pct}) may occur.", nextAgeRise:"In the next age bracket, an increase of about {amount} ({pct}) may occur.", nextAgeSame:"No meaningful change appears in the next age bracket.",
+        annualDesc:"The annual MTV total according to the 2026 tariff.", copySuccess:"Result copied to clipboard.", copyEmpty:"Create a result first.", statusInvalid:"Results cannot be produced until the required fields are complete.", statusPartial:"Complete the required fields to calculate.", shareSuccess:"Share panel opened.", shareFallback:"Share text copied to clipboard.", statusInvalid:"Vehicle value is required for post-2018 cars.",
+        autoDone:"Vehicle MTV analysis completed.", motoDone:"Motorcycle MTV analysis completed.",
+        mainComment1:"for", mainComment2:"years and", mainComment3:"engine size were used as the basis.", mainComment4:"vehicle value placed the vehicle into the band", mainComment5:".", mainComment6:"The annual MTV to vehicle value ratio is about", mainComment7:".", mainComment8:"Annual MTV", mainComment9:"per installment", mainComment10:"monthly equivalent about", mainComment11:"and weekly equivalent about", mainComment12:".",
+        resultYearly:"Annual MTV", resultFirst:"1st Installment", resultSecond:"2nd Installment", resultMonthly:"Monthly Equivalent", resultRatio:"Vehicle Value Ratio", resultTariff:"Tariff", resultBand:"Selected Band", resultNext:"Next Age Effect", resultComment:"Comment:"
+      }
+    };
+const mtvData = {
+      carPost2018: {
+        "1300-": [
+          { maxValue: 309100, taxes: {"1-3":5750,"4-6":4010,"7-11":2238,"12-15":1689,"16+":593}, labelTr:"309.100 TL ve altı", labelEn:"309,100 TRY and below" },
+          { maxValue: 541500, taxes: {"1-3":6319,"4-6":4409,"7-11":2459,"12-15":1861,"16+":655}, labelTr:"309.100 - 541.500 TL", labelEn:"309,100 - 541,500 TRY" },
+          { maxValue: Infinity, taxes: {"1-3":6902,"4-6":4807,"7-11":2693,"12-15":2032,"16+":706}, labelTr:"541.500 TL üzeri", labelEn:"Above 541,500 TRY" }
+        ],
+        "1301-1600": [
+          { maxValue: 309100, taxes: {"1-3":10016,"4-6":7510,"7-11":4354,"12-15":3077,"16+":1181}, labelTr:"309.100 TL ve altı", labelEn:"309,100 TRY and below" },
+          { maxValue: 541500, taxes: {"1-3":11023,"4-6":8264,"7-11":4794,"12-15":3375,"16+":1290}, labelTr:"309.100 - 541.500 TL", labelEn:"309,100 - 541,500 TRY" },
+          { maxValue: Infinity, taxes: {"1-3":12028,"4-6":9012,"7-11":5220,"12-15":3685,"16+":1408}, labelTr:"541.500 TL üzeri", labelEn:"Above 541,500 TRY" }
+        ],
+        "1601-1800": [
+          { maxValue: 775100, taxes: {"1-3":19472,"4-6":15226,"7-11":8948,"12-15":5458,"16+":2113}, labelTr:"775.100 TL ve altı", labelEn:"775,100 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":21251,"4-6":16600,"7-11":9775,"12-15":5964,"16+":2307}, labelTr:"775.100 TL üzeri", labelEn:"Above 775,100 TRY" }
+        ],
+        "1801-2000": [
+          { maxValue: 775100, taxes: {"1-3":30679,"4-6":23625,"7-11":13886,"12-15":8264,"16+":3248}, labelTr:"775.100 TL ve altı", labelEn:"775,100 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":33474,"4-6":25784,"7-11":15147,"12-15":9012,"16+":3547}, labelTr:"775.100 TL üzeri", labelEn:"Above 775,100 TRY" }
+        ],
+        "2001-2500": [
+          { maxValue: 968100, taxes: {"1-3":46027,"4-6":33413,"7-11":20874,"12-15":12465,"16+":4930}, labelTr:"968.100 TL ve altı", labelEn:"968,100 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":50217,"4-6":36448,"7-11":22768,"12-15":13606,"16+":5378}, labelTr:"968.100 TL üzeri", labelEn:"Above 968,100 TRY" }
+        ],
+        "2501-3000": [
+          { maxValue: 1937500, taxes: {"1-3":64175,"4-6":55837,"7-11":34878,"12-15":18758,"16+":6875}, labelTr:"1.937.500 TL ve altı", labelEn:"1,937,500 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":70018,"4-6":60905,"7-11":38053,"12-15":20466,"16+":7503}, labelTr:"1.937.500 TL üzeri", labelEn:"Above 1,937,500 TRY" }
+        ],
+        "3001-3500": [
+          { maxValue: 1937500, taxes: {"1-3":97744,"4-6":87954,"7-11":52976,"12-15":26443,"16+":9684}, labelTr:"1.937.500 TL ve altı", labelEn:"1,937,500 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":106641,"4-6":95940,"7-11":57791,"12-15":28839,"16+":10578}, labelTr:"1.937.500 TL üzeri", labelEn:"Above 1,937,500 TRY" }
+        ],
+        "3501-4000": [
+          { maxValue: 3101800, taxes: {"1-3":153684,"4-6":132712,"7-11":78152,"12-15":34878,"16+":13886}, labelTr:"3.101.800 TL ve altı", labelEn:"3,101,800 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":167671,"4-6":144770,"7-11":85271,"12-15":38053,"16+":15147}, labelTr:"3.101.800 TL üzeri", labelEn:"Above 3,101,800 TRY" }
+        ],
+        "4001+": [
+          { maxValue: 3683200, taxes: {"1-3":251554,"4-6":188627,"7-11":111714,"12-15":50206,"16+":19472}, labelTr:"3.683.200 TL ve altı", labelEn:"3,683,200 TRY and below" },
+          { maxValue: Infinity, taxes: {"1-3":274415,"4-6":205781,"7-11":121873,"12-15":54769,"16+":21251}, labelTr:"3.683.200 TL üzeri", labelEn:"Above 3,683,200 TRY" }
+        ]
+      },
+      carPre2018: {
+        "1300-": {"1-3":5750,"4-6":4010,"7-11":2238,"12-15":1689,"16+":593},
+        "1301-1600": {"1-3":10016,"4-6":7510,"7-11":4354,"12-15":3077,"16+":1181},
+        "1601-1800": {"1-3":17705,"4-6":13829,"7-11":8145,"12-15":4957,"16+":1917},
+        "1801-2000": {"1-3":27898,"4-6":21478,"7-11":12624,"12-15":7510,"16+":2958},
+        "2001-2500": {"1-3":41840,"4-6":30372,"7-11":18977,"12-15":11333,"16+":4479},
+        "2501-3000": {"1-3":58347,"4-6":50754,"7-11":31704,"12-15":17044,"16+":6255},
+        "3001-3500": {"1-3":88859,"4-6":79955,"7-11":48158,"12-15":24031,"16+":8813},
+        "3501-4000": {"1-3":139721,"4-6":120647,"7-11":71048,"12-15":31704,"16+":12624},
+        "4001+": {"1-3":228681,"4-6":171485,"7-11":101555,"12-15":45632,"16+":17705}
+      },
+      motorcycle: {
+        "100-250": {"1-3":1069,"4-6":799,"7-11":589,"12-15":362,"16+":136},
+        "251-650": {"1-3":2214,"4-6":1676,"7-11":1069,"12-15":589,"16+":362},
+        "651-1200": {"1-3":5719,"4-6":3398,"7-11":1676,"12-15":1069,"16+":589},
+        "1201+": {"1-3":13876,"4-6":9167,"7-11":5719,"12-15":4540,"16+":2214}
+      }
+    };
+    Object.assign(translations.tr, {
+      btnCalc:"Sonucu Gör",
+      btnShare:"Paylaş",
+      validationTitle:"Lütfen eksik alanları kontrol et",
+      validationType:"Araç türü seçilmelidir.",
+      validationReg:"Otomobil için tescil dönemi seçilmelidir.",
+      validationAge:"Araç yaşı seçilmelidir.",
+      validationEngine:"Motor hacmi seçilmelidir.",
+      validationValue:"2018 sonrası otomobillerde taşıt değeri alanı boş bırakılamaz.",
+      statusSample:"Örnek senaryo uygulandı. Bu veriler kalıcı olarak kaydedilmez.",
+      statusAutoSuffix:"Alan değişikliğine göre sonuç otomatik güncellendi.",
+      shareTitle:"MTV Hesaplama Sonucu",
+      shareSuccess:"Paylaşım penceresi açıldı.",
+      shareFallback:"Paylaşım metni panoya kopyalandı.",
+      copyEmpty:"Önce bir sonuç oluştur.",
+      badgeReady:"Hazır",
+      selectedBand:"Seçilen kademe",
+      selectedBandDesc:"Motor hacmi ve gerekiyorsa taşıt değeri ile oluşan MTV kademesi.",
+      resultBand:"Seçilen Kademe"
+    });
+    Object.assign(translations.en, {
+      btnCalc:"Show Result",
+      btnShare:"Share",
+      validationTitle:"Please check the missing fields",
+      validationType:"Vehicle type is required.",
+      validationReg:"Registration period is required for cars.",
+      validationAge:"Vehicle age is required.",
+      validationEngine:"Engine size is required.",
+      validationValue:"Vehicle value cannot be blank for post-2018 cars.",
+      statusSample:"A sample scenario was applied. These values are not saved permanently.",
+      statusAutoSuffix:"Results were refreshed automatically after the field change.",
+      shareTitle:"MTV Calculator Result",
+      shareSuccess:"Share sheet opened.",
+      shareFallback:"Share text copied to clipboard.",
+      copyEmpty:"Create a result first.",
+      badgeReady:"Ready",
+      selectedBand:"Selected band",
+      selectedBandDesc:"The MTV band formed by engine size and, where required, vehicle value.",
+      resultBand:"Selected Band"
+    });
+
+    const STORAGE_KEY = 'hesapica_mtv_lock_v3';
+    const ageOrder = ["1-3","4-6","7-11","12-15","16+"];
+    const DEFAULT_FORM = {
+      vehicleType:'',
+      registrationType:'',
+      vehicleAge:'',
+      engineSize:'',
+      vehicleValue:''
+    };
+    const state = {
+      lang:'tr',
+      isValid:false,
+      isCalculated:false,
+      dataMode:'manual',
+      suppressSave:false,
+      debounceTimer:null,
+      lastResult:null
+    };
+
+    function t(key){ return translations[state.lang][key] || key; }
+    function formatCurrency(value) {
+      return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', { style:'currency', currency:'TRY', maximumFractionDigits:0 }).format(Number(value || 0));
+    }
+    function formatPercent(value, digits = 2){
+      return '%' + new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US',{minimumFractionDigits:digits, maximumFractionDigits:digits}).format(Number(value || 0));
+    }
+    function parseMoneyString(raw){
+      return Number((raw || '').toString().replace(/\./g, '').replace(',', '.').replace(/[^\d.]/g, '')) || 0;
+    }
+    function parseMoneyInput(el){ return parseMoneyString(el.value || ''); }
+    function formatDigitsForDisplay(value){
+      const digits = String(value || '').replace(/\D/g, '');
+      return digits ? Number(digits).toLocaleString('tr-TR') : '';
+    }
+    function getField(id){ const el = document.getElementById(id); return el ? el.closest('.field') : null; }
+    function markFieldError(id, hasError){ const field = getField(id); if (field) field.classList.toggle('has-error', !!hasError); }
+    function clearErrors(){ document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error')); hideValidation(); }
+    function showValidation(messages) {
+      const box = document.getElementById('validationBox');
+      const list = document.getElementById('validationList');
+      list.innerHTML = messages.map(msg => `<li>${msg}</li>`).join('');
+      box.classList.toggle('hidden', !messages.length);
+    }
+    function hideValidation(){ document.getElementById('validationBox').classList.add('hidden'); document.getElementById('validationList').innerHTML = ''; }
+
+    function buildStaticSelects(){
+      document.getElementById('vehicleType').innerHTML = `<option value="">${t('selectPlaceholder')}</option><option value="car">${t('vehicleCar')}</option><option value="motorcycle">${t('vehicleMoto')}</option>`;
+      document.getElementById('registrationType').innerHTML = `<option value="">${t('selectPlaceholder')}</option><option value="post2018">${t('regPost')}</option><option value="pre2018">${t('regPre')}</option>`;
+      document.getElementById('vehicleAge').innerHTML = `<option value="">${t('selectPlaceholder')}</option><option value="1-3">${t('age13')}</option><option value="4-6">${t('age46')}</option><option value="7-11">${t('age711')}</option><option value="12-15">${t('age1215')}</option><option value="16+">${t('age16')}</option>`;
+    }
+
+    function populateEngineOptions() {
+      const vehicleType = document.getElementById('vehicleType').value;
+      const engineSize = document.getElementById('engineSize');
+      if (vehicleType === 'car') {
+        engineSize.innerHTML = `
+          <option value="">${t('selectPlaceholder')}</option>
+          <option value="1300-">${t('engineCar_1300')}</option>
+          <option value="1301-1600">${t('engineCar_1301_1600')}</option>
+          <option value="1601-1800">${t('engineCar_1601_1800')}</option>
+          <option value="1801-2000">${t('engineCar_1801_2000')}</option>
+          <option value="2001-2500">${t('engineCar_2001_2500')}</option>
+          <option value="2501-3000">${t('engineCar_2501_3000')}</option>
+          <option value="3001-3500">${t('engineCar_3001_3500')}</option>
+          <option value="3501-4000">${t('engineCar_3501_4000')}</option>
+          <option value="4001+">${t('engineCar_4001')}</option>`;
+        engineSize.disabled = false;
+        document.getElementById('engineHint').textContent = t('engineHint');
+      } else if (vehicleType === 'motorcycle') {
+        engineSize.innerHTML = `
+          <option value="">${t('selectPlaceholder')}</option>
+          <option value="100-250">${t('engineMoto_100_250')}</option>
+          <option value="251-650">${t('engineMoto_251_650')}</option>
+          <option value="651-1200">${t('engineMoto_651_1200')}</option>
+          <option value="1201+">${t('engineMoto_1201')}</option>`;
+        engineSize.disabled = false;
+        document.getElementById('engineHint').textContent = t('engineHint');
+      } else {
+        engineSize.innerHTML = `<option value="">${t('selectPlaceholder')}</option>`;
+        engineSize.disabled = true;
+        document.getElementById('engineHint').textContent = t('engineHintSelectVehicle');
+      }
+    }
+
+    function getFormValues(){
+      return {
+        vehicleType: document.getElementById('vehicleType').value || DEFAULT_FORM.vehicleType,
+        registrationType: document.getElementById('registrationType').value || DEFAULT_FORM.registrationType,
+        vehicleAge: document.getElementById('vehicleAge').value || DEFAULT_FORM.vehicleAge,
+        engineSize: document.getElementById('engineSize').value || DEFAULT_FORM.engineSize,
+        vehicleValue: document.getElementById('vehicleValue').value || ''
+      };
+    }
+
+    function setFormValues(values){
+      const safe = Object.assign({}, DEFAULT_FORM, values || {});
+      document.getElementById('vehicleType').value = safe.vehicleType;
+      document.getElementById('registrationType').value = safe.registrationType;
+      handleVehicleTypeChange(true);
+      document.getElementById('vehicleAge').value = safe.vehicleAge;
+      document.getElementById('engineSize').value = safe.engineSize;
+      document.getElementById('vehicleValue').value = safe.vehicleValue ? formatDigitsForDisplay(safe.vehicleValue) : '';
+    }
+
+    function handleVehicleTypeChange(keepSelection = false) {
+      const currentEngine = document.getElementById('engineSize').value;
+      const vehicleType = document.getElementById('vehicleType').value;
+      const registrationType = document.getElementById('registrationType').value;
+      const registrationField = document.getElementById('registrationField');
+      const showRegistration = vehicleType === 'car';
+      if (!showRegistration) document.getElementById('registrationType').value = '';
+      registrationField.classList.toggle('hidden', !showRegistration);
+      populateEngineOptions();
+      if (keepSelection && currentEngine) {
+        const exists = [...document.getElementById('engineSize').options].some(opt => opt.value === currentEngine);
+        document.getElementById('engineSize').value = exists ? currentEngine : '';
+      }
+      const currentReg = document.getElementById('registrationType').value;
+      const showValue = vehicleType === 'car' && currentReg === 'post2018';
+      document.getElementById('vehicleValueField').classList.toggle('hidden', !showValue);
+      if (!showValue) {
+        markFieldError('vehicleValue', false);
+        document.getElementById('vehicleValue').value = '';
+      }
+      if (!showRegistration) markFieldError('registrationType', false);
+    }
+
+    function persistState(){
+      if (state.suppressSave || state.dataMode !== 'manual') return;
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ lang: state.lang, dataMode:'manual', form:getFormValues() }));
+      } catch (err) {}
+    }
+
+    function loadState(){
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || parsed.dataMode !== 'manual' || !parsed.form) return null;
+        return parsed;
+      } catch (err) { return null; }
+    }
+
+    function clearScenarioActive(){ document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active')); }
+
+    function flashAndScrollToResult(){
+      const target = document.getElementById('highlightCard');
+      if (!target) return;
+      target.classList.remove('result-flash');
+      target.offsetWidth;
+      target.classList.add('result-flash');
+      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      setTimeout(() => target.classList.remove('result-flash'), 1200);
+    }
+
+    function hasMeaningfulInput(){
+      const values = getFormValues();
+      return !!(values.vehicleType || values.registrationType || values.vehicleAge || values.engineSize || parseMoneyString(values.vehicleValue));
+    }
+
+
+    function validate(opts = { showUI:true, markErrors:true }){
+      clearErrors();
+      const messages = [];
+      const vehicleType = document.getElementById('vehicleType').value;
+      const registrationType = document.getElementById('registrationType').value;
+      const vehicleAge = document.getElementById('vehicleAge').value;
+      const engineSize = document.getElementById('engineSize').value;
+      const vehicleValue = parseMoneyInput(document.getElementById('vehicleValue'));
+      const mark = (id, messageKey) => {
+        if (opts.markErrors) markFieldError(id, true);
+        messages.push(t(messageKey));
+      };
+      if (!vehicleType) mark('vehicleType', 'validationType');
+      if (vehicleType === 'car' && !registrationType) mark('registrationType', 'validationReg');
+      if (!vehicleAge) mark('vehicleAge', 'validationAge');
+      if (!engineSize) mark('engineSize', 'validationEngine');
+      if (vehicleType === 'car' && registrationType === 'post2018' && vehicleValue <= 0) mark('vehicleValue', 'validationValue');
+      state.isValid = messages.length === 0;
+      if (opts.showUI) {
+        if (messages.length) showValidation(messages);
+        else hideValidation();
+      }
+      return state.isValid;
+    }
+
+    function getStatus(amount, ratioPct) {
+      if (amount < 5000 && ratioPct < 1) return { label:t('low'), badgeClass:'good', decision:t('comfortable'), comment:t('commentLow') };
+      if (amount < 20000 && ratioPct < 3) return { label:t('medium'), badgeClass:'warn', decision:t('controlled'), comment:t('commentMid') };
+      return { label:t('high'), badgeClass:'bad', decision:t('attention'), comment:t('commentHigh') };
+    }
+
+    function getNextAgeBracket(current){
+      const idx = ageOrder.indexOf(current);
+      return idx >= 0 && idx < ageOrder.length - 1 ? ageOrder[idx + 1] : null;
+    }
+
+    function getTaxForSelection(vehicleType, registrationType, vehicleAge, engineSize, vehicleValue){
+      let annualTax = 0, tariffType = '', selectedBand = '';
+      if (vehicleType === 'motorcycle') {
+        const row = mtvData.motorcycle[engineSize];
+        annualTax = row[vehicleAge];
+        tariffType = t('tariffMoto');
+        selectedBand = engineSize;
+      } else if (registrationType === 'pre2018') {
+        const row = mtvData.carPre2018[engineSize];
+        annualTax = row[vehicleAge];
+        tariffType = t('tariffCarPre');
+        selectedBand = engineSize;
+      } else {
+        const rows = mtvData.carPost2018[engineSize];
+        const row = rows.find(r => vehicleValue <= r.maxValue);
+        annualTax = row.taxes[vehicleAge];
+        tariffType = t('tariffCarPost');
+        selectedBand = `${engineSize} / ${state.lang === 'tr' ? row.labelTr : row.labelEn}`;
+      }
+      return { annualTax, tariffType, selectedBand };
+    }
+
+    function updateEmptyState(){
+      document.getElementById('highlightCard').classList.add('is-empty');
+      document.getElementById('annualTaxResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = t('mainSub');
+      document.getElementById('taxScore').textContent = '0/100';
+      document.getElementById('scoreBadge').textContent = t('badgeScoreWait');
+      document.getElementById('scoreBadge').className = 'pill info';
+      document.getElementById('scoreBar').style.width = '0%';
+      document.getElementById('scoreExplain').textContent = t('scoreExplain');
+      document.getElementById('firstInstallmentResult').textContent = '—';
+      document.getElementById('monthlyEquivalentResult').textContent = '—';
+      document.getElementById('healthDecision').textContent = '—';
+      document.getElementById('healthDecisionSub').textContent = t('decisionWait');
+      ['secondInstallmentResult','tariffTypeResult','valueRatioResult','nextAgePreview'].forEach(id => document.getElementById(id).textContent = '—');
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('statusText').textContent = t('statusWait');
+      document.getElementById('resultBadge').textContent = t('badgeWait');
+      document.getElementById('resultBadge').className = 'badge info';
+      document.getElementById('smartComment').textContent = t('commentWait');
+      document.getElementById('detailTable').innerHTML = `
+        <tr><td>${t('row1m')}</td><td>—</td><td>${t('row1d')}</td></tr>
+        <tr><td>${t('row2m')}</td><td>—</td><td>${t('row2d')}</td></tr>
+        <tr><td>${t('row3m')}</td><td>—</td><td>${t('row3d')}</td></tr>
+        <tr><td>${t('row4m')}</td><td>—</td><td>${t('row4d')}</td></tr>
+        <tr><td>${t('row5m')}</td><td>—</td><td>${t('row5d')}</td></tr>
+        <tr><td>${t('row6m')}</td><td>—</td><td>${t('row6d')}</td></tr>
+        <tr><td>${t('selectedBand')}</td><td>—</td><td>${t('selectedBandDesc')}</td></tr>`;
+    }
+
+    function updatePartialState(){
+      state.isCalculated = false;
+      state.lastResult = null;
+      clearErrors();
+      hideValidation();
+      document.getElementById('highlightCard').classList.add('is-empty');
+      document.getElementById('annualTaxResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = t('mainSub');
+      document.getElementById('taxScore').textContent = '0/100';
+      document.getElementById('scoreBadge').textContent = t('statePartial');
+      document.getElementById('scoreBadge').className = 'pill warn';
+      document.getElementById('scoreBar').style.width = '0%';
+      document.getElementById('statusText').textContent = t('statusPartial');
+      document.getElementById('resultBadge').textContent = t('statePartial');
+      document.getElementById('resultBadge').className = 'badge warn';
+      document.getElementById('healthDecision').textContent = '—';
+      document.getElementById('healthDecisionSub').textContent = t('decisionWait');
+      document.getElementById('smartComment').textContent = t('statusPartial');
+      ['firstInstallmentResult','monthlyEquivalentResult','secondInstallmentResult','tariffTypeResult','valueRatioResult','nextAgePreview'].forEach(id => document.getElementById(id).textContent = '—');
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('detailTable').innerHTML = `
+        <tr><td>${t('row1m')}</td><td>—</td><td>${t('statusPartial')}</td></tr>
+        <tr><td>${t('row2m')}</td><td>—</td><td>${t('row2d')}</td></tr>
+        <tr><td>${t('row3m')}</td><td>—</td><td>${t('row3d')}</td></tr>
+        <tr><td>${t('row4m')}</td><td>—</td><td>${t('row4d')}</td></tr>
+        <tr><td>${t('row5m')}</td><td>—</td><td>${t('row5d')}</td></tr>
+        <tr><td>${t('row6m')}</td><td>—</td><td>${t('row6d')}</td></tr>
+        <tr><td>${t('selectedBand')}</td><td>—</td><td>${t('selectedBandDesc')}</td></tr>`;
+    }
+
+    function updateInvalidState(){
+      state.isCalculated = false;
+      state.lastResult = null;
+      document.getElementById('highlightCard').classList.add('is-empty');
+      document.getElementById('annualTaxResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = t('mainSub');
+      document.getElementById('taxScore').textContent = '0/100';
+      document.getElementById('scoreBadge').textContent = t('stateMissing');
+      document.getElementById('scoreBadge').className = 'pill bad';
+      document.getElementById('scoreBar').style.width = '0%';
+      document.getElementById('statusText').textContent = t('statusInvalid');
+      document.getElementById('resultBadge').textContent = t('stateMissing');
+      document.getElementById('resultBadge').className = 'badge bad';
+      document.getElementById('healthDecision').textContent = '—';
+      document.getElementById('healthDecisionSub').textContent = t('validationValue');
+      document.getElementById('smartComment').textContent = t('validationValue');
+      ['firstInstallmentResult','monthlyEquivalentResult','secondInstallmentResult','tariffTypeResult','valueRatioResult','nextAgePreview'].forEach(id => document.getElementById(id).textContent = '—');
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('detailTable').innerHTML = `
+        <tr><td>${t('row1m')}</td><td>—</td><td>${t('validationValue')}</td></tr>
+        <tr><td>${t('row2m')}</td><td>—</td><td>${t('row2d')}</td></tr>
+        <tr><td>${t('row3m')}</td><td>—</td><td>${t('row3d')}</td></tr>
+        <tr><td>${t('row4m')}</td><td>—</td><td>${t('row4d')}</td></tr>
+        <tr><td>${t('row5m')}</td><td>—</td><td>${t('row5d')}</td></tr>
+        <tr><td>${t('row6m')}</td><td>—</td><td>${t('row6d')}</td></tr>
+        <tr><td>${t('selectedBand')}</td><td>—</td><td>${t('selectedBandDesc')}</td></tr>`;
+    }
+
+    function calculateMTV(options = {}) {
+      const fromAuto = !!options.fromAuto;
+      const fromSample = !!options.fromSample;
+      const showValidationUI = !fromAuto || !!options.showValidation;
+      const markErrors = !fromAuto || !!options.showValidation;
+      if (!validate({ showUI:showValidationUI, markErrors })){
+        if (fromAuto && options.silentInvalid !== false) updatePartialState();
+        else updateInvalidState();
+        if (!state.suppressSave) persistState();
+        return;
+      }
+
+      const vehicleType = document.getElementById('vehicleType').value;
+      const registrationType = document.getElementById('registrationType').value;
+      const vehicleAge = document.getElementById('vehicleAge').value;
+      const engineSize = document.getElementById('engineSize').value;
+      const vehicleValue = parseMoneyInput(document.getElementById('vehicleValue'));
+
+      const result = getTaxForSelection(vehicleType, registrationType, vehicleAge, engineSize, vehicleValue);
+      const annualTax = result.annualTax;
+      const firstInstallment = annualTax / 2;
+      const secondInstallment = annualTax / 2;
+      const monthlyEquivalent = annualTax / 12;
+      const weeklyReserve = annualTax / 52;
+      const valueRatioPct = vehicleValue > 0 ? (annualTax / vehicleValue) * 100 : 0;
+      const status = getStatus(annualTax, valueRatioPct);
+      const score = Math.max(0, Math.min(100, Math.min(100, Math.round((annualTax / 30000) * 75 + Math.min(25, valueRatioPct * 8)))));
+
+      const nextAge = getNextAgeBracket(vehicleAge);
+      let nextAgeText = t('noMoreAge');
+      let nextAgeDetail = t('noMoreAgeDesc');
+      if (nextAge){
+        const nextResult = getTaxForSelection(vehicleType, registrationType, nextAge, engineSize, vehicleValue);
+        const diff = nextResult.annualTax - annualTax;
+        const pct = annualTax > 0 ? Math.abs(diff / annualTax) * 100 : 0;
+        nextAgeText = `${nextAge} → ${formatCurrency(nextResult.annualTax)}`;
+        if (diff < 0) nextAgeDetail = t('nextAgeDrop').replace('{amount}', formatCurrency(Math.abs(diff))).replace('{pct}', formatPercent(pct,1));
+        else if (diff > 0) nextAgeDetail = t('nextAgeRise').replace('{amount}', formatCurrency(diff)).replace('{pct}', formatPercent(pct,1));
+        else nextAgeDetail = t('nextAgeSame');
+      }
+
+      document.getElementById('highlightCard').classList.remove('is-empty');
+      document.getElementById('annualTaxResult').textContent = formatCurrency(annualTax);
+      document.getElementById('mainSubtext').textContent = t('annualDesc');
+      document.getElementById('taxScore').textContent = `${score}/100`;
+      document.getElementById('scoreBadge').textContent = status.label;
+      document.getElementById('scoreBadge').className = `pill ${status.badgeClass}`;
+      document.getElementById('scoreBar').style.width = `${score}%`;
+      document.getElementById('scoreExplain').textContent = `${t('scoreExplain')} ${t('selectedBand')}: ${result.selectedBand}.`;
+      document.getElementById('firstInstallmentResult').textContent = formatCurrency(firstInstallment);
+      document.getElementById('monthlyEquivalentResult').textContent = formatCurrency(monthlyEquivalent);
+      document.getElementById('healthDecision').textContent = status.decision;
+      document.getElementById('healthDecisionSub').textContent = status.comment;
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.remove('is-empty'));
+      document.getElementById('secondInstallmentResult').textContent = formatCurrency(secondInstallment);
+      document.getElementById('tariffTypeResult').textContent = result.tariffType;
+      document.getElementById('valueRatioResult').textContent = vehicleValue > 0 ? formatPercent(valueRatioPct,2) : '—';
+      document.getElementById('nextAgePreview').textContent = nextAgeText;
+
+      const statusLine = fromSample ? t('statusSample') : ((vehicleType === 'motorcycle' ? t('motoDone') : t('autoDone')) + (fromAuto ? ' ' + t('statusAutoSuffix') : ''));
+      document.getElementById('statusText').textContent = statusLine;
+      document.getElementById('resultBadge').textContent = fromAuto ? t('badgeReady') : status.label;
+      document.getElementById('resultBadge').className = `badge ${fromAuto ? 'info' : status.badgeClass}`;
+
+      document.getElementById('detailTable').innerHTML = `
+        <tr><td>${t('row1m')}</td><td>${formatCurrency(annualTax)}</td><td>${t('row1d')}</td></tr>
+        <tr><td>${t('row2m')}</td><td>${formatCurrency(firstInstallment)}</td><td>${t('row2d')}</td></tr>
+        <tr><td>${t('row3m')}</td><td>${formatCurrency(secondInstallment)}</td><td>${t('row3d')}</td></tr>
+        <tr><td>${t('row4m')}</td><td>${formatCurrency(monthlyEquivalent)}</td><td>${t('row4d')}</td></tr>
+        <tr><td>${t('row5m')}</td><td>${formatCurrency(weeklyReserve)}</td><td>${t('row5d')}</td></tr>
+        <tr><td>${t('row6m')}</td><td>${nextAgeText}</td><td>${nextAgeDetail}</td></tr>
+        <tr><td>${t('selectedBand')}</td><td>${result.selectedBand}</td><td>${t('selectedBandDesc')}</td></tr>`;
+
+      let comment = `${status.comment} `;
+      comment += `${vehicleType === 'motorcycle' ? t('vehicleMoto') : t('vehicleCar')} ${t('mainComment1')} ${vehicleAge} ${t('mainComment2')} ${engineSize} ${t('mainComment3')} `;
+      if (vehicleType === 'car' && registrationType === 'post2018') comment += `${formatCurrency(vehicleValue)} ${t('mainComment4')} ${result.selectedBand} ${t('mainComment5')} `;
+      if (vehicleValue > 0) comment += `${t('mainComment6')} ${formatPercent(valueRatioPct,2)} ${t('mainComment7')} `;
+      comment += `${t('mainComment8')} ${formatCurrency(annualTax)}, ${t('mainComment9')} ${formatCurrency(firstInstallment)}, ${t('mainComment10')} ${formatCurrency(monthlyEquivalent)} ${t('mainComment11')} ${formatCurrency(weeklyReserve)} ${t('mainComment12')} `;
+      comment += nextAgeDetail;
+      document.getElementById('smartComment').textContent = comment;
+
+      state.isCalculated = true;
+      state.lastResult = { annualTax, firstInstallment, secondInstallment, monthlyEquivalent, valueRatioPct, tariffType: result.tariffType, nextAgeText, comment, selectedBand: result.selectedBand };
+      if (!state.suppressSave) persistState();
+      if (options.scrollToResult) flashAndScrollToResult();
+    }
+
+    function applyScenario(type) {
+      clearErrors();
+      clearScenarioActive();
+      state.dataMode = 'sample';
+      state.suppressSave = true;
+      if (type === 'car1') {
+        setFormValues({ vehicleType:'car', registrationType:'post2018', vehicleAge:'4-6', engineSize:'1301-1600', vehicleValue:'450000' });
+        document.querySelectorAll('#scenarioRow .chip')[0].classList.add('active');
+      } else if (type === 'car2') {
+        setFormValues({ vehicleType:'car', registrationType:'post2018', vehicleAge:'1-3', engineSize:'1801-2000', vehicleValue:'1100000' });
+        document.querySelectorAll('#scenarioRow .chip')[1].classList.add('active');
+      } else {
+        setFormValues({ vehicleType:'motorcycle', registrationType:'post2018', vehicleAge:'1-3', engineSize:'100-250', vehicleValue:'' });
+        document.querySelectorAll('#scenarioRow .chip')[2].classList.add('active');
+      }
+      calculateMTV({ fromSample:true, scrollToResult:true });
+      state.suppressSave = false;
+    }
+
+    function fillExample(){ applyScenario('car1'); }
+
+    function resetForm() {
+      state.suppressSave = true;
+      state.dataMode = 'manual';
+      clearScenarioActive();
+      clearErrors();
+      setFormValues(DEFAULT_FORM);
+      handleVehicleTypeChange(true);
+      updateEmptyState();
+      try { localStorage.removeItem(STORAGE_KEY); } catch (err) {}
+      state.suppressSave = false;
+    }
+
+    function printResult() {
+      if (!state.isCalculated || !state.lastResult) {
+        document.getElementById('smartComment').textContent = t('copyEmpty');
+        return;
+      }
+      window.print();
+    }
+
+    function fallbackCopyText(text){
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly','');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      area.style.pointerEvents = 'none';
+      document.body.appendChild(area);
+      area.focus();
+      area.select();
+      let success = false;
+      try { success = document.execCommand('copy'); } catch (err) { success = false; }
+      document.body.removeChild(area);
+      if (!success) throw new Error('copy_failed');
+    }
+
+    async function copyResult() {
+      if (!state.isCalculated || !state.lastResult) { document.getElementById('smartComment').textContent = t('copyEmpty'); return; }
+      const text = [
+        t('resultYearly') + ': ' + document.getElementById('annualTaxResult').textContent,
+        t('resultFirst') + ': ' + document.getElementById('firstInstallmentResult').textContent,
+        t('resultSecond') + ': ' + document.getElementById('secondInstallmentResult').textContent,
+        t('resultMonthly') + ': ' + document.getElementById('monthlyEquivalentResult').textContent,
+        t('resultRatio') + ': ' + document.getElementById('valueRatioResult').textContent,
+        t('resultTariff') + ': ' + document.getElementById('tariffTypeResult').textContent,
+        t('resultBand') + ': ' + state.lastResult.selectedBand,
+        t('resultNext') + ': ' + document.getElementById('nextAgePreview').textContent,
+        '',
+        t('resultComment') + ':',
+        document.getElementById('smartComment').textContent
+      ].join('\n');
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+        else fallbackCopyText(text);
+        const old = document.getElementById('smartComment').textContent;
+        document.getElementById('smartComment').textContent = t('copySuccess');
+        setTimeout(() => document.getElementById('smartComment').textContent = old, 1600);
+      } catch (err) {
+        const old = document.getElementById('smartComment').textContent;
+        document.getElementById('smartComment').textContent = t('copyEmpty');
+        setTimeout(() => document.getElementById('smartComment').textContent = old, 1600);
+      }
+    }
+
+    async function shareResult() {
+      if (!state.isCalculated || !state.lastResult) { document.getElementById('smartComment').textContent = t('copyEmpty'); return; }
+      const shareText = [
+        t('resultYearly') + ': ' + document.getElementById('annualTaxResult').textContent,
+        t('resultFirst') + ': ' + document.getElementById('firstInstallmentResult').textContent,
+        t('resultSecond') + ': ' + document.getElementById('secondInstallmentResult').textContent,
+        t('resultMonthly') + ': ' + document.getElementById('monthlyEquivalentResult').textContent,
+        t('resultRatio') + ': ' + document.getElementById('valueRatioResult').textContent,
+        t('resultTariff') + ': ' + document.getElementById('tariffTypeResult').textContent,
+        t('resultBand') + ': ' + state.lastResult.selectedBand,
+        t('resultNext') + ': ' + document.getElementById('nextAgePreview').textContent
+      ].join('\n');
+      try {
+        if (navigator.share) {
+          await navigator.share({ title:t('shareTitle'), text:shareText, url:window.location.href });
+          const old = document.getElementById('smartComment').textContent;
+          document.getElementById('smartComment').textContent = t('shareSuccess');
+          setTimeout(() => document.getElementById('smartComment').textContent = old, 1600);
+        } else {
+          const sharePayload = shareText + '\n' + window.location.href;
+          if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(sharePayload);
+          else fallbackCopyText(sharePayload);
+          const old = document.getElementById('smartComment').textContent;
+          document.getElementById('smartComment').textContent = t('shareFallback');
+          setTimeout(() => document.getElementById('smartComment').textContent = old, 1600);
+        }
+      } catch (err) {
+        const old = document.getElementById('smartComment').textContent;
+        document.getElementById('smartComment').textContent = t('shareFallback');
+        setTimeout(() => document.getElementById('smartComment').textContent = old, 1600);
+      }
+    }
+
+    function markManualChange(){
+      if (state.suppressSave) return;
+      state.dataMode = 'manual';
+      clearScenarioActive();
+      persistState();
+      clearTimeout(state.debounceTimer);
+      state.debounceTimer = setTimeout(() => {
+        if (!hasMeaningfulInput()) updateEmptyState();
+        else calculateMTV({ fromAuto:true, silentInvalid:true });
+      }, 220);
+    }
+
+    function setLanguage(lang, options = {}){
+      state.lang = lang;
+      document.documentElement.lang = lang;
+      document.title = t('pageTitle');
+      document.getElementById('langTr').classList.toggle('active', lang === 'tr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.querySelectorAll('[data-i18n]').forEach(el => el.textContent = t(el.dataset.i18n));
+      const current = getFormValues();
+      buildStaticSelects();
+      setFormValues(current);
+      if (!options.skipRecalc && hasMeaningfulInput()) calculateMTV({ fromAuto:true, silentInvalid:true });
+      else updateEmptyState();
+      if (!options.skipPersist && state.dataMode === 'manual') persistState();
+    }
+
+    function attachListeners(){
+      ['vehicleType','registrationType','vehicleAge','engineSize'].forEach(id => {
+        document.getElementById(id).addEventListener('change', () => {
+          if (id === 'vehicleType' || id === 'registrationType') handleVehicleTypeChange(true);
+          markManualChange();
+        });
+        document.getElementById(id).addEventListener('blur', () => {
+          if (hasMeaningfulInput()) validate({ showUI:false, markErrors:true });
+        });
+      });
+      document.getElementById('vehicleValue').addEventListener('input', () => {
+        const input = document.getElementById('vehicleValue');
+        input.value = formatDigitsForDisplay(input.value);
+        markManualChange();
+      });
+      document.getElementById('vehicleValue').addEventListener('blur', () => {
+        if (hasMeaningfulInput()) validate({ showUI:false, markErrors:true });
+      });
+      document.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            calculateMTV({ scrollToResult:true, showValidation:true });
+          }
+        });
+      });
+    }
+
+    function init(){
+      const saved = loadState();
+      if (saved && saved.lang) state.lang = saved.lang;
+      buildStaticSelects();
+      handleVehicleTypeChange();
+      if (saved && saved.form) {
+        setFormValues(saved.form);
+      } else {
+        setFormValues(DEFAULT_FORM);
+      }
+      attachListeners();
+      setLanguage(state.lang, { skipPersist:true, skipRecalc:true });
+      if (saved && saved.form) {
+        state.dataMode = 'manual';
+        calculateMTV({ fromAuto:true });
+      } else {
+        updateEmptyState();
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

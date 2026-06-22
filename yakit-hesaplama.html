@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Araç Yakıt Hesaplama 2026 | Yakıt Maliyeti, Kişi Başı Yol Masrafı Analizi | Hesapica</title>
+<meta content="Araç yakıt hesaplama aracı ile tek yön veya gidiş dönüş yolculuk için toplam yakıt tüketimini, yakıt giderini, ek yol masraflarını, kişi başı maliyeti, verim skorunu ve senaryo analizini tek ekranda hesaplayın. 6,5 veya 6.5 gibi ondalık girişler desteklenir." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="araç yakıt hesaplama, yakıt hesaplama, araç yakıt maliyeti hesaplama, yol masrafı hesaplama, gidiş dönüş yakıt hesaplama, kişi başı yol maliyeti" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/yakit-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Araç Yakıt Hesaplama 2026 | Yakıt Maliyeti, Kişi Başı Yol Masrafı Analizi | Hesapica" property="og:title"/>
+<meta content="Araç yakıt hesaplama aracı ile tek yön veya gidiş dönüş yolculuk için toplam yakıt tüketimini, yakıt giderini, ek yol masraflarını, kişi başı maliyeti, verim skorunu ve senaryo analizini tek ekranda hesaplayın. 6,5 veya 6.5 gibi ondalık girişler desteklenir." property="og:description"/>
+<meta content="https://hesapica.com/yakit-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="https://hesapica.com/og-image.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Araç Yakıt Hesaplama 2026 | Yakıt Maliyeti, Kişi Başı Yol Masrafı Analizi | Hesapica" name="twitter:title"/>
+<meta content="Araç yakıt hesaplama aracı ile tek yön veya gidiş dönüş yolculuk için toplam yakıt tüketimini, yakıt giderini, ek yol masraflarını, kişi başı maliyeti, verim skorunu ve senaryo analizini tek ekranda hesaplayın. 6,5 veya 6.5 gibi ondalık girişler desteklenir." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.jpg" name="twitter:image"/>
+<style>
+    :root{
+      --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#ffffff;--surface-soft:#eef2ff;--surface-soft-2:#f8faff;
+      --text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);--radius-xl:24px;--radius-lg:18px;--radius-md:14px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text);background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);line-height:1.6}
+    a{text-decoration:none;color:inherit} button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}.hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}.section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}.helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}.helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}
+    input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease, background-color .2s ease}
+    input.with-prefix{padding-left:38px} input.with-suffix{padding-right:46px} input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)} input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}.error-text{display:none;margin-top:7px;font-size:13px;font-weight:700;color:var(--bad)}.field.has-error input,.field.has-error select{border-color:#fca5a5;background:#fff7f7;box-shadow:0 0 0 4px rgba(185,28,28,.06)}.field.has-error .error-text{display:block}.field.has-error .hint{display:none}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}.chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;transition:all .18s ease}.chip:hover,.chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe;transform:translateY(-1px)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}.btn:hover{transform:translateY(-1px);opacity:.97}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none !important;box-shadow:none !important}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}.flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}.flow-hint-text span{display:block;font-size:13px;color:#6366f1}.flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}@keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+    .results{position:sticky;top:20px;display:grid;gap:16px}.status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}.badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}.badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:var(--text)}.highlight-sub{font-size:15px;color:#4b5563}.highlight-card.is-empty .highlight-value,.mini-result.is-empty .value,.health-card.is-empty .big,.scorebox.is-empty .score-value{color:#9ca3af}.highlight-card.result-flash{animation:resultFlash 1.1s ease}.field input.text-right{text-align:right}@keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,.08);transform:translateY(0)}30%{box-shadow:0 0 0 8px rgba(79,70,229,.12);transform:translateY(-2px)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10);transform:translateY(0)}}
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}.score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}.score-value{font-size:44px;font-weight:900;line-height:1}.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}.progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%;transition:width .35s ease}.score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}.score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}.score-breakdown{display:grid;gap:8px;margin-top:12px}.score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}.score-breakdown-row .name{color:#4b5563}.score-breakdown-row .val{font-weight:800}.score-breakdown-row .val.pos{color:var(--good)}.score-breakdown-row .val.neg{color:var(--bad)}.score-breakdown-row .val.neu{color:var(--muted)}
+    .decision-card{padding:18px;border-radius:20px;background:#fff;border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}.decision-card h3{margin:0 0 8px;font-size:18px;color:var(--primary)}.decision-card p{margin:0;color:#374151;font-size:15px;line-height:1.7}
+    .mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:700;color:#374151}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}.health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}.health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}.comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .bar-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:#fbfcff}.bar-row + .bar-row{margin-top:12px}.bar-top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#374151;margin-bottom:7px}.bar{height:10px;border-radius:999px;background:#eef2f7;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0%;transition:width .35s ease}
+    .details-card{margin-top:24px}.accordion-stack{display:grid;gap:14px} details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px} details.block[open]{padding-bottom:20px} details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)} details.block summary::-webkit-details-marker{display:none}.summary-note{font-size:13.5px;color:#6366f1;font-weight:700}.details-inner{margin-top:16px}.table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff} table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top} th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em} td{color:var(--text);font-weight:700}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .micro-status{display:none;margin-top:10px;font-size:13px;font-weight:700;color:#4338ca}.micro-status.show{display:block}.loading-dot{display:inline-block;width:8px;height:8px;border-radius:999px;background:#6366f1;margin-right:8px;animation:pulseDot 1s ease infinite}@keyframes pulseDot{0%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1)}100%{opacity:.3;transform:scale(.8)}}
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,.scorebox,.decision-card,.bar-card,details.block{padding:20px}.field-grid,.health-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.hero h1{font-size:32px}.highlight-value{font-size:31px}.hero-box strong{font-size:24px}}
+    @media print{body{background:#fff}.topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.micro-status{display:none !important}.hero,.card,.status-card,.highlight-card,.scorebox,.decision-card,.bar-card,details.block{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}.results{position:static !important}details.block{display:block}details.block>summary{display:none}details.block .details-inner{display:block}}
+  </style>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Araç Yakıt Hesaplama","url":"https://hesapica.com/yakit-hesaplama","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Yolculuk için toplam yakıt tüketimini, yakıt giderini, ek yol masraflarını, kişi başı maliyeti ve maliyet skorunu hesaplayan ücretsiz araç."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu araç tek yön ve gidiş dönüş hesap yapar mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tek yön veya gidiş dönüş seçimine göre toplam mesafe otomatik hesaplanır."}},{"@type":"Question","name":"Ek yol payı neden eklenir?","acceptedAnswer":{"@type":"Answer","text":"Mola, rota sapması, şehir içi dolaşım veya yanlış dönüş gibi durumlar gerçek mesafeyi artırabilir. Bu yüzden opsiyonel ekstra yol payı eklenebilir."}},{"@type":"Question","name":"Kişi başı maliyet nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Toplam yolculuk maliyeti, masrafı paylaşacak kişi sayısına bölünerek kişi başı yaklaşık tutar bulunur."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Araç","item":"https://hesapica.com/#arac"},{"@type":"ListItem","position":3,"name":"Araç Yakıt Hesaplama","item":"https://hesapica.com/yakit-hesaplama"}]}</script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/yakit-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu araç doğru çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript'i etkinleştirip sayfayı yeniden yükleyin.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a><span>/</span><a href="/#arac">Araç</a><span>/</span><strong>Araç Yakıt Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Araç Yolculuk Aracı</span>
+<h1>Araç Yakıt Hesaplama</h1>
+<p>Bu araç yalnızca toplam yakıt masrafını değil; <strong>rota tipi</strong>, <strong>ek yol payı</strong>, <strong>klima ve yük etkisi</strong>, <strong>kişi başı maliyet</strong>, <strong>verim skoru</strong> ve <strong>senaryo karşılaştırmasını</strong> tek ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips"><span class="hero-chip">Boş başlangıç</span><span class="hero-chip">Otomatik hesaplama</span><span class="hero-chip">Skor + karar</span><span class="hero-chip">Senaryo analizi</span></div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Bu araç ne gösterir?</div>
+<strong>Toplam maliyet + kişi başı paylaşım + yolculuk verim analizi</strong>
+<p>Hedef; “Bu yol bana kaça mal olur?” sorusunu tek rakamla değil, karar destek çıktılarıyla cevaplamak.</p>
+<ul><li>Toplam yolculuk maliyeti</li><li>Toplam yakıt ve düzeltilmiş tüketim</li><li>Kişi başı maliyet</li><li>Skor, karar ve senaryo görünümü</li></ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Araç Yakıt Hesaplama Formu</h2>
+<p class="section-note">Tüm alanlar boş başlar. Gerekli verileri gir; sonuçlar otomatik güncellensin. Ondalıklı alanlarda 6,5 veya 6.5 yazabilirsin. İstersen örnek veri veya hazır senaryo yükleyebilirsin.</p>
+<div class="helper-box"><h3>Bu araç ne için ideal?</h3><p>Şehirler arası yolculuk planı, tatil bütçesi, masraf paylaşımı, gidiş dönüş karşılaştırması ve yakıt fiyat değişimine karşı hızlı maliyet öngörüsü için kullanabilirsin.</p></div>
+<div class="form-section">
+<div class="form-title">Temel yolculuk bilgileri</div>
+<div class="field-grid">
+<div class="field" id="field-distance"><label for="distance">Tek yön mesafe</label><div class="input-wrap"><input class="with-suffix" id="distance" inputmode="decimal" placeholder="Örn: 320" type="text"/><span class="suffix">km</span></div><div class="hint">Başlangıç ile varış arası tek yön mesafeyi gir.</div><div class="error-text">Geçerli bir mesafe gir.</div></div>
+<div class="field" id="field-tripType"><label for="tripType">Yolculuk tipi</label><select id="tripType"><option value="1">Tek yön</option><option value="2">Gidiş - dönüş</option></select><div class="hint">Dönüşü de hesaba katmak istiyorsan gidiş - dönüş seç.</div><div class="error-text">Yolculuk tipini seç.</div></div>
+<div class="field" id="field-consumption"><label for="consumption">Araç tüketimi</label><div class="input-wrap"><input class="with-suffix" id="consumption" inputmode="decimal" placeholder="Örn: 6,8" type="text"/><span class="suffix">L/100 km</span></div><div class="hint">Aracın katalog veya gerçek ortalama tüketim değeri. 6,5 veya 6.5 yazabilirsin.</div><div class="error-text">Geçerli bir tüketim değeri gir.</div></div>
+<div class="field" id="field-fuelPrice"><label for="fuelPrice">Yakıt fiyatı</label><div class="input-wrap"><span class="prefix">₺</span><input class="with-prefix" id="fuelPrice" inputmode="decimal" placeholder="Örn: 48,75" type="text"/></div><div class="hint">Güncel litre fiyatını yaz. 48,75 veya 48.75 formatı desteklenir.</div><div class="error-text">Geçerli bir yakıt fiyatı gir.</div></div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Sürüş koşulları</div>
+<div class="field-grid">
+<div class="field full"><label>Yol karakteri</label><div class="chip-row" id="roadTypeChips"><button class="chip" data-group="roadType" data-value="1.08" type="button">Şehir içi ağırlıklı</button><button class="chip active" data-group="roadType" data-value="1" type="button">Karma yol</button><button class="chip" data-group="roadType" data-value="0.92" type="button">Şehir dışı ağırlıklı</button></div><div class="hint">Yol karakteri tüketimi etkiler.</div></div>
+<div class="field full"><label>Klima kullanımı</label><div class="chip-row" id="acTypeChips"><button class="chip active" data-group="acType" data-value="1" type="button">Kapalı / etkisiz</button><button class="chip" data-group="acType" data-value="1.04" type="button">Ara sıra açık</button><button class="chip" data-group="acType" data-value="1.08" type="button">Sık açık</button></div><div class="hint">Özellikle yazın uzun yolda etkili olabilir.</div></div>
+<div class="field full"><label>Yük / bagaj durumu</label><div class="chip-row" id="loadTypeChips"><button class="chip active" data-group="loadType" data-value="1" type="button">Normal</button><button class="chip" data-group="loadType" data-value="1.04" type="button">Orta bagaj / yolcu yükü</button><button class="chip" data-group="loadType" data-value="1.08" type="button">Ağır yüklü</button></div><div class="hint">Araç ağırlığı arttıkça tüketim de artabilir.</div></div>
+<div class="field" id="field-extraKmPercent"><label for="extraKmPercent">Ekstra yol payı</label><div class="input-wrap"><input class="with-suffix" id="extraKmPercent" inputmode="decimal" placeholder="Örn: 5" type="text"/><span class="suffix">%</span></div><div class="hint">Mola, sapma veya şehir içi dolaşım payı ekleyebilirsin.</div><div class="error-text">0 veya daha büyük bir yüzde gir.</div></div>
+<div class="field" id="field-extraCosts"><label for="extraCosts">Ek giderler</label><div class="input-wrap"><span class="prefix">₺</span><input class="with-prefix" id="extraCosts" inputmode="decimal" placeholder="Otoyol, köprü, park" type="text"/></div><div class="hint">Yolculuğa özel diğer masrafları ekle. 125,50 veya 125.50 formatı da kullanılabilir.</div><div class="error-text">0 veya daha büyük bir tutar gir.</div></div>
+<div class="field" id="field-passengers"><label for="passengers">Masrafı paylaşacak kişi sayısı</label><div class="input-wrap"><input class="with-suffix" id="passengers" inputmode="numeric" placeholder="Örn: 3" type="text"/><span class="suffix">kişi</span></div><div class="hint">Toplam maliyeti kaç kişi paylaşacak?</div><div class="error-text">En az 1 kişi olmalı.</div></div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row">
+<button class="chip" data-scenario="kisa" type="button">Kısa şehir içi rota</button>
+<button class="chip" data-scenario="tatil" type="button">Tatil gidiş dönüş</button>
+<button class="chip" data-scenario="kalabalik" type="button">Kalabalık yolculuk</button>
+<button class="chip" data-scenario="uzun" type="button">Uzun şehir dışı rota</button>
+</div>
+<div class="hint">Boş başlangıç standardı korunur. Senaryolar örnek veri doldurur ama kayda yazılmaz.</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calcBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="resetBtn" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
+<button class="btn btn-ghost" id="printBtn" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div class="micro-status" id="microStatus"><span class="loading-dot"></span>Hesaplanıyor…</div>
+<div class="flow-hint"><div class="flow-hint-text"><strong>Akış sırası sabit</strong><span>Ana sonuç → skor → karar → detay → analiz</span></div><div class="flow-cue">↓</div></div>
+</div>
+<aside class="results">
+<div class="status-card"><div class="status-row"><div><div class="status-title">Hızlı durum özeti</div><div class="status-text" id="statusText">Veri bekleniyor. Mesafe, tüketim ve fiyat bilgisi girildiğinde sonuç paneli aktifleşir.</div></div><div class="badge" id="statusBadge">Hazır değil</div></div></div>
+<div class="highlight-card is-empty" id="mainHighlight"><div class="highlight-label">Ana Sonuç</div><div class="highlight-value" id="totalCostValue">—</div><div class="highlight-sub" id="totalCostSub">Toplam yolculuk maliyeti burada görünecek.</div></div>
+<div class="scorebox is-empty" id="scoreCard"><div class="score-row"><div><div class="highlight-label" style="margin-bottom:6px">Yolculuk Verim Skoru</div><div class="score-value" id="scoreValue">—</div></div><div class="pill" id="scoreBadge">Bekleniyor</div></div><div class="progress"><span id="scoreBar"></span></div><div class="score-explain"><strong>Skor neyi ölçer?</strong>Toplam maliyet, kişi başı paylaşım, düzeltilmiş tüketim ve ek gider baskısına göre genel verim görünümü üretir.</div><div class="score-breakdown"><div class="score-breakdown-row"><span class="name">Yakıt verimi</span><span class="val neu" id="scoreFuel">—</span></div><div class="score-breakdown-row"><span class="name">Ek gider baskısı</span><span class="val neu" id="scoreExtra">—</span></div><div class="score-breakdown-row"><span class="name">Paylaşım avantajı</span><span class="val neu" id="scoreShare">—</span></div></div></div>
+<div class="decision-card"><h3>Karar Özeti</h3><p id="decisionText">Karar motoru, hesap tamamlandığında yolculuğun maliyet seviyesini ve pratik öneriyi burada sunar.</p></div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="distanceCard"><div><div class="label">Toplam mesafe</div><div class="subline">Tek yön / gidiş dönüş ve ekstra yol dahil.</div></div><div class="value" id="distanceValue">—</div></div>
+<div class="mini-result is-empty" id="fuelCard"><div><div class="label">Toplam yakıt</div><div class="subline">Yolculuk için gereken yaklaşık litre.</div></div><div class="value" id="fuelValue">—</div></div>
+<div class="mini-result is-empty" id="fuelOnlyCard"><div><div class="label">Sadece yakıt gideri</div><div class="subline">Ek yol masrafları hariç yakıt tutarı.</div></div><div class="value" id="fuelOnlyValue">—</div></div>
+<div class="mini-result is-empty" id="perPersonCard"><div><div class="label">Kişi başı maliyet</div><div class="subline">Toplam maliyet paylaşım sonrası.</div></div><div class="value" id="perPersonValue">—</div></div>
+</div>
+<div class="health-grid"><div class="health-card is-empty" id="consumptionHealth"><h3>Düzeltilmiş tüketim</h3><div class="big" id="adjustedConsumptionValue">—</div></div><div class="health-card is-empty" id="extraHealth"><h3>Ek gider oranı</h3><div class="big" id="extraRatioValue">—</div></div><div class="health-card is-empty" id="confidenceHealth"><h3>Güven seviyesi</h3><div class="big" id="confidenceValue">—</div></div></div>
+<div class="bar-card"><div class="bar-row"><div class="bar-top"><span>Yakıt gideri / toplam maliyet</span><strong id="barFuelLabel">—</strong></div><div class="bar"><div class="bar-fill" id="barFuel"></div></div></div><div class="bar-row"><div class="bar-top"><span>Ek gider / toplam maliyet</span><strong id="barExtraLabel">—</strong></div><div class="bar"><div class="bar-fill" id="barExtra"></div></div></div><div class="bar-row"><div class="bar-top"><span>Paylaşım avantajı</span><strong id="barShareLabel">—</strong></div><div class="bar"><div class="bar-fill" id="barShare"></div></div></div></div>
+<div class="comment-box" id="smartComment">Verileri girdikten sonra sana akıllı yolculuk özeti burada gösterilecek.</div>
+</aside>
+</section>
+<section class="details-card"><div class="accordion-stack">
+<details class="block" open=""><summary><span>Senaryo analizi</span><span class="summary-note">Baz / ekonomik / pahalı yakıt</span></summary><div class="details-inner"><div class="table-wrap"><table><thead><tr><th>Senaryo</th><th>Yakıt fiyatı</th><th>Toplam maliyet</th><th>Kişi başı</th><th>Not</th></tr></thead><tbody id="scenarioTableBody"><tr><td>Baz</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr><tr><td>Ekonomik (-%10)</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr><tr><td>Pahalı (+%10)</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr></tbody></table></div></div></details>
+<details class="block"><summary><span>Detaylı hesap özeti</span><span class="summary-note">Mesafe, litre, maliyet akışı</span></summary><div class="details-inner"><div class="table-grid"><div class="table-wrap"><table><thead><tr><th>Kalem</th><th>Sonuç</th></tr></thead><tbody id="detailTableLeft"><tr><td>Toplam mesafe</td><td>—</td></tr><tr><td>Düzeltilmiş tüketim</td><td>—</td></tr><tr><td>Toplam yakıt</td><td>—</td></tr><tr><td>Sadece yakıt gideri</td><td>—</td></tr></tbody></table></div><div class="table-wrap"><table><thead><tr><th>Kalem</th><th>Sonuç</th></tr></thead><tbody id="detailTableRight"><tr><td>Ek giderler</td><td>—</td></tr><tr><td>Toplam yolculuk maliyeti</td><td>—</td></tr><tr><td>Kişi başı maliyet</td><td>—</td></tr><tr><td>Ekstra yol payı</td><td>—</td></tr></tbody></table></div></div></div></details>
+</div></section>
+<section class="content-grid">
+<article class="card content-block"><h2>Araç yakıt hesaplama nasıl yapılır?</h2><p>Önce toplam yol mesafesi bulunur. Tek yön veya gidiş dönüş seçimi, ekstra yol payı ve sürüş koşullarına bağlı çarpanlarla gerçekçi toplam mesafe ve düzeltilmiş tüketim hesaplanır. Sonra bu tüketim, güncel yakıt fiyatıyla çarpılarak yakıt gideri bulunur.</p><p>Ek giderler eklendiğinde toplam yolculuk maliyeti ortaya çıkar. Eğer masraf paylaşımı varsa, toplam tutar kişi sayısına bölünerek kişi başı maliyet hesaplanır. Bu araç aynı zamanda çıkan sonucun ne kadar verimli göründüğünü skor ve karar özetiyle yorumlar.</p></article>
+<article class="card accordion-card"><h2>Sık Sorulan Sorular</h2><details open=""><summary>Bu araç sadece yakıt giderini mi hesaplar?</summary><p>Hayır. Yakıt giderinin yanında otoyol, köprü, park gibi ek yol masraflarını da toplam yolculuk maliyetine dahil edebilirsin.</p></details><details><summary>Yol tipi ve klima neden sonucu etkiler?</summary><p>Şehir içi sürüş, sık fren-kalk, klima kullanımı ve ağır bagaj gibi unsurlar gerçek tüketimi katalog verisinin üstüne çıkarabilir. Bu yüzden düzeltme katsayıları kullanılır.</p></details><details><summary>Kişi başı maliyet ne zaman anlamlı olur?</summary><p>Özellikle kalabalık yolculuklarda toplam maliyetin kişi başına etkisini görmek karar vermeyi kolaylaştırır. Tek başına yolculukta bu alan toplam maliyetle aynı seviyeye yaklaşır.</p></details></article>
+</section>
+<section class="card" style="margin-top:24px"><h2>İlgili hesaplama araçları</h2><div class="related-grid"><a class="related-card" href="/km-maliyet-hesaplama"><span class="small">Araç</span><strong>KM Maliyet Hesaplama</strong><p>Aracın kilometre başına toplam sahiplik maliyetini ölç.</p></a><a class="related-card" href="/arac-aylik-maliyet-hesaplama"><span class="small">Araç</span><strong>Araç Aylık Maliyet Hesaplama</strong><p>Yakıt, vergi ve bakım dahil aylık yükü analiz et.</p></a><a class="related-card" href="/mtv-hesaplama"><span class="small">Araç</span><strong>MTV Hesaplama</strong><p>Yıllık vergi yükünü yolculuk ve kullanım bütçene ekle.</p></a></div></section>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica_yakit_hesaplama_lock_v4';
+    const DEMO_FLAG = 'hesapica_yakit_demo';
+    const state = { inputs:{}, results:null, isValid:false, isCalculated:false };
+    const els = {
+      distance:document.getElementById('distance'), tripType:document.getElementById('tripType'), consumption:document.getElementById('consumption'), fuelPrice:document.getElementById('fuelPrice'), extraKmPercent:document.getElementById('extraKmPercent'), extraCosts:document.getElementById('extraCosts'), passengers:document.getElementById('passengers'),
+      calcBtn:document.getElementById('calcBtn'), exampleBtn:document.getElementById('exampleBtn'), resetBtn:document.getElementById('resetBtn'), copyBtn:document.getElementById('copyBtn'), shareBtn:document.getElementById('shareBtn'), printBtn:document.getElementById('printBtn'), microStatus:document.getElementById('microStatus'),
+      statusText:document.getElementById('statusText'), statusBadge:document.getElementById('statusBadge'), mainHighlight:document.getElementById('mainHighlight'), totalCostValue:document.getElementById('totalCostValue'), totalCostSub:document.getElementById('totalCostSub'),
+      scoreCard:document.getElementById('scoreCard'), scoreValue:document.getElementById('scoreValue'), scoreBadge:document.getElementById('scoreBadge'), scoreBar:document.getElementById('scoreBar'), scoreFuel:document.getElementById('scoreFuel'), scoreExtra:document.getElementById('scoreExtra'), scoreShare:document.getElementById('scoreShare'),
+      decisionText:document.getElementById('decisionText'), distanceCard:document.getElementById('distanceCard'), distanceValue:document.getElementById('distanceValue'), fuelCard:document.getElementById('fuelCard'), fuelValue:document.getElementById('fuelValue'), fuelOnlyCard:document.getElementById('fuelOnlyCard'), fuelOnlyValue:document.getElementById('fuelOnlyValue'), perPersonCard:document.getElementById('perPersonCard'), perPersonValue:document.getElementById('perPersonValue'),
+      consumptionHealth:document.getElementById('consumptionHealth'), adjustedConsumptionValue:document.getElementById('adjustedConsumptionValue'), extraHealth:document.getElementById('extraHealth'), extraRatioValue:document.getElementById('extraRatioValue'), confidenceHealth:document.getElementById('confidenceHealth'), confidenceValue:document.getElementById('confidenceValue'),
+      barFuel:document.getElementById('barFuel'), barFuelLabel:document.getElementById('barFuelLabel'), barExtra:document.getElementById('barExtra'), barExtraLabel:document.getElementById('barExtraLabel'), barShare:document.getElementById('barShare'), barShareLabel:document.getElementById('barShareLabel'), smartComment:document.getElementById('smartComment'), scenarioTableBody:document.getElementById('scenarioTableBody'), detailTableLeft:document.getElementById('detailTableLeft'), detailTableRight:document.getElementById('detailTableRight')
+    };
+    const fieldIds=['distance','tripType','consumption','fuelPrice','extraKmPercent','extraCosts','passengers'];
+    let debounceTimer=null;
+
+    function parseTRNumber(value, opts={}){
+      const { preferThousands=false, integer=false } = opts;
+      if(value===null||value===undefined) return NaN;
+      let raw = String(value).trim();
+      if(!raw) return NaN;
+      raw = raw.replace(/\s+/g,'').replace(/[₺%]/g,'').replace(/[^0-9,.-]/g,'');
+      if(!raw || raw==='-' || raw==='.' || raw===',') return NaN;
+      const negative = raw.startsWith('-');
+      raw = raw.replace(/-/g,'');
+      if(!raw) return NaN;
+      const lastDot = raw.lastIndexOf('.');
+      const lastComma = raw.lastIndexOf(',');
+      let normalized = raw;
+
+      if(lastDot !== -1 && lastComma !== -1){
+        const decimalIndex = Math.max(lastDot, lastComma);
+        const intPart = raw.slice(0, decimalIndex).replace(/[.,]/g,'');
+        const fracPart = raw.slice(decimalIndex + 1).replace(/[.,]/g,'');
+        normalized = fracPart ? `${intPart}.${fracPart}` : intPart;
+      } else if(lastDot !== -1 || lastComma !== -1){
+        const sep = lastDot !== -1 ? '.' : ',';
+        const parts = raw.split(sep);
+        if(parts.length > 2){
+          const tail = parts.pop() || '';
+          const head = parts.join('');
+          if(preferThousands && tail.length === 3){
+            normalized = head + tail;
+          } else {
+            normalized = tail ? `${head}.${tail}` : head;
+          }
+        } else {
+          const [head, tail=''] = parts;
+          if(!tail){
+            normalized = head;
+          } else if(preferThousands && tail.length === 3 && head.length >= 1){
+            normalized = head + tail;
+          } else {
+            normalized = `${head}.${tail}`;
+          }
+        }
+      }
+
+      if(integer){
+        normalized = normalized.split('.')[0];
+      }
+      if(negative && normalized) normalized = `-${normalized}`;
+      if(!normalized || normalized==='-' || normalized==='.') return NaN;
+      const parsed = Number(normalized);
+      return Number.isFinite(parsed) ? parsed : NaN;
+    }
+    function formatNumber(value,digits=2){ return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number(value)||0); }
+    function formatTRY(value){ return new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(value)||0); }
+    function formatKm(value,digits=1){ return `${formatNumber(value,digits)} km`; }
+    function formatLiter(value){ return `${formatNumber(value,2)} L`; }
+    function formatPercent(value,digits=1){ return `%${formatNumber(value,digits)}`; }
+    function clamp(num,min,max){ return Math.min(Math.max(num,min),max); }
+    function round2(v){ return Math.round((Number(v)||0)*100)/100; }
+    function formatTrIntegerInput(value){
+      const digits = String(value ?? '').replace(/\D/g,'');
+      if(!digits) return '';
+      return new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(Number(digits));
+    }
+    function attachGroupedIntegerInput(input){
+      if(!input) return;
+      input.addEventListener('input',()=>{
+        const start = input.selectionStart || input.value.length;
+        const digitsBefore = input.value.slice(0,start).replace(/\D/g,'').length;
+        input.value = formatTrIntegerInput(input.value);
+        let digitCount = 0;
+        let cursor = input.value.length;
+        for(let i=0;i<input.value.length;i++){
+          if(/\d/.test(input.value[i])) digitCount++;
+          if(digitCount >= digitsBefore){ cursor = i + 1; break; }
+        }
+        try{ input.setSelectionRange(cursor, cursor); }catch(_){}
+      });
+      input.addEventListener('blur',()=>{ input.value = formatTrIntegerInput(input.value); });
+    }
+
+    function getActiveChip(group){ return document.querySelector(`[data-group="${group}"].active`); }
+    function getChipValue(group){ const active=getActiveChip(group); return active ? Number(active.dataset.value) : 1; }
+    function getActiveChipText(group){ const active=getActiveChip(group); return active ? active.textContent.trim() : ''; }
+
+    function getInputs(){
+      return {
+        distance:parseTRNumber(els.distance.value, { preferThousands:true }), tripType:Number(els.tripType.value||1), consumption:parseTRNumber(els.consumption.value), fuelPrice:parseTRNumber(els.fuelPrice.value), roadType:getChipValue('roadType'), acType:getChipValue('acType'), loadType:getChipValue('loadType'), extraKmPercent:parseTRNumber(els.extraKmPercent.value), extraCosts:parseTRNumber(els.extraCosts.value, { preferThousands:true }), passengers:parseTRNumber(els.passengers.value, { preferThousands:true, integer:true })
+      };
+    }
+
+    function validate(inputs){
+      const errors={};
+      if(!(inputs.distance>0)) errors.distance='Mesafe 0’dan büyük olmalı.';
+      if(!(inputs.consumption>0)) errors.consumption='Tüketim 0’dan büyük olmalı.';
+      if(!(inputs.fuelPrice>0)) errors.fuelPrice='Yakıt fiyatı 0’dan büyük olmalı.';
+      if(!inputs.tripType) errors.tripType='Yolculuk tipini seç.';
+      if(!Number.isNaN(inputs.extraKmPercent) && inputs.extraKmPercent<0) errors.extraKmPercent='Negatif ekstra yol payı olamaz.';
+      if(!Number.isNaN(inputs.extraCosts) && inputs.extraCosts<0) errors.extraCosts='Negatif ek gider olamaz.';
+      if(!Number.isNaN(inputs.passengers) && inputs.passengers<1) errors.passengers='En az 1 kişi olmalı.';
+      return { isValid:Object.keys(errors).length===0, errors };
+    }
+
+    function compute(inputs){
+      const extraKmPercent = Number.isNaN(inputs.extraKmPercent) ? 0 : inputs.extraKmPercent;
+      const extraCosts = Number.isNaN(inputs.extraCosts) ? 0 : inputs.extraCosts;
+      const passengers = Number.isNaN(inputs.passengers) || inputs.passengers < 1 ? 1 : Math.round(inputs.passengers);
+      const baseDistance = inputs.distance * inputs.tripType;
+      const extraDistance = baseDistance * (extraKmPercent / 100);
+      const totalDistance = baseDistance + extraDistance;
+      const adjustedConsumption = inputs.consumption * inputs.roadType * inputs.acType * inputs.loadType;
+      const totalFuelLiters = (totalDistance * adjustedConsumption) / 100;
+      const fuelOnlyCost = totalFuelLiters * inputs.fuelPrice;
+      const totalCost = fuelOnlyCost + extraCosts;
+      const perPerson = totalCost / passengers;
+      const fuelShare = totalCost > 0 ? (fuelOnlyCost/totalCost)*100 : 0;
+      const extraShare = totalCost > 0 ? (extraCosts/totalCost)*100 : 0;
+      const shareAdvantage = totalCost > 0 ? ((totalCost-perPerson)/totalCost)*100 : 0;
+      const fuelEfficiencyScore = clamp(100 - ((adjustedConsumption - 4.5) * 11), 10, 100);
+      const extraCostScore = clamp(100 - (extraShare * 1.2), 10, 100);
+      const sharingScore = clamp(40 + (passengers * 15), 40, 100);
+      const score = Math.round((fuelEfficiencyScore*0.45 + extraCostScore*0.30 + sharingScore*0.25) * 10) / 10;
+      const confidence = (extraKmPercent===0 && extraCosts===0) ? 'Orta' : 'Yüksek';
+      return { baseDistance:round2(baseDistance), extraDistance:round2(extraDistance), totalDistance:round2(totalDistance), adjustedConsumption:round2(adjustedConsumption), totalFuelLiters:round2(totalFuelLiters), fuelOnlyCost:round2(fuelOnlyCost), extraCosts:round2(extraCosts), totalCost:round2(totalCost), perPerson:round2(perPerson), passengers, fuelShare:round2(fuelShare), extraShare:round2(extraShare), shareAdvantage:round2(shareAdvantage), score, fuelEfficiencyScore:round2(fuelEfficiencyScore), extraCostScore:round2(extraCostScore), sharingScore:round2(sharingScore), confidence, tripTypeLabel: inputs.tripType===2 ? 'Gidiş - dönüş' : 'Tek yön', roadLabel:getActiveChipText('roadType'), acLabel:getActiveChipText('acType'), loadLabel:getActiveChipText('loadType'), fuelPrice:inputs.fuelPrice };
+    }
+
+    function getScoreBadge(score){ if(score>=80) return { text:'Güçlü', cls:'good' }; if(score>=60) return { text:'Dengeli', cls:'warn' }; return { text:'Pahalı', cls:'bad' }; }
+    function buildDecision(results){ if(results.score>=80) return `Bu yolculuk maliyet tarafında verimli görünüyor. Kişi başı maliyet ${formatTRY(results.perPerson)} seviyesinde ve ek gider baskısı sınırlı.`; if(results.score>=60) return `Yolculuk yapılabilir görünüyor ancak toplam maliyet orta seviyede. Yakıt fiyatı veya ekstra yol payı yükselirse bütçe baskısı artabilir.`; return `Bu yolculuk pahalı görünüyor. Alternatif rota, daha fazla paylaşım veya farklı yakıt zamanı düşünmek faydalı olabilir.`; }
+    function buildComment(results,inputs){ let text=`Toplam ${formatKm(results.totalDistance)} yol için yaklaşık ${formatLiter(results.totalFuelLiters)} yakıt gerekiyor. Bu yakıtın maliyeti ${formatTRY(results.fuelOnlyCost)} seviyesinde.`; text += results.extraCosts>0 ? ` Ek giderlerle birlikte toplam maliyet ${formatTRY(results.totalCost)} oldu.` : ` Ek gider girilmediği için toplam maliyet yakıt giderine yakın hesaplandı.`; if(results.passengers>1){ text += ` ${results.passengers} kişiyle paylaşıldığında kişi başı tutar ${formatTRY(results.perPerson)} seviyesine iniyor.`; } if((inputs.extraKmPercent||0)>0){ text += ` Rota sapması için eklenen ${formatPercent(inputs.extraKmPercent,1)} pay, toplam mesafeyi artırdı.`; } if(results.adjustedConsumption > inputs.consumption){ text += ` Yol tipi, klima veya yük seçimi tüketimi yukarı çekti.`; } return text; }
+
+    function setBadge(el,type,text){ el.className=`badge ${type}`.trim(); el.textContent=text; }
+    function setPill(el,type,text){ el.className=`pill ${type}`.trim(); el.textContent=text; }
+    function markReady(){ ['mainHighlight','scoreCard'].forEach(id=>els[id].classList.remove('is-empty')); ['distanceCard','fuelCard','fuelOnlyCard','perPersonCard','consumptionHealth','extraHealth','confidenceHealth'].forEach(id=>els[id].classList.remove('is-empty')); }
+    function resetVisualErrors(){ fieldIds.forEach(id=>{ const field=document.getElementById(`field-${id}`); if(field) field.classList.remove('has-error'); }); }
+    function applyErrors(errors){ resetVisualErrors(); Object.keys(errors).forEach(key=>{ const field=document.getElementById(`field-${key}`); if(field) field.classList.add('has-error'); }); }
+
+    function setActionButtonsEnabled(enabled){
+      [els.copyBtn, els.shareBtn, els.printBtn].forEach(btn=>{ if(btn) btn.disabled = !enabled; });
+    }
+
+    function hasCoreValues(){
+      return String(els.distance.value).trim() !== '' && String(els.consumption.value).trim() !== '' && String(els.fuelPrice.value).trim() !== '';
+    }
+
+    function hasAnyTypedValue(){
+      return ['distance','consumption','fuelPrice','extraKmPercent','extraCosts','passengers'].some(key => String(els[key].value).trim() !== '');
+    }
+
+    function setEmptyState(){
+      state.results=null; state.isCalculated=false; state.isValid=false; resetVisualErrors();
+      els.mainHighlight.classList.add('is-empty'); els.scoreCard.classList.add('is-empty'); ['distanceCard','fuelCard','fuelOnlyCard','perPersonCard','consumptionHealth','extraHealth','confidenceHealth'].forEach(id=>els[id].classList.add('is-empty'));
+      els.totalCostValue.textContent='—'; els.totalCostSub.textContent='Toplam yolculuk maliyeti burada görünecek.'; els.statusText.textContent='Veri bekleniyor. Mesafe, tüketim ve fiyat bilgisi girildiğinde sonuç paneli aktifleşir.'; setBadge(els.statusBadge,'','Hazır değil');
+      els.scoreValue.textContent='—'; setPill(els.scoreBadge,'','Bekleniyor'); els.scoreBar.style.width='0%'; els.scoreFuel.textContent='—'; els.scoreFuel.className='val neu'; els.scoreExtra.textContent='—'; els.scoreExtra.className='val neu'; els.scoreShare.textContent='—'; els.scoreShare.className='val neu';
+      els.decisionText.textContent='Karar motoru, hesap tamamlandığında yolculuğun maliyet seviyesini ve pratik öneriyi burada sunar.';
+      els.distanceValue.textContent='—'; els.fuelValue.textContent='—'; els.fuelOnlyValue.textContent='—'; els.perPersonValue.textContent='—'; els.adjustedConsumptionValue.textContent='—'; els.extraRatioValue.textContent='—'; els.confidenceValue.textContent='—';
+      els.barFuel.style.width='0%'; els.barFuelLabel.textContent='—'; els.barExtra.style.width='0%'; els.barExtraLabel.textContent='—'; els.barShare.style.width='0%'; els.barShareLabel.textContent='—'; els.smartComment.textContent='Verileri girdikten sonra sana akıllı yolculuk özeti burada gösterilecek.';
+      els.scenarioTableBody.innerHTML=`<tr><td>Baz</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr><tr><td>Ekonomik (-%10)</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr><tr><td>Pahalı (+%10)</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>`;
+      els.detailTableLeft.innerHTML=`<tr><td>Toplam mesafe</td><td>—</td></tr><tr><td>Düzeltilmiş tüketim</td><td>—</td></tr><tr><td>Toplam yakıt</td><td>—</td></tr><tr><td>Sadece yakıt gideri</td><td>—</td></tr>`;
+      els.detailTableRight.innerHTML=`<tr><td>Ek giderler</td><td>—</td></tr><tr><td>Toplam yolculuk maliyeti</td><td>—</td></tr><tr><td>Kişi başı maliyet</td><td>—</td></tr><tr><td>Ekstra yol payı</td><td>—</td></tr>`;
+      setActionButtonsEnabled(false);
+    }
+
+    function render(results,inputs){
+      markReady();
+      const badge=getScoreBadge(results.score); const statusType=results.totalCost<1000?'good':results.totalCost<3000?'warn':'bad'; const statusText=results.totalCost<1000?'Uygun görünüyor':results.totalCost<3000?'Orta maliyet':'Yüksek maliyet';
+      els.totalCostValue.textContent=formatTRY(results.totalCost); els.totalCostSub.textContent=`${results.tripTypeLabel} yolculukta toplam ${formatKm(results.totalDistance)} için hesaplandı.`; els.statusText.textContent=`${results.roadLabel}, ${results.acLabel.toLowerCase()} ve ${results.loadLabel.toLowerCase()} seçimine göre sonuç üretildi.`; setBadge(els.statusBadge,statusType,statusText);
+      els.scoreValue.textContent=formatNumber(results.score,0); setPill(els.scoreBadge,badge.cls,badge.text); els.scoreBar.style.width=`${clamp(results.score,0,100)}%`;
+      els.scoreFuel.textContent=formatNumber(results.fuelEfficiencyScore,0); els.scoreFuel.className=`val ${results.fuelEfficiencyScore>=75?'pos':results.fuelEfficiencyScore>=55?'neu':'neg'}`;
+      els.scoreExtra.textContent=formatNumber(results.extraCostScore,0); els.scoreExtra.className=`val ${results.extraCostScore>=75?'pos':results.extraCostScore>=55?'neu':'neg'}`;
+      els.scoreShare.textContent=formatNumber(results.sharingScore,0); els.scoreShare.className=`val ${results.sharingScore>=75?'pos':results.sharingScore>=55?'neu':'neg'}`;
+      els.decisionText.textContent=buildDecision(results); els.distanceValue.textContent=formatKm(results.totalDistance); els.fuelValue.textContent=formatLiter(results.totalFuelLiters); els.fuelOnlyValue.textContent=formatTRY(results.fuelOnlyCost); els.perPersonValue.textContent=formatTRY(results.perPerson); els.adjustedConsumptionValue.textContent=`${formatNumber(results.adjustedConsumption,2)} L`; els.extraRatioValue.textContent=formatPercent(results.extraShare,1); els.confidenceValue.textContent=results.confidence;
+      els.barFuel.style.width=`${clamp(results.fuelShare,0,100)}%`; els.barFuelLabel.textContent=formatPercent(results.fuelShare,1); els.barExtra.style.width=`${clamp(results.extraShare,0,100)}%`; els.barExtraLabel.textContent=formatPercent(results.extraShare,1); els.barShare.style.width=`${clamp(results.shareAdvantage,0,100)}%`; els.barShareLabel.textContent=formatPercent(results.shareAdvantage,1); els.smartComment.textContent=buildComment(results,inputs);
+      setActionButtonsEnabled(true);
+      renderScenarios(inputs); renderDetails(results,inputs);
+    }
+
+    function renderScenarios(inputs){
+      const base=compute(inputs); const economy=compute({ ...inputs, fuelPrice: inputs.fuelPrice*0.9 }); const expensive=compute({ ...inputs, fuelPrice: inputs.fuelPrice*1.1 });
+      const rows=[{name:'Baz',price:inputs.fuelPrice,result:base,note:'Mevcut fiyat'},{name:'Ekonomik (-%10)',price:inputs.fuelPrice*0.9,result:economy,note:'Yakıt düşerse'},{name:'Pahalı (+%10)',price:inputs.fuelPrice*1.1,result:expensive,note:'Yakıt artarsa'}];
+      els.scenarioTableBody.innerHTML=rows.map(row=>`<tr><td>${row.name}</td><td>${formatTRY(row.price)}</td><td>${formatTRY(row.result.totalCost)}</td><td>${formatTRY(row.result.perPerson)}</td><td>${row.note}</td></tr>`).join('');
+    }
+
+    function renderDetails(results,inputs){
+      els.detailTableLeft.innerHTML=`<tr><td>Toplam mesafe</td><td>${formatKm(results.totalDistance)}</td></tr><tr><td>Düzeltilmiş tüketim</td><td>${formatNumber(results.adjustedConsumption,2)} L/100 km</td></tr><tr><td>Toplam yakıt</td><td>${formatLiter(results.totalFuelLiters)}</td></tr><tr><td>Sadece yakıt gideri</td><td>${formatTRY(results.fuelOnlyCost)}</td></tr>`;
+      const extraPercent = Number.isNaN(inputs.extraKmPercent) ? 0 : inputs.extraKmPercent;
+      els.detailTableRight.innerHTML=`<tr><td>Ek giderler</td><td>${formatTRY(results.extraCosts)}</td></tr><tr><td>Toplam yolculuk maliyeti</td><td>${formatTRY(results.totalCost)}</td></tr><tr><td>Kişi başı maliyet</td><td>${formatTRY(results.perPerson)}</td></tr><tr><td>Ekstra yol payı</td><td>${formatPercent(extraPercent,1)}</td></tr>`;
+    }
+
+    function scrollToResults(){
+      const target = els.mainHighlight;
+      if(!target) return;
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      target.classList.remove('result-flash');
+      void target.offsetWidth;
+      target.classList.add('result-flash');
+      window.setTimeout(()=>target.classList.remove('result-flash'), 1200);
+    }
+
+    function showMicroStatus(show){ els.microStatus.classList.toggle('show', show); }
+    function collectInputStrings(){ return { distance:els.distance.value, tripType:els.tripType.value, consumption:els.consumption.value, fuelPrice:els.fuelPrice.value, roadType:getChipValue('roadType'), acType:getChipValue('acType'), loadType:getChipValue('loadType'), extraKmPercent:els.extraKmPercent.value, extraCosts:els.extraCosts.value, passengers:els.passengers.value }; }
+    function saveManualState(){ if(sessionStorage.getItem(DEMO_FLAG)==='1') return; if(!hasAnyTypedValue()){ localStorage.removeItem(STORAGE_KEY); return; } localStorage.setItem(STORAGE_KEY, JSON.stringify(collectInputStrings())); }
+    function loadManualState(){ const raw=localStorage.getItem(STORAGE_KEY); if(!raw) return false; try{ const saved=JSON.parse(raw); if(!saved || typeof saved !== 'object') return false; applyInputState(saved, false); return true; }catch(_){ return false; } }
+
+    function calculateAndRender(options={}){
+      const { focusResult = false } = options;
+      const inputs=getInputs();
+      const coreFilled = hasCoreValues();
+      if(!hasAnyTypedValue()){
+        setEmptyState();
+        return false;
+      }
+      if(!coreFilled){
+        state.results=null; state.isCalculated=false; state.isValid=false;
+        resetVisualErrors();
+        setActionButtonsEnabled(false);
+        els.statusText.textContent='Mesafe, tüketim ve yakıt fiyatı tamamlandığında sonuç alanı otomatik güncellenecek.';
+        setBadge(els.statusBadge,'','Kısmi giriş');
+        els.smartComment.textContent='Temel üç alan tamamlandığında sistem toplam maliyet, kişi başı tutar ve yolculuk verim skorunu oluşturacak.';
+        return false;
+      }
+      const validation=validate(inputs); state.isValid=validation.isValid; applyErrors(validation.errors);
+      if(!validation.isValid){
+        state.results=null; state.isCalculated=false;
+        setActionButtonsEnabled(false);
+        els.statusText.textContent='Lütfen kırmızı işaretli alanları düzelt.';
+        setBadge(els.statusBadge,'bad','Kontrol et');
+        return false;
+      }
+      state.results=compute(inputs); state.inputs=inputs; state.isCalculated=true; render(state.results, inputs);
+      if(sessionStorage.getItem(DEMO_FLAG)!=='1') saveManualState();
+      if(focusResult){ scrollToResults(); }
+      return true;
+    }
+
+    function scheduleCalc(){ showMicroStatus(true); clearTimeout(debounceTimer); debounceTimer=setTimeout(()=>{ showMicroStatus(false); calculateAndRender(); }, 220); }
+
+    function applyInputState(data, markAsManual=true){
+      els.distance.value=formatTrIntegerInput(data.distance ?? ''); els.tripType.value=String(data.tripType ?? '1'); els.consumption.value=data.consumption ?? ''; els.fuelPrice.value=data.fuelPrice ?? ''; els.extraKmPercent.value=data.extraKmPercent ?? ''; els.extraCosts.value=formatTrIntegerInput(data.extraCosts ?? ''); els.passengers.value=formatTrIntegerInput(data.passengers ?? '');
+      activateChip('roadType', data.roadType ?? 1); activateChip('acType', data.acType ?? 1); activateChip('loadType', data.loadType ?? 1);
+      if(markAsManual){ sessionStorage.removeItem(DEMO_FLAG); saveManualState(); }
+      calculateAndRender();
+    }
+
+    function activateChip(group, value){ document.querySelectorAll(`[data-group="${group}"]`).forEach(btn=>btn.classList.toggle('active', Number(btn.dataset.value)===Number(value))); }
+
+    function fillExample(){
+      sessionStorage.setItem(DEMO_FLAG,'1');
+      applyInputState({ distance:'320', tripType:'2', consumption:'6,8', fuelPrice:'48,75', roadType:1, acType:1.04, loadType:1.04, extraKmPercent:'5', extraCosts:'450', passengers:'3' }, false);
+    }
+
+    function loadScenario(name){
+      sessionStorage.setItem(DEMO_FLAG,'1');
+      const scenarios={
+        kisa:{distance:'28',tripType:'1',consumption:'7,5',fuelPrice:'48,75',roadType:1.08,acType:1,loadType:1,extraKmPercent:'4',extraCosts:'0',passengers:'1'},
+        tatil:{distance:'420',tripType:'2',consumption:'6,7',fuelPrice:'48,75',roadType:1,acType:1.04,loadType:1.04,extraKmPercent:'6',extraCosts:'680',passengers:'3'},
+        kalabalik:{distance:'260',tripType:'2',consumption:'7,2',fuelPrice:'48,75',roadType:1,acType:1.08,loadType:1.08,extraKmPercent:'5',extraCosts:'350',passengers:'5'},
+        uzun:{distance:'580',tripType:'2',consumption:'5,9',fuelPrice:'48,75',roadType:0.92,acType:1.04,loadType:1.04,extraKmPercent:'3',extraCosts:'900',passengers:'2'}
+      };
+      if(scenarios[name]) applyInputState(scenarios[name], false);
+    }
+
+    function resetForm(){
+      sessionStorage.removeItem(DEMO_FLAG); localStorage.removeItem(STORAGE_KEY);
+      els.distance.value=''; els.tripType.value='1'; els.consumption.value=''; els.fuelPrice.value=''; els.extraKmPercent.value=''; els.extraCosts.value=''; els.passengers.value='';
+      activateChip('roadType', 1); activateChip('acType', 1); activateChip('loadType', 1); setEmptyState();
+    }
+
+
+    function fallbackCopyText(text){
+      const textarea=document.createElement('textarea');
+      textarea.value=text;
+      textarea.setAttribute('readonly','');
+      textarea.style.position='fixed';
+      textarea.style.opacity='0';
+      textarea.style.pointerEvents='none';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      let copied=false;
+      try{ copied=document.execCommand('copy'); }catch(_){ copied=false; }
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    function copyResult(){
+      const text = state.isCalculated ? [
+        'Hesapica - Araç Yakıt Hesaplama',
+        `Toplam maliyet: ${els.totalCostValue.textContent}`,
+        `Toplam mesafe: ${els.distanceValue.textContent}`,
+        `Toplam yakıt: ${els.fuelValue.textContent}`,
+        `Kişi başı maliyet: ${els.perPersonValue.textContent}`,
+        `Karar özeti: ${els.decisionText.textContent}`
+      ].join('\n') : 'Henüz hesaplanmış bir sonuç yok.';
+      const onSuccess = ()=>{ els.smartComment.textContent='Sonuç panoya kopyalandı.'; setTimeout(()=>{ if(state.results) els.smartComment.textContent=buildComment(state.results, state.inputs); else els.smartComment.textContent='Verileri girdikten sonra sana akıllı yolculuk özeti burada gösterilecek.'; },1600); };
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(onSuccess).catch(()=>{ if(fallbackCopyText(text)) onSuccess(); });
+      } else if(fallbackCopyText(text)) {
+        onSuccess();
+      }
+    }
+
+    function shareResult(){
+      const text = state.isCalculated ? `Araç Yakıt Hesaplama sonucu: toplam ${els.totalCostValue.textContent}, kişi başı ${els.perPersonValue.textContent}. ${window.location.href}` : `Araç Yakıt Hesaplama aracı: ${window.location.href}`;
+      const onCopied = ()=>{ els.smartComment.textContent='Paylaşım metni panoya kopyalandı.'; setTimeout(()=>{ if(state.results) els.smartComment.textContent=buildComment(state.results, state.inputs); else els.smartComment.textContent='Verileri girdikten sonra sana akıllı yolculuk özeti burada gösterilecek.'; },1600); };
+      if(navigator.share){
+        navigator.share({ title:'Araç Yakıt Hesaplama', text, url:window.location.href }).catch(()=>{ 
+          if(navigator.clipboard && window.isSecureContext){
+            navigator.clipboard.writeText(text).then(onCopied).catch(()=>{ if(fallbackCopyText(text)) onCopied(); });
+          } else if(fallbackCopyText(text)) {
+            onCopied();
+          }
+        });
+      } else if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(onCopied).catch(()=>{ if(fallbackCopyText(text)) onCopied(); });
+      } else if(fallbackCopyText(text)) {
+        onCopied();
+      }
+    }
+
+    attachGroupedIntegerInput(els.distance);
+    attachGroupedIntegerInput(els.passengers);
+
+    document.querySelectorAll('[data-group]').forEach(btn=>btn.addEventListener('click',()=>{ sessionStorage.removeItem(DEMO_FLAG); activateChip(btn.dataset.group, btn.dataset.value); saveManualState(); scheduleCalc(); }));
+    document.querySelectorAll('[data-scenario]').forEach(btn=>btn.addEventListener('click',()=>loadScenario(btn.dataset.scenario)));
+    [els.distance,els.tripType,els.consumption,els.fuelPrice,els.extraKmPercent,els.extraCosts,els.passengers].forEach(el=>{
+      el.addEventListener('input',()=>{ sessionStorage.removeItem(DEMO_FLAG); saveManualState(); scheduleCalc(); });
+      el.addEventListener('change',()=>{ sessionStorage.removeItem(DEMO_FLAG); saveManualState(); scheduleCalc(); });
+      el.addEventListener('keydown',(e)=>{ if(e.key==='Enter'){ e.preventDefault(); calculateAndRender({ focusResult:true }); } });
+    });
+    els.calcBtn.addEventListener('click', ()=>calculateAndRender({ focusResult:true })); els.exampleBtn.addEventListener('click', fillExample); els.resetBtn.addEventListener('click', resetForm); els.copyBtn.addEventListener('click', copyResult); els.shareBtn.addEventListener('click', shareResult);
+
+    setEmptyState();
+    if(!loadManualState()){ resetVisualErrors(); }
+  </script>
+</body>
+</html>

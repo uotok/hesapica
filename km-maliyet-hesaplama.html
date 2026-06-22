@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Km Maliyet Hesaplama 2026 | Km Başı Maliyet, 100 Km Gideri ve Araç Gider Analizi</title>
+<meta content="Km maliyet hesaplama aracı ile km başı maliyet, 100 km gideri, aylık ve yıllık araç kullanım maliyeti, sabit gider baskısı, maliyet verimlilik skoru ve senaryo analizini tek ekranda görün." name="description"/>
+<meta content="km maliyet hesaplama, kilometre maliyeti hesaplama, araç km maliyeti, 100 km maliyeti, araç gider hesabı, araç kullanım maliyeti" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/km-maliyet-hesaplama" rel="canonical"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+  s = s.replace(/\s+/g,'');
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<meta content="website" property="og:type"/>
+<meta content="Km Maliyet Hesaplama 2026 | Km Başı Maliyet, 100 Km Gideri ve Araç Gider Analizi" property="og:title"/>
+<meta content="Km maliyet hesaplama aracı ile km başı maliyet, 100 km gideri, aylık ve yıllık araç kullanım maliyeti, sabit gider baskısı, maliyet verimlilik skoru ve senaryo analizini tek ekranda görün." property="og:description"/>
+<meta content="https://hesapica.com/km-maliyet-hesaplama" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Km Maliyet Hesaplama 2026 | Km Başı Maliyet, 100 Km Gideri ve Araç Gider Analizi" name="twitter:title"/>
+<meta content="Km maliyet hesaplama aracı ile km başı maliyet, 100 km gideri, aylık ve yıllık araç kullanım maliyeti, sabit gider baskısı, maliyet verimlilik skoru ve senaryo analizini tek ekranda görün." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<style>
+    :root{
+      --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--surface-soft:#eef2ff;--surface-soft-2:#f8faff;
+      --text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);--radius-xl:24px;--radius-lg:18px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text);background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);line-height:1.6}
+    a{text-decoration:none;color:inherit} button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)} .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}.hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}.section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)} .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)} .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)} .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)} .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}
+    input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease} input.with-prefix{padding-left:38px} input.with-suffix{padding-right:46px} input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)} input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}.chip-row{display:flex;flex-wrap:wrap;gap:10px}.chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}.chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .toggle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.toggle-pill{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;background:#fcfcfd;border:1px solid var(--line);font-weight:700;color:#374151}.toggle-pill input{width:18px;height:18px;accent-color:var(--primary)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}.btn:hover{transform:translateY(-1px);opacity:.97}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}.flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}.flow-hint-text span{display:block;font-size:13px;color:#6366f1}.flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px}
+    .results{position:sticky;top:20px;display:grid;gap:16px}.status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge,.pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}.good{background:#ecfdf5 !important;color:var(--good)!important;border-color:#a7f3d0!important}.warn{background:#fff7ed !important;color:var(--warn)!important;border-color:#fed7aa!important}.bad{background:#fef2f2 !important;color:var(--bad)!important;border-color:#fecaca!important}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#4b5563}.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}.score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}.score-value{font-size:44px;font-weight:900;line-height:1}.progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}.score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}.score-breakdown{display:grid;gap:8px;margin-top:12px}.score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}.score-breakdown-row .name{color:#4b5563}.score-breakdown-row .val{font-weight:800}
+    .mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:700;color:#374151}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}.health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}.health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}.details-card{margin-top:24px}.accordion-stack{display:grid;gap:14px} details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px} details.block[open]{padding-bottom:20px} details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)} details.block summary::-webkit-details-marker{display:none}.summary-note{font-size:13.5px;color:#6366f1;font-weight:700}.details-inner{margin-top:16px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff} table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top} th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em} td{color:var(--text);font-weight:700}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .field.error-state .hint{color:#991b1b}.field.error-state label{color:#991b1b}.error-text{display:none;margin-top:8px;font-size:14px;font-weight:700;line-height:1.5;color:#b91c1c}.field.error-state .error-text{display:block}.input-error{border-color:rgba(185,28,28,.55)!important;box-shadow:0 0 0 4px rgba(185,28,28,.10)!important;background:#fff7f7!important}
+    .result-flash{animation:resultFlash 1.1s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,.00), var(--shadow)}35%{box-shadow:0 0 0 8px rgba(79,70,229,.14), 0 18px 38px rgba(79,70,229,.18)}100%{box-shadow:var(--shadow)}}
+
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}.field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.hero h1{font-size:32px}.highlight-value{font-size:31px}}
+    @media print{body{background:#fff}.topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn{display:none!important}.hero,.card,.status-card,.highlight-card,.scorebox,details.block{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout,.content-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Km Maliyet Hesaplama",
+    "url": "https://hesapica.com/km-maliyet-hesaplama",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "inLanguage": "tr-TR",
+    "description": "Km başı maliyet, 100 km gideri, aylık ve yıllık araç kullanım yükü ile sabit gider baskısını hesaplayan araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://hesapica.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Otomotiv", "item": "https://hesapica.com/#arac"},
+      {"@type": "ListItem", "position": 3, "name": "Km Maliyet Hesaplama", "item": "https://hesapica.com/km-maliyet-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Yıllık km girmek zorunlu mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır. Yıllık km alanını boş bırakırsanız sistem aylık km değerini 12 ile çarparak yıllık kullanım tahmini üretir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sabit giderleri neden eklemeliyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gerçek araç sahipliği maliyetinin önemli bölümü sigorta, MTV, bakım ve diğer sabit giderlerden oluşur. Özellikle düşük km yapan kullanıcılar için bu baskı daha belirgin hale gelir."
+        }
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="Hesapica" property="og:site_name"/><meta content="https://hesapica.com/km-maliyet-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;padding:14px 16px;max-width:1180px;border:1px solid #fecaca;border-radius:16px;background:#fef2f2;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu hesaplama aracı JavaScript ile çalışır. Sonuçları görmek için tarayıcınızda JavaScript etkin olmalıdır.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a><span>/</span><a href="/#arac">Otomotiv</a><span>/</span><strong>Km Maliyet Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Araç gider analizi</span>
+<h1>Km Maliyet Hesaplama</h1>
+<p>Bu araç yalnızca yakıt giderini değil; <strong>km başı gerçek maliyeti</strong>, <strong>100 km maliyetini</strong>, <strong>aylık ve yıllık araç kullanım yükünü</strong>, <strong>sabit gider baskısını</strong> ve <strong>senaryo etkilerini</strong> tek ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Maliyet Verim Skoru</span>
+<span class="hero-chip">Yakıt + sabit gider analizi</span>
+<span class="hero-chip">Senaryo tablosu</span>
+<span class="hero-chip">Karar özeti</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Tek ekranda maliyet özeti</div>
+<strong>Ana sonuç, gider baskısı ve karar özeti aynı akışta görünür</strong>
+<p>Yakıt, bakım, vergi ve sigorta gibi giderleri birlikte düşünerek aracın sana gerçekten km başına ne kadara mal olduğunu görebilirsin.</p>
+<ul>
+<li>Kullanım maliyeti seviyesini gör</li>
+<li>Sabit gider baskısını ayır</li>
+<li>Yakıt artarsa sonucu anında kıyasla</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Kullanım Maliyeti Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Gerekli verileri girince sistem otomatik hesaplar. Yıllık km alanı opsiyoneldir; boş bırakılırsa aylık km × 12 alınır.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Birçok kişi yalnızca yakıtı hesaplar. Oysa sigorta, bakım, MTV ve diğer sabit giderler gerçek araç sahipliği maliyetini ciddi biçimde etkiler. Bu araç farkı görünür hale getirir.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Temel kullanım verileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="monthlyKm">Aylık ortalama km</label>
+<div class="input-wrap"><input aria-describedby="monthlyKmHint monthlyKmError" autocomplete="off" id="monthlyKm" inputmode="numeric" placeholder="Örn: 1.200" type="text"/></div>
+<div class="hint" id="monthlyKmHint">Düzenli aylık kullanımın.</div>
+<div aria-live="polite" class="error-text" id="monthlyKmError"></div>
+</div>
+<div class="field">
+<label for="annualKmManual">Yıllık km <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap"><input aria-describedby="annualKmManualHint annualKmManualError" autocomplete="off" id="annualKmManual" inputmode="numeric" placeholder="Örn: 15.000" type="text"/></div>
+<div class="hint" id="annualKmManualHint">Doluysa aylık km yerine bu baz alınır.</div>
+<div aria-live="polite" class="error-text" id="annualKmManualError"></div>
+</div>
+<div class="field">
+<label for="consumption">Tüketim (100 km’de litre)</label>
+<div class="input-wrap"><input aria-describedby="consumptionHint consumptionError" aria-required="true" autocomplete="off" id="consumption" inputmode="decimal" placeholder="Örn: 6,8" required="" type="text"/></div>
+<div class="hint" id="consumptionHint">Resmî değer yerine gerçek ortalamayı kullanmak daha sağlıklıdır.</div>
+<div aria-live="polite" class="error-text" id="consumptionError"></div>
+</div>
+<div class="field">
+<label for="fuelPrice">Yakıt fiyatı (TL / litre)</label>
+<div class="input-wrap"><span class="prefix">₺</span><input aria-describedby="fuelPriceHint fuelPriceError" aria-required="true" autocomplete="off" class="with-prefix" id="fuelPrice" inputmode="decimal" placeholder="Örn: 48,75" required="" type="text"/></div>
+<div class="hint" id="fuelPriceHint">Güncel litre fiyatını gir.</div>
+<div aria-live="polite" class="error-text" id="fuelPriceError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Sürüş ve sabit giderler</div>
+<div class="field-grid">
+<div class="field">
+<label for="drivingStyle">Sürüş profili</label>
+<select id="drivingStyle">
+<option value="0.95">Ekonomik sürüş</option>
+<option selected="" value="1">Normal sürüş</option>
+<option value="1.1">Biraz agresif sürüş</option>
+<option value="1.2">Yoğun / agresif sürüş</option>
+</select>
+<div class="hint">Tüketimi sürüş tarzına göre çarpar.</div>
+</div>
+<div class="field">
+<label for="fixedCostMode">Hesaplama modu</label>
+<select id="fixedCostMode">
+<option selected="" value="include">Yakıt + sabit gider dahil</option>
+<option value="fuelOnly">Sadece yakıt maliyeti</option>
+</select>
+<div class="hint">Gerçek sahiplik maliyeti için ilk seçeneği kullan.</div>
+</div>
+<div class="field">
+<label for="annualInsurance">Yıllık sigorta / kasko</label>
+<div class="input-wrap"><span class="prefix">₺</span><input autocomplete="off" class="with-prefix" id="annualInsurance" inputmode="numeric" placeholder="Örn: 18.000" type="text"/></div>
+<div class="hint">Yıllık toplam tutar.</div>
+</div>
+<div class="field">
+<label for="annualTax">Yıllık MTV / vergi</label>
+<div class="input-wrap"><span class="prefix">₺</span><input autocomplete="off" class="with-prefix" id="annualTax" inputmode="numeric" placeholder="Örn: 6.000" type="text"/></div>
+<div class="hint">MTV veya yıllık vergi yükü.</div>
+</div>
+<div class="field">
+<label for="annualMaintenance">Yıllık bakım / lastik / servis</label>
+<div class="input-wrap"><span class="prefix">₺</span><input autocomplete="off" class="with-prefix" id="annualMaintenance" inputmode="numeric" placeholder="Örn: 12.000" type="text"/></div>
+<div class="hint">Bakım, lastik, servis vb.</div>
+</div>
+<div class="field">
+<label for="otherAnnualCosts">Diğer yıllık giderler</label>
+<div class="input-wrap"><span class="prefix">₺</span><input autocomplete="off" class="with-prefix" id="otherAnnualCosts" inputmode="numeric" placeholder="Örn: 5.000" type="text"/></div>
+<div class="hint">Park, muayene, ek harcamalar vb.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="fillScenario('economy', this)" type="button">Ekonomik dizel</button>
+<button class="chip" onclick="fillScenario('city', this)" type="button">Şehir içi benzinli</button>
+<button class="chip" onclick="fillScenario('aggressive', this)" type="button">Agresif kullanım</button>
+<button class="chip" onclick="fillScenario('fuelonly', this)" type="button">Sadece yakıt analizi</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateKmCost()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="resetForm()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Maliyet skoru, karar özeti ve senaryo tablosu aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak maliyet baskısı ve alternatif senaryoları görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" id="statusText">Sonuç görmek için gerekli alanları doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana Sonuç</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Km başına gerçek kullanım maliyetin burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div style="font-size:14px;color:#4b5563;font-weight:700">Maliyet Verim Skoru</div>
+<div class="score-value" id="costScore">0/100</div>
+</div>
+<span class="pill" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+            100’e yaklaştıkça km başı maliyet daha verimli görünür. Skor; km başı maliyet, sabit gider baskısı, tüketim seviyesi ve yıllık kullanım ölçeğine göre oluşur.
+            <div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Km maliyet etkisi</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Sabit gider baskısı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Tüketim seviyesi</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Kullanım ölçeği</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1"><div class="label">100 km maliyeti</div><div class="value" id="per100KmResult">—</div></div>
+<div class="mini-result is-empty" id="mini2"><div class="label">Aylık yaklaşık maliyet</div><div class="value" id="monthlyCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini3"><div class="label">Yıllık yaklaşık maliyet</div><div class="value" id="annualCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini4"><div class="label">Yıllık toplam km</div><div class="value" id="annualKmResult">—</div></div>
+<div class="mini-result is-empty" id="mini5"><div><div class="label">Yıllık yakıt gideri</div><div class="subline" id="fuelSubline">Düzeltilmiş tüketime göre</div></div><div class="value" id="annualFuelCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini6"><div><div class="label">Yıllık sabit gider</div><div class="subline" id="fixedSubline">Sigorta + MTV + bakım + diğer</div></div><div class="value" id="annualFixedCostResult">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı Durum Özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Maliyet seviyesi</h3><div class="big" id="health1">—</div></div>
+<div class="health-card"><h3>Gider baskısı</h3><div class="big" id="health2">—</div></div>
+<div class="health-card"><h3>Karar</h3><div aria-live="polite" class="big" id="health3">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="commentBox">Veri bekleniyor. Hesaplama sonrası araç sahipliği maliyetinin kısa yorumu ve aksiyon önerisi burada yer alacak.</div>
+</aside>
+</section>
+<section class="details-card">
+<div class="accordion-stack">
+<details class="block" open="">
+<summary>Kırılım ve senaryo analizi <span class="summary-note">Baz / yakıt artışı / bakım artışı</span></summary>
+<div class="details-inner">
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Senaryo</th><th>Km başı maliyet</th><th>100 km</th><th>Yıllık toplam maliyet</th><th>Yorum</th></tr>
+</thead>
+<tbody id="scenarioTableBody">
+<tr><td>Baz senaryo</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+<tr><td>Yakıt +%10</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+<tr><td>Bakım +%20</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+<tr><td>Kullanım +%20 km</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section class="content-grid">
+<div class="accordion-card">
+<h2>Km maliyeti nasıl hesaplanır?</h2>
+<details open=""><summary>Temel mantık</summary><p>Önce yıllık toplam km belirlenir. Ardından tüketim ve litre fiyatına göre yıllık yakıt maliyeti hesaplanır. İstenirse sigorta, vergi, bakım ve diğer sabit giderler de eklenerek km başı toplam maliyet bulunur.</p></details>
+<details><summary>Yakıt mı toplam maliyet mi?</summary><p>Sadece yakıt maliyeti kısa vadeli kullanım hesabı için faydalıdır. Aracın sana gerçekten ne kadara mal olduğunu görmek için sabit giderleri dahil etmek daha doğrudur.</p></details>
+</div>
+<div class="accordion-card">
+<h2>Sık sorulan sorular</h2>
+<details open=""><summary>Yıllık km girmek zorunlu mu?</summary><p>Hayır. Boş bırakırsan aylık km × 12 alınır.</p></details>
+<details><summary>Sabit giderleri neden eklemeliyim?</summary><p>Çünkü gerçek araç sahipliği maliyetinin önemli bölümü yakıt dışındaki kalemlerden gelir. Özellikle düşük km yapan kullanıcıda sabit gider baskısı daha belirgin olur.</p></details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/yakit-hesaplama"><span class="small">Otomotiv</span><strong>Yakıt Maliyeti Hesaplama</strong><p>Belirli rota veya yol için yakıt giderini hesapla.</p></a>
+<a class="related-card" href="/arac-aylik-maliyet-hesaplama"><span class="small">Otomotiv</span><strong>Araç Aylık Maliyet</strong><p>Aylık toplam araç bütçeni daha geniş perspektifte gör.</p></a>
+<a class="related-card" href="/butce-hesaplama"><span class="small">Planlama</span><strong>Bütçe ve Tasarruf Hesaplama</strong><p>Araç giderinin aylık bütçen ve tasarruf alanın üzerindeki etkisini karşılaştır.</p></a>
+</div>
+</section>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica-km-maliyet-manual-v2';
+    const $ = (id) => document.getElementById(id);
+    const els = {
+      monthlyKm: $('monthlyKm'),
+      annualKmManual: $('annualKmManual'),
+      consumption: $('consumption'),
+      fuelPrice: $('fuelPrice'),
+      drivingStyle: $('drivingStyle'),
+      fixedCostMode: $('fixedCostMode'),
+      annualInsurance: $('annualInsurance'),
+      annualTax: $('annualTax'),
+      annualMaintenance: $('annualMaintenance'),
+      otherAnnualCosts: $('otherAnnualCosts')
+    };
+
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      source: 'manual',
+      touched: {},
+      hasAttemptedSubmit: false
+    };
+
+    const formatTR = (value, digits=2) => new Intl.NumberFormat('tr-TR', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: digits
+    }).format(value);
+    const money = (v,d=2) => '₺' + formatTR(v,d);
+    const km = (v) => formatTR(v,0) + ' km';
+    const pct = (v,d=1) => '%' + formatTR(v,d);
+
+    function parseTRNumber(str){
+      if (typeof str !== 'string') return Number(str) || 0;
+      const cleaned = str.replace(/\./g,'').replace(',', '.').replace(/[^0-9.-]/g,'');
+      const n = parseFloat(cleaned);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function parseFlexibleNumber(value){
+      if (typeof value === 'number') return Number.isFinite(value) ? value : 0;
+      const raw = String(value || '').trim().replace(/\s+/g, '');
+      if (!raw) return 0;
+      const cleaned = raw.replace(/[^0-9,.-]/g, '');
+      const lastComma = cleaned.lastIndexOf(',');
+      const lastDot = cleaned.lastIndexOf('.');
+      const decimalIndex = Math.max(lastComma, lastDot);
+      if (decimalIndex === -1) {
+        const n = parseFloat(cleaned.replace(/[^0-9-]/g, ''));
+        return Number.isFinite(n) ? n : 0;
+      }
+      const integerPart = cleaned.slice(0, decimalIndex).replace(/[^0-9-]/g, '');
+      const decimalPart = cleaned.slice(decimalIndex + 1).replace(/[^0-9]/g, '');
+      const normalized = `${integerPart || '0'}.${decimalPart}`;
+      const n = parseFloat(normalized);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function formatInputTR(input){
+      const raw = input.value.replace(/\D/g,'');
+      if(!raw){ input.value = ''; return; }
+      input.value = new Intl.NumberFormat('tr-TR').format(Number(raw));
+    }
+
+    function serializeInputs(){
+      return {
+        monthlyKm: els.monthlyKm.value,
+        annualKmManual: els.annualKmManual.value,
+        consumption: els.consumption.value,
+        fuelPrice: els.fuelPrice.value,
+        drivingStyle: els.drivingStyle.value,
+        fixedCostMode: els.fixedCostMode.value,
+        annualInsurance: els.annualInsurance.value,
+        annualTax: els.annualTax.value,
+        annualMaintenance: els.annualMaintenance.value,
+        otherAnnualCosts: els.otherAnnualCosts.value
+      };
+    }
+
+    function applySerializedInputs(data){
+      Object.entries(data || {}).forEach(([key, value]) => {
+        if (els[key] && value != null) els[key].value = value;
+      });
+    }
+
+    function saveManualState(){
+      if(state.source !== 'manual') return;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        version: 2,
+        source: 'manual',
+        inputs: serializeInputs()
+      }));
+    }
+
+    function clearSavedState(){
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function loadSavedState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return false;
+        const saved = JSON.parse(raw);
+        if(saved?.version !== 2 || saved?.source !== 'manual' || !saved.inputs) return false;
+        applySerializedInputs(saved.inputs);
+        state.source = 'manual';
+        resetValidationState();
+        validateAndCalc(false);
+        return true;
+      }catch{
+        return false;
+      }
+    }
+
+    function clearInputErrors(){
+      ['monthlyKm','annualKmManual','consumption','fuelPrice'].forEach(id => {
+        const input = els[id];
+        const field = input.closest('.field');
+        const errorEl = $(id + 'Error');
+        input.classList.remove('input-error');
+        input.setAttribute('aria-invalid', 'false');
+        field?.classList.remove('error-state');
+        if(errorEl) errorEl.textContent = '';
+      });
+    }
+
+    function setFieldError(id, message){
+      const input = els[id];
+      if(!input) return;
+      input.classList.add('input-error');
+      input.setAttribute('aria-invalid', 'true');
+      input.closest('.field')?.classList.add('error-state');
+      const errorEl = $(id + 'Error');
+      if(errorEl) errorEl.textContent = message;
+    }
+
+    function resetValidationState(){
+      state.touched = {};
+      state.hasAttemptedSubmit = false;
+      clearInputErrors();
+    }
+
+    function shouldShowError(id, force=false){
+      return !!(force || state.hasAttemptedSubmit || state.touched[id]);
+    }
+
+    function validateInputs(d, force=false){
+      clearInputErrors();
+      let valid = true;
+      const hasKm = d.monthlyKm > 0 || d.annualKmManual > 0;
+
+      if(!hasKm && (shouldShowError('monthlyKm', force) || shouldShowError('annualKmManual', force))){
+        const msg = 'Aylık km veya yıllık km alanlarından en az birini doldur.';
+        setFieldError('monthlyKm', msg);
+        setFieldError('annualKmManual', msg);
+        valid = false;
+      }
+      if(d.monthlyKm && (d.monthlyKm < 0 || d.monthlyKm > 50000) && shouldShowError('monthlyKm', force)){
+        setFieldError('monthlyKm', 'Aylık km 0 ile 50.000 arasında olmalı.');
+        valid = false;
+      }
+      if(d.annualKmManual && (d.annualKmManual < 0 || d.annualKmManual > 600000) && shouldShowError('annualKmManual', force)){
+        setFieldError('annualKmManual', 'Yıllık km 0 ile 600.000 arasında olmalı.');
+        valid = false;
+      }
+
+      if((!d.consumption || d.consumption <= 0 || d.consumption > 60) && shouldShowError('consumption', force)){
+        setFieldError('consumption', 'Tüketim değeri 0 ile 60 litre/kWh arasında olmalı.');
+        valid = false;
+      }
+
+      if((!d.fuelPrice || d.fuelPrice <= 0 || d.fuelPrice > 200) && shouldShowError('fuelPrice', force)){
+        setFieldError('fuelPrice', 'Yakıt fiyatı 0 ile 200 TL arasında olmalı.');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    function focusFirstInvalidField(){
+      const first = document.querySelector('.input-error');
+      first?.focus();
+    }
+
+    function setEmptyState(clearValidation = true){
+      $('statusText').textContent = 'Sonucu görmek için gerekli alanları doldur veya Örnek Veri kullan.';
+      const sb = $('statusBadge');
+      sb.textContent = 'Veri bekleniyor';
+      sb.className = 'badge';
+
+      $('highlightCard').classList.add('is-empty');
+      $('mainResult').textContent = '—';
+      $('mainResultText').textContent = 'Km başına gerçek kullanım maliyetin burada görünecek.';
+
+      $('costScore').textContent = '0/100';
+      $('scoreBadge').textContent = 'Veri bekleniyor';
+      $('scoreBadge').className = 'pill';
+      $('scoreBar').style.width = '0%';
+
+      $('scoreBreakdown').innerHTML = `
+        <div class="score-breakdown-row"><span class="name">Km maliyet etkisi</span><span class="val">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Sabit gider baskısı</span><span class="val">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Tüketim seviyesi</span><span class="val">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Kullanım ölçeği</span><span class="val">—</span></div>`;
+
+      ['per100KmResult','monthlyCostResult','annualCostResult','annualKmResult','annualFuelCostResult','annualFixedCostResult']
+        .forEach(id => $(id).textContent='—');
+      ['mini1','mini2','mini3','mini4','mini5','mini6']
+        .forEach(id => $(id).classList.add('is-empty'));
+
+      $('health1').textContent='—';
+      $('health2').textContent='—';
+      $('health3').textContent='—';
+
+      $('commentBox').textContent='Veri bekleniyor. Hesaplama sonrası araç sahipliği maliyetinin kısa yorumu ve aksiyon önerisi burada yer alacak.';
+
+      $('scenarioTableBody').innerHTML = `
+        <tr><td>Baz senaryo</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+        <tr><td>Yakıt +%10</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+        <tr><td>Bakım +%20</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+        <tr><td>Kullanım +%20 km</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>`;
+
+      if(clearValidation) clearInputErrors();
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+    }
+
+    function getData(){
+      const data = {
+        monthlyKm: parseTRNumber(els.monthlyKm.value),
+        annualKmManual: parseTRNumber(els.annualKmManual.value),
+        consumption: parseFlexibleNumber(els.consumption.value),
+        fuelPrice: parseFlexibleNumber(els.fuelPrice.value),
+        drivingStyle: parseFloat(els.drivingStyle.value || '1'),
+        fixedCostMode: els.fixedCostMode.value,
+        annualInsurance: parseTRNumber(els.annualInsurance.value),
+        annualTax: parseTRNumber(els.annualTax.value),
+        annualMaintenance: parseTRNumber(els.annualMaintenance.value),
+        otherAnnualCosts: parseTRNumber(els.otherAnnualCosts.value),
+      };
+      state.inputs = data;
+      return data;
+    }
+
+    function compute(d){
+      if ((!d.monthlyKm && !d.annualKmManual) || !d.consumption || !d.fuelPrice || d.consumption <= 0 || d.fuelPrice <= 0) return null;
+
+      const annualKm = d.annualKmManual > 0 ? d.annualKmManual : d.monthlyKm * 12;
+      if (!annualKm || annualKm <= 0) return null;
+
+      const adjustedConsumption = d.consumption * d.drivingStyle;
+      const annualFuelLiters = annualKm * adjustedConsumption / 100;
+      const annualFuelCost = annualFuelLiters * d.fuelPrice;
+      const annualFixedCost = d.annualInsurance + d.annualTax + d.annualMaintenance + d.otherAnnualCosts;
+      const annualTotalCost = d.fixedCostMode === 'fuelOnly' ? annualFuelCost : annualFuelCost + annualFixedCost;
+      const monthlyCost = annualTotalCost / 12;
+      const perKm = annualTotalCost / annualKm;
+      const per100Km = perKm * 100;
+      const fixedShare = annualTotalCost > 0 ? (annualFixedCost / annualTotalCost) * 100 : 0;
+
+      return {annualKm, adjustedConsumption, annualFuelLiters, annualFuelCost, annualFixedCost, annualTotalCost, monthlyCost, perKm, per100Km, fixedShare};
+    }
+
+    function getScore(x){
+      const perKmPart = Math.max(0, Math.min(40, 40 - Math.max(0, (x.perKm - 1.5) * 8)));
+      const fixedPart = Math.max(0, Math.min(20, 20 - Math.max(0, (x.fixedShare - 20) * 0.35)));
+      const consumptionPart = Math.max(0, Math.min(20, 20 - Math.max(0, (x.adjustedConsumption - 5) * 2.8)));
+      const usagePart = Math.max(0, Math.min(20, x.annualKm >= 15000 ? 18 : x.annualKm >= 10000 ? 14 : x.annualKm >= 6000 ? 10 : 6));
+      const score = Math.round(perKmPart + fixedPart + consumptionPart + usagePart);
+      return {score, perKmPart: Math.round(perKmPart), fixedPart: Math.round(fixedPart), consumptionPart: Math.round(consumptionPart), usagePart: Math.round(usagePart)};
+    }
+
+    function scoreMeta(score){
+      if(score >= 75) return {text:'Güçlü', cls:'good'};
+      if(score >= 50) return {text:'Orta', cls:'warn'};
+      return {text:'Baskılı', cls:'bad'};
+    }
+
+    function levelFromPerKm(perKm){
+      if (perKm < 3) return 'Düşük';
+      if (perKm < 5) return 'Orta';
+      return 'Yüksek';
+    }
+
+    function decisionText(perKm, fixedShare){
+      if (perKm < 3 && fixedShare < 35) return 'Verimli';
+      if (perKm < 5) return 'İzlenmeli';
+      return 'Dikkat';
+    }
+
+    function render(result, d){
+      const s = getScore(result);
+      state.results = result;
+      state.isValid = true;
+      state.isCalculated = true;
+
+      $('statusText').textContent = 'Hesaplama tamamlandı. Araç kullanım maliyetin ve senaryo analizin aşağıda.';
+      const statusBadge = $('statusBadge');
+      statusBadge.textContent = 'Hazır';
+      statusBadge.className = 'badge ' + scoreMeta(s.score).cls;
+
+      $('highlightCard').classList.remove('is-empty');
+      $('mainResult').textContent = money(result.perKm,2);
+      $('mainResultText').textContent = d.fixedCostMode === 'fuelOnly'
+        ? 'Bu sonuç yalnızca yakıt maliyetine göre hesaplandı.'
+        : 'Bu sonuç yakıt ve yıllık sabit giderler dahil edilerek hesaplandı.';
+
+      $('costScore').textContent = `${s.score}/100`;
+      const sm = scoreMeta(s.score);
+      $('scoreBadge').textContent = sm.text;
+      $('scoreBadge').className = 'pill ' + sm.cls;
+      $('scoreBar').style.width = s.score + '%';
+
+      $('scoreBreakdown').innerHTML = `
+        <div class="score-breakdown-row"><span class="name">Km maliyet etkisi</span><span class="val">${s.perKmPart}/40</span></div>
+        <div class="score-breakdown-row"><span class="name">Sabit gider baskısı</span><span class="val">${s.fixedPart}/20</span></div>
+        <div class="score-breakdown-row"><span class="name">Tüketim seviyesi</span><span class="val">${s.consumptionPart}/20</span></div>
+        <div class="score-breakdown-row"><span class="name">Kullanım ölçeği</span><span class="val">${s.usagePart}/20</span></div>`;
+
+      $('per100KmResult').textContent = money(result.per100Km,2);
+      $('monthlyCostResult').textContent = money(result.monthlyCost,2);
+      $('annualCostResult').textContent = money(result.annualTotalCost,2);
+      $('annualKmResult').textContent = km(result.annualKm);
+      $('annualFuelCostResult').textContent = money(result.annualFuelCost,2);
+      $('annualFixedCostResult').textContent = d.fixedCostMode === 'fuelOnly' ? 'Hariç' : money(result.annualFixedCost,2);
+
+      ['mini1','mini2','mini3','mini4','mini5','mini6']
+        .forEach(id => $(id).classList.remove('is-empty'));
+
+      $('health1').textContent = levelFromPerKm(result.perKm);
+      $('health2').textContent = d.fixedCostMode === 'fuelOnly' ? 'Yakıt odaklı' : pct(result.fixedShare,1);
+      $('health3').textContent = decisionText(result.perKm, result.fixedShare);
+      $('commentBox').textContent = buildComment(result, d, s.score);
+      renderScenarios(d);
+      clearInputErrors();
+    }
+
+    function buildComment(r, d, score){
+      let txt = `Yıllık yaklaşık ${formatTR(r.annualKm,0)} km kullanımda aracın sana km başına ${formatTR(r.perKm,2)} TL, 100 km’de ise ${formatTR(r.per100Km,2)} TL seviyesinde mal oluyor. `;
+      txt += `Düzeltilmiş tüketim ${formatTR(r.adjustedConsumption,2)} L/100 km ve yıllık yakıt gideri yaklaşık ${formatTR(r.annualFuelCost,2)} TL görünüyor. `;
+      if (d.fixedCostMode !== 'fuelOnly') txt += `Sabit giderlerin toplam yük içindeki payı ${formatTR(r.fixedShare,1)}%. `;
+      if (score >= 75) txt += 'Genel görünüm verimli. Bu seviyeyi korumak için tüketim disiplini ve bakım planını sürdürmek mantıklı.';
+      else if (score >= 50) txt += 'Görünüm orta seviyede. Yakıt fiyatı artışı veya bakım masrafı artışı sonucu belirgin biçimde yukarı çekebilir; özellikle sabit giderleri izlemek faydalı olur.';
+      else txt += 'Maliyet baskısı yüksek görünüyor. Daha düşük tüketim, daha yüksek yıllık kullanım verimi veya sabit giderleri azaltacak tercihleri değerlendirmek mantıklı olabilir.';
+      return txt;
+    }
+
+    function scenarioRow(name, res, note){
+      return `<tr><td>${name}</td><td>${money(res.perKm,2)}</td><td>${money(res.per100Km,2)}</td><td>${money(res.annualTotalCost,2)}</td><td>${note}</td></tr>`;
+    }
+
+    function renderScenarios(d){
+      const base = compute(d);
+      const fuelUp = compute({...d, fuelPrice: d.fuelPrice * 1.10});
+      const maintUp = compute({...d, annualMaintenance: d.annualMaintenance * 1.20});
+      const baseAnnualKm = d.annualKmManual || d.monthlyKm * 12;
+      const kmUp = compute({...d, annualKmManual: baseAnnualKm * 1.20, monthlyKm: d.monthlyKm ? d.monthlyKm * 1.20 : d.monthlyKm});
+      $('scenarioTableBody').innerHTML = [
+        scenarioRow('Baz senaryo', base, 'Mevcut verilerle'),
+        scenarioRow('Yakıt +%10', fuelUp, 'Yakıt fiyatı arttığında baskı artar'),
+        scenarioRow('Bakım +%20', maintUp, 'Sabit gider yükselirse toplam maliyet artar'),
+        scenarioRow('Kullanım +%20 km', kmUp, 'Daha fazla kullanım sabit gider yükünü yayabilir'),
+      ].join('');
+    }
+
+    function validateAndCalc(showError=true){
+      const d = getData();
+      const inputsAreValid = validateInputs(d, showError);
+      const result = inputsAreValid ? compute(d) : null;
+
+      if(!result){
+        state.results = null;
+        state.isValid = false;
+        state.isCalculated = false;
+        setEmptyState(false);
+
+        if(showError || state.hasAttemptedSubmit){
+          $('statusText').textContent = 'Geçerli km, tüketim ve yakıt fiyatı bilgisi gerekli.';
+          $('statusBadge').textContent = 'Eksik veri';
+          $('statusBadge').className = 'badge bad';
+          $('mainResult').textContent = 'Hatalı giriş';
+          $('mainResultText').textContent = 'Lütfen km, tüketim ve yakıt fiyatı alanlarını kontrol et.';
+          focusFirstInvalidField();
+        }
+        return;
+      }
+
+      render(result, d);
+      if(state.source === 'manual') saveManualState();
+    }
+
+    function flashAndScrollToResults(){
+      if(!state.isValid || !state.results) return;
+      const panel = $('resultPanel');
+      if(!panel) return;
+      panel.classList.remove('result-flash');
+      void panel.offsetWidth;
+      panel.classList.add('result-flash');
+      panel.scrollIntoView({behavior:'smooth', block:'start'});
+      setTimeout(() => panel.classList.remove('result-flash'), 1200);
+    }
+
+    function calculateKmCost(){
+      state.source = 'manual';
+      state.hasAttemptedSubmit = true;
+      validateAndCalc(true);
+      flashAndScrollToResults();
+    }
+
+    function fillExample(){
+      state.source = 'example';
+      resetValidationState();
+      els.monthlyKm.value='1.200';
+      els.annualKmManual.value='';
+      els.consumption.value='6,8';
+      els.fuelPrice.value='48,75';
+      els.drivingStyle.value='1';
+      els.fixedCostMode.value='include';
+      els.annualInsurance.value='18.000';
+      els.annualTax.value='6.000';
+      els.annualMaintenance.value='12.000';
+      els.otherAnnualCosts.value='5.000';
+      clearChipActive();
+      clearSavedState();
+      validateAndCalc(false);
+      flashAndScrollToResults();
+    }
+
+    function fillScenario(type, btn){
+      state.source = 'scenario';
+      resetValidationState();
+      clearChipActive();
+      if(btn) btn.classList.add('active');
+
+      if(type === 'economy') {
+        els.monthlyKm.value='1.500'; els.annualKmManual.value=''; els.consumption.value='5,5'; els.fuelPrice.value='46,20'; els.drivingStyle.value='0.95'; els.fixedCostMode.value='include'; els.annualInsurance.value='16.000'; els.annualTax.value='5.000'; els.annualMaintenance.value='10.000'; els.otherAnnualCosts.value='3.500';
+      }
+      if(type === 'city') {
+        els.monthlyKm.value='1.100'; els.annualKmManual.value=''; els.consumption.value='8,2'; els.fuelPrice.value='48,75'; els.drivingStyle.value='1'; els.fixedCostMode.value='include'; els.annualInsurance.value='21.000'; els.annualTax.value='7.000'; els.annualMaintenance.value='14.000'; els.otherAnnualCosts.value='5.000';
+      }
+      if(type === 'aggressive') {
+        els.monthlyKm.value='1.400'; els.annualKmManual.value=''; els.consumption.value='9,1'; els.fuelPrice.value='48,75'; els.drivingStyle.value='1.2'; els.fixedCostMode.value='include'; els.annualInsurance.value='22.000'; els.annualTax.value='8.000'; els.annualMaintenance.value='18.000'; els.otherAnnualCosts.value='6.000';
+      }
+      if(type === 'fuelonly') {
+        els.monthlyKm.value='1.200'; els.annualKmManual.value=''; els.consumption.value='6,8'; els.fuelPrice.value='48,75'; els.drivingStyle.value='1'; els.fixedCostMode.value='fuelOnly'; els.annualInsurance.value=''; els.annualTax.value=''; els.annualMaintenance.value=''; els.otherAnnualCosts.value='';
+      }
+
+      clearSavedState();
+      validateAndCalc(false);
+      flashAndScrollToResults();
+    }
+
+    function clearChipActive(){
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    }
+
+    function resetForm(){
+      resetValidationState();
+      Object.values(els).forEach(el => {
+        if(el.tagName === 'SELECT') return;
+        el.value='';
+      });
+      els.drivingStyle.value='1';
+      els.fixedCostMode.value='include';
+      clearChipActive();
+      clearSavedState();
+      state.source = 'manual';
+      setEmptyState();
+    }
+
+    function fallbackCopy(text){
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch(e) { ok = false; }
+      document.body.removeChild(textarea);
+      return ok;
+    }
+
+    function hasValidResult(){
+      return !!(state.isValid && state.results);
+    }
+
+    function buildResultSummary(){
+      return `Km Maliyet Hesaplama Sonucu
+
+Ana Sonuç: ${$('mainResult').textContent}
+Maliyet Verim Skoru: ${$('costScore').textContent}
+100 Km Maliyeti: ${$('per100KmResult').textContent}
+Aylık Yaklaşık Maliyet: ${$('monthlyCostResult').textContent}
+Yıllık Yaklaşık Maliyet: ${$('annualCostResult').textContent}
+Yıllık Toplam Km: ${$('annualKmResult').textContent}
+Yıllık Yakıt Gideri: ${$('annualFuelCostResult').textContent}
+Yıllık Sabit Gider: ${$('annualFixedCostResult').textContent}
+
+Karar Özeti: ${$('health3').textContent}
+Yorum: ${$('commentBox').textContent}`;
+    }
+
+    function copyResult(){
+      if(!hasValidResult()){
+        alert('Önce geçerli bir sonuç oluşturmalısın.');
+        return;
+      }
+      const text = buildResultSummary();
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(() => alert('Sonuç kopyalandı.'))
+          .catch(() => fallbackCopy(text) ? alert('Sonuç kopyalandı.') : alert('Kopyalama başarısız oldu.'));
+        return;
+      }
+      fallbackCopy(text) ? alert('Sonuç kopyalandı.') : alert('Kopyalama başarısız oldu.');
+    }
+
+    function shareResult(){
+      if(!hasValidResult()){
+        alert('Önce geçerli bir sonuç oluşturmalısın.');
+        return;
+      }
+      const shareText = `Km Maliyet Hesaplama sonucu: ${$('mainResult').textContent} km başı maliyet, ${$('annualCostResult').textContent} yıllık toplam maliyet.`;
+      if(navigator.share){
+        navigator.share({title:'Km Maliyet Hesaplama', text:shareText, url: window.location.href}).catch(() => {});
+        return;
+      }
+      const shareFallback = `${shareText}
+${window.location.href}`;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(shareFallback)
+          .then(() => alert('Paylaşım metni kopyalandı.'))
+          .catch(() => fallbackCopy(shareFallback) ? alert('Paylaşım metni kopyalandı.') : alert('Paylaşım metni kopyalanamadı.'));
+        return;
+      }
+      fallbackCopy(shareFallback) ? alert('Paylaşım metni kopyalandı.') : alert('Paylaşım metni kopyalanamadı.');
+    }
+
+    function printResult(){
+      if(!hasValidResult()){
+        alert('Önce geçerli bir sonuç oluşturmalısın.');
+        return;
+      }
+      window.print();
+    }
+
+    let debounceTimer;
+    function debouncedCalc(){
+      state.source = 'manual';
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => validateAndCalc(false), 250);
+    }
+
+    function setupManualEvents(){
+      const trInputs = ['monthlyKm','annualKmManual','annualInsurance','annualTax','annualMaintenance','otherAnnualCosts'];
+      trInputs.forEach(id => {
+        els[id].addEventListener('input', () => {
+          state.source = 'manual';
+          formatInputTR(els[id]);
+          debouncedCalc();
+        });
+        els[id].addEventListener('blur', () => {
+          state.source = 'manual';
+          state.touched[id] = true;
+          validateAndCalc(false);
+        });
+      });
+
+      ['consumption','fuelPrice'].forEach(id => {
+        els[id].addEventListener('input', () => {
+          state.source = 'manual';
+          debouncedCalc();
+        });
+        els[id].addEventListener('blur', () => {
+          state.source = 'manual';
+          state.touched[id] = true;
+          validateAndCalc(false);
+        });
+      });
+
+      ['drivingStyle','fixedCostMode'].forEach(id => {
+        els[id].addEventListener('change', () => {
+          state.source = 'manual';
+          debouncedCalc();
+        });
+      });
+
+      Object.values(els).forEach(el => {
+        el.addEventListener('keydown', (event) => {
+          if(event.key === 'Enter'){
+            event.preventDefault();
+            calculateKmCost();
+          }
+        });
+      });
+    }
+
+    setupManualEvents();
+    setEmptyState();
+    loadSavedState();
+  </script>
+</body>
+</html>

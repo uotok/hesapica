@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doğalgaz Faturası Hesaplama 2026 | Hesapica</title>
+<meta content="Aylık m³ tüketimi, birim fiyat, KDV ve sabit giderlere göre tahmini doğalgaz faturasını; skor, karar özeti, günlük ortalama ve senaryo analiziyle birlikte hesaplayın." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="doğalgaz faturası hesaplama, doğalgaz m3 hesaplama, tahmini doğalgaz faturası, doğalgaz tüketim hesaplama, kombi gideri hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/dogalgaz-faturasi-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Doğalgaz Faturası Hesaplama 2026 | Hesapica" property="og:title"/>
+<meta content="Aylık m³ tüketimi, birim fiyat, KDV ve sabit giderlere göre tahmini doğalgaz faturasını; skor, karar özeti, günlük ortalama ve senaryo analiziyle birlikte hesaplayın." property="og:description"/>
+<meta content="https://hesapica.com/dogalgaz-faturasi-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Doğalgaz Faturası Hesaplama 2026 | Hesapica" name="twitter:title"/>
+<meta content="Aylık m³ tüketimi, birim fiyat, KDV ve sabit giderlere göre tahmini doğalgaz faturasını; skor, karar özeti, günlük ortalama ve senaryo analiziyle birlikte hesaplayın." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:8px;font-size:13px;font-weight:700;color:var(--bad)}
+    .field.error input,.field.error select{border-color:#fecaca;background:#fff8f8;box-shadow:0 0 0 4px rgba(185,28,28,.06)}
+    .field.error .error-text{display:block}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10);transition:background .2s ease, border-color .2s ease}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#9ca3af}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.ready .highlight-value{color:var(--text)}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1;color:#9ca3af}
+    .scorebox.ready .score-value{color:var(--text)}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right;color:#9ca3af}
+    .mini-result.ready .value{color:var(--text)}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em;color:#9ca3af}
+    .health-card.ready .big{color:var(--text)}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .feedback-note{margin-top:10px;font-size:13px;color:var(--good);min-height:20px}
+    .result-flash{animation:resultFlash 1.4s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,0);border-color:rgba(79,70,229,.12)}35%{box-shadow:0 0 0 10px rgba(79,70,229,.12);border-color:rgba(79,70,229,.38)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10);border-color:rgba(79,70,229,.12)}}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.feedback-note{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}
+      .tool-layout,.content-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Doğalgaz Faturası Hesaplama",
+    "url":"https://hesapica.com/dogalgaz-faturasi-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Aylık m³ tüketimi, birim fiyat, KDV ve sabit giderlere göre tahmini doğalgaz faturasını skor ve senaryo analiziyle hesaplayan ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Doğalgaz faturası nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Temel mantık, aylık m³ tüketiminin birim fiyatla çarpılması, üzerine sabit gider ve KDV eklenmesidir."}},
+      {"@type":"Question","name":"Doğalgaz faturasını en çok ne yükseltir?","acceptedAnswer":{"@type":"Answer","text":"En büyük etki genellikle toplam m³ tüketimidir. Özellikle kış aylarında ısınma odaklı kullanım faturayı hızlı yükseltebilir."}},
+      {"@type":"Question","name":"Bu araç gerçek faturayla birebir aynı sonucu verir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Bu araç tahmini sonuç verir. Dağıtım bedeli, dönemsel tarife güncellemesi ve şirket kalemleri gerçek faturada fark yaratabilir."}}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Fatura","item":"https://hesapica.com/#faturalar"},
+      {"@type":"ListItem","position":3,"name":"Doğalgaz Faturası Hesaplama","item":"https://hesapica.com/dogalgaz-faturasi-hesaplama"}
+    ]
+  }
+</script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/dogalgaz-faturasi-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#faturalar">Fatura</a>
+<span>/</span>
+<strong>Doğalgaz Faturası Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Fatura Analizi</span>
+<h1>Doğalgaz Faturası Hesaplama</h1>
+<p>Aylık m³ tüketimi, birim fiyat, KDV ve sabit giderlere göre tahmini doğalgaz faturanı hesapla; günlük ortalama, yıllık toplam, fatura baskı seviyesi ve tasarruf senaryolarını aynı ekranda gör.</p>
+<div class="hero-chips">
+<span class="hero-chip">m³ bazlı hesap</span>
+<span class="hero-chip">KDV + sabit gider</span>
+<span class="hero-chip">Karar özeti</span>
+<span class="hero-chip">Senaryo analizi</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Bu araç ne sağlar?</div>
+<strong>Faturanın yanında tüketim alışkanlığını da görünür kılar</strong>
+<ul>
+<li>Toplam tahmini fatura</li>
+<li>Günlük ve yıllık görünüm</li>
+<li>Fatura baskı skoru</li>
+<li>Azaltma / artış senaryosu</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Doğalgaz Faturası Formu</h2>
+<p class="section-note">Tüm alanlar boş başlar. Fatura tahmini için aylık tüketim, gün sayısı, birim fiyat ve KDV bilgilerini gir. Sonuçlar otomatik güncellenir.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Bu araç tahmini analiz sunar. Gerçek fatura; şehir, tarife dönemi, dağıtım şirketi, sayaç ve abonelik detaylarına göre farklılık gösterebilir.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Temel tüketim bilgileri</div>
+<div class="field-grid">
+<div class="field" id="field-monthlyM3">
+<label for="monthlyM3">Aylık doğalgaz tüketimi</label>
+<div class="input-wrap">
+<input class="with-suffix" id="monthlyM3" inputmode="decimal" placeholder="Örn: 120" type="text"/>
+<span class="suffix">m³</span>
+</div>
+<div class="hint">Aylık sayaç tüketimini veya tahmini m³ değerini gir.</div>
+<div class="error-text">Geçerli bir aylık m³ değeri gir.</div>
+</div>
+<div class="field" id="field-daysInMonth">
+<label for="daysInMonth">Ay içindeki gün sayısı</label>
+<div class="input-wrap">
+<input class="with-suffix" id="daysInMonth" inputmode="numeric" placeholder="Örn: 30" type="text"/>
+<span class="suffix">gün</span>
+</div>
+<div class="hint">Genelde 28–31 aralığında olur.</div>
+<div class="error-text">1 ile 31 arasında gün sayısı gir.</div>
+</div>
+<div class="field" id="field-unitPrice">
+<label for="unitPrice">Doğalgaz birim fiyatı</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix with-suffix" id="unitPrice" inputmode="decimal" placeholder="Örn: 6,20" type="text"/>
+<span class="suffix">/ m³</span>
+</div>
+<div class="hint">Kullandığın dağıtım şirketinin güncel veya tahmini birim maliyeti.</div>
+<div class="error-text">Geçerli birim fiyat gir.</div>
+</div>
+<div class="field" id="field-vatRate">
+<label for="vatRate">KDV oranı</label>
+<div class="input-wrap">
+<input class="with-suffix" id="vatRate" inputmode="decimal" placeholder="Örn: 20" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Tahmini veya döneme ait KDV oranı.</div>
+<div class="error-text">0 veya daha büyük KDV oranı gir.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Destekleyici bilgiler</div>
+<div class="field-grid">
+<div class="field" id="field-fixedCost">
+<label for="fixedCost">Sabit giderler</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input class="with-prefix" id="fixedCost" inputmode="decimal" placeholder="Örn: 18" type="text"/>
+</div>
+<div class="hint">Dağıtım, sayaç veya diğer sabit kalemleri eklemek için kullan.</div>
+<div class="error-text">0 veya daha büyük sabit gider gir.</div>
+</div>
+<div class="field">
+<label for="usageType">Kullanım tipi</label>
+<select id="usageType">
+<option value="isinma">Isınma + sıcak su + mutfak</option>
+<option value="karisik">Sıcak su + mutfak ağırlıklı</option>
+<option value="dusuk">Düşük kullanım</option>
+</select>
+<div class="hint">Karar motoru yorumunu daha doğru kurmak için kullanılır.</div>
+</div>
+<div class="field full">
+<label>Hazır senaryolar</label>
+<div class="chip-row" id="scenarioChips">
+<button class="chip" data-scenario="dusuk" type="button">Düşük Kullanım</button>
+<button class="chip" data-scenario="standart" type="button">Standart Kış</button>
+<button class="chip" data-scenario="yogun" type="button">Yoğun Kış</button>
+<button class="chip" data-scenario="mutfak" type="button">Mutfak + Sıcak Su</button>
+</div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calcBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="resetBtn" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaşım Linki</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div class="feedback-note" id="feedbackNote"></div>
+<div class="flow-hint">
+<div class="flow-hint-text">
+<strong>Akış</strong>
+<span>Ana sonuç → Skor → Karar → Detay → Senaryo</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Hesap Durumu</div>
+<div class="status-text" id="statusText">Veri bekleniyor. Sonuçlar, temel alanları doldurduğunda otomatik oluşur.</div>
+</div>
+<div class="badge" id="statusBadge">Hazır Değil</div>
+</div>
+</div>
+<div class="highlight-card" id="highlightCard">
+<div class="highlight-label">Ana Sonuç</div>
+<div class="highlight-value" id="mainTotal">—</div>
+<div class="highlight-sub" id="mainSub">Aylık tahmini toplam doğalgaz faturası burada görünür.</div>
+</div>
+<div class="scorebox" id="scoreCard">
+<div class="score-row">
+<div>
+<div class="highlight-label" style="margin-bottom:4px">Fatura Baskı Skoru</div>
+<div class="small" style="color:#4b5563">Düşük fatura baskısı daha yüksek skor üretir.</div>
+</div>
+<div class="score-value" id="scoreValue">—</div>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain"><strong id="decisionLabel">Karar Özeti</strong><span id="decisionText">Önce verileri gir. Sistem, fatura seviyeni ve baskı durumunu burada yorumlayacak.</span></div>
+<div class="score-breakdown">
+<div class="score-breakdown-row"><span class="name">Tüketim Baskısı</span><span class="val" id="consumptionPressure">—</span></div>
+<div class="score-breakdown-row"><span class="name">Vergi + Sabit Gider Etkisi</span><span class="val" id="costPressure">—</span></div>
+<div class="score-breakdown-row"><span class="name">Günlük Ortalama Baskı</span><span class="val" id="dailyPressure">—</span></div>
+</div>
+</div>
+<div class="health-grid">
+<div class="health-card" id="yearlyCard">
+<h3>Yıllık Tahmini Toplam</h3>
+<div class="big" id="yearlyTotal">—</div>
+</div>
+<div class="health-card" id="dailyCard">
+<h3>Günlük Ortalama</h3>
+<div class="big" id="dailyAverage">—</div>
+</div>
+<div class="health-card" id="confidenceCard">
+<h3>Sonuç Güveni</h3>
+<div class="big" id="confidenceValue">—</div>
+</div>
+</div>
+<div class="comment-box" id="commentBox">Doğalgaz tüketimini girdikten sonra; fatura seviyen, kullanım tipin ve tasarruf fırsatı burada net cümlelerle yorumlanır.</div>
+</aside>
+</section>
+<section class="details-card">
+<div class="accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Detay Sonuçlar</span>
+<span class="summary-note">Temel kırılım</span>
+</summary>
+<div class="details-inner mini-result-grid">
+<div class="mini-result" id="usageCostCard"><div><div class="label">Tüketim bedeli</div><div class="subline">m³ × birim fiyat</div></div><div class="value" id="usageCost">—</div></div>
+<div class="mini-result" id="vatCard"><div><div class="label">KDV tutarı</div><div class="subline">Ara toplam üzerine vergi etkisi</div></div><div class="value" id="vatAmount">—</div></div>
+<div class="mini-result" id="fixedCard"><div><div class="label">Sabit giderler</div><div class="subline">Ek sabit kalemlerin toplam etkisi</div></div><div class="value" id="fixedAmount">—</div></div>
+<div class="mini-result" id="unitCard"><div><div class="label">1 m³ toplam maliyet</div><div class="subline">Vergi ve sabit gider etkisi dahil</div></div><div class="value" id="effectiveUnitCost">—</div></div>
+<div class="mini-result" id="dailyUseCard"><div><div class="label">Günlük tüketim</div><div class="subline">Aylık m³ / gün</div></div><div class="value" id="dailyUsage">—</div></div>
+</div>
+</details>
+<details class="block">
+<summary>
+<span>Senaryo Analizi</span>
+<span class="summary-note">-%15 / Baz / +%15</span>
+</summary>
+<div class="details-inner table-wrap">
+<table>
+<thead>
+<tr>
+<th>Senaryo</th>
+<th>Aylık m³</th>
+<th>Tahmini Fatura</th>
+<th>Yıllık Etki</th>
+<th>Yorum</th>
+</tr>
+</thead>
+<tbody id="scenarioTable">
+<tr><td>Zayıf</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+<tr><td>Baz</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+<tr><td>Yoğun</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</section>
+<section class="content-grid">
+<div class="card content-block">
+<h2>Doğalgaz faturası nasıl hesaplanır?</h2>
+<p>Temel mantık, aylık toplam tüketim miktarını m³ cinsinden almak ve bunu birim fiyatla çarpmaktır. Ardından sabit giderler eklenir, KDV uygulanır ve tahmini toplam fatura bulunur.</p>
+<p>Bu araç sadece toplam rakam vermekle kalmaz; günlük ortalamayı, yıllık projeksiyonu ve fatura baskı düzeyini de aynı ekranda analiz ederek daha anlamlı sonuç üretir.</p>
+</div>
+<div class="card accordion-card">
+<h2>Sık Sorulan Sorular</h2>
+<details open="">
+<summary>Bu araç gerçek faturayla birebir aynı sonucu verir mi?</summary>
+<p>Hayır. Bu araç tahmini sonuç verir. Ancak doğru tüketim ve yaklaşık doğru birim fiyatla kullanıldığında güçlü bir ön görünüm sağlar.</p>
+</details>
+<details>
+<summary>Doğalgaz faturasını en çok ne yükseltir?</summary>
+<p>En büyük etki genellikle toplam m³ tüketimidir. Özellikle kış aylarında ısınma odaklı kullanım faturayı hızlı yükseltir.</p>
+</details>
+<details>
+<summary>Tasarruf için hangi alanı izlemeliyim?</summary>
+<p>Günlük ortalama m³ ve 1 m³ toplam maliyet birlikte izlendiğinde hem tüketim hem maliyet baskısı daha iyi anlaşılır.</p>
+</details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/elektrik-faturasi-hesaplama">
+<span class="small">Fatura</span>
+<strong>Elektrik Faturası Hesaplama</strong>
+<p>Aylık elektrik tüketimini aynı mantıkla analiz et.</p>
+</a>
+<a class="related-card" href="/su-faturasi-hesaplama">
+<span class="small">Fatura</span>
+<strong>Su Faturası Hesaplama</strong>
+<p>Su tüketimini ve fatura baskısını ayrı incele.</p>
+</a>
+<a class="related-card" href="/butce-hesaplama">
+<span class="small">Finans</span>
+<strong>Bütçe ve Tasarruf Hesaplama</strong>
+<p>Enerji giderlerinin bütçeyi ne kadar sıkıştırdığını gör.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica_dogalgaz_v2';
+    const PAGE_URL = 'https://hesapica.com/dogalgaz-faturasi-hesaplama';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false
+    };
+
+    const els = {
+      monthlyM3: document.getElementById('monthlyM3'),
+      daysInMonth: document.getElementById('daysInMonth'),
+      unitPrice: document.getElementById('unitPrice'),
+      vatRate: document.getElementById('vatRate'),
+      fixedCost: document.getElementById('fixedCost'),
+      usageType: document.getElementById('usageType'),
+      statusText: document.getElementById('statusText'),
+      statusBadge: document.getElementById('statusBadge'),
+      highlightCard: document.getElementById('highlightCard'),
+      mainTotal: document.getElementById('mainTotal'),
+      mainSub: document.getElementById('mainSub'),
+      scoreCard: document.getElementById('scoreCard'),
+      scoreValue: document.getElementById('scoreValue'),
+      scoreBar: document.getElementById('scoreBar'),
+      decisionLabel: document.getElementById('decisionLabel'),
+      decisionText: document.getElementById('decisionText'),
+      consumptionPressure: document.getElementById('consumptionPressure'),
+      costPressure: document.getElementById('costPressure'),
+      dailyPressure: document.getElementById('dailyPressure'),
+      yearlyTotal: document.getElementById('yearlyTotal'),
+      dailyAverage: document.getElementById('dailyAverage'),
+      confidenceValue: document.getElementById('confidenceValue'),
+      commentBox: document.getElementById('commentBox'),
+      usageCost: document.getElementById('usageCost'),
+      vatAmount: document.getElementById('vatAmount'),
+      fixedAmount: document.getElementById('fixedAmount'),
+      effectiveUnitCost: document.getElementById('effectiveUnitCost'),
+      dailyUsage: document.getElementById('dailyUsage'),
+      scenarioTable: document.getElementById('scenarioTable'),
+      feedbackNote: document.getElementById('feedbackNote')
+    };
+
+    const fieldMap = {
+      monthlyM3: document.getElementById('field-monthlyM3'),
+      daysInMonth: document.getElementById('field-daysInMonth'),
+      unitPrice: document.getElementById('field-unitPrice'),
+      vatRate: document.getElementById('field-vatRate'),
+      fixedCost: document.getElementById('field-fixedCost')
+    };
+
+    function debounce(fn, delay = 180) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    function parseTRNumber(value) {
+      if (typeof value !== 'string') return Number(value) || 0;
+      const normalized = value.replace(/\./g, '').replace(',', '.').replace(/[^\d.-]/g, '');
+      return Number(normalized) || 0;
+    }
+
+    function formatInputNumber(el, decimals = 2) {
+      const num = parseTRNumber(el.value);
+      if (!num && num !== 0) return;
+      if (el.value.trim() === '') return;
+      const maxDecimals = decimals;
+      el.value = num.toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: maxDecimals });
+    }
+
+    function roundValue(value, type = 'money') {
+      if (type === 'money') return Math.round((value + Number.EPSILON) * 100) / 100;
+      if (type === 'percent1') return Math.round((value + Number.EPSILON) * 10) / 10;
+      if (type === 'percent2') return Math.round((value + Number.EPSILON) * 100) / 100;
+      return value;
+    }
+
+    function formatTRY(value) {
+      return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Number(value) || 0);
+    }
+
+    function formatNumber(value, digits = 2) {
+      return new Intl.NumberFormat('tr-TR', { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(Number(value) || 0);
+    }
+
+    function setFieldError(name, isError, show = true) {
+      const field = fieldMap[name];
+      if (!field) return;
+      field.classList.toggle('error', !!(show && isError));
+    }
+
+    function clearFieldErrors() {
+      Object.keys(fieldMap).forEach(key => setFieldError(key, false, false));
+    }
+
+    function getInputs() {
+      return {
+        monthlyM3: parseTRNumber(els.monthlyM3.value),
+        daysInMonth: parseTRNumber(els.daysInMonth.value),
+        unitPrice: parseTRNumber(els.unitPrice.value),
+        vatRate: parseTRNumber(els.vatRate.value),
+        fixedCost: parseTRNumber(els.fixedCost.value),
+        usageType: els.usageType.value
+      };
+    }
+
+    function validate(inputs, showErrors = false) {
+      const errors = {
+        monthlyM3: !(inputs.monthlyM3 > 0 && inputs.monthlyM3 <= 10000),
+        daysInMonth: !(inputs.daysInMonth >= 1 && inputs.daysInMonth <= 31),
+        unitPrice: !(inputs.unitPrice > 0 && inputs.unitPrice <= 100),
+        vatRate: !(inputs.vatRate >= 0 && inputs.vatRate <= 100),
+        fixedCost: !(inputs.fixedCost >= 0 && inputs.fixedCost <= 1000000)
+      };
+      if (showErrors) {
+        Object.entries(errors).forEach(([k, v]) => setFieldError(k, v, true));
+      } else {
+        clearFieldErrors();
+      }
+      return { isValid: !Object.values(errors).some(Boolean), errors };
+    }
+
+    function scoreBand(score) {
+      if (score >= 75) return { label: 'Düşük baskı', className: 'good' };
+      if (score >= 45) return { label: 'Orta baskı', className: 'warn' };
+      return { label: 'Yüksek baskı', className: 'bad' };
+    }
+
+    function usageLabel(type) {
+      return ({ isinma: 'Isınma odaklı', karisik: 'Karışık kullanım', dusuk: 'Düşük kullanım' })[type] || 'Genel kullanım';
+    }
+
+    function decisionEngine(r) {
+      if (r.totalBill < 450) {
+        return 'Tahmini fatura düşük bandda. Tüketim baskın görünmüyor; mevcut kullanım bütçe açısından rahat yönetilebilir.';
+      }
+      if (r.totalBill < 1100) {
+        return 'Tahmini fatura orta bandda. Kış kullanımında normal kabul edilebilir; yine de m³ tarafını biraz aşağı çekmek yıllık toplamı hissedilir azaltır.';
+      }
+      return 'Tahmini fatura yüksek bandda. Tüketim ve günlük ortalama baskısı güçlü; yalıtım, kombi ayarı ve kullanım alışkanlığı tarafında müdahale anlamlı fark yaratabilir.';
+    }
+
+    function commentEngine(inputs, r) {
+      const usageText = usageLabel(inputs.usageType);
+      const dailyText = r.dailyUsage < 2.5 ? 'günlük tüketim görece kontrollü' : r.dailyUsage < 5 ? 'günlük tüketim dikkat isteyen seviyede' : 'günlük tüketim yüksek baskı yaratıyor';
+      const vatText = r.vatAmount > r.usageCost * 0.15 ? 'Vergi etkisi toplamda görünür hale gelmiş durumda.' : 'Vergi etkisi var ama ana yük hâlâ tüketim tarafında.';
+      return `${usageText} profilinde aylık yaklaşık ${formatTRY(r.totalBill)} fatura oluşuyor. ${dailyText}. ${vatText} Aynı seviyenin 12 ay sürmesi halinde yıllık toplam ${formatTRY(r.yearlyTotal)} seviyesine çıkar.`;
+    }
+
+    function confidenceLevel(inputs) {
+      if (inputs.monthlyM3 > 0 && inputs.unitPrice > 0 && inputs.daysInMonth >= 28 && inputs.daysInMonth <= 31) return 'Yüksek';
+      if (inputs.monthlyM3 > 0 && inputs.unitPrice > 0) return 'Orta';
+      return 'Düşük';
+    }
+
+    function compute(inputs) {
+      const usageCost = roundValue(inputs.monthlyM3 * inputs.unitPrice, 'money');
+      const subtotal = roundValue(usageCost + inputs.fixedCost, 'money');
+      const vatAmount = roundValue(subtotal * (inputs.vatRate / 100), 'money');
+      const totalBill = roundValue(subtotal + vatAmount, 'money');
+      const dailyAverage = roundValue(totalBill / inputs.daysInMonth, 'money');
+      const yearlyTotal = roundValue(totalBill * 12, 'money');
+      const effectiveUnitCost = inputs.monthlyM3 > 0 ? roundValue(totalBill / inputs.monthlyM3, 'money') : 0;
+      const dailyUsage = inputs.daysInMonth > 0 ? roundValue(inputs.monthlyM3 / inputs.daysInMonth, 'percent2') : 0;
+
+      const consumptionPressure = Math.min(100, (inputs.monthlyM3 / 220) * 100);
+      const costPressure = subtotal > 0 ? Math.min(100, ((vatAmount + inputs.fixedCost) / subtotal) * 100) : 0;
+      const dailyPressure = Math.min(100, (dailyAverage / 45) * 100);
+      const rawScore = 100 - (consumptionPressure * 0.45 + costPressure * 0.15 + dailyPressure * 0.40);
+      const score = Math.max(0, Math.min(100, Math.round(rawScore)));
+      const scoreMeta = scoreBand(score);
+
+      const makeScenario = (label, factor) => {
+        const m3 = roundValue(inputs.monthlyM3 * factor, 'percent2');
+        const uCost = roundValue(m3 * inputs.unitPrice, 'money');
+        const sub = roundValue(uCost + inputs.fixedCost, 'money');
+        const vat = roundValue(sub * (inputs.vatRate / 100), 'money');
+        const total = roundValue(sub + vat, 'money');
+        return {
+          label,
+          m3,
+          total,
+          yearly: roundValue(total * 12, 'money'),
+          note: factor < 1 ? 'Tüketim azalırsa rahatlama sağlar' : factor > 1 ? 'Yoğun kullanım bütçeyi zorlar' : 'Mevcut durum'
+        };
+      };
+
+      return {
+        usageCost,
+        subtotal,
+        vatAmount,
+        totalBill,
+        dailyAverage,
+        yearlyTotal,
+        effectiveUnitCost,
+        dailyUsage,
+        consumptionPressure: roundValue(consumptionPressure, 'percent1'),
+        costPressure: roundValue(costPressure, 'percent1'),
+        dailyPressure: roundValue(dailyPressure, 'percent1'),
+        score,
+        scoreMeta,
+        decision: decisionEngine({ totalBill }),
+        confidence: confidenceLevel(inputs),
+        comment: commentEngine(inputs, { totalBill, dailyUsage, vatAmount, usageCost, yearlyTotal }),
+        scenarios: [
+          makeScenario('Zayıf', 0.85),
+          makeScenario('Baz', 1),
+          makeScenario('Yoğun', 1.15)
+        ]
+      };
+    }
+
+    function setEmptyState() {
+      state.results = null;
+      state.isCalculated = false;
+      els.statusText.textContent = 'Veri bekleniyor. Sonuçlar, temel alanları doldurduğunda otomatik oluşur.';
+      els.statusBadge.textContent = 'Hazır Değil';
+      els.statusBadge.className = 'badge';
+      els.highlightCard.classList.remove('ready');
+      els.scoreCard.classList.remove('ready');
+      document.querySelectorAll('.health-card, .mini-result').forEach(el => el.classList.remove('ready'));
+      els.mainTotal.textContent = '—';
+      els.mainSub.textContent = 'Aylık tahmini toplam doğalgaz faturası burada görünür.';
+      els.scoreValue.textContent = '—';
+      els.scoreBar.style.width = '0%';
+      els.decisionLabel.textContent = 'Karar Özeti';
+      els.decisionText.textContent = 'Önce verileri gir. Sistem, fatura seviyeni ve baskı durumunu burada yorumlayacak.';
+      els.consumptionPressure.textContent = '—';
+      els.costPressure.textContent = '—';
+      els.dailyPressure.textContent = '—';
+      els.yearlyTotal.textContent = '—';
+      els.dailyAverage.textContent = '—';
+      els.confidenceValue.textContent = '—';
+      els.commentBox.textContent = 'Doğalgaz tüketimini girdikten sonra; fatura seviyen, kullanım tipin ve tasarruf fırsatı burada net cümlelerle yorumlanır.';
+      els.usageCost.textContent = '—';
+      els.vatAmount.textContent = '—';
+      els.fixedAmount.textContent = '—';
+      els.effectiveUnitCost.textContent = '—';
+      els.dailyUsage.textContent = '—';
+      els.scenarioTable.innerHTML = '<tr><td>Zayıf</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr><tr><td>Baz</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr><tr><td>Yoğun</td><td>—</td><td>—</td><td>—</td><td>Veri bekleniyor</td></tr>';
+    }
+
+    function render(inputs, r) {
+      state.results = r;
+      state.isCalculated = true;
+      els.statusText.textContent = `${usageLabel(inputs.usageType)} profilinde ${formatNumber(inputs.monthlyM3, 2)} m³ tüketim için analiz hazır.`;
+      els.statusBadge.textContent = r.scoreMeta.label;
+      els.statusBadge.className = `badge ${r.scoreMeta.className}`;
+      els.highlightCard.classList.add('ready');
+      els.scoreCard.classList.add('ready');
+      document.querySelectorAll('.health-card, .mini-result').forEach(el => el.classList.add('ready'));
+
+      els.mainTotal.textContent = formatTRY(r.totalBill);
+      els.mainSub.textContent = `${formatNumber(inputs.monthlyM3,2)} m³ tüketim için tahmini aylık toplam fatura.`;
+      els.scoreValue.textContent = r.score;
+      els.scoreBar.style.width = `${r.score}%`;
+      els.decisionLabel.textContent = 'Karar';
+      els.decisionText.textContent = r.decision;
+      els.consumptionPressure.textContent = `%${formatNumber(r.consumptionPressure,1)}`;
+      els.costPressure.textContent = `%${formatNumber(r.costPressure,1)}`;
+      els.dailyPressure.textContent = `%${formatNumber(r.dailyPressure,1)}`;
+      els.yearlyTotal.textContent = formatTRY(r.yearlyTotal);
+      els.dailyAverage.textContent = formatTRY(r.dailyAverage);
+      els.confidenceValue.textContent = r.confidence;
+      els.commentBox.textContent = r.comment;
+      els.usageCost.textContent = formatTRY(r.usageCost);
+      els.vatAmount.textContent = formatTRY(r.vatAmount);
+      els.fixedAmount.textContent = formatTRY(inputs.fixedCost);
+      els.effectiveUnitCost.textContent = formatTRY(r.effectiveUnitCost);
+      els.dailyUsage.textContent = `${formatNumber(r.dailyUsage,2)} m³`;
+      els.scenarioTable.innerHTML = r.scenarios.map(s => `<tr><td>${s.label}</td><td>${formatNumber(s.m3,2)} m³</td><td>${formatTRY(s.total)}</td><td>${formatTRY(s.yearly)}</td><td>${s.note}</td></tr>`).join('');
+    }
+
+    function saveState(inputs) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs));
+    }
+
+    function loadState() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      try { return JSON.parse(raw); } catch { return null; }
+    }
+
+    function applyInputs(data) {
+      if (!data) return;
+      els.monthlyM3.value = data.monthlyM3 ? Number(data.monthlyM3).toLocaleString('tr-TR', { maximumFractionDigits: 2 }) : '';
+      els.daysInMonth.value = data.daysInMonth ? Number(data.daysInMonth).toLocaleString('tr-TR', { maximumFractionDigits: 0 }) : '';
+      els.unitPrice.value = data.unitPrice ? Number(data.unitPrice).toLocaleString('tr-TR', { maximumFractionDigits: 4 }) : '';
+      els.vatRate.value = data.vatRate !== undefined ? Number(data.vatRate).toLocaleString('tr-TR', { maximumFractionDigits: 2 }) : '';
+      els.fixedCost.value = data.fixedCost !== undefined ? Number(data.fixedCost).toLocaleString('tr-TR', { maximumFractionDigits: 2 }) : '';
+      els.usageType.value = data.usageType || 'isinma';
+    }
+
+    function flashResults() {
+      els.highlightCard.classList.remove('result-flash');
+      void els.highlightCard.offsetWidth;
+      els.highlightCard.classList.add('result-flash');
+    }
+
+    function scrollToResults() {
+      els.highlightCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      flashResults();
+    }
+
+    function copyTextSafely(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise((resolve, reject) => {
+        try {
+          const helper = document.createElement('textarea');
+          helper.value = text;
+          helper.setAttribute('readonly', '');
+          helper.style.position = 'fixed';
+          helper.style.opacity = '0';
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(helper);
+          ok ? resolve() : reject(new Error('copy-failed'));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }
+
+    function calculate(options = {}) {
+      const { persist = true, focusResults = false, showErrors = false } = options;
+      els.feedbackNote.textContent = 'Hesaplanıyor…';
+      const inputs = getInputs();
+      state.inputs = inputs;
+      const validation = validate(inputs, showErrors);
+      state.isValid = validation.isValid;
+      if (!validation.isValid) {
+        setEmptyState();
+        els.statusText.textContent = showErrors
+          ? 'Bazı alanlarda eksik veya hatalı veri var. İşaretlenen alanları düzelt.'
+          : 'Temel alanlar tamamlandığında sonuçlar otomatik oluşur.';
+        els.statusBadge.textContent = showErrors ? 'Hata' : 'Veri bekleniyor';
+        els.statusBadge.className = showErrors ? 'badge bad' : 'badge';
+        els.feedbackNote.textContent = '';
+        return;
+      }
+      const results = compute(inputs);
+      if (persist) saveState(inputs);
+      render(inputs, results);
+      if (focusResults) scrollToResults();
+      els.feedbackNote.textContent = 'Sonuç güncellendi.';
+      setTimeout(() => { if (els.feedbackNote.textContent === 'Sonuç güncellendi.') els.feedbackNote.textContent = ''; }, 1500);
+    }
+
+    const debouncedCalculate = debounce(() => calculate({ persist: true, showErrors: false }), 180);
+
+    function resetForm() {
+      clearFieldErrors();
+      els.monthlyM3.value = '';
+      els.daysInMonth.value = '';
+      els.unitPrice.value = '';
+      els.vatRate.value = '';
+      els.fixedCost.value = '';
+      els.usageType.value = 'isinma';
+      document.querySelectorAll('#scenarioChips .chip').forEach(c => c.classList.remove('active'));
+      localStorage.removeItem(STORAGE_KEY);
+      setEmptyState();
+      els.feedbackNote.textContent = 'Veriler sıfırlandı.';
+      setTimeout(() => { if (els.feedbackNote.textContent === 'Veriler sıfırlandı.') els.feedbackNote.textContent = ''; }, 1200);
+    }
+
+    function fillExample() {
+      applyInputs({ monthlyM3: 120, daysInMonth: 30, unitPrice: 6.20, vatRate: 20, fixedCost: 18, usageType: 'isinma' });
+      localStorage.removeItem(STORAGE_KEY);
+      calculate({ persist: false, focusResults: true, showErrors: true });
+    }
+
+    function applyScenario(name) {
+      document.querySelectorAll('#scenarioChips .chip').forEach(c => c.classList.toggle('active', c.dataset.scenario === name));
+      const scenarios = {
+        dusuk: { monthlyM3: 35, daysInMonth: 30, unitPrice: 6.20, vatRate: 20, fixedCost: 12, usageType: 'dusuk' },
+        standart: { monthlyM3: 120, daysInMonth: 30, unitPrice: 6.20, vatRate: 20, fixedCost: 18, usageType: 'isinma' },
+        yogun: { monthlyM3: 220, daysInMonth: 31, unitPrice: 6.20, vatRate: 20, fixedCost: 22, usageType: 'isinma' },
+        mutfak: { monthlyM3: 55, daysInMonth: 30, unitPrice: 6.20, vatRate: 20, fixedCost: 10, usageType: 'karisik' }
+      };
+      applyInputs(scenarios[name]);
+      localStorage.removeItem(STORAGE_KEY);
+      calculate({ persist: false, focusResults: true, showErrors: true });
+    }
+
+    function buildCopyText() {
+      if (!state.results) return '';
+      const i = state.inputs;
+      const r = state.results;
+      return [
+        'Hesapica - Doğalgaz Faturası Hesaplama',
+        `Aylık tüketim: ${formatNumber(i.monthlyM3,2)} m³`,
+        `Toplam fatura: ${formatTRY(r.totalBill)}`,
+        `Tüketim bedeli: ${formatTRY(r.usageCost)}`,
+        `KDV: ${formatTRY(r.vatAmount)}`,
+        `Günlük ortalama: ${formatTRY(r.dailyAverage)}`,
+        `Yıllık tahmini toplam: ${formatTRY(r.yearlyTotal)}`,
+        `Fatura baskı skoru: ${r.score}`,
+        `Karar: ${r.decision}`,
+        `Sayfa: ${PAGE_URL}`
+      ].join('\n');
+    }
+
+    async function copyResult() {
+      if (!state.results) {
+        els.feedbackNote.textContent = 'Önce hesaplama yap.';
+        return;
+      }
+      try {
+        await copyTextSafely(buildCopyText());
+        els.feedbackNote.textContent = 'Sonuç panoya kopyalandı.';
+      } catch {
+        els.feedbackNote.textContent = 'Kopyalama başarısız oldu.';
+      }
+      setTimeout(() => { els.feedbackNote.textContent = ''; }, 1600);
+    }
+
+    async function shareResult() {
+      if (!state.results) {
+        els.feedbackNote.textContent = 'Paylaşım linki için önce hesaplama yap.';
+        return;
+      }
+      const params = new URLSearchParams({
+        m3: state.inputs.monthlyM3,
+        days: state.inputs.daysInMonth,
+        unit: state.inputs.unitPrice,
+        vat: state.inputs.vatRate,
+        fixed: state.inputs.fixedCost,
+        type: state.inputs.usageType
+      });
+      const url = `${PAGE_URL}?${params.toString()}`;
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: 'Doğalgaz Faturası Hesaplama',
+            text: 'Tahmini doğalgaz faturası sonucunu incele.',
+            url
+          });
+          els.feedbackNote.textContent = 'Paylaşım penceresi açıldı.';
+        } else {
+          await copyTextSafely(url);
+          els.feedbackNote.textContent = 'Paylaşım linki panoya kopyalandı.';
+        }
+      } catch {
+        try {
+          await copyTextSafely(url);
+          els.feedbackNote.textContent = 'Paylaşım linki panoya kopyalandı.';
+        } catch {
+          els.feedbackNote.textContent = url;
+        }
+      }
+      setTimeout(() => { els.feedbackNote.textContent = ''; }, 1800);
+    }
+
+    function hydrateFromQuery() {
+      const p = new URLSearchParams(location.search);
+      if (!p.toString()) return false;
+      applyInputs({
+        monthlyM3: p.get('m3') || '',
+        daysInMonth: p.get('days') || '',
+        unitPrice: p.get('unit') || '',
+        vatRate: p.get('vat') || '',
+        fixedCost: p.get('fixed') || '',
+        usageType: p.get('type') || 'isinma'
+      });
+      calculate({ persist: false, showErrors: false });
+      return true;
+    }
+
+    function bind() {
+      [els.monthlyM3, els.daysInMonth, els.unitPrice, els.vatRate, els.fixedCost].forEach(el => {
+        el.addEventListener('input', debouncedCalculate);
+        el.addEventListener('blur', () => formatInputNumber(el, el === els.daysInMonth ? 0 : 2));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter') calculate({ persist: true, focusResults: true, showErrors: true }); });
+      });
+      els.usageType.addEventListener('change', () => calculate({ persist: true, showErrors: false }));
+      document.getElementById('calcBtn').addEventListener('click', () => calculate({ persist: true, focusResults: true, showErrors: true }));
+      document.getElementById('exampleBtn').addEventListener('click', fillExample);
+      document.getElementById('resetBtn').addEventListener('click', resetForm);
+      document.getElementById('copyBtn').addEventListener('click', copyResult);
+      document.getElementById('shareBtn').addEventListener('click', shareResult);
+      document.querySelectorAll('#scenarioChips .chip').forEach(chip => chip.addEventListener('click', () => applyScenario(chip.dataset.scenario)));
+    }
+
+    bind();
+    setEmptyState();
+    if (!hydrateFromQuery()) {
+      const saved = loadState();
+      if (saved) {
+        applyInputs(saved);
+        calculate({ persist: true, showErrors: false });
+      }
+    }
+  </script>
+</body>
+</html>

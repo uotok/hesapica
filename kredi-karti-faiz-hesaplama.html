@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kredi Kartı Faiz Hesaplama | Akdi Faiz, Gecikme Faizi, BSMV ve Borç Yükü Analizi - Hesapica</title>
+<meta content="Kredi kartı faiz hesaplama aracı ile dönem borcu, gecikme veya nakit avans senaryosunda faiz, BSMV, toplam geri ödeme, aylık ödeme planı ve borç yükü etkisini analiz edin." name="description"/>
+<meta content="kredi kartı faiz hesaplama, kredi kartı gecikme faizi, akdi faiz hesaplama, bsmv hesaplama, kredi kartı borç hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/kredi-karti-faiz-hesaplama" rel="canonical"/>
+<meta content="index,follow" name="robots"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+  s = s.replace(/\s+/g,'');
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<meta content="website" property="og:type"/>
+<meta content="Kredi Kartı Faiz Hesaplama | Akdi Faiz, Gecikme Faizi, BSMV ve Borç Yükü Analizi - Hesapica" property="og:title"/>
+<meta content="Kredi kartı faiz hesaplama aracı ile dönem borcu, gecikme veya nakit avans senaryosunda faiz, BSMV, toplam geri ödeme, aylık ödeme planı ve borç yükü etkisini analiz edin." property="og:description"/>
+<meta content="https://hesapica.com/kredi-karti-faiz-hesaplama" property="og:url"/>
+<meta content="https://hesapica.com/og-image.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Kredi Kartı Faiz Hesaplama | Akdi Faiz, Gecikme Faizi, BSMV ve Borç Yükü Analizi - Hesapica" name="twitter:title"/>
+<meta content="Kredi kartı faiz hesaplama aracı ile dönem borcu, gecikme veya nakit avans senaryosunda faiz, BSMV, toplam geri ödeme, aylık ödeme planı ve borç yükü etkisini analiz edin." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.jpg" name="twitter:image"/>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .helper-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .helper-link{display:block;padding:14px;border-radius:16px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .helper-link .title{font-weight:900;margin-bottom:6px}
+    .helper-link .desc,.small{font-size:14.5px;color:#4b5563;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error{display:none;margin-top:7px;font-size:14px;color:var(--bad);font-weight:700}
+    .field.has-error .error{display:block}
+    .field.has-error input,.field.has-error select{border-color:rgba(185,28,28,.55);box-shadow:0 0 0 4px rgba(185,28,28,.08)}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .toggle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .toggle-pill{
+      display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;
+      background:#fcfcfd;border:1px solid var(--line);font-weight:700;color:#374151
+    }
+    .toggle-pill input{width:18px;height:18px;accent-color:var(--primary)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .results-kicker{display:none;padding:14px 16px;border-radius:18px;background:#ffffff;border:1px solid rgba(79,70,229,.12);color:#4f46e5;font-size:14px;font-weight:800;box-shadow:var(--shadow)}
+    .results-kicker span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:4px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .result-flash{animation:resultFlash 1.35s ease}
+    @keyframes resultFlash{
+      0%{box-shadow:0 0 0 0 rgba(79,70,229,0);transform:translateY(0)}
+      25%{box-shadow:0 0 0 8px rgba(79,70,229,.08);transform:translateY(-1px)}
+      100%{box-shadow:0 16px 40px rgba(79,70,229,.10);transform:translateY(0)}
+    }
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .score-breakdown-row .val.pos{color:var(--good)}
+    .score-breakdown-row .val.neg{color:var(--bad)}
+    .score-breakdown-row .val.neu{color:var(--muted)}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .bar-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:#fbfcff}
+    .bar-row + .bar-row{margin-top:12px}
+    .bar-top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#374151;margin-bottom:7px}
+    .bar{height:10px;border-radius:999px;background:#eef2f7;overflow:hidden}
+    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0%;transition:width .35s ease}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .success{color:var(--good)} .warning{color:var(--warn)} .danger,.bad{color:var(--bad)} .hide{display:none !important}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .helper-links,.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.bar-card,details.block{padding:20px}
+      .helper-links,.field-grid,.health-grid,.related-grid,.toggle-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .results-kicker{display:block}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.toggle-grid{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;
+        border:1px solid #d1d5db !important;
+        break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kredi Kartı Faiz Hesaplama",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "url": "https://hesapica.com/kredi-karti-faiz-hesaplama",
+    "description": "Kredi kartı faiz, gecikme faizi, BSMV, toplam geri ödeme ve borç yükü analizi yapan hesaplama aracı.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://hesapica.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Finans", "item": "https://hesapica.com/#finans"},
+      {"@type": "ListItem", "position": 3, "name": "Kredi Kartı Faiz Hesaplama", "item": "https://hesapica.com/kredi-karti-faiz-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bu araç resmi banka sonucu verir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır. Bu araç yaklaşık analiz üretir. Kesin ekstre ve faiz işlemesi banka sistemine göre değişebilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "BSMV neden ayrı gösteriliyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Çünkü kullanıcı sadece faiz değil, faiz üzerindeki vergi etkisini de görmelidir. Toplam maliyet bu yüzden katmanlı gösterilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ek ödeme ne işe yarar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Her ay yapılan ek ödeme toplam yükü azaltabilir. Bu yüzden standart ve ek ödemeli görünüm kıyaslı biçimde verilir."
+        }
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="Hesapica" property="og:site_name"/><meta content="https://hesapica.com/kredi-karti-faiz-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="background:#fff7ed;color:#9a3412;border-bottom:1px solid #fdba74;padding:12px 16px;text-align:center;font-weight:700">Bu araç en iyi deneyim için JavaScript gerektirir. Hesaplama ve paylaşım özellikleri JavaScript kapalıysa çalışmayabilir.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#finans">Finans</a>
+<span>/</span>
+<strong>Kredi Kartı Faiz Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Gelişmiş Finans Aracı</span>
+<h1>Kredi Kartı Faiz Hesaplama</h1>
+<p>Bu araç yalnızca faiz değil; <strong>ana borç</strong>, <strong>faiz yükü</strong>, <strong>BSMV etkisi</strong>, <strong>toplam geri ödeme</strong>, <strong>aylık ödeme baskısı</strong> ve <strong>minimum ödeme tuzağına yaklaşım</strong> açısından borcunuzu daha net görmeniz için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Akdi / gecikme / nakit avans</span>
+<span class="hero-chip">BSMV dahil görünüm</span>
+<span class="hero-chip">Borç yükü skoru</span>
+<span class="hero-chip">Karar odaklı analiz</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Gelişmiş analiz yaklaşımı</div>
+<strong>Ana sonuç üstte, borç yükü ve ödeme baskısı aşağıda</strong>
+<p>Faiz türünü seç, borç ve vade bilgilerini gir. Sistem toplam faiz, BSMV, geri ödeme, aylık ödeme baskısı ve risk seviyesini tek ekranda analiz etsin.</p>
+<ul>
+<li>Faiz + BSMV ayrı ayrı görünür</li>
+<li>Toplam maliyet katmanlı gösterilir</li>
+<li>Ek ödeme etkisi senaryolaştırılır</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Hesaplama Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Faiz oranını güncel sözleşmene veya kartına göre sen girersin. Bu araç yaklaşık borç analizi üretir; resmi ekstre tutarı banka verisine göre değişebilir.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Kredi kartı borcunda asıl baskı çoğu zaman sadece faiz değil; faiz üzerine binen vergi etkisi ve borcun aylar boyunca taşınmasıdır. Bu yüzden burada anapara, faiz, BSMV ve toplam ödeme ayrı ayrı gösterilir.</p>
+<div class="helper-links">
+<div class="helper-link">
+<div class="title">1) Faiz türünü seç</div>
+<div class="desc">Dönem borcu için akdi, gecikmiş borç için gecikme, nakit kullanım için nakit avans senaryosu seçebilirsin.</div>
+</div>
+<div class="helper-link">
+<div class="title">2) Vade etkisini gör</div>
+<div class="desc">Aynı borç kısa vadede taşınırsa baskı daha düşük, uzadıkça toplam maliyet daha yüksek görünür.</div>
+</div>
+<div class="helper-link">
+<div class="title">3) Ek ödeme etkisini karşılaştır</div>
+<div class="desc">İstersen aylık ekstra ödeme girerek toplam yükün ne kadar hafiflediğini senaryoda görebilirsin.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Borç ve faiz bilgileri</div>
+<div class="field-grid">
+<div class="field" id="fieldDebtType">
+<label for="debtType">Borç tipi</label>
+<select aria-describedby="debtTypeHint debtTypeError" id="debtType">
+<option value="akdi">Dönem borcu / akdi faiz</option>
+<option value="gecikme">Gecikmiş borç / gecikme faizi</option>
+<option value="nakit">Nakit avans / kullanım faizi</option>
+</select>
+<div class="hint" id="debtTypeHint">Bu seçim yorum dilini etkiler. Oranı güncel kart sözleşmene göre sen girersin.</div>
+<div class="error" id="debtTypeError" role="alert">Borç tipi seçimi gerekli.</div>
+</div>
+<div class="field" id="fieldPrincipalInput">
+<label for="principalInput">Toplam borç</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input aria-describedby="principalInputHint principalInputError" aria-required="true" autocomplete="off" class="with-prefix js-money" id="principalInput" inputmode="numeric" placeholder="Örn: 50.000" required="" type="text"/>
+</div>
+<div class="hint" id="principalInputHint">Ekstredeki taşınan veya hesaplamak istediğin toplam borç.</div>
+<div class="error" id="principalInputError" role="alert">Lütfen 0'dan büyük bir borç gir.</div>
+</div>
+<div class="field" id="fieldMonthlyRate">
+<label for="monthlyRate">Aylık faiz oranı</label>
+<div class="input-wrap">
+<input aria-describedby="monthlyRateHint monthlyRateError" aria-required="true" autocomplete="off" class="with-suffix js-decimal" id="monthlyRate" inputmode="decimal" placeholder="Örn: 4,75" required="" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint" id="monthlyRateHint">Kartına uygulanan aylık faiz oranını gir. 4,75 veya 4.75 şeklinde yazabilirsin.</div>
+<div class="error" id="monthlyRateError" role="alert">Geçerli bir aylık faiz oranı gir.</div>
+</div>
+<div class="field" id="fieldMonths">
+<label for="months">Taşıma süresi</label>
+<div class="input-wrap">
+<input aria-describedby="monthsHint monthsError" aria-required="true" class="with-suffix" id="months" min="1" placeholder="Örn: 6" required="" step="1" type="number"/>
+<span class="suffix">Ay</span>
+</div>
+<div class="hint" id="monthsHint">Borcu kaç ay taşıyacağını varsayıyorsun?</div>
+<div class="error" id="monthsError" role="alert">Ay sayısı 1 ile 240 arasında olmalı.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Ödeme davranışı</div>
+<div class="toggle-grid">
+<label class="toggle-pill">
+<input checked="" name="paymentMode" type="radio" value="minimum"/>
+              Minimum ödeme davranışı gibi yorumla
+            </label>
+<label class="toggle-pill">
+<input name="paymentMode" type="radio" value="planli"/>
+              Planlı geri ödeme gibi yorumla
+            </label>
+</div>
+<div class="field-grid" style="margin-top:16px">
+<div class="field" id="fieldExtraPayment">
+<label for="extraPayment">Aylık ekstra ödeme</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input aria-describedby="extraPaymentHint extraPaymentError" autocomplete="off" class="with-prefix js-money" id="extraPayment" inputmode="numeric" placeholder="Boş bırakılabilir" type="text"/>
+</div>
+<div class="hint" id="extraPaymentHint">Her ay ek ödeme yapabiliyorsan gir. Boşsa 0 kabul edilir.</div>
+<div class="error" id="extraPaymentError" role="alert">Ek ödeme negatif olamaz.</div>
+</div>
+<div class="field" id="fieldBsmvRate">
+<label for="bsmvRate">BSMV oranı</label>
+<div class="input-wrap">
+<input aria-describedby="bsmvRateHint bsmvRateError" autocomplete="off" class="with-suffix js-decimal" id="bsmvRate" inputmode="decimal" placeholder="Boşsa %5 kullanılır" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint" id="bsmvRateHint">Boş bırakırsan varsayılan olarak %5 kullanılır.</div>
+<div class="error" id="bsmvRateError" role="alert">BSMV oranı 0 ile 100 arasında olmalı.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="fillScenario('akdi')" type="button">Akdi borç örneği</button>
+<button class="chip" onclick="fillScenario('gecikme')" type="button">Gecikme örneği</button>
+<button class="chip" onclick="fillScenario('nakit')" type="button">Nakit avans örneği</button>
+<button class="chip" onclick="fillScenario('ekstra')" type="button">Ek ödeme örneği</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="runPrimaryAction()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="clearAllFields()" type="button">Temizle</button>
+<button class="btn btn-ghost" onclick="copyResults()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResults()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Tüm detaylı analiz ve senaryo kıyası aşağıda devam eder</strong>
+<span>Sağ panelde ana sonucu gördükten sonra detay bloklarına inerek faiz, BSMV ve ek ödeme etkisini ayrı ayrı inceleyebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results">
+<div class="results-kicker">Sonuçlar aşağıda başlıyor<span>Ana çıktı, hızlı özet, skor ve detay metrikler bu bölümde yer alır.</span></div>
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div aria-live="polite" class="status-text" id="statusText">Sonucu görmek için borç, faiz ve ay bilgilerini doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana Sonuç</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Toplam ödeme (taksitler) burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small">Borç Yükü Skoru</div>
+<div class="score-value" id="burdenScore">0/100</div>
+</div>
+<span class="pill" id="difficultyBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div aria-live="polite" class="small" id="scoreText" style="margin-top:10px">Bu skor, faiz süresi, toplam maliyet artışı, BSMV etkisi ve aylık ödeme baskısına göre oluşur. Düşük skor daha sağlıklı görünümü temsil eder.</div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+<div class="small" id="scoreExplainText">0 düşük baskı, 100 yüksek baskı demektir. Vade uzadıkça ve maliyet büyüdükçe skor yükselir.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Faiz yükü</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name">BSMV etkisi</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name">Aylık ödeme baskısı</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val neu">—</span></div>
+</div>
+</div>
+</section>
+<div class="health-grid">
+<div class="health-card">
+<h3>Faiz yükü</h3>
+<div class="big" id="healthInterest">—</div>
+<div class="small" id="healthInterestSub">Faiz verisi bekleniyor</div>
+</div>
+<div class="health-card">
+<h3>Vergi etkisi</h3>
+<div class="big" id="healthTax">—</div>
+<div class="small" id="healthTaxSub">BSMV verisi bekleniyor</div>
+</div>
+<div class="health-card">
+<h3>Karar</h3>
+<div class="big" id="healthDecision">—</div>
+<div class="small" id="healthDecisionSub">Analiz için veri bekleniyor</div>
+</div>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1">
+<div class="label">Toplam faiz</div>
+<div class="value" id="totalInterestValue">—</div>
+</div>
+<div class="mini-result is-empty" id="mini2">
+<div class="label">BSMV</div>
+<div class="value" id="bsmvValue">—</div>
+</div>
+<div class="mini-result is-empty" id="mini3">
+<div class="label">Toplam ödeme (taksitler)</div>
+<div class="value" id="repaymentValue">—</div>
+</div>
+<div class="mini-result is-empty" id="mini4">
+<div class="label">Aylık ödeme</div>
+<div class="value" id="monthlyValue">—</div>
+</div>
+</div>
+<div class="bar-card">
+<div class="bar-row">
+<div class="bar-top"><span>Ana para payı</span><strong id="barText1">%0</strong></div>
+<div class="bar"><div class="bar-fill" id="bar1"></div></div>
+</div>
+<div class="bar-row">
+<div class="bar-top"><span>Faiz + vergi payı</span><strong id="barText2">%0</strong></div>
+<div class="bar"><div class="bar-fill" id="bar2"></div></div>
+</div>
+</div>
+<div aria-live="polite" class="comment-box" id="smartComment">
+          Henüz veri girilmedi. Hesaplama sonrası burada kısa ve akıllı yorum gösterilir.
+        </div>
+</aside>
+</section>
+<section class="details-card">
+<div class="accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Detaylı maliyet kırılımı</span>
+<span class="summary-note">Ana para, faiz, BSMV, toplam</span>
+</summary>
+<div class="details-inner">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Kalem</th>
+<th>Tutar</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody id="detailTable">
+<tr><td>Ana para</td><td>—</td><td>Veri girildiğinde kırılım oluşur.</td></tr>
+<tr><td>Faiz</td><td>—</td><td>Seçilen faiz türü ve süresiyle hesaplanır.</td></tr>
+<tr><td>BSMV</td><td>—</td><td>Faiz üstünden hesaplanan vergi etkisi.</td></tr>
+<tr><td>Toplam ödeme (taksitler)</td><td>—</td><td>Ana para + faiz + BSMV.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block">
+<summary>
+<span>Senaryo kıyası</span>
+<span class="summary-note">Ek ödemeli / ek ödemesiz karşılaştırma</span>
+</summary>
+<div class="details-inner">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Senaryo</th>
+<th>Toplam ödeme</th>
+<th>Aylık ödeme</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody id="scenarioTable">
+<tr><td>Standart</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Ek ödemeli</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block">
+<summary>
+<span>Yorumlama rehberi</span>
+<span class="summary-note">Skor ve karar ne demek?</span>
+</summary>
+<div class="details-inner">
+<p class="small">Borç Yükü Skoru yükseldikçe, borcun taşınma maliyeti ve ödeme baskısı artıyor demektir. Özellikle minimum ödeme davranışı uzun süre devam ettiğinde maliyet hızla büyüyebilir. Bu araç resmi ekstre yerine geçmez; ama baskı seviyesini erken görmek için güçlü bir ön izleme sunar.</p>
+</div>
+</details>
+</div>
+</section>
+<section class="content-grid">
+<article class="card accordion-card">
+<h2>Bu araç ne işe yarar?</h2>
+<p>Kredi kartı faiz hesaplama aracı; borcun taşındığı durumda toplam faizin, varsa vergi etkisinin ve geri ödeme baskısının nasıl büyüdüğünü görmek için kullanılır. Özellikle “birkaç ay sonra kapatırım” düşüncesinin gerçek maliyetini önceden fark etmek için faydalıdır.</p>
+<p>Buradaki yapı bilinçli olarak karar odaklıdır. Sadece faiz sonucu değil; toplam geri ödeme, borç yükü skoru, aylık ödeme baskısı ve ek ödeme etkisi birlikte değerlendirilir.</p>
+</article>
+<article class="card accordion-card">
+<h2>Sık Sorulan Sorular</h2>
+<details>
+<summary>Bu araç resmi banka sonucu verir mi?</summary>
+<p>Hayır. Bu araç yaklaşık analiz üretir. Kesin ekstre ve faiz işlemesi banka sistemine göre değişebilir.</p>
+</details>
+<details>
+<summary>BSMV neden ayrı gösteriliyor?</summary>
+<p>Çünkü kullanıcı sadece faiz değil, faiz üzerindeki vergi etkisini de görmelidir. Toplam maliyet bu yüzden katmanlı gösterilir.</p>
+</details>
+<details>
+<summary>Ek ödeme ne işe yarar?</summary>
+<p>Her ay yapılan ek ödeme toplam yükü azaltabilir. Bu yüzden standart ve ek ödemeli görünüm kıyaslı biçimde verilir.</p>
+</details>
+</article>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/kredi-hesaplama">
+<span class="small">İlgili Araç</span>
+<strong>Kredi Hesaplama</strong>
+<p>Kredi taksidi, toplam ödeme ve faiz etkisini daha klasik kredi yapısında incele.</p>
+</a>
+<a class="related-card" href="/#finans">
+<span class="small">İlgili Araç</span>
+<strong>Borç Kapama Planı</strong>
+<p>Birden fazla borç arasında ödeme önceliği ve kapama stratejisi oluştur.</p>
+</a>
+<a class="related-card" href="/faiz-hesaplama">
+<span class="small">İlgili Araç</span>
+<strong>Faiz Hesaplama</strong>
+<p>Basit faiz ve toplam maliyet görünümünü daha genel yapıda karşılaştır.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica_kredi_karti_faiz_lock_v2';
+    const DEFAULT_BSMV = 5;
+
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      lastSource: 'empty',
+      hasAttemptedSubmit: false,
+      touched: new Set()
+    };
+
+    const debtType = document.getElementById('debtType');
+    const principalInput = document.getElementById('principalInput');
+    const monthlyRate = document.getElementById('monthlyRate');
+    const months = document.getElementById('months');
+    const extraPayment = document.getElementById('extraPayment');
+    const bsmvRate = document.getElementById('bsmvRate');
+
+    const statusText = document.getElementById('statusText');
+    const statusBadge = document.getElementById('statusBadge');
+    const highlightCard = document.getElementById('highlightCard');
+    const mainResult = document.getElementById('mainResult');
+    const mainResultText = document.getElementById('mainResultText');
+
+    const burdenScore = document.getElementById('burdenScore');
+    const difficultyBadge = document.getElementById('difficultyBadge');
+    const scoreBar = document.getElementById('scoreBar');
+    const scoreExplainText = document.getElementById('scoreExplainText');
+    const scoreBreakdown = document.getElementById('scoreBreakdown');
+
+    const totalInterestValue = document.getElementById('totalInterestValue');
+    const bsmvValue = document.getElementById('bsmvValue');
+    const repaymentValue = document.getElementById('repaymentValue');
+    const monthlyValue = document.getElementById('monthlyValue');
+
+    const healthInterest = document.getElementById('healthInterest');
+    const healthInterestSub = document.getElementById('healthInterestSub');
+    const healthTax = document.getElementById('healthTax');
+    const healthTaxSub = document.getElementById('healthTaxSub');
+    const healthDecision = document.getElementById('healthDecision');
+    const healthDecisionSub = document.getElementById('healthDecisionSub');
+
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const barText1 = document.getElementById('barText1');
+    const barText2 = document.getElementById('barText2');
+
+    const detailTable = document.getElementById('detailTable');
+    const scenarioTable = document.getElementById('scenarioTable');
+    const smartComment = document.getElementById('smartComment');
+    const allFields = Array.from(document.querySelectorAll('.field'));
+    const fieldMap = {
+      debtType: debtType.closest('.field'),
+      principalInput: principalInput.closest('.field'),
+      monthlyRate: monthlyRate.closest('.field'),
+      months: months.closest('.field'),
+      extraPayment: extraPayment.closest('.field'),
+      bsmvRate: bsmvRate.closest('.field')
+    };
+
+    function formatMoney(value){
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(Number(value || 0)) + ' TL';
+    }
+
+    function formatPercent(value, digits = 2){
+      return '%' + new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      }).format(Number(value || 0));
+    }
+
+    function formatInputMoney(value){
+      if (value === null || value === undefined || value === '') return '';
+      const n = Number(value);
+      if (!Number.isFinite(n) || n === 0) return '';
+      return n.toLocaleString('tr-TR');
+    }
+
+    function setMoneyInputFormatting(selector){
+      document.querySelectorAll(selector).forEach(input => {
+        input.addEventListener('input', () => {
+          const digits = input.value.replace(/\D/g, '');
+          input.value = digits ? Number(digits).toLocaleString('tr-TR') : '';
+        });
+      });
+    }
+
+    function parseMoneyInput(el){
+      const raw = (el.value || '').replace(/\./g, '').replace(',', '.').replace(/[^\d.]/g, '');
+      return Number(raw) || 0;
+    }
+
+    function parseDecimalValue(value){
+      if (value === null || value === undefined) return 0;
+      const normalized = String(value).trim().replace(/\s+/g, '').replace(/%/g, '').replace(/,/g, '.').replace(/[^\d.\-]/g, '');
+      if (!normalized) return 0;
+      const parts = normalized.split('.');
+      const safe = parts.length > 2 ? parts[0] + '.' + parts.slice(1).join('') : normalized;
+      const num = Number(safe);
+      return Number.isFinite(num) ? num : 0;
+    }
+
+    function formatDecimalInputValue(value, digits = 2){
+      if (value === null || value === undefined || value === '') return '';
+      const num = Number(value);
+      if (!Number.isFinite(num)) return '';
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      }).format(num);
+    }
+
+    function focusResults(){
+      highlightCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      highlightCard.classList.remove('result-flash');
+      void highlightCard.offsetWidth;
+      highlightCard.classList.add('result-flash');
+      setTimeout(() => highlightCard.classList.remove('result-flash'), 1400);
+    }
+
+    function getPaymentMode(){
+      return document.querySelector('input[name="paymentMode"]:checked')?.value || 'minimum';
+    }
+
+    function getFormData(){
+      const rawBsmv = parseDecimalValue(bsmvRate.value);
+      return {
+        debtType: debtType.value,
+        principal: parseMoneyInput(principalInput),
+        monthlyRate: parseDecimalValue(monthlyRate.value),
+        months: Number(months.value) || 0,
+        extraPayment: parseMoneyInput(extraPayment),
+        bsmvRate: Number.isFinite(rawBsmv) && rawBsmv >= 0 ? rawBsmv : DEFAULT_BSMV,
+        paymentMode: getPaymentMode()
+      };
+    }
+
+    function setFormData(data, source = 'manual', shouldCalculate = false){
+      state.lastSource = source;
+      state.touched.clear();
+      state.hasAttemptedSubmit = false;
+      clearValidationState();
+      if (data.debtType) debtType.value = data.debtType;
+      principalInput.value = formatInputMoney(data.principal);
+      monthlyRate.value = formatDecimalInputValue(data.monthlyRate);
+      months.value = data.months ?? '';
+      extraPayment.value = formatInputMoney(data.extraPayment);
+      bsmvRate.value = (data.bsmvRate ?? '') === '' ? '' : formatDecimalInputValue(data.bsmvRate);
+      const mode = data.paymentMode || 'minimum';
+      const radio = document.querySelector(`input[name="paymentMode"][value="${mode}"]`);
+      if (radio) radio.checked = true;
+      if (shouldCalculate) calculateAll(source);
+    }
+
+    function saveManualState(){
+      if (state.lastSource !== 'manual' || !state.isValid) return;
+      const payload = {
+        source: 'manual',
+        debtType: debtType.value,
+        principal: parseMoneyInput(principalInput),
+        monthlyRate: monthlyRate.value,
+        months: months.value,
+        extraPayment: parseMoneyInput(extraPayment),
+        bsmvRate: bsmvRate.value,
+        paymentMode: getPaymentMode()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function loadManualState(){
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        const saved = JSON.parse(raw);
+        if (!saved || saved.source !== 'manual') return false;
+        setFormData(saved, 'manual', false);
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    function removeSavedState(){
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function emptyState(){
+      state.results = null;
+      state.isCalculated = false;
+      state.isValid = false;
+
+      highlightCard.classList.add('is-empty');
+      mainResult.textContent = '—';
+      mainResultText.textContent = 'Toplam ödeme (taksitler) burada görünecek.';
+      burdenScore.textContent = '0/100';
+      difficultyBadge.textContent = 'Veri bekleniyor';
+      difficultyBadge.className = 'pill';
+      scoreBar.style.width = '0%';
+      scoreExplainText.textContent = '0 düşük baskı, 100 yüksek baskı demektir. Vade uzadıkça ve maliyet büyüdükçe skor yükselir.';
+      scoreBreakdown.innerHTML = `
+        <div class="score-breakdown-row"><span class="name">Faiz yükü</span><span class="val neu">—</span></div>
+        <div class="score-breakdown-row"><span class="name">BSMV etkisi</span><span class="val neu">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Aylık ödeme baskısı</span><span class="val neu">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val neu">—</span></div>
+      `;
+      [totalInterestValue,bsmvValue,repaymentValue,monthlyValue].forEach(el => el.textContent = '—');
+      [document.getElementById('mini1'),document.getElementById('mini2'),document.getElementById('mini3'),document.getElementById('mini4')].forEach(el => el.classList.add('is-empty'));
+      healthInterest.textContent = '—';
+      healthInterestSub.textContent = 'Faiz verisi bekleniyor';
+      healthTax.textContent = '—';
+      healthTaxSub.textContent = 'BSMV verisi bekleniyor';
+      healthDecision.textContent = '—';
+      healthDecisionSub.textContent = 'Analiz için veri bekleniyor';
+      bar1.style.width = '0%';
+      bar2.style.width = '0%';
+      barText1.textContent = '%0';
+      barText2.textContent = '%0';
+      detailTable.innerHTML = `
+        <tr><td>Ana para</td><td>—</td><td>Veri girildiğinde kırılım oluşur.</td></tr>
+        <tr><td>Faiz</td><td>—</td><td>Seçilen faiz türü ve süresiyle hesaplanır.</td></tr>
+        <tr><td>BSMV</td><td>—</td><td>Faiz üstünden hesaplanan vergi etkisi.</td></tr>
+        <tr><td>Toplam ödeme (taksitler)</td><td>—</td><td>Ana para + faiz + BSMV.</td></tr>`;
+      scenarioTable.innerHTML = `
+        <tr><td>Standart</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Ek ödemeli</td><td>—</td><td>—</td><td>—</td></tr>`;
+      smartComment.textContent = 'Henüz veri girilmedi. Sonucu görmek için borç, faiz ve ay bilgilerini doldur veya örnek veri kullan.';
+      statusText.textContent = 'Sonucu görmek için borç, faiz ve ay bilgilerini doldur veya örnek veri kullan.';
+      statusBadge.textContent = 'Veri bekleniyor';
+      statusBadge.className = 'badge';
+    }
+
+    function markFieldTouched(fieldKey){
+      if (!fieldKey) return;
+      state.touched.add(fieldKey);
+    }
+
+    function clearValidationState(){
+      allFields.forEach(field => field.classList.remove('has-error'));
+      Object.entries(fieldMap).forEach(([key, field]) => {
+        const input = field?.querySelector('input, select');
+        if (input) input.setAttribute('aria-invalid', 'false');
+      });
+    }
+
+    function setFieldError(fieldKey, shouldShow){
+      const field = fieldMap[fieldKey];
+      if (!field) return;
+      const input = field.querySelector('input, select');
+      field.classList.toggle('has-error', shouldShow);
+      if (input) input.setAttribute('aria-invalid', shouldShow ? 'true' : 'false');
+    }
+
+    function getFirstInvalidFieldKey(validity){
+      const order = ['principalInput', 'monthlyRate', 'months', 'extraPayment', 'bsmvRate'];
+      return order.find(key => validity[key] === false) || null;
+    }
+
+    function focusFirstInvalidField(fieldKey){
+      if (!fieldKey) return;
+      const field = fieldMap[fieldKey];
+      const input = field?.querySelector('input, select');
+      if (input) input.focus();
+    }
+
+    function validate(markErrors = true){
+      const principal = parseMoneyInput(principalInput);
+      const rate = parseDecimalValue(monthlyRate.value);
+      const monthCount = Number(months.value) || 0;
+      const extra = parseMoneyInput(extraPayment);
+      const hasBsmvInput = bsmvRate.value !== '';
+      const bsmv = hasBsmvInput ? parseDecimalValue(bsmvRate.value) : DEFAULT_BSMV;
+
+      const validity = {
+        principalInput: principal > 0,
+        monthlyRate: rate > 0 && rate <= 100,
+        months: monthCount >= 1 && monthCount <= 240,
+        extraPayment: extra >= 0,
+        bsmvRate: Number.isFinite(bsmv) && bsmv >= 0 && bsmv <= 100
+      };
+
+      let ok = true;
+      Object.entries(validity).forEach(([key, pass]) => {
+        if (!pass) ok = false;
+        const shouldShow = markErrors
+          ? !pass && (state.hasAttemptedSubmit || state.touched.has(key))
+          : !pass && state.touched.has(key);
+        setFieldError(key, shouldShow);
+      });
+
+      state.isValid = ok;
+      return { ok, validity };
+    }
+
+    function calcAmortized(principal, ratePct, monthCount, extra, bsmvPct){
+      const monthlyRateDec = Math.max(0, ratePct / 100);
+      const taxRateDec = Math.max(0, bsmvPct / 100);
+      const effectiveRate = monthlyRateDec * (1 + taxRateDec);
+
+      let plannedPayment;
+      if (effectiveRate <= 0) {
+        plannedPayment = principal / monthCount;
+      } else {
+        plannedPayment = principal * effectiveRate / (1 - Math.pow(1 + effectiveRate, -monthCount));
+      }
+      plannedPayment = Math.max(plannedPayment, principal / monthCount);
+
+      let balance = principal;
+      let totalInterest = 0;
+      let totalTax = 0;
+      let totalPaid = 0;
+      let monthsUsed = 0;
+      let firstMonthly = 0;
+
+      while (balance > 0.01 && monthsUsed < 240) {
+        const interest = balance * monthlyRateDec;
+        const tax = interest * taxRateDec;
+        const due = balance + interest + tax;
+        const payment = Math.min(due, plannedPayment + extra);
+        if (!firstMonthly) firstMonthly = payment;
+        totalInterest += interest;
+        totalTax += tax;
+        totalPaid += payment;
+        balance = Math.max(0, due - payment);
+        monthsUsed += 1;
+      }
+
+      return {
+        interest: totalInterest,
+        tax: totalTax,
+        total: totalPaid,
+        monthly: firstMonthly || 0,
+        monthsUsed,
+        plannedPayment,
+        balance
+      };
+    }
+
+    function calculateAll(source = 'manual', options = {}){
+      state.lastSource = source;
+      const shouldShowErrors = options.showValidation !== false;
+      if (shouldShowErrors) state.hasAttemptedSubmit = true;
+
+      const validation = validate(shouldShowErrors);
+      if (!validation.ok) {
+        emptyState();
+        statusText.textContent = 'Önce hatalı alanları düzeltmen gerekiyor.';
+        statusBadge.textContent = 'Eksik / hatalı veri';
+        statusBadge.className = 'badge bad';
+        smartComment.textContent = 'Geçerli borç, faiz ve süre girildiğinde sistem gerçek analizi oluşturacak.';
+        if (shouldShowErrors) focusFirstInvalidField(getFirstInvalidFieldKey(validation.validity));
+        return;
+      }
+
+      const data = getFormData();
+      state.inputs = data;
+
+      const base = calcAmortized(data.principal, data.monthlyRate, data.months, 0, data.bsmvRate);
+      const withExtra = calcAmortized(data.principal, data.monthlyRate, data.months, data.extraPayment, data.bsmvRate);
+
+      const totalCostRatio = ((base.total - data.principal) / data.principal) * 100;
+      const taxRatio = base.interest > 0 ? (base.tax / base.interest) * 100 : 0;
+      const monthlyPressureRatio = data.principal > 0 ? (base.monthly / data.principal) * 100 : 0;
+      const durationRatio = Math.min(100, (base.monthsUsed / 12) * 100);
+
+      const scoreInterest = Math.min(35, totalCostRatio * 0.55);
+      const scoreTax = Math.min(15, taxRatio * 0.8);
+      const scoreMonthly = Math.min(25, monthlyPressureRatio * 2.3);
+      const scoreDuration = Math.min(20, durationRatio * 0.22);
+      const scoreMode = data.paymentMode === 'minimum' ? 5 : 0;
+      const rawScore = Math.min(100, Math.round(scoreInterest + scoreTax + scoreMonthly + scoreDuration + scoreMode));
+
+      let pillClass = 'good', pillText = 'Düşük baskı';
+      if (rawScore >= 67) { pillClass = 'bad'; pillText = 'Yüksek baskı'; }
+      else if (rawScore >= 34) { pillClass = 'warn'; pillText = 'Orta baskı'; }
+
+      const principalShare = base.total > 0 ? (data.principal / base.total) * 100 : 0;
+      const costShare = 100 - principalShare;
+      const savedTotal = Math.max(0, base.total - withExtra.total);
+      const savedMonths = Math.max(0, base.monthsUsed - withExtra.monthsUsed);
+
+      state.results = { data, base, withExtra, rawScore, totalCostRatio, taxRatio, monthlyPressureRatio, pillClass, pillText, savedTotal, savedMonths };
+      state.isCalculated = true;
+      clearValidationState();
+
+      highlightCard.classList.remove('is-empty');
+      mainResult.textContent = formatMoney(base.total);
+      mainResultText.textContent = `${base.monthsUsed} ay civarında kapanan senaryoda ana borç + faiz + BSMV ile oluşan yaklaşık toplam geri ödeme.`;
+
+      burdenScore.textContent = `${rawScore}/100`;
+      difficultyBadge.textContent = pillText;
+      difficultyBadge.className = `pill ${pillClass}`;
+      scoreBar.style.width = `${rawScore}%`;
+      scoreExplainText.textContent = `Faiz yükü ${formatPercent(totalCostRatio,1)}, BSMV etkisi ${formatPercent(taxRatio,1)} ve ilk ay ödeme baskısı ${formatPercent(monthlyPressureRatio,1)} seviyesinde görünüyor.`;
+
+      scoreBreakdown.innerHTML = `
+        <div class="score-breakdown-row"><span class="name">Faiz yükü</span><span class="val ${scoreInterest > 20 ? 'neg':'neu'}">${formatPercent(totalCostRatio,1)}</span></div>
+        <div class="score-breakdown-row"><span class="name">BSMV etkisi</span><span class="val ${scoreTax > 8 ? 'neg':'neu'}">${formatPercent(taxRatio,1)}</span></div>
+        <div class="score-breakdown-row"><span class="name">Aylık ödeme baskısı</span><span class="val ${scoreMonthly > 14 ? 'neg':'neu'}">${formatPercent(monthlyPressureRatio,1)}</span></div>
+        <div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val ${scoreDuration > 10 ? 'neg':'neu'}">${base.monthsUsed} ay</span></div>
+      `;
+
+      [document.getElementById('mini1'),document.getElementById('mini2'),document.getElementById('mini3'),document.getElementById('mini4')].forEach(el => el.classList.remove('is-empty'));
+      totalInterestValue.textContent = formatMoney(base.interest);
+      bsmvValue.textContent = formatMoney(base.tax);
+      repaymentValue.textContent = formatMoney(base.total);
+      monthlyValue.textContent = formatMoney(base.monthly);
+
+      healthInterest.textContent = totalCostRatio >= 30 ? 'Yüksek' : totalCostRatio >= 15 ? 'Orta' : 'Düşük';
+      healthInterestSub.textContent = `Faiz yükü ana borcun ${formatPercent(totalCostRatio,1)} seviyesinde.`;
+
+      healthTax.textContent = formatMoney(base.tax);
+      healthTaxSub.textContent = `Varsayılan/özel BSMV oranı: ${formatPercent(data.bsmvRate, data.bsmvRate % 1 === 0 ? 0 : 2)}.`;
+
+      let decision = '', decisionSub = '';
+      if (rawScore >= 67) {
+        decision = 'Dikkat';
+        decisionSub = 'Borcu uzun taşımak maliyeti belirgin büyütüyor.';
+      } else if (rawScore >= 34) {
+        decision = 'Kontrollü';
+        decisionSub = 'Kısa sürede azaltılırsa baskı yönetilebilir.';
+      } else {
+        decision = 'Görece iyi';
+        decisionSub = 'Maliyet seviyesi daha sınırlı görünüyor.';
+      }
+      healthDecision.textContent = decision;
+      healthDecisionSub.textContent = decisionSub;
+
+      bar1.style.width = `${principalShare}%`;
+      bar2.style.width = `${costShare}%`;
+      barText1.textContent = formatPercent(principalShare,1);
+      barText2.textContent = formatPercent(costShare,1);
+
+      detailTable.innerHTML = `
+        <tr><td>Ana para</td><td>${formatMoney(data.principal)}</td><td>Hesaba esas taşınan ana borç.</td></tr>
+        <tr><td>Toplam faiz</td><td>${formatMoney(base.interest)}</td><td>${data.debtType === 'gecikme' ? 'Gecikme faizi' : data.debtType === 'nakit' ? 'Nakit kullanım faizi' : 'Akdi faiz'} yaklaşımı ile yaklaşık hesaplandı.</td></tr>
+        <tr><td>BSMV</td><td>${formatMoney(base.tax)}</td><td>Faiz üzerinden ayrı gösterilen vergi etkisi.</td></tr>
+        <tr><td>Toplam ödeme (taksitler)</td><td>${formatMoney(base.total)}</td><td>Ana para + faiz + BSMV toplamı.</td></tr>`;
+
+      scenarioTable.innerHTML = `
+        <tr><td>Standart</td><td>${formatMoney(base.total)}</td><td>${formatMoney(base.monthly)}</td><td>${base.monthsUsed} ay</td></tr>
+        <tr><td>Ek ödemeli</td><td>${formatMoney(withExtra.total)}</td><td>${formatMoney(withExtra.monthly)}</td><td>${data.extraPayment > 0 ? (savedMonths + ' ay daha kısa') : 'Ek ödeme yok'}</td></tr>`;
+
+      statusText.textContent = `${data.debtType === 'gecikme' ? 'Gecikmiş borç' : data.debtType === 'nakit' ? 'Nakit kullanım' : 'Akdi borç'} senaryosu analiz edildi.`;
+      statusBadge.textContent = rawScore >= 67 ? 'Yüksek maliyet riski' : rawScore >= 34 ? 'Orta maliyet' : 'Görece kontrollü';
+      statusBadge.className = `badge ${pillClass === 'good' ? 'good' : pillClass === 'warn' ? 'warn' : 'bad'}`;
+
+      const typeText = data.debtType === 'gecikme' ? 'Gecikmiş borçta' : data.debtType === 'nakit' ? 'Nakit kullanım senaryosunda' : 'Akdi borç senaryosunda';
+      const modeText = data.paymentMode === 'minimum'
+        ? 'minimum ödeme davranışı uzun süre devam ederse maliyet baskısı daha kalıcı hale gelebilir.'
+        : 'planlı geri ödeme yaklaşımıyla bu yük daha kontrollü yönetilebilir.';
+      const extraText = data.extraPayment > 0
+        ? ` Aylık ${formatMoney(data.extraPayment)} ek ödeme girildiğinde toplam yük yaklaşık ${formatMoney(savedTotal)} azalıyor ve kapanış süresi yaklaşık ${savedMonths} ay kısalıyor.`
+        : ' Ek ödeme girilmediği için standart görünüm esas alındı.';
+      smartComment.textContent = `${typeText} ${formatMoney(data.principal)} borç için yaklaşık ${base.monthsUsed} aylık taşıma senaryosunda toplam faiz ${formatMoney(base.interest)}, BSMV ${formatMoney(base.tax)} ve toplam geri ödeme ${formatMoney(base.total)} seviyesinde oluşuyor. ${modeText}${extraText}`;
+
+      if (source === 'manual') saveManualState();
+      if (options.focusResults) focusResults();
+    }
+
+    function runPrimaryAction(){
+      calculateAll('manual', { focusResults: true });
+    }
+
+    function fillExample(){
+      setActiveScenario('');
+      setFormData({
+        debtType: 'akdi',
+        principal: 35000,
+        monthlyRate: 4.75,
+        months: 6,
+        extraPayment: 0,
+        bsmvRate: DEFAULT_BSMV,
+        paymentMode: 'minimum'
+      }, 'demo', false);
+      calculateAll('demo', { focusResults: true });
+    }
+
+    function fillScenario(type){
+      const scenarios = {
+        akdi: { debtType: 'akdi', principal: 40000, monthlyRate: 4.60, months: 5, extraPayment: 0, bsmvRate: DEFAULT_BSMV, paymentMode: 'minimum' },
+        gecikme: { debtType: 'gecikme', principal: 28000, monthlyRate: 5.10, months: 4, extraPayment: 0, bsmvRate: DEFAULT_BSMV, paymentMode: 'minimum' },
+        nakit: { debtType: 'nakit', principal: 18000, monthlyRate: 5.00, months: 3, extraPayment: 0, bsmvRate: DEFAULT_BSMV, paymentMode: 'planli' },
+        ekstra: { debtType: 'akdi', principal: 50000, monthlyRate: 4.80, months: 8, extraPayment: 1500, bsmvRate: DEFAULT_BSMV, paymentMode: 'planli' }
+      };
+      if (!scenarios[type]) return;
+      setActiveScenario(type);
+      setFormData(scenarios[type], 'demo', false);
+      calculateAll('demo', { focusResults: true });
+    }
+
+    function setActiveScenario(type){
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+      const map = { akdi: 0, gecikme: 1, nakit: 2, ekstra: 3 };
+      if (type && typeof map[type] === 'number') {
+        document.querySelectorAll('#scenarioRow .chip')[map[type]].classList.add('active');
+      }
+    }
+
+    function clearAllFields(){
+      debtType.value = 'akdi';
+      principalInput.value = '';
+      monthlyRate.value = '';
+      months.value = '';
+      extraPayment.value = '';
+      bsmvRate.value = '';
+      document.querySelector('input[name="paymentMode"][value="minimum"]').checked = true;
+      allFields.forEach(f => f.classList.remove('has-error'));
+      state.touched.clear();
+      state.hasAttemptedSubmit = false;
+      clearValidationState();
+      setActiveScenario('');
+      state.lastSource = 'empty';
+      removeSavedState();
+      emptyState();
+    }
+
+    function fallbackCopyText(text){
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      ta.style.pointerEvents = 'none';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    async function copyResults(){
+      if (!state.isCalculated || !state.results) {
+        const old = smartComment.textContent;
+        smartComment.textContent = 'Önce geçerli bir sonuç üretmelisin.';
+        setTimeout(() => smartComment.textContent = old, 1800);
+        return;
+      }
+      const text = [
+        'Kredi Kartı Faiz Hesaplama Sonucu',
+        'Borç tipi: ' + debtType.options[debtType.selectedIndex].text,
+        'Toplam faiz: ' + totalInterestValue.textContent,
+        'BSMV: ' + bsmvValue.textContent,
+        'Toplam ödeme (taksitler): ' + repaymentValue.textContent,
+        'Aylık ödeme: ' + monthlyValue.textContent,
+        'Borç Yükü Skoru: ' + burdenScore.textContent,
+        '',
+        'Yorum:',
+        smartComment.textContent
+      ].join('\n');
+
+      let copied = false;
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(text);
+          copied = true;
+        } catch {}
+      }
+      if (!copied) copied = fallbackCopyText(text);
+      const old = smartComment.textContent;
+      smartComment.textContent = copied ? 'Sonuç panoya kopyalandı.' : 'Kopyalama başarısız oldu. Lütfen manuel olarak kopyala.';
+      setTimeout(() => smartComment.textContent = old, 1800);
+    }
+
+    async function shareResults(){
+      if (!state.isCalculated || !state.results) {
+        const old = smartComment.textContent;
+        smartComment.textContent = 'Paylaşım için önce geçerli sonuç üretmelisin.';
+        setTimeout(() => smartComment.textContent = old, 1800);
+        return;
+      }
+      const url = window.location.href;
+      const text = `${mainResult.textContent} toplam geri ödeme • ${burdenScore.textContent} borç yükü skoru`;
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: 'Kredi Kartı Faiz Hesaplama', text, url });
+          return;
+        } catch {}
+      }
+      let copied = false;
+      const shareText = `${text}\n${url}`;
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(shareText);
+          copied = true;
+        } catch {}
+      }
+      if (!copied) copied = fallbackCopyText(shareText);
+      const old = smartComment.textContent;
+      smartComment.textContent = copied ? 'Paylaşım özeti panoya kopyalandı.' : 'Paylaşım bağlantısı kopyalanamadı. Lütfen adres çubuğundan bağlantıyı kopyala.';
+      setTimeout(() => smartComment.textContent = old, 1800);
+    }
+
+    const debouncedAutoCalculate = (() => {
+      let timer;
+      return (source = 'manual') => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const validation = validate(false);
+          if (validation.ok) calculateAll(source, { showValidation: false });
+          else if (source === 'manual') {
+            state.lastSource = 'manual';
+            removeSavedState();
+            emptyState();
+          }
+        }, 180);
+      };
+    })();
+
+    setMoneyInputFormatting('.js-money');
+
+    [debtType, principalInput, monthlyRate, months, extraPayment, bsmvRate].forEach(el => {
+      const fieldKey = el.id;
+      el.addEventListener('input', () => {
+        state.lastSource = 'manual';
+        setActiveScenario('');
+        if (fieldKey !== 'debtType') markFieldTouched(fieldKey);
+        debouncedAutoCalculate('manual');
+      });
+      el.addEventListener('change', () => {
+        state.lastSource = 'manual';
+        setActiveScenario('');
+        markFieldTouched(fieldKey);
+        debouncedAutoCalculate('manual');
+      });
+      el.addEventListener('blur', () => {
+        markFieldTouched(fieldKey);
+        validate(false);
+      });
+      el.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          calculateAll('manual', { focusResults: true, showValidation: true });
+        }
+      });
+    });
+
+    document.querySelectorAll('input[name="paymentMode"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        state.lastSource = 'manual';
+        setActiveScenario('');
+        debouncedAutoCalculate('manual');
+      });
+    });
+
+    if (loadManualState()) {
+      debouncedAutoCalculate('manual');
+    } else {
+      emptyState();
+      clearValidationState();
+    }
+  </script>
+</body>
+</html>

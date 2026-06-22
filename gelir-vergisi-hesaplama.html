@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gelir Vergisi Hesaplama 2026 | Vergi Yükü, Dilim Analizi ve Maaştan Yıllığa Simülasyon</title>
+<meta content="Gelir vergisi hesaplama aracı ile ücret geliri veya diğer gelir türleri için yıllık vergi, efektif oran, mahsup sonrası kalan vergi, vergi yük skoru ve maaştan yıllığa simülasyonu tek ekranda analiz edin." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="gelir vergisi hesaplama, gelir vergisi dilimleri, ücret geliri vergi hesaplama, yıllık gelir vergisi, maaştan yıllık vergi hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/gelir-vergisi-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Gelir Vergisi Hesaplama 2026 | Vergi Yükü, Dilim Analizi ve Maaştan Yıllığa Simülasyon" property="og:title"/>
+<meta content="Gelir vergisi hesaplama aracı ile ücret geliri veya diğer gelir türleri için yıllık vergi, efektif oran, mahsup sonrası kalan vergi, vergi yük skoru ve maaştan yıllığa simülasyonu tek ekranda analiz edin." property="og:description"/>
+<meta content="https://hesapica.com/gelir-vergisi-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Gelir Vergisi Hesaplama 2026 | Vergi Yükü, Dilim Analizi ve Maaştan Yıllığa Simülasyon" name="twitter:title"/>
+<meta content="Gelir vergisi hesaplama aracı ile ücret geliri veya diğer gelir türleri için yıllık vergi, efektif oran, mahsup sonrası kalan vergi, vergi yük skoru ve maaştan yıllığa simülasyonu tek ekranda analiz edin." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Gelir Vergisi Hesaplama",
+    "url": "https://hesapica.com/gelir-vergisi-hesaplama",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Yıllık gelir vergisi, efektif vergi oranı, mahsup sonrası kalan vergi ve maaştan yıllığa simülasyonu tek ekranda analiz eden hesaplama aracı.",
+    "inLanguage": "tr-TR",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hesapica"
+    }
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://hesapica.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Finans",
+        "item": "https://hesapica.com/#finans"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gelir Vergisi Hesaplama",
+        "item": "https://hesapica.com/gelir-vergisi-hesaplama"
+      }
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bu araç bordro hesaplar mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır. Bu ekran yıllık gelir vergisi mantığıyla çalışır. Memur ve ücretli çalışanlarda bordro uygulamaları, istisna, SGK ve diğer kesintiler sonucu değiştirebilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Aylık maaş alanı zorunlu mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır. Aylık maaş bölümü opsiyoneldir. İstersen doğrudan yıllık gelir girerek de kullanabilirsin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mahsup sonrası negatif sonuç ne demek?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Önceden kesilen vergi toplam vergiden yüksek görünüyorsa teorik olarak fazla mahsup görünümü oluşur. Bu ekran bunu analitik olarak gösterir."
+        }
+      }
+    ]
+  }
+  </script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .toggle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .toggle-pill{
+      display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;
+      background:#fcfcfd;border:1px solid var(--line);font-weight:700;color:#374151
+    }
+    .toggle-pill input{width:18px;height:18px;accent-color:var(--primary)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .flash-highlight{animation:resultFlash 1.6s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,.28)}35%{box-shadow:0 0 0 10px rgba(79,70,229,.12)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+
+    .hide{display:none!important}
+    .field{position:relative}
+    .field.is-invalid label{color:#991b1b}
+    .field.is-invalid .hint{color:#7c2d12}
+    .field.is-invalid input,
+    .field.is-invalid select,
+    .is-invalid{border-color:#dc2626!important;box-shadow:0 0 0 4px rgba(220,38,38,.08)!important;background:#fff8f8}
+    .field-error{display:none;margin-top:8px;font-size:14px;font-weight:700;color:#991b1b;line-height:1.5}
+    .field-error.show{display:block}
+    .validation-box{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}
+    .validation-box.show{display:block}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.toggle-grid{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;
+        border:1px solid #d1d5db !important;
+        break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/gelir-vergisi-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç en doğru deneyim için JavaScript gerektirir. Tarayıcınızda JavaScript kapalıysa hesaplama ve paylaşım özellikleri çalışmayabilir.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#finans">Finans</a>
+<span>/</span>
+<strong>Gelir Vergisi Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica</span>
+<h1>Gelir Vergisi Hesaplama</h1>
+<p>Bu araç yalnızca toplam vergiyi değil; <strong>vergiye esas matrahı</strong>, <strong>dilim bazlı vergi kırılımını</strong>, <strong>efektif vergi oranını</strong>, <strong>mahsup sonrası kalan vergiyi</strong> ve istersen <strong>aylık maaştan yıllığa simülasyonu</strong> tek ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Vergi yük skoru</span>
+<span class="hero-chip">Maaştan yıllığa simülasyon</span>
+<span class="hero-chip">Dilim bazlı kırılım</span>
+<span class="hero-chip">Mobilde sade akış</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Vergi analizi</div>
+<strong>Ana vergi üstte, detaylı dilim analizi aşağıda</strong>
+<p>İstersen yıllık gelir gir, istersen aylık maaştan yıllığa dönüştür. Araç toplam vergiyle birlikte efektif yükü, kalan vergiyi ve yüksek vergi baskısının nerede oluştuğunu daha görünür hale getirir.</p>
+<ul>
+<li>Yıllık matrah ve toplam gelir vergisi</li>
+<li>Mahsup sonrası kalan vergi</li>
+<li>Aylık maaştan yıllık gelir simülasyonu</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Hesaplama Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Doğrudan yıllık gelir girebilir veya aylık maaş simülasyonunu açabilirsin. Sistem sonuçları otomatik hesaplar.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Bu ekran yıllık gelir vergisi mantığıyla çalışır. Memur ve ücretli çalışanlarda bordro uygulamaları (istisna, SGK vb.) sonucu farklılık olabilir. Gerçek bordroda SGK, işsizlik primi, istisna ve işveren uygulamaları sonucu değiştirebilir. Buradaki amaç vergi yükünü daha net okumaktır.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Temel vergi verileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="taxYear">Vergi yılı</label>
+<select id="taxYear">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+</select>
+<div class="hint">Seçtiğin yıla göre vergi dilimleri otomatik uygulanır.</div>
+</div>
+<div class="field">
+<label for="incomeType">Gelir türü</label>
+<select id="incomeType">
+<option value="salary">Ücret Geliri</option>
+<option value="other">Diğer Gelirler</option>
+</select>
+<div class="hint">Ücret gelirleri ile diğer gelir türlerinde bazı dilim eşikleri farklı olabilir.</div>
+</div>
+<div class="field">
+<label for="annualGrossIncome">Yıllık brüt gelir (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="annualGrossIncome" inputmode="numeric" placeholder="Örn: 1.200.000" required="" type="text"/>
+</div>
+<div class="hint">Doğrudan yıllık gelir girmek istersen bu alanı kullan.</div>
+<div aria-live="polite" class="field-error" id="annualGrossIncomeError"></div>
+</div>
+<div class="field">
+<label for="annualDeductions">Yıllık indirim / istisna toplamı (TL) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="annualDeductions" inputmode="numeric" placeholder="Örn: 80.000" type="text"/>
+</div>
+<div class="hint">Matrahtan düşmek istediğin toplam tutar.</div>
+<div aria-live="polite" class="field-error" id="annualDeductionsError"></div>
+</div>
+<div class="field">
+<label for="prepaidTax">Önceden kesilen / ödenen vergi (TL) <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="prepaidTax" inputmode="numeric" placeholder="Örn: 120.000" type="text"/>
+</div>
+<div class="hint">Mahsup edilecek vergi varsa gir. Boşsa 0 kabul edilir.</div>
+<div aria-live="polite" class="field-error" id="prepaidTaxError"></div>
+</div>
+<div class="field full">
+<label for="taxNote">Senaryo notu <span style="color:#6b7280;font-weight:600">(opsiyonel)</span></label>
+<input id="taxNote" placeholder="Örn: yıllık ücret geliri, kira + diğer gelir, serbest meslek benzeri senaryo" type="text"/>
+<div class="hint">Bu alan hesabı değiştirmez, sadece yorum metnini daha anlaşılır hale getirir.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Opsiyonel maaştan yıllığa simülasyon</div>
+<div class="toggle-grid" style="margin-bottom:14px">
+<label class="toggle-pill"><input id="useMonthlyMode" type="checkbox"/> Aylık maaştan yıllık gelir oluştur</label>
+<label class="toggle-pill"><input checked="" id="use12Months" type="checkbox"/> 12 ay üzerinden çarp</label>
+</div>
+<div class="field-grid hide" id="monthlyFields">
+<div class="field">
+<label for="monthlyGross">Aylık brüt maaş (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="monthlyGross" inputmode="numeric" placeholder="Örn: 100.000" type="text"/>
+</div>
+<div class="hint">Bu alan doluysa araç yıllık geliri otomatik türetir.</div>
+<div aria-live="polite" class="field-error" id="monthlyGrossError"></div>
+</div>
+<div class="field">
+<label for="monthsWorked">Çalışılan ay sayısı</label>
+<input id="monthsWorked" max="12" min="1" placeholder="12" step="1" type="number"/>
+<div class="hint">12 ay yerine belirli ay sayısı ile simülasyon yapmak istersen kullan.</div>
+<div aria-live="polite" class="field-error" id="monthsWorkedError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır senaryolar</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="applyScenario('salary-mid', this)" type="button">Orta ücret</button>
+<button class="chip" onclick="applyScenario('salary-high', this)" type="button">Yüksek ücret</button>
+<button class="chip" onclick="applyScenario('other-mid', this)" type="button">Diğer gelir</button>
+<button class="chip" onclick="applyScenario('monthly', this)" type="button">Aylık maaş senaryosu</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="handlePrimaryAction()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="handleExampleAction()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" onclick="resetTool()" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="handlePrintAction()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Dilim kırılımı, senaryo tablosu ve yorum blokları aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak vergi yük skorunu, dilim dağılımını ve mahsup etkisini detaylı görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox">Devam etmek için yıllık gelir ya da aylık maaş simülasyon alanlarını geçerli şekilde doldur.</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div class="status-text" id="statusText">Yıllık gelir veya aylık maaş bilgisi girildiğinde toplam vergi ve vergi yükü otomatik görünür.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Toplam gelir vergisi burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" style="margin:0;color:#4f46e5;font-weight:800">Vergi Yük Skoru</div>
+<div class="score-value" id="taxScore">0/100</div>
+</div>
+<span class="pill" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+<div id="scoreText">Skor; efektif vergi oranı, üst dilim baskısı, mahsup sonrası kalan vergi ve net gelir üzerindeki baskı dikkate alınarak oluşur.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Efektif oran</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Üst dilim baskısı</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Mahsup etkisi</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Net gelir baskısı</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty"><div><div class="label">Vergiye esas matrah</div><div class="subline">İndirim sonrası</div></div><div class="value" id="taxBaseResult">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Efektif vergi oranı</div><div class="subline">Gerçek yük yüzdesi</div></div><div class="value" id="effectiveRateResult">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Aylık ortalama vergi</div><div class="subline">Yıllık verginin aylık karşılığı</div></div><div class="value" id="monthlyTaxResult">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Vergi sonrası net gelir</div><div class="subline">Yıllık net görünüm</div></div><div class="value" id="netIncomeResult">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Mahsup sonrası kalan vergi</div><div class="subline">Ödenecek / fazla görünüm</div></div><div class="value" id="remainingTaxResult">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Simülasyon yıllık gelir</div><div class="subline">Aylık mod açıksa</div></div><div class="value" id="annualizedIncomeResult">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Vergi seviyesi</h3><div class="big" id="health1">—</div><div class="hint" id="health1Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Dilim baskısı</h3><div class="big" id="health2">—</div><div class="hint" id="health2Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Mahsup görünümü</h3><div class="big" id="health3">—</div><div class="hint" id="health3Sub" style="margin-top:6px">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Gelir bilgilerini girdiğinde sistem, vergi baskısını ve dilim etkisini kısa yorumla açıklayacak.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Toplam gelir vergisi</th><td id="stat1">—</td></tr>
+<tr><th>Vergiye esas matrah</th><td id="stat2">—</td></tr>
+<tr><th>Efektif oran</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Aylık ortalama vergi</th><td id="stat4">—</td></tr>
+<tr><th>Mahsup sonrası kalan</th><td id="stat5">—</td></tr>
+<tr><th>Yıllık net gelir</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Dilim kırılımı ve senaryo tablosu</span>
+<span class="summary-note">Verginin hangi dilimlerde oluştuğunu gör</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Dilim</th><th>Matrah aralığı</th><th>Oran</th><th>Bu dilimde vergi</th></tr>
+</thead>
+<tbody id="breakdownTable">
+<tr><td colspan="4">Hesaplama yapıldığında dilim kırılımı burada görünecek.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Karşılaştırma</th><th>Değer</th></tr></thead>
+<tbody>
+<tr><th>En baskın dilim</th><td id="analysis1">—</td></tr>
+<tr><th>En üst aktif dilimde matrah</th><td id="analysis2">—</td></tr>
+<tr><th>Mahsup etkisi</th><td id="analysis3">—</td></tr>
+<tr><th>Aylık mod yıllık gelir</th><td id="analysis4">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Gelir vergisi nasıl okunmalı?</h2>
+<p class="section-note">Gelir vergisi tek oranlı değil, artan oranlı bir sistemdir. Bu yüzden toplam gelirin tamamı aynı orandan vergilenmez; matrah dilimlere bölünür ve her parça kendi oranıyla hesaplanır.</p>
+<details open="">
+<summary>Efektif vergi oranı neden önemli?</summary>
+<p>Nominal üst dilim oranı yüksek görünse de, gerçek yük her zaman aynı seviyede olmaz. Efektif oran toplam verginin gerçek gelir üzerindeki etkisini daha net gösterir.</p>
+</details>
+<details>
+<summary>Maaştan yıllığa simülasyon ne işe yarar?</summary>
+<p>Aylık brüt maaşını girerek yaklaşık yıllık gelir görünümü oluşturabilirsin. Bu özellikle kullanıcıların yıllık vergi baskısını daha hızlı anlamasını sağlar.</p>
+</details>
+<details>
+<summary>Mahsup alanı neden ayrı?</summary>
+<p>Yıl içinde kesilmiş vergi varsa toplam yükü doğru okumak için bunu ayrıca görmek gerekir. Mahsup sonrası kalan vergi, teorik ödenecek kısmı daha görünür yapar.</p>
+</details>
+</div>
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Sık sorulan sorular</h2>
+<details open="">
+<summary>Bu araç bordro hesaplar mı?</summary>
+<p>Hayır. Bu ekran yıllık gelir vergisi mantığıyla çalışır. Memur ve ücretli çalışanlarda bordro uygulamaları (istisna, SGK vb.) sonucu farklılık olabilir. Gerçek bordroda SGK, işsizlik primi, asgari ücret istisnası ve başka kalemler de etkili olabilir.</p>
+</details>
+<details>
+<summary>Aylık maaş alanı zorunlu mu?</summary>
+<p>Hayır. Aylık maaş bölümü opsiyoneldir. İstersen doğrudan yıllık gelir girerek kullanabilirsin.</p>
+</details>
+<details>
+<summary>Mahsup sonrası negatif sonuç ne demek?</summary>
+<p>Önceden kesilen vergi toplam vergiden yüksek görünüyorsa teorik olarak fazla mahsup görünümü oluşur. Bu ekran bunu yalnızca analitik olarak gösterir.</p>
+</details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 style="margin-bottom:12px">İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/stopaj-hesaplama">
+<span class="small">Vergi</span>
+<strong>Stopaj Hesaplama</strong>
+<p>Kesinti tarafını ayrıca analiz etmek için kullan.</p>
+</a>
+<a class="related-card" href="/maas-brut-net-hesaplama">
+<span class="small">Maaş</span>
+<strong>Maaş Brüt Net Hesaplama</strong>
+<p>Brüt ve net maaş dönüşümünü ayrı ekranda gör.</p>
+</a>
+<a class="related-card" href="/damga-vergisi-hesaplama">
+<span class="small">Vergi</span>
+<strong>Damga Vergisi Hesaplama</strong>
+<p>Belge ve sözleşme tarafındaki vergi yükünü hesapla.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const taxTariffs = {
+      2026: {
+        salary: [
+          { upper: 190000, rate: 0.15 },
+          { upper: 400000, rate: 0.20 },
+          { upper: 1500000, rate: 0.27 },
+          { upper: 5300000, rate: 0.35 },
+          { upper: Infinity, rate: 0.40 }
+        ],
+        other: [
+          { upper: 190000, rate: 0.15 },
+          { upper: 400000, rate: 0.20 },
+          { upper: 1000000, rate: 0.27 },
+          { upper: 5300000, rate: 0.35 },
+          { upper: Infinity, rate: 0.40 }
+        ]
+      },
+      2025: {
+        salary: [
+          { upper: 158000, rate: 0.15 },
+          { upper: 330000, rate: 0.20 },
+          { upper: 1200000, rate: 0.27 },
+          { upper: 4300000, rate: 0.35 },
+          { upper: Infinity, rate: 0.40 }
+        ],
+        other: [
+          { upper: 158000, rate: 0.15 },
+          { upper: 330000, rate: 0.20 },
+          { upper: 800000, rate: 0.27 },
+          { upper: 4300000, rate: 0.35 },
+          { upper: Infinity, rate: 0.40 }
+        ]
+      }
+    };
+
+    const STORAGE_KEY = 'hesapica_gelir_vergisi_manual_v2';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      lastInputSource: 'manual',
+      touched: {},
+      hasAttemptedSubmit: false,
+      debounceTimer: null
+    };
+
+    const el = id => document.getElementById(id);
+    const fieldConfigs = {
+      annualGrossIncome: { fieldId: 'annualGrossIncome', errorId: 'annualGrossIncomeError' },
+      annualDeductions: { fieldId: 'annualDeductions', errorId: 'annualDeductionsError' },
+      prepaidTax: { fieldId: 'prepaidTax', errorId: 'prepaidTaxError' },
+      monthlyGross: { fieldId: 'monthlyGross', errorId: 'monthlyGrossError' },
+      monthsWorked: { fieldId: 'monthsWorked', errorId: 'monthsWorkedError' }
+    };
+
+    function clearFieldError(id){
+      const cfg = fieldConfigs[id];
+      if(!cfg) return;
+      const input = el(cfg.fieldId);
+      const error = el(cfg.errorId);
+      const field = input.closest('.field');
+      input.classList.remove('is-invalid');
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+      if(field) field.classList.remove('is-invalid');
+      if(error){
+        error.textContent = '';
+        error.classList.remove('show');
+        error.removeAttribute('role');
+      }
+    }
+
+    function showFieldError(id, message){
+      const cfg = fieldConfigs[id];
+      if(!cfg) return;
+      const input = el(cfg.fieldId);
+      const error = el(cfg.errorId);
+      const field = input.closest('.field');
+      input.classList.add('is-invalid');
+      input.setAttribute('aria-invalid', 'true');
+      if(field) field.classList.add('is-invalid');
+      if(error){
+        error.textContent = message;
+        error.classList.add('show');
+        error.setAttribute('role', 'alert');
+        input.setAttribute('aria-describedby', cfg.errorId);
+      }
+    }
+
+    function clearInputErrors(){
+      Object.keys(fieldConfigs).forEach(clearFieldError);
+      el('validationBox').classList.remove('show');
+    }
+
+    function markTouched(id){
+      if(id) state.touched[id] = true;
+    }
+
+    function markInputSource(source='manual'){
+      state.lastInputSource = source;
+    }
+
+    function scheduleAutoCalculate(){
+      clearTimeout(state.debounceTimer);
+      state.debounceTimer = setTimeout(() => calculateAll(), 180);
+    }
+    function saveManualState(){
+      if(state.lastInputSource !== 'manual') return;
+      const payload = {
+        source:'manual',
+        taxYear: el('taxYear').value,
+        incomeType: el('incomeType').value,
+        annualGrossIncome: el('annualGrossIncome').value,
+        annualDeductions: el('annualDeductions').value,
+        prepaidTax: el('prepaidTax').value,
+        taxNote: el('taxNote').value,
+        useMonthlyMode: el('useMonthlyMode').checked,
+        use12Months: el('use12Months').checked,
+        monthlyGross: el('monthlyGross').value,
+        monthsWorked: el('monthsWorked').value
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+    function loadManualState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return false;
+        const data = JSON.parse(raw);
+        if(!data || data.source !== 'manual') return false;
+        el('taxYear').value = data.taxYear || '2026';
+        el('incomeType').value = data.incomeType || 'salary';
+        el('annualGrossIncome').value = data.annualGrossIncome || '';
+        el('annualDeductions').value = data.annualDeductions || '';
+        el('prepaidTax').value = data.prepaidTax || '';
+        el('taxNote').value = data.taxNote || '';
+        el('useMonthlyMode').checked = !!data.useMonthlyMode;
+        el('use12Months').checked = data.use12Months !== false;
+        el('monthlyGross').value = data.monthlyGross || '';
+        el('monthsWorked').value = data.monthsWorked || '';
+        state.hasAttemptedSubmit = false;
+        state.touched = {};
+        updateMonthlyMode(false);
+        calculateAll();
+        return true;
+      }catch(e){
+        localStorage.removeItem(STORAGE_KEY);
+        return false;
+      }
+    }
+
+
+    function formatCurrency(value){
+      return new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0}).format(Number(value)||0);
+    }
+    function formatPercent(value,digits=1){
+      return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number(value)||0) + '%';
+    }
+    function formatNumber(value,digits=0){
+      return new Intl.NumberFormat('tr-TR',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number(value)||0);
+    }
+    function formatTrInput(value){
+      const num = Math.round(Number(value)||0);
+      return num ? new Intl.NumberFormat('tr-TR').format(num) : '';
+    }
+    function parseTrNumber(value){
+      if(value === null || value === undefined) return 0;
+      const cleaned = String(value).replace(/\./g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
+      return Number(cleaned) || 0;
+    }
+    function clamp(n,min,max){ return Math.min(Math.max(n,min),max); }
+
+    function announceStatus(message, duration = 1800){
+      const old = el('statusText').textContent;
+      el('statusText').textContent = message;
+      if(duration > 0){
+        setTimeout(() => {
+          if(el('statusText').textContent === message){
+            el('statusText').textContent = old;
+          }
+        }, duration);
+      }
+    }
+
+    function flashElement(node){
+      if(!node) return;
+      node.classList.remove('flash-highlight');
+      void node.offsetWidth;
+      node.classList.add('flash-highlight');
+      setTimeout(() => node.classList.remove('flash-highlight'), 1700);
+    }
+
+    function scrollToResults(){
+      const target = el('highlightCard');
+      if(!target) return;
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      flashElement(target);
+    }
+
+    async function copyToClipboard(text){
+      try{
+        if(navigator.clipboard && window.isSecureContext){
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      }catch(e){}
+      try{
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly','');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        textarea.style.pointerEvents = 'none';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return ok;
+      }catch(e){
+        return false;
+      }
+    }
+
+    function setMoneyInput(input){
+      input.addEventListener('input', () => {
+        const raw = input.value.replace(/\D/g,'');
+        input.value = raw ? new Intl.NumberFormat('tr-TR').format(Number(raw)) : '';
+        markTouched(input.id);
+        markInputSource('manual');
+        scheduleAutoCalculate();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseTrNumber(input.value);
+        input.value = val ? formatTrInput(val) : '';
+      });
+    }
+
+    function renderBreakdownTable(rows){
+      const tbody = el('breakdownTable');
+      if(!rows.length){
+        tbody.innerHTML = '<tr><td colspan="4">Hesaplama yapıldığında dilim kırılımı burada görünecek.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.map(row => {
+        const rangeText = row.upper === Infinity
+          ? formatNumber(row.lower) + ' TL üzeri'
+          : formatNumber(row.lower) + ' TL - ' + formatNumber(row.upper) + ' TL';
+        return `
+          <tr>
+            <td>${row.index}. dilim</td>
+            <td>${rangeText}</td>
+            <td>${formatPercent(row.rate*100,0)}</td>
+            <td>${formatCurrency(row.tax)}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    function calculateByBrackets(taxBase, type){
+      const year = el('taxYear').value;
+      const brackets = taxTariffs[year][type];
+      let remaining = taxBase;
+      let previousUpper = 0;
+      let totalTax = 0;
+      const breakdown = [];
+
+      for(let i=0;i<brackets.length;i++){
+        const bracket = brackets[i];
+        const cap = bracket.upper - previousUpper;
+        const taxable = Math.max(0, Math.min(remaining, cap));
+
+        if(taxable > 0){
+          const tax = taxable * bracket.rate;
+          totalTax += tax;
+          breakdown.push({
+            index:i+1,
+            lower:previousUpper,
+            upper:bracket.upper,
+            rate:bracket.rate,
+            taxable,
+            tax
+          });
+          remaining -= taxable;
+        }
+        previousUpper = bracket.upper;
+        if(remaining <= 0) break;
+      }
+
+      return {totalTax, breakdown};
+    }
+
+    function updateMonthlyMode(shouldCalculate = true){
+      const active = el('useMonthlyMode').checked;
+      el('monthlyFields').classList.toggle('hide', !active);
+      if(!active){
+        el('monthlyGross').classList.remove('is-invalid');
+        el('monthsWorked').classList.remove('is-invalid');
+      }
+      if(shouldCalculate) calculateAll();
+    }
+
+    function setEmptyState(){
+      el('statusBadge').textContent = 'Veri bekleniyor';
+      el('statusBadge').className = 'badge';
+      el('statusText').textContent = 'Yıllık gelir veya aylık maaş bilgisi girildiğinde toplam vergi ve vergi yükü otomatik görünür.';
+      el('highlightCard').classList.add('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.add('is-empty'));
+
+      el('mainResult').textContent = '—';
+      el('mainResultText').textContent = 'Toplam gelir vergisi burada görünecek.';
+      el('taxScore').textContent = '0/100';
+      el('scoreBadge').textContent = 'Veri bekleniyor';
+      el('scoreBadge').className = 'pill';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'Skor; efektif vergi oranı, üst dilim baskısı, mahsup sonrası kalan vergi ve net gelir üzerindeki baskı dikkate alınarak oluşur.';
+      el('scoreBreakdown').querySelectorAll('.val').forEach(v => v.textContent = '—');
+
+      ['taxBaseResult','effectiveRateResult','monthlyTaxResult','netIncomeResult','remainingTaxResult','annualizedIncomeResult','stat1','stat2','stat3','stat4','stat5','stat6','analysis1','analysis2','analysis3','analysis4'].forEach(id => el(id).textContent = '—');
+      ['health1','health2','health3','health1Sub','health2Sub','health3Sub'].forEach(id => el(id).textContent = '—');
+      el('smartComment').textContent = 'Gelir bilgilerini girdiğinde sistem, vergi baskısını ve dilim etkisini kısa yorumla açıklayacak.';
+      renderBreakdownTable([]);
+    }
+
+    function calculateAll(options = {}){
+      const shouldScroll = !!options.shouldScroll;
+      const forceValidation = !!options.forceValidation;
+      if(forceValidation){
+        state.hasAttemptedSubmit = true;
+      }
+      clearInputErrors();
+
+      const incomeType = el('incomeType').value;
+      const annualGrossInput = parseTrNumber(el('annualGrossIncome').value);
+      const deductions = parseTrNumber(el('annualDeductions').value);
+      const prepaidTax = parseTrNumber(el('prepaidTax').value);
+      const note = el('taxNote').value.trim();
+      const useMonthlyMode = el('useMonthlyMode').checked;
+      const monthlyGross = parseTrNumber(el('monthlyGross').value);
+      const use12Months = el('use12Months').checked;
+      const monthsWorkedRaw = (el('monthsWorked').value || '').trim();
+      const monthsWorked = Number(monthsWorkedRaw) || 0;
+
+      let annualGross = annualGrossInput;
+      let annualizedIncome = 0;
+      let effectiveMonths = 12;
+      const errors = {};
+      const shouldShow = id => forceValidation || state.hasAttemptedSubmit || !!state.touched[id];
+
+      if(annualGrossInput <= 0 && !useMonthlyMode && shouldShow('annualGrossIncome')){
+        errors.annualGrossIncome = 'Yıllık brüt gelir alanına 0’dan büyük bir tutar gir.';
+      }
+
+      if(deductions < 0 && shouldShow('annualDeductions')){
+        errors.annualDeductions = 'İndirim / istisna toplamı negatif olamaz.';
+      }
+
+      if(prepaidTax < 0 && shouldShow('prepaidTax')){
+        errors.prepaidTax = 'Önceden ödenen vergi negatif olamaz.';
+      }
+
+      if(useMonthlyMode){
+        if(monthlyGross <= 0 && shouldShow('monthlyGross')){
+          errors.monthlyGross = 'Aylık brüt maaş alanına 0’dan büyük bir tutar gir.';
+        }else if(monthlyGross > 0){
+          effectiveMonths = 12;
+          if(!use12Months){
+            if(!monthsWorkedRaw){
+              if(shouldShow('monthsWorked')){
+                errors.monthsWorked = 'Çalışılan ay sayısını gir.';
+              }
+            }else if(!Number.isInteger(Number(monthsWorkedRaw)) || monthsWorked < 1 || monthsWorked > 12){
+              if(shouldShow('monthsWorked')){
+                errors.monthsWorked = 'Çalışılan ay sayısı 1 ile 12 arasında tam sayı olmalı.';
+              }
+            }else{
+              effectiveMonths = monthsWorked;
+            }
+          }
+          if(!errors.monthlyGross && !errors.monthsWorked){
+            annualizedIncome = monthlyGross * effectiveMonths;
+            annualGross = annualizedIncome;
+          }
+        }
+      }
+
+      Object.entries(errors).forEach(([id, message]) => showFieldError(id, message));
+
+      const hasCoreInput = !!(
+        el('annualGrossIncome').value.trim() ||
+        el('monthlyGross').value.trim() ||
+        monthsWorkedRaw
+      );
+
+      if(annualGross <= 0 || Object.keys(errors).length){
+        setEmptyState();
+        if(forceValidation || hasCoreInput || Object.keys(errors).length){
+          el('validationBox').textContent = useMonthlyMode
+            ? 'Devam etmek için aylık maaş alanlarını geçerli şekilde doldur.'
+            : 'Devam etmek için yıllık gelir alanına geçerli bir tutar gir.';
+          el('validationBox').classList.add('show');
+          el('statusText').textContent = el('validationBox').textContent;
+          el('statusBadge').textContent = 'Kontrol et';
+          el('statusBadge').className = 'badge bad';
+        }
+        state.inputs = {incomeType, annualGrossInput, deductions, prepaidTax, note, useMonthlyMode, monthlyGross, use12Months, monthsWorked};
+        state.results = null;
+        state.isValid = false;
+        state.isCalculated = false;
+        return;
+      }
+
+      const taxBase = Math.max(0, annualGross - deductions);
+      const calc = calculateByBrackets(taxBase, incomeType);
+      const totalTax = calc.totalTax;
+      const monthlyDivisor = useMonthlyMode && !use12Months ? effectiveMonths : 12;
+      const monthlyTax = totalTax / monthlyDivisor;
+      const netIncome = annualGross - totalTax;
+      const remainingTax = totalTax - prepaidTax;
+      const lastBracketRate = calc.breakdown.length ? calc.breakdown[calc.breakdown.length - 1].rate * 100 : 0;
+      const topBracketTax = calc.breakdown.length ? calc.breakdown[calc.breakdown.length - 1].tax : 0;
+      const topBracketTaxable = calc.breakdown.length ? calc.breakdown[calc.breakdown.length - 1].taxable : 0;
+      const effectiveRate = annualGross > 0 ? (totalTax / annualGross) * 100 : 0;
+
+      let score = 100;
+      score -= clamp(effectiveRate * 2.5, 0, 45);
+      score -= clamp(lastBracketRate * 0.7, 0, 22);
+      score -= clamp((remainingTax > 0 ? (remainingTax/annualGross)*100 : 0) * 1.3, 0, 18);
+      score -= clamp(((annualGross - netIncome)/annualGross)*100 * 0.8, 0, 15);
+      score = Math.round(clamp(score, 0, 100));
+
+      let level = 'good';
+      if(effectiveRate >= 20 || lastBracketRate >= 35) level = 'bad';
+      else if(effectiveRate >= 10 || lastBracketRate >= 27) level = 'warn';
+
+      el('statusBadge').textContent = level === 'good' ? 'Hesaplandı' : level === 'warn' ? 'Dikkat gerekli' : 'Vergi baskısı yüksek';
+      el('statusBadge').className = 'badge ' + level;
+      el('statusText').textContent = useMonthlyMode && monthlyGross > 0
+        ? `Aylık brüt ${formatCurrency(monthlyGross)} üzerinden yıllık yaklaşık gelir ${formatCurrency(annualGross)} olarak simüle edildi.`
+        : 'Yıllık gelir üzerinden vergi hesaplandı.';
+      el('highlightCard').classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.remove('is-empty'));
+
+      el('mainResult').textContent = formatCurrency(totalTax);
+      el('mainResultText').textContent = `${incomeType === 'salary' ? 'Ücret geliri' : 'Diğer gelir'} senaryosunda toplam gelir vergisi ${formatCurrency(totalTax)} olarak görünüyor.`;
+
+      el('taxBaseResult').textContent = formatCurrency(taxBase);
+      el('effectiveRateResult').textContent = formatPercent(effectiveRate,1);
+      el('monthlyTaxResult').textContent = formatCurrency(monthlyTax);
+      el('netIncomeResult').textContent = formatCurrency(netIncome);
+      el('remainingTaxResult').textContent = formatCurrency(remainingTax);
+      el('annualizedIncomeResult').textContent = useMonthlyMode && annualizedIncome > 0 ? formatCurrency(annualizedIncome) : 'Kapalı';
+
+      el('stat1').textContent = formatCurrency(totalTax);
+      el('stat2').textContent = formatCurrency(taxBase);
+      el('stat3').textContent = formatPercent(effectiveRate,1);
+      el('stat4').textContent = formatCurrency(monthlyTax);
+      el('stat5').textContent = formatCurrency(remainingTax);
+      el('stat6').textContent = formatCurrency(netIncome);
+
+      renderBreakdownTable(calc.breakdown);
+
+      el('analysis1').textContent = calc.breakdown.length ? `${calc.breakdown[calc.breakdown.length - 1].index}. dilim` : '—';
+      el('analysis2').textContent = formatCurrency(topBracketTaxable);
+      el('analysis3').textContent = prepaidTax > 0 ? formatCurrency(prepaidTax) : 'Yok';
+      el('analysis4').textContent = useMonthlyMode && annualizedIncome > 0 ? formatCurrency(annualizedIncome) : 'Kapalı';
+
+      el('taxScore').textContent = `${score}/100`;
+      el('scoreBar').style.width = `${score}%`;
+      const scoreBadge = el('scoreBadge');
+      if(score >= 75){
+        scoreBadge.textContent = 'Kontrollü';
+        scoreBadge.className = 'pill good';
+      }else if(score >= 50){
+        scoreBadge.textContent = 'Orta baskı';
+        scoreBadge.className = 'pill warn';
+      }else{
+        scoreBadge.textContent = 'Baskı yüksek';
+        scoreBadge.className = 'pill bad';
+      }
+      el('scoreText').textContent = score >= 75
+        ? 'Vergi yükü şu an daha kontrollü görünüyor. Yine de mahsup ve indirim alanlarını doğru girmek toplam resmi etkiler.'
+        : score >= 50
+          ? 'Vergi baskısı orta seviyeye yaklaşmış durumda. Özellikle üst dilim geçişi ve mahsup alanı sonucu belirgin etkileyebilir.'
+          : 'Vergi yükü belirgin şekilde artmış görünüyor. Üst dilim baskısı ve kalan vergi dikkatle izlenmeli.';
+
+      const scoreVals = el('scoreBreakdown').querySelectorAll('.val');
+      scoreVals[0].textContent = formatPercent(effectiveRate,1);
+      scoreVals[1].textContent = formatPercent(lastBracketRate,0);
+      scoreVals[2].textContent = prepaidTax > 0 ? formatCurrency(prepaidTax) : 'Yok';
+      scoreVals[3].textContent = formatPercent(((annualGross - netIncome)/annualGross)*100,1);
+
+      el('health1').textContent = effectiveRate < 10 ? 'Daha hafif' : effectiveRate < 20 ? 'Orta' : 'Yüksek';
+      el('health1Sub').textContent = `Efektif vergi oranı ${formatPercent(effectiveRate,1)}`;
+      el('health2').textContent = lastBracketRate < 27 ? 'Sınırlı' : lastBracketRate < 35 ? 'Belirgin' : 'Üst dilim';
+      el('health2Sub').textContent = `En yüksek aktif oran ${formatPercent(lastBracketRate,0)}`;
+      el('health3').textContent = prepaidTax > 0 ? 'Mahsup var' : 'Mahsup yok';
+      el('health3Sub').textContent = prepaidTax > 0 ? `Kalan görünüm ${formatCurrency(remainingTax)}` : 'Toplam vergi doğrudan görünüyor';
+
+      let comment = `${incomeType === 'salary' ? 'Ücret geliri' : 'Diğer gelir'} senaryosunda vergiye esas matrah ${formatCurrency(taxBase)} oldu ve toplam gelir vergisi ${formatCurrency(totalTax)} seviyesine çıktı. `;
+      comment += `Efektif vergi oranı ${formatPercent(effectiveRate,1)} görünüyor. `;
+      if(useMonthlyMode && monthlyGross > 0){
+        comment += `Aylık brüt ${formatCurrency(monthlyGross)} tutarı ${effectiveMonths} ay üzerinden yıllık yaklaşık ${formatCurrency(annualGross)} gelire dönüştürüldü. `;
+      }
+      if(prepaidTax > 0){
+        if(remainingTax > 0){
+          comment += `Mahsup sonrası yaklaşık ${formatCurrency(remainingTax)} vergi kalıyor. `;
+        }else{
+          comment += `Mahsup tutarı toplam vergiyi karşılıyor; teorik olarak ${formatCurrency(Math.abs(remainingTax))} fazla görünüm oluşuyor. `;
+        }
+      }else{
+        comment += `Mahsup girilmediği için kalan vergi toplam vergi ile aynı kabul edildi. `;
+      }
+      if(lastBracketRate >= 35){
+        comment += `Üst dilim baskısı belirgin olduğu için indirim ve mahsup alanlarının doğru girilmesi özellikle önemli. `;
+      }else if(lastBracketRate >= 27){
+        comment += `Orta-üst dilim baskısı hissedilmeye başlamış durumda. `;
+      }else{
+        comment += `Vergi baskısı daha kontrollü seviyede görünüyor. `;
+      }
+      if(note){
+        comment += `Not alanındaki "${note}" ifadesi bu hesabın senaryosunu takip etmene yardımcı olabilir.`;
+      }
+      el('smartComment').textContent = comment;
+
+      state.inputs = {incomeType, annualGross, annualGrossInput, deductions, prepaidTax, note, useMonthlyMode, monthlyGross, use12Months, monthsWorked, annualizedIncome};
+      state.results = {taxBase, totalTax, effectiveRate, monthlyTax, netIncome, remainingTax, lastBracketRate, topBracketTax, topBracketTaxable, score, level, annualizedIncome, effectiveMonths};
+      state.isValid = true;
+      state.isCalculated = true;
+      saveManualState();
+      if(shouldScroll){
+        scrollToResults();
+      }
+    }
+
+    function clearScenarioActive(){
+      document.querySelectorAll('#scenarioRow .chip').forEach(ch => ch.classList.remove('active'));
+    }
+
+    function applyScenario(type, btn){
+      state.hasAttemptedSubmit = false;
+      state.touched = {};
+      markInputSource('demo');
+      clearScenarioActive();
+      if(btn) btn.classList.add('active');
+
+      if(type === 'salary-mid'){
+        el('incomeType').value = 'salary';
+        el('annualGrossIncome').value = '900.000';
+        el('annualDeductions').value = '60.000';
+        el('prepaidTax').value = '';
+        el('taxNote').value = 'Orta seviye ücret geliri örneği';
+        el('useMonthlyMode').checked = false;
+      }else if(type === 'salary-high'){
+        el('incomeType').value = 'salary';
+        el('annualGrossIncome').value = '2.400.000';
+        el('annualDeductions').value = '100.000';
+        el('prepaidTax').value = '250.000';
+        el('taxNote').value = 'Yüksek ücret geliri örneği';
+        el('useMonthlyMode').checked = false;
+      }else if(type === 'other-mid'){
+        el('incomeType').value = 'other';
+        el('annualGrossIncome').value = '1.400.000';
+        el('annualDeductions').value = '120.000';
+        el('prepaidTax').value = '80.000';
+        el('taxNote').value = 'Diğer gelir türü örneği';
+        el('useMonthlyMode').checked = false;
+      }else if(type === 'monthly'){
+        el('incomeType').value = 'salary';
+        el('annualGrossIncome').value = '';
+        el('annualDeductions').value = '80.000';
+        el('prepaidTax').value = '120.000';
+        el('taxNote').value = 'Aylık maaştan yıllığa simülasyon';
+        el('useMonthlyMode').checked = true;
+        el('use12Months').checked = true;
+        el('monthlyGross').value = '100.000';
+        el('monthsWorked').value = '12';
+      }
+      updateMonthlyMode(false);
+      calculateAll({shouldScroll:true, forceValidation:true});
+    }
+
+    function handlePrimaryAction(){
+      markInputSource('manual');
+      calculateAll({shouldScroll:true, forceValidation:true});
+    }
+
+    function handleExampleAction(){
+      fillExample();
+    }
+
+    function fillExample(){
+      state.hasAttemptedSubmit = false;
+      state.touched = {};
+      markInputSource('demo');
+      clearScenarioActive();
+      el('incomeType').value = 'salary';
+      el('annualGrossIncome').value = '1.200.000';
+      el('annualDeductions').value = '80.000';
+      el('prepaidTax').value = '120.000';
+      el('taxNote').value = 'Örnek ücret geliri senaryosu';
+      el('useMonthlyMode').checked = false;
+      el('monthlyGross').value = '';
+      el('monthsWorked').value = '';
+      updateMonthlyMode(false);
+      calculateAll({shouldScroll:true});
+    }
+
+    function resetTool(){
+      markInputSource('manual');
+      state.hasAttemptedSubmit = false;
+      state.touched = {};
+      clearTimeout(state.debounceTimer);
+      localStorage.removeItem(STORAGE_KEY);
+      clearScenarioActive();
+      el('incomeType').value = 'salary';
+      el('annualGrossIncome').value = '';
+      el('annualDeductions').value = '';
+      el('prepaidTax').value = '';
+      el('taxNote').value = '';
+      el('useMonthlyMode').checked = false;
+      el('use12Months').checked = true;
+      el('monthlyGross').value = '';
+      el('monthsWorked').value = '';
+      updateMonthlyMode(false);
+      setEmptyState();
+    }
+
+    async function copyResult(){
+      if(!state.isCalculated || !state.results){
+        announceStatus('Önce geçerli bir sonuç oluşturmalısın.');
+        return;
+      }
+      const text = [
+        'Gelir Vergisi Hesaplama',
+        `Toplam Gelir Vergisi: ${el('mainResult').textContent}`,
+        `Vergiye Esas Matrah: ${el('taxBaseResult').textContent}`,
+        `Efektif Vergi Oranı: ${el('effectiveRateResult').textContent}`,
+        `Aylık Ortalama Vergi: ${el('monthlyTaxResult').textContent}`,
+        `Vergi Sonrası Net Gelir: ${el('netIncomeResult').textContent}`,
+        `Mahsup Sonrası Kalan Vergi: ${el('remainingTaxResult').textContent}`,
+        `Vergi Yük Skoru: ${el('taxScore').textContent}`,
+        window.location.href
+      ].join('\n');
+
+      const ok = await copyToClipboard(text);
+      announceStatus(ok ? 'Sonuç özeti panoya kopyalandı.' : 'Panoya kopyalama bu tarayıcıda engellendi.');
+    }
+
+    async function shareResult(){
+      if(!state.isCalculated || !state.results){
+        announceStatus('Önce geçerli bir sonuç oluşturmalısın.');
+        return;
+      }
+      const shareText = `Toplam gelir vergisi ${el('mainResult').textContent}, efektif oran ${el('effectiveRateResult').textContent}, vergi yük skoru ${el('taxScore').textContent}.`;
+      if(navigator.share){
+        try{
+          await navigator.share({title:'Gelir Vergisi Hesaplama', text:shareText, url:window.location.href});
+        }catch(_){ }
+      }else{
+        const ok = await copyToClipboard(`${shareText}\n${window.location.href}`);
+        announceStatus(ok ? 'Paylaşım bağlantısı panoya kopyalandı.' : 'Paylaşım bağlantısı panoya kopyalanamadı.');
+      }
+    }
+
+    function handlePrintAction(){
+      if(!state.isCalculated || !state.results){
+        announceStatus('Yazdırmadan önce geçerli bir sonuç oluşturmalısın.');
+        return;
+      }
+      window.print();
+    }
+
+    setMoneyInput(el('annualGrossIncome'));
+    setMoneyInput(el('annualDeductions'));
+    setMoneyInput(el('prepaidTax'));
+    setMoneyInput(el('monthlyGross'));
+
+    el('useMonthlyMode').addEventListener('change', () => {
+      markInputSource('manual');
+      updateMonthlyMode();
+    });
+
+    ['annualGrossIncome','annualDeductions','prepaidTax','monthlyGross','monthsWorked','taxNote'].forEach(id => {
+      const node = el(id);
+      if(!node) return;
+      node.addEventListener('blur', () => {
+        markTouched(id);
+        markInputSource('manual');
+        calculateAll();
+      });
+    });
+
+    ['taxYear','incomeType','use12Months'].forEach(id => {
+      el(id).addEventListener('change', () => {
+        markInputSource('manual');
+        calculateAll();
+      });
+    });
+
+    document.querySelectorAll('input,select').forEach(node => {
+      if(!['annualGrossIncome','annualDeductions','prepaidTax','monthlyGross','useMonthlyMode','taxYear','incomeType','use12Months'].includes(node.id)){
+        node.addEventListener('input', () => {
+          markTouched(node.id);
+          markInputSource('manual');
+          scheduleAutoCalculate();
+        });
+      }
+      node.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter'){
+          e.preventDefault();
+          markTouched(node.id);
+          markInputSource('manual');
+          calculateAll({shouldScroll:true, forceValidation:true});
+        }
+      });
+    });
+
+    if(!loadManualState()){
+      setEmptyState();
+    }
+  </script>
+</body>
+</html>

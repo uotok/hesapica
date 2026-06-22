@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hesapica | Finans, Yaşam ve Özgün Hesaplama Araçları</title>
+<meta content="Hesapica; finans, vergi, emlak, araç, yatırım, günlük yaşam ve özgün keşif kategorilerinde hızlı, mobil uyumlu ve yüksek değerli hesaplama araçları sunan Türkçe karar destek platformudur." name="description"/>
+<meta content="hesaplama araçları, kredi hesaplama, kira artış hesaplama, tapu harcı hesaplama, emlak vergisi hesaplama, elektrik faturası hesaplama, mevduat faizi hesaplama, yatırım getirisi hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://hesapica.com/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Hesapica | Finans, Yaşam ve Özgün Hesaplama Araçları" property="og:title"/>
+<meta content="Hesapica; finans, vergi, emlak, araç, yatırım, günlük yaşam ve özgün keşif kategorilerinde hızlı, mobil uyumlu ve yüksek değerli hesaplama araçları sunan Türkçe karar destek platformudur." property="og:description"/>
+<meta content="https://hesapica.com/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hesapica | Finans, Yaşam ve Özgün Hesaplama Araçları" name="twitter:title">
+<meta content="Hesapica; finans, vergi, emlak, araç, yatırım, günlük yaşam ve özgün keşif kategorilerinde hızlı, mobil uyumlu ve yüksek değerli hesaplama araçları sunan Türkçe karar destek platformudur." name="twitter:description">
+<meta content="https://hesapica.com/" name="twitter:url"/>
+<link href="cookie-consent.css" rel="stylesheet"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<style>
+    :root{
+      --bg:#f6f8fc;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#4f46e5;
+      --primary2:#7c3aed;
+      --primary-soft:#eef2ff;
+      --surface:rgba(255,255,255,0.78);
+      --surface-strong:rgba(255,255,255,0.92);
+      --shadow:0 18px 42px rgba(15,23,42,0.08);
+      --shadow-soft:0 10px 24px rgba(79,70,229,0.08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,58,237,0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(79,70,229,0.10), transparent 20%),
+        linear-gradient(180deg,#eef2ff 0,#f8fafc 220px,#f6f8fc 100%);
+      color:var(--text);
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .hero{
+      position:relative;
+      overflow:visible;
+      z-index:4;
+      background:linear-gradient(135deg,#1e1b4b 0%, #312e81 42%, #4f46e5 100%);
+      color:#fff;
+      padding:48px 20px 64px;
+      box-shadow:0 14px 28px rgba(49,46,129,0.18);
+      isolation:isolate;
+    }
+
+    .hero::before,
+    .hero::after{
+      content:"";
+      position:absolute;
+      border-radius:999px;
+      pointer-events:none;
+      filter:blur(2px);
+      z-index:-1;
+    }
+
+    .hero::before{
+      width:420px;
+      height:420px;
+      right:-90px;
+      top:-170px;
+      background:radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 72%);
+    }
+
+    .hero::after{
+      width:340px;
+      height:340px;
+      left:-120px;
+      bottom:-180px;
+      background:radial-gradient(circle, rgba(167,139,250,0.24) 0%, rgba(167,139,250,0) 70%);
+    }
+
+    .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+
+    .hero.category-panel-open{
+      z-index:3001;
+    }
+
+    body.category-panel-open{
+      overflow:hidden;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.16);
+      padding:11px 16px;
+      border-radius:999px;
+      font-weight:bold;
+      letter-spacing:.01em;
+      margin-bottom:18px;
+      box-shadow:0 12px 24px rgba(15,23,42,0.12);
+    }
+
+    .brand-icon{
+      width:32px;
+      height:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.12));
+      font-size:16px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    .hero h1{
+      margin:0;
+      max-width:760px;
+      font-size:48px;
+      line-height:1.08;
+      letter-spacing:-0.03em;
+    }
+
+    .hero p{
+      margin:14px 0 0;
+      max-width:760px;
+      color:rgba(255,255,255,0.90);
+      font-size:18px;
+      line-height:1.68;
+    }
+
+    .quick-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .quick-links a{
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.16);
+      color:#fff;
+      padding:10px 15px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+      transition:0.2s ease;
+      box-shadow:0 8px 18px rgba(15,23,42,0.10);
+    }
+
+    .quick-links a:hover{background:rgba(255,255,255,0.22); transform:translateY(-1px)}
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .hero-cta,
+    .hero-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:700;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .hero-cta{
+      background:#fff;
+      color:#312e81;
+      box-shadow:0 16px 28px rgba(15,23,42,0.18);
+    }
+
+    .hero-secondary{
+      background:rgba(255,255,255,0.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.16);
+      backdrop-filter:blur(10px);
+    }
+
+    .hero-cta:hover, .hero-secondary:hover{transform:translateY(-1px)}
+
+
+    .hero-nav{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-start;
+      gap:12px;
+      margin-top:20px;
+      flex-wrap:nowrap;
+      position:relative;
+    }
+
+    .hero-nav-controls{
+      position:relative;
+      z-index:50;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:10px;
+      flex-wrap:nowrap;
+      width:auto;
+      max-width:100%;
+    }
+
+    .all-categories-btn{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+      padding:11px 16px;
+      border-radius:999px;
+      font-size:14px;
+      cursor:pointer;
+      transition:0.2s ease;
+      font-weight:700;
+      backdrop-filter:blur(10px);
+      box-shadow:0 10px 20px rgba(15,23,42,0.10);
+    }
+
+    .all-categories-btn:hover,
+    .all-categories-btn[aria-expanded="true"]{
+      background:rgba(255,255,255,0.22);
+    }
+
+    .all-categories-panel{
+      position:fixed;
+      top:96px;
+      left:20px;
+      width:min(392px, calc(100vw - 28px));
+      max-width:calc(100vw - 28px);
+      max-height:min(78vh, 620px);
+      background:#fff;
+      border:2px solid rgba(79,70,229,.38);
+      border-radius:22px;
+      box-shadow:0 28px 70px rgba(15,23,42,.18), 0 0 0 3px rgba(124,58,237,.10);
+      padding:18px 18px 16px;
+      display:none;
+      z-index:2005;
+      color:var(--text);
+      overflow:hidden;
+    }
+
+    .all-categories-panel.open{display:block}
+
+    .all-categories-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.28);
+      backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .18s ease;
+      z-index:2000;
+    }
+
+    .all-categories-backdrop.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+
+    .all-categories-panel-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .all-categories-panel-head strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:4px;
+    }
+
+    .all-categories-panel-head span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+      max-width:190px;
+      display:block;
+    }
+
+    .all-categories-close{
+      border:none;
+      background:#eef2ff;
+      color:var(--primary);
+      padding:8px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .category-panel-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      max-height:470px;
+      overflow-y:auto;
+      overflow-x:hidden;
+      padding-right:4px;
+      padding-bottom:74px;
+      scrollbar-width:thin;
+      scrollbar-color:#c7d2fe transparent;
+    }
+
+    .category-panel-grid::-webkit-scrollbar{width:8px}
+    .category-panel-grid::-webkit-scrollbar-track{background:transparent}
+    .category-panel-grid::-webkit-scrollbar-thumb{background:#c7d2fe;border-radius:999px}
+
+    .category-panel-scroll-action{
+      position:absolute;
+      right:14px;
+      bottom:14px;
+      margin:0;
+      padding:0;
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      pointer-events:none;
+      z-index:3;
+    }
+
+    .category-panel-scroll-action::before{display:none}
+
+    .category-panel-scroll-btn{
+      position:relative;
+      z-index:1;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,#ffffff 0%, #eef2ff 100%);
+      border:1px solid rgba(79,70,229,.22);
+      color:var(--primary);
+      font-size:20px;
+      font-weight:700;
+      box-shadow:0 14px 26px rgba(79,70,229,.16);
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      pointer-events:auto;
+    }
+
+    .category-panel-scroll-btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 26px rgba(79,70,229,.18);
+      background:linear-gradient(135deg, rgba(79,70,229,.22), rgba(124,58,237,.22));
+    }
+
+    .category-panel-scroll-btn:focus-visible{
+      outline:3px solid rgba(79,70,229,.18);
+      outline-offset:2px;
+    }
+
+    .category-panel-scroll-btn.hide{display:none !important}
+
+    .category-panel-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      min-width:0;
+      overflow:hidden;
+      color:var(--text);
+      transition:0.2s ease;
+    }
+
+    .category-panel-link:hover{
+      border-color:#c7d2fe;
+      background:#eef2ff;
+      color:var(--primary);
+    }
+
+    .category-panel-link span{
+      flex:0 0 auto;
+      margin-left:10px;
+    }
+
+    .search-box-inner{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .search-clear{
+      border:none;
+      background:#eef2ff;
+      color:var(--primary);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+      flex-shrink:0;
+      display:none;
+    }
+
+    .search-clear.show{display:inline-flex}
+
+    .search-status{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      min-height:21px;
+    }
+
+    .other-categories{
+      margin-top:10px;
+    }
+
+    .category-chip-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .category-chip{
+      background:#fff;
+      border:1px solid var(--border);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      transition:0.2s ease;
+      box-shadow:var(--shadow);
+    }
+
+    .category-chip:hover{
+      border-color:#c7d2fe;
+      color:var(--primary);
+      background:#eef2ff;
+    }
+
+    .footer{
+      padding:34px 20px 42px;
+      border-top:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(248,250,255,.98) 100%);
+      text-align:left;
+    }
+
+    .footer-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .footer-brand{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:22px 24px;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-brand-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#eef2ff;
+      color:var(--primary);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.02em;
+      margin-bottom:12px;
+    }
+
+    .footer-brand strong{
+      display:block;
+      font-size:24px;
+      line-height:1.15;
+      margin-bottom:8px;
+      letter-spacing:-.02em;
+    }
+
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.75;
+      max-width:700px;
+    }
+
+    .footer-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .footer-mini-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      color:var(--muted);
+      padding:9px 12px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .footer-contact{
+      display:grid;
+      gap:12px;
+      align-content:start;
+    }
+
+    .footer-contact-head{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:18px 20px;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-contact-head strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:6px;
+      letter-spacing:-.01em;
+    }
+
+    .footer-contact-head span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:12px;
+    }
+
+    .footer-pill{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:14px 16px;
+      background:#fff;
+      color:var(--text);
+      font-size:14px;
+      transition:0.2s ease;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-pill:hover{
+      transform:translateY(-1px);
+      border-color:#c7d2fe;
+      background:#eef2ff;
+    }
+
+    .footer-icon{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      background:#f8fafc;
+      border:1px solid var(--border);
+    }
+
+    .footer-pill.instagram .footer-icon{
+      background:linear-gradient(135deg,#fdf497 0%,#fd5949 35%,#d6249f 65%,#285AEB 100%);
+      border-color:transparent;
+    }
+
+    .footer-pill.x .footer-icon{
+      background:#0f172a;
+      border-color:#0f172a;
+    }
+
+    .footer-pill.email .footer-icon{
+      background:#fff;
+      border-color:#d1d5db;
+    }
+
+    .footer-pill svg{
+      width:20px;
+      height:20px;
+      display:block;
+    }
+
+    .footer-pill.instagram svg,
+    .footer-pill.x svg{
+      color:#fff;
+      fill:currentColor;
+    }
+
+    .footer-pill.email svg{
+      width:22px;
+      height:18px;
+    }
+
+    .footer-pill-content{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .footer-pill-label{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+
+    .footer-pill-value{
+      color:var(--text);
+      font-size:14px;
+      font-weight:800;
+      overflow-wrap:anywhere;
+    }
+
+
+    .search-wrap{
+      max-width:1200px;
+      margin:-14px auto 0;
+      padding:0 20px;
+      position:relative;
+      z-index:8;
+    }
+
+    .search-box{
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90));
+      border-radius:24px;
+      box-shadow:0 18px 38px rgba(15,23,42,0.10);
+      padding:16px;
+      border:1px solid rgba(99,102,241,0.12);
+      backdrop-filter:blur(16px);
+      position:relative;
+      overflow:visible;
+    }
+
+    .search-box::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:1px;
+      background:linear-gradient(90deg, rgba(79,70,229,0), rgba(79,70,229,0.32), rgba(124,58,237,0));
+    }
+
+    .search-box-inner{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background:#f8fafc;
+      border:1px solid rgba(99,102,241,0.10);
+      border-radius:16px;
+      padding:8px 8px 8px 14px;
+    }
+
+    .search-icon{
+      flex-shrink:0;
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.10));
+      color:var(--primary);
+      font-size:17px;
+    }
+
+    .search-box input{
+      width:100%;
+      border:none;
+      outline:none;
+      font-size:16px;
+      padding:14px 6px;
+      border-radius:12px;
+      background:transparent;
+      color:var(--text);
+    }
+
+    .search-box input::placeholder{color:#8b93a7}
+
+    .search-box-help{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+
+    .search-results-popover{
+      display:none;
+      margin-top:14px;
+      border:1px solid rgba(99,102,241,0.14);
+      border-radius:20px;
+      background:linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+      box-shadow:0 18px 38px rgba(15,23,42,0.10);
+      overflow:hidden;
+    }
+
+    .search-results-popover.show{display:block}
+
+    .search-results-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px 12px;
+      border-bottom:1px solid rgba(99,102,241,0.10);
+      background:linear-gradient(180deg, rgba(238,242,255,0.72), rgba(255,255,255,0.82));
+    }
+
+    .search-results-head strong{
+      display:block;
+      font-size:15px;
+      line-height:1.35;
+      color:#1f2a44;
+      letter-spacing:-0.01em;
+    }
+
+    .search-results-head span{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.45;
+    }
+
+    .search-results-count{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:42px;
+      min-height:34px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eef2ff;
+      border:1px solid rgba(79,70,229,0.12);
+      color:#4338ca;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .search-results-list{
+      display:grid;
+      gap:10px;
+      padding:12px;
+    }
+
+    .search-result-card{
+      display:block;
+      border:1px solid rgba(99,102,241,0.10);
+      border-radius:18px;
+      padding:14px 15px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,255,0.96));
+      box-shadow:0 10px 24px rgba(79,70,229,0.06);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      text-align:left;
+      color:inherit;
+      width:100%;
+    }
+
+    .search-result-card:hover{
+      transform:translateY(-1px);
+      border-color:rgba(79,70,229,0.24);
+      box-shadow:0 14px 28px rgba(79,70,229,0.10);
+      background:linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
+    }
+
+    .search-result-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .search-result-title{
+      font-size:15px;
+      font-weight:800;
+      line-height:1.4;
+      letter-spacing:-0.01em;
+      color:#1f2937;
+    }
+
+    .search-result-desc{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.58;
+    }
+
+    .search-result-meta{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .search-result-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border-radius:999px;
+      padding:7px 10px;
+      background:#f8fafc;
+      border:1px solid rgba(99,102,241,0.10);
+      color:#4b5563;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .search-result-pill.primary{
+      background:#eef2ff;
+      color:#4338ca;
+      border-color:rgba(79,70,229,0.12);
+    }
+
+    .search-result-empty{
+      padding:16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .search-hit-flash{
+      animation:searchHitFlash 1.3s ease;
+      border-color:rgba(79,70,229,0.32) !important;
+      box-shadow:0 0 0 6px rgba(79,70,229,0.12), 0 22px 42px rgba(15,23,42,0.11) !important;
+    }
+
+    @keyframes searchHitFlash{
+      0%{box-shadow:0 0 0 0 rgba(79,70,229,0), 0 14px 28px rgba(15,23,42,0.06)}
+      35%{box-shadow:0 0 0 8px rgba(79,70,229,0.14), 0 22px 42px rgba(15,23,42,0.11)}
+      100%{box-shadow:0 0 0 0 rgba(79,70,229,0), 0 14px 28px rgba(15,23,42,0.06)}
+    }
+
+    .container{
+      max-width:1200px;
+      margin:34px auto 54px;
+      padding:0 20px;
+    }
+
+
+    .section{
+      margin-top:30px;
+      padding:24px;
+      background:var(--surface);
+      border:1px solid rgba(99,102,241,0.08);
+      border-radius:26px;
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(10px);
+    }
+
+    .section-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+      padding-bottom:14px;
+      border-bottom:1px solid rgba(148,163,184,0.18);
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .section-badge{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:21px;
+      color:#fff;
+      box-shadow:0 14px 28px rgba(79,70,229,0.18);
+      flex-shrink:0;
+    }
+
+    .badge-popular{ background:linear-gradient(135deg,#f59e0b,#ef4444); }
+    .badge-finance{ background:linear-gradient(135deg,#2563eb,#06b6d4); }
+    .badge-vehicle{ background:linear-gradient(135deg,#0f766e,#14b8a6); }
+    .badge-tax{ background:linear-gradient(135deg,#7c3aed,#a855f7); }
+    .badge-daily{ background:linear-gradient(135deg,#ea580c,#f97316); }
+    .badge-health{ background:linear-gradient(135deg,#db2777,#f43f5e); }
+    .badge-student{ background:linear-gradient(135deg,#16a34a,#84cc16); }
+    .badge-math{ background:linear-gradient(135deg,#4f46e5,#8b5cf6); }
+    .badge-invest{ background:linear-gradient(135deg,#0891b2,#22c55e); }
+    .badge-realestate{ background:linear-gradient(135deg,#b45309,#f59e0b); }
+    .badge-bills{ background:linear-gradient(135deg,#4f46e5,#7c3aed); }
+    .badge-work{ background:linear-gradient(135deg,#0f766e,#22c55e); }
+    .badge-convert{ background:linear-gradient(135deg,#2563eb,#8b5cf6); }
+
+    .section h2{
+      margin:0;
+      font-size:26px;
+      letter-spacing:-0.02em;
+    }
+
+    .section p{
+      margin:5px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      align-items:start;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
+      border:1px solid rgba(99,102,241,0.10);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 14px 28px rgba(15,23,42,0.06);
+      transition:transform .20s ease, box-shadow .20s ease, border-color .20s ease;
+      position:relative;
+      overflow:hidden;
+      display:block;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 22px 42px rgba(15,23,42,0.11);
+      border-color:rgba(99,102,241,0.20);
+    }
+
+    .card::after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg,var(--primary),var(--primary2));
+      opacity:0.95;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:-28px;
+      right:-24px;
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(79,70,229,0.10) 0%, rgba(79,70,229,0) 70%);
+      pointer-events:none;
+    }
+
+    .card-title{
+      font-size:18px;
+      font-weight:800;
+      margin:4px 0 10px;
+      line-height:1.38;
+      letter-spacing:-0.01em;
+    }
+
+    .card-desc{
+      font-size:14px;
+      line-height:1.62;
+      color:var(--muted);
+      min-height:68px;
+    }
+
+    .card-meta{
+      margin-top:16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-size:13px;
+      color:var(--muted);
+      flex-wrap:wrap;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:#eef2ff;
+      color:#4338ca;
+      border:1px solid rgba(79,70,229,0.10);
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+
+.live{
+      background:#eef2ff;
+      color:#4338ca;
+    }
+
+    .soon{
+      background:#fef3c7;
+      color:#92400e;
+    }
+
+    .section-actions{
+      margin-top:16px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .toggle-btn{
+      border:none;
+      cursor:pointer;
+      background:linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.12));
+      color:#4338ca;
+      border-radius:999px;
+      padding:11px 18px;
+      font-weight:800;
+      font-size:14px;
+      transition:0.2s ease;
+      box-shadow:0 10px 20px rgba(79,70,229,0.08);
+    }
+
+    .toggle-btn:hover{background:#e0e7ff; transform:translateY(-1px)}
+
+    .section.collapsible.collapsed .grid .card:nth-child(n+7){
+      display:none;
+    }
+
+    .search-active .section.collapsible.collapsed .grid .card:nth-child(n+7){
+      display:block;
+    }
+
+    .search-active .section-actions{
+      display:none;
+    }
+
+    .info-boxes{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:38px;
+    }
+
+    .info-box{
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
+      border:1px solid rgba(99,102,241,0.10);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .info-box h3{
+      margin:0 0 10px;
+      font-size:20px;
+    }
+
+    .info-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .footer-note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.65;
+    }
+
+    .hide{display:none !important}
+
+    .footer-legal{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:grid;
+      gap:16px;
+    }
+
+    .footer-legal-head{
+      background:transparent;
+      border:none;
+      border-radius:0;
+      padding:0;
+      box-shadow:none;
+    }
+
+    .footer-legal-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:stretch;
+    }
+
+    .footer-legal-link,
+    .footer-pref-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:11px 15px;
+      border-radius:999px;
+      border:1px solid #dbe4ff;
+      background:linear-gradient(180deg,#f8faff 0%,#eef2ff 100%);
+      color:#1f2a44;
+      font-size:14px;
+      font-weight:800;
+      line-height:1.2;
+      transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
+      box-shadow:0 10px 24px rgba(79,70,229,.10);
+      text-decoration:none;
+    }
+
+    .footer-legal-link:hover,
+    .footer-legal-link:focus-visible,
+    .footer-pref-btn:hover,
+    .footer-pref-btn:focus-visible{
+      transform:translateY(-1px);
+      border-color:#a5b4fc;
+      background:linear-gradient(180deg,#eef2ff 0%,#e0e7ff 100%);
+      box-shadow:0 14px 30px rgba(79,70,229,.16);
+      outline:none;
+    }
+
+    .footer-pref-btn{
+      appearance:none;
+      -webkit-appearance:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+
+    @media (max-width: 720px){
+      .all-categories-panel{
+        width:calc(100vw - 28px);
+        max-width:calc(100vw - 28px);
+        border-radius:18px;
+        padding:16px;
+      }
+    }
+
+    @media (max-width:1000px){
+            .info-boxes{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr}
+      .footer-contact{justify-content:flex-start}
+    }
+
+    @media (max-width:760px){
+      .hero{padding-top:40px;padding-bottom:42px}
+      .hero h1{font-size:34px}
+      .hero p{font-size:16px}
+            .section{padding:18px}
+      .footer-brand strong{font-size:22px}
+      .all-categories-btn{width:100%;justify-content:center}
+      .all-categories-panel{padding:16px;border-radius:18px}
+      .all-categories-panel-head{flex-direction:column;align-items:flex-start}
+      .all-categories-close{align-self:flex-start}
+    }
+
+    @media (max-width:640px){
+            .container{margin-top:26px}
+      .search-wrap{margin-top:2px}
+      .search-box{padding:10px 10px 12px}
+      .search-box-inner{padding:8px 8px 8px 10px}
+      .search-icon{width:34px;height:34px;border-radius:10px;font-size:15px}
+      .search-box input{font-size:15px;padding:12px 4px}
+      .search-results-head{align-items:flex-start}
+      .search-result-card{padding:13px 14px}
+      .search-result-top{flex-direction:column;align-items:flex-start;gap:8px}
+      .section h2{font-size:22px}
+      .card{padding:16px}
+      .card-desc{min-height:auto}
+      .footer{padding:28px 16px 34px}
+      .footer-brand,.footer-contact-head,.footer-pill{padding-left:16px;padding-right:16px}
+      .footer-legal{padding:18px 16px}
+      .footer-legal-links{display:grid;grid-template-columns:1fr}
+      .footer-legal-link,.footer-pref-btn{width:100%;justify-content:flex-start}
+      .footer-meta{gap:8px}
+    }
+
+    /* light + premium balance */
+    body{
+      background:
+        radial-gradient(circle at top left, rgba(99,102,241,0.10), transparent 22%),
+        linear-gradient(180deg,#f3f6ff 0,#f8fafc 220px,#f6f8fc 100%) !important;
+    }
+    .hero{
+      background:linear-gradient(135deg,#1f2a66 0%, #3646b9 58%, #4f46e5 100%) !important;
+      padding:44px 20px 58px !important;
+      box-shadow:0 10px 24px rgba(31,42,102,0.14) !important;
+    }
+    .hero::before{
+      width:320px !important;height:320px !important;right:-70px !important;top:-140px !important;
+      background:radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 72%) !important;
+      filter:none !important;
+    }
+    .hero::after{
+      width:220px !important;height:220px !important;left:-60px !important;bottom:-120px !important;
+      background:radial-gradient(circle, rgba(167,139,250,0.20) 0%, rgba(167,139,250,0) 72%) !important;
+      filter:none !important;
+    }
+    .brand{
+      background:rgba(255,255,255,0.12) !important;
+      border:1px solid rgba(255,255,255,0.18) !important;
+      box-shadow:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }
+    .brand-icon{
+      background:rgba(255,255,255,0.16) !important;
+      box-shadow:none !important;
+    }
+    .hero h1{font-size:clamp(34px,4.8vw,48px) !important;max-width:780px !important;letter-spacing:-.035em !important;}
+    .hero p{max-width:720px !important;color:rgba(255,255,255,0.92) !important;font-size:17px !important;line-height:1.7 !important;}
+    .hero-premium-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+    .hero-premium-pill{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border-radius:999px;
+      background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.16);color:#fff;
+      font-size:13px;font-weight:700;letter-spacing:.01em;
+    }
+    .quick-links{margin-top:18px !important;}
+    .quick-links a,.hero-secondary,.all-categories-btn{
+      background:rgba(255,255,255,0.10) !important;
+      border:1px solid rgba(255,255,255,0.14) !important;
+      box-shadow:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }
+    .hero-cta{
+      background:#ffffff !important;color:#23316d !important;box-shadow:0 10px 22px rgba(15,23,42,0.12) !important;
+    }
+    .search-box{
+      border:1px solid rgba(99,102,241,0.14) !important;
+      box-shadow:0 12px 28px rgba(15,23,42,0.06) !important;
+      background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%) !important;
+      border-radius:22px !important;
+    }
+    .search-box-inner{
+      background:#f8fafc !important;border:1px solid #e6ebff !important;border-radius:16px !important;
+    }
+    .search-icon{
+      background:linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.08)) !important;
+      color:#4338ca !important;
+    }
+    .search-box input{font-size:16px !important;}
+    .search-status{font-size:13.5px !important;}
+    .search-results-popover{
+      border:1px solid #dbe4ff !important;
+      border-radius:18px !important;
+      box-shadow:0 14px 28px rgba(15,23,42,0.08) !important;
+      background:#ffffff !important;
+    }
+    .section{
+      border:1px solid rgba(226,232,240,0.95) !important;
+      border-radius:24px !important;
+      box-shadow:0 8px 18px rgba(15,23,42,0.04) !important;
+      background:#fff !important;
+      padding:22px !important;
+    }
+    .section-header{
+      padding-bottom:13px !important;
+      margin-bottom:16px !important;
+      border-bottom:1px solid rgba(226,232,240,0.85) !important;
+    }
+    .section h2{font-size:25px !important;letter-spacing:-.025em !important;}
+    .section p{font-size:14px !important;line-height:1.65 !important;}
+    .section-badge{
+      width:44px !important;height:44px !important;border-radius:14px !important;
+      box-shadow:0 8px 18px rgba(79,70,229,0.12) !important;
+    }
+    .card{
+      border:1px solid rgba(226,232,240,0.95) !important;
+      border-radius:20px !important;
+      box-shadow:0 6px 16px rgba(15,23,42,0.04) !important;
+      padding:18px !important;
+      background:linear-gradient(180deg,#fff 0%,#fcfdff 100%) !important;
+      transition:transform .18s ease,border-color .18s ease, box-shadow .18s ease !important;
+    }
+    .card:hover{
+      transform:translateY(-2px) !important;
+      border-color:#c7d2fe !important;
+      box-shadow:0 10px 20px rgba(79,70,229,0.08) !important;
+    }
+    .card::after{height:3px !important;opacity:.9 !important;}
+    .card::before{display:none !important;}
+    .card-title{font-size:17px !important;letter-spacing:-.015em !important;}
+    .card-desc{color:#667085 !important;line-height:1.62 !important;}
+    .tag{background:#eef2ff !important;border-color:#dbe4ff !important;color:#4338ca !important;}
+    .category-chip,.footer-mini-pill{
+      background:#f8fafc !important;border:1px solid #e5e7eb !important;box-shadow:none !important;
+    }
+    .footer{
+      background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%) !important;
+      border-top:1px solid #eef2f7 !important;
+    }
+    .footer-brand,.footer-contact-head,.footer-pill,.footer-legal{
+      box-shadow:0 6px 14px rgba(15,23,42,0.04) !important;
+      border:1px solid rgba(226,232,240,0.95) !important;
+      border-radius:20px !important;
+    }
+    .footer-brand strong{font-size:23px !important;}
+    .footer-pill:hover,.footer-legal-link:hover,.footer-pref-btn:hover{
+      transform:translateY(-1px) !important;
+      box-shadow:0 8px 16px rgba(79,70,229,0.06) !important;
+      border-color:#dbe4ff !important;
+      background:#f8faff !important;
+    }
+    .footer-legal-link,.footer-pref-btn{
+      background:#f8fafc !important;border:1px solid #e6ebff !important;
+    }
+    @media (max-width:760px){
+      .hero{padding:36px 18px 44px !important;}
+      .hero h1{font-size:34px !important;}
+      .hero p{font-size:16px !important;}
+      .hero-premium-strip{gap:8px !important;margin-top:16px !important;}
+      .hero-premium-pill{padding:9px 12px !important;font-size:12.5px !important;}
+      .section{padding:18px !important;}
+    }
+
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Hesapica",
+    "url":"https://hesapica.com/",
+    "inLanguage":"tr-TR",
+    "description":"Kredi, vergi, fatura, emlak, araç, sağlık, yatırım ve günlük yaşam için ücretsiz hesaplama araçları sunan Türkçe hesaplama portalı."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Hesapica",
+    "url":"https://hesapica.com/",
+    "sameAs":[
+      "https://x.com/hesapica",
+      "https://instagram.com/hesapicanoktacom"
+    ],
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"hesapicaofficial@gmail.com",
+      "availableLanguage":["Turkish"]
+    }]
+  }
+  </script>
+<style id="google-adsense-performance-override">
+    :root{
+      --surface:#ffffff;
+      --shadow:0 12px 28px rgba(15,23,42,0.06);
+      --shadow-soft:0 8px 20px rgba(15,23,42,0.05);
+    }
+
+    .hero::before,
+    .hero::after{
+      filter:none;
+      opacity:.82;
+    }
+
+    .brand,
+    .quick-links a,
+    .hero-secondary,
+    .hero-glance-card,
+    .all-categories-btn,
+    .search-box,
+    .stat,
+    .section,
+    .footer-brand,
+    .footer-contact-head,
+    .footer-pill,
+    .footer-legal,
+    .all-categories-panel{
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+    }
+
+    .hero{
+      padding:44px 20px 54px;
+      box-shadow:0 10px 22px rgba(49,46,129,0.14);
+    }
+
+    .brand,
+    .quick-links a,
+    .hero-secondary,
+    .hero-glance-card,
+    .all-categories-btn{
+      box-shadow:0 8px 18px rgba(15,23,42,0.08);
+    }
+
+    .hero-glance{
+      gap:12px;
+    }
+
+    .search-box{
+      background:#ffffff;
+      box-shadow:0 14px 28px rgba(15,23,42,0.08);
+      border-color:rgba(99,102,241,0.10);
+    }
+
+    .search-box::before{
+      opacity:.72;
+    }
+
+    .search-results-popover,
+    .all-categories-panel{
+      contain:layout paint;
+      box-shadow:0 18px 36px rgba(15,23,42,0.12);
+    }
+
+    .stat,
+    .section,
+    .card,
+    .info-box,
+    .footer-brand,
+    .footer-contact-head,
+    .footer-pill,
+    .footer-legal{
+      box-shadow:0 8px 20px rgba(15,23,42,0.05);
+    }
+
+    .section{
+      background:#ffffff;
+    }
+
+    .section:not(#diger-kategoriler):not(#popular),
+    .info-boxes,
+    .footer{
+      content-visibility:auto;
+      contain-intrinsic-size:1px 1100px;
+    }
+
+    .card::before{
+      width:78px;
+      height:78px;
+      top:-24px;
+      right:-18px;
+      opacity:.8;
+    }
+
+    .footer{
+      background:#f8fafc;
+    }
+
+    @media (max-width:760px){
+      .hero{
+        padding:38px 20px 42px;
+      }
+      .search-wrap{
+        margin-top:0;
+      }
+      .hero-glance{
+        gap:10px;
+      }
+      .hero-glance-card{
+        padding:14px 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+      }
+    }
+  </style>
+<style id="ultra-light-overrides">
+    body{background:#f6f8fc !important;}
+    .hero{padding:42px 20px 52px !important;background:linear-gradient(135deg,#312e81 0%, #4f46e5 100%) !important;box-shadow:none !important;isolation:auto !important;}
+    .hero::before,.hero::after,.search-box::before,.stat::before,.card::before,.card::after{display:none !important;content:none !important;}
+    .brand,.quick-links a,.hero-secondary,.all-categories-btn,.search-box,.search-box-inner,.stat,.section,.card,.info-box,.footer-brand,.footer-contact-head,.footer-pill,.footer-legal,.footer-legal-link,.footer-pref-btn,.category-chip,.all-categories-panel,.category-panel-scroll-btn{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;box-shadow:none !important;}
+    .brand,.search-box,.search-box-inner,.section,.card,.info-box,.footer-brand,.footer-contact-head,.footer-pill,.footer-legal,.footer-legal-link,.footer-pref-btn,.category-chip,.all-categories-panel{background:#fff !important;}
+    .hero p{margin:14px 0 18px !important;max-width:720px !important;}
+    .hero-actions{margin-top:16px !important;}
+    .hero-nav{margin-top:18px !important;gap:10px !important;}
+    .quick-links{margin-top:0 !important;}
+    .quick-links a{color:#fff !important;background:rgba(255,255,255,.10) !important;border:1px solid rgba(255,255,255,.18) !important;}
+    .all-categories-btn{background:rgba(255,255,255,.12) !important;color:#fff !important;border:1px solid rgba(255,255,255,.18) !important;}
+    .all-categories-btn:hover,.all-categories-btn[aria-expanded="true"]{background:rgba(255,255,255,.18) !important;}
+    .search-wrap{margin:-6px auto 0 !important;padding:0 20px !important;}
+    .search-box{padding:12px !important;border:1px solid #dbe4ff !important;border-radius:20px !important;}
+    .search-box-inner{padding:8px 8px 8px 12px !important;border:1px solid #e5e7eb !important;border-radius:14px !important;}
+    .search-box input{padding:12px 4px !important;}
+    .container{margin:26px auto 48px !important;}
+    .section{padding:20px !important;border:1px solid #e5e7eb !important;border-radius:22px !important;background:#fff !important;}
+    .section-header{padding-bottom:12px !important;margin-bottom:16px !important;}
+    .section h2{font-size:24px !important;}
+    .grid{gap:14px !important;}
+    .card{padding:18px !important;border:1px solid #e5e7eb !important;border-radius:18px !important;transition:border-color .18s ease, background .18s ease !important;}
+    .card:hover{transform:none !important;border-color:#c7d2fe !important;box-shadow:none !important;}
+    .card-desc{min-height:auto !important;}
+    .card-meta{margin-top:12px !important;}
+    .category-chip-grid{gap:8px !important;}
+    .category-chip{padding:9px 12px !important;border:1px solid #e5e7eb !important;}
+    .info-boxes{display:grid !important;grid-template-columns:1fr !important;gap:14px !important;content-visibility:auto;contain-intrinsic-size:720px;}
+    .info-box{padding:20px !important;border:1px solid #e5e7eb !important;border-radius:18px !important;}
+    .footer{padding:26px 20px 32px !important;background:#fff !important;}
+    .footer-inner{gap:16px !important;}
+    .footer-brand,.footer-contact-head,.footer-pill,.footer-legal{border:1px solid #e5e7eb !important;border-radius:18px !important;}
+    .footer-brand,.footer-contact-head,.footer-pill,.footer-legal{padding:18px !important;}
+    .footer-brand strong{font-size:22px !important;}
+    .footer-meta{margin-top:12px !important;}
+    .footer-mini-pill{background:#f8fafc !important;border:1px solid #e5e7eb !important;}
+    .footer-pill:hover,.footer-legal-link:hover,.footer-pref-btn:hover{transform:none !important;box-shadow:none !important;}
+    .footer-legal-link,.footer-pref-btn{box-shadow:none !important;border:1px solid #e5e7eb !important;background:#f8fafc !important;}
+    .all-categories-backdrop{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;background:rgba(15,23,42,0.20) !important;}
+    .all-categories-panel{top:88px !important;border:1px solid #c7d2fe !important;box-shadow:0 14px 30px rgba(15,23,42,.12) !important;}
+    .category-panel-scroll-action::before{display:none !important;}
+    .category-panel-scroll-btn{width:40px !important;height:40px !important;box-shadow:0 8px 18px rgba(79,70,229,.12) !important;background:#eef2ff !important;border:1px solid #c7d2fe !important;}
+    .section,.search-box,.footer,.footer-brand,.footer-contact,.footer-legal,.info-boxes{content-visibility:auto;contain-intrinsic-size:700px;}
+    @media (max-width:760px){
+      .hero{padding:36px 18px 42px !important;}
+      .hero h1{font-size:34px !important;}
+      .search-wrap{padding:0 16px !important;}
+      .section,.card,.info-box,.footer-brand,.footer-contact-head,.footer-pill,.footer-legal{padding-left:16px !important;padding-right:16px !important;}
+    }
+  </style>
+<style id="brand-fix-overrides">
+    .brand{
+      background:rgba(255,255,255,.14) !important;
+      color:#ffffff !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      box-shadow:none !important;
+    }
+    .brand span{
+      color:#ffffff !important;
+      font-weight:800 !important;
+      letter-spacing:.01em;
+    }
+    .brand-icon{
+      background:rgba(255,255,255,.18) !important;
+      color:#ffffff !important;
+    }
+  </style>
+</meta></meta><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<header class="hero">
+<div class="hero-inner">
+<div class="brand">
+<div class="brand-icon">🧮</div>
+<span>Hesapica</span>
+</div>
+<h1>Finans, günlük yaşam ve özgün keşif araçları tek yerde</h1>
+<p>Kredi, vergi, emlak, araç, yatırım, günlük yaşam ve özgün keşif senaryoları için geliştirilmiş; yorum katmanı güçlü, mobil uyumlu ve pratik hesaplama araçlarını tek merkezde kullan.</p>
+<div class="hero-actions">
+<a class="hero-cta" href="#popular">Popüler Araçlara Git</a>
+<a class="hero-secondary" href="#toolSearch">Araç Ara</a>
+</div>
+<div aria-label="öne çıkan özellikler" class="hero-premium-strip">
+<span class="hero-premium-pill">Seçilmiş canlı araçlar</span>
+<span class="hero-premium-pill">Karar destekli sonuçlar</span>
+<span class="hero-premium-pill">Mobil odaklı yapı</span>
+</div>
+<div class="hero-nav">
+<div class="quick-links">
+<a href="#finans">Finans</a>
+<a href="#vergi">Vergi</a>
+<a href="#faturalar">Faturalar</a>
+<a href="#emlak">Emlak</a>
+<a href="#yatirim">Yatırım</a>
+<a href="#arac">Araç</a>
+<a href="#maas">Maaş</a>
+<a href="#diger-kategoriler">Diğer</a>
+</div>
+<div class="hero-nav-controls">
+<button aria-controls="allCategoriesPanel" aria-expanded="false" class="all-categories-btn" id="allCategoriesToggle" type="button">Tüm Kategoriler</button>
+<div aria-hidden="true" class="all-categories-panel" id="allCategoriesPanel">
+<div class="all-categories-panel-head">
+<div>
+<strong>Tüm Kategoriler</strong>
+<span>İstediğin kategoriye hemen geç.<br/>Devamı için aşağı kaydır.</span>
+</div>
+<button class="all-categories-close" id="allCategoriesClose" type="button">Kapat</button>
+</div>
+<div class="category-panel-grid" id="categoryPanelGrid">
+<a class="category-panel-link" href="#popular">Popüler Araçlar <span>→</span></a>
+<a class="category-panel-link" href="#finans">Finans <span>→</span></a>
+<a class="category-panel-link" href="#vergi">Vergi <span>→</span></a>
+<a class="category-panel-link" href="#faturalar">Faturalar <span>→</span></a>
+<a class="category-panel-link" href="#emlak">Emlak <span>→</span></a>
+<a class="category-panel-link" href="#yatirim">Yatırım <span>→</span></a>
+<a class="category-panel-link" href="#arac">Araç <span>→</span></a>
+<a class="category-panel-link" href="#maas">Maaş <span>→</span></a>
+<a class="category-panel-link" href="#gunluk">Günlük Hayat <span>→</span></a>
+<a class="category-panel-link" href="#ogrenci">Öğrenciler <span>→</span></a>
+<a class="category-panel-link" href="#matematik">Matematik <span>→</span></a>
+<a class="category-panel-link" href="#saglik">Sağlık <span>→</span></a>
+</div>
+<div class="category-panel-scroll-action">
+<button aria-label="Aşağı kaydır" class="category-panel-scroll-btn" id="categoryPanelScrollBtn" title="Aşağı kaydır" type="button">↓</button>
+</div>
+</div>
+<div aria-hidden="true" class="all-categories-backdrop" id="allCategoriesBackdrop"></div>
+</div>
+</div>
+</div>
+</header>
+<div class="search-wrap">
+<div class="search-box">
+<div class="search-box-inner">
+<div aria-hidden="true" class="search-icon">⌕</div>
+<input aria-label="Hesaplama aracı ara" autocomplete="off" enterkeyhint="search" id="toolSearch" placeholder="Araç ara... örn: kredi, mevduat, tapu harcı, altın getirisi, not ortalaması" type="text"/>
+<button class="search-clear" id="clearSearchBtn" type="button">Temizle</button>
+</div>
+<div class="search-status" id="searchStatus">Araç adına göre arama yapabilirsin. Arama sonuçları kart başlığına göre filtrelenir.</div>
+<div class="search-results-popover" hidden="" id="searchResultsPopover">
+<div class="search-results-head">
+<div>
+<strong id="searchResultsTitle">Hızlı sonuçlar</strong>
+<span id="searchResultsHint">En yakın eşleşmeler burada görünür.</span>
+</div>
+<div class="search-results-count" id="searchResultsCount">0</div>
+</div>
+<div class="search-results-list" id="searchResultsList"></div>
+</div>
+</div>
+</div>
+<main class="container">
+<section class="section other-categories" id="diger-kategoriler">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-convert">🧭</div>
+<div>
+<h2>Diğer Kategoriler</h2>
+<p>Kısa yollarda görünmeyen kategorilere buradan hızlıca ulaşabilirsin.</p>
+</div>
+</div>
+</div>
+<div class="category-chip-grid">
+<a class="category-chip" href="#saglik">Sağlık</a>
+<a class="category-chip" href="#ogrenci">Öğrenciler</a>
+<a class="category-chip" href="#matematik">Matematik</a>
+<a class="category-chip" href="#gunluk">Günlük Hayat</a>
+</div>
+</section>
+<section class="section searchable-section" id="popular">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-popular">⭐</div>
+<div>
+<h2>Popüler Araçlar</h2>
+<p>Gerçek kullanım niyeti yüksek ve şu anda çalışan güçlü araçlar</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/kredi-hesaplama">
+<div class="card-title">Kredi, Taksit ve Erken Kapatma</div>
+<div class="card-desc">Kredi taksiti, alışveriş taksidi ve erken kapatma avantajını tek araçta hesapla; aylık ödeme, toplam maliyet ve bütçe baskısını birlikte gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Finans • Kredi</span></div>
+</a>
+<a class="card searchable-card" href="/kira-artis-hesaplama">
+<div class="card-title">Kira Artış Hesaplama</div>
+<div class="card-desc">Resmi oran veya özel oranla yeni kira, artış tutarı ve yıllık farkı hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Emlak</span></div>
+</a>
+<a class="card searchable-card" href="/kdv-hesaplama">
+<div class="card-title">KDV Hesaplama</div>
+<div class="card-desc">KDV dahil veya hariç tutara göre vergi tutarını ve toplam bedeli gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+<a class="card searchable-card" href="/faiz-hesaplama">
+<div class="card-title">Faiz, Mevduat ve Bileşik Getiri</div>
+<div class="card-desc">Basit faiz, vadeli mevduat ve bileşik getiri modlarını tek araçta kullan; net sonuç, stopaj ve reel görünümü birlikte gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Finans • Yatırım</span></div>
+</a>
+<a class="card searchable-card" href="/enflasyon-hesaplama">
+<div class="card-title">Enflasyon Hesaplama</div>
+<div class="card-desc">Geçmişteki paranın bugünkü değerini ve alım gücü farkını hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Finans</span></div>
+</a>
+<a class="card searchable-card" href="/ev-amortisman-hesaplama">
+<div class="card-title">Ev Amortisman Hesaplama</div>
+<div class="card-desc">Ev fiyatı ve kira gelirine göre geri dönüş süresini ve yatırım kalitesini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Emlak</span></div>
+</a>
+<a class="card searchable-card" href="/yakit-hesaplama">
+<div class="card-title">Araç Yakıt Hesaplama</div>
+<div class="card-desc">Tek yön veya gidiş-dönüş yolculuk için yakıt, toplam maliyet ve kişi başı paylaşımı hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Araç</span></div>
+</a>
+<a class="card searchable-card" href="/elektrik-faturasi-hesaplama">
+<div class="card-title">Elektrik Faturası Hesaplama</div>
+<div class="card-desc">Aylık kWh tüketimine göre enerji bedeli, dağıtım, KDV ile toplam elektrik faturasını hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fatura</span></div>
+</a>
+<a class="card searchable-card" href="/dogalgaz-faturasi-hesaplama">
+<div class="card-title">Doğalgaz Faturası Hesaplama</div>
+<div class="card-desc">Aylık m³ tüketimine göre birim fiyat, KDV ve sabit giderlerle doğalgaz faturasını hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fatura</span></div>
+</a>
+<a class="card searchable-card" href="/su-faturasi-hesaplama">
+<div class="card-title">Su Faturası Hesaplama</div>
+<div class="card-desc">Aylık su tüketimine göre su bedeli, atık su ve KDV ile tahmini toplam su faturasını hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fatura</span></div>
+</a>
+</div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="finans">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-finance">💳</div>
+<div>
+<h2>Finans Hesaplamaları</h2>
+<p>Kredi, faiz, borç ve bütçe planlaması için temel finans araçları</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/faiz-hesaplama">
+<div class="card-title">Faiz, Mevduat ve Bileşik Getiri</div>
+<div class="card-desc">Basit faiz, vadeli mevduat ve bileşik getiri modlarını tek araçta kullan; net sonuç, stopaj ve reel görünümü birlikte gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Finans • Yatırım</span></div>
+</a>
+<a class="card searchable-card" href="/kredi-hesaplama">
+<div class="card-title">Kredi, Taksit ve Erken Kapatma</div>
+<div class="card-desc">Kredi taksiti, alışveriş taksidi ve erken kapatma avantajını tek araçta hesapla; aylık ödeme, toplam maliyet ve bütçe baskısını birlikte gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Finans • Kredi</span></div>
+</a>
+<a class="card searchable-card" href="/enflasyon-hesaplama">
+<div class="card-title">Enflasyon Hesaplama</div>
+<div class="card-desc">Geçmişteki paranın bugünkü değerini ve alım gücü farkını hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Ekonomi</span></div>
+</a>
+<a class="card searchable-card" href="/kredi-karti-faiz-hesaplama">
+<div class="card-title">Kredi Kartı Faiz Hesaplama</div>
+<div class="card-desc">Borç, faiz, asgari ödeme ve ekstra ödeme bilgilerine göre kredi kartı borcunu kapatma planı.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Borç</span></div>
+</a>
+<a class="card searchable-card" href="/borc-kapama-plani">
+<div class="card-title">Borç Kapatma ve Bütçe Planı</div>
+<div class="card-desc">Borçlarını, kira ve giderlerini birlikte girerek kalan paranı ve günlük harcama limitini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Finans</span></div>
+</a>
+<a class="card searchable-card" href="/butce-hesaplama">
+<div class="card-title">Bütçe ve Tasarruf Hesaplama</div>
+<div class="card-desc">Gelir, gider, borç ve hedef oranına göre kalan bütçeyi, tasarruf oranını, tasarruf skorunu ve birikim projeksiyonunu tek araçta gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Bütçe • Tasarruf</span></div>
+</a>
+<a class="card searchable-card" href="/yatirim-getirisi-hesaplama">
+<div class="card-title">Yatırım Getirisi ve ROI Hesaplama</div>
+<div class="card-desc">Başlangıç tutarı, süre, beklenen getiri ve ROI analizi ile yatırım performansını tek güçlü akışta hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Yatırım</span></div>
+</a>
+<a class="card searchable-card" href="/indirimli-fiyat-hesaplama">
+<div class="card-title">İndirimli Fiyat Hesaplama</div>
+<div class="card-desc">İskonto oranına göre yeni satış fiyatını ve toplam tasarrufu hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fiyat</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section" id="vergi">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-tax">🧾</div>
+<div>
+<h2>Vergi Hesaplamaları</h2>
+<p>KDV, gelir vergisi, stopaj ve taşınmaz gelirleri için temel vergi araçları</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/kdv-hesaplama">
+<div class="card-title">KDV Hesaplama</div>
+<div class="card-desc">KDV oranına göre vergi tutarını ve toplam bedeli hızlıca hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+<a class="card searchable-card" href="/stopaj-hesaplama">
+<div class="card-title">Stopaj Hesaplama</div>
+<div class="card-desc">Brüt tutar, net ödeme, stopaj kesintisi ve KDV etkisini kolayca hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+<a class="card searchable-card" href="/gelir-vergisi-hesaplama">
+<div class="card-title">Gelir Vergisi Hesaplama</div>
+<div class="card-desc">2026 tarifesine göre yıllık gelir vergisini, matrahı ve dilim bazlı vergi tutarını hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+<a class="card searchable-card" href="/kira-gelir-vergisi-hesaplama">
+<div class="card-title">Kira Gelir Vergisi Hesaplama</div>
+<div class="card-desc">Konut ve işyeri kira gelirleri için istisna, gider ve vergi tutarını hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Emlak Vergisi</span></div>
+</a>
+<a class="card searchable-card" href="/damga-vergisi-hesaplama">
+<div class="card-title">Damga Vergisi Hesaplama</div>
+<div class="card-desc">Sözleşme ve resmi işlemlere göre damga vergisi tutarını pratik şekilde hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+</div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="faturalar">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-bills">💡</div>
+<div>
+<h2>Fatura ve Abonelik Hesapları</h2>
+<p>Ev giderleri ve abonelik maliyetlerini hesaplamak için güçlü araçlar</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/elektrik-faturasi-hesaplama">
+<div class="card-title">Elektrik Faturası Hesaplama</div>
+<div class="card-desc">Aylık kWh tüketimine göre enerji bedeli, dağıtım, KDV ile toplam elektrik faturasını hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fatura</span></div>
+</a>
+<a class="card searchable-card" href="/su-faturasi-hesaplama">
+<div class="card-title">Su Faturası Hesaplama</div>
+<div class="card-desc">Aylık su tüketimine göre su bedeli, atık su, KDV ve tahmini toplam su faturasını hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fatura</span></div>
+</a>
+<a class="card searchable-card" href="/dogalgaz-faturasi-hesaplama">
+<div class="card-title">Doğalgaz Faturası Hesaplama</div>
+<div class="card-desc">Aylık m³ tüketimine göre birim fiyat, KDV ve sabit giderlerle doğalgaz faturasını hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Fatura</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="emlak">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-realestate">🏢</div>
+<div>
+<h2>Emlak ve Konut Hesapları</h2>
+<p>Konut, kira, yatırım ve tapu maliyetleri için büyüyen emlak clusterı</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/kira-artis-hesaplama">
+<div class="card-title">Kira Artış Hesaplama</div>
+<div class="card-desc">Resmi oran veya özel oranla yeni kira, artış tutarı ve yıllık farkı hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Emlak</span></div>
+</a>
+<a class="card searchable-card" href="/ev-amortisman-hesaplama">
+<div class="card-title">Ev Amortisman ve Kira Çarpanı</div>
+<div class="card-desc">Ev fiyatı ve kira gelirine göre kira çarpanını, net getiriyi ve geri dönüş süresini tek ekranda hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Emlak</span></div>
+</a>
+<a class="card searchable-card" href="/tapu-harci-hesaplama">
+<div class="card-title">Tapu Harcı Hesaplama</div>
+<div class="card-desc">Satış bedeline göre alıcı ve satıcı harcını, işlem masrafını ve toplam maliyeti hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Tapu</span></div>
+</a>
+<a class="card searchable-card" href="/emlak-vergisi-hesaplama">
+<div class="card-title">Emlak Vergisi Hesaplama</div>
+<div class="card-desc">Konut veya arsa rayiç değerine göre yıllık emlak vergisini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="saglik">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-health">❤️</div>
+<div>
+<h2>Sağlık Hesaplamaları</h2>
+<p>Beslenme, vücut ve günlük sağlık takibi için güçlü araçlar</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/vucut-kitle-indeksi">
+<div class="card-title">Vücut Kitle İndeksi (BMI)</div>
+<div class="card-desc">Boy ve kiloya göre vücut kitle indeksini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>BMI</span></div>
+</a>
+<a class="card searchable-card" href="/gunluk-su-ihtiyaci-hesaplama">
+<div class="card-title">Günlük Su İhtiyacı</div>
+<div class="card-desc">Kilo, aktivite ve hava durumuna göre günlük su ihtiyacını hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Sağlık</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="yatirim">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-invest">📈</div>
+<div>
+<h2>Yatırım Araçları</h2>
+<p>Genel yatırım projeksiyonu ile altın, döviz, borsa ve kripto odaklı araçlar</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/yatirim-getirisi-hesaplama">
+<div class="card-title">Yatırım Getirisi ve ROI Hesaplama</div>
+<div class="card-desc">Başlangıç tutarı, süre, beklenen getiri ve ROI analizi ile yatırım performansını tek araçta hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Yatırım</span></div>
+</a>
+<a class="card searchable-card" href="/varlik-getirisi-hesaplama">
+<div class="card-title">Varlık Getirisi Hesaplama</div>
+<div class="card-desc">Altın, dolar ve euro yatırımlarında alış, satış, miktar, makas ve maliyet etkisine göre net kar veya zararı tek araçta hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Altın • Döviz</span></div>
+</a>
+<a class="card searchable-card" href="/kripto-kar-hesaplama">
+<div class="card-title">Kripto Kâr &amp; Arz Analizi</div>
+<div class="card-desc">Kripto yatırım kârını, arz artışını, dilution etkisini, ATH zorluğunu, market değerini hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Kripto</span></div>
+</a>
+<a class="card searchable-card" href="/borsa-kar-hesaplama">
+<div class="card-title">Borsa Kar Hesaplama</div>
+<div class="card-desc">Hisse senedi alış ve satış işlemlerinden doğan net kar veya zararı hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Borsa</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="arac">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-vehicle">🚗</div>
+<div>
+<h2>Araç ve Yakıt Hesapları</h2>
+<p>Sürücüler için maliyet, gider ve karşılaştırma araçları</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/yakit-hesaplama">
+<div class="card-title">Araç Yakıt Hesaplama</div>
+<div class="card-desc">Toplam yakıt, toplam maliyet, km başı ve kişi başı paylaşımı tek ekranda hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Araç</span></div>
+</a>
+<a class="card searchable-card" href="/km-maliyet-hesaplama">
+<div class="card-title">Km Maliyet Hesaplama</div>
+<div class="card-desc">Yakıt ve yıllık sabit giderlerle aracın km başı kullanım maliyetini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Maliyet</span></div>
+</a>
+<a class="card searchable-card" href="/arac-aylik-maliyet-hesaplama">
+<div class="card-title">Araç Aylık Maliyet Hesaplama</div>
+<div class="card-desc">Otomobil, motosiklet ve elektrikli araçların giderlerinden oluşan aylık maliyetini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Araç</span></div>
+</a>
+<a class="card searchable-card" href="/mtv-hesaplama">
+<div class="card-title">MTV Hesaplama</div>
+<div class="card-desc">2026 MTV tutarını araç türü, yaş, motor hacmi ve gerekiyorsa taşıt değerine göre hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Vergi</span></div>
+</a>
+<a class="card searchable-card" href="/arac-deger-kaybi-hesaplama">
+<div class="card-title">Araç Değer Kaybı Hesaplama</div>
+<div class="card-desc">Kaza sonrası aracın yaklaşık değer kaybını rayiç değer ve hasar bilgilerine göre hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Değer</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="maas">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-work">💼</div>
+<div>
+<h2>Maaş ve Çalışma Hesapları</h2>
+<p>Maaş artışı, brüt-net dönüşümü ve çalışma gelirleri için güçlü cluster</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/maas-brut-net-hesaplama">
+<div class="card-title">Maaş ve Gelir Hesaplama</div>
+<div class="card-desc">Brüt-net bordro, netten brüte çözüm, maaş zammı analizi ve saatlik ücret hesabını tek sayfada kullan.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Maaş</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="gunluk">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-daily">🏠</div>
+<div>
+<h2>Günlük Hayat Hesapları</h2>
+<p>Ev, bütçe, tarih ve yaşam planlaması için pratik araçlar</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/gunluk-su-ihtiyaci-hesaplama">
+<div class="card-title">Günlük Su İhtiyacı</div>
+<div class="card-desc">Kilo, aktivite ve hava durumuna göre günlük su ihtiyacını hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Günlük</span></div>
+</a>
+
+<a class="card searchable-card" href="/yas-hesaplama">
+<div class="card-title">Yaş ve Geçen Süre Hesaplama</div>
+<div class="card-desc">Yaşını hesapla veya evlilik, işe başlama, mezuniyet gibi bir olayın üzerinden geçen süreyi yıl, ay, gün, saat ve saniye olarak detaylı gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Tarih</span></div>
+</a>
+<a class="card searchable-card" href="/yukselen-burc-ve-gunes-burcu-hesaplama">
+<div class="card-title">Yükselen Burç ve Güneş Burcu Hesaplama</div>
+<div class="card-desc">Doğum tarihi, saati ve yerine göre güneş burcunu, yükselen burcunu ve temel karakter uyumunu aynı sayfada gör.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Astroloji</span></div>
+</a>
+<a class="card searchable-card" href="/iki-tarih-arasi-gun-hesaplama">
+<div class="card-title">İki Tarih Arası Gün Hesaplama</div>
+<div class="card-desc">İki tarih arasındaki gün farkını hızlıca öğren.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Tarih</span></div>
+</a>
+
+<a class="card searchable-card" href="/geri-sayim-hesaplama">
+<div class="card-title">Geri Sayım Hesaplama</div>
+<div class="card-desc">Belirlediğiniz tarihe kaç gün, saat, dakika ve saniye kaldığını detaylı şekilde hesaplayın.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Tarih</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="section searchable-section" id="ogrenci">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-student">🎓</div>
+<div>
+<h2>Öğrenciler İçin</h2>
+<p>Not, ders ve sınav planlaması odaklı yardımcı araçlar</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/not-ortalamasi-hesaplama">
+<div class="card-title">Not Ortalaması Hesaplama</div>
+<div class="card-desc">Ders notlarına göre dönem veya yıl sonu ortalamanı hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Öğrenci</span></div>
+</a>
+</div>
+</section>
+<section class="section searchable-section collapsible collapsed" id="matematik">
+<div class="section-header">
+<div class="section-title">
+<div class="section-badge badge-math">📐</div>
+<div>
+<h2>Matematik Araçları</h2>
+<p>Temel işlemler ve pratik matematik yardımcıları</p>
+</div>
+</div>
+</div>
+<div class="grid">
+<a class="card searchable-card" href="/yuzde-hesaplama">
+<div class="card-title">Yüzde Hesaplama</div>
+<div class="card-desc">Yüzde artış, azalış ve oran işlemlerini kolayca yap.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Matematik</span></div>
+</a>
+<a class="card searchable-card" href="/ortalama-hesaplama">
+<div class="card-title">Ortalama Hesaplama</div>
+<div class="card-desc">Aritmetik, ağırlıklı ortalama, medyan ve mod hesaplamasını yap.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Matematik</span></div>
+</a>
+</div>
+<div class="section-actions"><button class="toggle-btn" type="button">Daha Fazlasını Göster</button></div>
+</section>
+<section class="info-boxes">
+<div class="info-box">
+<h3>Hesapica nedir?</h3>
+<p>
+          Hesapica; kredi hesaplama, faiz hesaplama, bileşik faiz hesaplama, KDV hesaplama, kira artış hesaplama,
+          tapu harcı hesaplama, elektrik faturası hesaplama, mevduat faizi hesaplama ve yatırım getirisi hesaplama gibi
+          Türkçe hesaplama araçlarını tek çatı altında sunan modern bir hesaplama platformudur.
+        </p>
+</div>
+<div class="info-box">
+<h3>Hangi hesaplama araçları bulunur?</h3>
+<p>
+          Sitede finans, vergi, emlak, araç, fatura, yatırım, sağlık, öğrenci, matematik ve günlük hayat
+          kategorilerinde hem çalışan hem de yakında eklenecek güçlü hesaplama araçları yer alır. Amaç, en çok aranan
+          hesap türlerini sade ve hızlı çalışan sayfalarda toplu halde sunmaktır.
+        </p>
+</div>
+<div class="info-box">
+<h3>Neden Hesapica?</h3>
+<p>
+          Mobil uyumlu tasarımı, hızlı açılan statik sayfa yapısı, anlaşılır kart mimarisi ve düzenli büyüyen araç arşivi sayesinde
+          Hesapica, kullanıcıların ihtiyaç duyduğu hesaplara saniyeler içinde ulaşmasını kolaylaştırır. Kategori bazlı yapı aynı zamanda
+          Google'ın sayfa konusunu daha net anlamasına yardımcı olacak güçlü bir içerik mimarisi oluşturur.
+        </p>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<span class="footer-brand-badge">Hesapica • Dijital Hesaplama Merkezi</span>
+<strong>Tüm hesaplama araçların için daha düzenli, daha güven veren bir ana merkez</strong>
+<p>Hesapica; finans, vergi, araç, fatura, emlak, yatırım, günlük yaşam ve özgün keşif hesaplamalarını tek yerde toplayan modern araç platformudur. Aktif araçları hızlıca bulman, güçlü kategorilere daha rahat geçmen ve karar destek odaklı sonuçlara ulaşman için sade ama güçlü bir yapı sunar.</p>
+<div class="footer-meta">
+<span class="footer-mini-pill">50+ aktif araç</span>
+<span class="footer-mini-pill">Mobil uyumlu kullanım</span>
+<span class="footer-mini-pill">Tek URL mantığıyla sade SEO yapı</span>
+</div>
+<div class="footer-note">Yeni araçlar geldikçe arşiv büyür; aktif araçlar aynı düzenli sistem içinde kalır.</div>
+</div>
+<div class="footer-contact">
+<div class="footer-contact-head">
+<strong>Sosyal medya ve iletişim</strong>
+<span>Hesapica’yı takip etmek, soru iletmek veya iş birliği için aşağıdaki kanalları kullanabilirsin.</span>
+</div>
+<div class="footer-links">
+<a aria-label="Hesapica X hesabı" class="footer-pill x" href="https://x.com/hesapica" rel="noopener" target="_blank">
+<span aria-hidden="true" class="footer-icon">
+<svg aria-hidden="true" role="img" viewbox="0 0 24 24"><path d="M18.901 2H21l-6.559 7.495L22.154 22H16.11l-4.734-6.207L5.95 22H3.85l7.016-8.017L2.5 2h6.198l4.28 5.633L18.901 2Zm-1.06 18.2h1.164L8.082 3.704H6.833L17.84 20.2Z"></path></svg>
+</span>
+<span class="footer-pill-content">
+<span class="footer-pill-label">X / Twitter</span>
+<span class="footer-pill-value">@hesapica</span>
+</span>
+</a>
+<a aria-label="Hesapica Instagram hesabı" class="footer-pill instagram" href="https://instagram.com/hesapicanoktacom" rel="noopener" target="_blank">
+<span aria-hidden="true" class="footer-icon">
+<svg aria-hidden="true" role="img" viewbox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 6.25A5.75 5.75 0 1 1 6.25 12 5.75 5.75 0 0 1 12 6.25Zm0 1.8A3.95 3.95 0 1 0 15.95 12 3.95 3.95 0 0 0 12 8.05Z"></path></svg>
+</span>
+<span class="footer-pill-content">
+<span class="footer-pill-label">Instagram</span>
+<span class="footer-pill-value">@hesapicanoktacom</span>
+</span>
+</a>
+<a aria-label="Hesapica e-posta adresi" class="footer-pill email" href="mailto:hesapicaofficial@gmail.com">
+<span aria-hidden="true" class="footer-icon">
+<svg aria-hidden="true" role="img" viewbox="0 0 64 48">
+<path d="M58 0H6a6 6 0 0 0-6 6v36a6 6 0 0 0 6 6h52a6 6 0 0 0 6-6V6a6 6 0 0 0-6-6Z" fill="#EA4335" opacity=".08"></path>
+<path d="M58 48H6a6 6 0 0 1-6-6V11.2l32 23.2 32-23.2V42a6 6 0 0 1-6 6Z" fill="#EA4335"></path>
+<path d="M0 11.2V6a6 6 0 0 1 6-6h1.7L32 17.6 56.3 0H58a6 6 0 0 1 6 6v5.2L32 34.4 0 11.2Z" fill="#4285F4"></path>
+<path d="M0 11.2 13.8 21v27H6a6 6 0 0 1-6-6V11.2Z" fill="#34A853"></path>
+<path d="M50.2 21 64 11.2V42a6 6 0 0 1-6 6h-7.8V21Z" fill="#FBBC04"></path>
+</svg>
+</span>
+<span class="footer-pill-content">
+<span class="footer-pill-label">E-posta</span>
+<span class="footer-pill-value">hesapicaofficial@gmail.com</span>
+</span>
+</a>
+</div>
+<div aria-label="Güven ve yasal bağlantılar" class="footer-legal">
+<div class="footer-contact-head footer-legal-head">
+<strong>Güven ve yasal bilgiler</strong>
+<span>Hesapica'nın bilgilendirme, gizlilik ve çerez tercihleri sayfalarına buradan ulaşabilirsin.</span>
+</div>
+<div class="footer-legal-links">
+<a class="footer-legal-link" href="/iletisim">İletişim</a>
+<a class="footer-legal-link" href="/gizlilik-politikasi">Gizlilik Politikası</a>
+<a class="footer-legal-link" href="/cerez-politikasi">Çerez Politikası</a>
+<a class="footer-legal-link" href="/hakkimizda">Hakkımızda</a>
+<a class="footer-legal-link" href="/kullanim-sartlari">Kullanım Şartları</a>
+<button class="footer-pref-btn" data-open-cookie-preferences="" type="button">Çerez Tercihleri</button>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script defer="" src="cookie-consent.js"></script>
+<script>
+    const searchInput = document.getElementById("toolSearch");
+    const clearSearchBtn = document.getElementById("clearSearchBtn");
+    const searchStatus = document.getElementById("searchStatus");
+    const searchResultsPopover = document.getElementById("searchResultsPopover");
+    const searchResultsList = document.getElementById("searchResultsList");
+    const searchResultsCount = document.getElementById("searchResultsCount");
+    const searchResultsTitle = document.getElementById("searchResultsTitle");
+    const searchResultsHint = document.getElementById("searchResultsHint");
+    const cards = document.querySelectorAll(".searchable-card");
+    const sections = document.querySelectorAll(".searchable-section");
+    const collapsibleSections = document.querySelectorAll(".section.collapsible");
+    const allCategoriesToggle = document.getElementById("allCategoriesToggle");
+    const heroHeader = document.querySelector(".hero");
+    const allCategoriesPanel = document.getElementById("allCategoriesPanel");
+    const allCategoriesClose = document.getElementById("allCategoriesClose");
+    const categoryPanelGrid = document.getElementById("categoryPanelGrid");
+    const categoryPanelScrollBtn = document.getElementById("categoryPanelScrollBtn");
+    const allCategoriesBackdrop = document.getElementById("allCategoriesBackdrop");
+    const DEFAULT_SEARCH_MESSAGE = "Araç adına göre arama yapabilirsin. Arama sonuçları kart başlığına göre filtrelenir.";
+    const MAX_QUICK_RESULTS = 6;
+
+    function normalizeText(str) {
+      return (str || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "");
+    }
+
+    function getCardKey(card) {
+      const href = card.getAttribute("href");
+      if (href) return href.replace(/^\//, "");
+      const title = card.querySelector(".card-title")?.textContent?.trim() || card.textContent.trim();
+      return title;
+    }
+
+    function getSearchText(card) {
+      const title = card.querySelector(".card-title")?.textContent || "";
+      const meta = Array.from(card.querySelectorAll(".card-meta span"))
+        .map(el => el.textContent)
+        .join(" ");
+      const href = (card.getAttribute("href") || "").replace(/[\/\.-]/g, " ");
+      const extra = card.dataset.search || "";
+      return normalizeText([title, meta, href, extra].join(" "));
+    }
+
+    function getCardMeta(card) {
+      const metaItems = Array.from(card.querySelectorAll(".card-meta span")).map(el => el.textContent.trim()).filter(Boolean);
+      const sectionTitle = card.closest('.section')?.querySelector('.section-title h2')?.textContent?.trim();
+      return {
+        title: card.querySelector('.card-title')?.textContent?.trim() || 'Araç',
+        desc: card.querySelector('.card-desc')?.textContent?.trim() || '',
+        meta: metaItems,
+        href: card.getAttribute('href') || '',
+        section: sectionTitle || ''
+      };
+    }
+
+    function getUniqueMatches(query) {
+      const seen = new Set();
+      const matches = [];
+
+      cards.forEach(card => {
+        if (!getSearchText(card).includes(query)) return;
+        const key = getCardKey(card);
+        if (seen.has(key)) return;
+        seen.add(key);
+        matches.push(card);
+      });
+
+      return matches;
+    }
+
+    function updateToggleButton(section) {
+      const button = section.querySelector(".toggle-btn");
+      if (!button) return;
+      const isCollapsed = section.classList.contains("collapsed");
+      button.textContent = isCollapsed ? "Daha Fazlasını Göster" : "Daha Az Göster";
+    }
+
+    collapsibleSections.forEach(section => {
+      section.dataset.userCollapsed = section.classList.contains("collapsed") ? "true" : "false";
+      const button = section.querySelector(".toggle-btn");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        section.classList.toggle("collapsed");
+        section.dataset.userCollapsed = section.classList.contains("collapsed") ? "true" : "false";
+        updateToggleButton(section);
+      });
+    });
+
+    function hideQuickResults() {
+      if (!searchResultsPopover) return;
+      searchResultsPopover.classList.remove('show');
+      searchResultsPopover.hidden = true;
+      if (searchResultsList) searchResultsList.innerHTML = '';
+    }
+
+    function renderQuickResults(rawQuery, matches) {
+      if (!searchResultsPopover || !searchResultsList || !searchResultsCount || !searchResultsTitle || !searchResultsHint) return;
+
+      if (!rawQuery) {
+        hideQuickResults();
+        return;
+      }
+
+      searchResultsPopover.hidden = false;
+      searchResultsPopover.classList.add('show');
+      searchResultsCount.textContent = String(matches.length);
+      searchResultsTitle.textContent = matches.length > 0 ? 'Hızlı sonuçlar' : 'Sonuç bulunamadı';
+      searchResultsHint.textContent = matches.length > 0
+        ? 'İlk eşleşmeleri burada gör. İstersen Enter ile ilk karta da kayabilirsin.'
+        : `“${rawQuery}” için hızlı sonuç bulunamadı.`;
+
+      if (!matches.length) {
+        searchResultsList.innerHTML = '<div class="search-result-empty">Farklı bir araç adı, kategori veya daha kısa bir kelime deneyebilirsin.</div>';
+        return;
+      }
+
+      const quickItems = matches.slice(0, MAX_QUICK_RESULTS).map(card => {
+        const data = getCardMeta(card);
+        const key = getCardKey(card);
+        const metaBits = [];
+        if (data.section) metaBits.push(`<span class="search-result-pill">${data.section}</span>`);
+        if (data.meta[1]) metaBits.push(`<span class="search-result-pill">${data.meta[1]}</span>`);
+        metaBits.push(`<span class="search-result-pill primary">${data.href ? 'Araca Git' : 'Kartı Göster'}</span>`);
+        const tag = data.href ? 'a' : 'button';
+        const extraAttrs = data.href
+          ? `href="${data.href}"`
+          : `type="button" data-scroll-card="${key.replace(/"/g, '&quot;')}"`;
+        return `
+          <${tag} class="search-result-card" ${extraAttrs}>
+            <div class="search-result-top">
+              <div class="search-result-title">${data.title}</div>
+              <span class="tag ${data.href ? 'live' : 'soon'}">${data.meta[0] || (data.href ? 'Canlı' : 'Yakında')}</span>
+            </div>
+            <div class="search-result-desc">${data.desc || 'Bu araç için sonuç kartına gitmek üzere tıklayabilirsin.'}</div>
+            <div class="search-result-meta">${metaBits.join('')}</div>
+          </${tag}>`;
+      }).join('');
+
+      searchResultsList.innerHTML = quickItems;
+
+      searchResultsList.querySelectorAll('[data-scroll-card]').forEach(button => {
+        button.addEventListener('click', () => {
+          const target = Array.from(cards).find(card => getCardKey(card) === button.dataset.scrollCard);
+          if (target) scrollToCard(target);
+        });
+      });
+    }
+
+    function scrollToCard(card) {
+      if (!card) return;
+      const section = card.closest('.section');
+      if (section) {
+        section.classList.remove('hide');
+        if (section.classList.contains('collapsible')) {
+          section.classList.remove('collapsed');
+          updateToggleButton(section);
+        }
+      }
+      card.classList.remove('hide');
+      const top = card.getBoundingClientRect().top + window.scrollY - 110;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      card.classList.remove('search-hit-flash');
+      requestAnimationFrame(() => card.classList.add('search-hit-flash'));
+      window.setTimeout(() => card.classList.remove('search-hit-flash'), 1500);
+    }
+
+    function resetSearchState() {
+      document.body.classList.remove("search-active");
+      cards.forEach(card => {
+        card.classList.remove("hide");
+        card.classList.remove('search-hit-flash');
+      });
+      sections.forEach(section => {
+        section.classList.remove("hide");
+        if (section.classList.contains("collapsible")) {
+          const shouldCollapse = section.dataset.userCollapsed === "true";
+          section.classList.toggle("collapsed", shouldCollapse);
+          updateToggleButton(section);
+        }
+      });
+      searchStatus.textContent = DEFAULT_SEARCH_MESSAGE;
+      clearSearchBtn.classList.remove("show");
+      hideQuickResults();
+    }
+
+    function applySearch() {
+      const rawQuery = searchInput.value.trim();
+      const query = normalizeText(rawQuery);
+
+      if (!query) {
+        resetSearchState();
+        return;
+      }
+
+      document.body.classList.add("search-active");
+      clearSearchBtn.classList.add("show");
+
+      const matches = getUniqueMatches(query);
+      const matchKeys = new Set(matches.map(getCardKey));
+
+      cards.forEach(card => {
+        card.classList.toggle('hide', !matchKeys.has(getCardKey(card)));
+      });
+
+      sections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.searchable-card:not(.hide)');
+        const hasVisible = visibleCards.length > 0;
+        section.classList.toggle('hide', !hasVisible);
+
+        if (hasVisible && section.classList.contains('collapsible')) {
+          section.classList.remove('collapsed');
+          updateToggleButton(section);
+        }
+      });
+
+      searchStatus.textContent = matches.length > 0
+        ? `“${rawQuery}” için ${matches.length} araç bulundu. Hızlı sonuçlar arama kutusunun hemen altında listelenir.`
+        : `“${rawQuery}” için eşleşen araç bulunamadı.`;
+
+      renderQuickResults(rawQuery, matches);
+    }
+
+    searchInput.addEventListener('input', applySearch);
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      const rawQuery = searchInput.value.trim();
+      const query = normalizeText(rawQuery);
+      if (!query) return;
+      const matches = getUniqueMatches(query);
+      if (!matches.length) return;
+      event.preventDefault();
+      scrollToCard(matches[0]);
+    });
+
+    clearSearchBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      resetSearchState();
+      searchInput.focus();
+    });
+
+    function updateCategoryScrollButton() {
+      if (!categoryPanelGrid || !categoryPanelScrollBtn) return;
+      const canScroll = categoryPanelGrid.scrollHeight > categoryPanelGrid.clientHeight + 6;
+      categoryPanelScrollBtn.classList.toggle("hide", !canScroll);
+      if (!canScroll) return;
+
+      const atTop = categoryPanelGrid.scrollTop <= 10;
+      const label = atTop ? "Aşağı kaydır" : "Yukarı kaydır";
+      categoryPanelScrollBtn.textContent = atTop ? "↓" : "↑";
+      categoryPanelScrollBtn.setAttribute("aria-label", label);
+      categoryPanelScrollBtn.setAttribute("title", label);
+    }
+
+    function positionCategoryPanel() {
+      if (!allCategoriesPanel || !allCategoriesToggle) return;
+      const viewportPadding = window.innerWidth <= 760 ? 14 : 20;
+      const preferredWidth = Math.min(392, window.innerWidth - (viewportPadding * 2));
+      const toggleRect = allCategoriesToggle.getBoundingClientRect();
+      let left = Math.max(viewportPadding, Math.min(toggleRect.left, window.innerWidth - preferredWidth - viewportPadding));
+      let top = toggleRect.bottom + 12;
+      let availableHeight = window.innerHeight - top - 16;
+
+      if (availableHeight < 320) {
+        top = Math.max(16, window.innerHeight - Math.min(620, Math.round(window.innerHeight * 0.82)) - 16);
+        availableHeight = window.innerHeight - top - 16;
+      }
+
+      const panelHeight = Math.max(320, Math.min(620, availableHeight));
+
+      allCategoriesPanel.style.left = `${left}px`;
+      allCategoriesPanel.style.top = `${top}px`;
+      allCategoriesPanel.style.width = `${preferredWidth}px`;
+      allCategoriesPanel.style.maxWidth = `${preferredWidth}px`;
+      allCategoriesPanel.style.maxHeight = `${panelHeight}px`;
+
+      if (categoryPanelGrid) {
+        const headHeight = allCategoriesPanel.querySelector('.all-categories-panel-head')?.offsetHeight || 0;
+        const gridHeight = Math.max(180, Math.min(500, panelHeight - headHeight - 36));
+        categoryPanelGrid.style.maxHeight = `${gridHeight}px`;
+      }
+    }
+
+    function closeCategoryPanel() {
+      if (!allCategoriesPanel) return;
+      allCategoriesPanel.classList.remove("open");
+      allCategoriesPanel.setAttribute("aria-hidden", "true");
+      allCategoriesToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("category-panel-open");
+      if (heroHeader) heroHeader.classList.remove("category-panel-open");
+      if (allCategoriesBackdrop) {
+        allCategoriesBackdrop.classList.remove("open");
+        allCategoriesBackdrop.setAttribute("aria-hidden", "true");
+      }
+    }
+
+    function openCategoryPanel() {
+      if (!allCategoriesPanel) return;
+      document.body.classList.add("category-panel-open");
+      if (heroHeader) heroHeader.classList.add("category-panel-open");
+      positionCategoryPanel();
+      allCategoriesPanel.classList.add("open");
+      allCategoriesPanel.setAttribute("aria-hidden", "false");
+      allCategoriesToggle.setAttribute("aria-expanded", "true");
+      if (allCategoriesBackdrop) {
+        allCategoriesBackdrop.classList.add("open");
+        allCategoriesBackdrop.setAttribute("aria-hidden", "false");
+      }
+      requestAnimationFrame(() => {
+        positionCategoryPanel();
+        updateCategoryScrollButton();
+      });
+    }
+
+    if (allCategoriesToggle && allCategoriesPanel) {
+      allCategoriesToggle.addEventListener("click", () => {
+        const isOpen = allCategoriesPanel.classList.contains("open");
+        if (isOpen) closeCategoryPanel(); else openCategoryPanel();
+      });
+
+      if (allCategoriesClose) {
+        allCategoriesClose.addEventListener("click", closeCategoryPanel);
+      }
+
+      if (allCategoriesBackdrop) {
+        allCategoriesBackdrop.addEventListener("click", closeCategoryPanel);
+      }
+
+      if (categoryPanelGrid) {
+        categoryPanelGrid.addEventListener("scroll", updateCategoryScrollButton, { passive:true });
+      }
+
+      if (categoryPanelScrollBtn && categoryPanelGrid) {
+        categoryPanelScrollBtn.addEventListener("click", () => {
+          const atTop = categoryPanelGrid.scrollTop <= 10;
+          if (atTop) {
+            categoryPanelGrid.scrollBy({ top: Math.round(categoryPanelGrid.clientHeight * 0.72), behavior: "smooth" });
+          } else {
+            categoryPanelGrid.scrollTo({ top: 0, behavior: "smooth" });
+          }
+          setTimeout(updateCategoryScrollButton, 180);
+        });
+      }
+
+      document.addEventListener("click", (event) => {
+        if (!allCategoriesPanel.classList.contains("open")) return;
+        const insidePanel = allCategoriesPanel.contains(event.target);
+        const onToggle = allCategoriesToggle.contains(event.target);
+        if (!insidePanel && !onToggle) closeCategoryPanel();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && allCategoriesPanel.classList.contains("open")) {
+          closeCategoryPanel();
+        }
+      });
+
+      allCategoriesPanel.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeCategoryPanel);
+      });
+    }
+
+    window.addEventListener("resize", () => {
+      if (allCategoriesPanel && allCategoriesPanel.classList.contains("open")) positionCategoryPanel();
+      updateCategoryScrollButton();
+    });
+    window.addEventListener("scroll", () => {
+      if (allCategoriesPanel && allCategoriesPanel.classList.contains("open")) positionCategoryPanel();
+    }, { passive:true });
+    updateCategoryScrollButton();
+    resetSearchState();
+  </script>
+</body>
+</html>

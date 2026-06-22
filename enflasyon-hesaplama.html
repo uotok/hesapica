@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica</title>
+<meta content="Enflasyon hesaplama aracı ile geçmişteki bir tutarın bugünkü yaklaşık değerini veya bugünkü bir tutarın geçmişteki karşılığını hesapla. Alım gücü kaybı, korunma ihtiyacı, yıllık ortalama etki ve hızlı durum özetini tek ekranda analiz et." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="enflasyon hesaplama, alım gücü hesaplama, para değeri hesaplama, geçmiş para bugün ne eder, bugünkü para geçmişte ne ederdi, enflasyon analizi" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/enflasyon-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica" property="og:title"/>
+<meta content="Enflasyon hesaplama aracı ile geçmişteki bir tutarın bugünkü yaklaşık değerini veya bugünkü bir tutarın geçmişteki karşılığını hesapla. Alım gücü kaybı, korunma ihtiyacı, yıllık ortalama etki ve hızlı durum özetini tek ekranda analiz et." property="og:description"/>
+<meta content="https://hesapica.com/enflasyon-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica" name="twitter:title"/>
+<meta content="Enflasyon hesaplama aracı ile geçmişteki bir tutarın bugünkü yaklaşık değerini veya bugünkü bir tutarın geçmişteki karşılığını hesapla. Alım gücü kaybı, korunma ihtiyacı, yıllık ortalama etki ve hızlı durum özetini tek ekranda analiz et." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select,textarea{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus,textarea:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder,select::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .field-error{margin-top:7px;font-size:14px;color:var(--bad);font-weight:700;min-height:20px}
+    .has-error input,.has-error select{border-color:rgba(185,28,28,.55)!important;box-shadow:0 0 0 4px rgba(185,28,28,.08)!important;background:#fff7f7}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .results-kicker{display:none;padding:14px 16px;border-radius:18px;background:#ffffff;border:1px solid rgba(79,70,229,.12);color:#4f46e5;font-size:14px;font-weight:800;box-shadow:var(--shadow)}
+    .results-kicker span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:4px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .results-panel-flash{animation:resultPulse 1.2s ease}
+    @keyframes resultPulse{0%{box-shadow:0 0 0 0 rgba(79,70,229,.00)}25%{box-shadow:0 0 0 6px rgba(79,70,229,.10)}100%{box-shadow:0 0 0 0 rgba(79,70,229,.00)}}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .score-breakdown-row .val.pos{color:var(--good)}
+    .score-breakdown-row .val.neg{color:var(--bad)}
+    .score-breakdown-row .val.neu{color:var(--muted)}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .hide{display:none !important}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid,.content-grid,.table-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .hero-chips{gap:8px}
+      .hero-chip:nth-child(n+3){display:none}
+      .flow-hint{margin-top:16px}
+      .results-kicker{display:block}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;
+        border:1px solid #d1d5db !important;
+        break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Enflasyon Hesaplama",
+    "url":"https://hesapica.com/enflasyon-hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Geçmiş ve bugünkü para değerini, alım gücü kaybını ve korunması gereken artış oranını analiz eden ücretsiz araç."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Finans","item":"https://hesapica.com/#finans"},
+      {"@type":"ListItem","position":3,"name":"Enflasyon Hesaplama","item":"https://hesapica.com/enflasyon-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Geçmişteki para bugün ne eder?","acceptedAnswer":{"@type":"Answer","text":"Bu hesapta geçmişteki bir tutar, girilen enflasyon oranı ve yıl farkına göre bugünkü yaklaşık karşılığına taşınır."}},
+      {"@type":"Question","name":"Bugünkü para geçmişte ne ederdi?","acceptedAnswer":{"@type":"Answer","text":"Bu hesapta bugünkü bir tutarın geçmişteki satın alma gücüne göre yaklaşık karşılığı bulunur."}},
+      {"@type":"Question","name":"Toplam enflasyon ile yıllık ortalama enflasyon arasında fark nedir?","acceptedAnswer":{"@type":"Answer","text":"Toplam enflasyon tek bir dönemin toplam artışını ifade eder. Yıllık ortalama enflasyon ise her yıl benzer etki varsayımıyla bileşik olarak hesap yapılmasını sağlar."}}
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/enflasyon-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç etkileşimli hesaplama için JavaScript gerektirir. Sonuçları görmek için lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/">Ana Sayfa</a>
+<span>/</span>
+<a href="/#finans">Finans</a>
+<span>/</span>
+<strong>Enflasyon Hesaplama</strong>
+</nav>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Gelişmiş Finans Aracı</span>
+<h1>Enflasyon Hesaplama</h1>
+<p>Bu araç yalnızca geçmiş para bugün ne eder sorusunu cevaplamaz; <strong>paranın alım gücü kaybını</strong>, <strong>korunması gereken değer artışını</strong>, <strong>yıllık ortalama etkiyi</strong> ve <strong>enflasyon baskısının seviyesini</strong> tek ekranda analiz etmek için tasarlandı.</p>
+<div class="hero-chips">
+<span class="hero-chip">Alım gücü odaklı analiz</span>
+<span class="hero-chip">Hızlı durum özeti</span>
+<span class="hero-chip">Boş başlangıç standardı</span>
+<span class="hero-chip">Mobilde sade akış</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Gelişmiş analiz yaklaşımı</div>
+<strong>Ana sonuç üstte, ek metrikler ve yorumlar kontrollü şekilde aşağıda</strong>
+<p>Tutarı, yıl farkını ve hesaplama yöntemini girmen yeterli. Sistem eşdeğer değeri hesaplar; ardından alım gücü kaybını, korunma ihtiyacını ve enflasyon etkisinin seviyesini otomatik yorumlar.</p>
+<ul>
+<li>Geçmişten bugüne veya bugünden geçmişe çift yönlü hesap</li>
+<li>Toplam enflasyon ya da yıllık ortalama yöntem seçimi</li>
+<li>Karar destekli hızlı özet ve yorum motoru</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Hesaplama Paneli</h2>
+<p class="section-note">Tüm alanlar boş başlar. Temel sonuçlar için tutar, yıl farkı ve enflasyon bilgisini girmen yeterli. Bu araç yaklaşık karşılaştırma ve planlama amacıyla tasarlanmıştır.</p>
+<div class="helper-box">
+<h3>Kısa not</h3>
+<p>Enflasyon hesapları tek başına resmi veri yerine geçmez; ancak geçmişteki bir tutarın bugünkü karşılığını, bugünkü bir tutarın geçmişteki gücünü ve aynı yaşam standardını korumak için gereken artışı hızlıca anlamanı sağlar.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Temel hesaplama verileri</div>
+<div class="field-grid">
+<div class="field">
+<label for="calcDirection">Hesaplama yönü</label>
+<select id="calcDirection">
+<option value="pastToToday">Geçmişteki para bugün ne eder?</option>
+<option value="todayToPast">Bugünkü para geçmişte ne ederdi?</option>
+</select>
+<div class="hint">Parayı ileriye mi taşıyacağını yoksa geçmişteki alım gücünü mü görmek istediğini seç.</div>
+<div class="field-error" id="calcDirectionError"></div>
+</div>
+<div class="field">
+<label for="calcMethod">Hesaplama yöntemi</label>
+<select id="calcMethod">
+<option value="totalInflation">Toplam enflasyon oranı ile hesapla</option>
+<option value="annualAverage">Yıllık ortalama enflasyon ile hesapla</option>
+</select>
+<div class="hint">Elindeki veriye göre tek dönem toplam oranı ya da yıllık ortalama etkiyi kullanabilirsin.</div>
+<div class="field-error" id="calcMethodError"></div>
+</div>
+<div class="field">
+<label for="amount">Tutar (TL)</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="amount" inputmode="numeric" placeholder="Örn: 10.000" type="text"/>
+</div>
+<div class="hint">Büyük tutarlar otomatik olarak 10.000 gibi gösterilir.</div>
+<div class="field-error" id="amountError"></div>
+</div>
+<div class="field">
+<label for="yearDifference">Yıl farkı</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="yearDifference" inputmode="decimal" placeholder="Örn: 5" type="text"/>
+<span class="suffix">yıl</span>
+</div>
+<div class="hint">1 yıl, 3.5 yıl veya 5 yıl gibi dönem farkını gir.</div>
+<div class="field-error" id="yearDifferenceError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Enflasyon oranı</div>
+<div class="field-grid">
+<div class="field full" id="totalInflationField">
+<label for="totalInflation">Toplam enflasyon oranı (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="totalInflation" inputmode="decimal" placeholder="Örn: 250" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Toplam etkiyi biliyorsan tek seferde bu alanı kullan.</div>
+<div class="field-error" id="totalInflationError"></div>
+</div>
+<div class="field full hide" id="annualInflationField">
+<label for="annualInflation">Yıllık ortalama enflasyon (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="annualInflation" inputmode="decimal" placeholder="Örn: 35" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Yıllık ortalama enflasyon bilgisini girersen sistem toplam etkiyi bileşik olarak hesaplar.</div>
+<div class="field-error" id="annualInflationError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Hazır kısayol senaryosu</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="fillExample(this)" type="button">Örnek veri</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateAll({ silent:false, forceValidation:true })" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Hızlı dene (örnek veri)</button>
+<button class="btn btn-ghost" onclick="clearAllFields()" type="button">Temizle</button>
+<button class="btn btn-ghost" onclick="copyResults()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" onclick="shareResults()" type="button">Paylaş</button>
+<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Tüm detaylı analiz ve yorumlar aşağıda devam eder</strong>
+<span>Mobilde ilk ekran sonrası kaydırarak hızlı özet, ek metrikler ve senaryo tablolarını görebilirsin.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="results-kicker">Sonuçlar aşağıda başlıyor<span>Ana çıktı, ara sonuçlar ve yorum blokları bu bölümde yer alır.</span></div>
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Sonuç alanı durumu</div>
+<div class="status-text" id="statusText">Sonuç görmek için gerekli alanları doldur veya örnek veri kullan.</div>
+</div>
+<span class="badge" id="statusBadge">Veri bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Ana Sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Hesaplanan eşdeğer değer burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" style="margin-top:0">Alım Gücü Kaybı Skoru</div>
+<div class="score-value" id="impactScore">0/100</div>
+</div>
+<span class="pill" id="difficultyBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="hint" id="scoreText" style="margin-top:10px">Bu skor, enflasyon etkisinin paranın alım gücü üzerinde ne kadar baskı oluşturduğunu anlatır.</div>
+<div class="score-explain">
+<strong>Bu skor neyi ifade eder?</strong>
+<div id="scoreExplainText">0 düşük etki, 100 çok güçlü etki demektir. Değer; toplam enflasyon, yıllık ortalama etki, alım gücü kaybı ve korunma ihtiyacına göre oluşur.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Toplam enflasyon</span><span class="val neu" id="breakTotal">—</span></div>
+<div class="score-breakdown-row"><span class="name">Yıllık ortalama baskı</span><span class="val neu" id="breakAnnual">—</span></div>
+<div class="score-breakdown-row"><span class="name">Alım gücü kaybı</span><span class="val neu" id="breakLoss">—</span></div>
+<div class="score-breakdown-row"><span class="name">Korunma ihtiyacı</span><span class="val neu" id="breakProtect">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1">
+<div>
+<div class="label">Değer farkı</div>
+<div class="subline">Nominal fark</div>
+</div>
+<div class="value" id="differenceResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini2">
+<div>
+<div class="label">Korunma ihtiyacı</div>
+<div class="subline">Aynı alım gücü için gerekli artış</div>
+</div>
+<div class="value" id="protectionResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini3">
+<div>
+<div class="label">Aylık ortalama etki</div>
+<div class="subline">Yaklaşık aylık karşılık</div>
+</div>
+<div class="value" id="monthlyInflationResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini4">
+<div>
+<div class="label">Yıllık ortalama etki</div>
+<div class="subline">Yaklaşık yıllık baskı</div>
+</div>
+<div class="value" id="annualInflationResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini5">
+<div>
+<div class="label">Toplam enflasyon</div>
+<div class="subline">Seçilen dönemin toplam etkisi</div>
+</div>
+<div class="value" id="totalInflationResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini6">
+<div>
+<div class="label">Alım gücü kaybı</div>
+<div class="subline">Yaklaşık kayıp oranı</div>
+</div>
+<div class="value" id="purchasingPowerResult">—</div>
+</div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Hızlı durum özeti</h2>
+<div class="health-grid">
+<div class="health-card">
+<h3>Enflasyon seviyesi</h3>
+<div class="big" id="health1">—</div>
+<div class="hint" id="health1Sub" style="margin-top:6px">—</div>
+</div>
+<div class="health-card">
+<h3>Alım gücü baskısı</h3>
+<div class="big" id="health2">—</div>
+<div class="hint" id="health2Sub" style="margin-top:6px">—</div>
+</div>
+<div class="health-card">
+<h3>Karar görünümü</h3>
+<div class="big" id="health3">—</div>
+<div class="hint" id="health3Sub" style="margin-top:6px">—</div>
+</div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Bilgileri girip hesapladığında sistem, enflasyon etkisini ve alım gücü baskısını yorumlayacak.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Hesaplanan eşdeğer değer</th><td id="stat1">—</td></tr>
+<tr><th>Nominal değer farkı</th><td id="stat2">—</td></tr>
+<tr><th>Korunması gereken artış</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Aylık ortalama etki</th><td id="stat4">—</td></tr>
+<tr><th>Yıllık ortalama etki</th><td id="stat5">—</td></tr>
+<tr><th>Alım gücü kaybı</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Senaryo ve karşılaştırma tablosu</span>
+<span class="summary-note">Dönem etkisini daha hızlı kıyasla</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Senaryo</th><th>Eşdeğer değer</th><th>Yorum</th></tr></thead>
+<tbody id="scenarioBody"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Gösterge</th><th>Değer</th></tr></thead>
+<tbody>
+<tr><td>Seçilen yön</td><td id="directionStat">—</td></tr>
+<tr><td>Yöntem</td><td id="methodStat">—</td></tr>
+<tr><td>Dönem</td><td id="periodStat">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<section class="card accordion-card">
+<h2>Enflasyon hesaplama hakkında</h2>
+<details open="">
+<summary>Bu araç neyi hesaplar?</summary>
+<p>Geçmişteki bir paranın bugünkü yaklaşık karşılığını veya bugünkü bir paranın geçmişteki yaklaşık değerini hesaplar. Ayrıca alım gücü kaybını ve aynı seviyeyi korumak için gereken artışı gösterir.</p>
+</details>
+<details>
+<summary>Sonuçlar neden yaklaşık kabul edilir?</summary>
+<p>Kullanılan oran, dönem, resmi endeks türü ve harcama kalıpları sonucu etkileyebilir. Bu yüzden bu araç planlama ve genel farkındalık amacıyla kullanılmalıdır.</p>
+</details>
+<details>
+<summary>Toplam ve yıllık ortalama yöntem ne zaman kullanılır?</summary>
+<p>Elinde tek bir dönemin toplam artışı varsa toplam yöntem uygundur. Yıllık ortalama verin varsa ve bileşik etkiyi görmek istiyorsan yıllık ortalama yöntemi daha anlamlıdır.</p>
+</details>
+</section>
+<section class="card">
+<h2>İlgili araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/faiz-hesaplama?mod=mevduat">
+<span class="small">Finans</span>
+<strong>Mevduat Faizi Hesaplama</strong>
+<p>Paranı faizle değerlendirdiğinde enflasyona karşı nasıl konumlandığını ayrıca gör.</p>
+</a>
+<a class="related-card" href="/butce-hesaplama">
+<span class="small">Finans</span>
+<strong>Bütçe ve Tasarruf Hesaplama</strong>
+<p>Düzenli birikimin uzun vadede ne kadar büyüyebileceğini incele.</p>
+</a>
+<a class="related-card" href="/yatirim-getirisi-hesaplama">
+<span class="small">Yatırım</span>
+<strong>Yatırım Getirisi Hesaplama</strong>
+<p>Nominal getiri ile enflasyon etkisini birlikte düşünmek için yatırım sonucunu ayrıca hesapla.</p>
+</a>
+</div>
+</section>
+</section>
+</main>
+<script>
+    const el = id => document.getElementById(id);
+
+    const STORAGE_KEY = 'hesapica:enflasyon-hesaplama:v3';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      lastInputMode: 'manual',
+      hasAttemptedSubmit: false
+    };
+    const touchedFields = new Set();
+    let debounceTimer = null;
+    let statusTimer = null;
+
+    const amountEl = el('amount');
+    const yearDifferenceEl = el('yearDifference');
+    const calcDirectionEl = el('calcDirection');
+    const calcMethodEl = el('calcMethod');
+    const totalInflationEl = el('totalInflation');
+    const annualInflationEl = el('annualInflation');
+    const totalInflationField = el('totalInflationField');
+    const annualInflationField = el('annualInflationField');
+    const resultsPanelEl = el('resultsPanel');
+    const requiredFieldIds = ['amount','yearDifference','totalInflation','annualInflation'];
+
+    function formatTRY(value){
+      return new Intl.NumberFormat('tr-TR',{
+        style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2
+      }).format(Number(value) || 0);
+    }
+
+    function formatPercent(value, digits = 2){
+      return '%' + (Number(value) || 0).toLocaleString('tr-TR', {
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      });
+    }
+
+    function formatTrIntegerInput(value){
+      const num = Math.round(Number(value) || 0);
+      return num ? new Intl.NumberFormat('tr-TR').format(num) : '';
+    }
+
+    function parseTrNumber(value){
+      if(value === null || value === undefined) return 0;
+      const cleaned = String(value).replace(/\./g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
+      return Number(cleaned) || 0;
+    }
+
+    function parseDecimal(value){
+      if(value === null || value === undefined) return NaN;
+      const cleaned = String(value).trim().replace(/\s+/g,'').replace(/%/g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
+      if(!cleaned || cleaned === '.' || cleaned === '-' || cleaned === '-.') return NaN;
+      return Number(cleaned);
+    }
+
+    function formatDecimalInput(value, digits = 2){
+      if(!Number.isFinite(value)) return '';
+      return Number(value).toLocaleString('tr-TR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      });
+    }
+
+    function clamp(n, min, max){
+      return Math.min(Math.max(n, min), max);
+    }
+
+    function sanitizeDecimalText(value){
+      let cleaned = String(value || '').replace(/[^0-9,.-]/g, '');
+      cleaned = cleaned.replace(/(?!^)-/g, '');
+      const parts = cleaned.split(/[.,]/);
+      if(parts.length > 1){
+        const decimal = parts.slice(1).join('');
+        cleaned = parts[0] + ',' + decimal;
+      }
+      return cleaned;
+    }
+
+    function updateStateInputs(){
+      state.inputs = {
+        amount: amountEl.value,
+        yearDifference: yearDifferenceEl.value,
+        calcDirection: calcDirectionEl.value,
+        calcMethod: calcMethodEl.value,
+        totalInflation: totalInflationEl.value,
+        annualInflation: annualInflationEl.value
+      };
+    }
+
+    function hasAnyInputValue(){
+      return Boolean(amountEl.value || yearDifferenceEl.value || totalInflationEl.value || annualInflationEl.value);
+    }
+
+    function shouldShowError(id, forceValidation = false){
+      return forceValidation || state.hasAttemptedSubmit || touchedFields.has(id);
+    }
+
+    function flashResults(){
+      resultsPanelEl.classList.remove('results-panel-flash');
+      void resultsPanelEl.offsetWidth;
+      resultsPanelEl.classList.add('results-panel-flash');
+      window.setTimeout(() => resultsPanelEl.classList.remove('results-panel-flash'), 1300);
+    }
+
+    function scrollToResults(){
+      resultsPanelEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      flashResults();
+    }
+
+    function pulseStatus(text, type = 'warn', badge = 'Bilgi'){
+      const previousText = el('statusText').textContent;
+      const previousClass = el('statusBadge').className;
+      const previousBadge = el('statusBadge').textContent;
+      setStatus(type, text, badge);
+      clearTimeout(statusTimer);
+      statusTimer = window.setTimeout(() => {
+        el('statusText').textContent = previousText;
+        el('statusBadge').className = previousClass;
+        el('statusBadge').textContent = previousBadge;
+      }, 1800);
+    }
+
+    function setMoneyInput(input){
+      input.addEventListener('input', () => {
+        state.lastInputMode = 'manual';
+        touchedFields.add(input.id);
+        const raw = input.value.replace(/\D/g, '');
+        input.value = raw ? new Intl.NumberFormat('tr-TR').format(Number(raw)) : '';
+        updateStateInputs();
+        scheduleAutoCalculate();
+      });
+      input.addEventListener('blur', () => {
+        touchedFields.add(input.id);
+        const val = parseTrNumber(input.value);
+        input.value = val ? formatTrIntegerInput(val) : '';
+        updateStateInputs();
+        calculateAll({ silent:true, forceValidation:false });
+      });
+    }
+
+    function setDecimalInput(input, digits = 2){
+      input.addEventListener('input', () => {
+        state.lastInputMode = 'manual';
+        touchedFields.add(input.id);
+        input.value = sanitizeDecimalText(input.value);
+        updateStateInputs();
+        scheduleAutoCalculate();
+      });
+      input.addEventListener('blur', () => {
+        touchedFields.add(input.id);
+        const value = parseDecimal(input.value);
+        input.value = Number.isFinite(value) ? formatDecimalInput(value, digits) : '';
+        updateStateInputs();
+        calculateAll({ silent:true, forceValidation:false });
+      });
+    }
+
+    function scheduleAutoCalculate(){
+      clearTimeout(debounceTimer);
+      debounceTimer = window.setTimeout(() => calculateAll({ silent:true, forceValidation:false }), 220);
+    }
+
+    function setAutoCalcListeners(){
+      [calcDirectionEl, calcMethodEl].forEach(item => {
+        item.addEventListener('change', () => {
+          state.lastInputMode = 'manual';
+          updateStateInputs();
+          scheduleAutoCalculate();
+        });
+      });
+    }
+
+    function setFieldError(id, message = ''){
+      const input = el(id);
+      const field = input ? input.closest('.field') : null;
+      const errorBox = el(id + 'Error');
+      if(!field || !errorBox || !input) return;
+      const invalid = Boolean(message);
+      errorBox.textContent = message;
+      field.classList.toggle('has-error', invalid);
+      input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+      if(errorBox.id) input.setAttribute('aria-describedby', errorBox.id);
+    }
+
+    function clearFieldErrors(){
+      requiredFieldIds.forEach(id => setFieldError(id, ''));
+    }
+
+    function markMiniCardsEmpty(isEmpty){
+      ['mini1','mini2','mini3','mini4','mini5','mini6'].forEach(id => el(id).classList.toggle('is-empty', isEmpty));
+      el('highlightCard').classList.toggle('is-empty', isEmpty);
+    }
+
+    function setMethodVisibility(){
+      const annual = calcMethodEl.value === 'annualAverage';
+      totalInflationField.classList.toggle('hide', annual);
+      annualInflationField.classList.toggle('hide', !annual);
+      totalInflationEl.required = !annual;
+      annualInflationEl.required = annual;
+      if(annual){
+        setFieldError('totalInflation', '');
+      } else {
+        setFieldError('annualInflation', '');
+      }
+    }
+
+    function setStatus(type = 'waiting', text = 'Sonuç görmek için gerekli alanları doldur veya örnek veri kullan.', badge = 'Veri bekleniyor'){
+      const badgeEl = el('statusBadge');
+      badgeEl.className = 'badge';
+      if(type === 'good') badgeEl.classList.add('good');
+      if(type === 'warn') badgeEl.classList.add('warn');
+      if(type === 'bad') badgeEl.classList.add('bad');
+      badgeEl.textContent = badge;
+      el('statusText').textContent = text;
+    }
+
+    function setScoreBadge(type = 'waiting', text = 'Veri bekleniyor'){
+      const badgeEl = el('difficultyBadge');
+      badgeEl.className = 'pill';
+      if(type === 'good') badgeEl.classList.add('good');
+      if(type === 'warn') badgeEl.classList.add('warn');
+      if(type === 'bad') badgeEl.classList.add('bad');
+      badgeEl.textContent = text;
+    }
+
+    function setBreakdown(id, value, type = 'neu'){
+      const box = el(id);
+      box.className = 'val ' + type;
+      box.textContent = value;
+    }
+
+    function resetOutputs(){
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      markMiniCardsEmpty(true);
+      setStatus();
+      setScoreBadge();
+      el('mainResult').textContent = '—';
+      el('mainResultText').textContent = 'Hesaplanan eşdeğer değer burada görünecek.';
+      el('impactScore').textContent = '0/100';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'Bu skor, enflasyon etkisinin paranın alım gücü üzerinde ne kadar baskı oluşturduğunu anlatır.';
+      el('scoreExplainText').textContent = '0 düşük etki, 100 çok güçlü etki demektir. Değer; toplam enflasyon, yıllık ortalama etki, alım gücü kaybı ve korunma ihtiyacına göre oluşur.';
+      setBreakdown('breakTotal', '—');
+      setBreakdown('breakAnnual', '—');
+      setBreakdown('breakLoss', '—');
+      setBreakdown('breakProtect', '—');
+
+      ['differenceResult','protectionResult','monthlyInflationResult','annualInflationResult','totalInflationResult','purchasingPowerResult','stat1','stat2','stat3','stat4','stat5','stat6','health1','health2','health3','health1Sub','health2Sub','health3Sub','directionStat','methodStat','periodStat'].forEach(id => {
+        el(id).textContent = '—';
+      });
+
+      el('scenarioBody').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+      el('smartComment').textContent = 'Bilgileri girip hesapladığında sistem, enflasyon etkisini ve alım gücü baskısını yorumlayacak.';
+    }
+
+    function getSeverity(totalInflationPercent, powerLoss){
+      if(totalInflationPercent >= 150 || powerLoss >= 60){
+        return { type:'bad', label:'Yüksek baskı' };
+      }
+      if(totalInflationPercent >= 50 || powerLoss >= 25){
+        return { type:'warn', label:'Orta baskı' };
+      }
+      return { type:'good', label:'Görece sınırlı' };
+    }
+
+    function validateInputs(forceValidation = false){
+      clearFieldErrors();
+      setMethodVisibility();
+
+      const amount = parseTrNumber(amountEl.value);
+      const years = parseDecimal(yearDifferenceEl.value);
+      const method = calcMethodEl.value;
+      let ok = true;
+
+      function applyValidation(id, invalid, message){
+        if(invalid){
+          ok = false;
+          if(shouldShowError(id, forceValidation)) setFieldError(id, message);
+        } else {
+          setFieldError(id, '');
+        }
+      }
+
+      applyValidation('amount', !amount || amount <= 0, 'Lütfen 0’dan büyük bir tutar girin.');
+      if(amount > 1000000000000){
+        ok = false;
+        if(shouldShowError('amount', forceValidation)) setFieldError('amount', 'Bu tutar çok yüksek görünüyor. Lütfen değeri kontrol edin.');
+      }
+
+      applyValidation('yearDifference', !Number.isFinite(years) || years <= 0, 'Lütfen 0’dan büyük bir yıl farkı girin.');
+      if(Number.isFinite(years) && years > 200){
+        ok = false;
+        if(shouldShowError('yearDifference', forceValidation)) setFieldError('yearDifference', '200 yıldan büyük dönemler bu araç için anlamlı olmayabilir.');
+      }
+
+      if(method === 'totalInflation'){
+        const total = parseDecimal(totalInflationEl.value);
+        applyValidation('totalInflation', !Number.isFinite(total) || total < 0, 'Lütfen geçerli bir toplam enflasyon oranı girin.');
+        if(Number.isFinite(total) && total > 100000){
+          ok = false;
+          if(shouldShowError('totalInflation', forceValidation)) setFieldError('totalInflation', 'Oran çok yüksek görünüyor. Lütfen değeri kontrol edin.');
+        }
+        setFieldError('annualInflation', '');
+      } else {
+        const annual = parseDecimal(annualInflationEl.value);
+        applyValidation('annualInflation', !Number.isFinite(annual) || annual < 0, 'Lütfen geçerli bir yıllık ortalama enflasyon oranı girin.');
+        if(Number.isFinite(annual) && annual > 1000){
+          ok = false;
+          if(shouldShowError('annualInflation', forceValidation)) setFieldError('annualInflation', 'Oran çok yüksek görünüyor. Lütfen değeri kontrol edin.');
+        }
+        setFieldError('totalInflation', '');
+      }
+
+      state.isValid = ok;
+      return ok;
+    }
+
+    function buildScenarioRows(direction, amount, baseYears, annualRate){
+      const yearsList = [1, Math.max(2, Math.round(baseYears)), Math.max(5, Math.ceil(baseYears))];
+      const uniqueYears = [...new Set(yearsList)].sort((a, b) => a - b);
+      const rows = uniqueYears.map(years => {
+        const factor = Math.pow(1 + annualRate / 100, years);
+        const eq = direction === 'pastToToday' ? amount * factor : amount / factor;
+        let note = 'Görece sınırlı etki';
+        if(annualRate >= 25) note = 'Belirgin baskı';
+        if(annualRate >= 50) note = 'Çok güçlü baskı';
+        return `<tr><td>${formatDecimalInput(years, 1)} yıl</td><td>${formatTRY(eq)}</td><td>${note}</td></tr>`;
+      });
+      el('scenarioBody').innerHTML = rows.join('');
+    }
+
+    function saveManualState(){
+      updateStateInputs();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.inputs));
+    }
+
+    function loadManualState(){
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        const saved = JSON.parse(raw);
+        amountEl.value = typeof saved.amount === 'string' ? saved.amount : '';
+        yearDifferenceEl.value = typeof saved.yearDifference === 'string' ? saved.yearDifference : '';
+        calcDirectionEl.value = saved.calcDirection === 'todayToPast' ? 'todayToPast' : 'pastToToday';
+        calcMethodEl.value = saved.calcMethod === 'annualAverage' ? 'annualAverage' : 'totalInflation';
+        totalInflationEl.value = typeof saved.totalInflation === 'string' ? saved.totalInflation : '';
+        annualInflationEl.value = typeof saved.annualInflation === 'string' ? saved.annualInflation : '';
+        updateStateInputs();
+      } catch(err){
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+
+    function clearSavedState(){
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function hasValidResult(){
+      return el('mainResult').textContent && el('mainResult').textContent !== '—';
+    }
+
+    function buildCopyText(){
+      return `Enflasyon Hesaplama Sonucu
+Hesaplama Yönü: ${calcDirectionEl.options[calcDirectionEl.selectedIndex].text}
+Hesaplama Yöntemi: ${calcMethodEl.options[calcMethodEl.selectedIndex].text}
+Tutar: ${amountEl.value ? amountEl.value + ' TL' : '-'}
+Yıl Farkı: ${yearDifferenceEl.value || '-'} yıl
+
+Ana Sonuç: ${el('mainResult').textContent}
+Değer Farkı: ${el('differenceResult').textContent}
+Korunma İhtiyacı: ${el('protectionResult').textContent}
+Aylık Ortalama Etki: ${el('monthlyInflationResult').textContent}
+Yıllık Ortalama Etki: ${el('annualInflationResult').textContent}
+Toplam Enflasyon: ${el('totalInflationResult').textContent}
+Alım Gücü Kaybı: ${el('purchasingPowerResult').textContent}
+Alım Gücü Kaybı Skoru: ${el('impactScore').textContent}
+
+Yorum:
+${el('smartComment').textContent}`;
+    }
+
+    function calculateAll(options = {}){
+      const opts = typeof options === 'boolean'
+        ? { silent: options, forceValidation: false }
+        : { silent: Boolean(options.silent), forceValidation: Boolean(options.forceValidation) };
+
+      setMethodVisibility();
+      updateStateInputs();
+
+      if(!hasAnyInputValue()){
+        clearFieldErrors();
+        if(state.lastInputMode === 'manual') clearSavedState();
+        resetOutputs();
+        return false;
+      }
+
+      if(opts.forceValidation){
+        state.hasAttemptedSubmit = true;
+      }
+
+      if(!validateInputs(opts.forceValidation)){
+        resetOutputs();
+        setStatus('bad', 'Bazı alanlarda düzeltme gerekiyor. Kırmızı uyarıları kontrol et.', 'Kontrol et');
+        if(state.lastInputMode === 'manual') saveManualState();
+        return false;
+      }
+
+      const direction = calcDirectionEl.value;
+      const amount = parseTrNumber(amountEl.value);
+      const years = parseDecimal(yearDifferenceEl.value);
+      const method = calcMethodEl.value;
+
+      let totalInflationPercent = 0;
+      let annualInflationPercentValue = 0;
+
+      if(method === 'totalInflation'){
+        totalInflationPercent = parseDecimal(totalInflationEl.value);
+        annualInflationPercentValue = (Math.pow(1 + totalInflationPercent / 100, 1 / years) - 1) * 100;
+      } else {
+        annualInflationPercentValue = parseDecimal(annualInflationEl.value);
+        totalInflationPercent = (Math.pow(1 + annualInflationPercentValue / 100, years) - 1) * 100;
+      }
+
+      const monthlyInflationPercentValue = (Math.pow(1 + annualInflationPercentValue / 100, 1 / 12) - 1) * 100;
+      const inflationFactor = 1 + totalInflationPercent / 100;
+      const equivalent = direction === 'pastToToday' ? amount * inflationFactor : amount / inflationFactor;
+      const difference = direction === 'pastToToday' ? equivalent - amount : amount - equivalent;
+      const powerLoss = inflationFactor > 0 ? (1 - (1 / inflationFactor)) * 100 : 0;
+      const protectionNeed = totalInflationPercent;
+
+      const scoreRaw =
+        clamp(totalInflationPercent / 4, 0, 40) +
+        clamp(annualInflationPercentValue * 0.7, 0, 20) +
+        clamp(powerLoss * 0.35, 0, 25) +
+        clamp(protectionNeed * 0.15, 0, 15);
+      const impactScore = Math.round(clamp(scoreRaw, 0, 100));
+      const severity = getSeverity(totalInflationPercent, powerLoss);
+
+      state.results = {
+        direction,
+        amount,
+        years,
+        method,
+        equivalent,
+        difference,
+        powerLoss,
+        protectionNeed,
+        totalInflationPercent,
+        annualInflationPercentValue,
+        monthlyInflationPercentValue,
+        impactScore,
+        severity: severity.type
+      };
+      state.isValid = true;
+      state.isCalculated = true;
+
+      markMiniCardsEmpty(false);
+      setStatus(
+        severity.type,
+        direction === 'pastToToday'
+          ? 'Geçmişteki tutarın bugünkü eşdeğer değeri ve alım gücü baskısı hesaplandı.'
+          : 'Bugünkü tutarın geçmişteki yaklaşık karşılığı ve alım gücü farkı hesaplandı.',
+        severity.label
+      );
+      setScoreBadge(severity.type, severity.label);
+
+      el('mainResult').textContent = formatTRY(equivalent);
+      el('mainResultText').textContent =
+        direction === 'pastToToday'
+          ? `${formatTRY(amount)} tutarının bugün yaklaşık karşılığı hesaplandı.`
+          : `${formatTRY(amount)} tutarının geçmişteki yaklaşık karşılığı hesaplandı.`;
+
+      el('differenceResult').textContent = formatTRY(difference);
+      el('protectionResult').textContent = formatPercent(protectionNeed);
+      el('monthlyInflationResult').textContent = formatPercent(monthlyInflationPercentValue);
+      el('annualInflationResult').textContent = formatPercent(annualInflationPercentValue);
+      el('totalInflationResult').textContent = formatPercent(totalInflationPercent);
+      el('purchasingPowerResult').textContent = formatPercent(powerLoss);
+
+      el('impactScore').textContent = `${impactScore}/100`;
+      el('scoreBar').style.width = `${impactScore}%`;
+      el('scoreText').textContent =
+        impactScore >= 75 ? 'Enflasyon etkisi çok güçlü görünüyor. Koruma stratejisi düşünmek daha kritik hale gelir.'
+        : impactScore >= 40 ? 'Enflasyon etkisi belirgin seviyede. Paranın korunması için dikkatli planlama gerekir.'
+        : 'Enflasyon etkisi görece sınırlı görünüyor. Yine de dönem uzadıkça baskı artabilir.';
+      el('scoreExplainText').textContent =
+        `Skor; toplam enflasyon ${formatPercent(totalInflationPercent)}, yıllık ortalama etki ${formatPercent(annualInflationPercentValue)} ve alım gücü kaybı ${formatPercent(powerLoss)} dikkate alınarak oluşturuldu.`;
+      setBreakdown('breakTotal', formatPercent(totalInflationPercent), totalInflationPercent >= 50 ? 'neg' : 'pos');
+      setBreakdown('breakAnnual', formatPercent(annualInflationPercentValue), annualInflationPercentValue >= 20 ? 'neg' : 'pos');
+      setBreakdown('breakLoss', formatPercent(powerLoss), powerLoss >= 25 ? 'neg' : 'pos');
+      setBreakdown('breakProtect', formatPercent(protectionNeed), protectionNeed >= 50 ? 'neg' : 'pos');
+
+      el('health1').textContent =
+        totalInflationPercent >= 150 ? 'Çok yüksek'
+        : totalInflationPercent >= 50 ? 'Belirgin'
+        : 'Sınırlı';
+      el('health1Sub').textContent = `Toplam etki ${formatPercent(totalInflationPercent)} seviyesinde.`;
+
+      el('health2').textContent =
+        powerLoss >= 60 ? 'Sert kayıp'
+        : powerLoss >= 25 ? 'Kayda değer'
+        : 'Düşük';
+      el('health2Sub').textContent = `Yaklaşık alım gücü kaybı ${formatPercent(powerLoss)}.`;
+
+      el('health3').textContent =
+        protectionNeed >= 150 ? 'Koruma şart'
+        : protectionNeed >= 50 ? 'Planla'
+        : 'İzle';
+      el('health3Sub').textContent =
+        direction === 'pastToToday'
+          ? 'Bugünkü seviyeyi korumak için artış ihtiyacını dikkate al.'
+          : 'Geçmiş kıyaslamayı bugünkü kararlarla birlikte değerlendir.';
+
+      el('stat1').textContent = formatTRY(equivalent);
+      el('stat2').textContent = formatTRY(difference);
+      el('stat3').textContent = formatPercent(protectionNeed);
+      el('stat4').textContent = formatPercent(monthlyInflationPercentValue);
+      el('stat5').textContent = formatPercent(annualInflationPercentValue);
+      el('stat6').textContent = formatPercent(powerLoss);
+
+      el('directionStat').textContent = calcDirectionEl.options[calcDirectionEl.selectedIndex].text;
+      el('methodStat').textContent = calcMethodEl.options[calcMethodEl.selectedIndex].text;
+      el('periodStat').textContent = `${formatDecimalInput(years, 1)} yıl`;
+
+      buildScenarioRows(direction, amount, years, annualInflationPercentValue);
+
+      let summaryLead = '';
+      if(totalInflationPercent >= 150){
+        summaryLead = 'Bu dönem çok güçlü bir enflasyon baskısı gösteriyor.';
+      } else if(totalInflationPercent >= 50){
+        summaryLead = 'Bu dönem belirgin bir enflasyon etkisi gösteriyor.';
+      } else {
+        summaryLead = 'Bu dönem görece daha sınırlı bir enflasyon etkisi gösteriyor.';
+      }
+
+      const directionText = direction === 'pastToToday'
+        ? `${formatTRY(amount)} tutarı yaklaşık ${formatTRY(equivalent)} seviyesine taşınmış görünüyor.`
+        : `${formatTRY(amount)} tutarının geçmişteki yaklaşık karşılığı ${formatTRY(equivalent)} seviyesinde görünüyor.`;
+
+      el('smartComment').textContent =
+        `${summaryLead} ${directionText} Yaklaşık alım gücü kaybı ${formatPercent(powerLoss)} seviyesinde. Aynı gücü korumak için yaklaşık ${formatPercent(protectionNeed)} oranında artış gerekir. Yıllık ortalama baskı ${formatPercent(annualInflationPercentValue)} civarında hesaplandı.`;
+
+      if(state.lastInputMode === 'manual') saveManualState();
+      if(!opts.silent) scrollToResults();
+      return true;
+    }
+
+    function fillExample(btn){
+      state.lastInputMode = 'example';
+      state.hasAttemptedSubmit = false;
+      touchedFields.clear();
+      amountEl.value = '10.000';
+      yearDifferenceEl.value = '5';
+      calcDirectionEl.value = 'pastToToday';
+      calcMethodEl.value = 'annualAverage';
+      totalInflationEl.value = '';
+      annualInflationEl.value = '35';
+      setMethodVisibility();
+      updateStateInputs();
+
+      document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
+      if(btn) btn.classList.add('active');
+      calculateAll({ silent:false, forceValidation:false });
+    }
+
+    function clearAllFields(){
+      state.lastInputMode = 'manual';
+      state.hasAttemptedSubmit = false;
+      touchedFields.clear();
+      amountEl.value = '';
+      yearDifferenceEl.value = '';
+      calcDirectionEl.value = 'pastToToday';
+      calcMethodEl.value = 'totalInflation';
+      totalInflationEl.value = '';
+      annualInflationEl.value = '';
+      document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
+      clearFieldErrors();
+      setMethodVisibility();
+      clearSavedState();
+      updateStateInputs();
+      resetOutputs();
+    }
+
+    function copyResults(){
+      if(!hasValidResult()){
+        pulseStatus('Önce geçerli bir sonuç üret, sonra kopyala.', 'warn', 'Sonuç yok');
+        return;
+      }
+      const text = buildCopyText();
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text)
+          .then(() => pulseStatus('Sonuç panoya kopyalandı.', 'good', 'Kopyalandı'))
+          .catch(() => fallbackCopyText(text));
+      } else {
+        fallbackCopyText(text);
+      }
+    }
+
+    async function shareResults(){
+      if(!hasValidResult()){
+        pulseStatus('Önce geçerli bir sonuç üret, sonra paylaş.', 'warn', 'Sonuç yok');
+        return;
+      }
+      const text = buildCopyText();
+      if(navigator.share){
+        try {
+          await navigator.share({
+            title: 'Enflasyon Hesaplama Sonucu',
+            text,
+            url: 'https://hesapica.com/enflasyon-hesaplama'
+          });
+        } catch(err){
+          if(err && err.name !== 'AbortError'){
+            copyResults();
+          }
+        }
+      } else {
+        copyResults();
+      }
+    }
+
+    function fallbackCopyText(text){
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      try {
+        document.execCommand('copy');
+        pulseStatus('Sonuç panoya kopyalandı.', 'good', 'Kopyalandı');
+      } catch (err) {
+        pulseStatus('Kopyalama başarısız oldu.', 'bad', 'Hata');
+      } finally {
+        textarea.remove();
+      }
+    }
+
+    function bindEnterToCalculate(){
+      document.querySelectorAll('input, select').forEach(node => {
+        node.addEventListener('keydown', event => {
+          if(event.key === 'Enter'){
+            event.preventDefault();
+            state.lastInputMode = 'manual';
+            if(node.id) touchedFields.add(node.id);
+            calculateAll({ silent:false, forceValidation:true });
+          }
+        });
+      });
+    }
+
+    loadManualState();
+    setMoneyInput(amountEl);
+    setDecimalInput(yearDifferenceEl, 1);
+    setDecimalInput(totalInflationEl, 2);
+    setDecimalInput(annualInflationEl, 2);
+    setAutoCalcListeners();
+    calcMethodEl.addEventListener('change', () => {
+      setMethodVisibility();
+      updateStateInputs();
+    });
+    bindEnterToCalculate();
+
+    requiredFieldIds.forEach(id => {
+      const input = el(id);
+      if(input){
+        input.setAttribute('aria-describedby', id + 'Error');
+      }
+    });
+
+    setMethodVisibility();
+    updateStateInputs();
+    if(hasAnyInputValue()){
+      calculateAll({ silent:true, forceValidation:false });
+    } else {
+      resetOutputs();
+    }
+  </script>
+</body>
+</html>

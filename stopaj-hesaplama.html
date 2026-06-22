@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stopaj Hesaplama | Withholding Tax Calculator - Hesapica</title>
+<meta content="Stopaj hesaplama aracı ile brütten net, netten brüt, stopaj kesintisi, KDV etkisi, efektif kesinti oranı ve senaryo analizlerini tek ekranda hesaplayın. English support included." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="stopaj hesaplama, withholding tax calculator, brütten net, netten brüt, kira stopaj, kdv etkisi" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/stopaj-hesaplama" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Stopaj Hesaplama | Withholding Tax Calculator - Hesapica" property="og:title"/>
+<meta content="Stopaj hesaplama aracı ile brütten net, netten brüt, stopaj kesintisi, KDV etkisi, efektif kesinti oranı ve senaryo analizlerini tek ekranda hesaplayın. English support included." property="og:description"/>
+<meta content="https://hesapica.com/stopaj-hesaplama" property="og:url"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="Stopaj Hesaplama | Withholding Tax Calculator - Hesapica" name="twitter:title"/>
+<meta content="Stopaj hesaplama aracı ile brütten net, netten brüt, stopaj kesintisi, KDV etkisi, efektif kesinti oranı ve senaryo analizlerini tek ekranda hesaplayın. English support included." name="twitter:description"/>
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132">const parseTR = (val) => {
+  if(val == null) return null;
+  let s = String(val).trim();
+  if(!s) return null;
+
+  s = s.replace(/\s+/g,'');
+
+  if(s.includes('.') && !s.includes(',')){
+    s = s.replace(/\./g,'');
+  }
+
+  if(s.includes(',') && s.includes('.')){
+    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
+      s = s.replace(/\./g,'').replace(',', '.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if(s.includes(',')) {
+    s = s.replace(',', '.');
+  }
+
+  s = s.replace(/[^0-9.\-]/g,'');
+  const n = Number(s);
+  if(n === 0 && s !== "0") return null;
+  return Number.isFinite(n) ? n : null;
+};
+</script>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --info:#2563eb;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .toprow{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .lang-switch{display:flex;gap:8px}
+    .lang-btn{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:800;transition:.18s ease}
+    .lang-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .hero{
+      margin-top:8px;padding:34px;border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.06fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error{display:none;margin-top:7px;font-size:14px;color:var(--bad);font-weight:700}
+    .field.has-error .error{display:block}
+    .field.has-error input,.field.has-error select{border-color:rgba(185,28,28,.55);box-shadow:0 0 0 4px rgba(185,28,28,.08)}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;transition:.18s ease}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn:disabled{opacity:.58;cursor:not-allowed;transform:none;box-shadow:none}
+    .btn:disabled:hover{transform:none;opacity:.58}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .badge.info,.pill.info{background:#eff6ff;color:var(--info);border-color:#bfdbfe}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .table-card{margin-top:24px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .content-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .content-card h2{margin:0 0 14px;font-size:24px;color:var(--primary)}
+    .content-card p,.content-card li{color:#374151}
+    .faq-item{border-top:1px solid #edf0f7;padding:18px 0}
+    .faq-item:first-of-type{border-top:0;padding-top:0}
+    .faq-item h3{margin:0 0 8px;font-size:18px}
+
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+    .hidden{display:none!important}
+@keyframes resultPulse{
+  0%{box-shadow:0 0 0 0 rgba(79,70,229,.00);transform:translateY(0)}
+  20%{box-shadow:0 0 0 6px rgba(79,70,229,.10);transform:translateY(-1px)}
+  100%{box-shadow:0 0 0 0 rgba(79,70,229,.00);transform:translateY(0)}
+}
+.result-flash{animation:resultPulse 1.4s ease}
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.content-card,.highlight-card,.scorebox,.status-card{padding:20px}.field-grid,.health-grid,.related-grid,.toprow{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row,.toprow{flex-direction:column;align-items:flex-start}.mini-result .value{text-align:left}.hero h1{font-size:32px}}
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Stopaj Hesaplama",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "url":"https://hesapica.com/stopaj-hesaplama",
+    "description":"Brütten net, netten brüt, stopaj tutarı, KDV etkisi ve senaryo karşılaştırmaları için hesaplama aracı.",
+    "inLanguage":["tr","en"],
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":2,"name":"Vergi","item":"https://hesapica.com/#vergi"},
+      {"@type":"ListItem","position":3,"name":"Stopaj Hesaplama","item":"https://hesapica.com/stopaj-hesaplama"}
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Bu araç resmi oranı otomatik getiriyor mu?",
+        "acceptedAnswer":{"@type":"Answer","text":"Hayır. Bu araç, girdiğin oranlarla matematiksel hesaplama yapar. Resmi oranı ayrıca doğrulaman gerekir."}
+      },
+      {
+        "@type":"Question",
+        "name":"Netten brüte hesaplama ne işe yarar?",
+        "acceptedAnswer":{"@type":"Answer","text":"Elinde kalması gereken net tutar belliyse, bunun stopajlı brüt karşılığını görmek için kullanılır. Özellikle anlaşma ve ödeme planlarında faydalıdır."}
+      },
+      {
+        "@type":"Question",
+        "name":"KDV ile stopaj aynı şey midir?",
+        "acceptedAnswer":{"@type":"Answer","text":"Hayır. Stopaj bir kesinti mantığıyla çalışır; KDV ise ayrıca eklenen vergi etkisidir. Bu araç ikisini aynı ekranda görmeyi kolaylaştırır."}
+      }
+    ]
+  }
+  </script>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style>
+<meta content="https://hesapica.com/stopaj-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu hesaplama aracını tam kullanabilmek için tarayıcınızda JavaScript etkin olmalıdır.</div></noscript>
+<div class="container topbar">
+<div class="toprow">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a data-i18n="crumbHome" href="/">Ana Sayfa</a><span>/</span>
+<a data-i18n="crumbCat" href="/#vergi">Vergi</a><span>/</span>
+<strong data-i18n="crumbCurrent">Stopaj Hesaplama</strong>
+</nav>
+<div class="lang-switch">
+<button class="lang-btn active" id="langTr" onclick="setLanguage('tr')" type="button">TR</button>
+<button class="lang-btn" id="langEn" onclick="setLanguage('en')" type="button">EN</button>
+</div>
+</div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill" data-i18n="eyebrow">Hesapica Aracı</span>
+<h1 data-i18n="heroTitle">Stopaj Hesaplama</h1>
+<p data-i18n="heroDesc">Brütten net, netten brüt, sadece stopaj tutarı, KDV etkisi, efektif kesinti oranı ve senaryo analizlerini tek ekranda hesaplayın.</p>
+<div class="hero-chips">
+<span class="hero-chip" data-i18n="chip1">Brütten net</span>
+<span class="hero-chip" data-i18n="chip2">Netten brüt</span>
+<span class="hero-chip" data-i18n="chip3">KDV etkisi</span>
+<span class="hero-chip" data-i18n="chip4">TR / EN destek</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow" data-i18n="heroBoxEyebrow">Kullanım odağı</div>
+<strong data-i18n="heroBoxTitle">Sadece kesintiyi değil, gerçek yükü de göster</strong>
+<p data-i18n="heroBoxDesc">Bu araç stopaj tutarını tek başına bırakmaz; net ödeme, KDV dahil toplam, efektif kesinti ve oran senaryolarını birlikte sunar.</p>
+<ul>
+<li data-i18n="heroLi1">Nete kalan tutar</li>
+<li data-i18n="heroLi2">Toplam fatura etkisi</li>
+<li data-i18n="heroLi3">Kesinti baskısı yorumu</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2 data-i18n="panelTitle">Hesaplama Paneli</h2>
+<p class="section-note" data-i18n="panelNote">İşlem modunu, tutarı ve oranları gir. Sistem stopaj, net tutar, KDV görünümü ve kesinti baskısını otomatik oluştursun.</p>
+<div class="helper-box">
+<h3 data-i18n="helperTitle">Kısa not</h3>
+<p data-i18n="helperDesc">Bu araç, girdiğin oranlara göre matematiksel hesap yapar. Resmi oranı otomatik çekmez. Farklı işlem türlerinde farklı stopaj oranları uygulanabileceği için oranı ayrıca doğrulamak gerekir.</p>
+</div>
+<div aria-live="polite" class="helper-box hidden" id="validationBox" style="background:linear-gradient(180deg,#fff7ed 0%, #fff1f2 100%);border:1px solid rgba(180,83,9,.18);margin-top:16px">
+<h3 id="validationTitle">Dikkat edilmesi gereken alanlar</h3>
+<p id="validationDesc">Sonucu doğru görebilmek için aşağıdaki alanları düzelt.</p>
+<ul id="validationList" style="margin:10px 0 0;padding-left:18px;color:#7c2d12;font-weight:700"></ul>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="formTitle">İşlem bilgileri</div>
+<div class="field-grid">
+<div class="field">
+<label data-i18n="labelMode" for="calcMode">Hesaplama modu</label>
+<select id="calcMode"></select>
+<div class="hint" data-i18n="hintMode">Tutarın brüt mü net mi olduğunu seç.</div>
+</div>
+<div class="field">
+<label data-i18n="labelAmount" for="amountInput">Tutar</label>
+<div class="input-wrap">
+<span class="prefix">₺</span>
+<input autocomplete="off" class="with-prefix" id="amountInput" inputmode="decimal" placeholder="25.000" type="text"/>
+</div>
+<div class="hint" data-i18n="hintAmount">Seçtiğin moda göre bu alan brüt, net veya temel tutar olarak kullanılır.</div>
+<div class="error" data-i18n="errorAmount">Geçerli bir tutar gir.</div>
+</div>
+<div class="field">
+<label data-i18n="labelWithholding" for="withholdingRate">Stopaj oranı</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="withholdingRate" inputmode="decimal" placeholder="20" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint" data-i18n="hintWithholding">Girmek istediğin stopaj oranını yaz veya aşağıdan hazır oran seç.</div>
+<div class="error" data-i18n="errorWithholding">0 ile 100 arasında geçerli bir oran gir.</div>
+</div>
+<div class="field">
+<label data-i18n="labelVat" for="vatRate">KDV oranı</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="vatRate" inputmode="decimal" placeholder="20" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint" data-i18n="hintVat">İstersen KDV etkisini de aynı ekranda görebilirsin.</div>
+<div class="error" data-i18n="errorVat">0 ile 100 arasında geçerli bir oran gir.</div>
+</div>
+<div class="field full">
+<label data-i18n="labelNote" for="noteInput">İşlem notu</label>
+<input data-i18n-placeholder="notePlaceholder" id="noteInput" placeholder="Örn: kira ödemesi, danışmanlık faturası" type="text"/>
+<div class="hint" data-i18n="hintNote">Bu alan hesaplamayı değiştirmez; sonucu bağlama oturtmana yardımcı olur.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="presetTitle">Hazır oranlar</div>
+<div class="chip-row" id="rateChips">
+<button class="chip" onclick="setWithholdingRate(5)" type="button">%5</button>
+<button class="chip" onclick="setWithholdingRate(10)" type="button">%10</button>
+<button class="chip" onclick="setWithholdingRate(15)" type="button">%15</button>
+<button class="chip" onclick="setWithholdingRate(20)" type="button">%20</button>
+<button class="chip" onclick="setWithholdingRate(25)" type="button">%25</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title" data-i18n="scenarioTitle">Senaryo analizi</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" data-i18n="scenario1" onclick="fillScenario('service')" type="button">Hizmet örneği</button>
+<button class="chip" data-i18n="scenario2" onclick="fillScenario('rent')" type="button">Kira örneği</button>
+<button class="chip" data-i18n="scenario3" onclick="fillScenario('net')" type="button">Netten brüt örneği</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" data-i18n="btnCalc" onclick="calculateWithholding({source:'button'})" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" data-i18n="btnExample" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" data-i18n="btnClear" onclick="resetForm()" type="button">Temizle</button>
+<button class="btn btn-ghost" data-i18n="btnCopy" id="copyBtn" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" data-i18n="btnShare" id="shareBtn" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" data-i18n="btnPrint" id="printBtn" onclick="printResult()" type="button">Yazdır / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong data-i18n="flowStrong">Detaylı sonuç özeti sağ panelde görünür</strong>
+<span data-i18n="flowSpan">Net ödeme, stopaj baskısı, KDV etkisi ve karşılaştırmalı oran görünümü birlikte değerlendirilir.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultPanelTarget">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title" data-i18n="statusTitle">Sonuç alanı durumu</div>
+<div class="status-text" data-i18n="statusWait" id="statusText">Sonuç görmek için mod, tutar ve oran bilgilerini gir.</div>
+</div>
+<span class="badge info" data-i18n="badgeWait" id="resultBadge">Bekleniyor</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label" data-i18n="mainLabel">Ana Sonuç</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" data-i18n="mainSub" id="mainSubtext">Net ödeme veya brüt karşılık burada görünecek.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small" data-i18n="scoreLabel">Tax Load Score</div>
+<div class="score-value" id="taxScore">0/100</div>
+</div>
+<span class="pill info" data-i18n="badgeScoreWait" id="scoreBadge">Veri bekleniyor</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong data-i18n="scoreExplainTitle">Bu skor neyi ifade eder?</strong>
+<div class="small" data-i18n="scoreExplainText" id="scoreExplain">Skor; stopaj oranı, efektif kesinti ve KDV dahil toplam baskısını birlikte okuyarak kesinti yükünün ne kadar hissedildiğini özetler.</div>
+</div>
+</section>
+<div class="health-grid">
+<div class="health-card">
+<h3 data-i18n="card1Title">Stopaj</h3>
+<div class="big" id="withholdingResult">—</div>
+<div class="small" data-i18n="card1Sub" id="withholdingSub">Kesinti tutarı görünümü</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card2Title">KDV dahil toplam</h3>
+<div class="big" id="totalInvoiceResult">—</div>
+<div class="small" data-i18n="card2Sub" id="invoiceSub">Toplam fatura etkisi</div>
+</div>
+<div class="health-card">
+<h3 data-i18n="card3Title">Karar</h3>
+<div class="big" id="healthDecision">—</div>
+<div class="small" data-i18n="card3Sub" id="healthDecisionSub">Yorum için veri bekleniyor</div>
+</div>
+</div>
+<div class="mini-result-grid" style="margin-top:16px">
+<div class="mini-result is-empty" id="mini1"><div class="label" data-i18n="mini1">Brüt tutar</div><div class="value" id="grossResult">—</div></div>
+<div class="mini-result is-empty" id="mini2"><div class="label" data-i18n="mini2">Net tutar</div><div class="value" id="netResult">—</div></div>
+<div class="mini-result is-empty" id="mini3"><div class="label" data-i18n="mini3">KDV tutarı</div><div class="value" id="vatResult">—</div></div>
+<div class="mini-result is-empty" id="mini4"><div class="label" data-i18n="mini4">Efektif kesinti</div><div class="value" id="effectiveRateResult">—</div></div>
+</div>
+<div class="comment-box" data-i18n="commentWait" id="smartComment" style="margin-top:16px">Hesaplama sonrası burada akıllı yorum görünecek.</div>
+</aside>
+</section>
+<section class="table-card card">
+<h2 data-i18n="tableTitle">Senaryo karşılaştırma tablosu</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th data-i18n="th1">Oran</th>
+<th data-i18n="th2">Stopaj</th>
+<th data-i18n="th3">Net</th>
+<th data-i18n="th4">KDV Dahil Toplam</th>
+<th data-i18n="th5">Not</th>
+</tr>
+</thead>
+<tbody id="resultTableBody">
+<tr><td colspan="5" data-i18n="tableWait">Henüz senaryo oluşturulmadı.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-grid">
+<article class="content-card">
+<h2 data-i18n="content1Title">Stopaj neden önemlidir?</h2>
+<p data-i18n="content1P1">Stopaj, belirli bir ödeme üzerinden verginin kaynağında kesilmesi anlamına gelir. Bu yüzden brüt tutarla nete kalan tutar aynı değildir ve özellikle sözleşme, kira ya da hizmet ödemelerinde bu fark bütçeyi ciddi biçimde etkileyebilir.</p>
+<p data-i18n="content1P2">Bu araç, yalnızca stopaj tutarını değil; nete kalan tutarı, KDV dahil toplamı ve kesinti baskısını da göstererek daha gerçekçi bir ödeme görünümü sunar.</p>
+</article>
+<article class="content-card">
+<h2 data-i18n="faqTitle">Sık Sorulan Sorular</h2>
+<div class="faq-item">
+<h3 data-i18n="faq1q">Bu araç resmi oranı otomatik getiriyor mu?</h3>
+<p data-i18n="faq1a">Hayır. Bu araç, girdiğin oranlarla matematiksel hesaplama yapar. Resmi oranı ayrıca doğrulaman gerekir.</p>
+</div>
+<div class="faq-item">
+<h3 data-i18n="faq2q">Netten brüte hesaplama ne işe yarar?</h3>
+<p data-i18n="faq2a">Elinde kalması gereken net tutar belliyse, bunun stopajlı brüt karşılığını görmek için kullanılır. Özellikle anlaşma ve ödeme planlarında faydalıdır.</p>
+</div>
+<div class="faq-item">
+<h3 data-i18n="faq3q">KDV ile stopaj aynı şey midir?</h3>
+<p data-i18n="faq3a">Hayır. Stopaj bir kesinti mantığıyla çalışır; KDV ise ayrıca eklenen vergi etkisidir. Bu araç ikisini aynı ekranda görmeyi kolaylaştırır.</p>
+</div>
+</article>
+</section>
+<section class="content-card" style="margin-top:24px">
+<h2 data-i18n="relatedTitle">İlgili Araçlar</h2>
+<div class="related-grid">
+<a class="related-card" href="/butce-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related1t">Bütçe ve Tasarruf Hesaplama</strong><p data-i18n="related1d">Stopaj sonrası elde kalan net tutarın bütçedeki etkisini incele.</p></a>
+<a class="related-card" href="/gelir-vergisi-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related2t">Gelir Vergisi Hesaplama</strong><p data-i18n="related2d">Vergi yükünü daha geniş çerçevede analiz et.</p></a>
+<a class="related-card" href="/kdv-hesaplama"><span class="small" data-i18n="relatedSmall">İlgili Araç</span><strong data-i18n="related3t">KDV Hesaplama</strong><p data-i18n="related3d">KDV dahil ve hariç toplamları ayrı detayla hesapla.</p></a>
+</div>
+</section>
+<div class="footer-note" data-i18n="footerNote">Bu araç bilgilendirme amaçlıdır. Nihai mali ve vergisel işlemler öncesinde güncel mevzuat ve resmi oranlar ayrıca kontrol edilmelidir.</div>
+</main>
+<script>
+    const translations = {
+      tr: {
+        pageTitle:"Stopaj Hesaplama | Withholding Tax Calculator - Hesapica",
+        crumbHome:"Ana Sayfa", crumbCat:"Vergi", crumbCurrent:"Stopaj Hesaplama",
+        eyebrow:"Hesapica Aracı", heroTitle:"Stopaj Hesaplama",
+        heroDesc:"Brütten net, netten brüt, sadece stopaj tutarı, KDV etkisi, efektif kesinti oranı ve senaryo analizlerini tek ekranda hesaplayın.",
+        chip1:"Brütten net", chip2:"Netten brüt", chip3:"KDV etkisi", chip4:"TR / EN destek",
+        heroBoxEyebrow:"Kullanım odağı", heroBoxTitle:"Sadece kesintiyi değil, gerçek yükü de göster",
+        heroBoxDesc:"Bu araç stopaj tutarını tek başına bırakmaz; net ödeme, KDV dahil toplam, efektif kesinti ve oran senaryolarını birlikte sunar.",
+        heroLi1:"Nete kalan tutar", heroLi2:"Toplam fatura etkisi", heroLi3:"Kesinti baskısı yorumu",
+        panelTitle:"Hesaplama Paneli", panelNote:"İşlem modunu, tutarı ve oranları gir. Sistem stopaj, net tutar, KDV görünümü ve kesinti baskısını otomatik oluştursun.",
+        helperTitle:"Kısa not", helperDesc:"Bu araç, girdiğin oranlara göre matematiksel hesap yapar. Resmi oranı otomatik çekmez. Farklı işlem türlerinde farklı stopaj oranları uygulanabileceği için oranı ayrıca doğrulamak gerekir.",
+        formTitle:"İşlem bilgileri", labelMode:"Hesaplama modu", labelAmount:"Tutar", labelWithholding:"Stopaj oranı", labelVat:"KDV oranı", labelNote:"İşlem notu",
+        hintMode:"Tutarın brüt mü net mi olduğunu seç.", hintAmount:"Seçtiğin moda göre bu alan brüt, net veya temel tutar olarak kullanılır.", hintWithholding:"Girmek istediğin stopaj oranını yaz veya aşağıdan hazır oran seç.", hintVat:"İstersen KDV etkisini de aynı ekranda görebilirsin.", hintNote:"Bu alan hesaplamayı değiştirmez; sonucu bağlama oturtmana yardımcı olur.",
+        errorAmount:"Geçerli bir tutar gir.", errorWithholding:"0 ile 100 arasında geçerli bir oran gir.", errorVat:"0 ile 100 arasında geçerli bir oran gir.",
+        notePlaceholder:"Örn: kira ödemesi, danışmanlık faturası",
+        presetTitle:"Hazır oranlar", scenarioTitle:"Senaryo analizi", scenario1:"Hizmet örneği", scenario2:"Kira örneği", scenario3:"Netten brüt örneği",
+        btnCalc:"Hesapla", btnExample:"Örnek Veri", btnClear:"Temizle", btnCopy:"Sonucu Kopyala", btnPrint:"Yazdır / PDF",
+        flowStrong:"Detaylı sonuç özeti sağ panelde görünür", flowSpan:"Net ödeme, stopaj baskısı, KDV etkisi ve karşılaştırmalı oran görünümü birlikte değerlendirilir.",
+        statusTitle:"Sonuç alanı durumu", statusWait:"Sonuç görmek için mod, tutar ve oran bilgilerini gir.", badgeWait:"Bekleniyor",
+        mainLabel:"Ana Sonuç", mainSub:"Net ödeme veya brüt karşılık burada görünecek.",
+        scoreLabel:"Tax Load Score", badgeScoreWait:"Veri bekleniyor", scoreExplainTitle:"Bu skor neyi ifade eder?", scoreExplainText:"Skor; stopaj oranı, efektif kesinti ve KDV dahil toplam baskısını birlikte okuyarak kesinti yükünün ne kadar hissedildiğini özetler.",
+        card1Title:"Stopaj", card1Sub:"Kesinti tutarı görünümü", card2Title:"KDV dahil toplam", card2Sub:"Toplam fatura etkisi", card3Title:"Karar", card3Sub:"Yorum için veri bekleniyor",
+        mini1:"Brüt tutar", mini2:"Net tutar", mini3:"KDV tutarı", mini4:"Efektif kesinti",
+        commentWait:"Hesaplama sonrası burada akıllı yorum görünecek.",
+        tableTitle:"Senaryo karşılaştırma tablosu", th1:"Oran", th2:"Stopaj", th3:"Net", th4:"KDV Dahil Toplam", th5:"Not", tableWait:"Henüz senaryo oluşturulmadı.",
+        content1Title:"Stopaj neden önemlidir?", content1P1:"Stopaj, belirli bir ödeme üzerinden verginin kaynağında kesilmesi anlamına gelir. Bu yüzden brüt tutarla nete kalan tutar aynı değildir ve özellikle sözleşme, kira ya da hizmet ödemelerinde bu fark bütçeyi ciddi biçimde etkileyebilir.", content1P2:"Bu araç, yalnızca stopaj tutarını değil; nete kalan tutarı, KDV dahil toplamı ve kesinti baskısını da göstererek daha gerçekçi bir ödeme görünümü sunar.",
+        faqTitle:"Sık Sorulan Sorular", faq1q:"Bu araç resmi oranı otomatik getiriyor mu?", faq1a:"Hayır. Bu araç, girdiğin oranlarla matematiksel hesaplama yapar. Resmi oranı ayrıca doğrulaman gerekir.", faq2q:"Netten brüte hesaplama ne işe yarar?", faq2a:"Elinde kalması gereken net tutar belliyse, bunun stopajlı brüt karşılığını görmek için kullanılır. Özellikle anlaşma ve ödeme planlarında faydalıdır.", faq3q:"KDV ile stopaj aynı şey midir?", faq3a:"Hayır. Stopaj bir kesinti mantığıyla çalışır; KDV ise ayrıca eklenen vergi etkisidir. Bu araç ikisini aynı ekranda görmeyi kolaylaştırır.",
+        relatedTitle:"İlgili Araçlar", relatedSmall:"İlgili Araç", related1t:"Aylık Tasarruf Hesaplama", related1d:"Stopaj sonrası elde kalan net tutarın bütçedeki etkisini incele.", related2t:"Gelir Vergisi Hesaplama", related2d:"Vergi yükünü daha geniş çerçevede analiz et.", related3t:"KDV Hesaplama", related3d:"KDV dahil ve hariç toplamları ayrı detayla hesapla.",
+        footerNote:"Bu araç bilgilendirme amaçlıdır. Nihai mali ve vergisel işlemler öncesinde güncel mevzuat ve resmi oranlar ayrıca kontrol edilmelidir.",
+        modeGrossToNet:"Brütten Nete", modeNetToGross:"Netten Brüte", modeOnly:"Sadece Stopaj Tutarı",
+        stateLow:"Düşük", stateMid:"Orta", stateHigh:"Yüksek", decisionComfort:"Rahat", decisionWatch:"Kontrollü", decisionAttention:"Dikkat", stateMissing:"Eksik veri", stateReady:"Analiz hazır",
+        commentLow:"Kesinti baskısı düşük seviyede görünüyor.", commentMid:"Kesinti baskısı orta seviyede görünüyor.", commentHigh:"Kesinti baskısı belirgin seviyede görünüyor.",
+        invalidMode:"Tutar ve oran alanlarını geçerli şekilde doldurmalısın.",
+        scenarioNoteLow:"Düşük oran karşılaştırması", scenarioNoteBase:"Seçili oran", scenarioNoteHigh:"Yüksek oran karşılaştırması",
+        copySuccess:"Sonuç panoya kopyalandı.",
+        resultGross:"Brüt Tutar", resultNet:"Net Tutar", resultWithholding:"Stopaj Tutarı", resultVat:"KDV Tutarı", resultTotal:"KDV Dahil Toplam", resultEffective:"Efektif Kesinti", resultComment:"Yorum"
+      },
+      en: {
+        pageTitle:"Withholding Tax Calculator | Hesapica",
+        crumbHome:"Home", crumbCat:"Tax", crumbCurrent:"Withholding Tax Calculator",
+        eyebrow:"Hesapica Tool", heroTitle:"Withholding Tax Calculator",
+        heroDesc:"Calculate gross-to-net, net-to-gross, withholding only, VAT effect, effective deduction rate and scenario comparisons on one screen.",
+        chip1:"Gross to net", chip2:"Net to gross", chip3:"VAT effect", chip4:"TR / EN support",
+        heroBoxEyebrow:"Usage focus", heroBoxTitle:"Show not only the deduction, but the real burden too",
+        heroBoxDesc:"This tool does not leave withholding alone; it shows net payment, VAT-included total, effective deduction and rate scenarios together.",
+        heroLi1:"Amount remaining after deduction", heroLi2:"Total invoice impact", heroLi3:"Deduction pressure interpretation",
+        panelTitle:"Calculation Panel", panelNote:"Enter the mode, amount and rates. The system will automatically generate withholding, net amount, VAT view and deduction pressure.",
+        helperTitle:"Quick note", helperDesc:"This tool makes mathematical calculations using the rates you enter. It does not fetch the official rate automatically. Since different transaction types may use different withholding rates, the rate should be verified separately.",
+        formTitle:"Transaction details", labelMode:"Calculation mode", labelAmount:"Amount", labelWithholding:"Withholding rate", labelVat:"VAT rate", labelNote:"Transaction note",
+        hintMode:"Choose whether the amount is gross or net.", hintAmount:"Depending on the selected mode, this field is treated as gross, net or base amount.", hintWithholding:"Enter the withholding rate you want to use or pick a preset below.", hintVat:"You can also view VAT effect on the same screen.", hintNote:"This field does not change the calculation; it helps you keep the result in context.",
+        errorAmount:"Enter a valid amount.", errorWithholding:"Enter a valid rate between 0 and 100.", errorVat:"Enter a valid rate between 0 and 100.",
+        notePlaceholder:"Example: rent payment, consultancy invoice",
+        presetTitle:"Preset rates", scenarioTitle:"Scenario analysis", scenario1:"Service example", scenario2:"Rent example", scenario3:"Net to gross example",
+        btnCalc:"Calculate", btnExample:"Sample Data", btnClear:"Clear", btnCopy:"Copy Result", btnPrint:"Print / PDF",
+        flowStrong:"Detailed summary appears on the right panel", flowSpan:"Net payment, withholding pressure, VAT effect and comparative rate view are evaluated together.",
+        statusTitle:"Result status", statusWait:"Enter mode, amount and rate information to see results.", badgeWait:"Waiting",
+        mainLabel:"Main Result", mainSub:"Net payment or gross equivalent will appear here.",
+        scoreLabel:"Tax Load Score", badgeScoreWait:"Waiting for data", scoreExplainTitle:"What does this score mean?", scoreExplainText:"The score summarizes how strongly the deduction is felt by reading the withholding rate, effective deduction and VAT-included total pressure together.",
+        card1Title:"Withholding", card1Sub:"Deduction amount view", card2Title:"VAT included total", card2Sub:"Total invoice impact", card3Title:"Decision", card3Sub:"Waiting for interpretation",
+        mini1:"Gross amount", mini2:"Net amount", mini3:"VAT amount", mini4:"Effective deduction",
+        commentWait:"A smart interpretation will appear here after calculation.",
+        tableTitle:"Scenario comparison table", th1:"Rate", th2:"Withholding", th3:"Net", th4:"VAT Included Total", th5:"Note", tableWait:"No scenario generated yet.",
+        content1Title:"Why is withholding important?", content1P1:"Withholding means a tax is deducted at the source from a specific payment. That is why the gross amount and the amount left after deduction are not the same, and this difference can significantly affect the budget in contracts, rent or service payments.", content1P2:"This tool presents a more realistic payment view by showing not only the withholding amount but also the net remaining amount, VAT-included total and deduction pressure.",
+        faqTitle:"Frequently Asked Questions", faq1q:"Does this tool fetch the official rate automatically?", faq1a:"No. This tool performs a mathematical calculation with the rates you enter. You must verify the official rate separately.", faq2q:"What is net-to-gross calculation useful for?", faq2a:"If the net amount you want to retain is known, it is used to see the gross equivalent after withholding. It is especially useful in planning agreements and payments.", faq3q:"Are VAT and withholding the same thing?", faq3a:"No. Withholding works as a deduction logic, while VAT is an additional tax effect. This tool makes it easier to see both on the same screen.",
+        relatedTitle:"Related Tools", relatedSmall:"Related Tool", related1t:"Monthly Savings Calculator", related1d:"Review the budget effect of the net amount left after withholding.", related2t:"Income Tax Calculator", related2d:"Analyze the tax burden in a broader frame.", related3t:"VAT Calculator", related3d:"Calculate VAT included and excluded totals with more detail.",
+        footerNote:"This tool is for informational purposes. Before final financial and tax transactions, current regulations and official rates should be checked separately.",
+        modeGrossToNet:"Gross to Net", modeNetToGross:"Net to Gross", modeOnly:"Withholding Only",
+        stateLow:"Low", stateMid:"Medium", stateHigh:"High", decisionComfort:"Comfortable", decisionWatch:"Manageable", decisionAttention:"Attention", stateMissing:"Missing data", stateReady:"Analysis ready",
+        commentLow:"Deduction pressure appears low.", commentMid:"Deduction pressure appears moderate.", commentHigh:"Deduction pressure appears significant.",
+        invalidMode:"You need to fill in the amount and rate fields with valid values.",
+        scenarioNoteLow:"Low-rate comparison", scenarioNoteBase:"Selected rate", scenarioNoteHigh:"High-rate comparison",
+        copySuccess:"Result copied to clipboard.",
+        resultGross:"Gross Amount", resultNet:"Net Amount", resultWithholding:"Withholding Amount", resultVat:"VAT Amount", resultTotal:"VAT Included Total", resultEffective:"Effective Deduction", resultComment:"Comment"
+      }
+    };
+
+    Object.assign(translations.tr, {
+      btnCalc:"Sonucu Gör",
+      btnShare:"Paylaş",
+      validationTitle:"Dikkat edilmesi gereken alanlar",
+      validationDesc:"Sonucu doğru görebilmek için aşağıdaki alanları düzelt.",
+      validationFix:"Düzelt ve tekrar dene",
+      validationAmount:"Tutar alanına sıfırdan büyük bir değer gir.",
+      validationWithholding:"Stopaj oranını 0 ile 100 arasında gir.",
+      validationVat:"KDV oranını 0 ile 100 arasında gir.",
+      scoreLabel:"Kesinti Yük Skoru",
+      statusCalculating:"Girdi değişikliği algılandı. Sonuç alanı güncelleniyor...",
+      badgeCalculating:"Hesaplanıyor",
+      shareSuccess:"Sonuç paylaşım için hazırlandı.",
+      shareFallback:"Paylaşım desteklenmiyor. Sonuç panoya kopyalandı.",
+      noResultToShare:"Önce paylaşılabilir bir sonuç oluştur.",
+      noResultToPrint:"Önce yazdırılabilir bir sonuç oluştur.",
+      statusPartial:"Girdiler tamamlandığında sonuç alanı otomatik güncellenecek.",
+      mainSub:"Net ödeme veya brüt karşılık burada görünecek.",
+      stateReady:"Analiz hazır",
+      stateMissing:"Eksik veri",
+      invalidMode:"Tutar ve stopaj alanlarını geçerli şekilde doldur. KDV gireceksen oranı 0 ile 100 arasında olmalı.",
+      noResultToCopy:"Önce kopyalanabilir bir sonuç oluştur."
+    });
+
+    Object.assign(translations.en, {
+      btnCalc:"Show Result",
+      btnShare:"Share",
+      validationTitle:"Fields that need attention",
+      validationDesc:"Fix the following fields to see an accurate result.",
+      validationFix:"Fix and try again",
+      validationAmount:"Enter an amount greater than zero.",
+      validationWithholding:"Enter the withholding rate between 0 and 100.",
+      validationVat:"Enter the VAT rate between 0 and 100.",
+      scoreLabel:"Deduction Load Score",
+      statusCalculating:"Input change detected. The result panel is updating...",
+      badgeCalculating:"Calculating",
+      shareSuccess:"Result is ready to share.",
+      shareFallback:"Sharing is not supported. The result was copied to the clipboard.",
+      noResultToShare:"Create a result before sharing.",
+      noResultToPrint:"Create a printable result first.",
+      statusPartial:"The result panel will update automatically when the inputs are complete.",
+      mainSub:"Net payment or gross equivalent will appear here.",
+      stateReady:"Analysis ready",
+      stateMissing:"Missing data",
+      invalidMode:"Enter valid amount and withholding values. If you enter VAT, keep it between 0 and 100.",
+      noResultToCopy:"Create a result before copying."
+    });
+
+    const STORAGE_KEY = 'hesapica-stopaj-lock-v2';
+    const DEFAULT_INPUTS = {
+      calcMode:'grossToNet',
+      amountInput:'',
+      withholdingRate:'',
+      vatRate:'',
+      noteInput:''
+    };
+
+    const state = {
+      lang:'tr',
+      inputs: { ...DEFAULT_INPUTS },
+      isValid:false,
+      isCalculated:false,
+      dataMode:'manual',
+      suppressSave:false,
+      debounceTimer:null,
+      lastResult:null
+    };
+
+    function t(key) {
+      return translations[state.lang][key] || key;
+    }
+
+    function buildSelects() {
+      const select = document.getElementById('calcMode');
+      const current = state.inputs.calcMode || select.value || 'grossToNet';
+      select.innerHTML = `
+        <option value="grossToNet">${t('modeGrossToNet')}</option>
+        <option value="netToGross">${t('modeNetToGross')}</option>
+        <option value="onlyWithholding">${t('modeOnly')}</option>
+      `;
+      select.value = current;
+    }
+
+    function setLanguage(lang) {
+      state.lang = lang;
+      document.documentElement.lang = lang;
+      document.title = t('pageTitle');
+      document.getElementById('langTr').classList.toggle('active', lang === 'tr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t(el.dataset.i18n);
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        el.placeholder = t(el.dataset.i18nPlaceholder);
+      });
+      buildSelects();
+      applyStateToInputs();
+      renderState();
+      if (state.dataMode === 'manual' && !state.suppressSave) saveState();
+    }
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', {
+        style:'currency',
+        currency:'TRY',
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }).format(Number(value || 0));
+    }
+
+    function formatPercent(value, digits = 2) {
+      return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US', {
+        minimumFractionDigits:digits,
+        maximumFractionDigits:digits
+      }).format(Number(value || 0)) + '%';
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('.field').forEach(field => field.classList.remove('has-error'));
+    }
+
+    function showValidation(errors) {
+      const box = document.getElementById('validationBox');
+      const list = document.getElementById('validationList');
+      const title = document.getElementById('validationTitle');
+      const desc = document.getElementById('validationDesc');
+      title.textContent = t('validationTitle');
+      desc.textContent = t('validationDesc');
+      if (!errors.length) {
+        box.classList.add('hidden');
+        list.innerHTML = '';
+        return;
+      }
+      box.classList.remove('hidden');
+      list.innerHTML = errors.map(item => `<li>${item}</li>`).join('');
+    }
+
+    function parseLocaleNumber(raw) {
+      if (raw === null || raw === undefined) return NaN;
+      let value = String(raw).trim();
+      if (!value) return NaN;
+      value = value.replace(/[^\d,.-]/g, '').replace(/(?!^)-/g, '');
+      const lastComma = value.lastIndexOf(',');
+      const lastDot = value.lastIndexOf('.');
+      let decimalSep = null;
+
+      if (lastComma > -1 && lastDot > -1) {
+        decimalSep = lastComma > lastDot ? ',' : '.';
+      } else if (lastComma > -1) {
+        const digitsAfter = value.length - lastComma - 1;
+        decimalSep = digitsAfter > 0 && digitsAfter <= 2 ? ',' : null;
+      } else if (lastDot > -1) {
+        const digitsAfter = value.length - lastDot - 1;
+        decimalSep = digitsAfter > 0 && digitsAfter <= 2 ? '.' : null;
+      }
+
+      if (decimalSep) {
+        const thousandsSep = decimalSep === ',' ? /\./g : /,/g;
+        value = value.replace(thousandsSep, '').replace(decimalSep, '.');
+      } else {
+        value = value.replace(/[.,]/g, '');
+      }
+
+      const number = Number(value);
+      return Number.isFinite(number) ? number : NaN;
+    }
+
+    function formatAmountInput(raw) {
+      const number = parseLocaleNumber(raw);
+      if (!Number.isFinite(number)) return '';
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: number % 1 ? 2 : 0,
+        maximumFractionDigits: 2
+      }).format(number);
+    }
+
+    function formatRateInput(raw) {
+      const number = parseLocaleNumber(raw);
+      if (!Number.isFinite(number)) return '';
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: number % 1 ? 2 : 0,
+        maximumFractionDigits: 2
+      }).format(number);
+    }
+
+    function sanitizeDecimalInput(value) {
+      return String(value || '').replace(/[^\d,.-]/g, '').replace(/(?!^)-/g, '');
+    }
+
+    function parseInputs() {
+      return {
+        calcMode: document.getElementById('calcMode').value || 'grossToNet',
+        amountInput: document.getElementById('amountInput').value.trim(),
+        withholdingRate: document.getElementById('withholdingRate').value.trim(),
+        vatRate: document.getElementById('vatRate').value.trim(),
+        noteInput: document.getElementById('noteInput').value.trim()
+      };
+    }
+
+    function syncInputsToState() {
+      state.inputs = parseInputs();
+    }
+
+    function applyStateToInputs() {
+      document.getElementById('calcMode').value = state.inputs.calcMode || 'grossToNet';
+      document.getElementById('amountInput').value = state.inputs.amountInput ? formatAmountInput(state.inputs.amountInput) : '';
+      document.getElementById('withholdingRate').value = state.inputs.withholdingRate ? formatRateInput(state.inputs.withholdingRate) : '';
+      document.getElementById('vatRate').value = state.inputs.vatRate ? formatRateInput(state.inputs.vatRate) : '';
+      document.getElementById('noteInput').value = state.inputs.noteInput ?? '';
+      setActiveRateChip();
+    }
+
+    function clearScenarioActive() {
+
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+    }
+
+    function setActiveRateChip() {
+      document.querySelectorAll('#rateChips .chip').forEach(btn => btn.classList.remove('active'));
+      const raw = document.getElementById('withholdingRate').value.trim();
+      if (!raw) return;
+      const parsed = parseLocaleNumber(raw);
+      if (!Number.isFinite(parsed)) return;
+      const value = String(parsed);
+      const exact = Array.from(document.querySelectorAll('#rateChips .chip')).find(btn => {
+        const btnValue = btn.textContent.replace('%','').trim();
+        return String(Number(btnValue)) === value;
+      });
+      if (exact) exact.classList.add('active');
+    }
+
+    function validateInputs() {
+      clearErrors();
+      const inputs = parseInputs();
+      const errors = [];
+      const amount = parseLocaleNumber(inputs.amountInput);
+      const withholdingRate = parseLocaleNumber(inputs.withholdingRate);
+      const vatRate = inputs.vatRate === '' ? 0 : parseLocaleNumber(inputs.vatRate);
+
+      if (!(amount > 0)) {
+        document.getElementById('amountInput').closest('.field').classList.add('has-error');
+        errors.push(t('validationAmount'));
+      }
+      if (!(withholdingRate >= 0 && withholdingRate < 100)) {
+        document.getElementById('withholdingRate').closest('.field').classList.add('has-error');
+        errors.push(t('validationWithholding'));
+      }
+      if (!(vatRate >= 0 && vatRate <= 100)) {
+        document.getElementById('vatRate').closest('.field').classList.add('has-error');
+        errors.push(t('validationVat'));
+      }
+
+      return {
+        ok: errors.length === 0,
+        errors,
+        values: {
+          mode: inputs.calcMode,
+          amount,
+          withholdingRate,
+          vatRate,
+          note: inputs.noteInput
+        }
+      };
+    }
+
+    function getStatus(rate, effectiveRate, totalPressurePct) {
+      const scoreRaw = Math.min(100, Math.round(rate * 2 + effectiveRate * 1.2 + totalPressurePct * 0.3));
+      const score = Math.max(0, Math.min(100, scoreRaw));
+      if (score < 35) return { score, label:t('stateLow'), badgeClass:'good', decision:t('decisionComfort'), comment:t('commentLow') };
+      if (score < 70) return { score, label:t('stateMid'), badgeClass:'warn', decision:t('decisionWatch'), comment:t('commentMid') };
+      return { score, label:t('stateHigh'), badgeClass:'bad', decision:t('decisionAttention'), comment:t('commentHigh') };
+    }
+
+    function buildScenarioRows(mode, amount, vatRate) {
+      const base = parseLocaleNumber(document.getElementById('withholdingRate').value) || 0;
+      const rates = [...new Set([Math.max(0, Math.min(99, Math.round(Math.max(0, base - 5)))), base, Math.max(0, Math.min(99, Math.round(base + 5)))])];
+      const notes = [t('scenarioNoteLow'), t('scenarioNoteBase'), t('scenarioNoteHigh')];
+
+      const rows = rates.map((rate, index) => {
+        let gross = 0;
+        let net = 0;
+        let withholding = 0;
+
+        if (mode === 'grossToNet' || mode === 'onlyWithholding') {
+          gross = amount;
+          withholding = gross * rate / 100;
+          net = gross - withholding;
+        } else {
+          net = amount;
+          gross = rate >= 100 ? 0 : net / (1 - rate / 100);
+          withholding = gross - net;
+        }
+
+        const total = gross + gross * vatRate / 100;
+        return { rate, gross, net, withholding, total, note: notes[index] || t('scenarioNoteBase') };
+      });
+
+      document.getElementById('resultTableBody').innerHTML = rows.map(row => `
+        <tr>
+          <td>${formatPercent(row.rate, 0)}</td>
+          <td>${formatCurrency(row.withholding)}</td>
+          <td>${formatCurrency(row.net)}</td>
+          <td>${formatCurrency(row.total)}</td>
+          <td>${row.note}</td>
+        </tr>
+      `).join('');
+    }
+
+    function updateStatus(text, badgeText, badgeClass = 'info') {
+      document.getElementById('statusText').textContent = text;
+      document.getElementById('resultBadge').textContent = badgeText;
+      document.getElementById('resultBadge').className = `badge ${badgeClass}`;
+    }
+
+    function updateActionButtons() {
+      const disabled = !state.lastResult;
+      ['copyBtn','shareBtn','printBtn'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.disabled = disabled;
+      });
+    }
+function flashResultArea() {
+  const target = document.getElementById('highlightCard');
+  target.classList.remove('result-flash');
+  void target.offsetWidth;
+  target.classList.add('result-flash');
+  setTimeout(() => target.classList.remove('result-flash'), 1500);
+}
+
+function focusResultArea() {
+  const target = document.getElementById('resultPanelTarget');
+  target.scrollIntoView({ behavior:'smooth', block:'start' });
+  flashResultArea();
+}
+
+
+    function resetResultsOnly() {
+      document.getElementById('highlightCard').classList.add('is-empty');
+      document.getElementById('mainResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = t('mainSub');
+      document.getElementById('taxScore').textContent = '0/100';
+      document.getElementById('scoreBadge').textContent = t('badgeScoreWait');
+      document.getElementById('scoreBadge').className = 'pill info';
+      document.getElementById('scoreBar').style.width = '0%';
+      document.getElementById('withholdingResult').textContent = '—';
+      document.getElementById('withholdingSub').textContent = t('card1Sub');
+      document.getElementById('totalInvoiceResult').textContent = '—';
+      document.getElementById('invoiceSub').textContent = t('card2Sub');
+      document.getElementById('healthDecision').textContent = '—';
+      document.getElementById('healthDecisionSub').textContent = t('card3Sub');
+      ['grossResult','netResult','vatResult','effectiveRateResult'].forEach(id => {
+        document.getElementById(id).textContent = '—';
+      });
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      document.getElementById('smartComment').textContent = t('commentWait');
+      document.getElementById('resultTableBody').innerHTML = `<tr><td colspan="5">${t('tableWait')}</td></tr>`;
+      state.lastResult = null;
+      updateActionButtons();
+    }
+
+    function renderResult(result) {
+      const status = getStatus(result.withholdingRate, result.effectiveRate, result.totalPressurePct);
+
+      document.getElementById('highlightCard').classList.remove('is-empty');
+      document.getElementById('mainResult').textContent = result.mode === 'netToGross'
+        ? formatCurrency(result.gross)
+        : formatCurrency(result.mode === 'onlyWithholding' ? result.withholding : result.net);
+      document.getElementById('mainSubtext').textContent = result.mode === 'netToGross'
+        ? (state.lang === 'tr' ? 'İstenen net tutarın brüt karşılığı hesaplandı.' : 'The gross equivalent of the target net amount was calculated.')
+        : result.mode === 'onlyWithholding'
+          ? (state.lang === 'tr' ? 'Girilen brüt tutar üzerinden stopaj kesintisi hesaplandı.' : 'The withholding deduction was calculated from the entered gross amount.')
+          : (state.lang === 'tr' ? 'Kesinti sonrası nete kalan tutar hesaplandı.' : 'The net amount remaining after deduction was calculated.');
+
+      document.getElementById('taxScore').textContent = `${status.score}/100`;
+      document.getElementById('scoreBadge').textContent = status.label;
+      document.getElementById('scoreBadge').className = `pill ${status.badgeClass}`;
+      document.getElementById('scoreBar').style.width = `${status.score}%`;
+
+      document.getElementById('withholdingResult').textContent = formatCurrency(result.withholding);
+      document.getElementById('withholdingSub').textContent = state.lang === 'tr'
+        ? `${formatPercent(result.withholdingRate, 2)} oranlı kesinti`
+        : `${formatPercent(result.withholdingRate, 2)} deduction rate`;
+      document.getElementById('totalInvoiceResult').textContent = formatCurrency(result.totalInvoice);
+      document.getElementById('invoiceSub').textContent = result.vatRate > 0
+        ? (state.lang === 'tr' ? `${formatPercent(result.vatRate, 2)} KDV dahil görünüm` : `${formatPercent(result.vatRate, 2)} VAT included view`)
+        : (state.lang === 'tr' ? 'KDV eklenmeden toplam görünüm' : 'Total view without VAT');
+      document.getElementById('healthDecision').textContent = status.decision;
+      document.getElementById('healthDecisionSub').textContent = status.comment;
+
+      ['mini1','mini2','mini3','mini4'].forEach(id => document.getElementById(id).classList.remove('is-empty'));
+      document.getElementById('grossResult').textContent = formatCurrency(result.gross);
+      document.getElementById('netResult').textContent = formatCurrency(result.net);
+      document.getElementById('vatResult').textContent = formatCurrency(result.vatAmount);
+      document.getElementById('effectiveRateResult').textContent = formatPercent(result.effectiveRate, 2);
+
+      updateStatus(t('stateReady'), status.label, status.badgeClass);
+
+      buildScenarioRows(result.mode, result.amount, result.vatRate);
+
+      let comment = `${status.comment} `;
+      if (result.mode === 'grossToNet') {
+        comment += state.lang === 'tr'
+          ? `Brüt ${formatCurrency(result.gross)} üzerinden ${formatPercent(result.withholdingRate,2)} stopajla ${formatCurrency(result.withholding)} kesinti ve ${formatCurrency(result.net)} net görünümü oluştu. `
+          : `From a gross amount of ${formatCurrency(result.gross)}, a ${formatPercent(result.withholdingRate,2)} withholding produced ${formatCurrency(result.withholding)} deduction and a ${formatCurrency(result.net)} net result. `;
+      } else if (result.mode === 'onlyWithholding') {
+        comment += state.lang === 'tr'
+          ? `Girilen ${formatCurrency(result.gross)} temel tutar için sadece kesinti tarafı izleniyor; stopaj ${formatCurrency(result.withholding)} ve net karşılık ${formatCurrency(result.net)} seviyesinde. `
+          : `For the entered base amount of ${formatCurrency(result.gross)}, the tool focuses on deduction only; withholding is ${formatCurrency(result.withholding)} and the net equivalent is ${formatCurrency(result.net)}. `;
+      } else {
+        comment += state.lang === 'tr'
+          ? `${formatCurrency(result.net)} net tutara ulaşmak için brüt karşılık ${formatCurrency(result.gross)} ve stopaj ${formatCurrency(result.withholding)} seviyesinde oluştu. `
+          : `To reach a net amount of ${formatCurrency(result.net)}, the gross equivalent became ${formatCurrency(result.gross)} and withholding reached ${formatCurrency(result.withholding)}. `;
+      }
+
+      if (result.vatRate > 0) {
+        comment += state.lang === 'tr'
+          ? `${formatPercent(result.vatRate,2)} KDV ile toplam görünüm ${formatCurrency(result.totalInvoice)} oldu. `
+          : `With ${formatPercent(result.vatRate,2)} VAT, the total view became ${formatCurrency(result.totalInvoice)}. `;
+      } else {
+        comment += state.lang === 'tr'
+          ? `KDV girilmediği için toplam görünüm brüt tutar seviyesinde kaldı. `
+          : `Since no VAT was entered, the total view stayed at the gross amount level. `;
+      }
+
+      if (result.note) {
+        comment += state.lang === 'tr'
+          ? `Not alanındaki "${result.note}" ifadesi bu hesabın bağlamını takip etmene yardımcı olur.`
+          : `The note "${result.note}" helps you keep the context of this calculation.`;
+      }
+
+      document.getElementById('smartComment').textContent = comment;
+      state.lastResult = { ...result, status, comment };
+      updateActionButtons();
+    }
+
+    function calculateWithholding(options = {}) {
+      syncInputsToState();
+      const validation = validateInputs();
+      state.isValid = validation.ok;
+
+      if (!validation.ok) {
+        state.isCalculated = false;
+        showValidation(validation.errors);
+        resetResultsOnly();
+        updateStatus(t('invalidMode'), t('stateMissing'), 'bad');
+        if (state.dataMode === 'manual' && !state.suppressSave) saveState();
+        return null;
+      }
+
+      showValidation([]);
+      const { mode, amount, withholdingRate, vatRate, note } = validation.values;
+
+      let gross = 0;
+      let net = 0;
+      let withholding = 0;
+
+      if (mode === 'grossToNet' || mode === 'onlyWithholding') {
+        gross = amount;
+        withholding = gross * (withholdingRate / 100);
+        net = gross - withholding;
+      } else {
+        net = amount;
+        gross = net / (1 - (withholdingRate / 100));
+        withholding = gross - net;
+      }
+
+      const vatAmount = gross * (vatRate / 100);
+      const totalInvoice = gross + vatAmount;
+      const effectiveRate = gross > 0 ? (withholding / gross) * 100 : 0;
+      const totalPressurePct = gross > 0 ? ((withholding + vatAmount) / gross) * 100 : 0;
+
+      renderResult({
+        mode,
+        amount,
+        gross,
+        net,
+        withholding,
+        withholdingRate,
+        vatRate,
+        vatAmount,
+        totalInvoice,
+        effectiveRate,
+        totalPressurePct,
+        note
+      });
+
+      state.isCalculated = true;
+      if (state.dataMode === 'manual' && !state.suppressSave) saveState();
+      if (options.source && options.source !== 'auto') focusResultArea();
+      return state.lastResult;
+    }
+
+    function renderState() {
+      applyStateToInputs();
+      if (state.isCalculated && state.lastResult) {
+        renderResult(state.lastResult);
+      } else {
+        resetResultsOnly();
+        showValidation([]);
+        updateStatus(t('statusWait'), t('badgeWait'), 'info');
+      }
+    }
+
+    function saveState() {
+      try {
+        const payload = {
+          lang: state.lang,
+          inputs: { ...state.inputs },
+          isCalculated: state.isCalculated && state.dataMode === 'manual',
+          lastResult: state.isCalculated && state.dataMode === 'manual' ? state.lastResult : null
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch (error) {
+        console.warn('State save skipped', error);
+      }
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const saved = JSON.parse(raw);
+        if (saved.lang === 'tr' || saved.lang === 'en') {
+          state.lang = saved.lang;
+        }
+        state.inputs = { ...DEFAULT_INPUTS, ...(saved.inputs || {}) };
+        state.isCalculated = Boolean(saved.isCalculated && saved.lastResult);
+        state.lastResult = saved.lastResult || null;
+      } catch (error) {
+        console.warn('State load skipped', error);
+      }
+    }
+
+    function scheduleAutoCalculate() {
+      clearTimeout(state.debounceTimer);
+      syncInputsToState();
+      const hasAnyValue = state.inputs.amountInput || state.inputs.withholdingRate || state.inputs.vatRate || state.inputs.noteInput;
+      if (hasAnyValue) {
+        updateStatus(t('statusCalculating'), t('badgeCalculating'), 'info');
+      } else {
+        resetResultsOnly();
+        showValidation([]);
+        updateStatus(t('statusWait'), t('badgeWait'), 'info');
+      }
+      state.debounceTimer = setTimeout(() => {
+        const coreReady = state.inputs.amountInput && state.inputs.withholdingRate;
+        if (coreReady) {
+          calculateWithholding({ source:'auto' });
+        } else {
+          resetResultsOnly();
+          showValidation([]);
+          updateStatus(t('statusWait'), t('badgeWait'), 'info');
+        }
+      }, 220);
+    }
+
+    function handleManualChange(callback) {
+      state.dataMode = 'manual';
+      state.suppressSave = false;
+      clearScenarioActive();
+      if (callback) callback();
+      scheduleAutoCalculate();
+    }
+
+    function setWithholdingRate(rate) {
+      document.getElementById('withholdingRate').value = formatRateInput(rate);
+      state.dataMode = 'manual';
+      state.suppressSave = false;
+      clearScenarioActive();
+      setActiveRateChip();
+      scheduleAutoCalculate();
+    }
+
+    function fillScenario(type) {
+      state.dataMode = 'demo';
+      state.suppressSave = true;
+      clearScenarioActive();
+
+      if (type === 'service') {
+        document.getElementById('calcMode').value = 'grossToNet';
+        document.getElementById('amountInput').value = formatAmountInput('25000');
+        document.getElementById('withholdingRate').value = formatRateInput('20');
+        document.getElementById('vatRate').value = formatRateInput('20');
+        document.getElementById('noteInput').value = state.lang === 'tr' ? 'Hizmet ödemesi' : 'Service payment';
+        document.querySelectorAll('#scenarioRow .chip')[0].classList.add('active');
+      } else if (type === 'rent') {
+        document.getElementById('calcMode').value = 'grossToNet';
+        document.getElementById('amountInput').value = formatAmountInput('18000');
+        document.getElementById('withholdingRate').value = formatRateInput('20');
+        document.getElementById('vatRate').value = formatRateInput('0');
+        document.getElementById('noteInput').value = state.lang === 'tr' ? 'Kira ödemesi' : 'Rent payment';
+        document.querySelectorAll('#scenarioRow .chip')[1].classList.add('active');
+      } else {
+        document.getElementById('calcMode').value = 'netToGross';
+        document.getElementById('amountInput').value = formatAmountInput('30000');
+        document.getElementById('withholdingRate').value = formatRateInput('20');
+        document.getElementById('vatRate').value = formatRateInput('20');
+        document.getElementById('noteInput').value = state.lang === 'tr' ? 'Netten brüt planlama' : 'Net to gross planning';
+        document.querySelectorAll('#scenarioRow .chip')[2].classList.add('active');
+      }
+
+      syncInputsToState();
+      setActiveRateChip();
+      calculateWithholding({ source:'sample' });
+      state.suppressSave = false;
+    }
+
+    function fillExample() {
+      fillScenario('service');
+    }
+
+    function buildShareText() {
+      if (!state.lastResult) return '';
+      return [
+        `${t('resultGross')}: ${document.getElementById('grossResult').textContent}`,
+        `${t('resultNet')}: ${document.getElementById('netResult').textContent}`,
+        `${t('resultWithholding')}: ${document.getElementById('withholdingResult').textContent}`,
+        `${t('resultVat')}: ${document.getElementById('vatResult').textContent}`,
+        `${t('resultTotal')}: ${document.getElementById('totalInvoiceResult').textContent}`,
+        `${t('resultEffective')}: ${document.getElementById('effectiveRateResult').textContent}`,
+        '',
+        `${t('resultComment')}:`,
+        document.getElementById('smartComment').textContent
+      ].join('\\n');
+    }
+
+    function fallbackCopyText(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      textarea.style.pointerEvents = 'none';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      let ok = false;
+      try {
+        ok = document.execCommand('copy');
+      } catch (error) {
+        ok = false;
+      }
+      document.body.removeChild(textarea);
+      return ok;
+    }
+
+    async function safeCopyText(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (error) {
+        console.warn('Clipboard write failed, using fallback', error);
+      }
+      return fallbackCopyText(text);
+    }
+
+    async function copyResult() {
+      if (!state.lastResult) {
+        updateStatus(t('noResultToCopy'), t('stateMissing'), 'bad');
+        return;
+      }
+      const text = buildShareText();
+      const copied = await safeCopyText(text);
+      if (!copied) {
+        updateStatus(t('validationFix'), t('stateMissing'), 'warn');
+        return;
+      }
+      const old = document.getElementById('smartComment').textContent;
+      document.getElementById('smartComment').textContent = t('copySuccess');
+      setTimeout(() => {
+        if (state.lastResult) document.getElementById('smartComment').textContent = state.lastResult.comment;
+        else document.getElementById('smartComment').textContent = old;
+      }, 1600);
+    }
+
+    async function shareResult() {
+      if (!state.lastResult) {
+        updateStatus(t('noResultToShare'), t('stateMissing'), 'bad');
+        return;
+      }
+      const shareText = buildShareText();
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: document.title,
+            text: shareText
+          });
+          updateStatus(t('shareSuccess'), t('stateReady'), 'good');
+        } else {
+          const copied = await safeCopyText(shareText);
+          updateStatus(copied ? t('shareFallback') : t('validationFix'), t('stateReady'), copied ? 'good' : 'warn');
+        }
+      } catch (error) {
+        if (error && error.name !== 'AbortError') {
+          console.warn('Share cancelled or failed', error);
+          const copied = await safeCopyText(shareText);
+          if (copied) updateStatus(t('shareFallback'), t('stateReady'), 'good');
+        }
+      }
+    }
+
+    function printResult() {
+      if (!state.lastResult) {
+        updateStatus(t('noResultToPrint'), t('stateMissing'), 'bad');
+        return;
+      }
+      focusResultArea();
+      setTimeout(() => window.print(), 220);
+    }
+
+    function resetForm() {
+      state.inputs = { ...DEFAULT_INPUTS };
+      state.isValid = false;
+      state.isCalculated = false;
+      state.dataMode = 'manual';
+      state.suppressSave = false;
+      state.lastResult = null;
+      applyStateToInputs();
+      document.querySelectorAll('.chip').forEach(btn => btn.classList.remove('active'));
+      clearErrors();
+      showValidation([]);
+      resetResultsOnly();
+      updateStatus(t('statusWait'), t('badgeWait'), 'info');
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (error) {
+        console.warn('State clear skipped', error);
+      }
+    }
+
+    function attachFormattedField(elementId, formatter) {
+      const input = document.getElementById(elementId);
+      input.addEventListener('input', () => {
+        const start = input.selectionStart || input.value.length;
+        const digitsBeforeCaret = input.value.slice(0, start).replace(/\D/g, '').length;
+        const formatted = formatter(input.value);
+        input.value = formatted;
+
+        let seenDigits = 0;
+        let caret = formatted.length;
+        for (let i = 0; i < formatted.length; i += 1) {
+          if (/\d/.test(formatted[i])) seenDigits += 1;
+          if (seenDigits >= digitsBeforeCaret) {
+            caret = i + 1;
+            break;
+          }
+        }
+        input.setSelectionRange(caret, caret);
+      });
+
+      input.addEventListener('blur', () => {
+        input.value = formatter(input.value);
+      });
+    }
+
+    function attachRateField(elementId) {
+      const input = document.getElementById(elementId);
+      input.addEventListener('input', () => {
+        input.value = sanitizeDecimalInput(input.value);
+      });
+      input.addEventListener('blur', () => {
+        input.value = formatRateInput(input.value);
+      });
+    }
+
+    function attachEvents() {
+      document.getElementById('calcMode').addEventListener('change', () => handleManualChange());
+      attachFormattedField('amountInput', formatAmountInput);
+      attachRateField('withholdingRate');
+      attachRateField('vatRate');
+
+      document.getElementById('amountInput').addEventListener('input', () => handleManualChange());
+      document.getElementById('withholdingRate').addEventListener('input', () => handleManualChange(setActiveRateChip));
+      document.getElementById('vatRate').addEventListener('input', () => handleManualChange());
+      document.getElementById('noteInput').addEventListener('input', () => handleManualChange());
+
+      ['amountInput','withholdingRate','vatRate','noteInput'].forEach(id => {
+        document.getElementById(id).addEventListener('keydown', event => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            calculateWithholding({ source:'enter' });
+          }
+        });
+      });
+    }
+
+    loadState();
+
+    buildSelects();
+    attachEvents();
+    setLanguage(state.lang);
+    if (state.isCalculated && state.lastResult) {
+      renderResult(state.lastResult);
+      updateStatus(t('stateReady'), state.lastResult.status.label, state.lastResult.status.badgeClass);
+    } else {
+      resetResultsOnly();
+      updateStatus(t('statusWait'), t('badgeWait'), 'info');
+    }
+    updateActionButtons();
+  </script>
+</body>
+</html>
