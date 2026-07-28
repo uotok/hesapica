@@ -755,9 +755,7 @@ const parseTR = (val) => {
       });
     });
 
-    syncOfficialRateUI();
     if(!loadSavedInputs()){
-      setActiveRateChip(officialRateChipEl);
       updateMode();
       emptyState();
     }
