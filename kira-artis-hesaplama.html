@@ -419,7 +419,7 @@ const parseTR = (val) => {
 <div class="card">
 <h2>Kira Girdi Paneli</h2>
 <p class="section-note">Araç bu sayfa için <strong>PRO</strong> seviyesinde hazırlandı. Çünkü hızlı kullanım önemli ama sonuç alanında güçlü analiz de gerekiyor. Tüm para alanları okunabilirlik için noktalı TR formatta gösterilir.</p>
-<div class="info-banner"><strong>Not:</strong> Artış oranını kendi belirleyip girersin. Kira artış hesaplamalarında yasal üst sınır ve güncel TÜFE oranları için resmi kaynaklara ve sözleşme şartlarına mutlaka başvur.</div>
+<div class="info-banner"><strong>Not:</strong> Artış oranını manuel olarak girersin. Kira artışında yasal üst sınır ve güncel TÜFE oranları için resmi kaynakları ve sözleşme şartlarını ayrıca kontrol etmelisin.</div>
 <div class="form-section">
 <div class="form-title">Temel kira verileri</div>
 <div class="field-grid">
@@ -617,6 +617,7 @@ const parseTR = (val) => {
 </main>
 <script>
     const currentRentEl = document.getElementById('currentRent');
+    const increaseTypeEl = document.getElementById('increaseType') || { value: 'custom', selectedIndex: 0, options: [{ text: 'Özel oran' }], addEventListener: () => {} };
     const rateInputEl = document.getElementById('rateInput');
     const rateHintEl = document.getElementById('rateHint');
     const roundingTypeEl = document.getElementById('roundingType');
@@ -629,11 +630,8 @@ const parseTR = (val) => {
     };
 
     const moneyInputs = [currentRentEl, depositAmountEl];
-    
     const DEFAULT_SCENARIO_RATES = [25, 35, 45];
-    
-    
-    
+    let lastCustomRateValue = '';
     let hasAttemptedSubmit = false;
     const touchedFields = new Set();
     let suppressPersistence = false;
@@ -642,6 +640,7 @@ const parseTR = (val) => {
     const state = {
       inputs: {
         currentRent: '',
+        increaseType: 'custom',
         rateInput: '',
         roundingType: 'none',
         depositAmount: ''
@@ -717,6 +716,442 @@ const parseTR = (val) => {
       });
     }
 
+    function setActiveRateChip(targetBtn){
+      [...document.querySelectorAll('#rateChips .chip')].forEach(c=>c.classList.remove('active'));
+      if(targetBtn){
+        targetBtn.classList.add('active');
+      }
+    }
+
+    function scoreMeta(score){
+      if(score < 35) return ['good','Düşük baskı'];
+      if(score < 70) return ['warn','Orta baskı'];
+      return ['bad','Yüksek baskı'];
+    }
+
+    function isElementMostlyVisible(el){
+      const rect = el.getBoundingClientRect();
+      const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, viewHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      return visibleHeight >= Math.min(rect.height * 0.7, viewHeight * 0.6);
+    }
+
+    function revealPrimaryResult(){
+      const card = document.getElementById('mainCard');
+      if(!card || !state.isCalculated || !state.isValid) return;
+      const shouldScroll = window.matchMedia('(max-width: 768px)').matches || !isElementMostlyVisible(card);
+      if(shouldScroll){
+        card.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+      card.classList.add('result-flash');
+      setTimeout(()=>card.classList.remove('result-flash'), 1200);
+    }
+
+    function setFieldError(name, message){
+      const config = fieldConfig[name];
+      if(!config) return;
+      const shouldShow = Boolean(message) && (touchedFields.has(name) || hasAttemptedSubmit);
+      config.wrapper.classList.toggle('is-invalid', shouldShow);
+      config.input.setAttribute('aria-invalid', shouldShow ? 'true' : 'false');
+      config.error.textContent = shouldShow ? message : '';
+      config.error.classList.toggle('show', shouldShow);
+    }
+
+    function focusFirstError(errors){
+      const first = Object.keys(fieldConfig).find(name => errors[name]);
+      if(first){
+        fieldConfig[first].input.focus();
+      }
+    }
+
+    function validateInputs(){
+      const currentRent = parseTrNumber(currentRentEl.value);
+      const rate = parsePercentNumber(rateInputEl.value);
+      const errors = {};
+
+      if(Number.isNaN(currentRentEl.value.trim() === '' ? NaN : currentRent) || currentRentEl.value.trim() === ''){
+        errors.currentRent = 'Mevcut kira tutarını gir.';
+      } else if(currentRent <= 0){
+        errors.currentRent = 'Mevcut kira 0’dan büyük olmalı.';
+      }
+
+      if(rateInputEl.value.trim() === ''){
+        errors.rateInput = 'Artış oranını gir.';
+      } else if(Number.isNaN(rate)){
+        errors.rateInput = 'Geçerli bir artış oranı gir.';
+      } else if(rate < 0){
+        errors.rateInput = 'Artış oranı negatif olamaz.';
+      } else if(rate > 300){
+        errors.rateInput = 'Artış oranı mantıklı bir aralıkta olmalı.';
+      }
+
+      return { errors, currentRent, rate, depositAmount: parseTrNumber(depositAmountEl.value) };
+    }
+
+    function renderValidation(errors){
+      setFieldError('currentRent', errors.currentRent || '');
+      setFieldError('rateInput', errors.rateInput || '');
+    }
+
+    function emptyState(){
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      document.getElementById('newRentMain').textContent = '—';
+      document.getElementById('newRentMainSub').textContent = 'Artış sonrası yeni kira burada görünür.';
+      document.getElementById('pressureScore').textContent = '0/100';
+      document.getElementById('pressureBadge').className = 'pill';
+      document.getElementById('pressureBadge').textContent = 'Veri bekleniyor';
+      document.getElementById('scoreBar').style.width = '0%';
+      ['breakRate','breakMonthly','breakYearly','increaseAmount','usedRate','newYearly','yearlyDiff','depositCompare','oldRentTable','newRentTable','increaseTable','oldYearlyTable','newYearlyTable','yearlyDiffTable'].forEach(id=>document.getElementById(id).textContent='—');
+      document.getElementById('commentBox').textContent = 'Bu alan boş açılır. Hesaplama sonrası burada kısa, net ve karar destekleyici yorum görünür.';
+      document.getElementById('scenarioTable').innerHTML = '<tr><td colspan="3">Hesaplama bekleniyor.</td></tr>';
+      document.getElementById('statusText').textContent = 'Sonuç görmek için mevcut kira ve artış oranı gir.';
+      document.getElementById('statusBadge').className = 'badge';
+      document.getElementById('statusBadge').textContent = 'Veri bekleniyor';
+      ['healthLevel','healthLevelSub','healthYear','healthYearSub','healthRound','healthRoundSub'].forEach(id=>document.getElementById(id).textContent='—');
+      activateResult(['mainCard','r1','r2','r3','r4','r5','h1','h2','h3'], false);
+    }
+
+    function persistInputs(){
+      if(suppressPersistence) return;
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(()=>{
+        if(!state.inputs.currentRent && !state.inputs.depositAmount && state.inputs.roundingType === 'none' && !state.inputs.rateInput){
+          localStorage.removeItem('hesapica-kira-artis-inputs');
+          return;
+        }
+        localStorage.setItem('hesapica-kira-artis-inputs', JSON.stringify(state.inputs));
+      }, 120);
+    }
+
+    function syncStateInputs(){
+      state.inputs = {
+        currentRent: currentRentEl.value,
+        increaseType: increaseTypeEl.value,
+        rateInput: rateInputEl.value,
+        roundingType: roundingTypeEl.value,
+        depositAmount: depositAmountEl.value
+      };
+      persistInputs();
+    }
+
+    function calculateAll(options = {}){
+      const { submit = false } = options;
+      if(submit){
+        hasAttemptedSubmit = true;
+      }
+
+      const { errors, currentRent, rate, depositAmount } = validateInputs();
+      renderValidation(errors);
+      syncStateInputs();
+
+      const isValid = Object.keys(errors).length === 0;
+      if(!isValid){
+        emptyState();
+        if(submit){
+          focusFirstError(errors);
+        }
+        return false;
+      }
+
+      const roundingType = roundingTypeEl.value;
+      const rawIncrease = currentRent * rate / 100;
+      const rawNewRent = currentRent + rawIncrease;
+      const newRent = roundValue(rawNewRent, roundingType);
+      const increaseAmount = newRent - currentRent;
+      const oldYearly = currentRent * 12;
+      const newYearly = newRent * 12;
+      const yearlyDiff = newYearly - oldYearly;
+
+      const rateScore = Math.min(rate, 50) / 50 * 40;
+      const monthlyScore = Math.min((increaseAmount / Math.max(currentRent,1)) * 100, 50) / 50 * 30;
+      const yearlyScore = Math.min(yearlyDiff / Math.max(currentRent * 12,1) * 100, 50) / 50 * 30;
+      const score = Math.round(rateScore + monthlyScore + yearlyScore);
+
+      state.results = { currentRent, rate, depositAmount, roundingType, newRent, increaseAmount, oldYearly, newYearly, yearlyDiff, score, rateScore, monthlyScore, yearlyScore };
+      state.isValid = true;
+      state.isCalculated = true;
+
+      document.getElementById('newRentMain').textContent = formatMoney(newRent);
+      document.getElementById('newRentMainSub').textContent = `${formatMoney(currentRent)} mevcut kira için hesaplandı.`;
+
+      document.getElementById('pressureScore').textContent = `${score}/100`;
+      document.getElementById('scoreBar').style.width = `${score}%`;
+      const [badgeLevel, badgeText] = scoreMeta(score);
+      document.getElementById('pressureBadge').className = `pill ${badgeLevel}`;
+      document.getElementById('pressureBadge').textContent = badgeText;
+      document.getElementById('breakRate').textContent = `${Math.round(rateScore)}/40`;
+      document.getElementById('breakMonthly').textContent = `${Math.round(monthlyScore)}/30`;
+      document.getElementById('breakYearly').textContent = `${Math.round(yearlyScore)}/30`;
+
+      document.getElementById('increaseAmount').textContent = formatMoney(increaseAmount);
+      document.getElementById('usedRate').textContent = formatPercent(rate);
+      document.getElementById('newYearly').textContent = formatMoney(newYearly);
+      document.getElementById('yearlyDiff').textContent = formatMoney(yearlyDiff);
+
+      if(!Number.isNaN(depositAmount) && depositAmount > 0){
+        document.getElementById('depositCompare').textContent = formatPercent((newRent / depositAmount) * 100, 1);
+      } else {
+        document.getElementById('depositCompare').textContent = '—';
+      }
+
+      document.getElementById('oldRentTable').textContent = formatMoney(currentRent);
+      document.getElementById('newRentTable').textContent = formatMoney(newRent);
+      document.getElementById('increaseTable').textContent = formatMoney(increaseAmount);
+      document.getElementById('oldYearlyTable').textContent = formatMoney(oldYearly);
+      document.getElementById('newYearlyTable').textContent = formatMoney(newYearly);
+      document.getElementById('yearlyDiffTable').textContent = formatMoney(yearlyDiff);
+
+      let statusLevel='good', statusText='Hesaplama tamamlandı';
+      if(score >= 70){ statusLevel='bad'; statusText='Bütçe baskısı yüksek'; }
+      else if(score >= 35){ statusLevel='warn'; statusText='Orta düzey bütçe baskısı'; }
+      document.getElementById('statusText').textContent = `${formatPercent(rate)} artış oranı ile yeni kira ${formatMoney(newRent)} seviyesine çıkıyor.`;
+      setBadge(document.getElementById('statusBadge'), statusLevel, statusText);
+
+      document.getElementById('healthLevel').textContent = score >= 70 ? 'Yüksek' : score >= 35 ? 'Orta' : 'Düşük';
+      document.getElementById('healthLevelSub').textContent = `Artış oranı ${formatPercent(rate)}.`;
+      document.getElementById('healthYear').textContent = formatMoney(yearlyDiff,0);
+      document.getElementById('healthYearSub').textContent = 'Yıllık toplam ek maliyet.';
+      document.getElementById('healthRound').textContent = roundingType === 'none' ? 'Yok' : `${roundingType} TL`;
+      document.getElementById('healthRoundSub').textContent = roundingType === 'none' ? 'Ham sonuç gösteriliyor.' : 'Pratik görünüm için yuvarlandı.';
+
+      let comment = `Mevcut kira ${formatMoney(currentRent)} iken ${formatPercent(rate)} artışla yeni kira ${formatMoney(newRent)} oluyor. Aylık fark ${formatMoney(increaseAmount)}, 12 aylık toplam ek yük ise ${formatMoney(yearlyDiff)} seviyesinde.`;
+      if(roundingType !== 'none') comment += ` Sonuç ${roundingType} TL bazında yuvarlandı.`;
+      if(!Number.isNaN(depositAmount) && depositAmount > 0) comment += ` Yeni kira, girilen depozitonun yaklaşık ${formatPercent((newRent / depositAmount) * 100,1)} seviyesinde.`;
+      if(score >= 70) comment += ' Bu artış seviyesi belirgin bütçe baskısı oluşturabilir; yıllık maliyet planını ayrıca gözden geçirmek faydalı olur.';
+      else if(score >= 35) comment += ' Artış yönetilebilir görünse de yıllık toplam etkiyi göz ardı etmemek gerekir.';
+      else comment += ' Artış seviyesi görece sınırlı görünüyor.';
+      document.getElementById('commentBox').textContent = comment;
+
+      const rates = [rate - 10, rate, rate + 10].filter(v=>v>=0);
+      const uniqueRates = [...new Set([0, ...rates, ...DEFAULT_SCENARIO_RATES].filter(v=>v>=0).map(v=>Number(v.toFixed(2))))].sort((a,b)=>a-b);
+      document.getElementById('scenarioTable').innerHTML = uniqueRates.map(r=>{
+        const nr = roundValue(currentRent * (1 + r/100), roundingType);
+        const diff = nr - currentRent;
+        return `<tr><td>${formatPercent(r)}</td><td>${formatMoney(nr)}</td><td>${formatMoney(diff)}</td></tr>`;
+      }).join('');
+
+      activateResult(['mainCard','r1','r2','r3','r4','r5','h1','h2','h3'], true);
+      return true;
+    }
+
+    function debouncedCalculate(){
+      clearTimeout(window.__rentCalcTimer);
+      window.__rentCalcTimer = setTimeout(()=>calculateAll(), 140);
+    }
+
+    function markTouched(name){
+      touchedFields.add(name);
+    }
+
+    function attachMoneyFormatter(el, fieldName = null){
+      el.addEventListener('input',()=>{
+        if(fieldName){
+          markTouched(fieldName);
+        }
+        const num = parseTrNumber(el.value);
+        if(el.value.trim()===''){
+          if(fieldName){
+            setFieldError(fieldName, '');
+          }
+          debouncedCalculate();
+          return;
+        }
+        if(Number.isNaN(num)){
+          debouncedCalculate();
+          return;
+        }
+        el.value = new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(num);
+        debouncedCalculate();
+      });
+      el.addEventListener('blur',()=>{
+        if(fieldName){
+          markTouched(fieldName);
+        }
+        el.value = formatMoneyInput(el.value);
+        calculateAll();
+      });
+    }
+
+    attachMoneyFormatter(currentRentEl, 'currentRent');
+    attachMoneyFormatter(depositAmountEl);
+
+    function updateMode(){
+      rateInputEl.readOnly = false;
+      rateInputEl.placeholder = 'Örn. 25,5';
+      rateHintEl.textContent = 'Uygulamak istediğin artış oranını yüzde olarak gir.';
+      calculateAll();
+    }
+
+    function quickRate(rate, btn){
+      rateInputEl.value = formatRateInput(rate);
+      setActiveRateChip(btn);
+      updateMode();
+      revealPrimaryResult();
+    }
+
+    function fillExample(){
+      suppressPersistence = true;
+      currentRentEl.value = '15.000';
+      increaseTypeEl.value = 'custom';
+      rateInputEl.value = '25';
+      roundingTypeEl.value = '10';
+      depositAmountEl.value = '30.000';
+      touchedFields.clear();
+      hasAttemptedSubmit = false;
+      renderValidation({});
+      setActiveRateChip(null);
+      updateMode();
+      suppressPersistence = false;
+      localStorage.removeItem('hesapica-kira-artis-inputs');
+      revealPrimaryResult();
+    }
+
+    function resetTool(){
+      suppressPersistence = true;
+      currentRentEl.value = '';
+      increaseTypeEl.value = 'custom';
+      rateInputEl.value = '';
+      roundingTypeEl.value = 'none';
+      depositAmountEl.value = '';
+      touchedFields.clear();
+      hasAttemptedSubmit = false;
+      renderValidation({});
+      setActiveRateChip(null);
+      updateMode();
+      emptyState();
+      suppressPersistence = false;
+      localStorage.removeItem('hesapica-kira-artis-inputs');
+    }
+
+    function copyTextSafely(text){
+      if(navigator.clipboard && window.isSecureContext){
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise((resolve,reject)=>{
+        try{
+          const helper=document.createElement('textarea');
+          helper.value=text;
+          helper.setAttribute('readonly','');
+          helper.style.position='fixed';
+          helper.style.opacity='0';
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          const ok=document.execCommand('copy');
+          document.body.removeChild(helper);
+          ok ? resolve() : reject(new Error('copy-failed'));
+        }catch(err){ reject(err); }
+      });
+    }
+
+    function buildShareText(){
+      return `Kira Artış Hesaplama Sonucu
+Mevcut Kira: ${currentRentEl.value || '-'} TL
+Kullanılan Oran: ${rateInputEl.value || '-'}%
+Yuvarlama: ${roundingTypeEl.options[roundingTypeEl.selectedIndex].text}
+Depozito: ${depositAmountEl.value || '-'} TL
+
+Yeni Kira: ${document.getElementById('newRentMain').textContent}
+Aylık Artış Farkı: ${document.getElementById('increaseAmount').textContent}
+Yeni Yıllık Kira: ${document.getElementById('newYearly').textContent}
+12 Aylık Ek Yük: ${document.getElementById('yearlyDiff').textContent}
+Baskı Skoru: ${document.getElementById('pressureScore').textContent}
+
+Yorum:
+${document.getElementById('commentBox').textContent}`;
+    }
+
+    function ensureResultForAction(){
+      if(state.isCalculated && state.isValid && state.results){
+        return true;
+      }
+      hasAttemptedSubmit = true;
+      const ok = calculateAll({ submit: true });
+      if(!ok){
+        alert('Önce geçerli bir sonuç oluştur.');
+      }
+      return ok;
+    }
+
+    function copyResult(){
+      if(!ensureResultForAction()) return;
+      const text = buildShareText();
+      copyTextSafely(text)
+        .then(()=>alert('Sonuç kopyalandı.'))
+        .catch(()=>alert('Kopyalama başarısız oldu.'));
+    }
+
+    function shareResult(){
+      if(!ensureResultForAction()) return;
+      const text = buildShareText();
+      if(navigator.share){
+        navigator.share({
+          title: 'Kira Artış Hesaplama Sonucu',
+          text,
+          url: window.location.href
+        }).catch(()=>{});
+        return;
+      }
+      copyTextSafely(`${text}
+
+${window.location.href}`)
+        .then(()=>alert('Paylaşım için metin ve bağlantı kopyalandı.'))
+        .catch(()=>alert('Paylaşım metni kopyalanamadı.'));
+    }
+
+    function loadSavedInputs(){
+      try{
+        const raw = localStorage.getItem('hesapica-kira-artis-inputs');
+        if(!raw) return false;
+        const saved = JSON.parse(raw);
+        suppressPersistence = true;
+        currentRentEl.value = saved.currentRent || '';
+        increaseTypeEl.value = 'custom';
+        roundingTypeEl.value = saved.roundingType || 'none';
+        depositAmountEl.value = saved.depositAmount || '';
+        rateInputEl.value = saved.rateInput || '';
+        setActiveRateChip(null);
+        updateMode();
+        suppressPersistence = false;
+        calculateAll();
+        return true;
+      } catch (error) {
+        localStorage.removeItem('hesapica-kira-artis-inputs');
+        suppressPersistence = false;
+        return false;
+      }
+    }
+
+    function handleCalculateClick(){
+      const hasResult = calculateAll({ submit: true });
+      if(hasResult){
+        revealPrimaryResult();
+      }
+    }
+
+    
+    calculateBtn.addEventListener('click', handleCalculateClick);
+
+    rateInputEl.addEventListener('input', ()=>{
+      markTouched('rateInput');
+      const raw = rateInputEl.value;
+      if(raw.trim()===''){
+        lastCustomRateValue = '';
+        debouncedCalculate();
+        return;
+      }
+      const normalized = raw.replace(/[^\d,.-]/g,'');
+      if(normalized !== raw){
+        rateInputEl.value = normalized;
+      }
+      lastCustomRateValue = rateInputEl.value;
+      debouncedCalculate();
+    });
+
     rateInputEl.addEventListener('blur', ()=>{
       markTouched('rateInput');
       if(rateInputEl.value.trim()===''){
@@ -729,7 +1164,7 @@ const parseTR = (val) => {
         return;
       }
       rateInputEl.value = formatRateInput(parsed);
-      
+      lastCustomRateValue = rateInputEl.value;
       calculateAll();
     });
 
@@ -756,6 +1191,7 @@ const parseTR = (val) => {
     });
 
     if(!loadSavedInputs()){
+      setActiveRateChip(null);
       updateMode();
       emptyState();
     }
