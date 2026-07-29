@@ -303,7 +303,7 @@ const parseTR = (val) => {
 <meta content="index,follow" name="robots"/>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica","url":"https://hesapica.com/maas-brut-net-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
+{"@context":"https://schema.org","@type": "WebPage","name":"Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica","url":"https://hesapica.com/maas-brut-net-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type": "WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
 </script>
 <script type="application/ld+json">
   {
@@ -469,9 +469,15 @@ const parseTR = (val) => {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;min-height:280px;margin:20px 0;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
 .hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{min-height:260px}.hc-ad-slot .adsbygoogle{min-height:240px}}
+.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
+@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
+@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
 </style>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
@@ -1000,48 +1006,36 @@ const parseTR = (val) => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
-      {"@type":"ListItem","position":2,"name":"Maaş ve Çalışma","item":"https://hesapica.com/#maas"},
-      {"@type":"ListItem","position":3,"name":"Maaş Brüt Net Hesaplama","item":"https://hesapica.com/maas-brut-net-hesaplama"}
+      {"@type": "ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+      {"@type": "ListItem","position":2,"name":"Maaş ve Çalışma","item":"https://hesapica.com/#maas"},
+      {"@type": "ListItem","position":3,"name":"Maaş Brüt Net Hesaplama","item":"https://hesapica.com/maas-brut-net-hesaplama"}
     ]
   }
   </script>
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "
-<!-- HC_AD_SLOT:faq -->
-<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="4903929326"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-FAQPage",
+    "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "Bu araç hangi bordro tipine göre hesap yapıyor?",
-        "acceptedAnswer": {"@type":"Answer","text":"Bu sayfa 4A özel sektör ücretli çalışan bordrosu için tasarlanmıştır ve 2025 ile 2026 yılı resmi temel parametrelerini uygular."}
+        "acceptedAnswer": {"@type": "Answer","text":"Bu sayfa 4A özel sektör ücretli çalışan bordrosu için tasarlanmıştır ve 2025 ile 2026 yılı resmi temel parametrelerini uygular."}
       },
       {
         "@type": "Question",
         "name": "Neden yıl ortasında net maaş değişebilir?",
-        "acceptedAnswer": {"@type":"Answer","text":"Ücret gelirlerinde vergi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu durumda aynı brüt ücretle net tutar değişebilir."}
+        "acceptedAnswer": {"@type": "Answer","text":"Ücret gelirlerinde vergi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu durumda aynı brüt ücretle net tutar değişebilir."}
       },
       {
         "@type": "Question",
         "name": "Asgari ücret istisnası nasıl yansıtılıyor?",
-        "acceptedAnswer": {"@type":"Answer","text":"Araç, seçilen yılın asgari ücret omurgasını kullanarak gelir vergisi ve damga vergisi istisnasını bordroya aylık olarak yansıtır."}
+        "acceptedAnswer": {"@type": "Answer","text":"Araç, seçilen yılın asgari ücret omurgasını kullanarak gelir vergisi ve damga vergisi istisnasını bordroya aylık olarak yansıtır."}
       },
       {
         "@type": "Question",
         "name": "Netten brüte hesap neden iteratif çalışıyor?",
-        "acceptedAnswer": {"@type":"Answer","text":"Netten brüte dönüş doğrusal değildir; vergi dilimi ve istisnalar sebebiyle iteratif çözüm gerekir."}
+        "acceptedAnswer": {"@type": "Answer","text":"Netten brüte dönüş doğrusal değildir; vergi dilimi ve istisnalar sebebiyle iteratif çözüm gerekir."}
       }
     ]
   }

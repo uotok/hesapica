@@ -201,45 +201,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Borç Kapama Planı Hesaplama 2026 | Borçsuz Kalma Süresi, Bütçe Baskısı ve Ödeme Stratejisi Analizi","url":"https://hesapica.com/borc-kapama-plani","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
 </script>
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"Borç Kapama Planı Hesaplama",
-    "url":"https://hesapica.com/borc-kapama-plani",
-    "applicationCategory":"FinanceApplication",
-    "operatingSystem":"Web",
-    "inLanguage":"tr-TR",
-    "isAccessibleForFree":true,
-    "description":"Borç kapama süresi, toplam faiz yükü, bütçe baskısı ve günlük güvenli harcama limitini analiz eden ücretsiz borç planlama aracı."
-  }
-  const parseTR = (val) => {
-  if(val == null) return null;
-  let s = String(val).trim();
-  if(!s) return null;
-
-  s = s.replace(/\s+/g,'');
-
-  if(s.includes('.') && !s.includes(',')){
-    s = s.replace(/\./g,'');
-  }
-
-  if(s.includes(',') && s.includes('.')){
-    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      s = s.replace(/\./g,'').replace(',', '.');
-    } else {
-      s = s.replace(/,/g,'');
-    }
-  } else if(s.includes(',')) {
-    s = s.replace(',', '.');
-  }
-
-  s = s.replace(/[^0-9.\-]/g,'');
-  const n = Number(s);
-  if(n === 0 && s !== "0") return null;
-  return Number.isFinite(n) ? n : null;
-};
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Borç Kapama Planı Hesaplama","url":"https://hesapica.com/borc-kapama-plani","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"tr-TR","isAccessibleForFree":true,"description":"Borç kapama süresi, toplam faiz yükü, bütçe baskısı ve günlük güvenli harcama limitini analiz eden ücretsiz borç planlama aracı."}</script>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
 <link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
@@ -419,9 +381,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;min-height:280px;margin:20px 0;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
 .hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{min-height:260px}.hc-ad-slot .adsbygoogle{min-height:240px}}
+.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
+@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
+@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
 </style>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
