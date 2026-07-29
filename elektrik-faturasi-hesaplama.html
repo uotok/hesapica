@@ -384,9 +384,16 @@ const parseTR = (val) => {
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;min-height:280px;margin:20px 0;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{min-height:260px}.hc-ad-slot .adsbygoogle{min-height:240px}}
+/* Empty ad slots take no space; expand only when AdSense fills them */
+.hc-ad-slot{width:100%;min-height:0;height:auto;margin:0;padding:0;border:0;background:transparent;display:block;overflow:hidden}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
+ins.adsbygoogle{margin:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none!important;margin:0!important;padding:0!important;height:0!important;border:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:16px 0;padding:8px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;overflow:visible}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .adsbygoogle{min-height:90px}
+@media (max-width:720px){
+  .hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:12px 0;padding:6px}
+}
 </style>
 </head>
 <body>
