@@ -268,6 +268,11 @@ const parseTR = (val) => {
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
+<style id="hc-adsense-slot-style">
+.hc-ad-slot{width:100%;min-height:280px;margin:20px 0;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+@media (max-width:720px){.hc-ad-slot{min-height:260px}.hc-ad-slot .adsbygoogle{min-height:240px}}
+</style>
 </head>
 <body>
 <div class="container">
@@ -297,7 +302,19 @@ const parseTR = (val) => {
 <div class="card" style="margin-top:24px;"><h2>Senaryo Analizi</h2><p class="section-note">Satış fiyatı %5 değişirse sonucun nasıl evrileceğini hızlıca gör.</p><div class="scenario-result-grid"><div class="scenario-card-result"><div class="k">Satış fiyatı %5 artarsa</div><div class="v" id="scenarioUp">—</div><div class="s" id="scenarioUpText">Veri bekleniyor</div></div><div class="scenario-card-result"><div class="k">Satış fiyatı %5 düşerse</div><div class="v" id="scenarioDown">—</div><div class="s" id="scenarioDownText">Veri bekleniyor</div></div></div></div>
 </div>
 <aside class="sticky-panel">
-<div class="card" id="resultPanel">
+<div class="card" 
+<!-- HC_AD_SLOT:result -->
+<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="3982292851"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+id="resultPanel">
 <div class="status-card"><div class="status-row"><div><div class="status-title">Sonuç alanı durumu</div><div class="status-text" id="statusText">Alış, satış ve lot bilgileri girildiğinde sonuçlar otomatik oluşur.</div></div><span class="badge" id="statusBadge">Veri bekleniyor</span></div></div>
 <div class="highlight-card" id="mainBox"><div class="eyebrow-lite">📊 Sonuç Özeti</div><div class="result-main-label">Net Kar / Zarar</div><div class="result-main-value neutral" id="mainResult">—</div><p class="result-main-sub" id="resultSummary">Alış, satış ve lot bilgilerine göre net sonuç burada görünür.</p></div>
 <div class="score-card" id="scoreCard"><div class="score-top"><div class="score-title">İşlem Kalite Skoru</div><div class="score-value" id="tradeScore">—</div></div><div class="score-grid"><div class="score-mini"><div class="k">Getiri</div><div class="v" id="scoreReturn">—</div></div><div class="score-mini"><div class="k">Komisyon</div><div class="v" id="scoreCommission">—</div></div><div class="score-mini"><div class="k">Esneklik</div><div class="v" id="scoreFlex">—</div></div></div></div>
@@ -310,7 +327,19 @@ const parseTR = (val) => {
 </aside>
 </section>
 <section class="section-grid"><div class="card content-block"><h2>Borsa Kar Hesaplama Nasıl Yapılır?</h2><p>Borsa kar hesabında temel mantık; alış fiyatı ile satış fiyatı arasındaki farkın lot sayısıyla çarpılmasıdır. Ancak sadece fiyat farkına bakmak yeterli olmaz. Çünkü alış ve satış sırasında ödenen komisyonlar ile varsa ek işlem giderleri net sonucu düşürür.</p><p>Bu araçta önce toplam alış maliyeti hesaplanır. Ardından satış sonrası eline geçen net tutar bulunur. Son aşamada komisyon ve ek kesintiler çıktıktan sonra gerçek kar veya zarar hesaplanır.</p><div class="formula-box">Net Kar / Zarar = Net Satış Geliri - Toplam Alış Maliyeti - Ek Giderler</div></div><div class="card content-block"><h2>Bu Araç Ne İşe Yarar?</h2><p>Borsa kar hesaplama aracı, hisse senedi işlemlerinde çıkış noktasını görmek, hedef fiyat belirlemek ve satış kararı almadan önce net tabloyu hızlıca değerlendirmek için kullanılır.</p><p>Ayrıca farklı lot miktarları ve farklı fiyat senaryolarıyla oynayarak hangi seviyede kar ettiğini veya hangi seviyede zararının derinleştiğini daha net anlayabilirsin.</p></div></section>
-<section class="card" style="margin-bottom:28px;"><h2>Sık Sorulan Sorular</h2><p class="section-note">Borsa kar hesabıyla ilgili en çok merak edilen soruları kısa ve net biçimde topladık.</p><div class="faq-list"><div class="faq-item active"><button class="faq-question" onclick="toggleFaq(this)" type="button">Sadece alış ve satış fiyatı yeterli mi?<span>+</span></button><div class="faq-answer">Tam olarak değil. Lot sayısı, komisyon ve varsa ek işlem giderleri de net sonucu etkiler.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)" type="button">Komisyon küçükse ihmal edilebilir mi?<span>+</span></button><div class="faq-answer">Düşük hacimli işlemlerde etkisi sınırlı olabilir ama sık işlem yapanlarda toplam performansı belirgin şekilde etkileyebilir.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)" type="button">Zarar durumunu da hesaplar mı?<span>+</span></button><div class="faq-answer">Evet. Satış fiyatı alış fiyatının altındaysa veya giderler sonucu aşındırıyorsa araç bunu net zarar olarak gösterir.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)" type="button">Getiri oranı neye göre hesaplanıyor?<span>+</span></button><div class="faq-answer">Getiri yüzdesi, toplam alış maliyetine göre net kar veya zararın oranı alınarak hesaplanır.</div></div></div></section>
+<section class="card" style="margin-bottom:28px;">
+<!-- HC_AD_SLOT:faq -->
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="4903929326"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>Sık Sorulan Sorular</h2><p class="section-note">Borsa kar hesabıyla ilgili en çok merak edilen soruları kısa ve net biçimde topladık.</p><div class="faq-list"><div class="faq-item active"><button class="faq-question" onclick="toggleFaq(this)" type="button">Sadece alış ve satış fiyatı yeterli mi?<span>+</span></button><div class="faq-answer">Tam olarak değil. Lot sayısı, komisyon ve varsa ek işlem giderleri de net sonucu etkiler.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)" type="button">Komisyon küçükse ihmal edilebilir mi?<span>+</span></button><div class="faq-answer">Düşük hacimli işlemlerde etkisi sınırlı olabilir ama sık işlem yapanlarda toplam performansı belirgin şekilde etkileyebilir.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)" type="button">Zarar durumunu da hesaplar mı?<span>+</span></button><div class="faq-answer">Evet. Satış fiyatı alış fiyatının altındaysa veya giderler sonucu aşındırıyorsa araç bunu net zarar olarak gösterir.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)" type="button">Getiri oranı neye göre hesaplanıyor?<span>+</span></button><div class="faq-answer">Getiri yüzdesi, toplam alış maliyetine göre net kar veya zararın oranı alınarak hesaplanır.</div></div></div></section>
 <footer>© 2026 Hesapica.com · Hisse senedi alış ve satış işlemlerinden doğan net kar veya zararı hızlıca hesapla.</footer>
 </div>
 <script>
