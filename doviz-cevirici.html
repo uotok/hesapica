@@ -89,7 +89,7 @@ window.HESAPICA_I18N_CONFIG = {
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Döviz Çevirici 2026 | Canlı Kur ve Çapraz Döviz Hesaplama | Hesapica","url":"https://hesapica.com/doviz-cevirici","inLanguage":"tr-TR"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Döviz Çevirici 2026 | Canlı Kur ve Çapraz Döviz Hesaplama | Hesapica","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://hesapica.com/doviz-cevirici","description":"Canlı döviz çevirici ile USD, EUR, GBP, TRY, altın ve gümüş fiyatlarını anında dönüştürün. TCMB öncelikli kur akışıyla çapraz hesaplama yapın.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialProduct","name":"Döviz Çevirici 2026 | Canlı Kur ve Çapraz Döviz Hesaplama | Hesapica","url":"https://hesapica.com/doviz-cevirici","provider":{"@type":"Organization","name":"Hesapica"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Döviz çevirici hangi kurları kullanıyor?","acceptedAnswer":{"@type":"Answer","text":"Öncelik TCMB XML akışıdır. Erişim sorunu olursa yedek canlı kur servisi devreye girer."}},{"@type":"Question","name":"Çapraz döviz hesabı nasıl çalışır?","acceptedAnswer":{"@type":"Answer","text":"Tüm pariteler önce TRY bazına çevrilir, sonra hedef para birimine dönüştürülür."}},{"@type":"Question","name":"Kurlar ne sıklıkla güncelleniyor?","acceptedAnswer":{"@type":"Answer","text":"Kur verileri GitHub Actions ile her gün otomatik güncellenir. Gün içinde gerektiğinde yedek canlı kaynak devreye girebilir."}},{"@type":"Question","name":"Komisyon dahil mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Banka/makas/komisyon farkı bu araca dahil değildir."}},{"@type":"Question","name":"Mobilde hızlı kullanım var mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tutar değiştikçe sonuç otomatik güncellenir."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Döviz çevirici hangi kurları kullanıyor?","acceptedAnswer":{"@type":"Answer","text":"Öncelik TCMB XML akışıdır. Erişim sorunu olursa yedek canlı kur servisi devreye girer."}},{"@type":"Question","name":"Çapraz döviz hesabı nasıl çalışır?","acceptedAnswer":{"@type":"Answer","text":"Tüm pariteler önce TRY bazına çevrilir, sonra hedef para birimine dönüştürülür."}},{"@type":"Question","name":"Kurlar ne sıklıkla güncelleniyor?","acceptedAnswer":{"@type":"Answer","text":"Kur verileri günlük güncellenen kaynaklardan alınır. Gün içinde kaynak erişimine göre yedek canlı servis devreye girebilir."}},{"@type":"Question","name":"Komisyon dahil mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Banka/makas/komisyon farkı bu araca dahil değildir."}},{"@type":"Question","name":"Mobilde hızlı kullanım var mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tutar değiştikçe sonuç otomatik güncellenir."}}]}</script>
 </head>
 <body>
 <div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#popular">Araçlar</a><span>/</span><strong>Döviz Çevirici 2026 | Canlı Kur ve Çapraz Döviz Hesaplama | Hesapica</strong></nav></div>
@@ -133,7 +133,7 @@ window.HESAPICA_I18N_CONFIG = {
   <h2 data-i18n="faqTitle">Sık Sorulan Sorular</h2>
   <details><summary>Döviz çevirici hangi kurları kullanıyor?</summary><p>Öncelik TCMB XML akışıdır. Erişim sorunu olursa yedek canlı kur servisi devreye girer.</p></details>
 <details><summary>Çapraz döviz hesabı nasıl çalışır?</summary><p>Tüm pariteler önce TRY bazına çevrilir, sonra hedef para birimine dönüştürülür.</p></details>
-<details><summary>Kurlar ne sıklıkla güncelleniyor?</summary><p>Kur verileri GitHub Actions ile her gün otomatik güncellenir. Gün içinde gerektiğinde yedek canlı kaynak devreye girebilir.</p></details>
+<details><summary>Kurlar ne sıklıkla güncelleniyor?</summary><p>Kur verileri günlük güncellenen kaynaklardan alınır. Gün içinde kaynak erişimine göre yedek canlı servis devreye girebilir.</p></details>
 <details><summary>Komisyon dahil mi?</summary><p>Hayır. Banka/makas/komisyon farkı bu araca dahil değildir.</p></details>
 <details><summary>Mobilde hızlı kullanım var mı?</summary><p>Evet. Tutar değiştikçe sonuç otomatik güncellenir.</p></details>
 </section>
@@ -167,7 +167,28 @@ $('#waBtn').addEventListener('click', ()=>window.open('https://wa.me/?text='+enc
 $('#twBtn').addEventListener('click', ()=>window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(shareText()), '_blank'));
 
 let rates={TRY:1};
-let currencyMeta={};
+let currencyMeta={
+  TRY:{name_tr:'Türk Lirası',name_en:'Turkish Lira'},
+  USD:{name_tr:'ABD Doları',name_en:'US Dollar'},
+  EUR:{name_tr:'Euro',name_en:'Euro'},
+  GBP:{name_tr:'İngiliz Sterlini',name_en:'British Pound'},
+  CHF:{name_tr:'İsviçre Frangı',name_en:'Swiss Franc'},
+  JPY:{name_tr:'Japon Yeni',name_en:'Japanese Yen'},
+  SAR:{name_tr:'Suudi Riyali',name_en:'Saudi Riyal'},
+  AED:{name_tr:'BAE Dirhemi',name_en:'UAE Dirham'},
+  CAD:{name_tr:'Kanada Doları',name_en:'Canadian Dollar'},
+  AUD:{name_tr:'Avustralya Doları',name_en:'Australian Dollar'},
+  CNY:{name_tr:'Çin Yuanı',name_en:'Chinese Yuan'},
+  RUB:{name_tr:'Rus Rublesi',name_en:'Russian Ruble'},
+  KWD:{name_tr:'Kuveyt Dinarı',name_en:'Kuwaiti Dinar'},
+  NOK:{name_tr:'Norveç Kronu',name_en:'Norwegian Krone'},
+  SEK:{name_tr:'İsveç Kronu',name_en:'Swedish Krona'},
+  DKK:{name_tr:'Danimarka Kronu',name_en:'Danish Krone'},
+  QAR:{name_tr:'Katar Riyali',name_en:'Qatari Riyal'},
+  AZN:{name_tr:'Azerbaycan Manatı',name_en:'Azerbaijani Manat'},
+  XAU:{name_tr:'Gram Altın',name_en:'Gold (Gram)'},
+  XAG:{name_tr:'Gümüş',name_en:'Silver'}
+};
 const preferredCurrencies=['TRY','USD','EUR','GBP','CHF','JPY','SAR','AED','CAD','AUD','CNY','RUB','KWD','NOK','SEK','DKK','QAR','AZN','XAU','XAG'];
 
 function displayName(code){
@@ -196,44 +217,74 @@ function setUpdateInfo(text){
 async function loadRates(){
   let loaded=false;
 
-  // 1) Daily generated local dataset (recommended)
+  // 1) Canlı kaynaklar: TCMB + Truncgil (günlük güncellenen veri)
   try{
-    const r = await fetch('/rates.json?ts=' + Date.now(), { cache: 'no-store' });
-    if(r.ok){
-      const d = await r.json();
-      if(d?.rates_try && Object.keys(d.rates_try).length > 5){
-        rates = d.rates_try;
-        currencyMeta = d.currency_meta || {};
-        const src = (d.source_priority || []).join(' + ') || 'TCMB';
-        $('#rateInfo').value = `Günlük veri (${src})`;
-        setUpdateInfo(d?.notes?.tr || 'Veriler günlük olarak otomatik güncellenir.');
-        loaded = true;
-      }
-    }
-  }catch(e){}
+    const merged={TRY:1};
+    const sources=[];
 
-  // 2) Runtime fallback
-  if(!loaded){
     try{
       const r = await fetch('https://www.tcmb.gov.tr/kurlar/today.xml');
       const t = await r.text();
       const doc = new DOMParser().parseFromString(t,'text/xml');
-      const out={TRY:1};
       doc.querySelectorAll('Currency').forEach(c=>{
         const code = c.getAttribute('CurrencyCode');
         const forex = parseFloat((c.querySelector('ForexSelling')?.textContent||'').replace(',','.'));
-        if(code && forex && Number.isFinite(forex)) out[code]=forex;
+        if(code && forex && Number.isFinite(forex)) merged[code]=forex;
       });
-      if(Object.keys(out).length>3){
-        rates = out;
-        $('#rateInfo').value='TCMB (anlık yedek)';
-        setUpdateInfo('Veriler günlük dosya yüklenemezse anlık yedek kaynaktan çekilir.');
-        loaded = true;
+      if(Object.keys(merged).length>3) sources.push('TCMB');
+    }catch(e){}
+
+    try{
+      const r2 = await fetch('https://finans.truncgil.com/v4/today.json');
+      const d2 = await r2.json();
+
+      const pull = (k) => {
+        const val = d2?.[k]?.Selling;
+        const n = Number(val);
+        return Number.isFinite(n) && n > 0 ? n : null;
+      };
+
+      const extra=['USD','EUR','GBP','CHF','JPY','SAR','AED','CAD','AUD','CNY','RUB','KWD','NOK','SEK','DKK','QAR','AZN'];
+      extra.forEach(code=>{
+        const n = pull(code);
+        if(n) merged[code]=n;
+      });
+
+      const gold = pull('GRA');
+      const silver = pull('GUMUS');
+      if(gold) merged.XAU = gold;
+      if(silver) merged.XAG = silver;
+
+      if(gold || silver) sources.push('Truncgil');
+    }catch(e){}
+
+    if(Object.keys(merged).length > 8){
+      rates = merged;
+      $('#rateInfo').value = `Canlı veri (${sources.join(' + ') || 'çoklu kaynak'})`;
+      setUpdateInfo('Veriler günlük olarak güncellenir; kaynaklara erişim anında kontrol edilir.');
+      loaded = true;
+    }
+  }catch(e){}
+
+  // 2) Yerel yedek dosya
+  if(!loaded){
+    try{
+      const r = await fetch('/rates.json?ts=' + Date.now(), { cache: 'no-store' });
+      if(r.ok){
+        const d = await r.json();
+        if(d?.rates_try && Object.keys(d.rates_try).length > 5){
+          rates = d.rates_try;
+          currencyMeta = d.currency_meta || {};
+          const src = (d.source_priority || []).join(' + ') || 'TCMB';
+          $('#rateInfo').value = `Yedek veri (${src})`;
+          setUpdateInfo(d?.notes?.tr || 'Veriler günlük olarak otomatik güncellenir.');
+          loaded = true;
+        }
       }
     }catch(e){}
   }
 
-  // 3) Last fallback
+  // 3) Son yedek
   if(!loaded){
     try{
       const r=await fetch('https://open.er-api.com/v6/latest/TRY');

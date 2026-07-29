@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-07-29T12:50:39Z",
+  "updated_at_utc": "2026-07-29T12:52:27Z",
   "source_priority": [
     "TCMB",
     "Truncgil"
   ],
   "source_updates": {
     "tcmb": "29.07.2026",
-    "truncgil": "2026-07-29 15:50:01"
+    "truncgil": "2026-07-29 15:52:01"
   },
   "notes": {
     "tr": "Veriler günlük olarak otomatik güncellenir. Kurlar bilgilendirme amaçlıdır; alım-satımda kurum makasları farklı olabilir.",
@@ -32,8 +32,8 @@
     "DKK": 7.2334,
     "QAR": 13.0722,
     "AZN": 28.034,
-    "XAU": 6129.84,
-    "XAG": 87.32
+    "XAU": 6127.7,
+    "XAG": 87.3
   },
   "currency_meta": {
     "TRY": {
