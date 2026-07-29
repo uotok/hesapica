@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-07-29T12:50:39Z",
+  "source_priority": [
+    "TCMB",
+    "Truncgil"
+  ],
+  "source_updates": {
+    "tcmb": "29.07.2026",
+    "truncgil": "2026-07-29 15:50:01"
+  },
+  "notes": {
+    "tr": "Veriler günlük olarak otomatik güncellenir. Kurlar bilgilendirme amaçlıdır; alım-satımda kurum makasları farklı olabilir.",
+    "en": "Rates are updated automatically on a daily basis. Values are for informational use; institution spreads may differ."
+  },
+  "rates_try": {
+    "TRY": 1.0,
+    "USD": 47.3927,
+    "EUR": 53.9842,
+    "GBP": 63.1279,
+    "CHF": 57.98,
+    "JPY": 29.0343,
+    "SAR": 12.6244,
+    "AED": 12.9763,
+    "CAD": 33.6596,
+    "AUD": 32.9919,
+    "CNY": 7.043,
+    "RUB": 0.60009,
+    "KWD": 154.8087,
+    "NOK": 4.9113,
+    "SEK": 4.9064,
+    "DKK": 7.2334,
+    "QAR": 13.0722,
+    "AZN": 28.034,
+    "XAU": 6129.84,
+    "XAG": 87.32
+  },
+  "currency_meta": {
+    "TRY": {
+      "name_tr": "Türk Lirası",
+      "name_en": "Turkish Lira",
+      "type": "currency"
+    },
+    "USD": {
+      "name_tr": "ABD Doları",
+      "name_en": "US Dollar",
+      "type": "currency"
+    },
+    "EUR": {
+      "name_tr": "Euro",
+      "name_en": "Euro",
+      "type": "currency"
+    },
+    "GBP": {
+      "name_tr": "İngiliz Sterlini",
+      "name_en": "British Pound",
+      "type": "currency"
+    },
+    "CHF": {
+      "name_tr": "İsviçre Frangı",
+      "name_en": "Swiss Franc",
+      "type": "currency"
+    },
+    "JPY": {
+      "name_tr": "Japon Yeni",
+      "name_en": "Japanese Yen",
+      "type": "currency"
+    },
+    "SAR": {
+      "name_tr": "Suudi Riyali",
+      "name_en": "Saudi Riyal",
+      "type": "currency"
+    },
+    "AED": {
+      "name_tr": "BAE Dirhemi",
+      "name_en": "UAE Dirham",
+      "type": "currency"
+    },
+    "CAD": {
+      "name_tr": "Kanada Doları",
+      "name_en": "Canadian Dollar",
+      "type": "currency"
+    },
+    "AUD": {
+      "name_tr": "Avustralya Doları",
+      "name_en": "Australian Dollar",
+      "type": "currency"
+    },
+    "CNY": {
+      "name_tr": "Çin Yuanı",
+      "name_en": "Chinese Yuan",
+      "type": "currency"
+    },
+    "RUB": {
+      "name_tr": "Rus Rublesi",
+      "name_en": "Russian Ruble",
+      "type": "currency"
+    },
+    "KWD": {
+      "name_tr": "Kuveyt Dinarı",
+      "name_en": "Kuwaiti Dinar",
+      "type": "currency"
+    },
+    "NOK": {
+      "name_tr": "Norveç Kronu",
+      "name_en": "Norwegian Krone",
+      "type": "currency"
+    },
+    "SEK": {
+      "name_tr": "İsveç Kronu",
+      "name_en": "Swedish Krona",
+      "type": "currency"
+    },
+    "DKK": {
+      "name_tr": "Danimarka Kronu",
+      "name_en": "Danish Krone",
+      "type": "currency"
+    },
+    "QAR": {
+      "name_tr": "Katar Riyali",
+      "name_en": "Qatari Riyal",
+      "type": "currency"
+    },
+    "AZN": {
+      "name_tr": "Azerbaycan Manatı",
+      "name_en": "Azerbaijani Manat",
+      "type": "currency"
+    },
+    "XAU": {
+      "name_tr": "Gram Altın",
+      "name_en": "Gold (Gram)",
+      "type": "metal"
+    },
+    "XAG": {
+      "name_tr": "Gümüş",
+      "name_en": "Silver",
+      "type": "metal"
+    }
+  }
+}
