@@ -96,6 +96,18 @@ input::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
+<style id="hc-adsense-slot-style">
+/* Empty ad slots take no space; expand only when AdSense fills them */
+.hc-ad-slot{width:100%;min-height:0;height:auto;margin:0;padding:0;border:0;background:transparent;display:block;overflow:hidden}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
+ins.adsbygoogle{margin:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none!important;margin:0!important;padding:0!important;height:0!important;border:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:16px 0;padding:8px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;overflow:visible}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .adsbygoogle{min-height:90px}
+@media (max-width:720px){
+  .hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:12px 0;padding:6px}
+}
+</style>
 </head>
 <body>
 <div class="container">

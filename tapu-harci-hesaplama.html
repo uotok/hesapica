@@ -257,7 +257,7 @@
 {"@context":"https://schema.org","@type":"WebPage","name":"Tapu Harcı Hesaplama 2026 | Alıcı, Satıcı, Toplam Maliyet ve Opsiyonel Kredi Analizi","url":"https://hesapica.com/tapu-harci-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
 </script>
 <script type="application/ld+json">
-  {
+{
     "@context":"https://schema.org",
     "@type":"WebApplication",
     "name":"Tapu Harcı Hesaplama",
@@ -266,7 +266,9 @@
     "operatingSystem":"Web",
     "description":"Tapu harcı, ek giderler ve opsiyonel kredi kullanımında peşin çıkışı analiz eden ücretsiz araç."
   }
-  const parseTR = (val) => {
+</script>
+<script>
+const parseTR = (val) => {
   if(val == null) return null;
   let s = String(val).trim();
   if(!s) return null;
@@ -296,19 +298,7 @@
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"
-<!-- HC_AD_SLOT:faq -->
-<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="4903929326"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-FAQPage",
+    "@type":"FAQPage",
     "mainEntity":[
       {"@type":"Question","name":"Tapu harcı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Tapu harcı temel olarak beyan edilen satış bedeline oran uygulanarak hesaplanır. Bu araçta alıcı ve satıcı tarafı ayrı ayrı ya da toplam olarak görebilirsiniz."}},
       {"@type":"Question","name":"Tapu harcını kim öder?","acceptedAnswer":{"@type":"Answer","text":"Uygulamada alıcı ve satıcı ayrı ayrı pay ödeyebilir. Ancak taraflar kendi aralarında farklı paylaşım yapabilir. Bu yüzden araçta farklı ödeme senaryoları bulunur."}},
@@ -485,9 +475,16 @@ FAQPage",
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;min-height:280px;margin:20px 0;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{min-height:260px}.hc-ad-slot .adsbygoogle{min-height:240px}}
+/* Empty ad slots take no space; expand only when AdSense fills them */
+.hc-ad-slot{width:100%;min-height:0;height:auto;margin:0;padding:0;border:0;background:transparent;display:block;overflow:hidden}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
+ins.adsbygoogle{margin:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none!important;margin:0!important;padding:0!important;height:0!important;border:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:16px 0;padding:8px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;overflow:visible}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .adsbygoogle{min-height:90px}
+@media (max-width:720px){
+  .hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:12px 0;padding:6px}
+}
 </style>
 </head>
 <body>
