@@ -14,13 +14,13 @@
 <meta content="Kira Gelir Vergisi Hesaplama 2025-2026 | Konut, İşyeri, Hisse, Emsal | Hesapica" property="og:title"/>
 <meta content="Kira gelir vergisi hesaplama aracı ile 2025 ve 2026 gelir yıllarında konut ve işyeri kira gelirini, hisseli mülkiyet oranını, emsal kira riskini, %5 iktisap bedeli yardımını, istisna ve mahsup etkisini birlikte analiz edin." property="og:description"/>
 <meta content="https://hesapica.com/kira-gelir-vergisi-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
-<meta content="https://hesapica.com/og-image.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Kira Gelir Vergisi Hesaplama 2025-2026 | Konut, İşyeri, Hisse, Emsal | Hesapica" name="twitter:title"/>
 <meta content="Kira gelir vergisi hesaplama aracı ile 2025 ve 2026 gelir yıllarında konut ve işyeri kira gelirini, hisseli mülkiyet oranını, emsal kira riskini, %5 iktisap bedeli yardımını, istisna ve mahsup etkisini birlikte analiz edin." name="twitter:description"/>
-<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
 <link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
@@ -389,6 +389,9 @@ const parseTR = (val) => {
     }
   </style>
 <meta content="https://hesapica.com/kira-gelir-vergisi-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu hesaplama aracının doğru çalışması için tarayıcınızda JavaScript etkin olmalıdır.</div></noscript>
@@ -861,7 +864,6 @@ const parseTR = (val) => {
       el('specialResidenceWarningText').textContent = `Konut istisnası sadece mesken kira gelirinde uygulanır. ${rules.label} için beyan edilmesi gereken konut kira gelirinin eksik veya hiç beyan edilmesi halinde istisna kaybedilebilir; idare tespiti olmadan sonradan verilen beyanname gibi ayrık haller ayrıca değerlendirilmelidir.`;
     }
 
-
     function copyTextWithFallback(text, onSuccess, onError){
       if(navigator.clipboard && window.isSecureContext){
         navigator.clipboard.writeText(text).then(onSuccess).catch(()=> fallbackCopyText(text, onSuccess, onError));
@@ -898,7 +900,6 @@ const parseTR = (val) => {
       });
       inp.addEventListener('blur',()=> inp.value = formatInputNumber(inp.value));
     });
-
 
     
     function getCurrentInputs(){
@@ -1265,7 +1266,6 @@ const parseTR = (val) => {
       return { baseGross, declareRequired, deductibleExpense, taxBase, prepaidTax, withholdingApplied, incomeTaxForSingle };
     }
 
-
     
     function calculateRentalTax({ softValidation=false, forceValidation=false, focusInvalid=false } = {}){
       state.inputs = getCurrentInputs();
@@ -1535,7 +1535,6 @@ const parseTR = (val) => {
     el('copyBtn').addEventListener('click', copyResult);
     el('shareBtn').addEventListener('click', shareResult);
     el('printBtn').addEventListener('click', guardedPrint);
-
 
     document.querySelectorAll('input, select').forEach(node=>{
       node.addEventListener('keydown', (event)=>{

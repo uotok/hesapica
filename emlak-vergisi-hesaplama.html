@@ -14,6 +14,8 @@
 <meta content="Emlak Vergisi Hesaplama 2026 | Yıllık Vergi, Taksit ve Vergi Yükü Analizi" property="og:title"/>
 <meta content="Emlak vergisi hesaplama aracı ile konut, işyeri, arsa ve arazi için yıllık emlak vergisini, taksit tutarlarını ve vergi yük seviyesini tek ekranda analiz edin." property="og:description"/>
 <meta content="https://hesapica.com/emlak-vergisi-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Emlak Vergisi Hesaplama 2026 | Yıllık Vergi, Taksit ve Vergi Yükü Analizi" name="twitter:title"/>
@@ -290,7 +292,6 @@ const parseTR = (val) => {
     .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
     .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
 
-
     .field.invalid label{color:#991b1b}
     .field.invalid input,
     .field.invalid select{
@@ -472,6 +473,10 @@ const parseTR = (val) => {
     }
   </style>
 <meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript><div style="margin:16px auto 0;max-width:1180px;padding:14px 16px;border:1px solid #e5e7eb;border-radius:16px;background:#fff7ed;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu hesaplama aracını sorunsuz kullanmak için tarayıcınızda JavaScript açık olmalıdır.</div></noscript>
@@ -803,7 +808,6 @@ const parseTR = (val) => {
       target.classList.add('result-flash');
     }
 
-
     function getFormValues(){
       return {
         propertyType: el('propertyType').value,
@@ -861,7 +865,6 @@ const parseTR = (val) => {
       if(field) field.classList.toggle('invalid', shouldShow);
       el('rayicError').classList.toggle('show', shouldShow);
     }
-
 
     function safeCopyText(text, successMessage){
       if(navigator.clipboard && window.isSecureContext){

@@ -47,12 +47,12 @@ const parseTR = (val) => {
 <meta content="MTV Hesaplama 2026 | Motorlu Taşıtlar Vergisi Calculator - Hesapica" property="og:title"/>
 <meta content="2026 MTV hesaplama aracı ile otomobil ve motosikletler için yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizini hesaplayın. English support included." property="og:description"/>
 <meta content="https://hesapica.com/mtv-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="MTV Hesaplama 2026 | Motorlu Taşıtlar Vergisi Calculator - Hesapica" name="twitter:title"/>
 <meta content="2026 MTV hesaplama aracı ile otomobil ve motosikletler için yıllık MTV, taksit tutarı, aylık karşılığı ve vergi yükü analizini hesaplayın. English support included." name="twitter:description"/>
-<meta content="https://hesapica.com/og-image.png" property="og:image"/>
-<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
 <style>
     :root{
       --primary:#4f46e5; --secondary:#7c3aed; --bg:#f6f8fc; --surface:#ffffff; --surface-soft:#eef2ff;
@@ -372,6 +372,10 @@ const parseTR = (val) => {
     }
   </style>
 <meta content="https://hesapica.com/mtv-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript>
@@ -942,7 +946,6 @@ const mtvData = {
       const values = getFormValues();
       return !!(values.vehicleType || values.registrationType || values.vehicleAge || values.engineSize || parseMoneyString(values.vehicleValue));
     }
-
 
     function validate(opts = { showUI:true, markErrors:true }){
       clearErrors();

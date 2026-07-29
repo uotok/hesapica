@@ -14,12 +14,12 @@
 <meta content="Araç Yakıt Hesaplama 2026 | Yakıt Maliyeti, Kişi Başı Yol Masrafı Analizi | Hesapica" property="og:title"/>
 <meta content="Araç yakıt hesaplama aracı ile tek yön veya gidiş dönüş yolculuk için toplam yakıt tüketimini, yakıt giderini, ek yol masraflarını, kişi başı maliyeti, verim skorunu ve senaryo analizini tek ekranda hesaplayın. 6,5 veya 6.5 gibi ondalık girişler desteklenir." property="og:description"/>
 <meta content="https://hesapica.com/yakit-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
-<meta content="https://hesapica.com/og-image.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Araç Yakıt Hesaplama 2026 | Yakıt Maliyeti, Kişi Başı Yol Masrafı Analizi | Hesapica" name="twitter:title"/>
 <meta content="Araç yakıt hesaplama aracı ile tek yön veya gidiş dönüş yolculuk için toplam yakıt tüketimini, yakıt giderini, ek yol masraflarını, kişi başı maliyeti, verim skorunu ve senaryo analizini tek ekranda hesaplayın. 6,5 veya 6.5 gibi ondalık girişler desteklenir." name="twitter:description"/>
-<meta content="https://hesapica.com/og-image.jpg" name="twitter:image"/>
 <style>
     :root{
       --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#ffffff;--surface-soft:#eef2ff;--surface-soft-2:#f8faff;
@@ -220,6 +220,16 @@
     }
   </style>
 <meta content="https://hesapica.com/yakit-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
+
+<style id="hc-adsense-slot-style">
+.hc-ad-slot{width:100%;min-height:280px;margin:20px 0;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+@media (max-width:720px){.hc-ad-slot{min-height:260px}.hc-ad-slot .adsbygoogle{min-height:240px}}
+</style>
 </head>
 <body>
 <noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu araç doğru çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript'i etkinleştirip sayfayı yeniden yükleyin.</div></noscript>
@@ -246,6 +256,16 @@
 </div>
 </section>
 </header>
+<!-- HC_AD_SLOT:top -->
+<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="8110037872"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <main class="container" style="padding:24px 0 56px">
 <section class="tool-layout">
 <div class="card">
@@ -293,6 +313,16 @@
 <div class="micro-status" id="microStatus"><span class="loading-dot"></span>Hesaplanıyor…</div>
 <div class="flow-hint"><div class="flow-hint-text"><strong>Akış sırası sabit</strong><span>Ana sonuç → skor → karar → detay → analiz</span></div><div class="flow-cue">↓</div></div>
 </div>
+<!-- HC_AD_SLOT:result -->
+<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="8556241533"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <aside class="results">
 <div class="status-card"><div class="status-row"><div><div class="status-title">Hızlı durum özeti</div><div class="status-text" id="statusText">Veri bekleniyor. Mesafe, tüketim ve fiyat bilgisi girildiğinde sonuç paneli aktifleşir.</div></div><div class="badge" id="statusBadge">Hazır değil</div></div></div>
 <div class="highlight-card is-empty" id="mainHighlight"><div class="highlight-label">Ana Sonuç</div><div class="highlight-value" id="totalCostValue">—</div><div class="highlight-sub" id="totalCostSub">Toplam yolculuk maliyeti burada görünecek.</div></div>
@@ -315,7 +345,17 @@
 </div></section>
 <section class="content-grid">
 <article class="card content-block"><h2>Araç yakıt hesaplama nasıl yapılır?</h2><p>Önce toplam yol mesafesi bulunur. Tek yön veya gidiş dönüş seçimi, ekstra yol payı ve sürüş koşullarına bağlı çarpanlarla gerçekçi toplam mesafe ve düzeltilmiş tüketim hesaplanır. Sonra bu tüketim, güncel yakıt fiyatıyla çarpılarak yakıt gideri bulunur.</p><p>Ek giderler eklendiğinde toplam yolculuk maliyeti ortaya çıkar. Eğer masraf paylaşımı varsa, toplam tutar kişi sayısına bölünerek kişi başı maliyet hesaplanır. Bu araç aynı zamanda çıkan sonucun ne kadar verimli göründüğünü skor ve karar özetiyle yorumlar.</p></article>
-<article class="card accordion-card"><h2>Sık Sorulan Sorular</h2><details open=""><summary>Bu araç sadece yakıt giderini mi hesaplar?</summary><p>Hayır. Yakıt giderinin yanında otoyol, köprü, park gibi ek yol masraflarını da toplam yolculuk maliyetine dahil edebilirsin.</p></details><details><summary>Yol tipi ve klima neden sonucu etkiler?</summary><p>Şehir içi sürüş, sık fren-kalk, klima kullanımı ve ağır bagaj gibi unsurlar gerçek tüketimi katalog verisinin üstüne çıkarabilir. Bu yüzden düzeltme katsayıları kullanılır.</p></details><details><summary>Kişi başı maliyet ne zaman anlamlı olur?</summary><p>Özellikle kalabalık yolculuklarda toplam maliyetin kişi başına etkisini görmek karar vermeyi kolaylaştırır. Tek başına yolculukta bu alan toplam maliyetle aynı seviyeye yaklaşır.</p></details></article>
+<article class="card accordion-card"><!-- HC_AD_SLOT:faq -->
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="9570852631"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<h2>Sık Sorulan Sorular</h2><details open=""><summary>Bu araç sadece yakıt giderini mi hesaplar?</summary><p>Hayır. Yakıt giderinin yanında otoyol, köprü, park gibi ek yol masraflarını da toplam yolculuk maliyetine dahil edebilirsin.</p></details><details><summary>Yol tipi ve klima neden sonucu etkiler?</summary><p>Şehir içi sürüş, sık fren-kalk, klima kullanımı ve ağır bagaj gibi unsurlar gerçek tüketimi katalog verisinin üstüne çıkarabilir. Bu yüzden düzeltme katsayıları kullanılır.</p></details><details><summary>Kişi başı maliyet ne zaman anlamlı olur?</summary><p>Özellikle kalabalık yolculuklarda toplam maliyetin kişi başına etkisini görmek karar vermeyi kolaylaştırır. Tek başına yolculukta bu alan toplam maliyetle aynı seviyeye yaklaşır.</p></details></article>
 </section>
 <section class="card" style="margin-top:24px"><h2>İlgili hesaplama araçları</h2><div class="related-grid"><a class="related-card" href="/km-maliyet-hesaplama"><span class="small">Araç</span><strong>KM Maliyet Hesaplama</strong><p>Aracın kilometre başına toplam sahiplik maliyetini ölç.</p></a><a class="related-card" href="/arac-aylik-maliyet-hesaplama"><span class="small">Araç</span><strong>Araç Aylık Maliyet Hesaplama</strong><p>Yakıt, vergi ve bakım dahil aylık yükü analiz et.</p></a><a class="related-card" href="/mtv-hesaplama"><span class="small">Araç</span><strong>MTV Hesaplama</strong><p>Yıllık vergi yükünü yolculuk ve kullanım bütçene ekle.</p></a></div></section>
 </main>
@@ -599,7 +639,6 @@
       els.distance.value=''; els.tripType.value='1'; els.consumption.value=''; els.fuelPrice.value=''; els.extraKmPercent.value=''; els.extraCosts.value=''; els.passengers.value='';
       activateChip('roadType', 1); activateChip('acType', 1); activateChip('loadType', 1); setEmptyState();
     }
-
 
     function fallbackCopyText(text){
       const textarea=document.createElement('textarea');

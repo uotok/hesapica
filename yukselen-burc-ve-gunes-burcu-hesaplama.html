@@ -19,6 +19,8 @@
 <meta content="Yükselen Burç ve Güneş Burcu Hesaplama 2026 | Doğum Saatine Göre Sonuç | Hesapica" property="og:title"/>
 <meta content="Yükselen burç ve güneş burcu hesaplama aracı ile doğum tarihin, saatin ve doğum yerine göre burç kombinasyonunu öğren. İç karakter, dış izlenim, uyumlu burçlar ve yorum bloklarını tek ekranda gör." property="og:description"/>
 <meta content="https://hesapica.com/yukselen-burc-ve-gunes-burcu-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -380,6 +382,9 @@
     }
   </style>
 <meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript>
@@ -1058,7 +1063,6 @@
     function renderChipGroup(items){
       return items.map(item => `<span class="result-chip">${item}</span>`).join("");
     }
-
 
     function getSunSignsForWholeDay(dateParts){
       const first = zonedDateToUtc(dateParts.year, dateParts.month, dateParts.day, 0, 1);

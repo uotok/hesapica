@@ -14,6 +14,8 @@
 <meta content="Yatırım Getirisi ve ROI Hesaplama 2026 | Net Getiri, ROI ve Senaryo Analizi | Hesapica" property="og:title"/>
 <meta content="Yatırım getirisi ve ROI hesaplamasını tek sayfada yapın. Toplam getiri, reel getiri, net kâr, yıllıklandırılmış getiri, hedef farkı ve senaryo analizini birlikte görün." property="og:description"/>
 <meta content="https://hesapica.com/yatirim-getirisi-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -785,6 +787,10 @@
   .mode-switch-btn{width:100%}
 }
 </style><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç doğru çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
@@ -1658,7 +1664,6 @@
       ];
     }
 
-
     function clearValidationVisuals(){
       applyValidation({});
     }
@@ -1860,7 +1865,6 @@
       });
       return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
     }
-
 
     function hasAnyMeaningfulInput(){
       return ['initialAmount','monthlyContribution','investmentMonths','annualReturnRate','taxCostRate','inflationRate'].some(id => $(id).value.trim() !== '');
@@ -2192,7 +2196,6 @@
       requestAnimationFrame(() => target.classList.add('flash-highlight'));
       setTimeout(() => target.classList.remove('flash-highlight'), 1300);
     }
-
 
     function syncShortcutChips() {
       const monthValue = parseTRNumber(document.getElementById('roi-months').value);

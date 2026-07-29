@@ -12,6 +12,8 @@
 <meta content="Yaş ve Geçen Süre Hesaplama 2026 | Hesapica" property="og:title"/>
 <meta content="Yaşınızı hesaplayın veya evlilik, işe başlama, mezuniyet gibi bir olayın üzerinden geçen süreyi yıl, ay, gün, saat, dakika ve saniye bazında anında görün." property="og:description"/>
 <meta content="https://hesapica.com/yas-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="website" property="og:type"/>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
@@ -441,6 +443,10 @@
     }
   </style>
 <meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript>
@@ -1640,7 +1646,6 @@
     els.timeCancelBtn.addEventListener('click', closeTimeModal);
     els.timeClearBtn.addEventListener('click', clearTimeFromModal);
     els.timeSaveBtn.addEventListener('click', saveTimeFromModal);
-
 
     document.addEventListener('click', event => {
       if (!els.timePickerInline.classList.contains('show')) return;

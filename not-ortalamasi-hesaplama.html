@@ -18,6 +18,8 @@
 <meta content="Not Ortalaması Hesaplama | e-Okul Uyumlu 5-12. Sınıf Aracı | Hesapica" property="og:title"/>
 <meta content="5-12. sınıf için e-Okul uyumlu not ortalaması hesaplama aracı. 1. dönem veya 2. dönem ortalamasını, yıl sonu başarı puanını, sınıf geçme yorumunu ve takdir/teşekkür durumunu tek ekranda hesaplayın." property="og:description"/>
 <meta content="https://hesapica.com/not-ortalamasi-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch">
@@ -564,7 +566,10 @@ const parseTR = (val) => {
       }
     }
   </style>
-</link><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript><div style="max-width:1240px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;border-radius:16px;background:#fff1f2;color:#991b1b;font:600 15px/1.6 Inter,system-ui,sans-serif">Bu aracın çalışması için JavaScript açık olmalıdır.</div></noscript>
@@ -1110,7 +1115,6 @@ const parseTR = (val) => {
         </td>
       `;
 
-
       body.appendChild(summaryRow);
       body.appendChild(detailRow);
 
@@ -1533,7 +1537,6 @@ const parseTR = (val) => {
       const rowsRaw = rowIds().map(collectRowData);
       rowsRaw.forEach(row => sanitizeScoreInputs(row.id));
 
-
       const computedRows = rowsRaw.map(row => computeRowResult(row, stage));
       computedRows.forEach(updateSummaryRow);
 
@@ -1735,7 +1738,6 @@ const parseTR = (val) => {
       status.textContent = row.statusText;
       status.className = `status-pill ${row.statusClass}`;
     }
-
 
     function renderResults(){
       const results = state.results;
@@ -1987,7 +1989,6 @@ const parseTR = (val) => {
         return false;
       }
     }
-
 
     function buildSummaryText(){
       const results = state.results;

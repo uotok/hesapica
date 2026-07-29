@@ -14,6 +14,8 @@
 <meta content="Tapu Harcı Hesaplama 2026 | Alıcı, Satıcı, Toplam Maliyet ve Opsiyonel Kredi Analizi" property="og:title"/>
 <meta content="Tapu harcı hesaplama aracı ile alıcı ve satıcı tapu harcını, toplam işlem maliyetini, ek giderleri ve opsiyonel kredi kullanımında peşin çıkışı tek ekranda analiz edin." property="og:description"/>
 <meta content="https://hesapica.com/tapu-harci-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary" property="twitter:card"/>
 <meta content="Tapu Harcı Hesaplama" property="twitter:title"/>
@@ -466,6 +468,10 @@
     }
   </style>
 <meta content="summary_large_image" name="twitter:card"/><meta content="Tapu Harcı Hesaplama 2026 | Alıcı, Satıcı, Toplam Maliyet ve Opsiyonel Kredi Analizi" name="twitter:title"/><meta content="Tapu harcı hesaplama aracı ile alıcı ve satıcı tapu harcını, toplam işlem maliyetini, ek giderleri ve opsiyonel kredi kullanımında peşin çıkışı tek ekranda analiz edin." name="twitter:description"/><meta content="https://hesapica.com/tapu-harci-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç, hesaplamaları ve etkileşimli sonuçları gösterebilmek için JavaScript gerektirir.</div></noscript>
@@ -1356,7 +1362,6 @@
         return `<tr><td>${r.name}</td><td>${formatTRY(totalTax)}</td><td>${formatTRY(total)}</td></tr>`;
       }).join('');
     }
-
 
     function copyTextWithFallback(text, successMessage, failMessage){
       if(navigator.clipboard && window.isSecureContext){

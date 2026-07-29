@@ -14,6 +14,8 @@
 <meta content="Stopaj Hesaplama | Withholding Tax Calculator - Hesapica" property="og:title"/>
 <meta content="Stopaj hesaplama aracı ile brütten net, netten brüt, stopaj kesintisi, KDV etkisi, efektif kesinti oranı ve senaryo analizlerini tek ekranda hesaplayın. English support included." property="og:description"/>
 <meta content="https://hesapica.com/stopaj-hesaplama" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="tr_TR" property="og:locale"/>
@@ -423,6 +425,10 @@ const parseTR = (val) => {
     }
   </style>
 <meta content="https://hesapica.com/stopaj-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu hesaplama aracını tam kullanabilmek için tarayıcınızda JavaScript etkin olmalıdır.</div></noscript>
@@ -1074,7 +1080,6 @@ function focusResultArea() {
   target.scrollIntoView({ behavior:'smooth', block:'start' });
   flashResultArea();
 }
-
 
     function resetResultsOnly() {
       document.getElementById('highlightCard').classList.add('is-empty');
