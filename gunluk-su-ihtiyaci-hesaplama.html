@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 <head>
 <meta charset="utf-8"/>
@@ -28,7 +27,6 @@
 <link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
 <link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
-<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -42,7 +40,7 @@
       --primary:#4f46e5;
       --secondary:#7c3aed;
       --bg:#f6f8fc;
-      --surface:#ffffff;
+      --surface:#ffff;
       --surface-soft:#eef2ff;
       --surface-soft-2:#f8faff;
       --text:#1f2937;
@@ -72,6 +70,13 @@
     .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
     .topbar{padding:18px 0 8px}
     .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .toprow{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .lang-switch{display:flex;gap:8px}
+    .lang-btn{
+      border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:800;
+      transition:.18s ease;
+    }
+    .lang-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
     .hero{
       margin-top:8px;
       padding:34px;
@@ -212,6 +217,8 @@
       .mini-result .value{text-align:left}
       .hero h1{font-size:32px}
       .highlight-value{font-size:31px}
+      .toprow{flex-direction:column;align-items:flex-start}
+      .lang-switch{width:100%}
     }
     @media print{
       body{background:#fff}
@@ -440,36 +447,41 @@
 <noscript><div style="max-width:1180px;margin:12px auto 0;padding:12px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.5 Inter,system-ui,sans-serif;">Bu araç düzgün çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
 <div class="container">
 <div class="topbar">
+<div class="toprow">
 <nav aria-label="breadcrumb" class="breadcrumb">
-<a href="/">Ana Sayfa</a>
+<a data-i18n="breadcrumbHome" href="/">Ana Sayfa</a>
 <span>/</span>
-<a href="/#saglik">Sağlık</a>
+<a data-i18n="breadcrumbHealth" href="/#saglik">Sağlık</a>
 <span>/</span>
-<strong>Günlük Su İhtiyacı Hesaplama</strong>
+<strong data-i18n="breadcrumbCurrent">Günlük Su İhtiyacı Hesaplama</strong>
 </nav>
+<div class="lang-switch">
+<button class="lang-btn active" id="langTr" onclick="setLanguage('tr')" type="button">TR</button>
+<button class="lang-btn" id="langEn" onclick="setLanguage('en')" type="button">EN</button>
+</div>
+</div>
 </div>
 <header class="hero">
 <div class="hero-grid">
 <div>
-<span class="eyebrow-pill">Hesapica • Sağlık Aracı</span>
-<h1>Günlük Su İhtiyacı Hesaplama</h1>
-<p>Bu araç yalnızca kaç litre su içmen gerektiğini değil; <strong>su ihtiyacı yoğunluğunu</strong>, <strong>pratik uygulama planını</strong>, <strong>bardak ve şişe karşılığını</strong> ve <strong>serin / baz / yoğun gün senaryolarını</strong> aynı ekranda göstermek için tasarlandı.</p>
+<span class="eyebrow-pill" data-i18n="eyebrow">Hesapica • Sağlık Aracı</span>
+<h1 data-i18n="heroTitle">Günlük Su İhtiyacı Hesaplama</h1>
+<p data-i18n="heroDesc">Bu araç yalnızca kaç litre su içmen gerektiğini değil; <strong>su ihtiyacı yoğunluğunu</strong>, <strong>pratik uygulama planını</strong>, <strong>bardak ve şişe karşılığını</strong> ve <strong>serin / baz / yoğun gün senaryolarını</strong> aynı ekranda göstermek için tasarlandı.</p>
 <div class="hero-chips">
-<span class="hero-chip">Boş başlangıç</span>
-<span class="hero-chip">Yaklaşık planlayıcı</span>
-<span class="hero-chip">Bardak / şişe çevrimi</span>
-<span class="hero-chip">Senaryo analizi</span>
+<span class="hero-chip" data-i18n="heroChip1">Boş başlangıç</span>
+<span class="hero-chip" data-i18n="heroChip2">Yaklaşık planlayıcı</span>
+<span class="hero-chip" data-i18n="heroChip3">Bardak / şişe çevrimi</span>
+<span class="hero-chip" data-i18n="heroChip4">Senaryo analizi</span>
 </div>
 </div>
 <aside class="hero-box">
-<div class="eyebrow">Önemli not</div>
-<strong>Bu araç yaklaşık günlük içme suyu hedefi üretir</strong>
-<p>Genel referans tabloları “toplam suyu” yani içecek + gıdalardan gelen suyu birlikte ele alabilir. Buradaki sonuç, günlük su planını daha pratik hale getirmek için yaklaşık bir içme suyu hedefi olarak düşünülmelidir.</p>
+<div class="eyebrow" data-i18n="heroBoxEyebrow">Önemli not</div>
+<strong data-i18n="heroBoxTitle">Bu araç yaklaşık günlük içme suyu hedefi üretir</strong>
+<p data-i18n="heroBoxDesc">Genel referans tabloları "toplam suyu" yani içecek + gıdalardan gelen suyu birlikte ele alabilir. Buradaki sonuç, günlük su planını daha pratik hale getirmek için yaklaşık bir içme suyu hedefi olarak düşünülmelidir.</p>
 </aside>
 </div>
 </header>
 
-<!-- HC_AD_SLOT:top -->
 <div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
   <ins class="adsbygoogle"
        style="display:block"
@@ -483,27 +495,27 @@
 <main style="padding:24px 0 56px">
 <section class="tool-layout">
 <div class="card">
-<h2>Su Hedefi Paneli</h2>
-<p class="section-note">Tüm alanlar boş başlar. Sonuç görmek için temel alanları doldur veya örnek veriyi yükle.</p>
+<h2 data-i18n="panelTitle">Su Hedefi Paneli</h2>
+<p class="section-note" data-i18n="panelNote">Tüm alanlar boş başlar. Sonuç görmek için temel alanları doldur veya örnek veriyi yükle.</p>
 <div class="helper-box">
-<h3>Nasıl okumalıyım?</h3>
-<p>Sonuç “kesin tıbbi doz” değildir. Kilo, hareketlilik, egzersiz ve sıcaklığa göre yaklaşık bir günlük plan sunar. Özel sağlık durumlarında kişisel hekim önerisi daha önceliklidir.</p>
+<h3 data-i18n="helperTitle">Nasıl okumalıyım?</h3>
+<p data-i18n="helperDesc">Sonuç "kesin tıbbi doz" değildir. Kilo, hareketlilik, egzersiz ve sıcaklığa göre yaklaşık bir günlük plan sunar. Özel sağlık durumlarında kişisel hekim önerisi daha önceliklidir.</p>
 </div>
 <form id="calculatorForm" novalidate="">
 <div class="form-section">
-<div class="form-title">Temel bilgiler</div>
+<div class="form-title" data-i18n="formTitle">Temel bilgiler</div>
 <div class="field-grid">
 <div class="field" id="fieldWeight">
-<label for="weight">Kilo</label>
+<label data-i18n="labelWeight" for="weight">Kilo</label>
 <div class="input-wrap">
 <input aria-describedby="weightHint weightError" aria-invalid="false" aria-required="true" class="with-suffix" id="weight" inputmode="decimal" max="300" min="20" placeholder="Örn: 78" required="" step="0.1" type="number"/>
 <span class="suffix">kg</span>
 </div>
-<div class="hint" id="weightHint">Kilo arttıkça taban sıvı ihtiyacı yükselir.</div>
-<div aria-live="polite" class="error-text" id="weightError" role="alert">20–300 kg aralığında geçerli bir kilo gir.</div>
+<div class="hint" data-i18n="hintWeight" id="weightHint">Kilo arttıkça taban sıvı ihtiyacı yükselir.</div>
+<div aria-live="polite" class="error-text" data-i18n="errorWeight" id="weightError" role="alert">20–300 kg aralığında geçerli bir kilo gir.</div>
 </div>
 <div class="field" id="fieldGender">
-<label for="gender">Cinsiyet</label>
+<label data-i18n="labelGender" for="gender">Cinsiyet</label>
 <div class="select-wrap">
 <select aria-describedby="genderHint genderError" aria-invalid="false" aria-required="true" id="gender" required="">
 <option value="">Seçiniz</option>
@@ -511,11 +523,11 @@
 <option value="kadin">Kadın</option>
 </select>
 </div>
-<div class="hint" id="genderHint">Taban planı hafifçe etkiler.</div>
-<div aria-live="polite" class="error-text" id="genderError" role="alert">Lütfen bir cinsiyet seç.</div>
+<div class="hint" data-i18n="hintGender" id="genderHint">Taban planı hafifçe etkiler.</div>
+<div aria-live="polite" class="error-text" data-i18n="errorGender" id="genderError" role="alert">Lütfen bir cinsiyet seç.</div>
 </div>
 <div class="field" id="fieldActivity">
-<label for="activity">Günlük aktivite</label>
+<label data-i18n="labelActivity" for="activity">Günlük aktivite</label>
 <div class="select-wrap">
 <select aria-describedby="activityHint activityError" aria-invalid="false" aria-required="true" id="activity" required="">
 <option value="">Seçiniz</option>
@@ -524,20 +536,20 @@
 <option value="yuksek">Yüksek · ayakta / aktif yaşam</option>
 </select>
 </div>
-<div class="hint" id="activityHint">Günlük hareketlilik su ihtiyacını artırabilir.</div>
-<div aria-live="polite" class="error-text" id="activityError" role="alert">Aktivite düzeyi seç.</div>
+<div class="hint" data-i18n="hintActivity" id="activityHint">Günlük hareketlilik su ihtiyacını artırabilir.</div>
+<div aria-live="polite" class="error-text" data-i18n="errorActivity" id="activityError" role="alert">Aktivite düzeyi seç.</div>
 </div>
 <div class="field" id="fieldExercise">
-<label for="exercise">Egzersiz süresi</label>
+<label data-i18n="labelExercise" for="exercise">Egzersiz süresi</label>
 <div class="input-wrap">
 <input aria-describedby="exerciseHint exerciseError" aria-invalid="false" class="with-suffix" id="exercise" inputmode="numeric" max="300" min="0" placeholder="Örn: 45" step="1" type="number"/>
 <span class="suffix">dk</span>
 </div>
-<div class="hint" id="exerciseHint">Egzersiz yapmıyorsan boş bırakabilir veya 0 yazabilirsin.</div>
-<div aria-live="polite" class="error-text" id="exerciseError" role="alert">0–300 dakika aralığında geçerli bir süre gir.</div>
+<div class="hint" data-i18n="hintExercise" id="exerciseHint">Egzersiz yapmıyorsan boş bırakabilir veya 0 yazabilirsin.</div>
+<div aria-live="polite" class="error-text" data-i18n="errorExercise" id="exerciseError" role="alert">0–300 dakika aralığında geçerli bir süre gir.</div>
 </div>
 <div class="field" id="fieldWeather">
-<label for="weather">Hava sıcaklığı</label>
+<label data-i18n="labelWeather" for="weather">Hava sıcaklığı</label>
 <div class="select-wrap">
 <select aria-describedby="weatherHint weatherError" aria-invalid="false" aria-required="true" id="weather" required="">
 <option value="">Seçiniz</option>
@@ -546,11 +558,11 @@
 <option value="coksicak">Çok sıcak</option>
 </select>
 </div>
-<div class="hint" id="weatherHint">Sıcaklık arttıkça terleme kaynaklı ihtiyaç artabilir.</div>
-<div aria-live="polite" class="error-text" id="weatherError" role="alert">Bir hava durumu seç.</div>
+<div class="hint" data-i18n="hintWeather" id="weatherHint">Sıcaklık arttıkça terleme kaynaklı ihtiyaç artabilir.</div>
+<div aria-live="polite" class="error-text" data-i18n="errorWeather" id="weatherError" role="alert">Bir hava durumu seç.</div>
 </div>
 <div class="field" id="fieldGoal">
-<label for="goal">Hedef / dönem</label>
+<label data-i18n="labelGoal" for="goal">Hedef / dönem</label>
 <div class="select-wrap">
 <select aria-describedby="goalHint goalError" aria-invalid="false" aria-required="true" id="goal" required="">
 <option value="">Seçiniz</option>
@@ -559,15 +571,15 @@
 <option value="antrenman">Yoğun antrenman / kas yapma</option>
 </select>
 </div>
-<div class="hint" id="goalHint">Yoğun dönemlerde pratik hedef biraz yükselebilir.</div>
-<div aria-live="polite" class="error-text" id="goalError" role="alert">Bir hedef seç.</div>
+<div class="hint" data-i18n="hintGoal" id="goalHint">Yoğun dönemlerde pratik hedef biraz yükselebilir.</div>
+<div aria-live="polite" class="error-text" data-i18n="errorGoal" id="goalError" role="alert">Bir hedef seç.</div>
 </div>
 </div>
 </div>
 <div class="form-section">
-<div class="form-title">Hızlı seçenekler</div>
+<div class="form-title" data-i18n="quickTitle">Hızlı seçenekler</div>
 <div class="chip-row">
-<button class="chip" data-example="true" onclick="fillExample()" type="button">Örnek Veri</button>
+<button class="chip" data-example="true" onclick="fillExample()" type="button" data-i18n="chipExample">Örnek Veri</button>
 <button class="chip" onclick="applyQuickWeight(60)" type="button">60 kg</button>
 <button class="chip" onclick="applyQuickWeight(80)" type="button">80 kg</button>
 <button class="chip" onclick="applyQuickWeight(95)" type="button">95 kg</button>
@@ -576,40 +588,40 @@
 </div>
 </div>
 <div class="form-section">
-<div class="form-title">Hazır senaryolar</div>
-<div class="hint">Farklı gün profillerini tek tıkla doldurup sonucu kıyaslayabilirsin.</div>
+<div class="form-title" data-i18n="scenarioTitle">Hazır senaryolar</div>
+<div class="hint" data-i18n="scenarioHint">Farklı gün profillerini tek tıkla doldurup sonucu kıyaslayabilirsin.</div>
 <div class="scenario-grid">
 <button class="scenario-btn" onclick="applyScenario('serin', this)" type="button">
-<strong>Serin Gün</strong>
-<span>Düşük terleme · daha sakin tempo</span>
+<strong data-i18n="scenarioCool">Serin Gün</strong>
+<span data-i18n="scenarioCoolSub">Düşük terleme · daha sakin tempo</span>
 </button>
 <button class="scenario-btn" onclick="applyScenario('baz', this)" type="button">
-<strong>Normal Gün</strong>
-<span>Dengeli günlük hareketlilik</span>
+<strong data-i18n="scenarioBase">Normal Gün</strong>
+<span data-i18n="scenarioBaseSub">Dengeli günlük hareketlilik</span>
 </button>
 <button class="scenario-btn" onclick="applyScenario('aktif', this)" type="button">
-<strong>Sıcak &amp; Aktif Gün</strong>
-<span>Yüksek hareket + egzersiz</span>
+<strong data-i18n="scenarioHot">Sıcak & Aktif Gün</strong>
+<span data-i18n="scenarioHotSub">Yüksek hareket + egzersiz</span>
 </button>
 <button class="scenario-btn" onclick="applyScenario('antrenman', this)" type="button">
-<strong>Antrenman Günü</strong>
-<span>Yoğun antrenman odaklı profil</span>
+<strong data-i18n="scenarioTraining">Antrenman Günü</strong>
+<span data-i18n="scenarioTrainingSub">Yoğun antrenman odaklı profil</span>
 </button>
 </div>
 </div>
 <div class="actions">
-<button class="btn btn-primary" type="submit">Sonucu Gör</button>
-<button class="btn btn-secondary" onclick="resetForm(true)" type="button">Verileri Sıfırla</button>
-<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
-<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
-<button class="btn btn-ghost" onclick="printResult()" type="button">Yazdır / PDF</button>
+<button class="btn btn-primary" data-i18n="btnCalc" id="primaryCalcBtn" onclick="handlePrimaryCalculate()" type="button">Sonucu Gör</button>
+<button class="btn btn-secondary" data-i18n="btnReset" onclick="resetForm(true)" type="button">Verileri Sıfırla</button>
+<button class="btn btn-ghost" data-i18n="btnCopy" onclick="copyResult()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" data-i18n="btnShare" onclick="shareResult()" type="button">Paylaş</button>
+<button class="btn btn-ghost" data-i18n="btnPrint" onclick="printResult()" type="button">Yazdır / PDF</button>
 </div>
-<div aria-live="polite" class="status-inline" id="microStatus" role="status">Form boş başlar. İstersen örnek veri veya hazır senaryo ile hızlı başlangıç yapabilirsin.</div>
+<div aria-live="polite" class="status-inline" data-i18n="microStatusEmpty" id="microStatus" role="status">Form boş başlar. İstersen örnek veri veya hazır senaryo ile hızlı başlangıç yapabilirsin.</div>
 <div aria-live="assertive" class="validation-box" id="validationBox" role="alert"></div>
 </form>
 </div>
-<aside 
-<!-- HC_AD_SLOT:result -->
+<aside class="results" id="resultsPanel">
+
 <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
   <ins class="adsbygoogle"
        style="display:block"
@@ -620,81 +632,80 @@
 </div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-class="results" id="resultsPanel">
 <div class="status-card">
 <div class="status-row">
 <div>
-<div class="status-title">Durum Özeti</div>
-<div class="status-text" id="statusText">Veri bekleniyor. Sonuçlar, profilini girdikten sonra aktifleşir.</div>
+<div class="status-title" data-i18n="statusTitle">Durum Özeti</div>
+<div class="status-text" data-i18n="statusWait" id="statusText">Veri bekleniyor. Sonuçlar, profilini girdikten sonra aktifleşir.</div>
 </div>
-<div class="badge" id="statusBadge">Bekleniyor</div>
+<div class="badge" data-i18n="badgeWait" id="statusBadge">Bekleniyor</div>
 </div>
 </div>
 <div class="highlight-card" id="highlightCard">
-<div class="highlight-label">Günlük Su Hedefi</div>
+<div class="highlight-label" data-i18n="mainLabel">Günlük Su Hedefi</div>
 <div class="highlight-value" id="mainResult">—</div>
-<div class="highlight-sub" id="mainResultSub">Kişisel verilerine göre yaklaşık günlük içme suyu hedefi burada görünür.</div>
+<div class="highlight-sub" data-i18n="mainSub" id="mainResultSub">Kişisel verilerine göre yaklaşık günlük içme suyu hedefi burada görünür.</div>
 </div>
 <div class="scorebox" id="scoreCard">
 <div class="score-row">
 <div>
-<div class="highlight-label" style="margin-bottom:6px">Su İhtiyacı Yoğunluk Skoru</div>
+<div class="highlight-label" style="margin-bottom:6px" data-i18n="scoreLabel">Su İhtiyacı Yoğunluk Skoru</div>
 <div class="score-value" id="scoreValue">—</div>
 </div>
-<div class="pill" id="scoreBadge">Hazır değil</div>
+<div class="pill" data-i18n="scoreBadgeWait" id="scoreBadge">Hazır değil</div>
 </div>
 <div class="progress"><span id="scoreProgress"></span></div>
-<div class="score-explain" id="scoreExplain">Skor yükseldikçe gün içindeki su planı daha dikkatli yönetilmelidir.</div>
+<div class="score-explain" data-i18n="scoreExplainDefault" id="scoreExplain">Skor yükseldikçe gün içindeki su planı daha dikkatli yönetilmelidir.</div>
 <div class="score-breakdown">
-<div class="score-breakdown-row"><span class="name">Kilo etkisi</span><span class="val" id="scoreWeight">—</span></div>
-<div class="score-breakdown-row"><span class="name">Hareket / egzersiz</span><span class="val" id="scoreActivity">—</span></div>
-<div class="score-breakdown-row"><span class="name">Sıcaklık / hedef</span><span class="val" id="scoreClimate">—</span></div>
+<div class="score-breakdown-row"><span class="name" data-i18n="scoreWeightLabel">Kilo etkisi</span><span class="val" id="scoreWeight">—</span></div>
+<div class="score-breakdown-row"><span class="name" data-i18n="scoreActivityLabel">Hareket / egzersiz</span><span class="val" id="scoreActivity">—</span></div>
+<div class="score-breakdown-row"><span class="name" data-i18n="scoreClimateLabel">Sıcaklık / hedef</span><span class="val" id="scoreClimate">—</span></div>
 </div>
 </div>
 <div class="comment-box" id="decisionBox">
-<strong id="decisionTitle">Karar Özeti</strong>
-<div id="decisionText">Önce temel verileri gir; sonra pratik su planı ve yorum burada oluşsun.</div>
+<strong data-i18n="decisionTitleDefault" id="decisionTitle">Karar Özeti</strong>
+<div data-i18n="decisionTextDefault" id="decisionText">Önce temel verileri gir; sonra pratik su planı ve yorum burada oluşsun.</div>
 </div>
 <div class="mini-result-grid" id="miniGrid">
 <div class="mini-result">
 <div>
-<div class="label">Minimum hedef</div>
-<div class="subline">Daha sakin günler için alt eşik</div>
+<div class="label" data-i18n="miniMinLabel">Minimum hedef</div>
+<div class="subline" data-i18n="miniMinSub">Daha sakin günler için alt eşik</div>
 </div>
 <div class="value" id="minTarget">—</div>
 </div>
 <div class="mini-result">
 <div>
-<div class="label">Yoğun gün hedefi</div>
-<div class="subline">Sıcak / aktif günler için üst aralık</div>
+<div class="label" data-i18n="miniMaxLabel">Yoğun gün hedefi</div>
+<div class="subline" data-i18n="miniMaxSub">Sıcak / aktif günler için üst aralık</div>
 </div>
 <div class="value" id="maxTarget">—</div>
 </div>
 <div class="mini-result">
 <div>
-<div class="label">200 ml bardak</div>
-<div class="subline">Günlük hedefin bardak karşılığı</div>
+<div class="label" data-i18n="miniGlassLabel">200 ml bardak</div>
+<div class="subline" data-i18n="miniGlassSub">Günlük hedefin bardak karşılığı</div>
 </div>
 <div class="value" id="glassCount">—</div>
 </div>
 <div class="mini-result">
 <div>
-<div class="label">500 ml şişe</div>
-<div class="subline">Pratik taşıma karşılığı</div>
+<div class="label" data-i18n="miniBottleLabel">500 ml şişe</div>
+<div class="subline" data-i18n="miniBottleSub">Pratik taşıma karşılığı</div>
 </div>
 <div class="value" id="bottleCount">—</div>
 </div>
 <div class="mini-result">
 <div>
-<div class="label">Taban + ek ihtiyaç</div>
-<div class="subline">Base ve ek etkilerin toplam özeti</div>
+<div class="label" data-i18n="miniSummaryLabel">Taban + ek ihtiyaç</div>
+<div class="subline" data-i18n="miniSummarySub">Base ve ek etkilerin toplam özeti</div>
 </div>
 <div class="value" id="summaryValue">—</div>
 </div>
 <div class="mini-result">
 <div>
-<div class="label">Dağıtım planı</div>
-<div class="subline">Sabah / gün içi / akşam / egzersiz</div>
+<div class="label" data-i18n="miniPlanLabel">Dağıtım planı</div>
+<div class="subline" data-i18n="miniPlanSub">Sabah / gün içi / akşam / egzersiz</div>
 </div>
 <div class="value" id="planValue">—</div>
 </div>
@@ -702,44 +713,43 @@ class="results" id="resultsPanel">
 </aside>
 </section>
 <section class="card" style="margin-bottom:24px">
-<h2>Senaryo Analizi</h2>
-<p class="section-note">Aynı kişinin farklı gün koşullarında hedefi nasıl değişiyor? Aşağıda serin, baz ve yoğun gün kıyasını görebilirsin.</p>
+<h2 data-i18n="scenarioAnalysisTitle">Senaryo Analizi</h2>
+<p class="section-note" data-i18n="scenarioAnalysisNote">Aynı kişinin farklı gün koşullarında hedefi nasıl değişiyor? Aşağıda serin, baz ve yoğun gün kıyasını görebilirsin.</p>
 <div class="scenario-result-grid">
 <div class="scenario-card-result">
-<div class="k">Serin Gün</div>
+<div class="k" data-i18n="scenarioCoolLabel">Serin Gün</div>
 <div class="v" id="scenarioCool">—</div>
-<div class="s" id="scenarioCoolSub">Düşük sıcaklık ve daha sakin gün varsayımı.</div>
+<div class="s" data-i18n="scenarioCoolDesc" id="scenarioCoolSub">Düşük sıcaklık ve daha sakin gün varsayımı.</div>
 </div>
 <div class="scenario-card-result">
-<div class="k">Baz Gün</div>
+<div class="k" data-i18n="scenarioBaseLabel">Baz Gün</div>
 <div class="v" id="scenarioBase">—</div>
-<div class="s" id="scenarioBaseSub">Girilen verilerin baz sonucu.</div>
+<div class="s" data-i18n="scenarioBaseDesc" id="scenarioBaseSub">Girilen verilerin baz sonucu.</div>
 </div>
 <div class="scenario-card-result">
-<div class="k">Yoğun Gün</div>
+<div class="k" data-i18n="scenarioHardLabel">Yoğun Gün</div>
 <div class="v" id="scenarioHard">—</div>
-<div class="s" id="scenarioHardSub">Sıcak ve hareketli günlerde oluşan artış.</div>
+<div class="s" data-i18n="scenarioHardDesc" id="scenarioHardSub">Sıcak ve hareketli günlerde oluşan artış.</div>
 </div>
 </div>
 </section>
 <section class="section-grid">
 <div class="card content-block">
-<h2>Günlük su hedefi nasıl hesaplanır?</h2>
-<p>Bu araç, taban sıvı ihtiyacını kiloya göre yaklaşık bir çerçevede kurar; ardından hareketlilik, egzersiz, sıcaklık ve hedef durumuna göre ek ihtiyaçlar ekler. Amaç tıbbi teşhis vermek değil, gün içine yayılabilir pratik bir su planı oluşturmaktır.</p>
-<p>Sonuç litre, bardak ve şişe olarak birlikte verilir. Böylece “kaç litre?” sorusunun yanında “bunu gün içinde nasıl uygularım?” sorusuna da cevap üretilir.</p>
-<div class="formula-box">
+<h2 data-i18n="content1Title">Günlük su hedefi nasıl hesaplanır?</h2>
+<p data-i18n="content1P1">Bu araç, taban sıvı ihtiyacını kiloya göre yaklaşık bir çerçevede kurar; ardından hareketlilik, egzersiz, sıcaklık ve hedef durumuna göre ek ihtiyaçlar ekler. Amaç tıbbi teşhis vermek değil, gün içine yayılabilir pratik bir su planı oluşturmaktır.</p>
+<p data-i18n="content1P2">Sonuç litre, bardak ve şişe olarak birlikte verilir. Böylece "kaç litre?" sorusunun yanında "bunu gün içinde nasıl uygularım?" sorusuna da cevap üretilir.</p>
+<div class="formula-box" data-i18n="formulaBox">
             Yaklaşık günlük hedef = taban ihtiyaç + aktivite etkisi + egzersiz katkısı + sıcaklık etkisi + dönem / hedef katkısı
           </div>
 </div>
 <div class="card content-block">
-<h2>Bu araç ne için uygun?</h2>
-<p>Bu araç; günlük su planını pratikleştirmek, sıcak / egzersizli günlerde hedefi biraz yukarı taşımak ve su tüketimini “bardak / şişe” gibi daha uygulanabilir parçalara çevirmek için uygundur.</p>
-<p>Böbrek hastalığı, kalp yetmezliği, ileri tansiyon sorunları, doktorun sıvı kısıtlaması verdiği dönemler veya ciddi sağlık tablolarında bu araç yalnızca genel bilgilendirme olarak görülmelidir.</p>
+<h2 data-i18n="content2Title">Bu araç ne için uygun?</h2>
+<p data-i18n="content2P1">Bu araç; günlük su planını pratikleştirmek, sıcak / egzersizli günlerde hedefi biraz yukarı taşımak ve su tüketimini "bardak / şişe" gibi daha uygulanabilir parçalara çevirmek için uygundur.</p>
+<p data-i18n="content2P2">Böbrek hastalığı, kalp yetmezliği, ileri tansiyon sorunları, doktorun sıvı kısıtlaması verdiği dönemler veya ciddi sağlık tablolarında bu araç yalnızca genel bilgilendirme olarak görülmelidir.</p>
 </div>
 </section>
 <section class="card" style="margin-bottom:24px">
 
-<!-- HC_AD_SLOT:faq -->
 <div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
   <ins class="adsbygoogle"
        style="display:block"
@@ -751,54 +761,54 @@ class="results" id="resultsPanel">
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
 <section id="hc-related-tools" class="related-tools">
-  <h2>İlgili Hesaplama Araçları</h2>
+  <h2 data-i18n="relatedToolsTitle">İlgili Hesaplama Araçları</h2>
   <div class="related-grid">
-<a href="/vucut-kitle-indeksi" class="related-card"><h3>Vücut Kitle İndeksi</h3><p>BMI değerini ve ideal kilo aralığını hızla öğren.</p></a>
-<a href="/yas-hesaplama" class="related-card"><h3>Yaş Hesaplama</h3><p>Doğum tarihine göre yaşını ve geçen süreyi net hesapla.</p></a>
-<a href="/enflasyon-hesaplama" class="related-card"><h3>Enflasyon Hesaplama</h3><p>Paranın alım gücü değişimini dönemsel olarak analiz et.</p></a>
-<a href="/butce-hesaplama" class="related-card"><h3>Bütçe Hesaplama</h3><p>Gelir-gider dengesini kur, aylık tasarruf hedefini netleştir.</p></a>
+<a href="/vucut-kitle-indeksi" class="related-card"><h3 data-i18n="related1Title">Vücut Kitle İndeksi</h3><p data-i18n="related1Desc">BMI değerini ve ideal kilo aralığını hızla öğren.</p></a>
+<a href="/yas-hesaplama" class="related-card"><h3 data-i18n="related2Title">Yaş Hesaplama</h3><p data-i18n="related2Desc">Doğum tarihine göre yaşını ve geçen süreyi net hesapla.</p></a>
+<a href="/enflasyon-hesaplama" class="related-card"><h3 data-i18n="related3Title">Enflasyon Hesaplama</h3><p data-i18n="related3Desc">Paranın alım gücü değişimini dönemsel olarak analiz et.</p></a>
+<a href="/butce-hesaplama" class="related-card"><h3 data-i18n="related4Title">Bütçe Hesaplama</h3><p data-i18n="related4Desc">Gelir-gider dengesini kur, aylık tasarruf hedefini netleştir.</p></a>
   </div>
-  <a href="/" class="related-home-link">← Ana sayfaya dön ve tüm araçları keşfet</a>
+  <a href="/" class="related-home-link" data-i18n="relatedHomeLink">← Ana sayfaya dön ve tüm araçları keşfet</a>
 </section>
-<h2>Sık Sorulan Sorular</h2>
+<h2 data-i18n="faqTitle">Sık Sorulan Sorular</h2>
 <div class="faq-list">
 <div class="faq-item active">
-<button class="faq-question" onclick="toggleFaq(this)" type="button">Bu araç tıbbi tavsiye yerine geçer mi?<span>+</span></button>
-<div class="faq-answer">Hayır. Bu araç yaklaşık günlük su planı üretir. Özellikle sıvı kısıtlaması gerektiren sağlık durumlarında kişisel doktor önerisi daha önceliklidir.</div>
+<button class="faq-question" onclick="toggleFaq(this)" type="button"><span data-i18n="faq1q">Bu araç tıbbi tavsiye yerine geçer mi?</span><span>+</span></button>
+<div class="faq-answer" data-i18n="faq1a">Hayır. Bu araç yaklaşık günlük su planı üretir. Özellikle sıvı kısıtlaması gerektiren sağlık durumlarında kişisel doktor önerisi daha önceliklidir.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)" type="button">Neden sıcak hava ve egzersiz sonucu artırıyor?<span>+</span></button>
-<div class="faq-answer">Terleme ve sıvı kaybı artabildiği için sıcak ve aktif günlerde günlük plan biraz yukarı taşınabilir. Araç da bu etkiyi yaklaşık şekilde sonuca yansıtır.</div>
+<button class="faq-question" onclick="toggleFaq(this)" type="button"><span data-i18n="faq2q">Neden sıcak hava ve egzersiz sonucu artırıyor?</span><span>+</span></button>
+<div class="faq-answer" data-i18n="faq2a">Terleme ve sıvı kaybı artabildiği için sıcak ve aktif günlerde günlük plan biraz yukarı taşınabilir. Araç da bu etkiyi yaklaşık şekilde sonuca yansıtır.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)" type="button">Bardak ve şişe karşılığı ne işe yarar?<span>+</span></button>
-<div class="faq-answer">Litre hedefi çoğu kullanıcı için soyut kalabilir. Bardak ve şişe karşılığı, hedefi gün içinde daha kolay uygulamaya yardım eder.</div>
+<button class="faq-question" onclick="toggleFaq(this)" type="button"><span data-i18n="faq3q">Bardak ve şişe karşılığı ne işe yarar?</span><span>+</span></button>
+<div class="faq-answer" data-i18n="faq3a">Litre hedefi çoğu kullanıcı için soyut kalabilir. Bardak ve şişe karşılığı, hedefi gün içinde daha kolay uygulamaya yardım eder.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)" type="button">Her gün aynı miktar içmek gerekir mi?<span>+</span></button>
-<div class="faq-answer">Genelde hayır. Daha serin ve sakin günlerle daha sıcak ve aktif günler arasında ihtiyaç değişebilir. Bu yüzden araç senaryo karşılaştırmasını da ayrıca gösterir.</div>
+<button class="faq-question" onclick="toggleFaq(this)" type="button"><span data-i18n="faq4q">Her gün aynı miktar içmek gerekir mi?</span><span>+</span></button>
+<div class="faq-answer" data-i18n="faq4a">Genelde hayır. Daha serin ve sakin günlerle daha sıcak ve aktif günler arasında ihtiyaç değişebilir. Bu yüzden araç senaryo karşılaştırmasını da ayrıca gösterir.</div>
 </div>
 </div>
 </section>
 <section class="card related-card-wrap">
-<h2 style="margin:0">İlgili Hesaplama Araçları</h2>
-<p class="section-note" style="margin-top:8px">Sağlık ve günlük plan tarafında birlikte kullanabileceğin araçlar.</p>
+<h2 style="margin:0" data-i18n="relatedTitle">İlgili Hesaplama Araçları</h2>
+<p class="section-note" style="margin-top:8px" data-i18n="relatedNote">Sağlık ve günlük plan tarafında birlikte kullanabileceğin araçlar.</p>
 <div class="related-grid">
 <a class="related-link" href="/vucut-kitle-indeksi">
-<strong>Vücut Kitle İndeksi</strong>
-<span>Kilo değerlendirmesini ayrıca gör.</span>
+<strong data-i18n="relatedLink1Title">Vücut Kitle İndeksi</strong>
+<span data-i18n="relatedLink1Desc">Kilo değerlendirmesini ayrıca gör.</span>
 </a>
 <a class="related-link" href="/yas-hesaplama">
-<strong>Yaş Hesaplama</strong>
-<span>Yaş ve tarih odaklı günlük yaşam planını ayrıca gör.</span>
+<strong data-i18n="relatedLink2Title">Yaş Hesaplama</strong>
+<span data-i18n="relatedLink2Desc">Yaş ve tarih odaklı günlük yaşam planını ayrıca gör.</span>
 </a>
 <a class="related-link" href="/ortalama-hesaplama">
-<strong>Ortalama Hesaplama</strong>
-<span>Ölçüm ve takip verilerini ortalama mantığıyla hızlıca analiz et.</span>
+<strong data-i18n="relatedLink3Title">Ortalama Hesaplama</strong>
+<span data-i18n="relatedLink3Desc">Ölçüm ve takip verilerini ortalama mantığıyla hızlıca analiz et.</span>
 </a>
 <a class="related-link" href="/yuzde-hesaplama">
-<strong>Yüzde Hesaplama</strong>
-<span>Su hedefindeki artış ve azalış oranlarını hızlıca karşılaştır.</span>
+<strong data-i18n="relatedLink4Title">Yüzde Hesaplama</strong>
+<span data-i18n="relatedLink4Desc">Su hedefindeki artış ve azalış oranlarını hızlıca karşılaştır.</span>
 </a>
 </div>
 </section>
@@ -807,6 +817,7 @@ class="results" id="resultsPanel">
 <script>
     const STORAGE_KEY = 'hesapica_water_lock_v2';
     const state = {
+      lang: 'tr',
       inputs: {},
       results: null,
       isValid: false,
@@ -817,6 +828,389 @@ class="results" id="resultsPanel">
       source: 'empty',
       confidence: 'Orta'
     };
+
+    const translations = {
+      tr: {
+        pageTitle: "Günlük Su İhtiyacı Hesaplama 2026 | Hesapica",
+        breadcrumbHome: "Ana Sayfa",
+        breadcrumbHealth: "Sağlık",
+        breadcrumbCurrent: "Günlük Su İhtiyacı Hesaplama",
+        eyebrow: "Hesapica • Sağlık Aracı",
+        heroTitle: "Günlük Su İhtiyacı Hesaplama",
+        heroDesc: "Bu araç yalnızca kaç litre su içmen gerektiğini değil; <strong>su ihtiyacı yoğunluğunu</strong>, <strong>pratik uygulama planını</strong>, <strong>bardak ve şişe karşılığını</strong> ve <strong>serin / baz / yoğun gün senaryolarını</strong> aynı ekranda göstermek için tasarlandı.",
+        heroChip1: "Boş başlangıç",
+        heroChip2: "Yaklaşık planlayıcı",
+        heroChip3: "Bardak / şişe çevrimi",
+        heroChip4: "Senaryo analizi",
+        heroBoxEyebrow: "Önemli not",
+        heroBoxTitle: "Bu araç yaklaşık günlük içme suyu hedefi üretir",
+        heroBoxDesc: "Genel referans tabloları \"toplam suyu\" yani içecek + gıdalardan gelen suyu birlikte ele alabilir. Buradaki sonuç, günlük su planını daha pratik hale getirmek için yaklaşık bir içme suyu hedefi olarak düşünülmelidir.",
+        panelTitle: "Su Hedefi Paneli",
+        panelNote: "Tüm alanlar boş başlar. Sonuç görmek için temel alanları doldur veya örnek veriyi yükle.",
+        helperTitle: "Nasıl okumalıyım?",
+        helperDesc: "Sonuç \"kesin tıbbi doz\" değildir. Kilo, hareketlilik, egzersiz ve sıcaklığa göre yaklaşık bir günlük plan sunar. Özel sağlık durumlarında kişisel hekim önerisi daha önceliklidir.",
+        formTitle: "Temel bilgiler",
+        labelWeight: "Kilo",
+        labelGender: "Cinsiyet",
+        labelActivity: "Günlük aktivite",
+        labelExercise: "Egzersiz süresi",
+        labelWeather: "Hava sıcaklığı",
+        labelGoal: "Hedef / dönem",
+        hintWeight: "Kilo arttıkça taban sıvı ihtiyacı yükselir.",
+        hintGender: "Taban planı hafifçe etkiler.",
+        hintActivity: "Günlük hareketlilik su ihtiyacını artırabilir.",
+        hintExercise: "Egzersiz yapmıyorsan boş bırakabilir veya 0 yazabilirsin.",
+        hintWeather: "Sıcaklık arttıkça terleme kaynaklı ihtiyaç artabilir.",
+        hintGoal: "Yoğun dönemlerde pratik hedef biraz yükselebilir.",
+        errorWeight: "20–300 kg aralığında geçerli bir kilo gir.",
+        errorGender: "Lütfen bir cinsiyet seç.",
+        errorActivity: "Aktivite düzeyi seç.",
+        errorExercise: "0–300 dakika aralığında geçerli bir süre gir.",
+        errorWeather: "Bir hava durumu seç.",
+        errorGoal: "Bir hedef seç.",
+        genderSelect: "Seçiniz",
+        genderMale: "Erkek",
+        genderFemale: "Kadın",
+        activitySelect: "Seçiniz",
+        activityLow: "Düşük · masa başı / az hareket",
+        activityMid: "Orta · gün içinde bir miktar hareket",
+        activityHigh: "Yüksek · ayakta / aktif yaşam",
+        weatherSelect: "Seçiniz",
+        weatherCool: "Serin / normal",
+        weatherWarm: "Ilık / sıcak",
+        weatherHot: "Çok sıcak",
+        goalSelect: "Seçiniz",
+        goalMaintain: "Mevcut düzen / koruma",
+        goalLose: "Kilo verme dönemi",
+        goalTrain: "Yoğun antrenman / kas yapma",
+        quickTitle: "Hızlı seçenekler",
+        chipExample: "Örnek Veri",
+        scenarioTitle: "Hazır senaryolar",
+        scenarioHint: "Farklı gün profillerini tek tıkla doldurup sonucu kıyaslayabilirsin.",
+        scenarioCool: "Serin Gün",
+        scenarioCoolSub: "Düşük terleme · daha sakin tempo",
+        scenarioBase: "Normal Gün",
+        scenarioBaseSub: "Dengeli günlük hareketlilik",
+        scenarioHot: "Sıcak & Aktif Gün",
+        scenarioHotSub: "Yüksek hareket + egzersiz",
+        scenarioTraining: "Antrenman Günü",
+        scenarioTrainingSub: "Yoğun antrenman odaklı profil",
+        btnCalc: "Sonucu Gör",
+        btnReset: "Verileri Sıfırla",
+        btnCopy: "Sonucu Kopyala",
+        btnShare: "Paylaş",
+        btnPrint: "Yazdır / PDF",
+        microStatusEmpty: "Form boş başlar. İstersen örnek veri veya hazır senaryo ile hızlı başlangıç yapabilirsin.",
+        microStatusCalculating: "Hesaplanıyor...",
+        microStatusDone: "Sonuç güncellendi.",
+        microStatusFix: "Eksik veya hatalı alanları düzelt.",
+        microStatusPartial: "Temel alanları tamamladığında sonuç oluşur.",
+        microStatusReset: "Form sıfırlandı. İstersen örnek veri veya manuel girişle devam et.",
+        microStatusExample: "Örnek veri yüklendi. Bu veri otomatik kaydedilmez.",
+        microStatusScenario: "Hazır senaryo yüklendi. Bu veri otomatik kaydedilmez.",
+        microStatusShared: "Paylaşılan sonuç yüklendi.",
+        microStatusRestored: "Önceki manuel girişlerin geri yüklendi.",
+        microStatusNoResult: "Önce geçerli bir sonuç oluştur.",
+        microStatusCopied: "Sonuç panoya kopyalandı.",
+        microStatusCopyFail: "Kopyalama başarısız oldu.",
+        microStatusShareStart: "Paylaşım başlatıldı.",
+        microStatusShareCopy: "Paylaşım bağlantısı panoya kopyalandı.",
+        microStatusShareFail: "Paylaşım başarısız oldu.",
+        validationFix: "Lütfen kırmızı işaretli alanları kontrol et.",
+        statusTitle: "Durum Özeti",
+        statusWait: "Veri bekleniyor. Sonuçlar, profilini girdikten sonra aktifleşir.",
+        badgeWait: "Bekleniyor",
+        mainLabel: "Günlük Su Hedefi",
+        mainSub: "Kişisel verilerine göre yaklaşık günlük içme suyu hedefi burada görünür.",
+        scoreLabel: "Su İhtiyacı Yoğunluk Skoru",
+        scoreBadgeWait: "Hazır değil",
+        scoreExplainDefault: "Skor yükseldikçe gün içindeki su planı daha dikkatli yönetilmelidir.",
+        scoreWeightLabel: "Kilo etkisi",
+        scoreActivityLabel: "Hareket / egzersiz",
+        scoreClimateLabel: "Sıcaklık / hedef",
+        decisionTitleDefault: "Karar Özeti",
+        decisionTextDefault: "Önce temel verileri gir; sonra pratik su planı ve yorum burada oluşsun.",
+        miniMinLabel: "Minimum hedef",
+        miniMinSub: "Daha sakin günler için alt eşik",
+        miniMaxLabel: "Yoğun gün hedefi",
+        miniMaxSub: "Sıcak / aktif günler için üst aralık",
+        miniGlassLabel: "200 ml bardak",
+        miniGlassSub: "Günlük hedefin bardak karşılığı",
+        miniBottleLabel: "500 ml şişe",
+        miniBottleSub: "Pratik taşıma karşılığı",
+        miniSummaryLabel: "Taban + ek ihtiyaç",
+        miniSummarySub: "Base ve ek etkilerin toplam özeti",
+        miniPlanLabel: "Dağıtım planı",
+        miniPlanSub: "Sabah / gün içi / akşam / egzersiz",
+        scenarioAnalysisTitle: "Senaryo Analizi",
+        scenarioAnalysisNote: "Aynı kişinin farklı gün koşullarında hedefi nasıl değişiyor? Aşağıda serin, baz ve yoğun gün kıyasını görebilirsin.",
+        scenarioCoolLabel: "Serin Gün",
+        scenarioCoolDesc: "Düşük sıcaklık ve daha sakin gün varsayımı.",
+        scenarioBaseLabel: "Baz Gün",
+        scenarioBaseDesc: "Girilen verilerin baz sonucu.",
+        scenarioHardLabel: "Yoğun Gün",
+        scenarioHardDesc: "Sıcak ve hareketli günlerde oluşan artış.",
+        content1Title: "Günlük su hedefi nasıl hesaplanır?",
+        content1P1: "Bu araç, taban sıvı ihtiyacını kiloya göre yaklaşık bir çerçevede kurar; ardından hareketlilik, egzersiz, sıcaklık ve hedef durumuna göre ek ihtiyaçlar ekler. Amaç tıbbi teşhis vermek değil, gün içine yayılabilir pratik bir su planı oluşturmaktır.",
+        content1P2: "Sonuç litre, bardak ve şişe olarak birlikte verilir. Böylece \"kaç litre?\" sorusunun yanında \"bunu gün içinde nasıl uygularım?\" sorusuna da cevap üretilir.",
+        formulaBox: "Yaklaşık günlük hedef = taban ihtiyaç + aktivite etkisi + egzersiz katkısı + sıcaklık etkisi + dönem / hedef katkısı",
+        content2Title: "Bu araç ne için uygun?",
+        content2P1: "Bu araç; günlük su planını pratikleştirmek, sıcak / egzersizli günlerde hedefi biraz yukarı taşımak ve su tüketimini \"bardak / şişe\" gibi daha uygulanabilir parçalara çevirmek için uygundur.",
+        content2P2: "Böbrek hastalığı, kalp yetmezliği, ileri tansiyon sorunları, doktorun sıvı kısıtlaması verdiği dönemler veya ciddi sağlık tablolarında bu araç yalnızca genel bilgilendirme olarak görülmelidir.",
+        relatedToolsTitle: "İlgili Hesaplama Araçları",
+        related1Title: "Vücut Kitle İndeksi",
+        related1Desc: "BMI değerini ve ideal kilo aralığını hızla öğren.",
+        related2Title: "Yaş Hesaplama",
+        related2Desc: "Doğum tarihine göre yaşını ve geçen süreyi net hesapla.",
+        related3Title: "Enflasyon Hesaplama",
+        related3Desc: "Paranın alım gücü değişimini dönemsel olarak analiz et.",
+        related4Title: "Bütçe Hesaplama",
+        related4Desc: "Gelir-gider dengesini kur, aylık tasarruf hedefini netleştir.",
+        relatedHomeLink: "← Ana sayfaya dön ve tüm araçları keşfet",
+        faqTitle: "Sık Sorulan Sorular",
+        faq1q: "Bu araç tıbbi tavsiye yerine geçer mi?",
+        faq1a: "Hayır. Bu araç yaklaşık günlük su planı üretir. Özellikle sıvı kısıtlaması gerektiren sağlık durumlarında kişisel doktor önerisi daha önceliklidir.",
+        faq2q: "Neden sıcak hava ve egzersiz sonucu artırıyor?",
+        faq2a: "Terleme ve sıvı kaybı artabildiği için sıcak ve aktif günlerde günlük plan biraz yukarı taşınabilir. Araç da bu etkiyi yaklaşık şekilde sonuca yansıtır.",
+        faq3q: "Bardak ve şişe karşılığı ne işe yarar?",
+        faq3a: "Litre hedefi çoğu kullanıcı için soyut kalabilir. Bardak ve şişe karşılığı, hedefi gün içinde daha kolay uygulamaya yardım eder.",
+        faq4q: "Her gün aynı miktar içmek gerekir mi?",
+        faq4a: "Genelde hayır. Daha serin ve sakin günlerle daha sıcak ve aktif günler arasında ihtiyaç değişebilir. Bu yüzden araç senaryo karşılaştırmasını da ayrıca gösterir.",
+        relatedTitle: "İlgili Hesaplama Araçları",
+        relatedNote: "Sağlık ve günlük plan tarafında birlikte kullanabileceğin araçlar.",
+        relatedLink1Title: "Vücut Kitle İndeksi",
+        relatedLink1Desc: "Kilo değerlendirmesini ayrıca gör.",
+        relatedLink2Title: "Yaş Hesaplama",
+        relatedLink2Desc: "Yaş ve tarih odaklı günlük yaşam planını ayrıca gör.",
+        relatedLink3Title: "Ortalama Hesaplama",
+        relatedLink3Desc: "Ölçüm ve takip verilerini ortalama mantığıyla hızlıca analiz et.",
+        relatedLink4Title: "Yüzde Hesaplama",
+        relatedLink4Desc: "Su hedefindeki artış ve azalış oranlarını hızlıca karşılaştır.",
+        scoreLow: "Düşük ihtiyaç yoğunluğu",
+        scoreMid: "Orta ihtiyaç yoğunluğu",
+        scoreHigh: "Yüksek ihtiyaç yoğunluğu",
+        decisionGoodTitle: "Plan yönetilebilir görünüyor",
+        decisionGoodText: "Yaklaşık {LITRE} hedef, sakin veya orta tempolu bir gün için uygulanabilir seviyede. Günün başında ve öğün çevresinde su içmeyi düzenlemek çoğu zaman yeterli olur.",
+        decisionWarnTitle: "Planı gün içine yaymak önemli",
+        decisionWarnText: "Yaklaşık {LITRE} hedef orta yoğunlukta bir su planına işaret ediyor. Özellikle {EXERCISE_TEXT} daha planlı içmek hedefi rahatlatır.",
+        decisionWarnTextExercise: "egzersiz öncesi ve sonrası",
+        decisionWarnTextNoExercise: "öğünler ve gün içi aralarda",
+        decisionBadTitle: "Yoğun gün planı gerekiyor",
+        decisionBadText: "Yaklaşık {LITRE} hedef yüksek ihtiyaç yoğunluğu gösteriyor. Tek seferde çok içmek yerine suyu gün içine bölmek, yanında şişe taşımak ve sıcak / egzersizli zamanlarda ek içmek daha mantıklıdır.",
+        statusLow: "Düşük yoğunluk",
+        statusLowDesc: "Bugünkü su hedefin daha yönetilebilir görünüyor.",
+        statusMid: "Orta yoğunluk",
+        statusMidDesc: "Gün içine planlı yaymak önemli.",
+        statusHigh: "Yüksek yoğunluk",
+        statusHighDesc: "Sıcaklık ve hareket etkisi belirgin.",
+        scoreExplainDone: "Bu skor, kilo, günlük hareket, egzersiz ve sıcaklığın toplamda su planını ne kadar zorlaştırdığını gösterir. Yüksek skor, daha planlı içme ihtiyacı anlamına gelir.",
+        mainSubDone: "{TOTALML} günlük hedef. Güven seviyesi: {CONFIDENCE}.",
+        scenarioCoolResult: "Daha sakin ve serin gün varsayımıyla yaklaşık {TOTALML}.",
+        scenarioBaseResult: "Girilen baz profil için yaklaşık {TOTALML}.",
+        scenarioHardResult: "Daha sıcak ve aktif günde yaklaşık {TOTALML}.",
+        glassUnit: "bardak",
+        bottleUnit: "şişe",
+        copyTitle: "Hesapica - Günlük Su İhtiyacı",
+        copyHedef: "Hedef",
+        copyMin: "Minimum",
+        copyMax: "Yoğun gün",
+        copyGlass: "Bardak",
+        copyBottle: "Şişe",
+        copyScore: "Skor",
+        copyDecision: "Karar"
+      },
+      en: {
+        pageTitle: "Daily Water Intake Calculator 2026 | Hesapica",
+        breadcrumbHome: "Home",
+        breadcrumbHealth: "Health",
+        breadcrumbCurrent: "Daily Water Intake",
+        eyebrow: "Hesapica • Health Tool",
+        heroTitle: "Daily Water Intake Calculator",
+        heroDesc: "This tool is designed to show not just how many liters to drink, but also <strong>hydration intensity</strong>, <strong>a practical plan</strong>, <strong>glass and bottle equivalents</strong>, and <strong>cool / base / intense day scenarios</strong> on one screen.",
+        heroChip1: "Empty start",
+        heroChip2: "Approximate planner",
+        heroChip3: "Glass / bottle conversion",
+        heroChip4: "Scenario analysis",
+        heroBoxEyebrow: "Important note",
+        heroBoxTitle: "This tool produces an approximate daily drinking water target",
+        heroBoxDesc: "General reference tables may consider \"total water\" including beverages and food. The result here should be seen as an approximate drinking water target to make daily planning more practical.",
+        panelTitle: "Water Target Panel",
+        panelNote: "All fields start empty. Fill in the basic fields or load sample data to see results.",
+        helperTitle: "How should I read this?",
+        helperDesc: "The result is not an \"exact medical dose.\" It provides an approximate daily plan based on weight, activity, exercise, and temperature. For special health conditions, personal medical advice takes priority.",
+        formTitle: "Basic information",
+        labelWeight: "Weight",
+        labelGender: "Gender",
+        labelActivity: "Daily activity",
+        labelExercise: "Exercise duration",
+        labelWeather: "Temperature",
+        labelGoal: "Goal / period",
+        hintWeight: "Higher weight increases baseline fluid needs.",
+        hintGender: "Slightly affects the baseline plan.",
+        hintActivity: "Daily movement can increase water needs.",
+        hintExercise: "Leave empty or enter 0 if you don't exercise.",
+        hintWeather: "Higher temperatures can increase needs through sweating.",
+        hintGoal: "Intensive periods may slightly raise the practical target.",
+        errorWeight: "Enter a valid weight between 20–300 kg.",
+        errorGender: "Please select a gender.",
+        errorActivity: "Select an activity level.",
+        errorExercise: "Enter a valid duration between 0–300 minutes.",
+        errorWeather: "Select a weather condition.",
+        errorGoal: "Select a goal.",
+        genderSelect: "Select",
+        genderMale: "Male",
+        genderFemale: "Female",
+        activitySelect: "Select",
+        activityLow: "Low · desk job / little movement",
+        activityMid: "Moderate · some movement during the day",
+        activityHigh: "High · standing / active lifestyle",
+        weatherSelect: "Select",
+        weatherCool: "Cool / normal",
+        weatherWarm: "Mild / warm",
+        weatherHot: "Very hot",
+        goalSelect: "Select",
+        goalMaintain: "Current routine / maintenance",
+        goalLose: "Weight loss period",
+        goalTrain: "Intense training / muscle building",
+        quickTitle: "Quick options",
+        chipExample: "Sample Data",
+        scenarioTitle: "Ready scenarios",
+        scenarioHint: "Fill and compare different day profiles with one click.",
+        scenarioCool: "Cool Day",
+        scenarioCoolSub: "Low sweating · calmer pace",
+        scenarioBase: "Normal Day",
+        scenarioBaseSub: "Balanced daily movement",
+        scenarioHot: "Hot & Active Day",
+        scenarioHotSub: "High movement + exercise",
+        scenarioTraining: "Training Day",
+        scenarioTrainingSub: "Intense training-focused profile",
+        btnCalc: "See Result",
+        btnReset: "Reset Data",
+        btnCopy: "Copy Result",
+        btnShare: "Share",
+        btnPrint: "Print / PDF",
+        microStatusEmpty: "Form starts empty. Use sample data or a ready scenario for a quick start.",
+        microStatusCalculating: "Calculating...",
+        microStatusDone: "Result updated.",
+        microStatusFix: "Fix the missing or incorrect fields.",
+        microStatusPartial: "Results will appear once you complete the basic fields.",
+        microStatusReset: "Form reset. Continue with sample data or manual entry.",
+        microStatusExample: "Sample data loaded. This data is not saved automatically.",
+        microStatusScenario: "Ready scenario loaded. This data is not saved automatically.",
+        microStatusShared: "Shared result loaded.",
+        microStatusRestored: "Previous manual entries restored.",
+        microStatusNoResult: "Create a valid result first.",
+        microStatusCopied: "Result copied to clipboard.",
+        microStatusCopyFail: "Copy failed.",
+        microStatusShareStart: "Share initiated.",
+        microStatusShareCopy: "Share link copied to clipboard.",
+        microStatusShareFail: "Share failed.",
+        validationFix: "Please check the fields marked in red.",
+        statusTitle: "Status Summary",
+        statusWait: "Waiting for data. Results will activate after you enter your profile.",
+        badgeWait: "Waiting",
+        mainLabel: "Daily Water Target",
+        mainSub: "Your approximate daily drinking water target will appear here based on your data.",
+        scoreLabel: "Hydration Intensity Score",
+        scoreBadgeWait: "Not ready",
+        scoreExplainDefault: "As the score rises, your daily water plan should be managed more carefully.",
+        scoreWeightLabel: "Weight effect",
+        scoreActivityLabel: "Movement / exercise",
+        scoreClimateLabel: "Temperature / goal",
+        decisionTitleDefault: "Decision Summary",
+        decisionTextDefault: "Enter basic data first; then your practical water plan and interpretation will appear here.",
+        miniMinLabel: "Minimum target",
+        miniMinSub: "Lower threshold for calmer days",
+        miniMaxLabel: "Intense day target",
+        miniMaxSub: "Upper range for hot / active days",
+        miniGlassLabel: "200 ml glass",
+        miniGlassSub: "Glass equivalent of daily target",
+        miniBottleLabel: "500 ml bottle",
+        miniBottleSub: "Practical carrying equivalent",
+        miniSummaryLabel: "Base + extra need",
+        miniSummarySub: "Summary of base and additional effects",
+        miniPlanLabel: "Distribution plan",
+        miniPlanSub: "Morning / daytime / evening / workout",
+        scenarioAnalysisTitle: "Scenario Analysis",
+        scenarioAnalysisNote: "How does the target change for the same person under different day conditions? See the cool, base, and intense day comparison below.",
+        scenarioCoolLabel: "Cool Day",
+        scenarioCoolDesc: "Assuming lower temperature and a calmer day.",
+        scenarioBaseLabel: "Base Day",
+        scenarioBaseDesc: "The base result from entered data.",
+        scenarioHardLabel: "Intense Day",
+        scenarioHardDesc: "The increase on hot and active days.",
+        content1Title: "How is the daily water target calculated?",
+        content1P1: "This tool builds a baseline fluid need from weight, then adds extra needs based on activity, exercise, temperature, and goal. The aim is not to provide a medical diagnosis but to create a practical water plan that can be spread throughout the day.",
+        content1P2: "The result is given in liters, glasses, and bottles together. This way, alongside \"how many liters?\" it also answers \"how do I apply this during the day?\"",
+        formulaBox: "Approximate daily target = baseline need + activity effect + exercise contribution + temperature effect + period / goal contribution",
+        content2Title: "What is this tool suitable for?",
+        content2P1: "This tool is suitable for making daily water planning more practical, slightly raising the target on hot / exercise days, and converting water intake into more actionable units like \"glasses / bottles.\"",
+        content2P2: "For kidney disease, heart failure, advanced blood pressure issues, periods when a doctor has prescribed fluid restriction, or serious health conditions, this tool should be seen only as general information.",
+        relatedToolsTitle: "Related Calculators",
+        related1Title: "Body Mass Index",
+        related1Desc: "Quickly learn your BMI value and ideal weight range.",
+        related2Title: "Age Calculator",
+        related2Desc: "Calculate your exact age and elapsed time by birth date.",
+        related3Title: "Inflation Calculator",
+        related3Desc: "Analyze the change in purchasing power over periods.",
+        related4Title: "Budget Calculator",
+        related4Desc: "Balance income and expenses, clarify your monthly savings target.",
+        relatedHomeLink: "← Back to home and explore all tools",
+        faqTitle: "Frequently Asked Questions",
+        faq1q: "Does this tool replace medical advice?",
+        faq1a: "No. This tool produces an approximate daily water plan. Especially for health conditions requiring fluid restriction, personal medical advice takes priority.",
+        faq2q: "Why do hot weather and exercise increase the result?",
+        faq2a: "Since sweating and fluid loss can increase, the daily plan can be raised slightly on hot and active days. The tool reflects this effect approximately in the result.",
+        faq3q: "What is the glass and bottle equivalent for?",
+        faq3a: "A liter target can feel abstract for many users. The glass and bottle equivalent helps apply the target more easily throughout the day.",
+        faq4q: "Do I need to drink the same amount every day?",
+        faq4a: "Generally no. Needs can vary between cooler, calmer days and hotter, more active days. That's why the tool also shows a scenario comparison separately.",
+        relatedTitle: "Related Calculators",
+        relatedNote: "Tools you can use together for health and daily planning.",
+        relatedLink1Title: "Body Mass Index",
+        relatedLink1Desc: "See your weight assessment separately.",
+        relatedLink2Title: "Age Calculator",
+        relatedLink2Desc: "See your age and date-focused daily life plan separately.",
+        relatedLink3Title: "Average Calculator",
+        relatedLink3Desc: "Quickly analyze measurement and tracking data with averages.",
+        relatedLink4Title: "Percentage Calculator",
+        relatedLink4Desc: "Quickly compare increase and decrease rates in your water target.",
+        scoreLow: "Low hydration intensity",
+        scoreMid: "Moderate hydration intensity",
+        scoreHigh: "High hydration intensity",
+        decisionGoodTitle: "Plan looks manageable",
+        decisionGoodText: "Approximately {LITRE} target is at a manageable level for a calm or moderate-paced day. Arranging water intake at the start of the day and around meals is usually sufficient.",
+        decisionWarnTitle: "Spreading the plan throughout the day is important",
+        decisionWarnText: "Approximately {LITRE} target indicates a moderate-intensity water plan. Drinking more deliberately especially {EXERCISE_TEXT} makes the target easier.",
+        decisionWarnTextExercise: "before and after exercise",
+        decisionWarnTextNoExercise: "around meals and during the day",
+        decisionBadTitle: "An intense day plan is needed",
+        decisionBadText: "Approximately {LITRE} target shows high hydration intensity. Instead of drinking a lot at once, it's smarter to split water throughout the day, carry a bottle, and drink extra during hot / exercise times.",
+        statusLow: "Low intensity",
+        statusLowDesc: "Today's water target looks more manageable.",
+        statusMid: "Moderate intensity",
+        statusMidDesc: "Spreading throughout the day is important.",
+        statusHigh: "High intensity",
+        statusHighDesc: "Temperature and movement effects are noticeable.",
+        scoreExplainDone: "This score shows how much weight, daily movement, exercise, and temperature collectively challenge your water plan. A higher score means a greater need for planned drinking.",
+        mainSubDone: "{TOTALML} daily target. Confidence level: {CONFIDENCE}.",
+        scenarioCoolResult: "Approximately {TOTALML} assuming a calmer and cooler day.",
+        scenarioBaseResult: "Approximately {TOTALML} for the entered base profile.",
+        scenarioHardResult: "Approximately {TOTALML} on a hotter and more active day.",
+        glassUnit: "glasses",
+        bottleUnit: "bottles",
+        copyTitle: "Hesapica - Daily Water Intake",
+        copyHedef: "Target",
+        copyMin: "Minimum",
+        copyMax: "Intense day",
+        copyGlass: "Glasses",
+        copyBottle: "Bottles",
+        copyScore: "Score",
+        copyDecision: "Decision"
+      }
+    };
+
+    function t(key){ return translations[state.lang][key] || key; }
 
     const refs = {
       form: document.getElementById('calculatorForm'),
@@ -877,7 +1271,7 @@ class="results" id="resultsPanel">
     };
 
     function formatNumber(value, digits = 0){
-      return new Intl.NumberFormat('tr-TR',{
+      return new Intl.NumberFormat(state.lang === 'tr' ? 'tr-TR' : 'en-US',{
         minimumFractionDigits: digits,
         maximumFractionDigits: digits
       }).format(Number(value) || 0);
@@ -948,11 +1342,11 @@ class="results" id="resultsPanel">
       const climateScore = clamp((weatherExtra / 500) * 20 + (goalExtra / 320) * 10, 0, 30);
       const hydrationScore = roundByUnit(weightScore + activityScore + climateScore, 'score');
 
-      const scoreLabel = hydrationScore < 35 ? 'Düşük ihtiyaç yoğunluğu'
-        : hydrationScore < 65 ? 'Orta ihtiyaç yoğunluğu'
-        : 'Yüksek ihtiyaç yoğunluğu';
+      const scoreLabel = hydrationScore < 35 ? t('scoreLow')
+        : hydrationScore < 65 ? t('scoreMid')
+        : t('scoreHigh');
 
-      const confidence = 'Orta';
+      const confidence = state.lang === 'tr' ? 'Orta' : 'Medium';
       const distribution = {
         morning: roundByUnit(totalMl * 0.25, 'ml'),
         daytime: roundByUnit(totalMl * 0.35, 'ml'),
@@ -973,28 +1367,29 @@ class="results" id="resultsPanel">
       if(results.score < 35){
         return {
           badge:'good',
-          title:'Plan yönetilebilir görünüyor',
-          text:`Yaklaşık ${formatL(results.litre)} hedef, sakin veya orta tempolu bir gün için uygulanabilir seviyede. Günün başında ve öğün çevresinde su içmeyi düzenlemek çoğu zaman yeterli olur.`
+          title: t('decisionGoodTitle'),
+          text: t('decisionGoodText').replace('{LITRE}', formatL(results.litre))
         };
       }
       if(results.score < 65){
+        const exerciseText = inputs.exercise > 0 ? t('decisionWarnTextExercise') : t('decisionWarnTextNoExercise');
         return {
           badge:'warn',
-          title:'Planı gün içine yaymak önemli',
-          text:`Yaklaşık ${formatL(results.litre)} hedef orta yoğunlukta bir su planına işaret ediyor. Özellikle ${inputs.exercise > 0 ? 'egzersiz öncesi ve sonrası' : 'öğünler ve gün içi aralarda'} daha planlı içmek hedefi rahatlatır.`
+          title: t('decisionWarnTitle'),
+          text: t('decisionWarnText').replace('{LITRE}', formatL(results.litre)).replace('{EXERCISE_TEXT}', exerciseText)
         };
       }
       return {
         badge:'bad',
-        title:'Yoğun gün planı gerekiyor',
-        text:`Yaklaşık ${formatL(results.litre)} hedef yüksek ihtiyaç yoğunluğu gösteriyor. Tek seferde çok içmek yerine suyu gün içine bölmek, yanında şişe taşımak ve sıcak / egzersizli zamanlarda ek içmek daha mantıklıdır.`
+        title: t('decisionBadTitle'),
+        text: t('decisionBadText').replace('{LITRE}', formatL(results.litre))
       };
     }
 
     function buildStatus(results){
-      if(results.score < 35) return { badge:'good', text:'Düşük yoğunluk', desc:'Bugünkü su hedefin daha yönetilebilir görünüyor.' };
-      if(results.score < 65) return { badge:'warn', text:'Orta yoğunluk', desc:'Gün içine planlı yaymak önemli.' };
-      return { badge:'bad', text:'Yüksek yoğunluk', desc:'Sıcaklık ve hareket etkisi belirgin.' };
+      if(results.score < 35) return { badge:'good', text: t('statusLow'), desc: t('statusLowDesc') };
+      if(results.score < 65) return { badge:'warn', text: t('statusMid'), desc: t('statusMidDesc') };
+      return { badge:'bad', text: t('statusHigh'), desc: t('statusHighDesc') };
     }
 
     function buildScenarioResults(input){
@@ -1009,20 +1404,20 @@ class="results" id="resultsPanel">
       refs.scoreCard.classList.remove('ready');
       refs.miniGrid.classList.remove('ready');
       refs.mainResult.textContent = '—';
-      refs.mainResultSub.textContent = 'Kişisel verilerine göre yaklaşık günlük içme suyu hedefi burada görünür.';
-      refs.statusText.textContent = 'Veri bekleniyor. Sonuçlar, profilini girdikten sonra aktifleşir.';
-      refs.statusBadge.textContent = 'Bekleniyor';
+      refs.mainResultSub.textContent = t('mainSub');
+      refs.statusText.textContent = t('statusWait');
+      refs.statusBadge.textContent = t('badgeWait');
       refs.statusBadge.className = 'badge';
       refs.scoreValue.textContent = '—';
-      refs.scoreBadge.textContent = 'Hazır değil';
+      refs.scoreBadge.textContent = t('scoreBadgeWait');
       refs.scoreBadge.className = 'pill';
       refs.scoreProgress.style.width = '0%';
-      refs.scoreExplain.textContent = 'Skor yükseldikçe gün içindeki su planı daha dikkatli yönetilmelidir.';
+      refs.scoreExplain.textContent = t('scoreExplainDefault');
       refs.scoreWeight.textContent = '—';
       refs.scoreActivity.textContent = '—';
       refs.scoreClimate.textContent = '—';
-      refs.decisionTitle.textContent = 'Karar Özeti';
-      refs.decisionText.textContent = 'Önce temel verileri gir; sonra pratik su planı ve yorum burada oluşsun.';
+      refs.decisionTitle.textContent = t('decisionTitleDefault');
+      refs.decisionText.textContent = t('decisionTextDefault');
       refs.minTarget.textContent = '—';
       refs.maxTarget.textContent = '—';
       refs.glassCount.textContent = '—';
@@ -1056,7 +1451,7 @@ class="results" id="resultsPanel">
       refs.miniGrid.classList.add('ready');
 
       refs.mainResult.textContent = formatL(results.litre);
-      refs.mainResultSub.textContent = `${formatMl(results.totalMl)} günlük hedef. Güven seviyesi: ${results.confidence}.`;
+      refs.mainResultSub.textContent = t('mainSubDone').replace('{TOTALML}', formatMl(results.totalMl)).replace('{CONFIDENCE}', results.confidence);
 
       refs.statusText.textContent = status.desc;
       refs.statusBadge.textContent = status.text;
@@ -1066,7 +1461,7 @@ class="results" id="resultsPanel">
       refs.scoreBadge.textContent = results.scoreLabel;
       refs.scoreBadge.className = `pill ${status.badge}`;
       refs.scoreProgress.style.width = `${results.score}%`;
-      refs.scoreExplain.textContent = `Bu skor, kilo, günlük hareket, egzersiz ve sıcaklığın toplamda su planını ne kadar zorlaştırdığını gösterir. Yüksek skor, daha planlı içme ihtiyacı anlamına gelir.`;
+      refs.scoreExplain.textContent = t('scoreExplainDone');
       refs.scoreWeight.textContent = `${formatNumber(results.weightScore,0)} / 35`;
       refs.scoreActivity.textContent = `${formatNumber(results.activityScore,0)} / 35`;
       refs.scoreClimate.textContent = `${formatNumber(results.climateScore,0)} / 30`;
@@ -1076,17 +1471,17 @@ class="results" id="resultsPanel">
 
       refs.minTarget.textContent = formatL(results.minLitre);
       refs.maxTarget.textContent = formatL(results.intenseLitre);
-      refs.glassCount.textContent = `${formatNumber(results.glasses,1)} bardak`;
-      refs.bottleCount.textContent = `${formatNumber(results.bottles,1)} şişe`;
+      refs.glassCount.textContent = `${formatNumber(results.glasses,1)} ${t('glassUnit')}`;
+      refs.bottleCount.textContent = `${formatNumber(results.bottles,1)} ${t('bottleUnit')}`;
       refs.summaryValue.textContent = `${formatMl(results.baseNeed)} + ${formatMl(results.totalMl - results.baseNeed)}`;
       refs.planValue.textContent = `${formatMl(results.distribution.morning)} / ${formatMl(results.distribution.daytime)} / ${formatMl(results.distribution.evening)} / ${formatMl(results.distribution.workout)}`;
 
       refs.scenarioCool.textContent = formatL(scenarios.cool.litre);
       refs.scenarioBase.textContent = formatL(scenarios.base.litre);
       refs.scenarioHard.textContent = formatL(scenarios.hard.litre);
-      refs.scenarioCoolSub.textContent = `Daha sakin ve serin gün varsayımıyla yaklaşık ${formatMl(scenarios.cool.totalMl)}.`;
-      refs.scenarioBaseSub.textContent = `Girilen baz profil için yaklaşık ${formatMl(scenarios.base.totalMl)}.`;
-      refs.scenarioHardSub.textContent = `Daha sıcak ve aktif günde yaklaşık ${formatMl(scenarios.hard.totalMl)}.`;
+      refs.scenarioCoolSub.textContent = t('scenarioCoolResult').replace('{TOTALML}', formatMl(scenarios.cool.totalMl));
+      refs.scenarioBaseSub.textContent = t('scenarioBaseResult').replace('{TOTALML}', formatMl(scenarios.base.totalMl));
+      refs.scenarioHardSub.textContent = t('scenarioHardResult').replace('{TOTALML}', formatMl(scenarios.hard.totalMl));
     }
 
     function setInputA11y(key, isInvalid){
@@ -1127,7 +1522,7 @@ class="results" id="resultsPanel">
       });
 
       if(force && invalidKeys.length){
-        refs.validationBox.textContent = 'Lütfen kırmızı işaretli alanları kontrol et.';
+        refs.validationBox.textContent = t('validationFix');
         refs.validationBox.classList.add('show');
       }
     }
@@ -1143,7 +1538,7 @@ class="results" id="resultsPanel">
       let t;
       return (...args) => {
         clearTimeout(t);
-        refs.microStatus.textContent = 'Hesaplanıyor...';
+        refs.microStatus.textContent = t('microStatusCalculating');
         t = setTimeout(() => fn(...args), wait);
       };
     }
@@ -1188,12 +1583,12 @@ class="results" id="resultsPanel">
 
         const hasAnyValue = Object.values(inputs).some(value => value !== '' && value !== null && value !== 0);
         if(force){
-          refs.microStatus.textContent = 'Eksik veya hatalı alanları düzelt.';
+          refs.microStatus.textContent = t('microStatusFix');
           if(shouldFocus) focusFirstInvalid(errors);
         } else if(hasAnyValue){
-          refs.microStatus.textContent = 'Temel alanları tamamladığında sonuç oluşur.';
+          refs.microStatus.textContent = t('microStatusPartial');
         } else {
-          refs.microStatus.textContent = 'Form boş başlar. İstersen örnek veri veya hazır senaryo ile hızlı başlangıç yapabilirsin.';
+          refs.microStatus.textContent = t('microStatusEmpty');
         }
         return;
       }
@@ -1204,7 +1599,7 @@ class="results" id="resultsPanel">
       state.isCalculated = true;
       state.confidence = results.confidence;
       render(results, inputs);
-      refs.microStatus.textContent = 'Sonuç güncellendi.';
+      refs.microStatus.textContent = t('microStatusDone');
       if(state.source === 'manual') saveManualState();
       if(shouldFocus) focusResults();
     }
@@ -1216,6 +1611,13 @@ class="results" id="resultsPanel">
       debouncedCalculation();
     }
 
+    function handlePrimaryCalculate(){
+      state.source = state.source === 'empty' ? 'manual' : state.source;
+      if(state.source !== 'example' && state.source !== 'scenario' && state.source !== 'shared') state.source = 'manual';
+      touchAllFields();
+      handleCalculation(true, true);
+    }
+
     function resetForm(clearStorage = false){
       setFormValues({ weight:'', gender:'', activity:'', exercise:'', weather:'', goal:'' }, 'empty');
       state.touched = {};
@@ -1224,7 +1626,7 @@ class="results" id="resultsPanel">
       applyEmptyState();
       document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
       if(clearStorage) clearSavedState();
-      refs.microStatus.textContent = 'Form sıfırlandı. İstersen örnek veri veya manuel girişle devam et.';
+      refs.microStatus.textContent = t('microStatusReset');
     }
 
     function fillExample(){
@@ -1240,7 +1642,7 @@ class="results" id="resultsPanel">
       state.hasAttemptedSubmit = false;
       document.querySelectorAll('.scenario-btn').forEach(btn => btn.classList.remove('active'));
       handleCalculation(true, true);
-      refs.microStatus.textContent = 'Örnek veri yüklendi. Bu veri otomatik kaydedilmez.';
+      refs.microStatus.textContent = t('microStatusExample');
     }
 
     function applyScenario(name, button){
@@ -1256,7 +1658,7 @@ class="results" id="resultsPanel">
       state.touched = {};
       state.hasAttemptedSubmit = false;
       handleCalculation(true, true);
-      refs.microStatus.textContent = 'Hazır senaryo yüklendi. Bu veri otomatik kaydedilmez.';
+      refs.microStatus.textContent = t('microStatusScenario');
     }
 
     function applyQuickWeight(value){
@@ -1303,20 +1705,20 @@ class="results" id="resultsPanel">
 
     function copyResult(){
       if(!state.results){
-        refs.microStatus.textContent = 'Önce geçerli bir sonuç oluştur.';
+        refs.microStatus.textContent = t('microStatusNoResult');
         return;
       }
       const text = [
-        'Hesapica - Günlük Su İhtiyacı',
-        `Hedef: ${refs.mainResult.textContent}`,
-        `Minimum: ${refs.minTarget.textContent}`,
-        `Yoğun gün: ${refs.maxTarget.textContent}`,
-        `Bardak: ${refs.glassCount.textContent}`,
-        `Şişe: ${refs.bottleCount.textContent}`,
-        `Skor: ${refs.scoreValue.textContent} / 100`,
-        `Karar: ${refs.decisionText.textContent}`
+        t('copyTitle'),
+        `${t('copyHedef')}: ${refs.mainResult.textContent}`,
+        `${t('copyMin')}: ${refs.minTarget.textContent}`,
+        `${t('copyMax')}: ${refs.maxTarget.textContent}`,
+        `${t('copyGlass')}: ${refs.glassCount.textContent}`,
+        `${t('copyBottle')}: ${refs.bottleCount.textContent}`,
+        `${t('copyScore')}: ${refs.scoreValue.textContent} / 100`,
+        `${t('copyDecision')}: ${refs.decisionText.textContent}`
       ].join('\n');
-      copyTextSmart(text, 'Sonuç panoya kopyalandı.', 'Kopyalama başarısız oldu.');
+      copyTextSmart(text, t('microStatusCopied'), t('microStatusCopyFail'));
     }
 
     function buildShareUrl(){
@@ -1328,22 +1730,22 @@ class="results" id="resultsPanel">
 
     function shareResult(){
       if(!state.results){
-        refs.microStatus.textContent = 'Önce geçerli bir sonuç oluştur.';
+        refs.microStatus.textContent = t('microStatusNoResult');
         return;
       }
       const url = buildShareUrl();
       if(navigator.share){
-        navigator.share({ title:'Günlük Su İhtiyacı Hesaplama', text:'Su hedefimi hesapladım.', url })
-          .then(() => refs.microStatus.textContent = 'Paylaşım başlatıldı.')
-          .catch(() => copyTextSmart(url, 'Paylaşım bağlantısı panoya kopyalandı.', 'Paylaşım başarısız oldu.'));
+        navigator.share({ title: t('copyTitle'), text: `${t('copyHedef')}: ${refs.mainResult.textContent}`, url })
+          .then(() => refs.microStatus.textContent = t('microStatusShareStart'))
+          .catch(() => copyTextSmart(url, t('microStatusShareCopy'), t('microStatusShareFail')));
       } else {
-        copyTextSmart(url, 'Paylaşım bağlantısı panoya kopyalandı.', 'Paylaşım başarısız oldu.');
+        copyTextSmart(url, t('microStatusShareCopy'), t('microStatusShareFail'));
       }
     }
 
     function printResult(){
       if(!state.results){
-        refs.microStatus.textContent = 'Önce geçerli bir sonuç oluştur.';
+        refs.microStatus.textContent = t('microStatusNoResult');
         return;
       }
       window.print();
@@ -1364,7 +1766,7 @@ class="results" id="resultsPanel">
       state.touched = {};
       state.hasAttemptedSubmit = false;
       handleCalculation(true);
-      refs.microStatus.textContent = 'Paylaşılan sonuç yüklendi.';
+      refs.microStatus.textContent = t('microStatusShared');
       return true;
     }
 
@@ -1378,7 +1780,7 @@ class="results" id="resultsPanel">
         state.touched = {};
         state.hasAttemptedSubmit = false;
         handleCalculation(true);
-        refs.microStatus.textContent = 'Önceki manuel girişlerin geri yüklendi.';
+        refs.microStatus.textContent = t('microStatusRestored');
         return true;
       }catch{
         return false;
@@ -1390,12 +1792,61 @@ class="results" id="resultsPanel">
       item.classList.toggle('active');
     }
 
+    function updateSelectTexts(){
+      const genderSelect = refs.inputs.gender;
+      const activitySelect = refs.inputs.activity;
+      const weatherSelect = refs.inputs.weather;
+      const goalSelect = refs.inputs.goal;
+
+      if(genderSelect){
+        genderSelect.options[0].text = t('genderSelect');
+        genderSelect.options[1].text = t('genderMale');
+        genderSelect.options[2].text = t('genderFemale');
+      }
+      if(activitySelect){
+        activitySelect.options[0].text = t('activitySelect');
+        activitySelect.options[1].text = t('activityLow');
+        activitySelect.options[2].text = t('activityMid');
+        activitySelect.options[3].text = t('activityHigh');
+      }
+      if(weatherSelect){
+        weatherSelect.options[0].text = t('weatherSelect');
+        weatherSelect.options[1].text = t('weatherCool');
+        weatherSelect.options[2].text = t('weatherWarm');
+        weatherSelect.options[3].text = t('weatherHot');
+      }
+      if(goalSelect){
+        goalSelect.options[0].text = t('goalSelect');
+        goalSelect.options[1].text = t('goalMaintain');
+        goalSelect.options[2].text = t('goalLose');
+        goalSelect.options[3].text = t('goalTrain');
+      }
+    }
+
+    function setLanguage(lang){
+      state.lang = lang;
+      document.documentElement.lang = lang;
+      document.title = t('pageTitle');
+      document.getElementById('langTr').classList.toggle('active', lang === 'tr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if(key && translations[lang][key]){
+          el.textContent = translations[lang][key];
+        }
+      });
+      updateSelectTexts();
+      if(state.results){
+        render(state.results, state.inputs);
+      } else {
+        applyEmptyState();
+      }
+    }
+
+    // Form submit handler (fallback)
     refs.form.addEventListener('submit', (e) => {
       e.preventDefault();
-      touchAllFields();
-      state.source = state.source === 'empty' ? 'manual' : state.source;
-      if(state.source !== 'example' && state.source !== 'scenario' && state.source !== 'shared') state.source = 'manual';
-      handleCalculation(true, true);
+      handlePrimaryCalculate();
     });
 
     Object.entries(refs.inputs).forEach(([key, el]) => {
@@ -1414,14 +1865,13 @@ class="results" id="resultsPanel">
       el.addEventListener('keydown', (e) => {
         if(e.key === 'Enter'){
           e.preventDefault();
-          touchAllFields();
-          state.source = 'manual';
-          handleCalculation(true, true);
+          handlePrimaryCalculate();
         }
       });
     });
 
     (function init(){
+      setLanguage('tr');
       applyEmptyState();
       clearFieldErrors();
       if(loadFromQuery()) return;
