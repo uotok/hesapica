@@ -216,6 +216,57 @@
 .btn-whatsapp{background:#ecfdf5;color:#16a34a;border:1px solid #bbf7d0}
 @media(max-width:720px){.share-actions{flex-direction:column}.share-actions .btn{width:100%}}
 
+
+.city-picker-trigger{
+  width:100%;height:56px;padding:0 16px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;border:1px solid #d9def0;
+  border-radius:16px;background:#fff;color:var(--text);font-size:18px;
+  font-weight:600;text-align:left;cursor:pointer;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent
+}
+.city-picker-trigger:focus-visible{
+  outline:none;border-color:rgba(79,70,229,.45);
+  box-shadow:0 0 0 4px rgba(79,70,229,.08)
+}
+.field.has-error .city-picker-trigger{
+  border-color:#fca5a5;background:#fff7f7;
+  box-shadow:0 0 0 4px rgba(185,28,28,.08)
+}
+.city-picker-arrow{font-size:22px;color:#6366f1;transition:transform .18s ease}
+.city-picker-trigger[aria-expanded="true"] .city-picker-arrow{transform:rotate(180deg)}
+.city-picker-panel{
+  margin-top:10px;padding:14px;border:1px solid #dbe4ff;border-radius:18px;
+  background:#f8faff;box-shadow:0 16px 36px rgba(79,70,229,.12)
+}
+.city-picker-panel[hidden]{display:none!important}
+.city-search-label{font-size:14px!important;margin-bottom:7px}
+#citySearchInput{background:#fff}
+.city-search-status{min-height:24px;padding:7px 2px 5px;color:#6b7280;font-size:13px}
+.city-options{
+  max-height:300px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;
+  padding:2px;overscroll-behavior:contain
+}
+.city-option-btn{
+  min-height:46px;padding:9px 10px;border:1px solid #e5e7eb;border-radius:13px;
+  background:#fff;color:#374151;text-align:left;font-weight:700;cursor:pointer;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent
+}
+.city-option-btn:hover,.city-option-btn:focus-visible{
+  outline:none;border-color:#a5b4fc;background:#eef2ff
+}
+.city-option-btn.is-selected{
+  border-color:#818cf8;background:#eef2ff;color:#3730a3
+}
+.city-option-btn[hidden]{display:none!important}
+@media(max-width:720px){
+  .city-options{grid-template-columns:repeat(2,minmax(0,1fr));max-height:340px}
+  .city-picker-panel{padding:12px}
+}
+@media(max-width:390px){
+  .city-options{grid-template-columns:1fr}
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -503,91 +554,104 @@
 </div>
 <div class="field full">
 <label for="birthCity">Doğum yeri (Türkiye illeri)</label>
-<input autocomplete="off" id="birthCity" list="cityList" placeholder="Örn: Isparta, İstanbul, Ankara" type="text"/>
-<datalist id="cityList">
-<option value="Adana"></option>
-<option value="Adıyaman"></option>
-<option value="Afyonkarahisar"></option>
-<option value="Ağrı"></option>
-<option value="Aksaray"></option>
-<option value="Amasya"></option>
-<option value="Ankara"></option>
-<option value="Antalya"></option>
-<option value="Ardahan"></option>
-<option value="Artvin"></option>
-<option value="Aydın"></option>
-<option value="Balıkesir"></option>
-<option value="Bartın"></option>
-<option value="Batman"></option>
-<option value="Bayburt"></option>
-<option value="Bilecik"></option>
-<option value="Bingöl"></option>
-<option value="Bitlis"></option>
-<option value="Bolu"></option>
-<option value="Burdur"></option>
-<option value="Bursa"></option>
-<option value="Çanakkale"></option>
-<option value="Çankırı"></option>
-<option value="Çorum"></option>
-<option value="Denizli"></option>
-<option value="Diyarbakır"></option>
-<option value="Düzce"></option>
-<option value="Edirne"></option>
-<option value="Elazığ"></option>
-<option value="Erzincan"></option>
-<option value="Erzurum"></option>
-<option value="Eskişehir"></option>
-<option value="Gaziantep"></option>
-<option value="Giresun"></option>
-<option value="Gümüşhane"></option>
-<option value="Hakkâri"></option>
-<option value="Hatay"></option>
-<option value="Iğdır"></option>
-<option value="Isparta"></option>
-<option value="İstanbul"></option>
-<option value="İzmir"></option>
-<option value="Kahramanmaraş"></option>
-<option value="Karabük"></option>
-<option value="Karaman"></option>
-<option value="Kars"></option>
-<option value="Kastamonu"></option>
-<option value="Kayseri"></option>
-<option value="Kilis"></option>
-<option value="Kırıkkale"></option>
-<option value="Kırklareli"></option>
-<option value="Kırşehir"></option>
-<option value="Kocaeli"></option>
-<option value="Konya"></option>
-<option value="Kütahya"></option>
-<option value="Malatya"></option>
-<option value="Manisa"></option>
-<option value="Mardin"></option>
-<option value="Mersin"></option>
-<option value="Muğla"></option>
-<option value="Muş"></option>
-<option value="Nevşehir"></option>
-<option value="Niğde"></option>
-<option value="Ordu"></option>
-<option value="Osmaniye"></option>
-<option value="Rize"></option>
-<option value="Sakarya"></option>
-<option value="Samsun"></option>
-<option value="Şanlıurfa"></option>
-<option value="Siirt"></option>
-<option value="Sinop"></option>
-<option value="Sivas"></option>
-<option value="Şırnak"></option>
-<option value="Tekirdağ"></option>
-<option value="Tokat"></option>
-<option value="Trabzon"></option>
-<option value="Tunceli"></option>
-<option value="Uşak"></option>
-<option value="Van"></option>
-<option value="Yalova"></option>
-<option value="Yozgat"></option>
-<option value="Zonguldak"></option>
-</datalist>
-<div class="hint">İl merkezi koordinatları kullanılır. Şehir adını yazarak veya listeden seçerek ilerleyebilirsin; ilçe ya da daha hassas nokta için gelişmiş konum girişini açabilirsin.</div>
+
+<input id="birthCity" type="hidden" value=""/>
+<button aria-controls="cityPickerPanel" aria-expanded="false"
+        class="city-picker-trigger" id="cityPickerTrigger" type="button">
+  <span id="cityPickerLabel">İl seçiniz</span>
+  <span aria-hidden="true" class="city-picker-arrow">⌄</span>
+</button>
+<div class="city-picker-panel" id="cityPickerPanel" hidden>
+  <label class="city-search-label" for="citySearchInput">İl ara</label>
+  <input autocomplete="off" id="citySearchInput" inputmode="search"
+         placeholder="Örn: İstanbul, Ankara, Isparta" type="search"/>
+  <div aria-live="polite" class="city-search-status" id="citySearchStatus"></div>
+  <div class="city-options" id="cityOptions">
+    <button class="city-option-btn" data-city="Adana" type="button">Adana</button>
+<button class="city-option-btn" data-city="Adıyaman" type="button">Adıyaman</button>
+<button class="city-option-btn" data-city="Afyonkarahisar" type="button">Afyonkarahisar</button>
+<button class="city-option-btn" data-city="Ağrı" type="button">Ağrı</button>
+<button class="city-option-btn" data-city="Aksaray" type="button">Aksaray</button>
+<button class="city-option-btn" data-city="Amasya" type="button">Amasya</button>
+<button class="city-option-btn" data-city="Ankara" type="button">Ankara</button>
+<button class="city-option-btn" data-city="Antalya" type="button">Antalya</button>
+<button class="city-option-btn" data-city="Ardahan" type="button">Ardahan</button>
+<button class="city-option-btn" data-city="Artvin" type="button">Artvin</button>
+<button class="city-option-btn" data-city="Aydın" type="button">Aydın</button>
+<button class="city-option-btn" data-city="Balıkesir" type="button">Balıkesir</button>
+<button class="city-option-btn" data-city="Bartın" type="button">Bartın</button>
+<button class="city-option-btn" data-city="Batman" type="button">Batman</button>
+<button class="city-option-btn" data-city="Bayburt" type="button">Bayburt</button>
+<button class="city-option-btn" data-city="Bilecik" type="button">Bilecik</button>
+<button class="city-option-btn" data-city="Bingöl" type="button">Bingöl</button>
+<button class="city-option-btn" data-city="Bitlis" type="button">Bitlis</button>
+<button class="city-option-btn" data-city="Bolu" type="button">Bolu</button>
+<button class="city-option-btn" data-city="Burdur" type="button">Burdur</button>
+<button class="city-option-btn" data-city="Bursa" type="button">Bursa</button>
+<button class="city-option-btn" data-city="Çanakkale" type="button">Çanakkale</button>
+<button class="city-option-btn" data-city="Çankırı" type="button">Çankırı</button>
+<button class="city-option-btn" data-city="Çorum" type="button">Çorum</button>
+<button class="city-option-btn" data-city="Denizli" type="button">Denizli</button>
+<button class="city-option-btn" data-city="Diyarbakır" type="button">Diyarbakır</button>
+<button class="city-option-btn" data-city="Düzce" type="button">Düzce</button>
+<button class="city-option-btn" data-city="Edirne" type="button">Edirne</button>
+<button class="city-option-btn" data-city="Elazığ" type="button">Elazığ</button>
+<button class="city-option-btn" data-city="Erzincan" type="button">Erzincan</button>
+<button class="city-option-btn" data-city="Erzurum" type="button">Erzurum</button>
+<button class="city-option-btn" data-city="Eskişehir" type="button">Eskişehir</button>
+<button class="city-option-btn" data-city="Gaziantep" type="button">Gaziantep</button>
+<button class="city-option-btn" data-city="Giresun" type="button">Giresun</button>
+<button class="city-option-btn" data-city="Gümüşhane" type="button">Gümüşhane</button>
+<button class="city-option-btn" data-city="Hakkâri" type="button">Hakkâri</button>
+<button class="city-option-btn" data-city="Hatay" type="button">Hatay</button>
+<button class="city-option-btn" data-city="Iğdır" type="button">Iğdır</button>
+<button class="city-option-btn" data-city="Isparta" type="button">Isparta</button>
+<button class="city-option-btn" data-city="İstanbul" type="button">İstanbul</button>
+<button class="city-option-btn" data-city="İzmir" type="button">İzmir</button>
+<button class="city-option-btn" data-city="Kahramanmaraş" type="button">Kahramanmaraş</button>
+<button class="city-option-btn" data-city="Karabük" type="button">Karabük</button>
+<button class="city-option-btn" data-city="Karaman" type="button">Karaman</button>
+<button class="city-option-btn" data-city="Kars" type="button">Kars</button>
+<button class="city-option-btn" data-city="Kastamonu" type="button">Kastamonu</button>
+<button class="city-option-btn" data-city="Kayseri" type="button">Kayseri</button>
+<button class="city-option-btn" data-city="Kilis" type="button">Kilis</button>
+<button class="city-option-btn" data-city="Kırıkkale" type="button">Kırıkkale</button>
+<button class="city-option-btn" data-city="Kırklareli" type="button">Kırklareli</button>
+<button class="city-option-btn" data-city="Kırşehir" type="button">Kırşehir</button>
+<button class="city-option-btn" data-city="Kocaeli" type="button">Kocaeli</button>
+<button class="city-option-btn" data-city="Konya" type="button">Konya</button>
+<button class="city-option-btn" data-city="Kütahya" type="button">Kütahya</button>
+<button class="city-option-btn" data-city="Malatya" type="button">Malatya</button>
+<button class="city-option-btn" data-city="Manisa" type="button">Manisa</button>
+<button class="city-option-btn" data-city="Mardin" type="button">Mardin</button>
+<button class="city-option-btn" data-city="Mersin" type="button">Mersin</button>
+<button class="city-option-btn" data-city="Muğla" type="button">Muğla</button>
+<button class="city-option-btn" data-city="Muş" type="button">Muş</button>
+<button class="city-option-btn" data-city="Nevşehir" type="button">Nevşehir</button>
+<button class="city-option-btn" data-city="Niğde" type="button">Niğde</button>
+<button class="city-option-btn" data-city="Ordu" type="button">Ordu</button>
+<button class="city-option-btn" data-city="Osmaniye" type="button">Osmaniye</button>
+<button class="city-option-btn" data-city="Rize" type="button">Rize</button>
+<button class="city-option-btn" data-city="Sakarya" type="button">Sakarya</button>
+<button class="city-option-btn" data-city="Samsun" type="button">Samsun</button>
+<button class="city-option-btn" data-city="Şanlıurfa" type="button">Şanlıurfa</button>
+<button class="city-option-btn" data-city="Siirt" type="button">Siirt</button>
+<button class="city-option-btn" data-city="Sinop" type="button">Sinop</button>
+<button class="city-option-btn" data-city="Sivas" type="button">Sivas</button>
+<button class="city-option-btn" data-city="Şırnak" type="button">Şırnak</button>
+<button class="city-option-btn" data-city="Tekirdağ" type="button">Tekirdağ</button>
+<button class="city-option-btn" data-city="Tokat" type="button">Tokat</button>
+<button class="city-option-btn" data-city="Trabzon" type="button">Trabzon</button>
+<button class="city-option-btn" data-city="Tunceli" type="button">Tunceli</button>
+<button class="city-option-btn" data-city="Uşak" type="button">Uşak</button>
+<button class="city-option-btn" data-city="Van" type="button">Van</button>
+<button class="city-option-btn" data-city="Yalova" type="button">Yalova</button>
+<button class="city-option-btn" data-city="Yozgat" type="button">Yozgat</button>
+<button class="city-option-btn" data-city="Zonguldak" type="button">Zonguldak</button>
+  </div>
+</div>
+
+<div class="hint">Doğduğun ili seçmek için alana dokun. Açılan panelde arama yapabilir veya 81 il arasından seçim yapabilirsin. İlçe ya da daha hassas konum için gelişmiş konum girişini açabilirsin.</div>
 <div class="error-text">Listeden bir il seç veya gelişmiş koordinat alanlarını doldur.</div>
 </div>
 </div>
@@ -1647,6 +1711,121 @@ try{await navigator.clipboard.writeText(txt+"\n"+location.href);alert('Sonuç pa
 }
 }
 }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cityValue = document.getElementById("birthCity");
+  const trigger = document.getElementById("cityPickerTrigger");
+  const label = document.getElementById("cityPickerLabel");
+  const panel = document.getElementById("cityPickerPanel");
+  const search = document.getElementById("citySearchInput");
+  const status = document.getElementById("citySearchStatus");
+  const buttons = Array.from(document.querySelectorAll(".city-option-btn"));
+
+  if (!cityValue || !trigger || !label || !panel || !search || !buttons.length) return;
+
+  const normalize = function (value) {
+    return String(value || "")
+      .toLocaleLowerCase("tr-TR")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/ı/g, "i");
+  };
+
+  function syncPicker() {
+    const selected = cityValue.value || "";
+    label.textContent = selected || "İl seçiniz";
+    buttons.forEach(function (button) {
+      button.classList.toggle("is-selected", button.dataset.city === selected);
+    });
+  }
+
+  function filterCities() {
+    const query = normalize(search.value.trim());
+    let visible = 0;
+
+    buttons.forEach(function (button) {
+      const show = !query || normalize(button.dataset.city).includes(query);
+      button.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    status.textContent = visible
+      ? visible + " il gösteriliyor"
+      : "Aramana uygun il bulunamadı.";
+  }
+
+  function openPanel() {
+    panel.hidden = false;
+    trigger.setAttribute("aria-expanded", "true");
+    search.value = "";
+    filterCities();
+    setTimeout(function () {
+      search.focus({ preventScroll: true });
+    }, 0);
+  }
+
+  function closePanel() {
+    panel.hidden = true;
+    trigger.setAttribute("aria-expanded", "false");
+  }
+
+  trigger.addEventListener("click", function () {
+    if (panel.hidden) openPanel();
+    else closePanel();
+  });
+
+  search.addEventListener("input", filterCities);
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      cityValue.value = button.dataset.city;
+      cityValue.dispatchEvent(new Event("input", { bubbles: true }));
+      cityValue.dispatchEvent(new Event("change", { bubbles: true }));
+      syncPicker();
+      closePanel();
+    });
+  });
+
+  cityValue.addEventListener("input", syncPicker);
+  cityValue.addEventListener("change", syncPicker);
+
+  document.addEventListener("click", function (event) {
+    if (!panel.hidden &&
+        !panel.contains(event.target) &&
+        !trigger.contains(event.target)) {
+      closePanel();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && !panel.hidden) {
+      closePanel();
+      trigger.focus({ preventScroll: true });
+    }
+  });
+
+  const exampleButton = document.getElementById("exampleBtn");
+  const resetButton = document.getElementById("resetBtn");
+
+  if (exampleButton) {
+    exampleButton.addEventListener("click", function () {
+      setTimeout(syncPicker, 0);
+    });
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener("click", function () {
+      setTimeout(syncPicker, 0);
+    });
+  }
+
+  // Existing script may restore saved data before or just after this listener.
+  syncPicker();
+  setTimeout(syncPicker, 50);
 });
 </script>
 
