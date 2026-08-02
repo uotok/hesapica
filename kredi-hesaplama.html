@@ -4,13 +4,11 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Kredi Hesaplama 2026 | Kredi, Taksit ve Erken Kapatma Analizi</title>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 <meta name="description" content="Kredi taksidini anında hesapla; faiz, vade ve toplam geri ödeme tutarını karşılaştır. En uygun ödeme planını bul, başvurunu güvenle yap!"/>
 <meta name="robots" content="index,follow"/>
 <meta name="theme-color" content="#4f46e5"/>
 <link rel="canonical" href="https://hesapica.com/kredi-hesaplama"/>
 <link rel="alternate" hreflang="tr" href="https://hesapica.com/kredi-hesaplama" />
-<link rel="alternate" hreflang="en" href="https://hesapica.com/en/loan-calculator" />
 <link rel="alternate" hreflang="x-default" href="https://hesapica.com/kredi-hesaplama" />
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Kredi Hesaplama 2026 | Kredi, Taksit ve Erken Kapatma Analizi"/>
@@ -197,15 +195,15 @@ ins.adsbygoogle{margin:0!important}
         <div class="validation-box" id="validationBox">Lütfen gerekli alanları doldur.</div>
 
         <div class="field-grid">
-          <div class="field" data-mode-only="kredi">
+          <div class="field" data-mode-only="kredi erken">
             <label for="loanType">Kredi türü</label>
             <select id="loanType">
               <option value="ihtiyac">İhtiyaç kredisi</option>
               <option value="tasit">Taşıt kredisi</option>
-              <option value="konut">Konut kredisi</option>
+              <option value="konut">Konut finansmanı (istisna koşullarını sağlıyor)</option>
               <option value="diger">Diğer</option>
             </select>
-            <div class="hint">Türe göre KKDF, BSMV ve tahsis ücreti için önerilen varsayılanlar uygulanabilir.</div>
+            <div class="hint">Türe göre önerilen BSMV, KKDF ve tahsis ücreti varsayılanları uygulanır. Konut seçeneği yalnız istisna koşullarını sağlayan konut finansmanı içindir.</div>
             <div class="err"></div>
           </div>
 
@@ -219,7 +217,7 @@ ins.adsbygoogle{margin:0!important}
           <div class="field">
             <label for="rate">Aylık faiz / oran (%)</label>
             <input id="rate" data-type="decimal" inputmode="decimal" placeholder="Örn. 3,49"/>
-            <div class="hint" id="rateHint">Aylık oranı virgüllü olarak girebilirsin.</div>
+            <div class="hint" id="rateHint">Aylık oranı 3,49 veya 3.49 biçiminde girebilirsin.</div>
             <div class="err"></div>
           </div>
 
@@ -230,21 +228,21 @@ ins.adsbygoogle{margin:0!important}
             <div class="err"></div>
           </div>
 
-          <div class="field" data-mode-only="kredi">
+          <div class="field" data-mode-only="kredi taksit">
             <label for="income">Aylık net gelir (opsiyonel)</label>
             <input id="income" data-type="money" inputmode="decimal" placeholder="Örn. 55.000"/>
             <div class="hint">Girersen aylık ödemenin gelirine oranı da yorumlanır.</div>
             <div class="err"></div>
           </div>
 
-          <div class="field" data-mode-only="kredi">
+          <div class="field" data-mode-only="kredi erken">
             <label for="bsmv">BSMV (%)</label>
             <input id="bsmv" data-type="decimal" inputmode="decimal" placeholder="Örn. 15"/>
             <div class="hint">Boş bırakırsan kredi türüne göre varsayılan uygulanır.</div>
             <div class="err"></div>
           </div>
 
-          <div class="field" data-mode-only="kredi">
+          <div class="field" data-mode-only="kredi erken">
             <label for="kkdf">KKDF (%)</label>
             <input id="kkdf" data-type="decimal" inputmode="decimal" placeholder="Örn. 15"/>
             <div class="hint">Boş bırakırsan kredi türüne göre varsayılan uygulanır.</div>
@@ -305,10 +303,17 @@ ins.adsbygoogle{margin:0!important}
             <div class="err"></div>
           </div>
 
+           <div class="field" data-mode-only="erken" hidden>
+             <label for="daysSincePayment">Son taksit tarihinden geçen gün</label>
+             <input id="daysSincePayment" data-type="integer" inputmode="numeric" placeholder="Örn. 10"/>
+             <div class="hint">Kapama gününe kadar işlemiş yaklaşık faiz için 0–30 arasında gün sayısı gir.</div>
+             <div class="err"></div>
+           </div>
+
           <div class="field" data-mode-only="erken" hidden>
-            <label for="closeFee">Erken kapama masrafı (TL)</label>
+            <label for="closeFee">Banka bildirilen tazminat / ek ücret (TL)</label>
             <input id="closeFee" data-type="money" inputmode="decimal" placeholder="Örn. 1.250"/>
-            <div class="hint">Banka tarafından istenen tahmini kapama masrafı.</div>
+            <div class="hint">Varsa bankanın bildirdiği ek tutarı gir. Araç bu bedeli kendiliğinden üretmez; konut finansmanında yasal üst sınırlar sözleşme ve kalan vadeye göre değişebilir.</div>
             <div class="err"></div>
           </div>
 
@@ -369,16 +374,6 @@ ins.adsbygoogle{margin:0!important}
        data-full-width-responsive="true"></ins>
 </div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<section id="hc-related-tools" class="related-tools">
-  <h2>İlgili Hesaplama Araçları</h2>
-  <div class="related-grid">
-<a href="/faiz-hesaplama" class="related-card"><h3>Faiz Hesaplama</h3><p>Basit, mevduat ve bileşik getiri senaryolarını hemen hesapla.</p></a>
-<a href="/kredi-karti-faiz-hesaplama" class="related-card"><h3>Kredi Kartı Faiz Hesaplama</h3><p>Asgari ödeme ve gecikme faizinin borca etkisini hızlıca gör.</p></a>
-<a href="/butce-hesaplama" class="related-card"><h3>Bütçe Hesaplama</h3><p>Gelir-gider dengesini kur, aylık tasarruf hedefini netleştir.</p></a>
-<a href="/borc-kapama-plani" class="related-card"><h3>Borç Kapama Planı</h3><p>Borçları önceliklendir, kapanış süresini ve ödeme planını öğren.</p></a>
-  </div>
-  <a href="/" class="related-home-link">← Ana sayfaya dön ve tüm araçları keşfet</a>
-</section>
 <section class="card faq-section">
         <h2>Sık sorulanlar</h2>
         <div class="faq-grid">
@@ -397,7 +392,7 @@ ins.adsbygoogle{margin:0!important}
         </div>
       </section>
 
-      <div class="footer-note">Bilgilendirme: Sonuçlar tahmini karar desteği üretir. Nihai teklif, ödeme planı ve erken kapama tutarı için kurumun resmi tablolarını esas almalısın.</div>
+      <div class="footer-note">Bilgilendirme: Sonuçlar yaklaşık karar desteğidir. Vergi ve ücret istisnaları kredi ürününe ve sözleşmeye göre değişebilir. Nihai teklif, ödeme planı ve erken kapama tutarı için bankanın güncel resmî dökümünü esas almalısın.</div>
     </main>
 
     <!-- HC_AD_SLOT:result -->
@@ -439,13 +434,13 @@ ins.adsbygoogle{margin:0!important}
       <div class="scorebox">
         <div class="score-row">
           <div>
-            <div style="font-size:13px;font-weight:800;color:#4b5563;letter-spacing:.06em;text-transform:uppercase">Karar skoru</div>
+            <div style="font-size:13px;font-weight:800;color:#4b5563;letter-spacing:.06em;text-transform:uppercase">Hesapica değerlendirme skoru</div>
             <div class="score-value" id="scoreValue">0</div>
           </div>
           <div class="pill" id="scoreLabel">Bekleniyor</div>
         </div>
         <div class="progress"><span id="scoreBar"></span></div>
-        <div class="score-explain" id="scoreExplain">Skor; maliyet, gelir baskısı, faiz yükü veya erken kapatma avantajı birlikte okunarak üretilir. Tek başına nihai karar yerine hızlı bir filtre olarak düşünülmelidir.</div>
+        <div class="score-explain" id="scoreExplain">Hesapica değerlendirme skoru; maliyet, gelir baskısı, faiz yükü veya erken kapatma avantajını özetleyen site içi bir göstergedir. Resmî finansal puan değildir.</div>
       </div>
 
       <div class="comment-card">
@@ -500,39 +495,56 @@ ins.adsbygoogle{margin:0!important}
 
   const clamp = (v,min,max) => Math.min(max, Math.max(min, v));
   const roundMoney = (v) => Math.round((Number(v)||0) * 100) / 100;
-  const parseTR = (val) => {
-  if(val == null) return null;
-  let s = String(val).trim();
-  if(!s) return null;
-  s = s.replace(/\s+/g,'');
-  if(s.includes('.') && !s.includes(',')){
-    s = s.replace(/\./g,'');
-  }
-  if(s.includes(',') && s.includes('.')){
-    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      s = s.replace(/\./g,'').replace(',', '.');
-    } else {
-      s = s.replace(/,/g,'');
+  const parseLocalized = (val, kind = 'auto') => {
+    if(val == null) return null;
+    if(typeof val === 'number') return Number.isFinite(val) ? val : null;
+    let s = String(val).trim().replace(/\s+/g,'');
+    if(!s) return null;
+    const negative = s.startsWith('-');
+    s = s.replace(/[^0-9.,]/g,'');
+    if(!s) return null;
+    const dots = (s.match(/\./g) || []).length;
+    const commas = (s.match(/,/g) || []).length;
+    if(dots && commas){
+      const decimalSep = s.lastIndexOf(',') > s.lastIndexOf('.') ? ',' : '.';
+      const thousandsSep = decimalSep === ',' ? '.' : ',';
+      s = s.split(thousandsSep).join('');
+      const idx = s.lastIndexOf(decimalSep);
+      s = s.slice(0, idx).replace(/[.,]/g,'') + '.' + s.slice(idx + 1).replace(/[.,]/g,'');
+    } else if(dots || commas){
+      const sep = dots ? '.' : ',';
+      const parts = s.split(sep);
+      if(parts.length > 2){
+        const last = parts.pop();
+        if(kind === 'decimal' && last.length <= 2) s = parts.join('') + '.' + last;
+        else s = parts.join('') + last;
+      } else {
+        const left = parts[0] || '0';
+        const right = parts[1] || '';
+        const looksThousands = right.length === 3 && left.length >= 1;
+        if(kind === 'money') s = looksThousands ? left + right : left + (right ? '.' + right : '');
+        else if(kind === 'decimal') s = left + (right ? '.' + right : '');
+        else s = looksThousands && left.length > 2 ? left + right : left + (right ? '.' + right : '');
+      }
     }
-  } else if(s.includes(',')) {
-    s = s.replace(',', '.');
-  }
-  s = s.replace(/[^0-9.\-]/g,'');
-  const n = Number(s);
-  if(n === 0 && s !== "0") return null;
-  return Number.isFinite(n) ? n : null;
-};
+    if(negative) s = '-' + s;
+    const n = Number(s);
+    return Number.isFinite(n) ? n : null;
+  };
+  const parseMoney = (val) => parseLocalized(val, 'money');
+  const parseDecimal = (val) => parseLocalized(val, 'decimal');
+  const parseTR = (val) => parseLocalized(val, 'auto');
   const fmtMoney = (v) => new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(v)||0);
   const fmtPlain = (v,d=2) => (Number(v)||0).toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
   const fmtPercent = (v,d=1) => '%' + (Number(v)||0).toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
   const fmtInt = (v) => (Number(v)||0).toLocaleString('tr-TR',{maximumFractionDigits:0});
   const formatMoneyInput = (value) => {
-    const n = parseTR(value);
+    const n = parseMoney(value);
     if(n == null || !Number.isFinite(n) || n === 0) return '';
     return new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0}).format(Math.round(n));
   };
   const formatDecimalInput = (value, digits = 2) => {
-    const n = parseTR(value);
+    const n = parseDecimal(value);
     if(n == null || !Number.isFinite(n)) return '';
     return n.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:digits});
   };
@@ -541,7 +553,8 @@ ins.adsbygoogle{margin:0!important}
     state.mode = mode;
     document.querySelectorAll('.mode-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.mode === mode));
     document.querySelectorAll('[data-mode-only]').forEach(node => {
-      const show = node.getAttribute('data-mode-only') === mode;
+      const allowedModes = (node.getAttribute('data-mode-only') || '').split(/\s+/).filter(Boolean);
+      const show = allowedModes.includes(mode);
       node.hidden = !show;
       const inputs = node.querySelectorAll('input,select,textarea');
       inputs.forEach(input => {
@@ -676,7 +689,7 @@ ins.adsbygoogle{margin:0!important}
     els.scoreLabel.textContent = 'Bekleniyor';
     els.scoreLabel.className = 'pill';
     els.scoreBar.style.width = '0%';
-    els.scoreExplain.textContent = 'Skor; maliyet, gelir baskısı, faiz yükü veya erken kapatma avantajı birlikte okunarak üretilir. Tek başına nihai karar yerine hızlı bir filtre olarak düşünülmelidir.';
+    els.scoreExplain.textContent = 'Hesapica değerlendirme skoru; maliyet, gelir baskısı, faiz yükü veya erken kapatma avantajını özetleyen site içi bir göstergedir. Resmî finansal puan değildir.';
     els.commentText.textContent = 'Sonuç oluştuğunda burada kısa ve anlaşılır bir karar özeti görünecek.';
     els.scenarioLead.textContent = 'Küçük oran ve vade farkları toplam maliyeti düşündüğünden daha çok etkileyebilir.';
     els.scenarioGrid.innerHTML = '<div class="scenario-item"><strong>Hesap bekleniyor</strong><span>Sonuç üretildiğinde burada karşılaştırmalı örnekler oluşur.</span></div>';
@@ -733,8 +746,8 @@ ins.adsbygoogle{margin:0!important}
       if(showErrors) showFieldError(id, msg);
     };
 
-    const principal = parseTR(els.principal.value);
-    const rate = parseTR(els.rate.value);
+    const principal = parseMoney(els.principal.value);
+    const rate = parseDecimal(els.rate.value);
     const months = parseInt(String(els.months.value || '').replace(/[^\d]/g,''), 10);
 
     if(!(principal > 0)) add('principal','Tutar / anapara 0\'dan büyük olmalı.');
@@ -742,18 +755,18 @@ ins.adsbygoogle{margin:0!important}
     if(!(months >= 1)) add('months','Vade en az 1 ay olmalı.');
 
     if(state.mode === 'kredi'){
-      const income = parseTR(els.income.value);
+      const income = parseMoney(els.income.value);
       const bsmvRaw = els.bsmv.value.trim();
       const kkdfRaw = els.kkdf.value.trim();
       const feeRateRaw = els.feeRate.value.trim();
-      const insurance = parseTR(els.insurance.value) ?? 0;
+      const insurance = parseMoney(els.insurance.value) ?? 0;
       const d = defaultsByType(els.loanType.value);
       const data = {
         principal, rate, months,
         income: income ?? null,
-        bsmv: bsmvRaw === '' ? d.bsmv : parseTR(bsmvRaw),
-        kkdf: kkdfRaw === '' ? d.kkdf : parseTR(kkdfRaw),
-        feeRate: feeRateRaw === '' ? d.feeRate : parseTR(feeRateRaw),
+        bsmv: bsmvRaw === '' ? d.bsmv : parseDecimal(bsmvRaw),
+        kkdf: kkdfRaw === '' ? d.kkdf : parseDecimal(kkdfRaw),
+        feeRate: feeRateRaw === '' ? d.feeRate : parseDecimal(feeRateRaw),
         insurance
       };
       if(!(data.bsmv >= 0)) add('bsmv','BSMV negatif olamaz.');
@@ -761,7 +774,12 @@ ins.adsbygoogle{margin:0!important}
       if(!(data.kkdf >= 0)) add('kkdf','KKDF negatif olamaz.');
       if(Number.isFinite(data.kkdf) && data.kkdf > 100) add('kkdf',"KKDF %100'u aşamaz.");
       if(!(data.feeRate >= 0)) add('feeRate','Tahsis ücreti oranı negatif olamaz.');
-      if(Number.isFinite(data.feeRate) && data.feeRate > 100) add('feeRate',"Tahsis ücreti oranı %100'u aşamaz.");
+      const consumerFeeTypes = ['ihtiyac','tasit','konut'];
+      if(Number.isFinite(data.feeRate) && consumerFeeTypes.includes(els.loanType.value) && data.feeRate > 0.5){
+        add('feeRate',"Tüketici kredilerinde tahsis ücreti anaparanın %0,5'ini aşamaz.");
+      } else if(Number.isFinite(data.feeRate) && data.feeRate > 100){
+        add('feeRate',"Tahsis ücreti oranı %100'u aşamaz.");
+      }
       if(!(insurance >= 0)) add('insurance','Sigorta / ek masraf negatif olamaz.');
       if(!(data.income == null || data.income >= 0)) add('income','Gelir alanı negatif olamaz.');
       if(showErrors) setValidation(messages);
@@ -769,10 +787,10 @@ ins.adsbygoogle{margin:0!important}
     }
 
     if(state.mode === 'taksit'){
-      const upfrontPayment = parseTR(els.upfrontPayment.value) ?? 0;
-      const extraFee = parseTR(els.extraFee.value) ?? 0;
-      const compareCash = parseTR(els.compareCash.value);
-      const income = parseTR(els.income.value);
+      const upfrontPayment = parseMoney(els.upfrontPayment.value) ?? 0;
+      const extraFee = parseMoney(els.extraFee.value) ?? 0;
+      const compareCash = parseMoney(els.compareCash.value);
+      const income = parseMoney(els.income.value);
       if(!(upfrontPayment >= 0)) add('upfrontPayment','Peşinat negatif olamaz.');
       if(upfrontPayment > principal) add('upfrontPayment','Peşinat tutarı toplam alış fiyatını aşamaz.');
       if(!(extraFee >= 0)) add('extraFee','Ek ücret negatif olamaz.');
@@ -789,11 +807,20 @@ ins.adsbygoogle{margin:0!important}
 
     if(state.mode === 'erken'){
       const paidMonths = parseInt(String(els.paidMonths.value || '').replace(/[^\d]/g,''), 10);
-      const closeFee = parseTR(els.closeFee.value) ?? 0;
+      const daysSincePayment = parseInt(String(els.daysSincePayment.value || '0').replace(/[^\d]/g,''), 10);
+      const closeFee = parseMoney(els.closeFee.value) ?? 0;
+      const bsmvRaw = els.bsmv.value.trim();
+      const kkdfRaw = els.kkdf.value.trim();
+      const d = defaultsByType(els.loanType.value);
+      const bsmv = bsmvRaw === '' ? d.bsmv : parseDecimal(bsmvRaw);
+      const kkdf = kkdfRaw === '' ? d.kkdf : parseDecimal(kkdfRaw);
       if(!(paidMonths >= 0)) add('paidMonths','Ödenen taksit sayısı 0 veya daha büyük olmalı.');
       if(Number.isFinite(paidMonths) && Number.isFinite(months) && paidMonths > months) add('paidMonths','Ödenen taksit sayısı toplam vadeden büyük olamaz.');
-      if(!(closeFee >= 0)) add('closeFee','Erken kapama masrafı negatif olamaz.');
-      const data = { principal, rate, months, paidMonths, closeFee };
+      if(!(daysSincePayment >= 0 && daysSincePayment <= 30)) add('daysSincePayment','Geçen gün sayısı 0 ile 30 arasında olmalı.');
+      if(!(closeFee >= 0)) add('closeFee','Banka bildirilen ek tutar negatif olamaz.');
+      if(!(bsmv >= 0 && bsmv <= 100)) add('bsmv','BSMV 0 ile 100 arasında olmalı.');
+      if(!(kkdf >= 0 && kkdf <= 100)) add('kkdf','KKDF 0 ile 100 arasında olmalı.');
+      const data = { principal, rate, months, paidMonths, daysSincePayment, closeFee, loanType: els.loanType.value, bsmv, kkdf };
       if(showErrors) setValidation(messages);
       return { valid: messages.length === 0, data };
     }
@@ -837,22 +864,6 @@ ins.adsbygoogle{margin:0!important}
     };
   }
 
-  function annuityPayment(principal, monthlyRatePercent, months){
-    const r = monthlyRatePercent / 100;
-    if(principal <= 0 || months <= 0) return 0;
-    if(r === 0) return principal / months;
-    return principal * r * Math.pow(1+r, months) / (Math.pow(1+r, months) - 1);
-  }
-
-  function remainingPrincipalAnnuity(principal, monthlyRatePercent, totalMonths, paidMonths){
-    const r = monthlyRatePercent / 100;
-    const payment = annuityPayment(principal, monthlyRatePercent, totalMonths);
-    if(paidMonths <= 0) return principal;
-    if(paidMonths >= totalMonths) return 0;
-    if(r === 0) return principal - (principal / totalMonths) * paidMonths;
-    return principal * Math.pow(1+r, paidMonths) - payment * ((Math.pow(1+r, paidMonths) - 1) / r);
-  }
-
   function computeCredit(data){
     const fee = roundMoney(data.principal * ((data.feeRate || 0)/100));
     const calc = amortize(data.principal, data.rate || 0, data.months, data.bsmv || 0, data.kkdf || 0);
@@ -861,9 +872,15 @@ ins.adsbygoogle{margin:0!important}
     const taxAndFeeVsAmount = data.principal > 0 ? ((calc.totalTax + upfrontCosts) / data.principal) * 100 : 0;
     const incomeRatio = data.income ? (calc.payment / data.income) * 100 : null;
     const score = Math.round(clamp(100 - taxAndFeeVsAmount * 1.9 - (incomeRatio == null ? 12 : incomeRatio * 1.2) - clamp((data.months/60)*15,0,15), 0, 100));
-    const alt12 = amortize(data.principal, data.rate || 0, Math.max(12, Math.min(data.months,12)), data.bsmv || 0, data.kkdf || 0);
-    const alt36 = amortize(data.principal, data.rate || 0, Math.max(36, data.months), data.bsmv || 0, data.kkdf || 0);
     const altRate = amortize(data.principal, (data.rate || 0) + 0.5, data.months, data.bsmv || 0, data.kkdf || 0);
+    const creditScenarios = [];
+    [12, 36].forEach(term => {
+      if(term !== data.months){
+        const alt = amortize(data.principal, data.rate || 0, term, data.bsmv || 0, data.kkdf || 0);
+        creditScenarios.push([`Aynı oranla ${term} ay`, fmtMoney(alt.payment), term < data.months ? 'Daha kısa vadede taksit yükselir, toplam faiz genellikle azalır' : 'Daha uzun vadede taksit düşer, toplam maliyet genellikle artar']);
+      }
+    });
+    creditScenarios.push(['Oran +0,50 puan', fmtMoney(altRate.payment), 'Faizde küçük artış aylık taksidi yukarı taşır']);
     const note = els.note.value.trim();
     let comment = `${fmtInt(data.months)} ay vadede aylık tahmini taksit ${fmtMoney(calc.payment)} görünüyor. Toplam ödeme (taksitler) ${fmtMoney(calc.totalPayment)} ve ek masraflarla toplam kredi maliyeti ${fmtMoney(totalCost)} seviyesine geliyor. `;
     if(incomeRatio != null){
@@ -896,11 +913,7 @@ ins.adsbygoogle{margin:0!important}
       scoreExplain:'Bu skor; vergi ve masraf yükü, aylık ödemenin gelir üzerindeki baskısı ve vade uzunluğu birlikte okunarak üretildi. Daha yüksek skor genelde daha yönetilebilir bir kredi yapısına işaret eder.',
       comment,
       scenarioLead:'Aynı kredi tutarında vade ve faiz küçük görünse de toplam maliyet üzerinde ciddi etki yaratır.',
-      scenarios:[
-        ['Aynı oranla 12 ay', fmtMoney(alt12.payment), 'Kısa vadede taksit yükselir ama toplam faiz azalır'],
-        ['Aynı oranla 36 ay', fmtMoney(alt36.payment), 'Uzun vadede taksit düşer ama toplam maliyet artar'],
-        ['Oran +0,50 puan', fmtMoney(altRate.payment), 'Faizde küçük artış aylık taksidi hızla yukarı taşır']
-      ]
+      scenarios:creditScenarios
     };
   }
 
@@ -920,13 +933,29 @@ ins.adsbygoogle{margin:0!important}
     const incomeRate = data.income ? roundMoney((monthlyInstallment / data.income) * 100) : null;
     const interestShare = grandTotal > 0 ? (interestAmount / grandTotal) * 100 : 0;
     const score = Math.round(clamp(100 - clamp(interestShare*1.8,0,50) - (incomeRate == null ? 12 : clamp(incomeRate*1.1,0,35)) - clamp((data.months/36)*18,0,18), 0, 100));
-    const shorterMonths = Math.max(3, data.months - 3);
+    const shorterMonths = data.months > 3 ? data.months - 3 : null;
     const longerMonths = data.months + 6;
-    const s1 = computeInstallmentInternal({...data, months: shorterMonths});
+    const s1 = shorterMonths ? computeInstallmentInternal({...data, months: shorterMonths}) : null;
     const s2 = computeInstallmentInternal({...data, months: longerMonths});
     const s3 = computeInstallmentInternal({...data, rate: (data.rate || 0) + 0.5});
+    const installmentScenarios = [];
+    if(shorterMonths && s1) installmentScenarios.push([`${fmtInt(shorterMonths)} ay`, fmtMoney(s1.monthlyInstallment), 'Daha kısa vadede aylık ödeme yükselir, toplam faiz genellikle düşer']);
+    installmentScenarios.push([`${fmtInt(longerMonths)} ay`, fmtMoney(s2.monthlyInstallment), 'Daha uzun vadede aylık ödeme azalır, toplam maliyet genellikle artar']);
+    installmentScenarios.push(['Oran +0,50 puan', fmtMoney(s3.monthlyInstallment), 'Faizde küçük artış bile aylık taksidi yükseltir']);
     const note = els.note.value.trim();
-    let comment = `Aylık taksit ${fmtMoney(monthlyInstallment)} seviyesinde. Toplam taksitli maliyet ${fmtMoney(grandTotal)} ve bunun ${fmtMoney(interestAmount)} kısmı faiz yükü. `;
+    const paymentTypeLabels = {
+      shopping:'Alışveriş taksidi',
+      card:'Kart taksidi',
+      credit:'Kredi benzeri plan',
+      manual:'Serbest plan'
+    };
+    const paymentTypeIntro = {
+      shopping:'Alışveriş taksidinde ',
+      card:'Kart taksidinde ',
+      credit:'Kredi benzeri planda ',
+      manual:'Serbest planda '
+    };
+    let comment = `${paymentTypeIntro[data.paymentType] || ''}aylık taksit ${fmtMoney(monthlyInstallment)} seviyesinde. Toplam taksitli maliyet ${fmtMoney(grandTotal)} ve bunun ${fmtMoney(interestAmount)} kısmı faiz yükü. `;
     if(cashCompare != null){
       if(cashCompare > 0) comment += `Peşin fiyata göre ${fmtMoney(cashCompare)} daha pahalı bir senaryo oluşuyor. `;
       else comment += 'Peşin fiyatla kıyaslandığında taksitli plan avantajlı görünüyor. ';
@@ -941,7 +970,7 @@ ins.adsbygoogle{margin:0!important}
       score,
       badgeText: score >= 75 ? 'Kontrollü' : score >= 55 ? 'Dikkat' : 'Ağır yük',
       statusTitle:'Taksit görünümü hazır',
-      statusText:'Aylık taksit, toplam geri ödeme, peşin farkı ve bütçe baskısı hesaplandı.',
+      statusText:`${paymentTypeLabels[data.paymentType] || 'Taksit'} için aylık taksit, toplam geri ödeme, peşin farkı ve bütçe baskısı hesaplandı.`,
       mainLabel:'Aylık taksit',
       mainValue:fmtMoney(monthlyInstallment),
       mainSub:`Toplam maliyet ${fmtMoney(grandTotal)} · Faiz yükü ${fmtMoney(interestAmount)}`,
@@ -979,52 +1008,56 @@ ins.adsbygoogle{margin:0!important}
   }
 
   function computeEarly(data){
-    const monthlyPayment = roundMoney(annuityPayment(data.principal, data.rate, data.months));
-    const remainingPrincipal = roundMoney(Math.max(0, remainingPrincipalAnnuity(data.principal, data.rate, data.months, data.paidMonths)));
-    const remainingMonths = Math.max(0, data.months - data.paidMonths);
-    const remainingInstallments = roundMoney(monthlyPayment * remainingMonths);
-    const closeAmount = roundMoney(remainingPrincipal + (data.closeFee || 0));
+    const plan = amortize(data.principal, data.rate || 0, data.months, data.bsmv || 0, data.kkdf || 0);
+    const paid = clamp(data.paidMonths, 0, data.months);
+    const remainingMonths = Math.max(0, data.months - paid);
+    const remainingPrincipal = paid <= 0 ? roundMoney(data.principal) : paid >= data.months ? 0 : roundMoney(plan.schedule[paid - 1].balance);
+    const remainingRows = plan.schedule.slice(paid);
+    const remainingInstallments = roundMoney(remainingRows.reduce((sum,row)=>sum+row.installment,0));
+    const dayFraction = clamp(data.daysSincePayment || 0, 0, 30) / 30;
+    const accruedBaseInterest = roundMoney(remainingPrincipal * ((data.rate || 0) / 100) * dayFraction);
+    const accruedTax = roundMoney(accruedBaseInterest * (((data.bsmv || 0) + (data.kkdf || 0)) / 100));
+    const accruedTotal = roundMoney(accruedBaseInterest + accruedTax);
+    const closeAmount = roundMoney(remainingPrincipal + accruedTotal + (data.closeFee || 0));
     const netDifference = roundMoney(remainingInstallments - closeAmount);
     const interestAdvantage = roundMoney(Math.max(0, netDifference));
     const savingRatio = remainingInstallments > 0 ? (interestAdvantage / remainingInstallments) * 100 : 0;
     const feeRatio = remainingPrincipal > 0 ? ((data.closeFee || 0) / remainingPrincipal) * 100 : 0;
     const termRatio = data.months > 0 ? (remainingMonths / data.months) * 100 : 0;
     const score = Math.round(clamp(18 + Math.min(48, Math.max(0, savingRatio) * 2.1) + Math.min(32, termRatio * 0.34) - Math.min(25, feeRatio * 0.5) - (netDifference < 0 ? 18 : 0) - (remainingMonths <= 2 ? 12 : remainingMonths <= 4 ? 6 : 0), 0, 100));
-    const next3 = Math.min(data.months, data.paidMonths + 3);
-    const next3Principal = roundMoney(Math.max(0, remainingPrincipalAnnuity(data.principal, data.rate, data.months, next3)));
-    const next3Close = roundMoney(next3Principal + (data.closeFee || 0));
+    const nextPaid = Math.min(data.months, paid + 3);
+    const nextPrincipal = nextPaid <= 0 ? data.principal : nextPaid >= data.months ? 0 : plan.schedule[nextPaid - 1].balance;
+    const next3Close = roundMoney(Math.max(0, nextPrincipal) + (data.closeFee || 0));
     const note = els.note.value.trim();
-    let comment = `Bugün kapatırsan yaklaşık ödeme ${fmtMoney(closeAmount)} seviyesinde görünüyor. Kalan taksit toplamı ${fmtMoney(remainingInstallments)} olduğu için net fark ${fmtMoney(netDifference)}. `;
-    if(netDifference > 0){
-      if(savingRatio >= 15 && remainingMonths >= 6) comment += 'Erken kapatma güçlü avantaj üretiyor gibi görünüyor. ';
-      else comment += 'Erken kapatma avantajı var; yine de bankanın resmi dökümünü görmek iyi olur. ';
-    } else {
-      comment += 'Bu senaryoda erken kapatma net tasarruf üretmiyor gibi görünüyor. ';
-    }
+    let comment = `Bugün kapatırsan yaklaşık ödeme ${fmtMoney(closeAmount)} seviyesinde görünüyor. `;
+    comment += `Bu tutar ${fmtMoney(remainingPrincipal)} kalan anapara, ${fmtMoney(accruedTotal)} işlemiş faiz ve vergi ile ${fmtMoney(data.closeFee || 0)} kullanıcı tarafından girilen ek tutarı içeriyor. `;
+    comment += `Kalan taksit toplamı ${fmtMoney(remainingInstallments)} olduğu için tahmini net fark ${fmtMoney(netDifference)}. `;
+    if(netDifference > 0){ if(savingRatio >= 15 && remainingMonths >= 6) comment += 'Erken kapatma güçlü bir tasarruf potansiyeli gösteriyor. '; else comment += 'Erken kapatma tasarruf potansiyeli gösteriyor; bankanın güncel resmi kapama dökümünü kontrol et. '; }
+    else comment += 'Bu girdilerle erken kapatma net tasarruf üretmiyor gibi görünüyor. ';
     if(note) comment += 'Not: ' + note + '.';
     return {
       score,
       badgeText: netDifference > 0 ? (score >= 75 ? 'Güçlü avantaj' : 'Dengeli avantaj') : 'Zayıf avantaj',
       statusTitle:'Erken kapatma görünümü hazır',
-      statusText:'Yaklaşık kapama tutarı, kalan anapara ve net avantaj hesaplandı.',
+      statusText:'Kredi planındaki vergi yükü, kalan anapara ve son taksit sonrası geçen gün birlikte hesaba katıldı.',
       mainLabel:'Yaklaşık kapama tutarı',
       mainValue:fmtMoney(closeAmount),
-      mainSub:`Kalan anapara ${fmtMoney(remainingPrincipal)} · Net fark ${fmtMoney(netDifference)}`,
+      mainSub:`Kalan anapara ${fmtMoney(remainingPrincipal)} · İşlemiş faiz/vergi ${fmtMoney(accruedTotal)} · Net fark ${fmtMoney(netDifference)}`,
       mini:[
-        ['Aylık taksit', fmtMoney(monthlyPayment), 'Orijinal kredi planındaki aylık ödeme'],
-        ['Kalan anapara', fmtMoney(remainingPrincipal), 'Bugün itibarıyla yaklaşık anapara'],
-        ['Kalan taksit toplamı', fmtMoney(remainingInstallments), 'Beklersen ödeyeceğin toplam'],
+        ['Aylık taksit', fmtMoney(plan.payment), 'Vergiler dahil aynı kredi planındaki tahmini ödeme'],
+        ['Kalan anapara', fmtMoney(remainingPrincipal), 'Ödenen taksitlerden sonraki yaklaşık bakiye'],
+        ['Kalan taksit toplamı', fmtMoney(remainingInstallments), 'Plan devam ederse kalan ödemelerin toplamı'],
         ['Net avantaj', fmtMoney(netDifference), 'Pozitifse erken kapatma lehine'],
-        ['Tasarruf oranı', fmtPercent(savingRatio,1), 'Kalan taksitlere göre avantaj yüzdesi'],
-        ['Masraf oranı', fmtPercent(feeRatio,1), 'Kapama masrafının anaparaya oranı']
+        ['İşlemiş faiz + vergi', fmtMoney(accruedTotal), `${fmtInt(data.daysSincePayment || 0)} günlük yaklaşık tutar`],
+        ['Ek tutar oranı', fmtPercent(feeRatio,1), 'Girilen tazminat/ek ücretin kalan anaparaya oranı']
       ],
-      scoreExplain:'Bu skor; net tasarruf oranı, kalan vade ve kapama masrafının etkisi birlikte okunarak üretilir. Yüksek skor daha güçlü erken kapatma potansiyeline işaret eder.',
+      scoreExplain:'Bu Hesapica değerlendirme skoru; tahmini tasarruf oranı, kalan vade ve girilen ek tutarın etkisiyle üretilir. Bankanın resmi kapama tutarının yerine geçmez.',
       comment,
-      scenarioLead:'Erken kapatma kararında birkaç ay beklemek bile avantajı farklı yöne çevirebilir.',
+      scenarioLead:'Erken kapatma tutarı ödeme günü, banka dökümü ve varsa yasal tazminata göre değişebilir.',
       scenarios:[
-        ['Bugün kapat', fmtMoney(closeAmount), 'Mevcut kapama masrafıyla bugünkü tahmini tutar'],
-        ['3 taksit daha sonra', fmtMoney(next3Close), 'Biraz daha beklemek kalan anaparayı aşağı çeker'],
-        ['Masrafsız senaryo', fmtMoney(remainingPrincipal), 'Kapama masrafı olmazsa yaklaşık tutar']
+        ['Bugün kapat', fmtMoney(closeAmount), 'Girilen gün ve ek tutarla tahmini kapama'],
+        ['3 taksit daha sonra', fmtMoney(next3Close), 'Üç ödeme sonrası, işlemiş gün faizi hariç yaklaşık bakiye'],
+        ['Ek tutarsız senaryo', fmtMoney(remainingPrincipal + accruedTotal), 'Girilen tazminat/ek ücret olmazsa tahmini tutar']
       ]
     };
   }
@@ -1056,8 +1089,12 @@ ins.adsbygoogle{margin:0!important}
       els.principal.value = '250.000';
       els.rate.value = '3,29';
       els.months.value = '24';
+      els.loanType.value = 'ihtiyac';
+      els.bsmv.value = '';
+      els.kkdf.value = '';
       els.paidMonths.value = '8';
-      els.closeFee.value = '1.250';
+      els.daysSincePayment.value = '10';
+      els.closeFee.value = '0';
       els.note.value = 'kapatıp daha düşük faizli yeni krediye geçme planı';
     }
     clearErrors();
@@ -1075,7 +1112,7 @@ ins.adsbygoogle{margin:0!important}
   }
 
   function calculate(flash = false){
-    const validation = validateByMode(true);
+    const validation = validateByMode(flash);
     if(!validation.valid){ renderEmpty(); return false; }
     let result;
     if(state.mode === 'kredi') result = computeCredit(validation.data);
@@ -1087,13 +1124,14 @@ ins.adsbygoogle{margin:0!important}
   }
 
   function hasEnoughData(){
-    const principal = parseTR(els.principal.value);
-    const rate = parseTR(els.rate.value);
+    const principal = parseMoney(els.principal.value);
+    const rate = parseDecimal(els.rate.value);
     const months = parseInt(String(els.months.value || '').replace(/[^\d]/g,''), 10);
     if(!(principal > 0) || !(Number.isFinite(rate) && rate >= 0) || !(months >= 1)) return false;
     if(state.mode === 'erken'){
       const paidMonths = parseInt(String(els.paidMonths.value || '').replace(/[^\d]/g,''), 10);
-      return Number.isFinite(paidMonths) && paidMonths >= 0;
+      const daysSincePayment = parseInt(String(els.daysSincePayment.value || '0').replace(/[^\d]/g,''), 10);
+      return Number.isFinite(paidMonths) && paidMonths >= 0 && Number.isFinite(daysSincePayment) && daysSincePayment >= 0 && daysSincePayment <= 30;
     }
     return true;
   }
@@ -1110,10 +1148,8 @@ ins.adsbygoogle{margin:0!important}
   function updateModeDefaults(){
     if(state.mode !== 'kredi') return;
     if(els.bsmv.value.trim() || els.kkdf.value.trim() || els.feeRate.value.trim()) return;
-    const d = defaultsByType(els.loanType.value);
-    els.bsmv.value = '';
-    els.kkdf.value = '';
-    els.feeRate.value = '';
+    // Alanlar bilinçli olarak boş bırakılır; varsayılan BSMV/KKDF/tahsis ücreti oranları
+    // gerçek hesaplama sırasında validateByMode() içinde defaultsByType() ile uygulanır.
   }
 
   function initFormattedInputs(){
@@ -1136,7 +1172,7 @@ ins.adsbygoogle{margin:0!important}
       els[id].addEventListener('input', () => { state.source = 'manual'; autoCalculate(); });
       els[id].addEventListener('blur', () => { els[id].value = formatDecimalInput(els[id].value, 2); saveState(); });
     });
-    ['months','paidMonths'].forEach(id => {
+    ['months','paidMonths','daysSincePayment'].forEach(id => {
       if(!els[id]) return;
       els[id].addEventListener('input', () => {
         els[id].value = String(els[id].value || '').replace(/[^\d]/g,'');
@@ -1154,7 +1190,7 @@ ins.adsbygoogle{margin:0!important}
         saveState();
       });
     });
-    ['compareCash','note','income','upfrontPayment','extraFee','insurance','closeFee'].forEach(id => {
+    ['note'].forEach(id => {
       if(!els[id]) return;
       els[id].addEventListener('input', () => { state.source = 'manual'; autoCalculate(); });
       els[id].addEventListener('blur', saveState);
@@ -1169,7 +1205,7 @@ ins.adsbygoogle{margin:0!important}
   document.addEventListener('DOMContentLoaded', () => {
     const url = new URL(window.location.href);
     const qp = (url.searchParams.get('mod') || url.searchParams.get('mode') || '').toLowerCase();
-    const alias = { erkenkapatma:'erken', erken_kapatma:'erken', erkenkapatma:'erken' };
+    const alias = { erkenkapatma:'erken', erken_kapatma:'erken' };
     if(qp && (modeMeta[qp] || alias[qp])) state.mode = modeMeta[qp] ? qp : alias[qp];
     loadState();
     initFormattedInputs();
@@ -1181,8 +1217,6 @@ ins.adsbygoogle{margin:0!important}
 })();
 </script>
 <script defer="" src="cookie-consent.js"></script>
-<script>window.HESAPICA_I18N_CONFIG={"trUrl": "https://hesapica.com/kredi-hesaplama", "enUrl": "https://hesapica.com/en/loan-calculator", "xDefaultUrl": "https://hesapica.com/kredi-hesaplama", "titleTr": "Kredi Hesaplama 2026 | Kredi, Taksit ve Erken Kapatma Analizi", "descriptionTr": "Tek araçta kredi taksiti, alışveriş taksidi ve kredi erken kapatma analizini yapın. Aylık ödeme, toplam maliyet, faiz yükü, gelir baskısı ve erken kapatma avantajını birlikte görün.", "titleEn": "Loan & Credit Calculator 2026 | Installments and Early Closure Analysis", "descriptionEn": "Calculate loan installments, total cost, interest burden, income pressure, and early closure advantage in one tool.", "scopeSelector": "body", "observeSelectors": ["main", ".results", "#resultArea", "#resultPanel"], "textMap": {"Kredi, Taksit ve Erken Kapatma Hesaplama": "Loan, Installment and Early Closing Calculation", "Kredi modu": "Loan mode", "Taksit modu": "Installment mode", "Erken Kapatma": "Early Closure", "Aylık taksit": "Monthly installment", "Toplam maliyet": "Total cost", "Kredi Hesaplama": "Credit Calculation", "Kredi taksiti": "loan installment", "Erken kapatma avantajı": "Early closing advantage", "Gelir baskısı": "Income pressure", "Kredi": "Credit", "Aylık kredi yükünü netleştir": "Clarify your monthly credit load", "Hesaplama aracı": "calculation tool", "Boş alanlarla başlar. İstersen örnek veriyle akışı görebilir, kendi senaryona göre sonucu hemen yorumlayabilirsin.": "It starts with empty spaces. If you want, you can see the flow with sample data and immediately interpret the result according to your own scenario.", "Kredi türü": "Loan type", "Türe göre KKDF, BSMV ve tahsis ücreti için önerilen varsayılanlar uygulanabilir.": "Depending on the type, the recommended defaults for RUSF, BITT and allocation fee may be applied.", "Kredi veya taksit ana tutarını yaz.": "Write the main amount of the loan or installment.", "Aylık faiz / oran (%)": "Monthly interest/rate (%)", "Aylık oranı virgüllü olarak girebilirsin.": "You can enter the monthly rate with a comma.", "Aylık net gelir (opsiyonel)": "Monthly net income (optional)", "Girersen aylık ödemenin gelirine oranı da yorumlanır.": "If you enter, the ratio of your monthly payment to your income is also interpreted.", "Boş bırakırsan kredi türüne göre varsayılan uygulanır.": "If you leave it blank, the default will be applied based on the loan type.", "Tahsis ücreti (%)": "Allocation fee (%)", "Ana para üstünden bir defalık tahsis ücreti oranı.": "A one-time allocation fee rate based on the principal amount.", "Dosya masrafı veya sigorta gibi ek kalemleri ekleyebilirsin.": "You can add additional items such as filing fees or insurance.", "Peşinat / ilk ödeme (TL)": "Down payment / first payment (TL)", "Alışverişte peşin verdiğin kısmı yaz.": "Write down the amount you paid in advance for your purchase.", "Ek ücret / kart komisyonu (TL)": "Additional fee / card commission (TL)", "Dosya masrafı, komisyon veya hizmet bedeli ekleyebilirsin.": "You can add file costs, commission or service fee.", "Peşin fiyat (opsiyonel)": "Cash price (optional)", "Peşin fiyatı yazarsan farkı doğrudan görürsün.": "If you write down the cash price, you will see the difference directly.", "Yorum metni bu tipe göre daha anlaşılır hale gelir.": "Comment text becomes more understandable according to this type.", "Ödenen taksit sayısı": "Number of installments paid", "Bugüne kadar kaç taksit ödediğini yaz.": "Write down how many installments you have paid so far.", "Erken kapama masrafı (TL)": "Early closing cost (TL)", "Banka tarafından istenen tahmini kapama masrafı.": "Estimated closing costs required by the bank.", "Kendi planını yazarsan yorum bölümünde hatırlatma olarak görünür.": "If you write your own plan, it will appear as a reminder in the comment section.", "Sonucu Gör": "Show Result", "Örnek Veri": "Sample Data", "Bu araç ne yapar?": "What does this tool do?", "Kredi kararında tek metrik aylık taksit değildir. Bu sayfa üç farklı finans niyetini aynı omurgada toplar:": "Monthly installment is not the only metric in credit decision making. This page combines three different financial intentions on the same backbone:", "Kredi modu: aylık taksit, toplam faiz, vergi ve ek masrafları birlikte okur.": "Credit mode: monthly installment reads the total interest, taxes and additional costs together.", "Kredi modu:": "Credit mode:", "Taksit modu: peşin fiyata göre taksit farkını ve bütçe baskısını gösterir.": "Installment mode: shows the installment difference and budget pressure compared to the cash price.", "Erken kapatma modu: bugün kapatırsan yaklaşık ne kadar ödeyeceğini ve kalan faiz yükünden ne kadar kaçınacağını özetler.": "Early closing mode: outlines approximately how much you will pay if you close today and how much remaining interest burden you will avoid.", "İlgili araçlar": "Related tools", "Finans Faiz, Mevduat ve Bileşik Getiri Kısa vadeli faiz ve yatırım görünümünü ayrı araçta kıyasla.": "Finance Interest, Deposit and Compound Return Compare short-term interest and investment views in separate instruments.", "Faiz, Mevduat ve Bileşik Getiri": "Interest, Deposits and Compound Return", "Kısa vadeli faiz ve yatırım görünümünü ayrı araçta kıyasla.": "Compare short-term interest and investment outlook in separate instruments.", "Planlama Borç Kapama Planı Birden çok borcu öncelik sırasına göre düzenle ve aylık nakit akışını yönet.": "Planning Debt Payoff Plan Prioritize multiple debts and manage monthly cash flow.", "Borç Kapama Planı": "Debt Closing Plan", "Birden çok borcu öncelik sırasına göre düzenle ve aylık nakit akışını yönet.": "Prioritize multiple debts and manage monthly cash flow.", "Kart Kredi Kartı Faiz Hesaplama Kart borcunda akdi faiz, gecikme ve ödeme baskısını ayrı senaryoda analiz et.": "Card Credit Card Interest Calculation Analyze contractual interest, delay and payment pressure on card debt in a separate scenario.", "Kredi Kartı Faiz Hesaplama": "Credit Card Interest Calculation", "Kart borcunda akdi faiz, gecikme ve ödeme baskısını ayrı senaryoda analiz et.": "Analyze contractual interest, delay and payment pressure on card debt in a separate scenario.", "Sık sorulanlar": "frequently asked questions", "Kredi ve taksit hesabı aynı şey mi?": "Are loan and installment account the same thing?", "Erken kapatma hesabı bankanın verdiği resmi rakamla birebir aynı olur mu?": "Will the early closure account be exactly the same as the official figure given by the bank?", "Gelir alanını neden opsiyonel tuttunuz?": "Why did you keep the income field optional?", "Bütçe baskısını daha iyi yorumlamak için yararlıdır; fakat gelir girmeden de temel maliyet hesabını alabilirsin.": "Useful to better interpret budget pressure; But you can get the basic cost calculation without entering income.", "Sonuç bekleniyor": "Result awaited", "Kredi, taksit veya erken kapatma verilerini girdiğinde sonuç burada otomatik görünür.": "When you enter loan, installment or early closure data, the result automatically appears here.", "Kısa yorum": "Brief comment", "Sonuç oluştuğunda burada kısa ve anlaşılır bir karar özeti görünecek.": "When the result is achieved, a short and clear decision summary will appear here.", "Senaryo görünümü": "Scenario view", "Küçük oran ve vade farkları toplam maliyeti düşündüğünden daha çok etkileyebilir.": "Small rate and maturity differences can affect the total cost more than you think.", "Sonuç üretildiğinde burada karşılaştırmalı örnekler oluşur.": "When the result is produced, comparative examples are created here.", "Örn. 250.000": "Ex. 250,000", "Örn. 3,49": "Ex. 3.49", "Örn. 24": "Ex. 24", "Örn. 55.000": "Ex. 55,000", "Örn. 15": "Ex. 15", "Örn. 0,5": "Ex. 0.5", "Örn. 3.500": "Ex. 3,500", "Örn. 5.000": "Ex. 5,000", "Örn. 750": "Ex. 750", "Örn. 42.000": "Ex. 42,000", "Örn. 8": "Ex. 8", "Örn. 1.250": "Ex. 1,250", "Örn. maaş günü sonrası kapatmayı düşünüyorum": "Ex. I'm thinking of closing it after payday.", "Brüt": "Gross", "Net": "Net", "Anapara": "Principal", "Faiz": "Interest", "Vade": "Term", "KDV": "VAT", "Bütçe": "Budget", "Maaş": "Salary", "Kredi Kartı": "Credit Card", "Gelir Vergisi": "Income Tax", "Yatırım Getirisi": "Investment Return", "Kira Artış": "Rent Increase", "Enflasyon": "Inflation", "Temizle": "Clear", "Yazdır / PDF": "Print / PDF", "Sonucu Kopyala": "Copy Result", "Paylaş": "Share"}};</script>
-<script defer src="i18n-common.js"></script>
   <script src="ads-slot-manager.js"></script>
 </body>
 </html>
