@@ -8,10 +8,8 @@
 <meta name="description" content="Kredi kartı faizini hızlıca hesapla; asgari ödeme, gecikme ve toplam borç etkisini öğren. Borç yükünü azaltacak adımı şimdi keşfet!"/>
 <meta content="kredi kartı faiz hesaplama, kredi kartı gecikme faizi, akdi faiz hesaplama, bsmv hesaplama, kredi kartı borç hesaplama" name="keywords"/>
 <meta content="#4f46e5" name="theme-color"/>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 <link href="https://hesapica.com/kredi-karti-faiz-hesaplama" rel="canonical"/>
 <link rel="alternate" hreflang="tr" href="https://hesapica.com/kredi-karti-faiz-hesaplama" />
-<link rel="alternate" hreflang="en" href="https://hesapica.com/en/credit-card-interest-calculator" />
 <link rel="alternate" hreflang="x-default" href="https://hesapica.com/kredi-karti-faiz-hesaplama" />
 <meta content="index,follow" name="robots"/>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
@@ -26,31 +24,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-6BNBXVN9EW');
-</script>
-
-<script>
-const parseTR = (val) => {
-  if(val == null) return null;
-  let s = String(val).trim();
-  if(!s) return null;
-  s = s.replace(/\s+/g,'');
-  if(s.includes('.') && !s.includes(',')){
-    s = s.replace(/\./g,'');
-  }
-  if(s.includes(',') && s.includes('.')){
-    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      s = s.replace(/\./g,'').replace(',', '.');
-    } else {
-      s = s.replace(/,/g,'');
-    }
-  } else if(s.includes(',')) {
-    s = s.replace(',', '.');
-  }
-  s = s.replace(/[^0-9.\-]/g,'');
-  const n = Number(s);
-  if(n === 0 && s !== "0") return null;
-  return Number.isFinite(n) ? n : null;
-};
 </script>
 <meta content="website" property="og:type"/>
 <meta content="Kredi Kartı Faiz Hesaplama | Akdi Faiz, Gecikme Faizi, BSMV ve Borç Yükü Analizi - Hesapica" property="og:title"/>
@@ -290,7 +263,15 @@ const parseTR = (val) => {
       .results{position:static !important}
       a{text-decoration:none;color:inherit}
     }
-  </style>
+  
+#resultsPanel,.results{scroll-margin-top:16px}
+.related-card{color:#fff}
+.related-card strong{color:#fff}
+.related-card .small{color:rgba(255,255,255,.86)}
+.related-card p{color:rgba(255,255,255,.88)}
+#minimumRateWrap.is-hidden{display:none!important}
+
+</style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Kredi Kartı Faiz Hesaplama | Akdi Faiz, Gecikme Faizi, BSMV ve Borç Yükü Analizi - Hesapica","url":"https://hesapica.com/kredi-karti-faiz-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
@@ -337,10 +318,10 @@ const parseTR = (val) => {
       },
       {
         "@type": "Question",
-        "name": "BSMV neden ayrı gösteriliyor?",
+        "name": "BSMV ve KKDF neden ayrı gösteriliyor?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Çünkü kullanıcı sadece faiz değil, faiz üzerindeki vergi etkisini de görmelidir. Toplam maliyet bu yüzden katmanlı gösterilir."
+          "text": "Çünkü faiz dışında BSMV ve tüketici kredi kartlarında KKDF de maliyeti etkileyebilir. Bu kalemler bankanın resmi dökümüne göre değişebileceğinden ayrı gösterilir."
         }
       },
       {
@@ -507,31 +488,17 @@ const parseTR = (val) => {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
 .hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
+ins.adsbygoogle{margin:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none!important;margin:0!important;padding:0!important;height:0!important;border:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){display:block;margin:16px 0;padding:8px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;overflow:visible}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .adsbygoogle{min-height:90px}
+@media(max-width:720px){.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:12px 0;padding:6px}}
 </style>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<style id="hc-related-tools-style">
-.related-tools{margin-top:28px;padding:24px;border:1px solid #e5e7eb;border-radius:22px;background:#fff}
-.related-tools h2{margin:0 0 14px;color:#312e81;font-size:24px;letter-spacing:-.02em}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.related-card{display:block;padding:16px;border:1px solid #dbe4ff;border-radius:16px;background:linear-gradient(180deg,#fff,#f8faff);text-decoration:none}
-.related-card h3{margin:0 0 8px;font-size:17px;color:#1f2937}
-.related-card p{margin:0;color:#4b5563;font-size:14px;line-height:1.55}
-.related-home-link{display:inline-flex;margin-top:14px;font-weight:800;color:#4338ca}
-@media (max-width:720px){.related-tools{padding:18px}.related-grid{grid-template-columns:1fr}}
-</style>
-<script id="hc-financialproduct-schema" type="application/ld+json">
-{"@context": "https://schema.org", "@type": ["WebApplication", "FinancialProduct"], "name": "Kredi Kartı Faiz Hesaplama", "description": "Kredi kartı faizini hızlıca hesapla; asgari ödeme, gecikme ve toplam borç etkisini öğren. Borç yükünü azaltacak adımı şimdi keşfet!", "applicationCategory": "FinanceTool", "url": "https://hesapica.com/kredi-karti-faiz-hesaplama", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TRY"}, "featureList": ["Kredi Kartı Faiz Hesaplama sonucu", "Hızlı hesaplama", "Senaryo karşılaştırması", "Mobil uyumlu kullanım"]}
-</script>
 </head>
 <body>
 <noscript><div style="background:#fff7ed;color:#9a3412;border-bottom:1px solid #fdba74;padding:12px 16px;text-align:center;font-weight:700">Bu araç en iyi deneyim için JavaScript gerektirir. Hesaplama ve paylaşım özellikleri JavaScript kapalıysa çalışmayabilir.</div></noscript>
@@ -550,10 +517,10 @@ const parseTR = (val) => {
 <div>
 <span class="eyebrow-pill">Hesapica • Gelişmiş Finans Aracı</span>
 <h1>Kredi Kartı Faiz Hesaplama</h1>
-<p>Bu araç yalnızca faiz değil; <strong>ana borç</strong>, <strong>faiz yükü</strong>, <strong>BSMV etkisi</strong>, <strong>toplam geri ödeme</strong>, <strong>aylık ödeme baskısı</strong> ve <strong>minimum ödeme tuzağına yaklaşım</strong> açısından borcunuzu daha net görmeniz için tasarlandı.</p>
+<p>Bu araç yalnızca faiz değil; <strong>ana borç</strong>, <strong>faiz yükü</strong>, <strong>BSMV ve KKDF etkisi</strong>, <strong>toplam geri ödeme</strong>, <strong>aylık ödeme baskısı</strong> ve <strong>minimum ödeme tuzağına yaklaşım</strong> açısından borcunuzu daha net görmeniz için tasarlandı.</p>
 <div class="hero-chips">
 <span class="hero-chip">Akdi / gecikme / nakit avans</span>
-<span class="hero-chip">BSMV dahil görünüm</span>
+<span class="hero-chip">BSMV + KKDF dahil görünüm</span>
 <span class="hero-chip">Borç yükü skoru</span>
 <span class="hero-chip">Karar odaklı analiz</span>
 </div>
@@ -561,9 +528,9 @@ const parseTR = (val) => {
 <aside class="hero-box">
 <div class="eyebrow">Gelişmiş analiz yaklaşımı</div>
 <strong>Ana sonuç üstte, borç yükü ve ödeme baskısı aşağıda</strong>
-<p>Faiz türünü seç, borç ve vade bilgilerini gir. Sistem toplam faiz, BSMV, geri ödeme, aylık ödeme baskısı ve risk seviyesini tek ekranda analiz etsin.</p>
+<p>Faiz türünü seç, borç ve dönem bilgilerini gir. Sistem asgari ödeme veya planlı kapatma yaklaşımına göre faiz, BSMV, KKDF, kalan borç ve maliyet görünümünü analiz etsin.</p>
 <ul>
-<li>Faiz + BSMV ayrı ayrı görünür</li>
+<li>Faiz, BSMV ve KKDF ayrı ayrı görünür</li>
 <li>Toplam maliyet katmanlı gösterilir</li>
 <li>Ek ödeme etkisi senaryolaştırılır</li>
 </ul>
@@ -590,7 +557,7 @@ const parseTR = (val) => {
 <p class="section-note">Tüm alanlar boş başlar. Faiz oranını güncel sözleşmene veya kartına göre sen girersin. Bu araç yaklaşık borç analizi üretir; resmi ekstre tutarı banka verisine göre değişebilir.</p>
 <div class="helper-box">
 <h3>Kısa not</h3>
-<p>Kredi kartı borcunda asıl baskı çoğu zaman sadece faiz değil; faiz üzerine binen vergi etkisi ve borcun aylar boyunca taşınmasıdır. Bu yüzden burada anapara, faiz, BSMV ve toplam ödeme ayrı ayrı gösterilir.</p>
+<p>Kredi kartı borcunda maliyet yalnız faizden oluşmaz; faiz üzerinden BSMV ve tüketici kredi kartlarında KKDF etkisi de oluşabilir. Bu araç yeni harcama yapılmadığı varsayımıyla yaklaşık bir ödeme simülasyonu sunar.</p>
 <div class="helper-links">
 <div class="helper-link">
 <div class="title">1) Faiz türünü seç</div>
@@ -605,6 +572,11 @@ const parseTR = (val) => {
 <div class="desc">İstersen aylık ekstra ödeme girerek toplam yükün ne kadar hafiflediğini senaryoda görebilirsin.</div>
 </div>
 </div>
+
+<div class="helper-box" style="margin-top:16px">
+<h3>Güncel oran notu</h3>
+<p>Hazır örneklerde TCMB'nin 1 Ağustos 2026 tarihinden itibaren geçerli resmî azami aylık oranları kullanılır: dönem borcuna göre akdi %3,25 / %3,75 / %4,25; gecikme %3,55 / %4,05 / %4,55; nakit kullanım %4,25. Bankan daha düşük oran uygulayabilir. Asgari ödeme oranı kart limiti 50.000 TL ve altındaysa %20, üzerindeyse %40 seçilmelidir. Hesap; yeni harcama, ücret, kampanya taksiti ve gün bazlı ekstre hareketi olmadığı varsayımıyla yaklaşık sonuç üretir.</p>
+</div>
 </div>
 <div class="form-section">
 <div class="form-title">Borç ve faiz bilgileri</div>
@@ -616,7 +588,7 @@ const parseTR = (val) => {
 <option value="gecikme">Gecikmiş borç / gecikme faizi</option>
 <option value="nakit">Nakit avans / kullanım faizi</option>
 </select>
-<div class="hint" id="debtTypeHint">Bu seçim yorum dilini etkiler. Oranı güncel kart sözleşmene göre sen girersin.</div>
+<div class="hint" id="debtTypeHint">Bu seçim hesap türünü ve yorumları etkiler. Bankanın uyguladığı oranı gir; örnek senaryolar 1 Ağustos 2026 tarihli TCMB azami oranlarını kullanır.</div>
 <div class="error" id="debtTypeError" role="alert">Borç tipi seçimi gerekli.</div>
 </div>
 <div class="field" id="fieldPrincipalInput">
@@ -643,7 +615,7 @@ const parseTR = (val) => {
 <input aria-describedby="monthsHint monthsError" aria-required="true" class="with-suffix" id="months" min="1" placeholder="Örn: 6" required="" step="1" type="number"/>
 <span class="suffix">Ay</span>
 </div>
-<div class="hint" id="monthsHint">Borcu kaç ay taşıyacağını varsayıyorsun?</div>
+<div class="hint" id="monthsHint">Asgari modda analiz dönemi, planlı modda hedef kapatma vadesidir.</div>
 <div class="error" id="monthsError" role="alert">Ay sayısı 1 ile 240 arasında olmalı.</div>
 </div>
 </div>
@@ -653,32 +625,54 @@ const parseTR = (val) => {
 <div class="toggle-grid">
 <label class="toggle-pill">
 <input checked="" name="paymentMode" type="radio" value="minimum"/>
-              Minimum ödeme davranışı gibi yorumla
+              Asgari ödeme simülasyonu
             </label>
 <label class="toggle-pill">
 <input name="paymentMode" type="radio" value="planli"/>
-              Planlı geri ödeme gibi yorumla
+              Planlı eşit ödeme ile kapatma
             </label>
 </div>
+<div class="field-grid" id="minimumRateWrap" style="margin-top:16px">
+<div class="field full" id="fieldMinimumRate">
+<label for="minimumRate">Asgari ödeme oranı</label>
+<select id="minimumRate">
+<option value="20">%20 — kart limiti 50.000 TL ve altı</option>
+<option value="40">%40 — kart limiti 50.000 TL üzeri</option>
+</select>
+<div class="hint">BDDK düzenlemesine göre kart limitine uygun oranı seç. Bu alan yalnız asgari ödeme simülasyonunda kullanılır.</div>
+<div class="error" id="minimumRateError">Asgari ödeme oranı %1 ile %100 arasında olmalı.</div>
+</div>
+</div>
+
 <div class="field-grid" style="margin-top:16px">
 <div class="field" id="fieldExtraPayment">
-<label for="extraPayment">Aylık ekstra ödeme</label>
+<label for="extraPayment">Aylık ek ödeme</label>
 <div class="input-wrap">
 <span class="prefix">₺</span>
 <input aria-describedby="extraPaymentHint extraPaymentError" autocomplete="off" class="with-prefix js-money" id="extraPayment" inputmode="numeric" placeholder="Boş bırakılabilir" type="text"/>
 </div>
-<div class="hint" id="extraPaymentHint">Her ay ek ödeme yapabiliyorsan gir. Boşsa 0 kabul edilir.</div>
+<div class="hint" id="extraPaymentHint">Asgari tutara veya planlı aylık ödemeye ekleyeceğin tutarı gir. Boşsa 0 kabul edilir.</div>
 <div class="error" id="extraPaymentError" role="alert">Ek ödeme negatif olamaz.</div>
 </div>
 <div class="field" id="fieldBsmvRate">
 <label for="bsmvRate">BSMV oranı</label>
 <div class="input-wrap">
-<input aria-describedby="bsmvRateHint bsmvRateError" autocomplete="off" class="with-suffix js-decimal" id="bsmvRate" inputmode="decimal" placeholder="Boşsa %5 kullanılır" type="text"/>
+<input aria-describedby="bsmvRateHint bsmvRateError" autocomplete="off" class="with-suffix js-decimal" id="bsmvRate" inputmode="decimal" placeholder="Boşsa %15 kullanılır" type="text"/>
 <span class="suffix">%</span>
 </div>
-<div class="hint" id="bsmvRateHint">Boş bırakırsan varsayılan olarak %5 kullanılır.</div>
+<div class="hint" id="bsmvRateHint">Boş bırakırsan varsayılan olarak %15 kullanılır.</div>
 <div class="error" id="bsmvRateError" role="alert">BSMV oranı 0 ile 100 arasında olmalı.</div>
 </div>
+<div class="field" id="fieldKkdfRate">
+<label for="kkdfRate">KKDF oranı</label>
+<div class="input-wrap">
+<input aria-describedby="kkdfRateHint kkdfRateError" autocomplete="off" class="with-suffix js-decimal" id="kkdfRate" inputmode="decimal" placeholder="Boşsa %15 kullanılır" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint" id="kkdfRateHint">Tüketici kredi kartı faizlerinde varsayılan %15 kullanılır; bankanın dökümünü esas al.</div>
+<div class="error" id="kkdfRateError" role="alert">KKDF oranı 0 ile 100 arasında olmalı.</div>
+</div>
+
 </div>
 </div>
 <div class="form-section">
@@ -706,7 +700,7 @@ const parseTR = (val) => {
 <div class="flow-cue">↓</div>
 </div>
 </div>
-<aside 
+<aside class="results">
 <!-- HC_AD_SLOT:result -->
 <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
   <ins class="adsbygoogle"
@@ -717,8 +711,6 @@ const parseTR = (val) => {
        data-full-width-responsive="true"></ins>
 </div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-class="results">
 <div class="results-kicker">Sonuçlar aşağıda başlıyor<span>Ana çıktı, hızlı özet, skor ve detay metrikler bu bölümde yer alır.</span></div>
 <div class="status-card">
 <div class="status-row">
@@ -737,20 +729,20 @@ class="results">
 <section class="scorebox">
 <div class="score-row">
 <div>
-<div class="small">Borç Yükü Skoru</div>
+<div class="small">Hesapica Borç Maliyeti Skoru</div>
 <div class="score-value" id="burdenScore">0/100</div>
 </div>
 <span class="pill" id="difficultyBadge">Veri bekleniyor</span>
 </div>
 <div class="progress"><span id="scoreBar"></span></div>
-<div aria-live="polite" class="small" id="scoreText" style="margin-top:10px">Bu skor, faiz süresi, toplam maliyet artışı, BSMV etkisi ve aylık ödeme baskısına göre oluşur. Düşük skor daha sağlıklı görünümü temsil eder.</div>
+<div aria-live="polite" class="small" id="scoreText" style="margin-top:10px">Bu site içi skor; faiz, vergi/fon, kalan borç ve süre etkisini özetler. Resmî kredi notu veya finansal sağlık puanı değildir.</div>
 <div class="score-explain">
 <strong>Bu skor neyi ifade eder?</strong>
-<div class="small" id="scoreExplainText">0 düşük baskı, 100 yüksek baskı demektir. Vade uzadıkça ve maliyet büyüdükçe skor yükselir.</div>
+<div class="small" id="scoreExplainText">0 düşük maliyet baskısı, 100 yüksek maliyet baskısı demektir. Resmî bir gösterge değildir.</div>
 <div class="score-breakdown" id="scoreBreakdown">
 <div class="score-breakdown-row"><span class="name">Faiz yükü</span><span class="val neu">—</span></div>
-<div class="score-breakdown-row"><span class="name">BSMV etkisi</span><span class="val neu">—</span></div>
-<div class="score-breakdown-row"><span class="name">Aylık ödeme baskısı</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name">Vergi ve fon etkisi</span><span class="val neu">—</span></div>
+<div class="score-breakdown-row"><span class="name">İlk ödeme oranı</span><span class="val neu">—</span></div>
 <div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val neu">—</span></div>
 </div>
 </div>
@@ -774,19 +766,19 @@ class="results">
 </div>
 <div class="mini-result-grid">
 <div class="mini-result is-empty" id="mini1">
-<div class="label">Toplam faiz</div>
+<div class="label" id="mini1Label">Toplam faiz</div>
 <div class="value" id="totalInterestValue">—</div>
 </div>
 <div class="mini-result is-empty" id="mini2">
-<div class="label">BSMV</div>
+<div class="label" id="mini2Label">Vergi ve fon</div>
 <div class="value" id="bsmvValue">—</div>
 </div>
 <div class="mini-result is-empty" id="mini3">
-<div class="label">Toplam ödeme (taksitler)</div>
+<div class="label" id="mini3Label">Toplam ödeme</div>
 <div class="value" id="repaymentValue">—</div>
 </div>
 <div class="mini-result is-empty" id="mini4">
-<div class="label">Aylık ödeme</div>
+<div class="label" id="mini4Label">İlk aylık ödeme</div>
 <div class="value" id="monthlyValue">—</div>
 </div>
 </div>
@@ -825,7 +817,7 @@ class="results">
 <tbody id="detailTable">
 <tr><td>Ana para</td><td>—</td><td>Veri girildiğinde kırılım oluşur.</td></tr>
 <tr><td>Faiz</td><td>—</td><td>Seçilen faiz türü ve süresiyle hesaplanır.</td></tr>
-<tr><td>BSMV</td><td>—</td><td>Faiz üstünden hesaplanan vergi etkisi.</td></tr>
+<tr><td>BSMV</td><td>—</td><td>Faiz üzerinden hesaplanan vergi.</td></tr><tr><td>KKDF</td><td>—</td><td>Faiz üzerinden hesaplanan fon kesintisi.</td></tr>
 <tr><td>Toplam ödeme (taksitler)</td><td>—</td><td>Ana para + faiz + BSMV.</td></tr>
 </tbody>
 </table>
@@ -843,8 +835,8 @@ class="results">
 <thead>
 <tr>
 <th>Senaryo</th>
-<th>Toplam ödeme</th>
-<th>Aylık ödeme</th>
+<th>Ödenen tutar</th>
+<th>İlk aylık ödeme</th>
 <th>Fark</th>
 </tr>
 </thead>
@@ -862,7 +854,7 @@ class="results">
 <span class="summary-note">Skor ve karar ne demek?</span>
 </summary>
 <div class="details-inner">
-<p class="small">Borç Yükü Skoru yükseldikçe, borcun taşınma maliyeti ve ödeme baskısı artıyor demektir. Özellikle minimum ödeme davranışı uzun süre devam ettiğinde maliyet hızla büyüyebilir. Bu araç resmi ekstre yerine geçmez; ama baskı seviyesini erken görmek için güçlü bir ön izleme sunar.</p>
+<p class="small">Hesapica Borç Maliyeti Skoru yükseldikçe, borcun taşınma maliyeti ve ödeme baskısı artıyor demektir. Özellikle minimum ödeme davranışı uzun süre devam ettiğinde maliyet hızla büyüyebilir. Bu araç yeni harcama yapılmadığı ve faiz oranının dönem boyunca değişmediği varsayımıyla yaklaşık sonuç üretir. Bankanın resmi ekstresi ve güncel sözleşme oranları esas alınmalıdır.</p>
 </div>
 </details>
 </div>
@@ -902,8 +894,8 @@ class="results">
 <p>Hayır. Bu araç yaklaşık analiz üretir. Kesin ekstre ve faiz işlemesi banka sistemine göre değişebilir.</p>
 </details>
 <details>
-<summary>BSMV neden ayrı gösteriliyor?</summary>
-<p>Çünkü kullanıcı sadece faiz değil, faiz üzerindeki vergi etkisini de görmelidir. Toplam maliyet bu yüzden katmanlı gösterilir.</p>
+<summary>BSMV ve KKDF neden ayrı gösteriliyor?</summary>
+<p>Çünkü faiz dışında BSMV ve tüketici kredi kartlarında KKDF de maliyeti etkileyebilir. Bu kalemler bankanın resmi dökümüne göre değişebileceğinden ayrı gösterilir.</p>
 </details>
 <details>
 <summary>Ek ödeme ne işe yarar?</summary>
@@ -933,667 +925,403 @@ class="results">
 </section>
 </main>
 <script>
-    const STORAGE_KEY = 'hesapica_kredi_karti_faiz_lock_v2';
-    const DEFAULT_BSMV = 5;
+(() => {
+  'use strict';
 
-    const state = {
-      inputs: {},
-      results: null,
-      isValid: false,
-      isCalculated: false,
-      lastSource: 'empty',
-      hasAttemptedSubmit: false,
-      touched: new Set()
+  const STORAGE_KEY = 'hesapica_kredi_karti_faiz_v3';
+  const DEFAULT_BSMV = 15;
+  const DEFAULT_KKDF = 15;
+  const MAX_MONTHS = 240;
+  const $ = id => document.getElementById(id);
+
+  const state = {results:null,isCalculated:false,touched:new Set(),source:'empty'};
+
+  const els = {
+    debtType:$('debtType'), principal:$('principalInput'), monthlyRate:$('monthlyRate'),
+    months:$('months'), extra:$('extraPayment'), bsmv:$('bsmvRate'), kkdf:$('kkdfRate'),
+    minimumRate:$('minimumRate'), minimumRateWrap:$('minimumRateWrap'),
+    statusText:$('statusText'), statusBadge:$('statusBadge'), highlightCard:$('highlightCard'),
+    mainResult:$('mainResult'), mainResultText:$('mainResultText'), burdenScore:$('burdenScore'),
+    difficultyBadge:$('difficultyBadge'), scoreBar:$('scoreBar'), scoreExplainText:$('scoreExplainText'),
+    scoreBreakdown:$('scoreBreakdown'), totalInterestValue:$('totalInterestValue'),
+    bsmvValue:$('bsmvValue'), repaymentValue:$('repaymentValue'), monthlyValue:$('monthlyValue'),
+    mini1Label:$('mini1Label'), mini2Label:$('mini2Label'), mini3Label:$('mini3Label'), mini4Label:$('mini4Label'),
+    healthInterest:$('healthInterest'), healthInterestSub:$('healthInterestSub'),
+    healthTax:$('healthTax'), healthTaxSub:$('healthTaxSub'),
+    healthDecision:$('healthDecision'), healthDecisionSub:$('healthDecisionSub'),
+    bar1:$('bar1'), bar2:$('bar2'), barText1:$('barText1'), barText2:$('barText2'),
+    detailTable:$('detailTable'), scenarioTable:$('scenarioTable'), smartComment:$('smartComment')
+  };
+
+  const fields = {
+    principalInput:$('fieldPrincipalInput'), monthlyRate:$('fieldMonthlyRate'),
+    months:$('fieldMonths'), extraPayment:$('fieldExtraPayment'),
+    bsmvRate:$('fieldBsmvRate'), kkdfRate:$('fieldKkdfRate'),
+    minimumRate:$('fieldMinimumRate')
+  };
+
+  const round = value => Math.round((Number(value) || 0) * 100) / 100;
+  const money = value => new Intl.NumberFormat('tr-TR',{
+    style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2
+  }).format(Number(value) || 0);
+  const percent = (value,digits=1) => '%' + (Number(value) || 0).toLocaleString('tr-TR',{
+    minimumFractionDigits:digits,maximumFractionDigits:digits
+  });
+
+  function parseMoney(value){
+    const text = String(value ?? '').replace(/\s+/g,'').replace(/\./g,'').replace(',', '.').replace(/[^0-9.\-]/g,'');
+    const number = Number(text);
+    return Number.isFinite(number) ? number : 0;
+  }
+
+  function parseDecimal(value){
+    let text = String(value ?? '').trim().replace(/\s+/g,'').replace(/%/g,'');
+    if(!text) return NaN;
+    const negative = text.startsWith('-');
+    text = text.replace(/[^0-9.,]/g,'');
+    if(!text) return NaN;
+    const pos = Math.max(text.lastIndexOf(','), text.lastIndexOf('.'));
+    if(pos >= 0){
+      const whole = text.slice(0,pos).replace(/[.,]/g,'');
+      const fraction = text.slice(pos+1).replace(/[.,]/g,'');
+      text = (whole || '0') + (fraction ? '.' + fraction : '');
+    } else text = text.replace(/[.,]/g,'');
+    if(negative) text = '-' + text;
+    const number = Number(text);
+    return Number.isFinite(number) ? number : NaN;
+  }
+
+  const moneyInput = value => Number.isFinite(Number(value)) && Number(value) !== 0
+    ? Math.round(Number(value)).toLocaleString('tr-TR') : '';
+  const decimalInput = value => Number.isFinite(Number(value))
+    ? Number(value).toLocaleString('tr-TR',{maximumFractionDigits:2}) : '';
+
+  function paymentMode(){
+    return document.querySelector('input[name="paymentMode"]:checked')?.value || 'minimum';
+  }
+
+  function maxRate(type, periodDebt){
+    if(type === 'nakit') return 4.25;
+    const low = periodDebt < 30000;
+    const middle = periodDebt >= 30000 && periodDebt <= 180000;
+    if(type === 'gecikme') return low ? 3.55 : middle ? 4.05 : 4.55;
+    return low ? 3.25 : middle ? 3.75 : 4.25;
+  }
+
+  function data(){
+    const bsmv = parseDecimal(els.bsmv.value);
+    const kkdf = parseDecimal(els.kkdf.value);
+    return {
+      debtType:els.debtType.value,
+      principal:parseMoney(els.principal.value),
+      monthlyRate:parseDecimal(els.monthlyRate.value),
+      months:parseInt(els.months.value,10) || 0,
+      extraPayment:parseMoney(els.extra.value),
+      bsmvRate:Number.isFinite(bsmv) ? bsmv : DEFAULT_BSMV,
+      kkdfRate:Number.isFinite(kkdf) ? kkdf : DEFAULT_KKDF,
+      minimumRate:parseDecimal(els.minimumRate.value),
+      paymentMode:paymentMode()
     };
+  }
 
-    const debtType = document.getElementById('debtType');
-    const principalInput = document.getElementById('principalInput');
-    const monthlyRate = document.getElementById('monthlyRate');
-    const months = document.getElementById('months');
-    const extraPayment = document.getElementById('extraPayment');
-    const bsmvRate = document.getElementById('bsmvRate');
+  function syncMode(){
+    const minimum = paymentMode() === 'minimum';
+    els.minimumRateWrap.classList.toggle('is-hidden', !minimum);
+    const label = els.months.closest('.field').querySelector('label');
+    label.textContent = minimum ? 'Analiz süresi' : 'Hedef kapatma vadesi';
+    $('monthsHint').textContent = minimum
+      ? 'Asgari ödeme davranışının kaç ay sonrasını görmek istiyorsun?'
+      : 'Borcu kaç ayda planlı biçimde kapatmak istiyorsun?';
+  }
 
-    const statusText = document.getElementById('statusText');
-    const statusBadge = document.getElementById('statusBadge');
-    const highlightCard = document.getElementById('highlightCard');
-    const mainResult = document.getElementById('mainResult');
-    const mainResultText = document.getElementById('mainResultText');
+  function error(key,show){
+    const field = fields[key];
+    if(!field) return;
+    field.classList.toggle('has-error',show);
+    field.querySelector('input,select')?.setAttribute('aria-invalid',show ? 'true':'false');
+  }
 
-    const burdenScore = document.getElementById('burdenScore');
-    const difficultyBadge = document.getElementById('difficultyBadge');
-    const scoreBar = document.getElementById('scoreBar');
-    const scoreExplainText = document.getElementById('scoreExplainText');
-    const scoreBreakdown = document.getElementById('scoreBreakdown');
-
-    const totalInterestValue = document.getElementById('totalInterestValue');
-    const bsmvValue = document.getElementById('bsmvValue');
-    const repaymentValue = document.getElementById('repaymentValue');
-    const monthlyValue = document.getElementById('monthlyValue');
-
-    const healthInterest = document.getElementById('healthInterest');
-    const healthInterestSub = document.getElementById('healthInterestSub');
-    const healthTax = document.getElementById('healthTax');
-    const healthTaxSub = document.getElementById('healthTaxSub');
-    const healthDecision = document.getElementById('healthDecision');
-    const healthDecisionSub = document.getElementById('healthDecisionSub');
-
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const barText1 = document.getElementById('barText1');
-    const barText2 = document.getElementById('barText2');
-
-    const detailTable = document.getElementById('detailTable');
-    const scenarioTable = document.getElementById('scenarioTable');
-    const smartComment = document.getElementById('smartComment');
-    const allFields = Array.from(document.querySelectorAll('.field'));
-    const fieldMap = {
-      debtType: debtType.closest('.field'),
-      principalInput: principalInput.closest('.field'),
-      monthlyRate: monthlyRate.closest('.field'),
-      months: months.closest('.field'),
-      extraPayment: extraPayment.closest('.field'),
-      bsmvRate: bsmvRate.closest('.field')
+  function validate(show=true){
+    const d = data();
+    const checks = {
+      principalInput:d.principal > 0,
+      monthlyRate:Number.isFinite(d.monthlyRate) && d.monthlyRate >= 0 && d.monthlyRate <= 100,
+      months:d.months >= 1 && d.months <= MAX_MONTHS,
+      extraPayment:d.extraPayment >= 0,
+      bsmvRate:d.bsmvRate >= 0 && d.bsmvRate <= 100,
+      kkdfRate:d.kkdfRate >= 0 && d.kkdfRate <= 100,
+      minimumRate:d.paymentMode !== 'minimum' || (d.minimumRate >= 1 && d.minimumRate <= 100)
     };
+    Object.entries(checks).forEach(([key,pass]) => error(key,!pass && (show || state.touched.has(key))));
+    return {ok:Object.values(checks).every(Boolean),checks,d};
+  }
 
-    function formatMoney(value){
-      return new Intl.NumberFormat('tr-TR', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }).format(Number(value || 0)) + ' TL';
+  function planned(d,extra=0){
+    const r=Math.max(0,d.monthlyRate/100), b=Math.max(0,d.bsmvRate/100), k=Math.max(0,d.kkdfRate/100);
+    const effective=r*(1+b+k);
+    let base=effective===0 ? d.principal/d.months : d.principal*effective/(1-Math.pow(1+effective,-d.months));
+    base=Math.max(base,d.principal/d.months);
+    let balance=d.principal,interest=0,bsmv=0,kkdf=0,paid=0,first=0,used=0;
+    while(balance>0.01 && used<MAX_MONTHS){
+      const i=balance*r, bv=i*b, kv=i*k, due=balance+i+bv+kv;
+      const payment=Math.min(due,base+extra);
+      if(!first) first=payment;
+      interest+=i;bsmv+=bv;kkdf+=kv;paid+=payment;balance=Math.max(0,due-payment);used++;
+      if(payment<=i+bv+kv && balance>0.01) break;
+    }
+    return {mode:'planli',interest:round(interest),bsmv:round(bsmv),kkdf:round(kkdf),
+      taxes:round(bsmv+kkdf),totalPaid:round(paid),firstPayment:round(first),
+      remaining:round(balance),monthsUsed:used,closed:balance<=0.01};
+  }
+
+  function minimum(d,extra=0){
+    const r=Math.max(0,d.monthlyRate/100), b=Math.max(0,d.bsmvRate/100), k=Math.max(0,d.kkdfRate/100);
+    const min=Math.max(.01,d.minimumRate/100);
+    let balance=d.principal,interest=0,bsmv=0,kkdf=0,paid=0,first=0,used=0;
+    for(let month=0;month<d.months && balance>0.01;month++){
+      const i=balance*r,bv=i*b,kv=i*k,due=balance+i+bv+kv;
+      const payment=Math.min(due,Math.max(due*min,i+bv+kv)+extra);
+      if(!first) first=payment;
+      interest+=i;bsmv+=bv;kkdf+=kv;paid+=payment;balance=Math.max(0,due-payment);used++;
+    }
+    return {mode:'minimum',interest:round(interest),bsmv:round(bsmv),kkdf:round(kkdf),
+      taxes:round(bsmv+kkdf),totalPaid:round(paid),firstPayment:round(first),
+      remaining:round(balance),monthsUsed:used,closed:balance<=0.01};
+  }
+
+  const model=(d,extra=0)=>d.paymentMode==='minimum' ? minimum(d,extra) : planned(d,extra);
+
+  function metrics(d,r){
+    const cost=d.principal>0 ? ((r.interest+r.taxes)/d.principal)*100 : 0;
+    const remaining=d.principal>0 ? (r.remaining/d.principal)*100 : 0;
+    const first=d.principal>0 ? (r.firstPayment/d.principal)*100 : 0;
+    const duration=Math.min(100,(r.monthsUsed/24)*100);
+    const score=Math.round(Math.min(100,
+      Math.min(40,cost*.9)+Math.min(30,remaining*.30)+Math.min(15,duration*.15)+Math.min(15,Math.max(0,12-first))
+    ));
+    return {cost,remaining,first,duration,score};
+  }
+
+  function level(score){
+    if(score>=67) return {css:'bad',text:'Yüksek baskı'};
+    if(score>=34) return {css:'warn',text:'Orta baskı'};
+    return {css:'good',text:'Düşük baskı'};
+  }
+
+  function empty(){
+    state.results=null;state.isCalculated=false;
+    els.highlightCard.classList.add('is-empty');
+    els.mainResult.textContent='—';els.mainResultText.textContent='Hesaplama sonucu burada görünecek.';
+    els.burdenScore.textContent='0/100';els.difficultyBadge.textContent='Veri bekleniyor';els.difficultyBadge.className='pill';
+    els.scoreBar.style.width='0%';
+    els.scoreExplainText.textContent='0 düşük maliyet baskısı, 100 yüksek maliyet baskısı demektir. Resmî bir gösterge değildir.';
+    els.scoreBreakdown.innerHTML='<div class="score-breakdown-row"><span class="name">Faiz ve vergi yükü</span><span class="val neu">—</span></div><div class="score-breakdown-row"><span class="name">Kalan borç</span><span class="val neu">—</span></div><div class="score-breakdown-row"><span class="name">İlk ödeme oranı</span><span class="val neu">—</span></div><div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val neu">—</span></div>';
+    [els.totalInterestValue,els.bsmvValue,els.repaymentValue,els.monthlyValue].forEach(n=>n.textContent='—');
+    els.healthInterest.textContent='—';els.healthInterestSub.textContent='Faiz verisi bekleniyor';
+    els.healthTax.textContent='—';els.healthTaxSub.textContent='Vergi ve fon verisi bekleniyor';
+    els.healthDecision.textContent='—';els.healthDecisionSub.textContent='Analiz için veri bekleniyor';
+    els.bar1.style.width='0%';els.bar2.style.width='0%';els.barText1.textContent='%0';els.barText2.textContent='%0';
+    els.detailTable.innerHTML='<tr><td>Ana para</td><td>—</td><td>Veri girildiğinde kırılım oluşur.</td></tr><tr><td>Faiz</td><td>—</td><td>Seçilen faiz ve dönemle hesaplanır.</td></tr><tr><td>BSMV</td><td>—</td><td>Faiz üzerinden hesaplanır.</td></tr><tr><td>KKDF</td><td>—</td><td>Faiz üzerinden hesaplanır.</td></tr>';
+    els.scenarioTable.innerHTML='<tr><td>Standart</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Ek ödemeli</td><td>—</td><td>—</td><td>—</td></tr>';
+    els.smartComment.textContent='Henüz veri girilmedi. Sonucu görmek için borç, faiz ve dönem bilgilerini doldur veya örnek veri kullan.';
+    els.statusText.textContent='Sonucu görmek için borç, faiz ve dönem bilgilerini doldur veya örnek veri kullan.';
+    els.statusBadge.textContent='Veri bekleniyor';els.statusBadge.className='badge';
+  }
+
+  function render(d,base,extraResult,focus=false){
+    const m=metrics(d,base), t=level(m.score);
+    const savedCost=Math.max(0,(base.interest+base.taxes)-(extraResult.interest+extraResult.taxes));
+    const savedBalance=Math.max(0,base.remaining-extraResult.remaining);
+    state.results={d,base,extraResult,m};state.isCalculated=true;
+    els.highlightCard.classList.remove('is-empty');
+
+    if(d.paymentMode==='minimum'){
+      els.mainResult.textContent=money(base.remaining);
+      els.mainResultText.textContent=`${base.monthsUsed} aylık asgari ödeme simülasyonu sonunda kalan yaklaşık borç. Yeni harcama yapılmadığı varsayılmıştır.`;
+      els.mini1Label.textContent='Dönem boyunca faiz';els.mini2Label.textContent='BSMV + KKDF';
+      els.mini3Label.textContent='Dönem boyunca ödenen';els.mini4Label.textContent='İlk asgari ödeme';
+      els.repaymentValue.textContent=money(base.totalPaid);
+    }else{
+      els.mainResult.textContent=base.closed ? money(base.totalPaid) : money(base.remaining);
+      els.mainResultText.textContent=base.closed ? `${base.monthsUsed} ayda planlı kapatma için yaklaşık toplam ödeme.` : 'Seçilen ödeme borcu kapatmaya yetmedi; kalan borç gösteriliyor.';
+      els.mini1Label.textContent='Toplam faiz';els.mini2Label.textContent='BSMV + KKDF';
+      els.mini3Label.textContent=base.closed?'Toplam ödeme':'Kalan borç';els.mini4Label.textContent='İlk aylık ödeme';
+      els.repaymentValue.textContent=money(base.closed?base.totalPaid:base.remaining);
     }
 
-    function formatPercent(value, digits = 2){
-      return '%' + new Intl.NumberFormat('tr-TR', {
-        minimumFractionDigits: digits,
-        maximumFractionDigits: digits
-      }).format(Number(value || 0));
-    }
+    els.totalInterestValue.textContent=money(base.interest);els.bsmvValue.textContent=money(base.taxes);els.monthlyValue.textContent=money(base.firstPayment);
+    els.burdenScore.textContent=`${m.score}/100`;els.difficultyBadge.textContent=t.text;els.difficultyBadge.className=`pill ${t.css}`;
+    els.scoreBar.style.width=`${m.score}%`;
+    els.scoreExplainText.textContent=`Faiz ve vergi yükü ${percent(m.cost)}, kalan borç oranı ${percent(m.remaining)} ve ilk ödeme oranı ${percent(m.first)} olarak hesaplandı. Bu puan Hesapica içi bir göstergedir.`;
+    els.scoreBreakdown.innerHTML=`<div class="score-breakdown-row"><span class="name">Faiz ve vergi yükü</span><span class="val ${m.cost>=20?'neg':'neu'}">${percent(m.cost)}</span></div><div class="score-breakdown-row"><span class="name">Kalan borç</span><span class="val ${m.remaining>=50?'neg':'neu'}">${percent(m.remaining)}</span></div><div class="score-breakdown-row"><span class="name">İlk ödeme oranı</span><span class="val neu">${percent(m.first)}</span></div><div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val neu">${base.monthsUsed} ay</span></div>`;
 
-    function formatInputMoney(value){
-      if (value === null || value === undefined || value === '') return '';
-      const n = Number(value);
-      if (!Number.isFinite(n) || n === 0) return '';
-      return n.toLocaleString('tr-TR');
-    }
+    els.healthInterest.textContent=m.cost>=30?'Yüksek':m.cost>=15?'Orta':'Düşük';
+    els.healthInterestSub.textContent=`Faiz ve vergi/fon yükü ana borcun ${percent(m.cost)} seviyesinde.`;
+    els.healthTax.textContent=money(base.taxes);els.healthTaxSub.textContent=`BSMV ${percent(d.bsmvRate,0)} + KKDF ${percent(d.kkdfRate,0)}.`;
+    els.healthDecision.textContent=t.css==='bad'?'Dikkat':t.css==='warn'?'Kontrollü':'Görece iyi';
+    els.healthDecisionSub.textContent=d.paymentMode==='minimum'?'Asgari ödeme borcu azaltır; kalan bakiye faizlenmeye devam eder.':'Planlı ödeme vadesi ve ek ödeme maliyeti doğrudan etkiler.';
 
-    function setMoneyInputFormatting(selector){
-      document.querySelectorAll(selector).forEach(input => {
-        input.addEventListener('input', () => {
-          const digits = input.value.replace(/\D/g, '');
-          input.value = digits ? Number(digits).toLocaleString('tr-TR') : '';
-        });
-      });
-    }
+    const principalShare=d.paymentMode==='minimum'
+      ? Math.max(0,Math.min(100,((d.principal-base.remaining)/d.principal)*100))
+      : Math.max(0,Math.min(100,(d.principal/Math.max(base.totalPaid,d.principal))*100));
+    const costShare=100-principalShare;
+    els.bar1.style.width=`${principalShare}%`;els.bar2.style.width=`${costShare}%`;
+    els.barText1.textContent=percent(principalShare);els.barText2.textContent=percent(costShare);
 
-    function parseMoneyInput(el){
-      const raw = (el.value || '').replace(/\./g, '').replace(',', '.').replace(/[^\d.]/g, '');
-      return Number(raw) || 0;
-    }
+    els.detailTable.innerHTML=`<tr><td>Başlangıç borcu</td><td>${money(d.principal)}</td><td>Yeni harcama olmadığı varsayımıyla başlangıç bakiyesi.</td></tr><tr><td>Faiz</td><td>${money(base.interest)}</td><td>${percent(d.monthlyRate,2)} aylık oranla yaklaşık hesaplandı.</td></tr><tr><td>BSMV</td><td>${money(base.bsmv)}</td><td>Faiz üzerinden ${percent(d.bsmvRate,0)}.</td></tr><tr><td>KKDF</td><td>${money(base.kkdf)}</td><td>Faiz üzerinden ${percent(d.kkdfRate,0)}.</td></tr><tr><td>${d.paymentMode==='minimum'?'Dönem sonunda kalan borç':'Toplam ödeme'}</td><td>${money(d.paymentMode==='minimum'?base.remaining:base.totalPaid)}</td><td>${d.paymentMode==='minimum'?'Seçilen analiz dönemi sonundaki yaklaşık bakiye.':'Planlı ödeme senaryosundaki yaklaşık toplam.'}</td></tr>`;
 
-    function parseDecimalValue(value){
-      if (value === null || value === undefined) return 0;
-      const normalized = String(value).trim().replace(/\s+/g, '').replace(/%/g, '').replace(/,/g, '.').replace(/[^\d.\-]/g, '');
-      if (!normalized) return 0;
-      const parts = normalized.split('.');
-      const safe = parts.length > 2 ? parts[0] + '.' + parts.slice(1).join('') : normalized;
-      const num = Number(safe);
-      return Number.isFinite(num) ? num : 0;
-    }
+    els.scenarioTable.innerHTML=d.paymentMode==='minimum'
+      ? `<tr><td>Asgari ödeme</td><td>${money(base.totalPaid)}</td><td>${money(base.firstPayment)}</td><td>Kalan: ${money(base.remaining)}</td></tr><tr><td>Ek ödemeli</td><td>${money(extraResult.totalPaid)}</td><td>${money(extraResult.firstPayment)}</td><td>${d.extraPayment>0?'Kalan borç '+money(savedBalance)+' daha düşük':'Ek ödeme yok'}</td></tr>`
+      : `<tr><td>Planlı ödeme</td><td>${money(base.totalPaid)}</td><td>${money(base.firstPayment)}</td><td>${base.monthsUsed} ay</td></tr><tr><td>Ek ödemeli</td><td>${money(extraResult.totalPaid)}</td><td>${money(extraResult.firstPayment)}</td><td>${d.extraPayment>0?money(savedCost)+' maliyet azalması':'Ek ödeme yok'}</td></tr>`;
 
-    function formatDecimalInputValue(value, digits = 2){
-      if (value === null || value === undefined || value === '') return '';
-      const num = Number(value);
-      if (!Number.isFinite(num)) return '';
-      return new Intl.NumberFormat('tr-TR', {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: digits
-      }).format(num);
-    }
+    const type=d.debtType==='gecikme'?'gecikme faizi':d.debtType==='nakit'?'nakit kullanım faizi':'akdi faiz';
+    els.smartComment.textContent=d.paymentMode==='minimum'
+      ? `${money(d.principal)} başlangıç borcu, ${percent(d.minimumRate,0)} asgari ödeme oranı ve ${percent(d.monthlyRate,2)} aylık ${type} ile ${d.months} ay simüle edildi. Dönem sonunda yaklaşık ${money(base.remaining)} borç kalıyor; ${money(base.interest)} faiz ve ${money(base.taxes)} vergi/fon oluşuyor.${d.extraPayment>0?' Aylık '+money(d.extraPayment)+' ek ödeme kalan borcu yaklaşık '+money(savedBalance)+' azaltıyor.':''}`
+      : `${money(d.principal)} borcun ${d.months} ayda planlı kapatılması için ilk aylık ödeme yaklaşık ${money(base.firstPayment)} ve toplam ödeme ${money(base.totalPaid)} görünüyor. Faiz ${money(base.interest)}, vergi/fon ${money(base.taxes)}.${d.extraPayment>0?' Aylık '+money(d.extraPayment)+' ek ödeme yaklaşık '+money(savedCost)+' maliyet avantajı sağlıyor.':''}`;
+    els.statusText.textContent=`${d.paymentMode==='minimum'?'Asgari ödeme':'Planlı kapatma'} senaryosu hesaplandı.`;
+    els.statusBadge.textContent=t.text;els.statusBadge.className=`badge ${t.css}`;
 
-    function focusResults(){
-      highlightCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      highlightCard.classList.remove('result-flash');
-      void highlightCard.offsetWidth;
-      highlightCard.classList.add('result-flash');
-      setTimeout(() => highlightCard.classList.remove('result-flash'), 1400);
+    if(focus){
+      els.highlightCard.scrollIntoView({behavior:'smooth',block:'start'});
+      els.highlightCard.classList.remove('result-flash');void els.highlightCard.offsetWidth;
+      els.highlightCard.classList.add('result-flash');setTimeout(()=>els.highlightCard.classList.remove('result-flash'),1400);
     }
+  }
 
-    function getPaymentMode(){
-      return document.querySelector('input[name="paymentMode"]:checked')?.value || 'minimum';
-    }
+  function save(){
+    if(state.source!=='manual') return;
+    try{
+      localStorage.setItem(STORAGE_KEY,JSON.stringify({
+        source:'manual',debtType:els.debtType.value,principal:els.principal.value,
+        monthlyRate:els.monthlyRate.value,months:els.months.value,extra:els.extra.value,
+        bsmv:els.bsmv.value,kkdf:els.kkdf.value,minimumRate:els.minimumRate.value,paymentMode:paymentMode()
+      }));
+    }catch(err){}
+  }
 
-    function getFormData(){
-      const rawBsmv = parseDecimalValue(bsmvRate.value);
-      return {
-        debtType: debtType.value,
-        principal: parseMoneyInput(principalInput),
-        monthlyRate: parseDecimalValue(monthlyRate.value),
-        months: Number(months.value) || 0,
-        extraPayment: parseMoneyInput(extraPayment),
-        bsmvRate: Number.isFinite(rawBsmv) && rawBsmv >= 0 ? rawBsmv : DEFAULT_BSMV,
-        paymentMode: getPaymentMode()
-      };
-    }
+  function load(){
+    try{
+      const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
+      if(!saved || saved.source!=='manual') return false;
+      els.debtType.value=saved.debtType||'akdi';els.principal.value=saved.principal||'';
+      els.monthlyRate.value=saved.monthlyRate||'';els.months.value=saved.months||'';
+      els.extra.value=saved.extra||'';els.bsmv.value=saved.bsmv||'';els.kkdf.value=saved.kkdf||'';
+      els.minimumRate.value=saved.minimumRate||'20';
+      document.querySelector(`input[name="paymentMode"][value="${saved.paymentMode||'minimum'}"]`)?.click();
+      syncMode();return true;
+    }catch(err){return false;}
+  }
 
-    function setFormData(data, source = 'manual', shouldCalculate = false){
-      state.lastSource = source;
-      state.touched.clear();
-      state.hasAttemptedSubmit = false;
-      clearValidationState();
-      if (data.debtType) debtType.value = data.debtType;
-      principalInput.value = formatInputMoney(data.principal);
-      monthlyRate.value = formatDecimalInputValue(data.monthlyRate);
-      months.value = data.months ?? '';
-      extraPayment.value = formatInputMoney(data.extraPayment);
-      bsmvRate.value = (data.bsmvRate ?? '') === '' ? '' : formatDecimalInputValue(data.bsmvRate);
-      const mode = data.paymentMode || 'minimum';
-      const radio = document.querySelector(`input[name="paymentMode"][value="${mode}"]`);
-      if (radio) radio.checked = true;
-      if (shouldCalculate) calculateAll(source);
-    }
+  const remove=()=>{try{localStorage.removeItem(STORAGE_KEY);}catch(err){}};
 
-    function saveManualState(){
-      if (state.lastSource !== 'manual' || !state.isValid) return;
-      const payload = {
-        source: 'manual',
-        debtType: debtType.value,
-        principal: parseMoneyInput(principalInput),
-        monthlyRate: monthlyRate.value,
-        months: months.value,
-        extraPayment: parseMoneyInput(extraPayment),
-        bsmvRate: bsmvRate.value,
-        paymentMode: getPaymentMode()
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-    }
-
-    function loadManualState(){
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return false;
-        const saved = JSON.parse(raw);
-        if (!saved || saved.source !== 'manual') return false;
-        setFormData(saved, 'manual', false);
-        return true;
-      } catch {
-        return false;
+  function calculate(source='manual',options={}){
+    state.source=source;
+    const v=validate(options.show!==false);
+    if(!v.ok){
+      empty();els.statusText.textContent='Önce hatalı alanları düzeltmen gerekiyor.';
+      els.statusBadge.textContent='Eksik / hatalı veri';els.statusBadge.className='badge bad';
+      if(options.focus){
+        const key=Object.keys(v.checks).find(k=>!v.checks[k]);
+        fields[key]?.querySelector('input,select')?.focus();
       }
+      return;
     }
+    const base=model(v.d,0), extraResult=model(v.d,v.d.extraPayment);
+    render(v.d,base,extraResult,options.focus===true);
+    if(source==='manual') save();
+  }
 
-    function removeSavedState(){
-      localStorage.removeItem(STORAGE_KEY);
-    }
+  function setData(d){
+    state.source='demo';els.debtType.value=d.debtType;els.principal.value=moneyInput(d.principal);
+    els.monthlyRate.value=decimalInput(d.monthlyRate);els.months.value=d.months;
+    els.extra.value=moneyInput(d.extraPayment||0);els.bsmv.value=decimalInput(d.bsmvRate??DEFAULT_BSMV);
+    els.kkdf.value=decimalInput(d.kkdfRate??DEFAULT_KKDF);els.minimumRate.value=String(d.minimumRate??20);
+    const radio=document.querySelector(`input[name="paymentMode"][value="${d.paymentMode||'minimum'}"]`);
+    if(radio) radio.checked=true;
+    syncMode();calculate('demo',{focus:true,show:true});
+  }
 
-    function emptyState(){
-      state.results = null;
-      state.isCalculated = false;
-      state.isValid = false;
+  window.runPrimaryAction=()=>calculate('manual',{focus:true,show:true});
+  window.fillExample=()=>{
+    setActive('');
+    const principal=35000;
+    setData({debtType:'akdi',principal,monthlyRate:maxRate('akdi',principal),months:6,extraPayment:0,bsmvRate:15,kkdfRate:15,minimumRate:20,paymentMode:'minimum'});
+  };
+  window.fillScenario=type=>{
+    const scenarios={
+      akdi:{debtType:'akdi',principal:40000,months:6,extraPayment:0,minimumRate:20,paymentMode:'minimum'},
+      gecikme:{debtType:'gecikme',principal:28000,months:4,extraPayment:0,minimumRate:20,paymentMode:'minimum'},
+      nakit:{debtType:'nakit',principal:18000,months:3,extraPayment:0,minimumRate:20,paymentMode:'planli'},
+      ekstra:{debtType:'akdi',principal:50000,months:8,extraPayment:1500,minimumRate:40,paymentMode:'planli'}
+    };
+    const d=scenarios[type];if(!d)return;
+    d.monthlyRate=maxRate(d.debtType,d.principal);d.bsmvRate=15;d.kkdfRate=15;setActive(type);setData(d);
+  };
 
-      highlightCard.classList.add('is-empty');
-      mainResult.textContent = '—';
-      mainResultText.textContent = 'Toplam ödeme (taksitler) burada görünecek.';
-      burdenScore.textContent = '0/100';
-      difficultyBadge.textContent = 'Veri bekleniyor';
-      difficultyBadge.className = 'pill';
-      scoreBar.style.width = '0%';
-      scoreExplainText.textContent = '0 düşük baskı, 100 yüksek baskı demektir. Vade uzadıkça ve maliyet büyüdükçe skor yükselir.';
-      scoreBreakdown.innerHTML = `
-        <div class="score-breakdown-row"><span class="name">Faiz yükü</span><span class="val neu">—</span></div>
-        <div class="score-breakdown-row"><span class="name">BSMV etkisi</span><span class="val neu">—</span></div>
-        <div class="score-breakdown-row"><span class="name">Aylık ödeme baskısı</span><span class="val neu">—</span></div>
-        <div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val neu">—</span></div>
-      `;
-      [totalInterestValue,bsmvValue,repaymentValue,monthlyValue].forEach(el => el.textContent = '—');
-      [document.getElementById('mini1'),document.getElementById('mini2'),document.getElementById('mini3'),document.getElementById('mini4')].forEach(el => el.classList.add('is-empty'));
-      healthInterest.textContent = '—';
-      healthInterestSub.textContent = 'Faiz verisi bekleniyor';
-      healthTax.textContent = '—';
-      healthTaxSub.textContent = 'BSMV verisi bekleniyor';
-      healthDecision.textContent = '—';
-      healthDecisionSub.textContent = 'Analiz için veri bekleniyor';
-      bar1.style.width = '0%';
-      bar2.style.width = '0%';
-      barText1.textContent = '%0';
-      barText2.textContent = '%0';
-      detailTable.innerHTML = `
-        <tr><td>Ana para</td><td>—</td><td>Veri girildiğinde kırılım oluşur.</td></tr>
-        <tr><td>Faiz</td><td>—</td><td>Seçilen faiz türü ve süresiyle hesaplanır.</td></tr>
-        <tr><td>BSMV</td><td>—</td><td>Faiz üstünden hesaplanan vergi etkisi.</td></tr>
-        <tr><td>Toplam ödeme (taksitler)</td><td>—</td><td>Ana para + faiz + BSMV.</td></tr>`;
-      scenarioTable.innerHTML = `
-        <tr><td>Standart</td><td>—</td><td>—</td><td>—</td></tr>
-        <tr><td>Ek ödemeli</td><td>—</td><td>—</td><td>—</td></tr>`;
-      smartComment.textContent = 'Henüz veri girilmedi. Sonucu görmek için borç, faiz ve ay bilgilerini doldur veya örnek veri kullan.';
-      statusText.textContent = 'Sonucu görmek için borç, faiz ve ay bilgilerini doldur veya örnek veri kullan.';
-      statusBadge.textContent = 'Veri bekleniyor';
-      statusBadge.className = 'badge';
-    }
+  function setActive(type){
+    const buttons=[...document.querySelectorAll('#scenarioRow .chip')];
+    buttons.forEach(b=>b.classList.remove('active'));
+    const map={akdi:0,gecikme:1,nakit:2,ekstra:3};
+    if(type in map) buttons[map[type]]?.classList.add('active');
+  }
 
-    function markFieldTouched(fieldKey){
-      if (!fieldKey) return;
-      state.touched.add(fieldKey);
-    }
+  window.clearAllFields=()=>{
+    els.debtType.value='akdi';els.principal.value='';els.monthlyRate.value='';els.months.value='';
+    els.extra.value='';els.bsmv.value='';els.kkdf.value='';els.minimumRate.value='20';
+    document.querySelector('input[name="paymentMode"][value="minimum"]').checked=true;
+    state.touched.clear();state.source='empty';Object.keys(fields).forEach(k=>error(k,false));
+    setActive('');syncMode();remove();empty();
+  };
 
-    function clearValidationState(){
-      allFields.forEach(field => field.classList.remove('has-error'));
-      Object.entries(fieldMap).forEach(([key, field]) => {
-        const input = field?.querySelector('input, select');
-        if (input) input.setAttribute('aria-invalid', 'false');
-      });
-    }
+  function shareText(){
+    return ['Kredi Kartı Borç Analizi',
+      `Mod: ${state.results.d.paymentMode==='minimum'?'Asgari ödeme simülasyonu':'Planlı kapatma'}`,
+      `Ana sonuç: ${els.mainResult.textContent}`,`Faiz: ${els.totalInterestValue.textContent}`,
+      `BSMV + KKDF: ${els.bsmvValue.textContent}`,`Hesapica maliyet skoru: ${els.burdenScore.textContent}`,
+      '',els.smartComment.textContent,'','https://hesapica.com/kredi-karti-faiz-hesaplama'].join('\n');
+  }
 
-    function setFieldError(fieldKey, shouldShow){
-      const field = fieldMap[fieldKey];
-      if (!field) return;
-      const input = field.querySelector('input, select');
-      field.classList.toggle('has-error', shouldShow);
-      if (input) input.setAttribute('aria-invalid', shouldShow ? 'true' : 'false');
-    }
+  function fallback(text){
+    const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy');}catch(err){}ta.remove();return ok;
+  }
 
-    function getFirstInvalidFieldKey(validity){
-      const order = ['principalInput', 'monthlyRate', 'months', 'extraPayment', 'bsmvRate'];
-      return order.find(key => validity[key] === false) || null;
-    }
+  window.copyResults=async()=>{
+    if(!state.results){alert('Önce geçerli bir sonuç oluştur.');return;}
+    const text=shareText();let ok=false;
+    if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);ok=true;}catch(err){}}
+    if(!ok)ok=fallback(text);alert(ok?'Sonuç kopyalandı.':'Kopyalama başarısız oldu.');
+  };
 
-    function focusFirstInvalidField(fieldKey){
-      if (!fieldKey) return;
-      const field = fieldMap[fieldKey];
-      const input = field?.querySelector('input, select');
-      if (input) input.focus();
-    }
+  window.shareResults=async()=>{
+    if(!state.results){alert('Önce geçerli bir sonuç oluştur.');return;}
+    const text=shareText();
+    if(navigator.share){try{await navigator.share({title:'Kredi Kartı Borç Analizi',text,url:location.href});return;}catch(err){if(err?.name==='AbortError')return;}}
+    let ok=false;if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);ok=true;}catch(err){}}
+    if(!ok)ok=fallback(text);alert(ok?'Paylaşım özeti panoya kopyalandı.':'Paylaşım başarısız oldu.');
+  };
 
-    function validate(markErrors = true){
-      const principal = parseMoneyInput(principalInput);
-      const rate = parseDecimalValue(monthlyRate.value);
-      const monthCount = Number(months.value) || 0;
-      const extra = parseMoneyInput(extraPayment);
-      const hasBsmvInput = bsmvRate.value !== '';
-      const bsmv = hasBsmvInput ? parseDecimalValue(bsmvRate.value) : DEFAULT_BSMV;
+  let timer;
+  const schedule=()=>{clearTimeout(timer);timer=setTimeout(()=>{const v=validate(false);v.ok?calculate('manual',{show:false}):empty();},220);};
 
-      const validity = {
-        principalInput: principal > 0,
-        monthlyRate: rate > 0 && rate <= 100,
-        months: monthCount >= 1 && monthCount <= 240,
-        extraPayment: extra >= 0,
-        bsmvRate: Number.isFinite(bsmv) && bsmv >= 0 && bsmv <= 100
-      };
+  document.querySelectorAll('.js-money').forEach(input=>{
+    input.addEventListener('input',()=>{const digits=input.value.replace(/\D/g,'');input.value=digits?Number(digits).toLocaleString('tr-TR'):'';});
+  });
 
-      let ok = true;
-      Object.entries(validity).forEach(([key, pass]) => {
-        if (!pass) ok = false;
-        const shouldShow = markErrors
-          ? !pass && (state.hasAttemptedSubmit || state.touched.has(key))
-          : !pass && state.touched.has(key);
-        setFieldError(key, shouldShow);
-      });
+  [els.debtType,els.principal,els.monthlyRate,els.months,els.extra,els.bsmv,els.kkdf,els.minimumRate].forEach(input=>{
+    input.addEventListener('input',()=>{state.source='manual';state.touched.add(input.id);setActive('');schedule();});
+    input.addEventListener('change',()=>{state.source='manual';state.touched.add(input.id);setActive('');schedule();});
+    input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();calculate('manual',{focus:true,show:true});}});
+  });
 
-      state.isValid = ok;
-      return { ok, validity };
-    }
+  document.querySelectorAll('input[name="paymentMode"]').forEach(radio=>{
+    radio.addEventListener('change',()=>{state.source='manual';syncMode();setActive('');schedule();});
+  });
 
-    function calcAmortized(principal, ratePct, monthCount, extra, bsmvPct){
-      const monthlyRateDec = Math.max(0, ratePct / 100);
-      const taxRateDec = Math.max(0, bsmvPct / 100);
-      const effectiveRate = monthlyRateDec * (1 + taxRateDec);
-
-      let plannedPayment;
-      if (effectiveRate <= 0) {
-        plannedPayment = principal / monthCount;
-      } else {
-        plannedPayment = principal * effectiveRate / (1 - Math.pow(1 + effectiveRate, -monthCount));
-      }
-      plannedPayment = Math.max(plannedPayment, principal / monthCount);
-
-      let balance = principal;
-      let totalInterest = 0;
-      let totalTax = 0;
-      let totalPaid = 0;
-      let monthsUsed = 0;
-      let firstMonthly = 0;
-
-      while (balance > 0.01 && monthsUsed < 240) {
-        const interest = balance * monthlyRateDec;
-        const tax = interest * taxRateDec;
-        const due = balance + interest + tax;
-        const payment = Math.min(due, plannedPayment + extra);
-        if (!firstMonthly) firstMonthly = payment;
-        totalInterest += interest;
-        totalTax += tax;
-        totalPaid += payment;
-        balance = Math.max(0, due - payment);
-        monthsUsed += 1;
-      }
-
-      return {
-        interest: totalInterest,
-        tax: totalTax,
-        total: totalPaid,
-        monthly: firstMonthly || 0,
-        monthsUsed,
-        plannedPayment,
-        balance
-      };
-    }
-
-    function calculateAll(source = 'manual', options = {}){
-      state.lastSource = source;
-      const shouldShowErrors = options.showValidation !== false;
-      if (shouldShowErrors) state.hasAttemptedSubmit = true;
-
-      const validation = validate(shouldShowErrors);
-      if (!validation.ok) {
-        emptyState();
-        statusText.textContent = 'Önce hatalı alanları düzeltmen gerekiyor.';
-        statusBadge.textContent = 'Eksik / hatalı veri';
-        statusBadge.className = 'badge bad';
-        smartComment.textContent = 'Geçerli borç, faiz ve süre girildiğinde sistem gerçek analizi oluşturacak.';
-        if (shouldShowErrors) focusFirstInvalidField(getFirstInvalidFieldKey(validation.validity));
-        return;
-      }
-
-      const data = getFormData();
-      state.inputs = data;
-
-      const base = calcAmortized(data.principal, data.monthlyRate, data.months, 0, data.bsmvRate);
-      const withExtra = calcAmortized(data.principal, data.monthlyRate, data.months, data.extraPayment, data.bsmvRate);
-
-      const totalCostRatio = ((base.total - data.principal) / data.principal) * 100;
-      const taxRatio = base.interest > 0 ? (base.tax / base.interest) * 100 : 0;
-      const monthlyPressureRatio = data.principal > 0 ? (base.monthly / data.principal) * 100 : 0;
-      const durationRatio = Math.min(100, (base.monthsUsed / 12) * 100);
-
-      const scoreInterest = Math.min(35, totalCostRatio * 0.55);
-      const scoreTax = Math.min(15, taxRatio * 0.8);
-      const scoreMonthly = Math.min(25, monthlyPressureRatio * 2.3);
-      const scoreDuration = Math.min(20, durationRatio * 0.22);
-      const scoreMode = data.paymentMode === 'minimum' ? 5 : 0;
-      const rawScore = Math.min(100, Math.round(scoreInterest + scoreTax + scoreMonthly + scoreDuration + scoreMode));
-
-      let pillClass = 'good', pillText = 'Düşük baskı';
-      if (rawScore >= 67) { pillClass = 'bad'; pillText = 'Yüksek baskı'; }
-      else if (rawScore >= 34) { pillClass = 'warn'; pillText = 'Orta baskı'; }
-
-      const principalShare = base.total > 0 ? (data.principal / base.total) * 100 : 0;
-      const costShare = 100 - principalShare;
-      const savedTotal = Math.max(0, base.total - withExtra.total);
-      const savedMonths = Math.max(0, base.monthsUsed - withExtra.monthsUsed);
-
-      state.results = { data, base, withExtra, rawScore, totalCostRatio, taxRatio, monthlyPressureRatio, pillClass, pillText, savedTotal, savedMonths };
-      state.isCalculated = true;
-      clearValidationState();
-
-      highlightCard.classList.remove('is-empty');
-      mainResult.textContent = formatMoney(base.total);
-      mainResultText.textContent = `${base.monthsUsed} ay civarında kapanan senaryoda ana borç + faiz + BSMV ile oluşan yaklaşık toplam geri ödeme.`;
-
-      burdenScore.textContent = `${rawScore}/100`;
-      difficultyBadge.textContent = pillText;
-      difficultyBadge.className = `pill ${pillClass}`;
-      scoreBar.style.width = `${rawScore}%`;
-      scoreExplainText.textContent = `Faiz yükü ${formatPercent(totalCostRatio,1)}, BSMV etkisi ${formatPercent(taxRatio,1)} ve ilk ay ödeme baskısı ${formatPercent(monthlyPressureRatio,1)} seviyesinde görünüyor.`;
-
-      scoreBreakdown.innerHTML = `
-        <div class="score-breakdown-row"><span class="name">Faiz yükü</span><span class="val ${scoreInterest > 20 ? 'neg':'neu'}">${formatPercent(totalCostRatio,1)}</span></div>
-        <div class="score-breakdown-row"><span class="name">BSMV etkisi</span><span class="val ${scoreTax > 8 ? 'neg':'neu'}">${formatPercent(taxRatio,1)}</span></div>
-        <div class="score-breakdown-row"><span class="name">Aylık ödeme baskısı</span><span class="val ${scoreMonthly > 14 ? 'neg':'neu'}">${formatPercent(monthlyPressureRatio,1)}</span></div>
-        <div class="score-breakdown-row"><span class="name">Süre etkisi</span><span class="val ${scoreDuration > 10 ? 'neg':'neu'}">${base.monthsUsed} ay</span></div>
-      `;
-
-      [document.getElementById('mini1'),document.getElementById('mini2'),document.getElementById('mini3'),document.getElementById('mini4')].forEach(el => el.classList.remove('is-empty'));
-      totalInterestValue.textContent = formatMoney(base.interest);
-      bsmvValue.textContent = formatMoney(base.tax);
-      repaymentValue.textContent = formatMoney(base.total);
-      monthlyValue.textContent = formatMoney(base.monthly);
-
-      healthInterest.textContent = totalCostRatio >= 30 ? 'Yüksek' : totalCostRatio >= 15 ? 'Orta' : 'Düşük';
-      healthInterestSub.textContent = `Faiz yükü ana borcun ${formatPercent(totalCostRatio,1)} seviyesinde.`;
-
-      healthTax.textContent = formatMoney(base.tax);
-      healthTaxSub.textContent = `Varsayılan/özel BSMV oranı: ${formatPercent(data.bsmvRate, data.bsmvRate % 1 === 0 ? 0 : 2)}.`;
-
-      let decision = '', decisionSub = '';
-      if (rawScore >= 67) {
-        decision = 'Dikkat';
-        decisionSub = 'Borcu uzun taşımak maliyeti belirgin büyütüyor.';
-      } else if (rawScore >= 34) {
-        decision = 'Kontrollü';
-        decisionSub = 'Kısa sürede azaltılırsa baskı yönetilebilir.';
-      } else {
-        decision = 'Görece iyi';
-        decisionSub = 'Maliyet seviyesi daha sınırlı görünüyor.';
-      }
-      healthDecision.textContent = decision;
-      healthDecisionSub.textContent = decisionSub;
-
-      bar1.style.width = `${principalShare}%`;
-      bar2.style.width = `${costShare}%`;
-      barText1.textContent = formatPercent(principalShare,1);
-      barText2.textContent = formatPercent(costShare,1);
-
-      detailTable.innerHTML = `
-        <tr><td>Ana para</td><td>${formatMoney(data.principal)}</td><td>Hesaba esas taşınan ana borç.</td></tr>
-        <tr><td>Toplam faiz</td><td>${formatMoney(base.interest)}</td><td>${data.debtType === 'gecikme' ? 'Gecikme faizi' : data.debtType === 'nakit' ? 'Nakit kullanım faizi' : 'Akdi faiz'} yaklaşımı ile yaklaşık hesaplandı.</td></tr>
-        <tr><td>BSMV</td><td>${formatMoney(base.tax)}</td><td>Faiz üzerinden ayrı gösterilen vergi etkisi.</td></tr>
-        <tr><td>Toplam ödeme (taksitler)</td><td>${formatMoney(base.total)}</td><td>Ana para + faiz + BSMV toplamı.</td></tr>`;
-
-      scenarioTable.innerHTML = `
-        <tr><td>Standart</td><td>${formatMoney(base.total)}</td><td>${formatMoney(base.monthly)}</td><td>${base.monthsUsed} ay</td></tr>
-        <tr><td>Ek ödemeli</td><td>${formatMoney(withExtra.total)}</td><td>${formatMoney(withExtra.monthly)}</td><td>${data.extraPayment > 0 ? (savedMonths + ' ay daha kısa') : 'Ek ödeme yok'}</td></tr>`;
-
-      statusText.textContent = `${data.debtType === 'gecikme' ? 'Gecikmiş borç' : data.debtType === 'nakit' ? 'Nakit kullanım' : 'Akdi borç'} senaryosu analiz edildi.`;
-      statusBadge.textContent = rawScore >= 67 ? 'Yüksek maliyet riski' : rawScore >= 34 ? 'Orta maliyet' : 'Görece kontrollü';
-      statusBadge.className = `badge ${pillClass === 'good' ? 'good' : pillClass === 'warn' ? 'warn' : 'bad'}`;
-
-      const typeText = data.debtType === 'gecikme' ? 'Gecikmiş borçta' : data.debtType === 'nakit' ? 'Nakit kullanım senaryosunda' : 'Akdi borç senaryosunda';
-      const modeText = data.paymentMode === 'minimum'
-        ? 'minimum ödeme davranışı uzun süre devam ederse maliyet baskısı daha kalıcı hale gelebilir.'
-        : 'planlı geri ödeme yaklaşımıyla bu yük daha kontrollü yönetilebilir.';
-      const extraText = data.extraPayment > 0
-        ? ` Aylık ${formatMoney(data.extraPayment)} ek ödeme girildiğinde toplam yük yaklaşık ${formatMoney(savedTotal)} azalıyor ve kapanış süresi yaklaşık ${savedMonths} ay kısalıyor.`
-        : ' Ek ödeme girilmediği için standart görünüm esas alındı.';
-      smartComment.textContent = `${typeText} ${formatMoney(data.principal)} borç için yaklaşık ${base.monthsUsed} aylık taşıma senaryosunda toplam faiz ${formatMoney(base.interest)}, BSMV ${formatMoney(base.tax)} ve toplam geri ödeme ${formatMoney(base.total)} seviyesinde oluşuyor. ${modeText}${extraText}`;
-
-      if (source === 'manual') saveManualState();
-      if (options.focusResults) focusResults();
-    }
-
-    function runPrimaryAction(){
-      calculateAll('manual', { focusResults: true });
-    }
-
-    function fillExample(){
-      setActiveScenario('');
-      setFormData({
-        debtType: 'akdi',
-        principal: 35000,
-        monthlyRate: 4.75,
-        months: 6,
-        extraPayment: 0,
-        bsmvRate: DEFAULT_BSMV,
-        paymentMode: 'minimum'
-      }, 'demo', false);
-      calculateAll('demo', { focusResults: true });
-    }
-
-    function fillScenario(type){
-      const scenarios = {
-        akdi: { debtType: 'akdi', principal: 40000, monthlyRate: 4.60, months: 5, extraPayment: 0, bsmvRate: DEFAULT_BSMV, paymentMode: 'minimum' },
-        gecikme: { debtType: 'gecikme', principal: 28000, monthlyRate: 5.10, months: 4, extraPayment: 0, bsmvRate: DEFAULT_BSMV, paymentMode: 'minimum' },
-        nakit: { debtType: 'nakit', principal: 18000, monthlyRate: 5.00, months: 3, extraPayment: 0, bsmvRate: DEFAULT_BSMV, paymentMode: 'planli' },
-        ekstra: { debtType: 'akdi', principal: 50000, monthlyRate: 4.80, months: 8, extraPayment: 1500, bsmvRate: DEFAULT_BSMV, paymentMode: 'planli' }
-      };
-      if (!scenarios[type]) return;
-      setActiveScenario(type);
-      setFormData(scenarios[type], 'demo', false);
-      calculateAll('demo', { focusResults: true });
-    }
-
-    function setActiveScenario(type){
-      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
-      const map = { akdi: 0, gecikme: 1, nakit: 2, ekstra: 3 };
-      if (type && typeof map[type] === 'number') {
-        document.querySelectorAll('#scenarioRow .chip')[map[type]].classList.add('active');
-      }
-    }
-
-    function clearAllFields(){
-      debtType.value = 'akdi';
-      principalInput.value = '';
-      monthlyRate.value = '';
-      months.value = '';
-      extraPayment.value = '';
-      bsmvRate.value = '';
-      document.querySelector('input[name="paymentMode"][value="minimum"]').checked = true;
-      allFields.forEach(f => f.classList.remove('has-error'));
-      state.touched.clear();
-      state.hasAttemptedSubmit = false;
-      clearValidationState();
-      setActiveScenario('');
-      state.lastSource = 'empty';
-      removeSavedState();
-      emptyState();
-    }
-
-    function fallbackCopyText(text){
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.setAttribute('readonly', '');
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      ta.style.pointerEvents = 'none';
-      document.body.appendChild(ta);
-      ta.focus();
-      ta.select();
-      let ok = false;
-      try { ok = document.execCommand('copy'); } catch {}
-      document.body.removeChild(ta);
-      return ok;
-    }
-
-    async function copyResults(){
-      if (!state.isCalculated || !state.results) {
-        const old = smartComment.textContent;
-        smartComment.textContent = 'Önce geçerli bir sonuç üretmelisin.';
-        setTimeout(() => smartComment.textContent = old, 1800);
-        return;
-      }
-      const text = [
-        'Kredi Kartı Faiz Hesaplama Sonucu',
-        'Borç tipi: ' + debtType.options[debtType.selectedIndex].text,
-        'Toplam faiz: ' + totalInterestValue.textContent,
-        'BSMV: ' + bsmvValue.textContent,
-        'Toplam ödeme (taksitler): ' + repaymentValue.textContent,
-        'Aylık ödeme: ' + monthlyValue.textContent,
-        'Borç Yükü Skoru: ' + burdenScore.textContent,
-        '',
-        'Yorum:',
-        smartComment.textContent
-      ].join('\n');
-
-      let copied = false;
-      if (navigator.clipboard?.writeText) {
-        try {
-          await navigator.clipboard.writeText(text);
-          copied = true;
-        } catch {}
-      }
-      if (!copied) copied = fallbackCopyText(text);
-      const old = smartComment.textContent;
-      smartComment.textContent = copied ? 'Sonuç panoya kopyalandı.' : 'Kopyalama başarısız oldu. Lütfen manuel olarak kopyala.';
-      setTimeout(() => smartComment.textContent = old, 1800);
-    }
-
-    async function shareResults(){
-      if (!state.isCalculated || !state.results) {
-        const old = smartComment.textContent;
-        smartComment.textContent = 'Paylaşım için önce geçerli sonuç üretmelisin.';
-        setTimeout(() => smartComment.textContent = old, 1800);
-        return;
-      }
-      const url = window.location.href;
-      const text = `${mainResult.textContent} toplam geri ödeme • ${burdenScore.textContent} borç yükü skoru`;
-      if (navigator.share) {
-        try {
-          await navigator.share({ title: 'Kredi Kartı Faiz Hesaplama', text, url });
-          return;
-        } catch {}
-      }
-      let copied = false;
-      const shareText = `${text}\n${url}`;
-      if (navigator.clipboard?.writeText) {
-        try {
-          await navigator.clipboard.writeText(shareText);
-          copied = true;
-        } catch {}
-      }
-      if (!copied) copied = fallbackCopyText(shareText);
-      const old = smartComment.textContent;
-      smartComment.textContent = copied ? 'Paylaşım özeti panoya kopyalandı.' : 'Paylaşım bağlantısı kopyalanamadı. Lütfen adres çubuğundan bağlantıyı kopyala.';
-      setTimeout(() => smartComment.textContent = old, 1800);
-    }
-
-    const debouncedAutoCalculate = (() => {
-      let timer;
-      return (source = 'manual') => {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          const validation = validate(false);
-          if (validation.ok) calculateAll(source, { showValidation: false });
-          else if (source === 'manual') {
-            state.lastSource = 'manual';
-            removeSavedState();
-            emptyState();
-          }
-        }, 180);
-      };
-    })();
-
-    setMoneyInputFormatting('.js-money');
-
-    [debtType, principalInput, monthlyRate, months, extraPayment, bsmvRate].forEach(el => {
-      const fieldKey = el.id;
-      el.addEventListener('input', () => {
-        state.lastSource = 'manual';
-        setActiveScenario('');
-        if (fieldKey !== 'debtType') markFieldTouched(fieldKey);
-        debouncedAutoCalculate('manual');
-      });
-      el.addEventListener('change', () => {
-        state.lastSource = 'manual';
-        setActiveScenario('');
-        markFieldTouched(fieldKey);
-        debouncedAutoCalculate('manual');
-      });
-      el.addEventListener('blur', () => {
-        markFieldTouched(fieldKey);
-        validate(false);
-      });
-      el.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          event.preventDefault();
-          calculateAll('manual', { focusResults: true, showValidation: true });
-        }
-      });
-    });
-
-    document.querySelectorAll('input[name="paymentMode"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        state.lastSource = 'manual';
-        setActiveScenario('');
-        debouncedAutoCalculate('manual');
-      });
-    });
-
-    if (loadManualState()) {
-      debouncedAutoCalculate('manual');
-    } else {
-      emptyState();
-      clearValidationState();
-    }
-  </script>
+  syncMode();load()?schedule():empty();
+})();
+</script>
 <script defer="" src="cookie-consent.js"></script>
-<script>window.HESAPICA_I18N_CONFIG={"trUrl": "https://hesapica.com/kredi-karti-faiz-hesaplama", "enUrl": "https://hesapica.com/en/credit-card-interest-calculator", "xDefaultUrl": "https://hesapica.com/kredi-karti-faiz-hesaplama", "titleTr": "Kredi Kartı Faiz Hesaplama | Akdi Faiz, Gecikme Faizi, BSMV ve Borç Yükü Analizi - Hesapica", "descriptionTr": "Kredi kartı faiz hesaplama aracı ile dönem borcu, gecikme veya nakit avans senaryosunda faiz, BSMV, toplam geri ödeme, aylık ödeme planı ve borç yükü etkisini analiz edin.", "titleEn": "Credit Card Interest Calculator 2026 | Revolving Debt and Payment Impact", "descriptionEn": "Analyze credit card interest, revolving debt cost, late fees, and minimum payment impact with practical scenarios.", "scopeSelector": "body", "observeSelectors": ["main", ".results", "#resultArea", "#resultPanel"], "textMap": {"Kredi Kartı Faiz Hesaplama": "Credit Card Interest Calculation", "Asgari ödeme": "Minimum payment", "BSMV dahil görünüm": "Appearance including BSMV", "Borç yükü skoru": "Debt burden score", "Karar odaklı analiz": "Decision-oriented analysis", "Ana sonuç üstte, borç yükü ve ödeme baskısı aşağıda": "Main result at top, debt burden and payment pressure at bottom", "Faiz + BSMV ayrı ayrı görünür": "Interest + BSMV appear separately", "Toplam maliyet katmanlı gösterilir": "Total cost shown layered", "Ek ödeme etkisi senaryolaştırılır": "Additional payment impact is scenarioized", "Hesaplama Paneli": "Calculation Panel", "Kısa not": "memo", "Borç tipi": "Debt type", "Bu seçim yorum dilini etkiler. Oranı güncel kart sözleşmene göre sen girersin.": "This choice affects the comment language. You enter the rate according to your current card contract.", "Toplam borç": "total debt", "Ekstredeki taşınan veya hesaplamak istediğin toplam borç.": "The total debt carried on the statement or that you want to calculate.", "Aylık faiz oranı": "Monthly interest rate", "Kartına uygulanan aylık faiz oranını gir. 4,75 veya 4.75 şeklinde yazabilirsin.": "Enter the monthly interest rate applied to your card. You can write it as 4.75 or 4.75.", "Taşıma süresi": "Transport time", "Borcu kaç ay taşıyacağını varsayıyorsun?": "How many months do you assume you will carry the debt?", "Minimum ödeme davranışı gibi yorumla": "Interpret it as minimum payment behavior", "Planlı geri ödeme gibi yorumla": "Interpret it like a planned repayment", "Aylık ekstra ödeme": "Monthly extra payment", "Her ay ek ödeme yapabiliyorsan gir. Boşsa 0 kabul edilir.": "Enter if you can make additional payments every month. If it is empty, it is considered 0.", "BSMV oranı": "BSMV rate", "Boş bırakırsan varsayılan olarak %5 kullanılır.": "If you leave it blank, 5% is used by default.", "Akdi borç örneği": "Contractual debt example", "Gecikme örneği": "Delay example", "Nakit avans örneği": "Cash advance example", "Ek ödeme örneği": "Additional payment example", "Sonucu Gör": "Show Result", "Örnek Veri": "Sample Data", "Paylaş": "Share", "Yazdır / PDF": "Print / PDF", "Sonuç alanı durumu": "Result field status", "Sonucu görmek için borç, faiz ve ay bilgilerini doldur veya örnek veri kullan.": "Fill in debt, interest and month information or use sample data to see the result.", "Faiz yükü": "interest burden", "Vergi etkisi": "Tax impact", "Bu araç ne işe yarar?": "What does this tool do?", "Sık Sorulan Sorular": "Frequently Asked Questions", "Hayır. Bu araç yaklaşık analiz üretir. Kesin ekstre ve faiz işlemesi banka sistemine göre değişebilir.": "No. This tool produces approximate analysis. The exact statement and interest processing may vary depending on the banking system.", "Her ay yapılan ek ödeme toplam yükü azaltabilir. Bu yüzden standart ve ek ödemeli görünüm kıyaslı biçimde verilir.": "Additional payments made every month can reduce the total burden. Therefore, the standard and additional paid views are given comparatively.", "İlgili Araçlar": "Related Tools", "Kredi taksidi, toplam ödeme ve faiz etkisini daha klasik kredi yapısında incele.": "Examine the effect of loan installment, total payment and interest in a more classical loan structure.", "Birden fazla borç arasında ödeme önceliği ve kapama stratejisi oluştur.": "Create a payment priority and closing strategy across multiple debts.", "Basit faiz ve toplam maliyet görünümünü daha genel yapıda karşılaştır.": "Compare the simple interest and total cost view in a more general structure.", "Örn: 50.000": "Ex: 50,000", "Örn: 4,75": "Ex: 4.75", "Örn: 6": "Ex: 6", "Boş bırakılabilir": "Can be left blank", "Boşsa %5 kullanılır": "If empty, 5% is used", "Brüt": "Gross", "Net": "Net", "Anapara": "Principal", "Faiz": "Interest", "Vade": "Term", "KDV": "VAT", "Bütçe": "Budget", "Maaş": "Salary", "Kredi": "Loan", "Kredi Kartı": "Credit Card", "Gelir Vergisi": "Income Tax", "Yatırım Getirisi": "Investment Return", "Kira Artış": "Rent Increase", "Enflasyon": "Inflation", "Temizle": "Clear", "Verileri Sıfırla": "Reset Inputs", "Sonucu Kopyala": "Copy Result"}};</script>
-<script defer src="i18n-common.js"></script>
-  <script src="ads-slot-manager.js"></script>
+<script src="ads-slot-manager.js"></script>
 </body>
 </html>
