@@ -9,10 +9,8 @@
 <meta content="index,follow" name="robots"/>
 <meta content="enflasyon hesaplama, alım gücü hesaplama, para değeri hesaplama, geçmiş para bugün ne eder, bugünkü para geçmişte ne ederdi, enflasyon analizi" name="keywords"/>
 <meta content="#4f46e5" name="theme-color"/>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 <link href="https://hesapica.com/enflasyon-hesaplama" rel="canonical"/>
 <link rel="alternate" hreflang="tr" href="https://hesapica.com/enflasyon-hesaplama" />
-<link rel="alternate" hreflang="en" href="https://hesapica.com/en/inflation-calculator" />
 <link rel="alternate" hreflang="x-default" href="https://hesapica.com/enflasyon-hesaplama" />
 <meta content="website" property="og:type"/>
 <meta content="Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica" property="og:title"/>
@@ -251,7 +249,16 @@
       .results{position:static !important}
       a{text-decoration:none;color:inherit}
     }
-  </style>
+  
+#resultsPanel{scroll-margin-top:16px}
+
+/* İlgili araç kartları: sayfaya özgü mor kart görünümünü koru */
+.related-card{color:#fff}
+.related-card strong{color:#fff}
+.related-card .small{color:rgba(255,255,255,.86)}
+.related-card p{color:rgba(255,255,255,.88)}
+
+</style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica","url":"https://hesapica.com/enflasyon-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
@@ -283,9 +290,9 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"Geçmişteki para bugün ne eder?","acceptedAnswer":{"@type":"Answer","text":"Bu hesapta geçmişteki bir tutar, girilen enflasyon oranı ve yıl farkına göre bugünkü yaklaşık karşılığına taşınır."}},
-      {"@type":"Question","name":"Bugünkü para geçmişte ne ederdi?","acceptedAnswer":{"@type":"Answer","text":"Bu hesapta bugünkü bir tutarın geçmişteki satın alma gücüne göre yaklaşık karşılığı bulunur."}},
-      {"@type":"Question","name":"Toplam enflasyon ile yıllık ortalama enflasyon arasında fark nedir?","acceptedAnswer":{"@type":"Answer","text":"Toplam enflasyon tek bir dönemin toplam artışını ifade eder. Yıllık ortalama enflasyon ise her yıl benzer etki varsayımıyla bileşik olarak hesap yapılmasını sağlar."}}
+      {"@type":"Question","name":"Bu araç neyi hesaplar?","acceptedAnswer":{"@type":"Answer","text":"Geçmişteki bir paranın bugünkü yaklaşık karşılığını veya bugünkü bir paranın geçmişteki yaklaşık değerini hesaplar. Ayrıca alım gücü kaybını ve aynı seviyeyi korumak için gereken artışı gösterir."}},
+      {"@type":"Question","name":"Sonuçlar neden yaklaşık kabul edilir?","acceptedAnswer":{"@type":"Answer","text":"Kullanılan oran, dönem, resmi endeks türü ve harcama kalıpları sonucu etkileyebilir. Bu yüzden bu araç planlama ve genel farkındalık amacıyla kullanılmalıdır."}},
+      {"@type":"Question","name":"Toplam ve yıllık ortalama yöntem ne zaman kullanılır?","acceptedAnswer":{"@type":"Answer","text":"Elinde tek bir dönemin toplam artışı varsa toplam yöntem uygundur. Yıllık ortalama verin varsa ve bileşik etkiyi görmek istiyorsan yıllık ortalama yöntemi daha anlamlıdır."}}
     ]
   }
   </script>
@@ -443,31 +450,17 @@
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
 .hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
+ins.adsbygoogle{margin:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none!important;margin:0!important;padding:0!important;height:0!important;border:0!important}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){display:block;margin:16px 0;padding:8px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;overflow:visible}
+.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .adsbygoogle{min-height:90px}
+@media(max-width:720px){.hc-ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]){margin:12px 0;padding:6px}}
 </style>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<style id="hc-related-tools-style">
-.related-tools{margin-top:28px;padding:24px;border:1px solid #e5e7eb;border-radius:22px;background:#fff}
-.related-tools h2{margin:0 0 14px;color:#312e81;font-size:24px;letter-spacing:-.02em}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.related-card{display:block;padding:16px;border:1px solid #dbe4ff;border-radius:16px;background:linear-gradient(180deg,#fff,#f8faff);text-decoration:none}
-.related-card h3{margin:0 0 8px;font-size:17px;color:#1f2937}
-.related-card p{margin:0;color:#4b5563;font-size:14px;line-height:1.55}
-.related-home-link{display:inline-flex;margin-top:14px;font-weight:800;color:#4338ca}
-@media (max-width:720px){.related-tools{padding:18px}.related-grid{grid-template-columns:1fr}}
-</style>
-<script id="hc-financialproduct-schema" type="application/ld+json">
-{"@context": "https://schema.org", "@type": ["WebApplication", "FinancialProduct"], "name": "Enflasyon Hesaplama 2026", "description": "Enflasyon etkisini anında hesapla; paranın alım gücündeki değişimi net öğren. Geçmişten bugüne değer farkını keşfet, kararını güçlendir!", "applicationCategory": "FinanceTool", "url": "https://hesapica.com/enflasyon-hesaplama", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TRY"}, "featureList": ["Enflasyon Hesaplama 2026 sonucu", "Hızlı hesaplama", "Senaryo karşılaştırması", "Mobil uyumlu kullanım"]}
-</script>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç etkileşimli hesaplama için JavaScript gerektirir. Sonuçları görmek için lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
@@ -562,7 +555,7 @@
 <input autocomplete="off" class="with-suffix" id="yearDifference" inputmode="decimal" placeholder="Örn: 5" type="text"/>
 <span class="suffix">yıl</span>
 </div>
-<div class="hint">1 yıl, 3.5 yıl veya 5 yıl gibi dönem farkını gir.</div>
+<div class="hint">Yıllık ve aylık ortalama etkiyi hesaplamak için 1 yıl, 3.5 yıl veya 5 yıl gibi dönem farkını gir.</div>
 <div class="field-error" id="yearDifferenceError"></div>
 </div>
 </div>
@@ -588,12 +581,6 @@
 <div class="hint">Yıllık ortalama enflasyon bilgisini girersen sistem toplam etkiyi bileşik olarak hesaplar.</div>
 <div class="field-error" id="annualInflationError"></div>
 </div>
-</div>
-</div>
-<div class="form-section">
-<div class="form-title">Hazır kısayol senaryosu</div>
-<div class="chip-row" id="scenarioRow">
-<button class="chip" onclick="fillExample(this)" type="button">Örnek veri</button>
 </div>
 </div>
 <div class="actions">
@@ -641,21 +628,21 @@
 <section class="scorebox">
 <div class="score-row">
 <div>
-<div class="hint" style="margin-top:0">Alım Gücü Kaybı Skoru</div>
+<div class="hint" style="margin-top:0">Hesapica Enflasyon Etki Skoru</div>
 <div class="score-value" id="impactScore">0/100</div>
 </div>
 <span class="pill" id="difficultyBadge">Veri bekleniyor</span>
 </div>
 <div class="progress"><span id="scoreBar"></span></div>
-<div class="hint" id="scoreText" style="margin-top:10px">Bu skor, enflasyon etkisinin paranın alım gücü üzerinde ne kadar baskı oluşturduğunu anlatır.</div>
+<div class="hint" id="scoreText" style="margin-top:10px">Bu site içi skor, enflasyon etkisinin alım gücü üzerindeki baskısını özetler; resmî ekonomik gösterge değildir.</div>
 <div class="score-explain">
 <strong>Bu skor neyi ifade eder?</strong>
-<div id="scoreExplainText">0 düşük etki, 100 çok güçlü etki demektir. Değer; toplam enflasyon, yıllık ortalama etki, alım gücü kaybı ve korunma ihtiyacına göre oluşur.</div>
+<div id="scoreExplainText">0 düşük etki, 100 çok güçlü etki demektir. Değer; toplam fiyat değişimi, yıllık bileşik etki ve alım gücü kaybına göre oluşturulan Hesapica içi bir puandır.</div>
 <div class="score-breakdown" id="scoreBreakdown">
 <div class="score-breakdown-row"><span class="name">Toplam enflasyon</span><span class="val neu" id="breakTotal">—</span></div>
 <div class="score-breakdown-row"><span class="name">Yıllık ortalama baskı</span><span class="val neu" id="breakAnnual">—</span></div>
 <div class="score-breakdown-row"><span class="name">Alım gücü kaybı</span><span class="val neu" id="breakLoss">—</span></div>
-<div class="score-breakdown-row"><span class="name">Korunma ihtiyacı</span><span class="val neu" id="breakProtect">—</span></div>
+<div class="score-breakdown-row"><span class="name" id="breakProtectLabel">Korunma ihtiyacı</span><span class="val neu" id="breakProtect">—</span></div>
 </div>
 </div>
 </section>
@@ -669,8 +656,8 @@
 </div>
 <div class="mini-result is-empty" id="mini2">
 <div>
-<div class="label">Korunma ihtiyacı</div>
-<div class="subline">Aynı alım gücü için gerekli artış</div>
+<div class="label" id="protectionLabel">Korunma ihtiyacı</div>
+<div class="subline" id="protectionSubline">Aynı alım gücü için gerekli artış</div>
 </div>
 <div class="value" id="protectionResult">—</div>
 </div>
@@ -738,7 +725,7 @@
 <tbody>
 <tr><th>Hesaplanan eşdeğer değer</th><td id="stat1">—</td></tr>
 <tr><th>Nominal değer farkı</th><td id="stat2">—</td></tr>
-<tr><th>Korunması gereken artış</th><td id="stat3">—</td></tr>
+<tr><th id="stat3Label">Korunması gereken artış</th><td id="stat3">—</td></tr>
 </tbody>
 </table>
 </div>
@@ -825,16 +812,6 @@
        data-full-width-responsive="true"></ins>
 </div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<section id="hc-related-tools" class="related-tools">
-  <h2>İlgili Hesaplama Araçları</h2>
-  <div class="related-grid">
-<a href="/yatirim-getirisi-hesaplama" class="related-card"><h3>Yatırım Getirisi Hesaplama</h3><p>Net kâr, ROI ve hedef senaryolarını tek araçta incele.</p></a>
-<a href="/borsa-kar-hesaplama" class="related-card"><h3>Borsa Kâr Hesaplama</h3><p>Hisse işlemlerinde net kâr-zararını komisyonla birlikte hesapla.</p></a>
-<a href="/kripto-kar-hesaplama" class="related-card"><h3>Kripto Kâr Hesaplama</h3><p>Kripto işlemlerinde gerçek getiri ve maliyet etkisini gör.</p></a>
-<a href="/varlik-getirisi-hesaplama" class="related-card"><h3>Varlık Getirisi Hesaplama</h3><p>Altın, dolar ve euro yatırımlarını aynı tabloda karşılaştır.</p></a>
-  </div>
-  <a href="/" class="related-home-link">← Ana sayfaya dön ve tüm araçları keşfet</a>
-</section>
 </main>
 <script>
     const el = id => document.getElementById(id);
@@ -842,9 +819,6 @@
     const STORAGE_KEY = 'hesapica:enflasyon-hesaplama:v3';
     const state = {
       inputs: {},
-      results: null,
-      isValid: false,
-      isCalculated: false,
       lastInputMode: 'manual',
       hasAttemptedSubmit: false
     };
@@ -889,9 +863,28 @@
 
     function parseDecimal(value){
       if(value === null || value === undefined) return NaN;
-      const cleaned = String(value).trim().replace(/\s+/g,'').replace(/%/g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
-      if(!cleaned || cleaned === '.' || cleaned === '-' || cleaned === '-.') return NaN;
-      return Number(cleaned);
+      let cleaned = String(value).trim().replace(/\s+/g,'').replace(/%/g,'');
+      if(!cleaned) return NaN;
+
+      const negative = cleaned.startsWith('-');
+      cleaned = cleaned.replace(/[^0-9.,]/g,'');
+      if(!cleaned) return NaN;
+
+      const lastComma = cleaned.lastIndexOf(',');
+      const lastDot = cleaned.lastIndexOf('.');
+      const separatorIndex = Math.max(lastComma, lastDot);
+
+      if(separatorIndex >= 0){
+        const whole = cleaned.slice(0, separatorIndex).replace(/[.,]/g,'');
+        const fraction = cleaned.slice(separatorIndex + 1).replace(/[.,]/g,'');
+        cleaned = (whole || '0') + (fraction ? '.' + fraction : '');
+      } else {
+        cleaned = cleaned.replace(/[.,]/g,'');
+      }
+
+      if(negative) cleaned = '-' + cleaned;
+      const number = Number(cleaned);
+      return Number.isFinite(number) ? number : NaN;
     }
 
     function formatDecimalInput(value, digits = 2){
@@ -909,12 +902,20 @@
     function sanitizeDecimalText(value){
       let cleaned = String(value || '').replace(/[^0-9,.-]/g, '');
       cleaned = cleaned.replace(/(?!^)-/g, '');
-      const parts = cleaned.split(/[.,]/);
-      if(parts.length > 1){
-        const decimal = parts.slice(1).join('');
-        cleaned = parts[0] + ',' + decimal;
+
+      const negative = cleaned.startsWith('-');
+      cleaned = cleaned.replace(/-/g, '');
+
+      const firstSeparator = cleaned.search(/[.,]/);
+      if(firstSeparator >= 0){
+        const whole = cleaned.slice(0, firstSeparator).replace(/[.,]/g, '');
+        const fraction = cleaned.slice(firstSeparator + 1).replace(/[.,]/g, '');
+        cleaned = whole + ',' + fraction;
+      } else {
+        cleaned = cleaned.replace(/[.,]/g, '');
       }
-      return cleaned;
+
+      return (negative ? '-' : '') + cleaned;
     }
 
     function updateStateInputs(){
@@ -1071,9 +1072,6 @@
     }
 
     function resetOutputs(){
-      state.results = null;
-      state.isValid = false;
-      state.isCalculated = false;
       markMiniCardsEmpty(true);
       setStatus();
       setScoreBadge();
@@ -1081,8 +1079,8 @@
       el('mainResultText').textContent = 'Hesaplanan eşdeğer değer burada görünecek.';
       el('impactScore').textContent = '0/100';
       el('scoreBar').style.width = '0%';
-      el('scoreText').textContent = 'Bu skor, enflasyon etkisinin paranın alım gücü üzerinde ne kadar baskı oluşturduğunu anlatır.';
-      el('scoreExplainText').textContent = '0 düşük etki, 100 çok güçlü etki demektir. Değer; toplam enflasyon, yıllık ortalama etki, alım gücü kaybı ve korunma ihtiyacına göre oluşur.';
+      el('scoreText').textContent = 'Bu site içi skor, enflasyon etkisinin alım gücü üzerindeki baskısını özetler; resmî ekonomik gösterge değildir.';
+      el('scoreExplainText').textContent = '0 düşük etki, 100 çok güçlü etki demektir. Değer; toplam fiyat değişimi, yıllık bileşik etki ve alım gücü kaybına göre oluşturulan Hesapica içi bir puandır.';
       setBreakdown('breakTotal', '—');
       setBreakdown('breakAnnual', '—');
       setBreakdown('breakLoss', '—');
@@ -1097,6 +1095,10 @@
     }
 
     function getSeverity(totalInflationPercent, powerLoss){
+      if(totalInflationPercent < 0){
+        if(totalInflationPercent <= -20) return { type:'warn', label:'Belirgin deflasyon' };
+        return { type:'good', label:'Sınırlı deflasyon' };
+      }
       if(totalInflationPercent >= 150 || powerLoss >= 60){
         return { type:'bad', label:'Yüksek baskı' };
       }
@@ -1138,7 +1140,7 @@
 
       if(method === 'totalInflation'){
         const total = parseDecimal(totalInflationEl.value);
-        applyValidation('totalInflation', !Number.isFinite(total) || total < 0, 'Lütfen geçerli bir toplam enflasyon oranı girin.');
+        applyValidation('totalInflation', !Number.isFinite(total) || total <= -100, 'Toplam fiyat değişimi %-100’den büyük olmalıdır. Deflasyon için negatif oran girebilirsin.');
         if(Number.isFinite(total) && total > 100000){
           ok = false;
           if(shouldShowError('totalInflation', forceValidation)) setFieldError('totalInflation', 'Oran çok yüksek görünüyor. Lütfen değeri kontrol edin.');
@@ -1146,7 +1148,7 @@
         setFieldError('annualInflation', '');
       } else {
         const annual = parseDecimal(annualInflationEl.value);
-        applyValidation('annualInflation', !Number.isFinite(annual) || annual < 0, 'Lütfen geçerli bir yıllık ortalama enflasyon oranı girin.');
+        applyValidation('annualInflation', !Number.isFinite(annual) || annual <= -100, 'Yıllık oran %-100’den büyük olmalıdır. Deflasyon için negatif oran girebilirsin.');
         if(Number.isFinite(annual) && annual > 1000){
           ok = false;
           if(shouldShowError('annualInflation', forceValidation)) setFieldError('annualInflation', 'Oran çok yüksek görünüyor. Lütfen değeri kontrol edin.');
@@ -1154,19 +1156,31 @@
         setFieldError('totalInflation', '');
       }
 
-      state.isValid = ok;
       return ok;
     }
 
     function buildScenarioRows(direction, amount, baseYears, annualRate){
-      const yearsList = [1, Math.max(2, Math.round(baseYears)), Math.max(5, Math.ceil(baseYears))];
-      const uniqueYears = [...new Set(yearsList)].sort((a, b) => a - b);
+      const candidates = [1, 5, baseYears];
+
+      if(baseYears === 1) candidates.push(3);
+      if(baseYears === 5) candidates.push(10);
+      if(baseYears > 5) candidates.push(Math.max(2, Math.round(baseYears / 2)));
+      if(baseYears > 1 && baseYears < 5) candidates.push(Math.max(2, Math.ceil(baseYears + 2)));
+
+      const uniqueYears = [...new Set(
+        candidates
+          .filter(year => Number.isFinite(year) && year > 0)
+          .map(year => Math.round(year * 10) / 10)
+      )].sort((a, b) => a - b).slice(0, 4);
+
       const rows = uniqueYears.map(years => {
         const factor = Math.pow(1 + annualRate / 100, years);
         const eq = direction === 'pastToToday' ? amount * factor : amount / factor;
-        let note = 'Görece sınırlı etki';
+        const absoluteAnnual = Math.abs(annualRate);
+        let note = annualRate < 0 ? 'Deflasyon etkisi' : 'Görece sınırlı etki';
         if(annualRate >= 25) note = 'Belirgin baskı';
         if(annualRate >= 50) note = 'Çok güçlü baskı';
+        if(annualRate < 0 && absoluteAnnual >= 10) note = 'Belirgin deflasyon';
         return `<tr><td>${formatDecimalInput(years, 1)} yıl</td><td>${formatTRY(eq)}</td><td>${note}</td></tr>`;
       });
       el('scenarioBody').innerHTML = rows.join('');
@@ -1174,7 +1188,9 @@
 
     function saveManualState(){
       updateStateInputs();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.inputs));
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.inputs));
+      }catch(err){}
     }
 
     function loadManualState(){
@@ -1190,12 +1206,12 @@
         annualInflationEl.value = typeof saved.annualInflation === 'string' ? saved.annualInflation : '';
         updateStateInputs();
       } catch(err){
-        localStorage.removeItem(STORAGE_KEY);
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(removeErr){}
       }
     }
 
     function clearSavedState(){
-      localStorage.removeItem(STORAGE_KEY);
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(err){}
     }
 
     function hasValidResult(){
@@ -1211,12 +1227,12 @@ Yıl Farkı: ${yearDifferenceEl.value || '-'} yıl
 
 Ana Sonuç: ${el('mainResult').textContent}
 Değer Farkı: ${el('differenceResult').textContent}
-Korunma İhtiyacı: ${el('protectionResult').textContent}
+${el('protectionLabel').textContent}: ${el('protectionResult').textContent}
 Aylık Ortalama Etki: ${el('monthlyInflationResult').textContent}
 Yıllık Ortalama Etki: ${el('annualInflationResult').textContent}
 Toplam Enflasyon: ${el('totalInflationResult').textContent}
 Alım Gücü Kaybı: ${el('purchasingPowerResult').textContent}
-Alım Gücü Kaybı Skoru: ${el('impactScore').textContent}
+Hesapica Enflasyon Etki Skoru: ${el('impactScore').textContent}
 
 Yorum:
 ${el('smartComment').textContent}`;
@@ -1269,33 +1285,20 @@ ${el('smartComment').textContent}`;
       const equivalent = direction === 'pastToToday' ? amount * inflationFactor : amount / inflationFactor;
       const difference = direction === 'pastToToday' ? equivalent - amount : amount - equivalent;
       const powerLoss = inflationFactor > 0 ? (1 - (1 / inflationFactor)) * 100 : 0;
+      const powerMetricLabel = powerLoss >= 0 ? 'Alım gücü kaybı' : 'Alım gücü artışı';
       const protectionNeed = totalInflationPercent;
+      const absoluteTotal = Math.abs(totalInflationPercent);
+      const absoluteAnnual = Math.abs(annualInflationPercentValue);
+      const absolutePowerLoss = Math.abs(powerLoss);
 
-      const scoreRaw =
-        clamp(totalInflationPercent / 4, 0, 40) +
-        clamp(annualInflationPercentValue * 0.7, 0, 20) +
-        clamp(powerLoss * 0.35, 0, 25) +
-        clamp(protectionNeed * 0.15, 0, 15);
-      const impactScore = Math.round(clamp(scoreRaw, 0, 100));
+      const totalComponent = clamp(Math.log10(1 + absoluteTotal) * 24, 0, 45);
+      const annualComponent = clamp(Math.log10(1 + absoluteAnnual) * 18, 0, 25);
+      const lossComponent = clamp(absolutePowerLoss * 0.30, 0, 30);
+      const impactScore = Math.round(clamp(
+        totalComponent + annualComponent + lossComponent,
+        0, 100
+      ));
       const severity = getSeverity(totalInflationPercent, powerLoss);
-
-      state.results = {
-        direction,
-        amount,
-        years,
-        method,
-        equivalent,
-        difference,
-        powerLoss,
-        protectionNeed,
-        totalInflationPercent,
-        annualInflationPercentValue,
-        monthlyInflationPercentValue,
-        impactScore,
-        severity: severity.type
-      };
-      state.isValid = true;
-      state.isCalculated = true;
 
       markMiniCardsEmpty(false);
       setStatus(
@@ -1313,12 +1316,25 @@ ${el('smartComment').textContent}`;
           ? `${formatTRY(amount)} tutarının bugün yaklaşık karşılığı hesaplandı.`
           : `${formatTRY(amount)} tutarının geçmişteki yaklaşık karşılığı hesaplandı.`;
 
+      const protectionTitle = direction === 'pastToToday'
+        ? 'Korunma ihtiyacı'
+        : 'Bugünkü değere ulaşmak için artış';
+      const protectionDescription = direction === 'pastToToday'
+        ? 'Aynı alım gücü için gerekli artış'
+        : 'Geçmiş eşdeğerden bugünkü tutara ulaşmak için gereken artış';
+
+      el('protectionLabel').textContent = protectionTitle;
+      el('protectionSubline').textContent = protectionDescription;
+      el('stat3Label').textContent = protectionTitle;
+      el('breakProtectLabel').textContent = protectionTitle;
+
       el('differenceResult').textContent = formatTRY(difference);
       el('protectionResult').textContent = formatPercent(protectionNeed);
       el('monthlyInflationResult').textContent = formatPercent(monthlyInflationPercentValue);
       el('annualInflationResult').textContent = formatPercent(annualInflationPercentValue);
       el('totalInflationResult').textContent = formatPercent(totalInflationPercent);
-      el('purchasingPowerResult').textContent = formatPercent(powerLoss);
+      el('purchasingPowerResult').textContent = formatPercent(Math.abs(powerLoss));
+      el('mini6').querySelector('.label').textContent = powerMetricLabel;
 
       el('impactScore').textContent = `${impactScore}/100`;
       el('scoreBar').style.width = `${impactScore}%`;
@@ -1327,11 +1343,11 @@ ${el('smartComment').textContent}`;
         : impactScore >= 40 ? 'Enflasyon etkisi belirgin seviyede. Paranın korunması için dikkatli planlama gerekir.'
         : 'Enflasyon etkisi görece sınırlı görünüyor. Yine de dönem uzadıkça baskı artabilir.';
       el('scoreExplainText').textContent =
-        `Skor; toplam enflasyon ${formatPercent(totalInflationPercent)}, yıllık ortalama etki ${formatPercent(annualInflationPercentValue)} ve alım gücü kaybı ${formatPercent(powerLoss)} dikkate alınarak oluşturuldu.`;
-      setBreakdown('breakTotal', formatPercent(totalInflationPercent), totalInflationPercent >= 50 ? 'neg' : 'pos');
-      setBreakdown('breakAnnual', formatPercent(annualInflationPercentValue), annualInflationPercentValue >= 20 ? 'neg' : 'pos');
-      setBreakdown('breakLoss', formatPercent(powerLoss), powerLoss >= 25 ? 'neg' : 'pos');
-      setBreakdown('breakProtect', formatPercent(protectionNeed), protectionNeed >= 50 ? 'neg' : 'pos');
+        `Bu Hesapica içi skor; toplam fiyat değişimi ${formatPercent(totalInflationPercent)}, yıllık bileşik etki ${formatPercent(annualInflationPercentValue)} ve alım gücü değişimi ${formatPercent(powerLoss)} dikkate alınarak oluşturuldu. Resmî ekonomik gösterge değildir.`;
+      setBreakdown('breakTotal', formatPercent(totalInflationPercent), Math.abs(totalInflationPercent) >= 50 ? 'neg' : 'pos');
+      setBreakdown('breakAnnual', formatPercent(annualInflationPercentValue), Math.abs(annualInflationPercentValue) >= 20 ? 'neg' : 'pos');
+      setBreakdown('breakLoss', formatPercent(powerLoss), Math.abs(powerLoss) >= 25 ? 'neg' : 'pos');
+      setBreakdown('breakProtect', formatPercent(protectionNeed), Math.abs(protectionNeed) >= 50 ? 'neg' : 'pos');
 
       el('health1').textContent =
         totalInflationPercent >= 150 ? 'Çok yüksek'
@@ -1359,7 +1375,8 @@ ${el('smartComment').textContent}`;
       el('stat3').textContent = formatPercent(protectionNeed);
       el('stat4').textContent = formatPercent(monthlyInflationPercentValue);
       el('stat5').textContent = formatPercent(annualInflationPercentValue);
-      el('stat6').textContent = formatPercent(powerLoss);
+      el('stat6').textContent = formatPercent(Math.abs(powerLoss));
+      el('stat6').previousElementSibling.textContent = powerMetricLabel;
 
       el('directionStat').textContent = calcDirectionEl.options[calcDirectionEl.selectedIndex].text;
       el('methodStat').textContent = calcMethodEl.options[calcMethodEl.selectedIndex].text;
@@ -1368,7 +1385,11 @@ ${el('smartComment').textContent}`;
       buildScenarioRows(direction, amount, years, annualInflationPercentValue);
 
       let summaryLead = '';
-      if(totalInflationPercent >= 150){
+      if(totalInflationPercent < 0){
+        summaryLead = Math.abs(totalInflationPercent) >= 20
+          ? 'Bu dönem belirgin bir deflasyon etkisi gösteriyor.'
+          : 'Bu dönem sınırlı bir deflasyon etkisi gösteriyor.';
+      } else if(totalInflationPercent >= 150){
         summaryLead = 'Bu dönem çok güçlü bir enflasyon baskısı gösteriyor.';
       } else if(totalInflationPercent >= 50){
         summaryLead = 'Bu dönem belirgin bir enflasyon etkisi gösteriyor.';
@@ -1380,15 +1401,22 @@ ${el('smartComment').textContent}`;
         ? `${formatTRY(amount)} tutarı yaklaşık ${formatTRY(equivalent)} seviyesine taşınmış görünüyor.`
         : `${formatTRY(amount)} tutarının geçmişteki yaklaşık karşılığı ${formatTRY(equivalent)} seviyesinde görünüyor.`;
 
+      const powerSentence = powerLoss >= 0
+        ? `Yaklaşık alım gücü kaybı ${formatPercent(powerLoss)} seviyesinde.`
+        : `Yaklaşık alım gücü artışı ${formatPercent(Math.abs(powerLoss))} seviyesinde.`;
+      const protectionSentence = direction === 'pastToToday'
+        ? `Aynı gücü korumak için yaklaşık ${formatPercent(protectionNeed)} oranında değişim gerekir.`
+        : `Geçmiş eşdeğerden bugünkü tutara ulaşmak için yaklaşık ${formatPercent(protectionNeed)} oranında değişim gerekir.`;
+
       el('smartComment').textContent =
-        `${summaryLead} ${directionText} Yaklaşık alım gücü kaybı ${formatPercent(powerLoss)} seviyesinde. Aynı gücü korumak için yaklaşık ${formatPercent(protectionNeed)} oranında artış gerekir. Yıllık ortalama baskı ${formatPercent(annualInflationPercentValue)} civarında hesaplandı.`;
+        `${summaryLead} ${directionText} ${powerSentence} ${protectionSentence} Yıllık ortalama etki ${formatPercent(annualInflationPercentValue)} civarında hesaplandı.`;
 
       if(state.lastInputMode === 'manual') saveManualState();
       if(!opts.silent) scrollToResults();
       return true;
     }
 
-    function fillExample(btn){
+    function fillExample(){
       state.lastInputMode = 'example';
       state.hasAttemptedSubmit = false;
       touchedFields.clear();
@@ -1400,9 +1428,6 @@ ${el('smartComment').textContent}`;
       annualInflationEl.value = '35';
       setMethodVisibility();
       updateStateInputs();
-
-      document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
-      if(btn) btn.classList.add('active');
       calculateAll({ silent:false, forceValidation:false });
     }
 
@@ -1522,8 +1547,6 @@ ${el('smartComment').textContent}`;
     }
   </script>
 <script defer="" src="cookie-consent.js"></script>
-<script>window.HESAPICA_I18N_CONFIG={"trUrl": "https://hesapica.com/enflasyon-hesaplama", "enUrl": "https://hesapica.com/en/inflation-calculator", "xDefaultUrl": "https://hesapica.com/enflasyon-hesaplama", "titleTr": "Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica", "descriptionTr": "Enflasyon hesaplama aracı ile geçmişteki bir tutarın bugünkü yaklaşık değerini veya bugünkü bir tutarın geçmişteki karşılığını hesapla. Alım gücü kaybı, korunma ihtiyacı, yıllık ortalama etki ve hızlı durum özetini tek ekranda analiz et.", "titleEn": "Inflation Calculator 2026 | Purchasing Power Analysis", "descriptionEn": "Measure inflation impact, purchasing power change, and real value difference across time periods.", "scopeSelector": "body", "observeSelectors": ["main", ".results", "#resultArea", "#resultPanel"], "textMap": {"Enflasyon Hesaplama": "Inflation Calculation", "Alım gücü": "Purchasing power", "Alım gücü odaklı analiz": "Purchasing power focused analysis", "Hızlı durum özeti": "Quick status summary", "Boş başlangıç standardı": "Blank starting standard", "Mobilde sade akış": "Simple flow on mobile", "Ana sonuç üstte, ek metrikler ve yorumlar kontrollü şekilde aşağıda": "Main result at the top, additional metrics and comments below in a controlled manner", "Geçmişten bugüne veya bugünden geçmişe çift yönlü hesap": "Two-way calculation from past to present or from present to past", "Toplam enflasyon ya da yıllık ortalama yöntem seçimi": "Total inflation or annual average method selection", "Karar destekli hızlı özet ve yorum motoru": "Fast summary and comment engine with decision support", "Hesaplama Paneli": "Calculation Panel", "Kısa not": "memo", "Hesaplama yönü": "Calculation direction", "Parayı ileriye mi taşıyacağını yoksa geçmişteki alım gücünü mü görmek istediğini seç.": "Choose whether you want to carry the money forward or see past purchasing power.", "Hesaplama yöntemi": "Calculation method", "Elindeki veriye göre tek dönem toplam oranı ya da yıllık ortalama etkiyi kullanabilirsin.": "Depending on the data you have, you can use the single period total rate or the annual average impact.", "Büyük tutarlar otomatik olarak 10.000 gibi gösterilir.": "Large amounts are automatically shown as 10,000.", "Yıl farkı": "year difference", "1 yıl, 3.5 yıl veya 5 yıl gibi dönem farkını gir.": "Enter the period difference such as 1 year, 3.5 years or 5 years.", "Toplam enflasyon oranı (%)": "Total inflation rate (%)", "Toplam etkiyi biliyorsan tek seferde bu alanı kullan.": "If you know the total effect, use this area at a time.", "Yıllık ortalama enflasyon (%)": "Annual average inflation (%)", "Yıllık ortalama enflasyon bilgisini girersen sistem toplam etkiyi bileşik olarak hesaplar.": "If you enter annual average inflation information, the system calculates the total effect as a compound.", "Örnek veri": "sample data", "Sonucu Gör": "Show Result", "Hızlı dene (örnek veri)": "Quick try (sample data)", "Paylaş": "Share", "Yazdır / PDF": "Print / PDF", "Sonuç alanı durumu": "Result field status", "Sonuç görmek için gerekli alanları doldur veya örnek veri kullan.": "Fill in the required fields or use sample data to see results.", "Alım Gücü Kaybı Skoru": "Purchasing Power Loss Score", "Bu skor, enflasyon etkisinin paranın alım gücü üzerinde ne kadar baskı oluşturduğunu anlatır.": "This score tells you how much pressure the inflation effect puts on the purchasing power of money.", "Enflasyon seviyesi": "inflation level", "Alım gücü baskısı": "Purchasing power pressure", "Karar görünümü": "Decision view", "Enflasyon hesaplama hakkında": "About inflation calculation", "İlgili araçlar": "Related tools", "Paranı faizle değerlendirdiğinde enflasyona karşı nasıl konumlandığını ayrıca gör.": "When you invest your money with interest, also see how you are positioned against inflation.", "Düzenli birikimin uzun vadede ne kadar büyüyebileceğini incele.": "Examine how much regular savings can grow in the long run.", "Nominal getiri ile enflasyon etkisini birlikte düşünmek için yatırım sonucunu ayrıca hesapla.": "Calculate the investment result separately to consider the nominal return and the inflation effect together.", "Örn: 10.000": "Ex: 10,000", "Örn: 5": "Ex: 5", "Örn: 250": "Ex: 250", "Örn: 35": "Ex: 35", "Brüt": "Gross", "Net": "Net", "Anapara": "Principal", "Faiz": "Interest", "Vade": "Term", "KDV": "VAT", "Bütçe": "Budget", "Maaş": "Salary", "Kredi": "Loan", "Kredi Kartı": "Credit Card", "Gelir Vergisi": "Income Tax", "Yatırım Getirisi": "Investment Return", "Kira Artış": "Rent Increase", "Enflasyon": "Inflation", "Örnek Veri": "Sample Data", "Temizle": "Clear", "Verileri Sıfırla": "Reset Inputs", "Sonucu Kopyala": "Copy Result"}};</script>
-<script defer src="i18n-common.js"></script>
   <script src="ads-slot-manager.js"></script>
 </body>
 </html>
