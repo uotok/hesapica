@@ -4,41 +4,47 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica</title>
-<meta name="description" content="KDV tutarını hızlıca hesapla; KDV dahil-hariç fiyatı saniyeler içinde öğren. Ticari işlemlerini kolaylaştır, doğru tutarı hemen bul!"/>
-<meta content="index,follow" name="robots">
-<meta content="kdv hesaplama, kdv dahil hesaplama, kdv hariç hesaplama, kdv tutarı hesaplama, yüzde 20 kdv hesaplama" name="keywords"/>
-<meta content="#4f46e5" name="theme-color">
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
+<title>KDV Hesaplama 2026 | KDV Dahil, Hariç ve Vergi Tutarı | Hesapica</title>
+<meta content="KDV dahil veya hariç tutardan net bedeli, vergi tutarını ve toplamı hesapla. Güncel genel oranlar %1, %10 ve %20 ile özel oran desteğini kullan." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
 <link href="https://hesapica.com/kdv-hesaplama" rel="canonical"/>
-<link rel="alternate" hreflang="tr" href="https://hesapica.com/kdv-hesaplama" />
-<link rel="alternate" hreflang="en" href="https://hesapica.com/en/vat-calculator" />
-<link rel="alternate" hreflang="x-default" href="https://hesapica.com/kdv-hesaplama" />
-<meta content="KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica" property="og:title"/>
-<meta content="KDV hariç ve KDV dahil tutarı hızlıca hesaplayın. %1, %8, %10, %18, %20 ve özel oran ile KDV tutarı, net bedel ve toplam bedeli anında görün." property="og:description"/>
+<meta content="KDV Hesaplama 2026 | KDV Dahil, Hariç ve Vergi Tutarı | Hesapica" property="og:title"/>
+<meta content="KDV dahil veya hariç tutardan net bedeli, KDV tutarını ve toplamı hesapla. %1, %10, %20 ve özel oran desteği." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://hesapica.com/kdv-hesaplama" property="og:url"/>
-<meta property="og:image" content="https://hesapica.com/og-image.png"/>
-<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica" name="twitter:title"/>
-<meta content="KDV hariç ve KDV dahil tutarı hızlıca hesaplayın. %1, %8, %10, %18, %20 ve özel oran ile KDV tutarı, net bedel ve toplam bedeli anında görün." name="twitter:description"/>
+<meta content="KDV Hesaplama 2026 | KDV Dahil, Hariç ve Vergi Tutarı | Hesapica" name="twitter:title"/>
+<meta content="KDV dahil-hariç dönüşümünü, vergi tutarını ve toplamı %1, %10, %20 veya özel oranla hesapla." name="twitter:description"/>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
 <link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
 <link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
+<script>
+(function(){
+  var host=String(location.hostname||'').toLowerCase();
+  var isLive=host==='hesapica.com'||host==='www.hesapica.com';
+  document.documentElement.classList.add(isLive?'hc-live-site':'hc-preview-site');
+  if(!isLive) return;
+  var script=document.createElement('script');
+  script.async=true;
+  script.crossOrigin='anonymous';
+  script.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132';
+  document.head.appendChild(script);
+})();
+</script>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-6BNBXVN9EW');
 </script>
-
 <style>
     :root{
       --primary:#4f46e5;
@@ -231,55 +237,39 @@
       .tool-layout{grid-template-columns:1fr 1fr}
       .card,.status-card,.highlight-card{box-shadow:none;border:1px solid #ddd}
     }
-  </style>
+  
+    .rate-guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.rate-guide{padding:17px;border:1px solid #dbe4ff;border-radius:18px;background:linear-gradient(180deg,#fff,#f8faff)}.rate-guide strong{display:block;font-size:25px;color:var(--primary);margin-bottom:5px}.rate-guide span{display:block;color:#4b5563;font-size:14px;line-height:1.55}.legal-note{padding:14px 16px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#92400e}.kdv-guidance p{color:#374151}.btn:focus-visible,.chip:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(79,70,229,.22);outline-offset:2px}@media(max-width:720px){.rate-guide-grid{grid-template-columns:1fr}}@media print{.hc-ad-slot{display:none!important}}
 
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica","url":"https://hesapica.com/kdv-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
-</script>
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"KDV Hesaplama",
-    "url":"https://hesapica.com/kdv-hesaplama",
-    "applicationCategory":"FinanceApplication",
-    "operatingSystem":"Web",
-    "description":"KDV hariç ve KDV dahil tutarlara göre KDV bedelini, net tutarı ve toplam bedeli hesaplayan ücretsiz araç."
-  }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
-      {"@type":"ListItem","position":2,"name":"KDV Hesaplama","item":"https://hesapica.com/kdv-hesaplama"}
-    ]
-  }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"KDV hariç tutardan KDV dahil tutar nasıl hesaplanır?",
-        "acceptedAnswer":{"@type":"Answer","text":"KDV hariç tutar üzerine seçilen KDV oranı eklenir. Formül net tutar × oran / 100 ile KDV bedeli, net tutar + KDV ile toplam bedel bulunur."}
-      },
-      {
-        "@type":"Question",
-        "name":"KDV dahil tutardan KDV hariç tutar nasıl bulunur?",
-        "acceptedAnswer":{"@type":"Answer","text":"KDV dahil toplam bedel, 1 + KDV oranı / 100 sayısına bölünerek net tutar bulunur. Toplam bedelden net tutar çıkarıldığında KDV tutarı elde edilir."}
-      },
-      {
-        "@type":"Question",
-        "name":"Bu araçta özel KDV oranı girilebilir mi?",
-        "acceptedAnswer":{"@type":"Answer","text":"Evet. Hazır oranlar dışında özel oran seçeneği ile kendi KDV yüzdesini girerek hesap yapabilirsin."}
-      }
-    ]
-  }
-  </script>
+/* Reklam alanları: ölçülebilir, boşken yer kaplamaz, dolunca görünür. */
+/* Önizleme ve yerel dosyada dış reklam iframe'i oluşturulmaz. */
+html.hc-preview-site .hc-ad-slot{display:none!important;margin:0!important;padding:0!important;height:0!important;}
+.hc-ad-slot{
+  width:100%;
+  min-width:0;
+  min-height:0;
+  margin:20px 0;
+  padding:0;
+  border:0;
+  background:transparent;
+  overflow:hidden;
+}
+body > .hc-ad-slot, header + .hc-ad-slot{
+  width:min(1180px,calc(100% - 32px));
+  margin-left:auto;
+  margin-right:auto;
+}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-width:0;}
+.hc-ad-slot:has(.adsbygoogle[data-ad-status="unfilled"]){display:none;}
+.hc-ad-slot.hc-ad-loaded{display:block;}
+@media(max-width:720px){
+  body > .hc-ad-slot, header + .hc-ad-slot{width:min(100% - 20px,100%);}
+}
+@media print{.hc-ad-slot{display:none!important;}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"KDV Hesaplama 2026 | KDV Dahil, Hariç ve Vergi Tutarı | Hesapica","url":"https://hesapica.com/kdv-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"KDV Hesaplama","url":"https://hesapica.com/kdv-hesaplama","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"KDV dahil veya hariç tutardan net bedeli, vergi tutarını ve toplamı hesapla. Güncel genel oranlar %1, %10 ve %20 ile özel oran desteğini kullan.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"KDV Hesaplama","item":"https://hesapica.com/kdv-hesaplama"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"KDV dahil ve KDV hariç farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"KDV hariç tutar vergi öncesi net bedeldir. KDV dahil tutar ise net bedel ile hesaplanan KDV’nin toplamıdır."}},{"@type":"Question","name":"2026 yılında genel KDV oranları nelerdir?","acceptedAnswer":{"@type":"Answer","text":"Genel yapı %1, %10 ve %20 oranlarından oluşur. Hangi oranın uygulanacağı mal veya hizmetin ilgili listelerdeki sınıflandırmasına göre belirlenir."}},{"@type":"Question","name":"%20 KDV dahil tutarın içindeki KDV neden %20 değildir?","acceptedAnswer":{"@type":"Answer","text":"%20 oran net bedel üzerinden hesaplanır. Toplam içindeki vergi payı 20/120, yani yaklaşık %16,67 olur."}},{"@type":"Question","name":"Özel KDV oranı girilebilir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Özel oran seçeneğiyle 0 ile 100 arasında ondalıklı bir oran girebilirsin. Doğru oranın seçimi kullanıcı sorumluluğundadır."}},{"@type":"Question","name":"Tevkifat bu hesaplamaya dahil mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç hesaplanan toplam KDV’yi gösterir; KDV tevkifatı, istisna ve özel matrah işlemleri ayrıca hesaplanmalıdır."}},{"@type":"Question","name":"Faturadaki sonuç neden birkaç kuruş farklı olabilir?","acceptedAnswer":{"@type":"Answer","text":"Satır bazında veya belge toplamında yapılan yuvarlama, iskonto sırası ve muhasebe yazılımının uyguladığı yöntem birkaç kuruş fark oluşturabilir."}},{"@type":"Question","name":"Bu araç resmî belge yerine geçer mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç genel aritmetik hesaplama ve planlama içindir. Fatura ve beyan işlemlerinde güncel mevzuat ile mali müşavir değerlendirmesi esas alınmalıdır."}}]}</script>
 <style id="hesapica-global-typography-standard">
     :root{
       --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -428,38 +418,11 @@
     }
   </style>
 <meta content="https://hesapica.com/kdv-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
-
-<style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
-</style>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<style id="hc-related-tools-style">
-.related-tools{margin-top:28px;padding:24px;border:1px solid #e5e7eb;border-radius:22px;background:#fff}
-.related-tools h2{margin:0 0 14px;color:#312e81;font-size:24px;letter-spacing:-.02em}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.related-card{display:block;padding:16px;border:1px solid #dbe4ff;border-radius:16px;background:linear-gradient(180deg,#fff,#f8faff);text-decoration:none}
-.related-card h3{margin:0 0 8px;font-size:17px;color:#1f2937}
-.related-card p{margin:0;color:#4b5563;font-size:14px;line-height:1.55}
-.related-home-link{display:inline-flex;margin-top:14px;font-weight:800;color:#4338ca}
-@media (max-width:720px){.related-tools{padding:18px}.related-grid{grid-template-columns:1fr}}
-</style>
-<script id="hc-financialproduct-schema" type="application/ld+json">
-{"@context": "https://schema.org", "@type": ["WebApplication", "FinancialProduct"], "name": "KDV Hesaplama 2026", "description": "KDV tutarını hızlıca hesapla; KDV dahil-hariç fiyatı saniyeler içinde öğren. Ticari işlemlerini kolaylaştır, doğru tutarı hemen bul!", "applicationCategory": "FinanceTool", "url": "https://hesapica.com/kdv-hesaplama", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TRY"}, "featureList": ["KDV Hesaplama 2026 sonucu", "Hızlı hesaplama", "Senaryo karşılaştırması", "Mobil uyumlu kullanım"]}
-</script>
-</head>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<meta content="Hesapica KDV hesaplama aracı" property="og:image:alt"/><meta content="Hesapica KDV hesaplama aracı" name="twitter:image:alt"/></head>
 <body>
 <div class="container topbar">
 <nav aria-label="breadcrumb" class="breadcrumb">
@@ -474,34 +437,29 @@
 <section class="hero">
 <div class="hero-grid">
 <div>
-<span class="eyebrow-pill">Hesapica • LITE Aracı</span>
+<span class="eyebrow-pill">Hesapica • KDV Aracı</span>
 <h1>KDV Hesaplama</h1>
-<p>KDV hariç veya KDV dahil tutardan vergi payını hızlıca ayır. Bu araç, <strong>tek ekranda net tutar</strong>, <strong>KDV bedeli</strong> ve <strong>toplam tutarı</strong> sade akışla verir.</p>
+<p>KDV hariç veya KDV dahil tutardan <strong>net bedeli, KDV tutarını ve toplamı</strong> güvenli biçimde hesapla. Güncel genel oranları veya işlemine uygun özel oranı kullan.</p>
 <div class="hero-chips">
-<span class="hero-chip">Hızlı KDV hesabı</span>
-<span class="hero-chip">Boş başlangıç</span>
-<span class="hero-chip">Otomatik hesaplama</span>
-<span class="hero-chip">Mobilde tek kolon</span>
+<span class="hero-chip">KDV dahil / hariç</span>
+<span class="hero-chip">%1 • %10 • %20</span>
+<span class="hero-chip">Özel oran</span>
+<span class="hero-chip">Yönü tek tıkla değiştir</span>
 </div>
 </div>
 <aside class="hero-box">
-<div class="eyebrow">LITE Standart</div>
-<strong>KDV dahil ve hariç tutarı anında gör</strong>
-<p>KDV hariç tutarı, KDV bedelini ve KDV dahil toplamı tek ekranda hızlıca hesaplayın. İster hazır oran seçin, ister özel oran girin. En alttaki hızlı oran seçiminden tek dokunuşla oran değiştirebilirsin.</p>
+<div class="eyebrow">Şeffaf hesaplama</div>
+<strong>Dahil ve hariç tutarı aynı ekranda karşılaştır</strong>
+<p>Türkiye’de genel KDV oranları %1, %10 ve %20’dir. Doğru oran teslim veya hizmetin niteliğine göre değişebileceği için oranı resmî mevzuattan doğrula.</p>
 </aside>
 </div>
 </section>
 </header>
 <!-- HC_AD_SLOT:top -->
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3615831363"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
+<div aria-label="Reklam alanı" class="hc-ad-slot hc-ad-slot--top container">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="3615831363" data-full-width-responsive="true" style="display:block"></ins>
 </div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<script>if(document.documentElement.classList.contains('hc-live-site')){try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}}</script>
 <main class="container" style="padding:24px 0 56px">
 <section class="tool-layout">
 <div class="card">
@@ -509,12 +467,10 @@
 <p class="section-note">Tüm alanlar boş başlar. Tutarı ve oranı girdiğinde sonuçlar otomatik hesaplanır. KDV hariç tutardan toplamı bulabilir ya da KDV dahil tutarın içindeki vergi payını ayırabilirsin.</p>
 <div class="helper-box">
 <h3>KDV oranı ve yön seçimi</h3>
-<p>Aynı ekranda hem <strong>KDV hariçten KDV dahile</strong> geçebilir hem de <strong>KDV dahil tutarın içindeki vergi payını</strong> ayırabilirsin. Hazır oranlar hızlı kullanım sağlar; özel oran seçeneği ise farklı senaryolarda esneklik verir.</p>
+<p>Hazır oranlar <strong>%1, %10 ve %20</strong> için hızlı kullanım sağlar. Mal veya hizmetin tabi olduğu oran farklıysa özel oranı kullan; oran seçiminin mevzuat sorumluluğu kullanıcıya aittir.</p>
 <div class="helper-chips">
 <span class="helper-chip">%1</span>
-<span class="helper-chip">%8</span>
 <span class="helper-chip">%10</span>
-<span class="helper-chip">%18</span>
 <span class="helper-chip">%20</span>
 <span class="helper-chip">Özel oran</span>
 </div>
@@ -540,13 +496,11 @@
 <label for="vatRate">KDV oranı</label>
 <select aria-describedby="vatRateHint" id="vatRate">
 <option value="1">%1</option>
-<option value="8">%8</option>
 <option value="10">%10</option>
-<option value="18">%18</option>
 <option selected="" value="20">%20</option>
 <option value="custom">Özel oran</option>
 </select>
-<div class="hint" id="vatRateHint">Hazır oranlardan birini seç veya özel oran kullan.</div>
+<div class="hint" id="vatRateHint">Genel oranlardan birini seç veya işlemine uygun özel oran kullan.</div>
 </div>
 <div class="field full" id="customRateField" style="display:none">
 <label for="customRate">Özel KDV oranı (%)</label>
@@ -560,20 +514,18 @@
 <div class="form-title">Hızlı oran seçimi</div>
 <div class="chip-row" id="rateChips">
 <button class="chip" data-rate="1" type="button">%1</button>
-<button class="chip" data-rate="8" type="button">%8</button>
 <button class="chip" data-rate="10" type="button">%10</button>
-<button class="chip" data-rate="18" type="button">%18</button>
 <button class="chip active" data-rate="20" type="button">%20</button>
 <button class="chip" data-rate="custom" type="button">Özel</button>
 </div>
 </div>
 <div class="actions">
-<button class="btn btn-primary" onclick="manualCalculateVAT()" type="button">Sonucu Gör</button>
-<button class="btn btn-secondary" onclick="fillExample()" type="button">Örnek Veri</button>
-<button class="btn btn-ghost" onclick="resetTool()" type="button">Temizle</button>
-<button class="btn btn-ghost" onclick="copyResult()" type="button">Sonucu Kopyala</button>
-<button class="btn btn-ghost" onclick="shareResult()" type="button">Paylaş</button>
-<button class="btn btn-ghost" onclick="printResult()" type="button">Yazdır / PDF</button>
+<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button><button class="btn btn-secondary" id="swapModeBtn" type="button">Yönü Değiştir ⇄</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Temizle</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button>
 </div>
 <div aria-hidden="true" class="flow-hint">
 <div class="flow-hint-text">
@@ -584,15 +536,8 @@
 </div>
 </div>
 <!-- HC_AD_SLOT:result -->
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3982292851"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
 <aside class="results" id="resultPanel">
 <div class="results-kicker">Sonuçlar aşağıda başlıyor<span>Ana çıktı, ara sonuçlar ve kısa özet bu bölümde yer alır.</span></div>
 <div class="status-card">
@@ -649,7 +594,9 @@
 </div>
 <div aria-live="polite" class="comment-box" id="smartInsight">Bu alan boş açılır. Hesaplama yapıldığında burada kısa ve net açıklama görünür.</div>
 </aside>
-</section>
+</section><div aria-label="Reklam alanı" class="hc-ad-slot hc-ad-slot--result">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="3982292851" data-full-width-responsive="true" style="display:block"></ins>
+</div><script>if(document.documentElement.classList.contains('hc-live-site')){try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}}</script>
 <section class="details-card">
 <div class="card">
 <h2>Temel sonuçlar</h2>
@@ -670,63 +617,36 @@
 </div>
 </div>
 </section>
-<section class="content-grid">
-<article class="card">
-<h2>KDV hesaplama nasıl yapılır?</h2>
-<p class="section-note">Bu araç iki yönlü çalışır:</p>
+<section class="card content-card kdv-guidance" style="margin-top:24px">
+<h2>2026 KDV oranları ve doğru oran seçimi</h2>
+<p>Türkiye’de 2007/13033 sayılı düzenleme kapsamındaki genel yapı uyarınca (I) sayılı listedeki işlemlerde <strong>%1</strong>, (II) sayılı listedeki işlemlerde <strong>%10</strong>, bu listelerde yer almayan vergiye tabi işlemlerde ise genel olarak <strong>%20</strong> KDV uygulanır. Ürün veya hizmetin niteliği, istisna, tevkifat ve özel düzenlemeler sonucu değiştirebilir.</p>
+<div class="rate-guide-grid">
+<div class="rate-guide"><strong>%1</strong><span>Karardaki (I) sayılı listede bulunan belirli teslim ve hizmetler.</span></div>
+<div class="rate-guide"><strong>%10</strong><span>Karardaki (II) sayılı listede bulunan belirli teslim ve hizmetler.</span></div>
+<div class="rate-guide"><strong>%20</strong><span>İndirimli listelerde yer almayan vergiye tabi işlemler için genel oran.</span></div>
+</div>
+<p class="legal-note"><strong>Önemli:</strong> Bu araç yalnızca aritmetik hesaplama yapar; doğru KDV oranını otomatik belirlemez. Tevkifat, istisna, özel matrah, kur farkı ve fatura yuvarlaması gibi konular ayrıca değerlendirilmelidir.</p>
+</section><div aria-label="Reklam alanı" class="hc-ad-slot hc-ad-slot--faq">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="4903929326" data-full-width-responsive="true" style="display:block"></ins>
+</div><script>if(document.documentElement.classList.contains('hc-live-site')){try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}}</script><section class="content-grid">
+<article class="card"><h2>KDV hesaplama nasıl yapılır?</h2>
+<p>KDV hesabı, girilen tutarın vergi hariç mi yoksa vergi dahil mi olduğuna göre iki farklı formülle yapılır. Araç hesaplamayı tam hassasiyetle yapar ve para sonuçlarını iki ondalık basamakla gösterir.</p>
 <div class="accordion-card">
-<details open="">
-<summary>KDV hariç → KDV dahil</summary>
-<p>Net tutarın üzerine seçilen vergi oranı eklenir. Önce KDV bedeli hesaplanır, sonra net tutar ile toplanır.</p>
-</details>
-<details>
-<summary>KDV dahil → KDV hariç</summary>
-<p>Toplam bedel, 1 + oran/100 değerine bölünür. Böylece vergi öncesi net bedel ve içindeki KDV payı ayrıştırılır.</p>
-</details>
-<details>
-<summary>Hangi durumda hangisi kullanılır?</summary>
-<p>Teklif, sözleşme veya katalog fiyatı vergi hariçse ilk mod; faturadaki toplam tutarın içindeki vergi payını görmek istiyorsan ikinci mod kullanılır.</p>
-</details>
-</div>
-</article>
-<article class="card accordion-card">
-<!-- HC_AD_SLOT:faq -->
-<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="4903929326"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<section id="hc-related-tools" class="related-tools">
-  <h2>İlgili Hesaplama Araçları</h2>
-  <div class="related-grid">
-<a href="/gelir-vergisi-hesaplama" class="related-card"><h3>Gelir Vergisi Hesaplama</h3><p>Vergi dilimlerine göre yıllık yükünü net olarak hesapla.</p></a>
-<a href="/stopaj-hesaplama" class="related-card"><h3>Stopaj Hesaplama</h3><p>Brütten nete stopaj kesintisini saniyeler içinde bul.</p></a>
-<a href="/emlak-vergisi-hesaplama" class="related-card"><h3>Emlak Vergisi Hesaplama</h3><p>Taşınmaz türüne göre yıllık vergi tutarını öğren.</p></a>
-<a href="/damga-vergisi-hesaplama" class="related-card"><h3>Damga Vergisi Hesaplama</h3><p>Belge türüne göre damga vergisini doğru şekilde hesapla.</p></a>
-  </div>
-  <a href="/" class="related-home-link">← Ana sayfaya dön ve tüm araçları keşfet</a>
-</section>
-<h2>Sık sorulan sorular</h2>
-<details open="">
-<summary>KDV dahil ve KDV hariç farkı nedir?</summary>
-<p>KDV hariç tutar ürün veya hizmetin vergi eklenmemiş net fiyatıdır. KDV dahil tutar ise vergi eklendikten sonraki toplam bedeldir.</p>
-</details>
-<details>
-<summary>Özel KDV oranı girilebilir mi?</summary>
-<p>Evet. Hazır oranlar dışında özel oran seçip kendi yüzde değerini girerek hesap yapabilirsin.</p>
-</details>
-<details>
-<summary>Bu hesaplama resmî belge yerine geçer mi?</summary>
-<p>Hayır. Bu araç hızlı genel hesap içindir. Fatura, muhasebe ve resmî süreçlerde güncel mevzuat ve uzman görüşü ayrıca dikkate alınmalıdır.</p>
-</details>
-</article>
+<details open=""><summary>KDV hariç tutardan KDV dahil toplam</summary><p><strong>KDV = Net tutar × oran / 100</strong>. KDV dahil toplam ise net tutar ile hesaplanan KDV’nin toplamıdır. Örneğin 1.000 TL net tutara %20 KDV uygulandığında KDV 200 TL, toplam 1.200 TL olur.</p></details>
+<details><summary>KDV dahil tutardan net tutar</summary><p><strong>Net tutar = KDV dahil tutar ÷ (1 + oran / 100)</strong>. Örneğin %20 KDV dahil 1.200 TL’nin neti 1.000 TL, içindeki KDV 200 TL’dir. Dahil tutarı yalnızca oranla çarpmak doğru sonuç vermez.</p></details>
+<details><summary>Vergi payı neden seçilen KDV oranından düşüktür?</summary><p>%20 KDV, net tutarın %20’sidir; ancak KDV dahil toplamın içindeki vergi payı %16,67’dir. Araç “Vergi payı” alanında KDV’nin toplam içindeki oranını ayrıca gösterir.</p></details>
+</div></article>
+<article class="card accordion-card"><h2>Sık sorulan sorular</h2>
+<details open=""><summary>KDV dahil ve KDV hariç farkı nedir?</summary><p>KDV hariç tutar vergi öncesi net bedeldir. KDV dahil tutar ise net bedel ile hesaplanan KDV’nin toplamıdır.</p></details>
+<details><summary>2026 yılında genel KDV oranları nelerdir?</summary><p>Genel yapı %1, %10 ve %20 oranlarından oluşur. Hangi oranın uygulanacağı mal veya hizmetin ilgili listelerdeki sınıflandırmasına göre belirlenir.</p></details>
+<details><summary>%20 KDV dahil tutarın içindeki KDV neden %20 değildir?</summary><p>%20 oran net bedel üzerinden hesaplanır. Toplam içindeki vergi payı 20/120, yani yaklaşık %16,67 olur.</p></details>
+<details><summary>Özel KDV oranı girilebilir mi?</summary><p>Evet. Özel oran seçeneğiyle 0 ile 100 arasında ondalıklı bir oran girebilirsin. Doğru oranın seçimi kullanıcı sorumluluğundadır.</p></details>
+<details><summary>Tevkifat bu hesaplamaya dahil mi?</summary><p>Hayır. Araç hesaplanan toplam KDV’yi gösterir; KDV tevkifatı, istisna ve özel matrah işlemleri ayrıca hesaplanmalıdır.</p></details>
+<details><summary>Faturadaki sonuç neden birkaç kuruş farklı olabilir?</summary><p>Satır bazında veya belge toplamında yapılan yuvarlama, iskonto sırası ve muhasebe yazılımının uyguladığı yöntem birkaç kuruş fark oluşturabilir.</p></details>
+<details><summary>Bu araç resmî belge yerine geçer mi?</summary><p>Hayır. Araç genel aritmetik hesaplama ve planlama içindir. Fatura ve beyan işlemlerinde güncel mevzuat ile mali müşavir değerlendirmesi esas alınmalıdır.</p></details></article>
 </section>
 <section class="card" style="margin-top:24px">
-<h2>İlgili araçlar</h2>
+<h2>İlgili Hesaplama Araçları</h2>
 <div class="related-grid">
 <a class="related-card" href="/yuzde-hesaplama">
 <span class="small">Hızlı araç</span>
@@ -765,7 +685,7 @@
     const resultPanel = document.getElementById('resultPanel');
     const highlightCard = document.getElementById('highlightCard');
 
-    const STORAGE_KEY = 'hesapica:kdv-hesaplama:manual-v3';
+    const STORAGE_KEY = 'hesapica:kdv-hesaplama:v4';
     const defaultStatusText = 'Tutar ve KDV oranı girildiğinde hesaplama otomatik çalışır.';
     const state = {
       inputs: {},
@@ -1019,10 +939,10 @@
         }
       }
 
-      if (isCustom && (!inputs.customRateRaw || !Number.isFinite(inputs.rate) || inputs.rate < 0 || inputs.rate > 1000)) {
+      if (isCustom && (!inputs.customRateRaw || !Number.isFinite(inputs.rate) || inputs.rate < 0 || inputs.rate > 100)) {
         valid = false;
         if (shouldShowError('customRate', force)) {
-          showFieldError(customRateField, customRate, 'Özel oran için 0 ile 1000 arasında geçerli bir yüzde gir.');
+          showFieldError(customRateField, customRate, 'Özel oran için 0 ile 100 arasında geçerli bir yüzde gir.');
           invalidElements.push(customRate);
         }
       }
@@ -1101,7 +1021,7 @@
       document.getElementById('healthMode').textContent = result.type === 'haricten' ? 'Hariç → Dahil' : 'Dahil → Hariç';
       document.getElementById('healthModeSub').textContent = result.type === 'haricten' ? 'Net bedelden toplam bedel bulunuyor.' : 'Toplam bedelin içindeki vergi ayrıştırılıyor.';
       document.getElementById('healthRate').textContent = formatPercent(result.rate);
-      document.getElementById('healthRateSub').textContent = result.rate <= 8 ? 'Düşük oranlı KDV seçildi.' : result.rate <= 18 ? 'Orta seviye KDV oranı seçildi.' : 'Yüksek oranlı KDV seçildi.';
+      document.getElementById('healthRateSub').textContent = result.rate === 0 ? 'Sıfır oranlı özel hesap.' : result.rate <= 10 ? 'İndirimli oran seçildi.' : result.rate < 20 ? 'Özel ara oran seçildi.' : 'Genel oran veya yüksek özel oran seçildi.';
       document.getElementById('healthOutput').textContent = result.type === 'haricten' ? formatTRY(result.grossAmount) : formatTRY(result.netAmount);
       document.getElementById('healthOutputSub').textContent = result.type === 'haricten' ? 'Toplam tahsilat / ödeme' : 'Vergi hariç temel bedel';
 
@@ -1152,6 +1072,9 @@
       }
 
       const result = computeVAT(inputs);
+      if (![result.netAmount,result.vatAmount,result.grossAmount,result.share].every(Number.isFinite)) {
+        clearResults(); setStatus('Tutar hesaplama sınırını aşıyor. Daha küçük bir değer gir.', 'warn'); return false;
+      }
       state.results = result;
       state.isCalculated = true;
 
@@ -1183,10 +1106,20 @@
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return;
         const saved = JSON.parse(raw);
-        if (!saved || typeof saved !== 'object') return;
-        if (!saved.amount) return;
+        const validType = saved && ['haricten','dahilden'].includes(saved.calcType);
+        const validRateChoice = saved && ['1','10','20','custom'].includes(saved.vatRate);
+        const savedAmount = saved ? parseTRNumber(saved.amount) : NaN;
+        const savedCustomRate = saved && saved.vatRate === 'custom' ? parseTRNumber(saved.customRate) : 0;
+        const validAmount = Number.isFinite(savedAmount) && savedAmount > 0;
+        const validCustomRate = saved && saved.vatRate !== 'custom' || (Number.isFinite(savedCustomRate) && savedCustomRate >= 0 && savedCustomRate <= 100);
+        if (!saved || typeof saved !== 'object' || !validType || !validRateChoice || !validAmount || !validCustomRate) {
+          removeSavedState();
+          return;
+        }
         applyManualState(saved);
-      } catch (error) {}
+      } catch (error) {
+        removeSavedState();
+      }
     }
 
     function fillExample(){
@@ -1214,6 +1147,11 @@
       syncRateChips();
     }
 
+    async function copyPlainText(text){
+      if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return; }
+      const area=document.createElement('textarea'); area.value=text; area.setAttribute('readonly',''); area.style.position='fixed'; area.style.opacity='0'; document.body.appendChild(area); area.select(); const ok=document.execCommand('copy'); area.remove(); if(!ok) throw new Error('copy');
+    }
+
     async function copyResult(){
       if (!state.results) {
         setStatus('Kopyalamadan önce hesaplama yap.', 'warn');
@@ -1232,25 +1170,8 @@
         `Vergi Payı: ${formatPercent(state.results.share)}`
       ].join('\n');
 
-      try {
-        await navigator.clipboard.writeText(text);
-        setStatus('Sonuç panoya kopyalandı.', 'ready');
-      } catch (error) {
-        try {
-          const area = document.createElement('textarea');
-          area.value = text;
-          area.setAttribute('readonly', '');
-          area.style.position = 'absolute';
-          area.style.left = '-9999px';
-          document.body.appendChild(area);
-          area.select();
-          document.execCommand('copy');
-          document.body.removeChild(area);
-          setStatus('Sonuç panoya kopyalandı.', 'ready');
-        } catch (fallbackError) {
-          setStatus('Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.', 'warn');
-        }
-      }
+      try { await copyPlainText(text); setStatus('Sonuç panoya kopyalandı.', 'ready'); }
+      catch (error) { setStatus('Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.', 'warn'); }
     }
 
     async function shareResult(){
@@ -1272,18 +1193,30 @@
           await navigator.share(shareData);
           setStatus('Sonuç paylaşım penceresine gönderildi.', 'ready');
         } else {
-          await navigator.clipboard.writeText(sharePayload);
+          await copyPlainText(sharePayload);
           setStatus('Paylaşım özeti panoya kopyalandı.', 'ready');
         }
       } catch (error) {
         if (error && error.name === 'AbortError') return;
         try {
-          await navigator.clipboard.writeText(sharePayload);
+          await copyPlainText(sharePayload);
           setStatus('Paylaşım özeti panoya kopyalandı.', 'ready');
         } catch (fallbackError) {
           setStatus('Paylaşım başarısız oldu.', 'warn');
         }
       }
+    }
+
+    function swapCalculationDirection(){
+      const hadResult=!!state.results;
+      if (hadResult) {
+        const nextAmount=calcType.value==='haricten'?state.results.grossAmount:state.results.netAmount;
+        calcType.value=calcType.value==='haricten'?'dahilden':'haricten';
+        amountInput.value=formatTRNumericInput(new Intl.NumberFormat('tr-TR',{useGrouping:false,maximumFractionDigits:2}).format(nextAmount));
+      } else {
+        calcType.value=calcType.value==='haricten'?'dahilden':'haricten';
+      }
+      state.isDemo=false; calculateVAT({save:true,focusResult:hadResult});
     }
 
     function printResult(){
@@ -1359,14 +1292,20 @@
       }
     });
 
+    document.getElementById('calculateBtn').addEventListener('click', manualCalculateVAT);
+    document.getElementById('exampleBtn').addEventListener('click', fillExample);
+    document.getElementById('clearBtn').addEventListener('click', resetTool);
+    document.getElementById('copyBtn').addEventListener('click', copyResult);
+    document.getElementById('shareBtn').addEventListener('click', shareResult);
+    document.getElementById('printBtn').addEventListener('click', printResult);
+    document.getElementById('swapModeBtn').addEventListener('click', swapCalculationDirection);
+
     setIdleView();
     toggleCustomRate();
     loadSavedState();
     syncRateChips();
   </script>
-<script defer="" src="cookie-consent.js"></script>
-<script>window.HESAPICA_I18N_CONFIG={"trUrl": "https://hesapica.com/kdv-hesaplama", "enUrl": "https://hesapica.com/en/vat-calculator", "xDefaultUrl": "https://hesapica.com/kdv-hesaplama", "titleTr": "KDV Hesaplama 2026 | KDV Dahil ve Hariç Tutar Hesaplama | Hesapica", "descriptionTr": "KDV hariç ve KDV dahil tutarı hızlıca hesaplayın. %1, %8, %10, %18, %20 ve özel oran ile KDV tutarı, net bedel ve toplam bedeli anında görün.", "titleEn": "VAT Calculator 2026 | VAT Included and Excluded Amounts", "descriptionEn": "Calculate VAT amount, net value, and gross value for VAT-inclusive and VAT-exclusive pricing.", "scopeSelector": "body", "observeSelectors": ["main", ".results", "#resultArea", "#resultPanel"], "textMap": {"KDV Hesaplama": "VAT Calculation", "KDV Hariç Tutar → KDV Dahil Tutar": "VAT Excluded Amount → VAT Included Amount", "KDV Dahil Tutar → KDV Hariç Tutar": "VAT Included Amount → VAT Excluded Amount", "Hızlı KDV hesabı": "Quick VAT calculation", "Boş başlangıç": "empty start", "Otomatik hesaplama": "automatic calculation", "KDV dahil ve hariç tutarı anında gör": "Instantly see the amount including and excluding VAT", "KDV Giriş Paneli": "VAT Entry Panel", "KDV oranı ve yön seçimi": "VAT rate and direction selection", "Hesaplama türü": "Calculation type", "Net tutardan toplamı bulmak veya toplam tutarın içindeki KDV payını ayırmak için tür seç.": "Select a type to find the total from the net amount or separate the VAT share from the total amount.", "Büyük tutarlar okunabilir olması için otomatik olarak 250.000 gibi gösterilir.": "Large amounts are automatically shown as 250,000 for readability.", "KDV oranı": "VAT rate", "Hazır oranlardan birini seç veya özel oran kullan.": "Choose from ready-made odds or use custom odds.", "Özel KDV oranı (%)": "Special VAT rate (%)", "Özel oran alanı sadece bu seçenek aktifken kullanılır.": "The custom rate field is only used when this option is active.", "Özel": "Special", "Sonucu Gör": "Show Result", "Örnek Veri": "Sample Data", "Paylaş": "Share", "Yazdır / PDF": "Print / PDF", "Sonuç alanı durumu": "Result field status", "Tutar ve KDV oranı girildiğinde hesaplama otomatik çalışır.": "Once the amount and VAT rate are entered, the calculation runs automatically.", "Hızlı durum özeti": "Quick status summary", "Çıktı": "Output", "Temel sonuçlar": "Key results", "KDV hariç ve dahil dönüşümün çekirdek sayı seti aşağıda özetlenir.": "The core number set for the conversion, excluding and including VAT, is summarized below.", "KDV hesaplama nasıl yapılır?": "How to calculate VAT?", "Bu araç iki yönlü çalışır:": "This tool works two ways:", "Net tutarın üzerine seçilen vergi oranı eklenir. Önce KDV bedeli hesaplanır, sonra net tutar ile toplanır.": "The selected tax rate is added to the net amount. First, the VAT fee is calculated and then added to the net amount.", "Toplam bedel, 1 + oran/100 değerine bölünür. Böylece vergi öncesi net bedel ve içindeki KDV payı ayrıştırılır.": "The total cost is divided by 1 + odds/100. Thus, the net price before tax and the VAT share in it are separated.", "Sık sorulan sorular": "Frequently asked questions", "Evet. Hazır oranlar dışında özel oran seçip kendi yüzde değerini girerek hesap yapabilirsin.": "Yes. Apart from the ready-made rates, you can calculate by choosing a special rate and entering your own percentage value.", "İlgili araçlar": "Related tools", "İndirim, artış ve oran farklarını hızlıca hesapla.": "Quickly calculate discounts, increases and rate differences.", "İskonto sonrası net satış fiyatını saniyeler içinde gör.": "See the net sales price after discount in seconds.", "Basit faiz, net getiri ve vade etkisini ayrı ekranda incele.": "Examine simple interest, net return and maturity effects on a separate screen.", "Örn: 250.000": "Ex: 250,000", "Örn: 12,5": "Ex: 12.5", "Brüt": "Gross", "Net": "Net", "Anapara": "Principal", "Faiz": "Interest", "Vade": "Term", "KDV": "VAT", "Bütçe": "Budget", "Maaş": "Salary", "Kredi": "Loan", "Kredi Kartı": "Credit Card", "Gelir Vergisi": "Income Tax", "Yatırım Getirisi": "Investment Return", "Kira Artış": "Rent Increase", "Enflasyon": "Inflation", "Temizle": "Clear", "Verileri Sıfırla": "Reset Inputs", "Sonucu Kopyala": "Copy Result"}};</script>
-<script defer src="i18n-common.js"></script>
-  <script src="ads-slot-manager.js"></script>
+<footer style="padding:30px 14px 38px;text-align:center;color:#6b7280;font-size:13px">© 2026 Hesapica.com · KDV sonuçları genel hesaplama ve bilgilendirme amaçlıdır.</footer><script defer="" src="cookie-consent.js"></script>
+<script defer="" src="ads-slot-manager.js"></script>
 </body>
 </html>
