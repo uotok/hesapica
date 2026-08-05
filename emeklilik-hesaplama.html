@@ -109,7 +109,25 @@ function saveInputs(v){try{localStorage.setItem('hesapica_retirement_v5',JSON.st
 function loadInputs(){try{const d=JSON.parse(localStorage.getItem('hesapica_retirement_v5')||'null');if(!d)return;$('#birthDate').value=d.birthDate||'';$('#gender').value=d.gender||'';$('#status').value=d.status||'';$('#startDate').value=d.startDate||'';$('#currentPremium').value=Number.isFinite(Number(d.currentPremium))?d.currentPremium:'';$('#monthlyPremium').value=Number.isFinite(Number(d.monthlyPremium))?d.monthlyPremium:30}catch(e){try{localStorage.removeItem('hesapica_retirement_v5')}catch(_){}}}
 function shareText(){if(!lastResult||!lastResult.best)return'';return `Hesapica Emeklilik Hesaplama\n${lastResult.best.name}: ${fmtDate(lastResult.best.eligible)}\nEksik prim: ${fmtNum(lastResult.best.premiumLeft)} gün\nBu sonuç tahminidir; SGK kaydıyla doğrulanmalıdır.\n${location.href}`}
 async function copyText(text){if(!text)throw new Error('empty');if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return}const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();if(!ok)throw new Error('copy')}
-$('#calcBtn').addEventListener('click',render);$('#sampleBtn').addEventListener('click',()=>{$('#birthDate').value='1978-06-15';$('#gender').value='female';$('#status').value='4A';$('#startDate').value='1997-05-10';$('#currentPremium').value='5450';$('#monthlyPremium').value='30';render()});$('#clearBtn').addEventListener('click',()=>{['birthDate','gender','status','startDate','currentPremium'].forEach(id=>$('#'+id).value='');$('#monthlyPremium').value='30';document.querySelectorAll('.field.invalid').forEach(x=>x.classList.remove('invalid'));try{localStorage.removeItem('hesapica_retirement_v5')}catch(e){}resetResult();$('#birthDate').focus()});$('#copyBtn').addEventListener('click',async()=>{try{await copyText(shareText());alert('Sonuç kopyalandı.')}catch(e){alert(lastResult?'Kopyalama başarısız oldu.':'Önce geçerli bir sonuç hesapla.')}});$('#shareBtn').addEventListener('click',async()=>{const text=shareText();if(!text){alert('Önce geçerli bir sonuç hesapla.');return}if(navigator.share){try{await navigator.share({title:'Emeklilik Hesaplama',text,url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}try{await copyText(text);alert('Paylaşım desteklenmediği için sonuç kopyalandı.')}catch(e){alert('Paylaşım işlemi tamamlanamadı.')}});$('#printBtn').addEventListener('click',()=>window.print());['birthDate','gender','status','startDate','currentPremium','monthlyPremium'].forEach(id=>$('#'+id).addEventListener('change',()=>{if($('#birthDate').value&&$('#gender').value&&$('#status').value&&$('#startDate').value&&$('#currentPremium').value!=='')render()}));loadInputs();if($('#birthDate').value)render();
+function scrollToResult(){
+  const resultPanel=document.getElementById('resultArea');
+  if(!resultPanel)return;
+  window.setTimeout(()=>{
+    const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    resultPanel.setAttribute('tabindex','-1');
+    resultPanel.focus({preventScroll:true});
+  },120);
+}
+$('#calcBtn').addEventListener('click',()=>{
+  render();
+  if(lastResult&&lastResult.best){
+    scrollToResult();
+  }
+});$('#sampleBtn').addEventListener('click',()=>{$('#birthDate').value='1978-06-15';$('#gender').value='female';$('#status').value='4A';$('#startDate').value='1997-05-10';$('#currentPremium').value='5450';$('#monthlyPremium').value='30';render()});$('#clearBtn').addEventListener('click',()=>{['birthDate','gender','status','startDate','currentPremium'].forEach(id=>$('#'+id).value='');$('#monthlyPremium').value='30';document.querySelectorAll('.field.invalid').forEach(x=>x.classList.remove('invalid'));try{localStorage.removeItem('hesapica_retirement_v5')}catch(e){}resetResult();$('#birthDate').focus()});$('#copyBtn').addEventListener('click',async()=>{try{await copyText(shareText());alert('Sonuç kopyalandı.')}catch(e){alert(lastResult?'Kopyalama başarısız oldu.':'Önce geçerli bir sonuç hesapla.')}});$('#shareBtn').addEventListener('click',async()=>{const text=shareText();if(!text){alert('Önce geçerli bir sonuç hesapla.');return}if(navigator.share){try{await navigator.share({title:'Emeklilik Hesaplama',text,url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}try{await copyText(text);alert('Paylaşım desteklenmediği için sonuç kopyalandı.')}catch(e){alert('Paylaşım işlemi tamamlanamadı.')}});$('#printBtn').addEventListener('click',()=>window.print());['birthDate','gender','status','startDate','currentPremium','monthlyPremium'].forEach(id=>$('#'+id).addEventListener('change',()=>{if($('#birthDate').value&&$('#gender').value&&$('#status').value&&$('#startDate').value&&$('#currentPremium').value!=='')render()}));loadInputs();if($('#birthDate').value)render();
 </script>
 <script src="ads-slot-manager.js"></script>
 </body></html>
