@@ -120,7 +120,29 @@ function summaryText(){const i=state.inputs,r=state.results;return['Hesapica - S
 function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();return ok}async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return true}return fallbackCopy(text)}catch(e){return fallbackCopy(text)}}
 function buildUrl(){const u=new URL(location.href);u.search='';u.searchParams.set('mode',state.mode);fieldIds.forEach(id=>{const v=els[id].value.trim();if(v)u.searchParams.set(id,v.slice(0,40))});if($('prorateTiers').checked)u.searchParams.set('prorate','1');return u.toString()}
 function hydrateUrl(){const q=new URLSearchParams(location.search);if(!q.has('monthlyM3'))return false;state.suppressSave=true;setMode(q.get('mode')==='tiered'?'tiered':'simple',{persist:false});fieldIds.forEach(id=>{const v=q.get(id);if(v!==null&&v.length<=40)els[id].value=v});$('prorateTiers').checked=q.get('prorate')==='1';state.suppressSave=false;return true}
-$('waterBillForm').addEventListener('submit',e=>{e.preventDefault();if(calculate(true)){$('highlightCard').focus();$('highlightCard').scrollIntoView({behavior:'smooth',block:'center'})}});document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));fieldIds.forEach(id=>{els[id].addEventListener('input',()=>{state.suppressSave=false;clearTimeout(els[id]._t);els[id]._t=setTimeout(()=>calculate(false),220)});els[id].addEventListener('blur',()=>{normalize(id);safeSave()})});$('prorateTiers').addEventListener('change',()=>calculate(false));$('resetBtn').addEventListener('click',clearAll);$('exampleBtn').addEventListener('click',()=>applyPreset(presets.family));document.querySelectorAll('#presetRow .chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#presetRow .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyPreset(presets[b.dataset.preset])}));$('copyBtn').addEventListener('click',async()=>{$('smartComment').textContent=await copyText(summaryText())?'Sonuç özeti panoya kopyalandı.':'Kopyalama başarısız oldu.'});$('shareBtn').addEventListener('click',async()=>{const data={title:'Su Faturası Hesaplama',text:`Tahmini su faturası: ${fmtTRY(state.results.total)}`,url:buildUrl()};if(navigator.share){try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}}$('smartComment').textContent=await copyText(data.url)?'Paylaşım bağlantısı panoya kopyalandı.':'Paylaşım bağlantısı kopyalanamadı.'});$('printBtn').addEventListener('click',()=>window.print());
+function scrollToResult(){
+  const resultPanel=document.querySelector('.results');
+  if(!resultPanel)return;
+  window.setTimeout(()=>{
+    const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    $('highlightCard').focus({preventScroll:true});
+  },120);
+}
+$('waterBillForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(calculate(true)){
+    scrollToResult();
+  }
+});document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));fieldIds.forEach(id=>{els[id].addEventListener('input',()=>{state.suppressSave=false;clearTimeout(els[id]._t);els[id]._t=setTimeout(()=>calculate(false),220)});els[id].addEventListener('blur',()=>{normalize(id);safeSave()})});$('prorateTiers').addEventListener('change',()=>calculate(false));$('resetBtn').addEventListener('click',clearAll);$('exampleBtn').addEventListener('click',()=>{
+  applyPreset(presets.family);
+  if(state.results){
+    scrollToResult();
+  }
+});document.querySelectorAll('#presetRow .chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#presetRow .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyPreset(presets[b.dataset.preset])}));$('copyBtn').addEventListener('click',async()=>{$('smartComment').textContent=await copyText(summaryText())?'Sonuç özeti panoya kopyalandı.':'Kopyalama başarısız oldu.'});$('shareBtn').addEventListener('click',async()=>{const data={title:'Su Faturası Hesaplama',text:`Tahmini su faturası: ${fmtTRY(state.results.total)}`,url:buildUrl()};if(navigator.share){try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}}$('smartComment').textContent=await copyText(data.url)?'Paylaşım bağlantısı panoya kopyalandı.':'Paylaşım bağlantısı kopyalanamadı.'});$('printBtn').addEventListener('click',()=>window.print());
 empty();const fromUrl=hydrateUrl();if(!fromUrl)safeLoad();if(fieldIds.some(id=>els[id].value.trim()))calculate(false);
 })();
 </script>
