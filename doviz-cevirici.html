@@ -197,15 +197,23 @@ function clearResult(note='Tutarı girip para birimlerini seçin.'){els.mainResu
 function recalc(showError=true){const amount=validateAmount(showError);if(amount===null||!hasUsableRates){clearResult(amount===null?'Geçerli bir tutar girin.':'Kur verileri henüz hazır değil.');return;}const from=els.from.value;const to=els.to.value;const fromRate=Number(rates[from]);const toRate=Number(rates[to]);if(!Number.isFinite(fromRate)||!Number.isFinite(toRate)||fromRate<=0||toRate<=0){clearResult('Seçilen parite için geçerli kur bulunamadı.');return;}const tryValue=amount*fromRate;const converted=tryValue/toRate;if(!Number.isFinite(converted)||converted<0){clearResult('Hesaplama sırasında geçersiz bir sonuç oluştu.');return;}const cross=fromRate/toRate;els.mainResult.textContent=`${formatNumber(converted,6)} ${to}`;els.resultNote.textContent=`${formatNumber(amount,6)} ${from} için hesaplanan referans dönüşüm sonucu.`;const rows=[['Çapraz kur',`1 ${from} = ${formatNumber(cross,8)} ${to}`],['Ters kur',`1 ${to} = ${formatNumber(1/cross,8)} ${from}`],['TRY karşılığı',`${formatNumber(tryValue,6)} TRY`],['Kur türü',rateMeta.rateType],['Kaynak',rateMeta.source],['Veri zamanı',formatDate(rateMeta.updatedAt)]];els.kpiList.replaceChildren(...rows.map(([label,value])=>{const row=document.createElement('div');row.className='kpi-row';const strong=document.createElement('strong');const span=document.createElement('span');strong.textContent=label;span.textContent=value;row.append(strong,span);return row;}));}
 function resultText(){return [`Hesapica Döviz Çevirici`,els.resultNote.textContent,els.mainResult.textContent,...Array.from(els.kpiList.querySelectorAll('.kpi-row')).map(row=>`${row.firstElementChild.textContent}: ${row.lastElementChild.textContent}`),location.href].join('\n');}
 async function copyText(text){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return;}const area=document.createElement('textarea');area.value=text;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const success=document.execCommand('copy');area.remove();if(!success)throw new Error('Kopyalama başarısız');}
-els.amount.addEventListener('input',()=>{els.amountField.classList.remove('has-error');recalc(false);});els.amount.addEventListener('blur',()=>{const value=validateAmount(true);if(value!==null)els.amount.value=formatAmountInput(value);});els.from.addEventListener('change',()=>recalc(false));els.to.addEventListener('change',()=>recalc(false));els.calcBtn.addEventListener('click',()=>{
+els.amount.addEventListener('input',()=>{els.amountField.classList.remove('has-error');recalc(false);});els.amount.addEventListener('blur',()=>{const value=validateAmount(true);if(value!==null)els.amount.value=formatAmountInput(value);});els.from.addEventListener('change',()=>recalc(false));els.to.addEventListener('change',()=>recalc(false));function scrollToResult(){
+  const resultArea=document.getElementById('resultArea');
+  if(!resultArea)return;
+  window.setTimeout(()=>{
+    const top=resultArea.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    resultArea.setAttribute('tabindex','-1');
+    resultArea.focus({preventScroll:true});
+  },120);
+}
+els.calcBtn.addEventListener('click',()=>{
   recalc(true);
   if(els.mainResult.textContent!=='—'){
-    requestAnimationFrame(()=>{
-      document.getElementById('resultArea')?.scrollIntoView({
-        behavior:'smooth',
-        block:'start'
-      });
-    });
+    scrollToResult();
   }
 });els.swapBtn.addEventListener('click',()=>{const current=els.from.value;els.from.value=els.to.value;els.to.value=current;recalc(false);});els.refreshBtn.addEventListener('click',()=>loadRates(true));els.sampleBtn.addEventListener('click',()=>{els.amount.value='250';if([...els.from.options].some(o=>o.value==='EUR'))els.from.value='EUR';if([...els.to.options].some(o=>o.value==='USD'))els.to.value='USD';els.amountField.classList.remove('has-error');recalc(false);});els.clearBtn.addEventListener('click',()=>{els.amount.value='';els.amountField.classList.remove('has-error');if([...els.from.options].some(o=>o.value==='USD'))els.from.value='USD';if([...els.to.options].some(o=>o.value==='TRY'))els.to.value='TRY';clearResult();els.amount.focus();showToast('Panel temizlendi');});els.copyBtn.addEventListener('click',async()=>{if(els.mainResult.textContent==='—'){showToast('Önce geçerli bir sonuç oluşturun');return;}try{await copyText(resultText());showToast('Sonuç kopyalandı');}catch(error){showToast('Kopyalama başarısız oldu');}});els.shareBtn.addEventListener('click',async()=>{if(els.mainResult.textContent==='—'){showToast('Önce geçerli bir sonuç oluşturun');return;}if(navigator.share){try{await navigator.share({title:'Hesapica Döviz Çevirici',text:resultText(),url:location.href});}catch(error){if(error?.name!=='AbortError')showToast('Paylaşım tamamlanamadı');}return;}try{await copyText(resultText());showToast('Paylaşım metni kopyalandı');}catch(error){showToast('Paylaşım desteklenmiyor');}});els.printBtn.addEventListener('click',()=>window.print());
 loadRates(false);
