@@ -146,7 +146,21 @@ form.addEventListener('submit',e=>{
     scrollToResult();
   }
 });form.addEventListener('input',scheduleCalculate);form.addEventListener('change',scheduleCalculate);
-$('#sampleBtn').addEventListener('click',()=>{$('#startDate').value='2018-03-12';$('#endDate').value='2026-08-04';$('#grossSalary').value='68000';$('#regularBenefits').value='4500';$('#terminationReason').value='employer';$('#includeNotice').checked=true;$('#noticeTaxRate').value='0.20';toggleNotice();saveInputs();calculate()});
+$('#sampleBtn').addEventListener('click',()=>{
+  $('#startDate').value='2018-03-12';
+  $('#endDate').value='2026-08-04';
+  $('#grossSalary').value='68000';
+  $('#regularBenefits').value='4500';
+  $('#terminationReason').value='employer';
+  $('#includeNotice').checked=true;
+  $('#noticeTaxRate').value='0.20';
+  toggleNotice();
+  saveInputs();
+  const result=calculate();
+  if(result){
+    scrollToResult();
+  }
+});
 $('#clearBtn').addEventListener('click',()=>{form.reset();$('#regularBenefits').value='0';toggleNotice();resetResult();setMessage('Alanlar temizlendi.','info');try{localStorage.removeItem('hesapica_kidem_2026')}catch(e){}});
 $('#copyBtn').addEventListener('click',async()=>{try{await copyText(shareText());showToast('Sonuç kopyalandı.')}catch(e){showToast('Kopyalama başarısız oldu.')}});
 $('#shareBtn').addEventListener('click',async()=>{const text=shareText();if(navigator.share){try{await navigator.share({title:'Kıdem Tazminatı Hesaplama 2026',text,url:location.href})}catch(e){if(e&&e.name!=='AbortError')showToast('Paylaşım başlatılamadı.')}return}try{await copyText(text);showToast('Paylaşım metni kopyalandı.')}catch(e){showToast('Paylaşım desteklenmiyor.')}});
