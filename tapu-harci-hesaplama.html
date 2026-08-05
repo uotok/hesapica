@@ -113,8 +113,73 @@ async function copyResult(){if(!state.results)return;try{await writeClipboard(re
 async function shareResult(){if(!state.results)return;const data={title:'Tapu Harcı Hesaplama',text:resultText(),url:buildShareUrl()};if(navigator.share){try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}}try{await writeClipboard(data.url);$('statusText').textContent='Paylaşım bağlantısı panoya kopyalandı.'}catch{$('statusText').textContent='Paylaşım bağlantısı kopyalanamadı.'}}
 function toggleCredit(){$('creditFields').classList.toggle('hide',!$('useCredit').checked);}
 function resetTool(){clearErrors();$('tapuForm').reset();$('includeCostsInCash').checked=true;$('buyerRate').value=formatInput(state.rateData.buyerRatePercent);$('sellerRate').value=formatInput(state.rateData.sellerRatePercent);toggleCredit();invalidate();['mainResult','baseValue','buyerTax','sellerTax','grandTotal','buyerTotal','sellerTotal','cashNeed'].forEach(id=>$(id).textContent='—');$('mainResultText').textContent='Alıcı ve satıcı harçlarının toplamı burada görünür.';$('statusText').textContent='Satış bedeli ve emlak vergisi değerini girerek hesaplamaya başlayın.';$('statusBadge').textContent='Veri bekleniyor';$('statusBadge').className='badge';$('breakdownBody').innerHTML='<tr><td colspan="4">Hesaplama bekleniyor.</td></tr>';$('scenarioBody').innerHTML='<tr><td colspan="4">Hesaplama bekleniyor.</td></tr>';try{localStorage.removeItem(STORAGE_KEY)}catch{}}
-$('tapuForm').addEventListener('submit',e=>{e.preventDefault();const i=getInputs();if(!validate(i,true)){invalidate();return}try{const r=compute(i);state.results=r;state.isCalculated=true;render(i,r);saveState();$('resultsPanel').scrollIntoView({behavior:'smooth',block:'start'});}catch{$('validationBox').textContent='Hesaplama sırasında geçersiz bir sonuç oluştu.';$('validationBox').classList.remove('hide');invalidate();}});
-fieldIds.forEach(id=>{$(id).addEventListener('input',()=>{invalidate();saveState()});$(id).addEventListener('blur',()=>{const n=parseFlexibleNumber($(id).value);if(n!==null)$(id).value=formatInput(n,id.includes('Rate')?2:2)})});['propertyType','revolvingPayer','paymentMode','includeCostsInCash'].forEach(id=>$(id).addEventListener('change',()=>{invalidate();saveState()}));$('useCredit').addEventListener('change',()=>{toggleCredit();invalidate();saveState()});$('exampleBtn').addEventListener('click',()=>{applyData({salePrice:3500000,taxValue:1800000,buyerRate:state.rateData.buyerRatePercent,sellerRate:state.rateData.sellerRatePercent,revolvingFee:5000,revolvingPayer:'buyer',otherBuyerCost:7500,otherSellerCost:0,paymentMode:'legal',useCredit:false,includeCostsInCash:true,creditAmount:0,propertyType:'konut'});invalidate();saveState()});$('resetBtn').addEventListener('click',resetTool);$('copyBtn').addEventListener('click',copyResult);$('shareBtn').addEventListener('click',shareResult);$('printBtn').addEventListener('click',()=>window.print());
+function scrollToResult(){
+  const resultPanel=$('resultsPanel');
+  if(!resultPanel)return;
+  window.setTimeout(()=>{
+    const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    resultPanel.setAttribute('tabindex','-1');
+    resultPanel.focus({preventScroll:true});
+  },120);
+}
+$('tapuForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const i=getInputs();
+  if(!validate(i,true)){
+    invalidate();
+    return;
+  }
+  try{
+    const r=compute(i);
+    state.results=r;
+    state.isCalculated=true;
+    render(i,r);
+    saveState();
+    scrollToResult();
+  }catch{
+    $('validationBox').textContent='Hesaplama sırasında geçersiz bir sonuç oluştu.';
+    $('validationBox').classList.remove('hide');
+    invalidate();
+  }
+});
+fieldIds.forEach(id=>{$(id).addEventListener('input',()=>{invalidate();saveState()});$(id).addEventListener('blur',()=>{const n=parseFlexibleNumber($(id).value);if(n!==null)$(id).value=formatInput(n,id.includes('Rate')?2:2)})});['propertyType','revolvingPayer','paymentMode','includeCostsInCash'].forEach(id=>$(id).addEventListener('change',()=>{invalidate();saveState()}));$('useCredit').addEventListener('change',()=>{toggleCredit();invalidate();saveState()});$('exampleBtn').addEventListener('click',()=>{
+  applyData({
+    salePrice:3500000,
+    taxValue:1800000,
+    buyerRate:state.rateData.buyerRatePercent,
+    sellerRate:state.rateData.sellerRatePercent,
+    revolvingFee:5000,
+    revolvingPayer:'buyer',
+    otherBuyerCost:7500,
+    otherSellerCost:0,
+    paymentMode:'legal',
+    useCredit:false,
+    includeCostsInCash:true,
+    creditAmount:0,
+    propertyType:'konut'
+  });
+  const i=getInputs();
+  if(!validate(i,true)){
+    invalidate();
+    return;
+  }
+  try{
+    const r=compute(i);
+    state.results=r;
+    state.isCalculated=true;
+    render(i,r);
+    saveState();
+    scrollToResult();
+  }catch{
+    $('validationBox').textContent='Örnek veri hesaplanırken geçersiz bir sonuç oluştu.';
+    $('validationBox').classList.remove('hide');
+    invalidate();
+  }
+});$('resetBtn').addEventListener('click',resetTool);$('copyBtn').addEventListener('click',copyResult);$('shareBtn').addEventListener('click',shareResult);$('printBtn').addEventListener('click',()=>window.print());
 (()=>{if(!$('buyerRate').value)$('buyerRate').value=formatInput(state.rateData.buyerRatePercent);if(!$('sellerRate').value)$('sellerRate').value=formatInput(state.rateData.sellerRatePercent);const fromQuery=loadQuery();if(!fromQuery)loadState();const i=getInputs();if(fromQuery&&validate(i,false)){state.results=compute(i);state.isCalculated=true;render(i,state.results)}})();
 </script>
 </body></html>
