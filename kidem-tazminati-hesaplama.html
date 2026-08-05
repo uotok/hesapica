@@ -125,7 +125,27 @@ function saveInputs(){try{const data={startDate:$('#startDate').value,endDate:$(
 function loadInputs(){try{const raw=localStorage.getItem('hesapica_kidem_2026');if(!raw)return;const data=JSON.parse(raw);if(!data||Date.now()-Number(data.savedAt)>1000*60*60*24*90){localStorage.removeItem('hesapica_kidem_2026');return}['startDate','endDate','grossSalary','regularBenefits','terminationReason','noticeTaxRate'].forEach(id=>{if(data[id]!==undefined)$('#'+id).value=data[id]});$('#includeNotice').checked=Boolean(data.includeNotice)}catch(e){try{localStorage.removeItem('hesapica_kidem_2026')}catch(_){} }}
 let debounceTimer;function scheduleCalculate(){clearTimeout(debounceTimer);debounceTimer=setTimeout(()=>{toggleNotice();saveInputs();calculate()},180)}
 function toggleNotice(){$('#noticeTaxWrap').classList.toggle('is-visible',$('#includeNotice').checked)}
-form.addEventListener('submit',e=>{e.preventDefault();saveInputs();calculate()});form.addEventListener('input',scheduleCalculate);form.addEventListener('change',scheduleCalculate);
+function scrollToResult(){
+  const resultPanel=document.querySelector('.results');
+  if(!resultPanel)return;
+  window.setTimeout(()=>{
+    const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    resultPanel.setAttribute('tabindex','-1');
+    resultPanel.focus({preventScroll:true});
+  },120);
+}
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  saveInputs();
+  const result=calculate();
+  if(result){
+    scrollToResult();
+  }
+});form.addEventListener('input',scheduleCalculate);form.addEventListener('change',scheduleCalculate);
 $('#sampleBtn').addEventListener('click',()=>{$('#startDate').value='2018-03-12';$('#endDate').value='2026-08-04';$('#grossSalary').value='68000';$('#regularBenefits').value='4500';$('#terminationReason').value='employer';$('#includeNotice').checked=true;$('#noticeTaxRate').value='0.20';toggleNotice();saveInputs();calculate()});
 $('#clearBtn').addEventListener('click',()=>{form.reset();$('#regularBenefits').value='0';toggleNotice();resetResult();setMessage('Alanlar temizlendi.','info');try{localStorage.removeItem('hesapica_kidem_2026')}catch(e){}});
 $('#copyBtn').addEventListener('click',async()=>{try{await copyText(shareText());showToast('Sonuç kopyalandı.')}catch(e){showToast('Kopyalama başarısız oldu.')}});
