@@ -29,9 +29,9 @@
 <style>
 :root{--p:#4f46e5;--p2:#7c3aed;--bg:#f6f8fc;--t:#172033;--m:#64748b;--l:#e5e7eb;--sh:0 16px 38px rgba(79,70,229,.10);--good:#166534;--warn:#92400e;--bad:#b91c1c}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,#f6f8fc);color:var(--t);line-height:1.65}a{color:#4338ca;text-decoration:none}.container{width:min(1140px,calc(100% - 28px));margin:auto}.top{padding:16px 0 8px}.crumb{display:flex;gap:8px;flex-wrap:wrap;color:var(--m);font-size:14px}.hero{padding:clamp(22px,4vw,34px);border:1px solid #dbe4ff;border-radius:26px;background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));box-shadow:var(--sh)}h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:0 0 8px}.hero p{max-width:850px;margin:0;color:#374151;font-size:17px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;color:#4338ca;font-weight:800;font-size:13px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:20px;margin-top:20px;align-items:start}.card{background:#fff;border:1px solid var(--l);border-radius:20px;box-shadow:var(--sh);padding:22px}.card h2{margin:0 0 10px;color:#312e81;font-size:24px}.note{margin:0 0 16px;color:#4b5563}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14px}.help{display:block;margin-top:6px;color:var(--m);font-size:12.5px}input,select{width:100%;min-height:52px;border:1px solid #d9def0;border-radius:14px;padding:10px 14px;font-size:16px;background:#fff;outline:none}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}input[aria-invalid=true],select[aria-invalid=true]{border-color:#dc2626}.mode{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.mode button{border:1px solid #dbe4ff;background:#f8fafc;color:#374151;border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer}.mode button.active{background:#eef2ff;color:#4338ca}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:14px;padding:12px 15px;font-weight:800;cursor:pointer}.primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}.soft{background:#eef2ff;color:#4338ca}.ghost{background:#f8fafc;border:1px solid var(--l);color:#374151}.error{min-height:22px;margin-top:10px;color:var(--bad);font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:20px;margin-top:20px;align-items:start}.card{background:#fff;border:1px solid var(--l);border-radius:20px;box-shadow:var(--sh);padding:22px}.card h2{margin:0 0 10px;color:#312e81;font-size:24px}.note{margin:0 0 17px;color:#374151;font-size:16px;line-height:1.65}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-weight:800;color:#273244;font-size:15px;line-height:1.45}.help{display:block;margin-top:7px;color:#526070;font-size:14px;line-height:1.6}input,select{width:100%;min-height:54px;border:1px solid #d9def0;border-radius:14px;padding:11px 14px;font-size:17px;font-weight:600;color:var(--t);background:#fff;outline:none}input::placeholder{color:#7b8797;opacity:1}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}input[aria-invalid=true],select[aria-invalid=true]{border-color:#dc2626}.mode{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.mode button{border:1px solid #dbe4ff;background:#f8fafc;color:#374151;border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer}.mode button.active{background:#eef2ff;color:#4338ca}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:14px;padding:12px 15px;font-weight:800;cursor:pointer}.primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}.soft{background:#eef2ff;color:#4338ca}.ghost{background:#f8fafc;border:1px solid var(--l);color:#374151}.error{min-height:22px;margin-top:10px;color:var(--bad);font-weight:700}
 .results{position:sticky;top:14px}.mainval{font-size:clamp(32px,5vw,42px);font-weight:900;letter-spacing:-.03em;overflow-wrap:anywhere}.status{margin:12px 0;padding:11px 12px;border-radius:12px;font-weight:800;background:#f8fafc}.status.good{background:#f0fdf4;color:var(--good)}.status.warn{background:#fffbeb;color:var(--warn)}.kpis{display:grid;gap:10px}.row{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border:1px solid var(--l);border-radius:12px;background:#fcfcff}.row span{text-align:right}.content{margin-top:18px}.content h3{color:#312e81}.formula{padding:14px;border:1px solid var(--l);border-radius:14px;background:#f8fafc;font-weight:800}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:620px}th,td{padding:11px;border:1px solid var(--l);text-align:left}th{background:#f8fafc;color:#312e81}.faq details{padding:12px 14px;border:1px solid var(--l);border-radius:14px}.faq details+details{margin-top:10px}.faq summary{font-weight:800;color:#312e81;cursor:pointer}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.related a{padding:17px;border-radius:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff}.related span{display:block;color:#ede9fe;font-size:14px;margin-top:4px}.hidden{display:none!important}.hc-ad-slot{display:none;margin:20px 0}.hc-ad-slot.hc-ad-loaded{display:flex;padding:12px;background:#fff;border:1px solid var(--l);border-radius:16px}.toast{position:fixed;right:18px;bottom:18px;background:#111827;color:#fff;padding:12px 16px;border-radius:12px;opacity:0;transform:translateY(10px);transition:.2s}.toast.show{opacity:1;transform:none}
-@media(max-width:980px){.layout{grid-template-columns:1fr}.results{position:static}.related{grid-template-columns:1fr 1fr}}@media(max-width:700px){.grid,.related{grid-template-columns:1fr}.full{grid-column:auto}.actions .btn{flex:1 1 calc(50% - 10px)}.row{display:grid}.row span{text-align:left}}@media(max-width:380px){.actions .btn{flex-basis:100%}}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.results{position:static}.related{grid-template-columns:1fr 1fr}}@media(max-width:700px){.grid,.related{grid-template-columns:1fr}.full{grid-column:auto}.actions .btn{flex:1 1 calc(50% - 10px)}.row{display:grid}.row span{text-align:left}.note{font-size:15.5px;line-height:1.65}.help{font-size:14px;line-height:1.65}label{font-size:15px}input,select{font-size:17px}}@media(max-width:380px){.actions .btn{flex-basis:100%}}
 @media print{.top,.actions,.mode,.hc-ad-slot,.related{display:none!important}.layout{grid-template-columns:1fr}.results{position:static}.card,.hero{box-shadow:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gelir Vergisi Hesaplama 2026","url":"https://hesapica.com/gelir-vergisi-hesaplama","inLanguage":"tr-TR","dateModified":"2026-08-04","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}</script>
@@ -97,7 +97,41 @@ function toast(t){els.toast.textContent=t;els.toast.classList.add('show');clearT
 function save(){try{localStorage.setItem(KEY,JSON.stringify({at:Date.now(),mode,base:els.base.value,type:els.type.value,gross:els.gross.value,months:els.months.value,pre:els.pre.value}))}catch{}}
 function restore(){try{const d=JSON.parse(localStorage.getItem(KEY));if(!d||Date.now()-d.at>MAXAGE){localStorage.removeItem(KEY);return}mode=d.mode||'base';els.base.value=d.base||'';els.type.value=d.type||'salary';els.gross.value=d.gross||'';els.months.value=d.months||12;els.pre.value=d.pre||0;switchMode(mode);if((mode==='base'&&els.base.value)||(mode==='salary'&&els.gross.value))calc(true)}catch{try{localStorage.removeItem(KEY)}catch{}}}
 function switchMode(m){mode=m;$('#baseFields').classList.toggle('hidden',m!=='base');$('#salaryFields').classList.toggle('hidden',m!=='salary');$('#modeBase').classList.toggle('active',m==='base');$('#modeSalary').classList.toggle('active',m==='salary');last=null;els.main.textContent='—';els.status.className='status';els.status.textContent='Bilgileri doldurup hesaplayın.';setRows([]);renderBreak([])}
-$('#modeBase').onclick=()=>switchMode('base');$('#modeSalary').onclick=()=>switchMode('salary');$('#calc').onclick=()=>calc();$('#sample').onclick=()=>{if(mode==='base'){els.base.value=400000;els.type.value='salary'}else{els.gross.value=100000;els.months.value=12}els.pre.value=0;calc()};$('#clear').onclick=()=>{els.base.value='';els.gross.value='';els.months.value=12;els.pre.value=0;last=null;switchMode(mode);try{localStorage.removeItem(KEY)}catch{}toast('Veriler temizlendi.')};$('#copy').onclick=async()=>{try{await copy(text());toast('Sonuç kopyalandı.')}catch{toast('Kopyalama başarısız.')}};$('#share').onclick=async()=>{const t=text();if(navigator.share){try{await navigator.share({title:document.title,text:t,url:location.href});return}catch(e){if(e.name==='AbortError')return}}try{await copy(t);toast('Paylaşım metni kopyalandı.')}catch{toast('Paylaşım başarısız.')}};$('#print').onclick=()=>window.print();restore();
+function scrollToResult(){
+  const resultPanel=document.querySelector('.results');
+  if(!resultPanel)return;
+  window.setTimeout(()=>{
+    const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    resultPanel.setAttribute('tabindex','-1');
+    resultPanel.focus({preventScroll:true});
+  },120);
+}
+$('#modeBase').onclick=()=>switchMode('base');
+$('#modeSalary').onclick=()=>switchMode('salary');
+$('#calc').onclick=()=>{
+  const result=calc();
+  if(result){
+    scrollToResult();
+  }
+};
+$('#sample').onclick=()=>{
+  if(mode==='base'){
+    els.base.value=400000;
+    els.type.value='salary';
+  }else{
+    els.gross.value=100000;
+    els.months.value=12;
+  }
+  els.pre.value=0;
+  const result=calc();
+  if(result){
+    scrollToResult();
+  }
+};$('#clear').onclick=()=>{els.base.value='';els.gross.value='';els.months.value=12;els.pre.value=0;last=null;switchMode(mode);try{localStorage.removeItem(KEY)}catch{}toast('Veriler temizlendi.')};$('#copy').onclick=async()=>{try{await copy(text());toast('Sonuç kopyalandı.')}catch{toast('Kopyalama başarısız.')}};$('#share').onclick=async()=>{const t=text();if(navigator.share){try{await navigator.share({title:document.title,text:t,url:location.href});return}catch(e){if(e.name==='AbortError')return}}try{await copy(t);toast('Paylaşım metni kopyalandı.')}catch{toast('Paylaşım başarısız.')}};$('#print').onclick=()=>window.print();restore();
 })();
 </script>
 <script src="ads-slot-manager.js"></script>
