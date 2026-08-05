@@ -122,9 +122,48 @@ function buildShareUrl(){const u=new URL(PAGE_URL);const map={housePrice:'hp',pu
 function hydrateQuery(){const p=new URLSearchParams(location.search);const map={hp:'housePrice',pc:'purchaseCosts',mr:'monthlyRent',vr:'vacancyRate',oc:'annualOperatingCosts',at:'annualTax',rg:'rentGrowth',cg:'costGrowth',pg:'propertyGrowth',inf:'inflation',ty:'targetYield'};let any=false;Object.entries(map).forEach(([k,id])=>{const v=p.get(k);if(v!==null&&v.length<50&&parseNumber(v)!=null){$(id).value=v;formatInput($(id));any=true}});return any}
 async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return true}}catch(e){}try{const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();return ok}catch(e){return false}}
 function resultText(){const r=state.results;return['Ev Amortisman Hesaplama',`Toplam yatırım: ${formatCurrency(r.totalInvestment)}`,`Net amortisman: ${formatYears(r.netPayback)}`,`Brüt kira çarpanı: ${formatYears(r.grossPayback)}`,`Gider sonrası yıllık kira: ${formatCurrency(r.y1.net)}`,`Gider sonrası kira getirisi: ${formatPercent(r.netYield)}`,`Dinamik geri dönüş: ${r.dynamicYear==null?'100 yılda oluşmuyor':formatYears(r.dynamicYear)}`,buildShareUrl()].join('\n')}
-$('calcForm').addEventListener('submit',e=>{e.preventDefault();if(calculate(true)){$('highlight').scrollIntoView({behavior:'smooth',block:'start'})}});
+function scrollToResult(){
+  const resultPanel=document.querySelector('.results');
+  if(!resultPanel)return;
+  window.setTimeout(()=>{
+    const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    $('highlight').setAttribute('tabindex','-1');
+    $('highlight').focus({preventScroll:true});
+  },120);
+}
+$('calcForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(calculate(true)){
+    scrollToResult();
+  }
+});
 IDS.forEach(id=>{$(id).addEventListener('input',()=>{clearResults();validate(getInputs(),false);saveState()});$(id).addEventListener('blur',()=>formatInput($(id)))});
-$('exampleBtn').addEventListener('click',()=>{const ex={housePrice:3500000,purchaseCosts:175000,monthlyRent:22000,vacancyRate:5,annualOperatingCosts:35000,annualTax:0,rentGrowth:20,costGrowth:20,propertyGrowth:15,inflation:20,targetYield:6};Object.entries(ex).forEach(([id,v])=>{$(id).value=String(v);formatInput($(id))});calculate(true)});
+$('exampleBtn').addEventListener('click',()=>{
+  const ex={
+    housePrice:3500000,
+    purchaseCosts:175000,
+    monthlyRent:22000,
+    vacancyRate:5,
+    annualOperatingCosts:35000,
+    annualTax:0,
+    rentGrowth:20,
+    costGrowth:20,
+    propertyGrowth:15,
+    inflation:20,
+    targetYield:6
+  };
+  Object.entries(ex).forEach(([id,v])=>{
+    $(id).value=String(v);
+    formatInput($(id));
+  });
+  if(calculate(true)){
+    scrollToResult();
+  }
+});
 $('resetBtn').addEventListener('click',()=>{IDS.forEach(id=>$(id).value='');validate(getInputs(),false);clearResults();try{localStorage.removeItem(STORAGE_KEY)}catch(e){}showNotice('Tüm veriler temizlendi.')});
 $('copyBtn').addEventListener('click',async()=>{if(!state.results&&!calculate(true)){showNotice('Önce geçerli bir hesaplama yap.');return}showNotice(await copyText(resultText())?'Sonuç panoya kopyalandı.':'Kopyalama başarısız oldu.')});
 $('shareBtn').addEventListener('click',async()=>{if(!state.results&&!calculate(true)){showNotice('Önce geçerli bir hesaplama yap.');return}const data={title:'Ev Amortisman Hesaplama',text:resultText(),url:buildShareUrl()};if(navigator.share){try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}}showNotice(await copyText(data.url)?'Paylaşım bağlantısı panoya kopyalandı.':'Paylaşım bağlantısı kopyalanamadı.')});
