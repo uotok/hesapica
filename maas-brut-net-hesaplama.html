@@ -8,9 +8,6 @@
 <meta name="description" content="Brüt net maaşını anında hesapla; kesintileri, vergi etkisini ve net geliri öğren. Zam planını güçlendir, maaşını doğru analiz et!"/>
 <meta content="maaş ve gelir hesaplama, maaş brüt net hesaplama, netten brüte hesaplama, maaş zam hesaplama, saatlik ücret hesaplama, bordro hesaplama" name="keywords"/>
 <link href="https://hesapica.com/maas-brut-net-hesaplama" rel="canonical"/>
-<link rel="alternate" hreflang="tr" href="https://hesapica.com/maas-brut-net-hesaplama" />
-<link rel="alternate" hreflang="en" href="https://hesapica.com/en/salary-calculator" />
-<link rel="alternate" hreflang="x-default" href="https://hesapica.com/maas-brut-net-hesaplama" />
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
 <link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
@@ -25,36 +22,7 @@
   gtag('config', 'G-6BNBXVN9EW');
 </script>
 
-<script>
-const parseTR = (val) => {
-  if(val == null) return null;
-  let s = String(val).trim();
-  if(!s) return null;
-
-  s = s.replace(/\s+/g,'');
-
-  if(s.includes('.') && !s.includes(',')){
-    s = s.replace(/\./g,'');
-  }
-
-  if(s.includes(',') && s.includes('.')){
-    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      s = s.replace(/\./g,'').replace(',', '.');
-    } else {
-      s = s.replace(/,/g,'');
-    }
-  } else if(s.includes(',')) {
-    s = s.replace(',', '.');
-  }
-
-  s = s.replace(/[^0-9.\-]/g,'');
-  const n = Number(s);
-  if(n === 0 && s !== "0") return null;
-  return Number.isFinite(n) ? n : null;
-};
-</script>
 <meta content="#4f46e5" name="theme-color"/>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 <meta content="website" property="og:type"/>
 <meta content="Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica" property="og:title"/>
 <meta content="Maaş ve gelir hesaplama merkezi: brütten nete, netten brüte, maaş zammı ve saatlik ücret analizini tek sayfada gör. Bordro etkisi, reel zam, saatlik kazanç ve yorum katmanı birlikte çalışır." property="og:description"/>
@@ -151,7 +119,7 @@ const parseTR = (val) => {
       font-size:15px;
       margin:18px 0 24px;
     }
-    .info-note strong,.scope-note strong{color:#312e81}
+    .info-note strong,.scope-note strong{color:#312e81}.official-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.official-links a{display:inline-flex;padding:9px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.18);color:#4338ca;font-size:13px;font-weight:800}
     .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
     .field{display:flex;flex-direction:column;gap:8px}
     .field.full{grid-column:1/-1}
@@ -232,17 +200,17 @@ const parseTR = (val) => {
     .breakdown-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:16px;background:#fff;border:1px solid var(--border)}
     .breakdown-item span:first-child{color:#667085}
     .breakdown-item span:last-child{font-weight:900;color:#334155}
-    .result-area{margin-top:24px;display:grid;gap:22px}
+    .result-area{margin-top:24px;display:grid;gap:22px;min-width:0}.result-area>*{min-width:0}
     .summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     .summary-box{background:#fff;border:1px solid var(--border);border-radius:22px;padding:20px}
     .summary-box strong{display:block;font-size:28px;line-height:1.1;letter-spacing:-.03em;margin-top:8px}
     .summary-box small{display:block;color:#4338ca;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
     .summary-box p{margin:10px 0 0;color:#667085;font-size:14px}
-    .result-table-card,.faq-card,.related-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+    .result-table-card,.faq-card,.related-card{min-width:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
     .result-table-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
     .table-meta{display:flex;flex-wrap:wrap;gap:10px}
     .table-meta .tag{padding:9px 12px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:13px;font-weight:800}
-    .details-table-wrap{overflow:auto;border:1px solid var(--border);border-radius:22px}
+    .details-table-wrap{overflow:auto;border:1px solid var(--border);border-radius:22px;max-width:100%;min-width:0}
     .details-table{min-width:1200px}
     .details-table th{position:sticky;top:0;z-index:1}
     .empty-state{padding:24px;border-radius:22px;background:#f8faff;border:1px dashed rgba(79,70,229,.24);color:#667085;font-size:15px}
@@ -309,6 +277,21 @@ const parseTR = (val) => {
 @media (max-width:1100px){.family-grid{grid-template-columns:1fr}.results-panel{position:static}}
 @media (max-width:760px){.scenario-grid-lite,.mini-kpis{grid-template-columns:1fr}.family-switcher .segmented{flex-direction:column}}
 
+
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.results-panel .hc-ad-slot{margin:0 0 18px}
+@media print{
+  body{background:#fff}
+  .topbar,.family-switcher,.action-bar,.flow-hint,.hc-ad-slot,.related-card,.hero-chips,.official-links{display:none!important}
+  .container{max-width:none;padding:0}
+  .hero,.panel,.result-table-card,.faq-card,.summary-box,.analysis-card,.mini-card,.score-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}
+  .layout,.family-grid,.summary-grid,.analysis-grid,.mini-grid{grid-template-columns:1fr!important}
+  .results-panel{position:static!important}
+  #zamFamilySection[hidden],#saatlikFamilySection[hidden]{display:none!important}
+  .details-table-wrap,.month-table-wrap{overflow:visible!important}
+  .details-table{min-width:0!important;font-size:11px}
+  .details-table th,.details-table td{padding:6px 5px}
+}
 </style>
 <meta content="index,follow" name="robots"/>
 
@@ -322,7 +305,7 @@ const parseTR = (val) => {
     "name": "Maaş Brüt Net Hesaplama",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
-    "url": "https://hesapica.com/maas-brut-net-hesaplama.html",
+    "url": "https://hesapica.com/maas-brut-net-hesaplama",
     "inLanguage": "tr-TR"
   }
   </script>
@@ -479,33 +462,16 @@ const parseTR = (val) => {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}
 .hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
 .hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
 @media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
 </style>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<style id="hc-related-tools-style">
-.related-tools{margin-top:28px;padding:24px;border:1px solid #e5e7eb;border-radius:22px;background:#fff}
-.related-tools h2{margin:0 0 14px;color:#312e81;font-size:24px;letter-spacing:-.02em}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.related-card{display:block;padding:16px;border:1px solid #dbe4ff;border-radius:16px;background:linear-gradient(180deg,#fff,#f8faff);text-decoration:none}
-.related-card h3{margin:0 0 8px;font-size:17px;color:#1f2937}
-.related-card p{margin:0;color:#4b5563;font-size:14px;line-height:1.55}
-.related-home-link{display:inline-flex;margin-top:14px;font-weight:800;color:#4338ca}
-@media (max-width:720px){.related-tools{padding:18px}.related-grid{grid-template-columns:1fr}}
-</style>
-<script id="hc-financialproduct-schema" type="application/ld+json">
-{"@context": "https://schema.org", "@type": ["WebApplication", "FinancialProduct"], "name": "Maaş ve Gelir Hesaplama", "description": "Brüt net maaşını anında hesapla; kesintileri, vergi etkisini ve net geliri öğren. Zam planını güçlendir, maaşını doğru analiz et!", "applicationCategory": "FinanceTool", "url": "https://hesapica.com/maas-brut-net-hesaplama", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TRY"}, "featureList": ["Maaş ve Gelir Hesaplama sonucu", "Hızlı hesaplama", "Senaryo karşılaştırması", "Mobil uyumlu kullanım"]}
-</script>
 </head>
 <body>
+<noscript><div style="margin:16px auto;max-width:1240px;padding:14px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu hesaplama aracı doğru çalışmak için JavaScript gerektirir. Lütfen JavaScript’i etkinleştirip sayfayı yeniden yükleyin.</div></noscript>
 
 <!-- HC_AD_SLOT:top -->
 <div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
@@ -518,19 +484,7 @@ const parseTR = (val) => {
 </div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-<main>
-
-<!-- HC_AD_SLOT:result -->
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3982292851"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
- class="container">
+<main class="container">
 <nav aria-label="Breadcrumb" class="breadcrumb">
 <a href="/">Ana Sayfa</a>
 <span>/</span>
@@ -558,11 +512,11 @@ const parseTR = (val) => {
 <div class="hero-metric">
 <small>Kapsam</small>
 <strong>Bordro + zam + saatlik ücret akışı</strong>
-<span>Bordro modülü 4A özel sektör mantığıyla çalışır; zam ve saatlik modları hızlı karar desteği için ayrı akış sunar.</span>
+<span>Bordro modülü 4A özel sektör mantığıyla çalışır; zam ve saatlik modları ayrı analiz akışları sunar.</span>
 </div>
 <div class="hero-metric">
 <small>Resmi omurga</small>
-<strong>Tek sayfada üç ayrı karar akışı</strong>
+<strong>Tek sayfada üç ayrı hesap akışı</strong>
 <span>Brüt-net bordro, reel zam ve saatlik kazanç aynı merkeze bağlandı; böylece aynı kullanıcı niyeti parçalanmadan ilerler.</span>
 </div>
 </div>
@@ -620,9 +574,23 @@ const parseTR = (val) => {
 <select id="incentiveSelect"></select>
 <div class="hint" id="incentiveHint">Bu seçim çalışan netini değiştirmez. İşveren SGK payı ve toplam maliyeti etkiler.</div>
 </div>
+<div class="field">
+<label for="openingTaxBase">Dönem başı kümülatif vergi matrahı (TL)</label>
+<input autocomplete="off" data-format="money" id="openingTaxBase" inputmode="decimal" placeholder="Yeni başlangıç için 0" type="text"/>
+<div class="hint">Ocak’tan veya yeni işverende sıfırdan başlıyorsan 0 bırak. Aynı işverende yıl ortasından devam ediyorsan önceki ay sonu kümülatif matrahı gir.</div>
+<div class="error-text">0 veya daha büyük geçerli bir kümülatif matrah gir.</div>
+</div>
+<div class="field">
+<label for="wageSupportSelect">Asgari ücret desteği</label>
+<select id="wageSupportSelect">
+<option value="0">Dahil etme</option>
+<option value="1">Uygunluk varsayımıyla dahil et</option>
+</select>
+<div class="hint" id="wageSupportHint">Destek, yalnız SGK şartlarını sağlayan işyerlerinde uygulanır; varsayılan hesap desteği içermez.</div>
+</div>
 </div>
 <div class="info-note">
-<strong>Resmi omurgaya uygun açıklama:</strong> Gelir vergisi kesintisi, seçilen yılın ücret tarifesine göre kümülatif ilerler. Asgari ücret istisnası ve damga vergisi istisnası ayrıca düşülür. Böylece özellikle yıl ortasında artan vergi baskısı daha gerçekçi görünür.
+<strong>Resmî omurga ve kapsam:</strong> Gelir vergisi seçilen yılın ücret tarifesine göre kümülatif ilerler; asgari ücret gelir ve damga vergisi istisnaları takvim ayına göre uygulanır. Bu standart 4A özel sektör bordrosudur. Yemek/yol gibi prime veya vergiye özel ödemeler, Ar-Ge/teknopark/nitelikli hizmet merkezi gibi özel istisnalar ve diğer teşvikler ayrıca modellenmez.
           </div>
 <div id="quickModeSection">
 <h3 class="section-title">Hızlı hesap girişi</h3>
@@ -643,7 +611,7 @@ const parseTR = (val) => {
 <div class="field">
 <label for="quickStartMonth">Başlangıç ayı</label>
 <select id="quickStartMonth"></select>
-<div class="hint">Kümülatif vergi hesabı seçtiğin aydan başlar.</div>
+<div class="hint">Seçilen ay takvim ayını belirler. Önceki kümülatif matrahın varsa yukarıdaki alana ayrıca gir.</div>
 </div>
 <div class="field">
 <label for="quickMonthCount">Kaç ay hesaplanacak?</label>
@@ -688,6 +656,12 @@ const parseTR = (val) => {
 </div>
 </section>
 <aside class="panel results-panel highlight-target" id="resultArea">
+<!-- HC_AD_SLOT:result -->
+<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
 <div class="result-card">
 <span class="result-label" id="mainResultLabel">Ana sonuç</span>
 <div class="result-value" id="mainResultValue">—</div>
@@ -708,17 +682,17 @@ const parseTR = (val) => {
 <div class="score-card">
 <div class="score-top">
 <div>
-<span class="result-label" style="margin-bottom:6px">Bordro görünüm skoru</span>
+<span class="result-label" style="margin-bottom:6px">Net / brüt oranı</span>
 <div class="score-value" id="scoreValue">—</div>
 </div>
-<span class="pill" id="scorePill">Analiz bekliyor</span>
+<span class="pill" id="scorePill">Oransal görünüm</span>
 </div>
 <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
 <div class="breakdown-list">
-<div class="breakdown-item"><span>Net verim</span><span id="scoreNetEfficiency">—</span></div>
-<div class="breakdown-item"><span>Vergi baskısı</span><span id="scoreTaxPressure">—</span></div>
-<div class="breakdown-item"><span>İşveren maliyet farkı</span><span id="scoreCostGap">—</span></div>
-<div class="breakdown-item"><span>Teşvik / indirim etkisi</span><span id="scoreIncentiveImpact">—</span></div>
+<div class="breakdown-item"><span>Net / brüt</span><span id="scoreNetEfficiency">—</span></div>
+<div class="breakdown-item"><span>Gelir + damga / brüt</span><span id="scoreTaxPressure">—</span></div>
+<div class="breakdown-item"><span>Net / işveren maliyeti farkı</span><span id="scoreCostGap">—</span></div>
+<div class="breakdown-item"><span>SGK indirim + destek etkisi</span><span id="scoreIncentiveImpact">—</span></div>
 </div>
 </div>
 </aside>
@@ -743,9 +717,9 @@ const parseTR = (val) => {
 </div>
 <div class="analysis-grid">
 <div class="analysis-card">
-<small>Teşvik etkisi</small>
+<small>İşveren indirim / destek etkisi</small>
 <strong id="analysisIncentive">—</strong>
-<p id="analysisIncentiveDesc">İşveren maliyetine etkisi hesaplandığında burada görünür.</p>
+<p id="analysisIncentiveDesc">Seçilen SGK indirimi ve varsa asgari ücret desteğinin toplam etkisi burada görünür.</p>
 </div>
 <div class="analysis-card">
 <small>Engellilik indirimi etkisi</small>
@@ -766,7 +740,7 @@ const parseTR = (val) => {
 </div>
 </div>
 <div class="details-table-wrap">
-<table aria-describedby="tableDescription" class="details-table">
+<table aria-describedby="tableDescription" class="details-table" style="min-width:1320px">
 <thead>
 <tr>
 <th>Ay</th>
@@ -778,34 +752,24 @@ const parseTR = (val) => {
 <th>Damga Vergisi</th>
 <th>İşveren SGK</th>
 <th>İşveren İşsizlik</th>
+<th>Asgari Ücret Desteği</th>
 <th>Toplam Maliyet</th>
 <th>Kümülatif Matrah</th>
 <th>Vergi Dilimi</th>
 </tr>
 </thead>
 <tbody id="detailsBody">
-<tr><td colspan="12"><div class="empty-state">Henüz hesap yapılmadı. Sol panelden verileri girip Sonucu Gör butonuna bas.</div></td></tr>
+<tr><td colspan="13"><div class="empty-state">Henüz hesap yapılmadı. Sol panelden verileri girip Sonucu Gör butonuna bas.</div></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="faq-card">
-<section id="hc-related-tools" class="related-tools">
-  <h2>İlgili Hesaplama Araçları</h2>
-  <div class="related-grid">
-<a href="/faiz-hesaplama" class="related-card"><h3>Faiz Hesaplama</h3><p>Basit, mevduat ve bileşik getiri senaryolarını hemen hesapla.</p></a>
-<a href="/kredi-hesaplama" class="related-card"><h3>Kredi Hesaplama</h3><p>Faiz, taksit ve toplam geri ödemeyi tek ekranda karşılaştır.</p></a>
-<a href="/kdv-hesaplama" class="related-card"><h3>KDV Hesaplama</h3><p>KDV dahil-hariç tutarları anında hesapla.</p></a>
-<a href="/yatirim-getirisi-hesaplama" class="related-card"><h3>Yatırım Getirisi Hesaplama</h3><p>Net kâr, ROI ve hedef senaryolarını tek araçta incele.</p></a>
-<a href="/enflasyon-hesaplama" class="related-card"><h3>Enflasyon Hesaplama</h3><p>Paranın alım gücü değişimini dönemsel olarak analiz et.</p></a>
-  </div>
-  <a href="/" class="related-home-link">← Ana sayfaya dön ve tüm araçları keşfet</a>
-</section>
 <h2 class="section-title">Sık sorulan sorular</h2>
 <div class="faq-grid">
 <div class="faq-item">
 <strong>Bu araç hangi bordro tipine göre hesap yapıyor?</strong>
-<p>Bu sayfa, 4A özel sektör ücretli çalışan bordrosu için tasarlandı. 2025 ve 2026 yılı asgari ücret, prime esas kazanç sınırı, ücret gelir vergisi tarifesi, damga vergisi oranı ve engellilik indirimi tutarları yıl seçimine göre uygulanır.</p>
+<p>Bu sayfa standart 4A özel sektör ücretli çalışan bordrosu için tasarlandı. 2025 ve 2026 asgari ücret, prime esas kazanç sınırı, ücret gelir vergisi tarifesi, damga vergisi oranı, engellilik indirimi ve temel SGK işveren indirimleri yıl seçimine göre uygulanır. Özel ücret istisnaları ve işyerine özgü diğer teşvikler kapsam dışıdır.</p>
 </div>
 <div class="faq-item">
 <strong>Neden yıl ortasında net maaş değişebilir?</strong>
@@ -813,13 +777,17 @@ const parseTR = (val) => {
 </div>
 <div class="faq-item">
 <strong>Asgari ücret istisnası nasıl yansıtılıyor?</strong>
-<p>Asgari ücretin gelir vergisi ve damga vergisine isabet eden kısmı istisna olarak düşülür. Bu araç, seçilen yılın asgari ücret omurgasını kullanarak istisnayı aylık bordroya yansıtır.</p>
+<p>Asgari ücretin gelir vergisi ve damga vergisine isabet eden kısmı aylık istisna olarak düşülür. Gelir vergisi istisnası takvim ayındaki asgari ücretin kümülatif vergi dilimine göre, damga vergisi istisnası ise aylık brüt asgari ücret sınırına göre uygulanır; eksik gün nedeniyle istisna tavanı ayrıca gün sayısına bölünmez.</p>
 </div>
 <div class="faq-item">
 <strong>Netten brüte hesap neden iteratif çalışıyor?</strong>
 <p>Netten brüte dönüş, vergi dilimi ve istisnalar nedeniyle doğrusal değildir. Bu yüzden araç hedef net ücret için uygun brütü resmi bordro mantığına yaklaşan iteratif çözümle bulur.</p>
 </div>
 </div>
+</div>
+<div class="info-note" style="margin-top:22px">
+<strong>Resmî parametre kaynakları:</strong> 2025–2026 ücret gelir vergisi tarifeleri ve engellilik indirimleri Gelir İdaresi Başkanlığı; prime esas kazanç sınırları, işveren prim oranları, 5510 indirimleri ve asgari ücret destekleri Sosyal Güvenlik Kurumu; 2026 asgari ücret net/maliyet tablosu Çalışma ve Sosyal Güvenlik Bakanlığı verileri esas alınarak modellenmiştir. Bu araç standart 4A özel sektör senaryosudur ve bordro/mali müşavir belgesi yerine geçmez.
+<div class="official-links"><a href="https://www.gib.gov.tr/vergi-konulari/1_bireysel/11_ucret_geliri/11" target="_blank" rel="noopener noreferrer">GİB Ücret Geliri</a><a href="https://www.sgk.gov.tr/Content/Post/2e0c9e1a-2cfe-4456-af10-49d3de0c58ba/Prime-Esas-Kazanc-Miktarlari-2026-01-14-10-35-39" target="_blank" rel="noopener noreferrer">SGK PEK Sınırları</a><a href="https://www.sgk.gov.tr/Content/Post/c52f99f0-da6c-4029-9b9a-a0d6f96a6a42/Guncel-Sigorta-Primi-Tesvik-Destek-ve-Indirimleri-2026-01-12-03-04-11" target="_blank" rel="noopener noreferrer">SGK Teşvik ve Destekler</a><a href="https://www.csgb.gov.tr/tr/poco-pages/asgari-ucret/" target="_blank" rel="noopener noreferrer">Bakanlık Asgari Ücret</a></div>
 </div>
 <div class="related-card">
 <h2 class="section-title">İlgili araçlar</h2>
@@ -895,7 +863,7 @@ const parseTR = (val) => {
     <aside class="panel results-panel">
       <div class="panel-pad">
         <h2 class="section-title">Zam sonucu</h2>
-        <p class="section-subtitle">Yeni maaş, reel etki ve karar yorumu burada görünür.</p>
+        <p class="section-subtitle">Yeni maaş, reel etki ve karşılaştırma yorumu burada görünür.</p>
         <div class="empty-soft" id="raiseEmptyState">Mevcut maaş, zam oranı ve gerekiyorsa enflasyon verisini girerek sonucu başlat.</div>
         <div id="raiseResults" hidden>
           <div class="metric-list">
@@ -911,8 +879,8 @@ const parseTR = (val) => {
               <div class="mini-kpi"><strong>Reel zam</strong><span id="raiseRealValue">—</span><small id="raiseRealSub">Enflasyon sonrası gerçek artış</small></div>
             </div>
             <div class="decision-card" id="raiseDecisionCard">
-              <h3 id="raiseDecisionTitle">Karar yorumu</h3>
-              <p id="raiseDecisionText">Sonuç üretildiğinde karar yorumu burada görünür.</p>
+              <h3 id="raiseDecisionTitle">Karşılaştırma yorumu</h3>
+              <p id="raiseDecisionText">Sonuç üretildiğinde karşılaştırma yorumu burada görünür.</p>
             </div>
             <div>
               <h3 class="section-title" style="margin-top:0">Senaryo analizi</h3>
@@ -991,12 +959,12 @@ const parseTR = (val) => {
             </div>
             <div class="mini-kpis">
               <div class="mini-kpi"><strong>Günlük gelir</strong><span id="hourlyDailyValue">—</span><small id="hourlyDailySub">Yaklaşık günlük karşılık</small></div>
-              <div class="mini-kpi"><strong>Aylık çalışma saati</strong><span id="hourlyMonthHoursValue">—</span><small id="hourlyMonthHoursSub">4,33 hafta çarpanı ile</small></div>
+              <div class="mini-kpi"><strong>Aylık çalışma saati</strong><span id="hourlyMonthHoursValue">—</span><small id="hourlyMonthHoursSub">52 hafta / 12 ay ortalamasıyla</small></div>
               <div class="mini-kpi"><strong>Haftalık gelir</strong><span id="hourlyWeeklyValue">—</span><small id="hourlyWeeklySub">Aylık ücretin haftalık karşılığı</small></div>
               <div class="mini-kpi"><strong>Hedef farkı</strong><span id="hourlyTargetGapValue">—</span><small id="hourlyTargetGapSub">Hedef saatliğe göre fark</small></div>
             </div>
             <div class="decision-card" id="hourlyDecisionCard">
-              <h3 id="hourlyDecisionTitle">Karar yorumu</h3>
+              <h3 id="hourlyDecisionTitle">Karşılaştırma yorumu</h3>
               <p id="hourlyDecisionText">Sonuç üretildiğinde iş yükü ve ücret dengesi yorumlanır.</p>
             </div>
             <div>
@@ -1030,29 +998,29 @@ const parseTR = (val) => {
       {
         "@type": "Question",
         "name": "Bu araç hangi bordro tipine göre hesap yapıyor?",
-        "acceptedAnswer": {"@type": "Answer","text":"Bu sayfa 4A özel sektör ücretli çalışan bordrosu için tasarlanmıştır ve 2025 ile 2026 yılı resmi temel parametrelerini uygular."}
+        "acceptedAnswer": {"@type": "Answer","text":"Bu sayfa standart 4A özel sektör ücretli çalışan bordrosu için tasarlandı. 2025 ve 2026 asgari ücret, prime esas kazanç sınırı, ücret gelir vergisi tarifesi, damga vergisi oranı, engellilik indirimi ve temel SGK işveren indirimleri yıl seçimine göre uygulanır. Özel ücret istisnaları ve işyerine özgü diğer teşvikler kapsam dışıdır."}
       },
       {
         "@type": "Question",
         "name": "Neden yıl ortasında net maaş değişebilir?",
-        "acceptedAnswer": {"@type": "Answer","text":"Ücret gelirlerinde vergi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu durumda aynı brüt ücretle net tutar değişebilir."}
+        "acceptedAnswer": {"@type": "Answer","text":"Ücret gelirlerinde gelir vergisi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu nedenle aynı brüt maaşla bazı aylarda gelir vergisi artabilir ve net ele geçen tutar düşebilir."}
       },
       {
         "@type": "Question",
         "name": "Asgari ücret istisnası nasıl yansıtılıyor?",
-        "acceptedAnswer": {"@type": "Answer","text":"Araç, seçilen yılın asgari ücret omurgasını kullanarak gelir vergisi ve damga vergisi istisnasını bordroya aylık olarak yansıtır."}
+        "acceptedAnswer": {"@type": "Answer","text":"Asgari ücretin gelir vergisi ve damga vergisine isabet eden kısmı aylık istisna olarak düşülür. Gelir vergisi istisnası takvim ayındaki asgari ücretin kümülatif vergi dilimine göre, damga vergisi istisnası ise aylık brüt asgari ücret sınırına göre uygulanır; eksik gün nedeniyle istisna tavanı ayrıca gün sayısına bölünmez."}
       },
       {
         "@type": "Question",
         "name": "Netten brüte hesap neden iteratif çalışıyor?",
-        "acceptedAnswer": {"@type": "Answer","text":"Netten brüte dönüş doğrusal değildir; vergi dilimi ve istisnalar sebebiyle iteratif çözüm gerekir."}
+        "acceptedAnswer": {"@type": "Answer","text":"Netten brüte dönüş, vergi dilimi ve istisnalar nedeniyle doğrusal değildir. Bu yüzden araç hedef net ücret için uygun brütü resmi bordro mantığına yaklaşan iteratif çözümle bulur."}
       }
     ]
   }
   </script>
 <script>
     const MONTHS = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
-    const STORAGE_KEY = "hesapica_maas_bordro_v1";
+    const STORAGE_KEY = "hesapica_maas_bordro_v3";
     const YEAR_CONFIG = {
       2025: {
         minGross: 26005.50,
@@ -1061,7 +1029,8 @@ const parseTR = (val) => {
         disability: {0:0,1:9900,2:5700,3:2400},
         brackets: [158000,330000,1200000,4300000],
         rates: [0.15,0.20,0.27,0.35,0.40],
-        employerRates: {0:0.2075,4:0.1675,5:0.1575}
+        employerBaseRate: 0.2075,
+        wageSupportDaily: 33.33
       },
       2026: {
         minGross: 33030.00,
@@ -1070,7 +1039,8 @@ const parseTR = (val) => {
         disability: {0:0,1:12000,2:7000,3:3000},
         brackets: [190000,400000,1500000,5300000],
         rates: [0.15,0.20,0.27,0.35,0.40],
-        employerRates: {0:0.2175,2:0.1975,5:0.1675}
+        employerBaseRate: 0.2175,
+        wageSupportDaily: 42.33
       }
     };
 
@@ -1083,6 +1053,9 @@ const parseTR = (val) => {
       disabilitySelect: document.getElementById('disabilitySelect'),
       incentiveSelect: document.getElementById('incentiveSelect'),
       incentiveHint: document.getElementById('incentiveHint'),
+      openingTaxBase: document.getElementById('openingTaxBase'),
+      wageSupportSelect: document.getElementById('wageSupportSelect'),
+      wageSupportHint: document.getElementById('wageSupportHint'),
       quickAmount: document.getElementById('quickAmount'),
       quickDays: document.getElementById('quickDays'),
       quickStartMonth: document.getElementById('quickStartMonth'),
@@ -1170,39 +1143,22 @@ const parseTR = (val) => {
     }
     function parseTRNumber(raw){
       if (raw == null) return NaN;
-      let s = String(raw).trim();
-      if (!s) return NaN;
-      s = s
-        .replace(/₺|TL/gi,'')
-        .replace(/\s/g,'')
-        .replace(/[^\d,.-]/g,'');
-      if (!s) return NaN;
-
-      const hasComma = s.includes(',');
-      const hasDot = s.includes('.');
-
-      if (hasComma && hasDot) {
-        if (s.lastIndexOf(',') > s.lastIndexOf('.')) {
-          s = s.replace(/\./g,'').replace(',', '.');
-        } else {
-          s = s.replace(/,/g,'');
-        }
-      } else if (hasComma) {
-        if (/^-?\d{1,3}(,\d{3})+$/.test(s)) {
-          s = s.replace(/,/g,'');
-        } else {
-          s = s.replace(/\./g,'').replace(',', '.');
-        }
-      } else if (hasDot) {
-        if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) {
-          s = s.replace(/\./g,'');
-        } else if ((s.match(/\./g) || []).length > 1) {
-          s = s.replace(/\./g,'');
-        }
-      }
-
-      const num = Number(s);
-      return Number.isFinite(num) ? num : NaN;
+      let s = String(raw).trim().replace(/\s+/g,'').replace(/₺|TL/gi,'');
+      if (!s || /[^0-9,.-]/.test(s) || (s.match(/-/g)||[]).length || s.includes('-')) return NaN;
+      if (/^\d+$/.test(s)) return Number(s);
+      if (/^\d{1,3}(?:\.\d{3})+$/.test(s) || /^\d{1,3}(?:,\d{3})+$/.test(s)) return Number(s.replace(/[.,]/g,''));
+      if (/^\d{1,3}(?:\.\d{3})+,\d{1,2}$/.test(s)) return Number(s.replace(/\./g,'').replace(',','.'));
+      if (/^\d{1,3}(?:,\d{3})+\.\d{1,2}$/.test(s)) return Number(s.replace(/,/g,''));
+      if (/^\d+[,.]\d{1,2}$/.test(s)) return Number(s.replace(',','.'));
+      return NaN;
+    }
+    function parseTRInteger(raw){
+      if (raw == null) return NaN;
+      const s = String(raw).trim().replace(/\s+/g,'');
+      if (!s || /[^0-9.,]/.test(s)) return NaN;
+      if (/^\d+$/.test(s)) return Number(s);
+      if (/^\d{1,3}(?:[.,]\d{3})+$/.test(s)) return Number(s.replace(/[.,]/g,''));
+      return NaN;
     }
 
     function hasMeaningfulInput(){
@@ -1237,8 +1193,9 @@ const parseTR = (val) => {
       input.value = val.toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:2});
     }
     function formatEditableInteger(input){
-      const digits = (input.value || '').replace(/\D/g,'');
-      input.value = digits ? Number(digits).toLocaleString('tr-TR',{maximumFractionDigits:0}) : '';
+      const val = parseTRInteger(input.value);
+      if (!Number.isFinite(val)) return;
+      input.value = val.toLocaleString('tr-TR',{maximumFractionDigits:0});
     }
     function applyInputFormatters(){
       document.querySelectorAll('[data-format="money"]').forEach(input => {
@@ -1253,32 +1210,31 @@ const parseTR = (val) => {
       const cfg = getConfig();
       return cfg.disability[Number(els.disabilitySelect.value)] || 0;
     }
-    function getEmployerRate(){
+    function getEmployerRate(monthIndex=0){
       const cfg = getConfig();
-      return cfg.employerRates[Number(els.incentiveSelect.value)] || cfg.employerRates[0];
+      const choice = els.incentiveSelect.value;
+      let discountPoints = 0;
+      if (choice === 'standard') {
+        discountPoints = Number(els.yearSelect.value) === 2025 ? (monthIndex === 0 ? 5 : 4) : 2;
+      } else if (choice === 'manufacturing') {
+        discountPoints = 5;
+      }
+      return Math.max(0, cfg.employerBaseRate - discountPoints / 100);
     }
 
     function updateIncentiveOptions(){
       const year = Number(els.yearSelect.value);
       const prev = els.incentiveSelect.value;
-      if (year === 2025) {
-        els.incentiveSelect.innerHTML = `
-          <option value="0">İndirim uygulanmasın</option>
-          <option value="4">4 puan işveren SGK indirimi</option>
-          <option value="5">5 puan işveren SGK indirimi (imalat)</option>`;
-        els.incentiveHint.textContent = '2025 için SGK işveren payı seçenekleri resmi 4 puan ve 5 puan indirim mantığına göre gösterilir.';
-      } else {
-        els.incentiveSelect.innerHTML = `
-          <option value="0">İndirim uygulanmasın</option>
-          <option value="2">2 puan işveren SGK indirimi</option>
-          <option value="5">5 puan işveren SGK indirimi</option>`;
-        els.incentiveHint.textContent = '2026 için 2 puan ve 5 puan işveren SGK indirimi seçenekleri ayrı hesaplanır.';
-      }
-      if ([...els.incentiveSelect.options].some(opt => opt.value === prev)) {
-        els.incentiveSelect.value = prev;
-      } else {
-        els.incentiveSelect.value = '0';
-      }
+      els.incentiveSelect.innerHTML = `
+        <option value="0">İndirim uygulanmasın</option>
+        <option value="standard">${year === 2025 ? 'Standart indirim (Ocak 5 puan, Şubat-Aralık 4 puan)' : 'Standart 2 puan SGK indirimi'}</option>
+        <option value="manufacturing">İmalat sektörü 5 puan SGK indirimi</option>`;
+      els.incentiveHint.textContent = year === 2025
+        ? '2025’te standart indirim Ocak ayında 5 puan, Şubat-Aralık döneminde 4 puandır; imalat sektöründe 5 puan uygulanır.'
+        : '2026’da standart özel sektör indirimi 2 puandır; imalat sektöründe 2026 sonuna kadar 5 puan uygulanır.';
+      els.wageSupportHint.textContent = `${year} asgari ücret desteği uygunluk şartlarına bağlıdır. Uygunluk varsayılırsa günlük ${formatCurrency(getConfig().wageSupportDaily)} destek, bildirilen gün sayısı kadar işveren maliyetinden düşülür.`;
+      if ([...els.incentiveSelect.options].some(opt => opt.value === prev)) els.incentiveSelect.value = prev;
+      else els.incentiveSelect.value = '0';
     }
 
     function currentBracketRate(cumulativeBase, cfg){
@@ -1300,12 +1256,19 @@ const parseTR = (val) => {
       return round2(b1*r1 + (b2-b1)*r2 + (b3-b2)*r3 + (b4-b3)*r4 + (base-b4)*r5);
     }
 
-    function calcMonthFromGross({gross, days, cumulativeBase, cumulativeExemptBase}){
+    function minimumWageIncomeTaxExemption(monthIndex, cfg){
+      const monthlyTaxBase = round2(cfg.minGross * 0.85);
+      const before = cumulativeTax(monthlyTaxBase * monthIndex, cfg);
+      const after = cumulativeTax(monthlyTaxBase * (monthIndex + 1), cfg);
+      return round2(Math.max(after - before, 0));
+    }
+
+    function calcMonthFromGross({gross, days, monthIndex, cumulativeBase}){
       const cfg = getConfig();
       const disabilityAmount = gross > 0 ? getDisabilityAmount() : 0;
-      const proratedMinGross = round2(cfg.minGross * (days / 30));
+      const proratedFloor = round2(cfg.minGross * (days / 30));
       const proratedCeiling = round2(cfg.pekCeiling * (days / 30));
-      const primeBase = round2(Math.min(Math.max(gross, 0), proratedCeiling));
+      const primeBase = round2(Math.min(Math.max(gross, proratedFloor), proratedCeiling));
       const empSgk = round2(primeBase * 0.14);
       const empUnemp = round2(primeBase * 0.01);
       const taxBaseBeforeDisability = round2(Math.max(gross - empSgk - empUnemp, 0));
@@ -1314,49 +1277,47 @@ const parseTR = (val) => {
       const taxableBefore = cumulativeTax(cumulativeBase, cfg);
       const taxableAfter = cumulativeTax(cumulativeBase + taxableBase, cfg);
       const grossIncomeTax = round2(Math.max(taxableAfter - taxableBefore, 0));
-      const exemptBase = round2(Math.min(taxBaseBeforeDisability, proratedMinGross * 0.85));
-      const exemptBefore = cumulativeTax(cumulativeExemptBase, cfg);
-      const exemptAfter = cumulativeTax(cumulativeExemptBase + exemptBase, cfg);
-      const incomeTaxExemption = round2(Math.max(exemptAfter - exemptBefore, 0));
+      const incomeTaxExemptionCap = minimumWageIncomeTaxExemption(monthIndex, cfg);
+      const incomeTaxExemption = round2(Math.min(grossIncomeTax, incomeTaxExemptionCap));
       const incomeTax = round2(Math.max(grossIncomeTax - incomeTaxExemption, 0));
       const grossStampTax = round2(gross * cfg.stampRate);
-      const stampExemption = round2(Math.min(gross, proratedMinGross) * cfg.stampRate);
+      const stampExemption = round2(Math.min(gross, cfg.minGross) * cfg.stampRate);
       const stampTax = round2(Math.max(grossStampTax - stampExemption, 0));
       const net = round2(gross - empSgk - empUnemp - incomeTax - stampTax);
-      const employerRate = getEmployerRate();
+      const employerRate = getEmployerRate(monthIndex);
       const employerSgk = round2(primeBase * employerRate);
       const employerUnemployment = round2(primeBase * 0.02);
-      const employerCost = round2(gross + employerSgk + employerUnemployment);
+      const employerCostBeforeSupport = round2(gross + employerSgk + employerUnemployment);
+      const wageSupport = els.wageSupportSelect.value === '1' ? round2(cfg.wageSupportDaily * days) : 0;
+      const employerCost = round2(Math.max(employerCostBeforeSupport - wageSupport, 0));
       const nextCumulativeBase = round2(cumulativeBase + taxableBase);
-      const nextExemptBase = round2(cumulativeExemptBase + exemptBase);
       const marginalRate = currentBracketRate(nextCumulativeBase, cfg);
       return {
-        gross: round2(gross), net, days,
+        gross: round2(gross), net, days, monthIndex,
         empSgk, empUnemp, incomeTax, stampTax,
-        grossIncomeTax, incomeTaxExemption,
+        grossIncomeTax, incomeTaxExemption, incomeTaxExemptionCap,
         stampExemption, employerSgk, employerUnemployment,
-        employerCost, taxableBase, taxBaseBeforeDisability,
-        disabilityApplied, cumulativeBase: nextCumulativeBase,
-        cumulativeExemptBase: nextExemptBase, marginalRate,
-        primeBase
+        employerCostBeforeSupport, wageSupport, employerCost, taxableBase, taxBaseBeforeDisability,
+        disabilityApplied, cumulativeBase: nextCumulativeBase, marginalRate,
+        primeBase, proratedFloor, proratedCeiling
       };
     }
 
-    function solveGrossForTargetNet(targetNet, days, cumulativeBase, cumulativeExemptBase){
-      if (targetNet <= 0) return calcMonthFromGross({gross:0, days, cumulativeBase, cumulativeExemptBase});
+    function solveGrossForTargetNet(targetNet, days, monthIndex, cumulativeBase){
+      if (targetNet <= 0) return calcMonthFromGross({gross:0, days, monthIndex, cumulativeBase});
       let low = 0;
       let high = Math.max(targetNet * 1.6, 1000, getConfig().minGross * (days / 30));
       let guard = 0;
       while (guard < 60) {
-        const probe = calcMonthFromGross({gross:high, days, cumulativeBase, cumulativeExemptBase});
+        const probe = calcMonthFromGross({gross:high, days, monthIndex, cumulativeBase});
         if (probe.net >= targetNet) break;
         high *= 1.5;
         guard += 1;
       }
-      let best = calcMonthFromGross({gross:high, days, cumulativeBase, cumulativeExemptBase});
+      let best = calcMonthFromGross({gross:high, days, monthIndex, cumulativeBase});
       for (let i = 0; i < 80; i++) {
         const mid = (low + high) / 2;
-        const test = calcMonthFromGross({gross:mid, days, cumulativeBase, cumulativeExemptBase});
+        const test = calcMonthFromGross({gross:mid, days, monthIndex, cumulativeBase});
         if (Math.abs(test.net - targetNet) < 0.01) {
           best = test;
           break;
@@ -1376,7 +1337,7 @@ const parseTR = (val) => {
       resetDetailedErrors();
       if (state.view === 'quick') {
         const amount = parseTRNumber(els.quickAmount.value);
-        const days = parseTRNumber(els.quickDays.value);
+        const days = parseTRInteger(els.quickDays.value);
         const startIndex = Number(els.quickStartMonth.value);
         const monthCount = Number(els.quickMonthCount.value);
         const errors = [];
@@ -1391,11 +1352,27 @@ const parseTR = (val) => {
             els.quickAmount.setAttribute('aria-invalid','true');
           }
         }
-        if (!Number.isFinite(days) || days <= 0 || days > 30) {
+        if (!Number.isFinite(days) || !Number.isInteger(days) || days <= 0 || days > 30) {
           errors.push('Gün sayısı');
           if (shouldValidateDays) {
             els.quickDays.parentElement.classList.add('error');
             els.quickDays.setAttribute('aria-invalid','true');
+          }
+        }
+        if (Number.isFinite(amount) && amount > 0 && Number.isFinite(days) && Number.isInteger(days) && days > 0 && days <= 30) {
+          const legalGrossFloor = round2(getConfig().minGross * (days / 30));
+          const legalNetFloor = round2(legalGrossFloor * 0.85);
+          const belowFloor = state.mainMode === 'gross' ? amount < legalGrossFloor : amount < legalNetFloor;
+          if (belowFloor) {
+            errors.push('Yasal asgari ücret sınırı');
+            if (shouldValidateAmount) {
+              els.quickAmount.parentElement.classList.add('error');
+              els.quickAmount.setAttribute('aria-invalid','true');
+              const err = els.quickAmount.parentElement.querySelector('.error-text');
+              if (err) err.textContent = state.mainMode === 'gross'
+                ? `Bu gün sayısı için brüt ücret en az ${formatCurrency(legalGrossFloor)} olmalı.`
+                : `Bu gün sayısı için hedef net yaklaşık ${formatCurrency(legalNetFloor)} altında olamaz.`;
+            }
           }
         }
         if (errors.length) return {valid:false, errors};
@@ -1414,7 +1391,7 @@ const parseTR = (val) => {
         const daysInput = row.querySelector('.detail-days');
         const noteInput = row.querySelector('.detail-note');
         const amount = parseTRNumber(amountInput.value);
-        const days = parseTRNumber(daysInput.value);
+        const days = parseTRInteger(daysInput.value);
         const hasAmount = amountInput.value.trim() !== '';
         const hasDays = daysInput.value.trim() !== '';
         if (!hasAmount && !hasDays) return;
@@ -1427,15 +1404,24 @@ const parseTR = (val) => {
           }
           errors.push(MONTHS[idx] + ' tutarı');
         }
-        if (!Number.isFinite(days) || days <= 0 || days > 30) {
+        if (!Number.isFinite(days) || !Number.isInteger(days) || days <= 0 || days > 30) {
           if (shouldValidateDays) {
             daysInput.parentElement.classList.add('error');
             daysInput.setAttribute('aria-invalid','true');
           }
           errors.push(MONTHS[idx] + ' günü');
         }
-        if (Number.isFinite(amount) && amount > 0 && Number.isFinite(days) && days > 0 && days <= 30) {
-          months.push({monthIndex: idx, amount: round2(amount), days: round2(days), note: noteInput.value.trim()});
+        if (Number.isFinite(amount) && amount > 0 && Number.isFinite(days) && Number.isInteger(days) && days > 0 && days <= 30) {
+          const legalGrossFloor = round2(getConfig().minGross * (days / 30));
+          const legalNetFloor = round2(legalGrossFloor * 0.85);
+          const belowFloor = state.mainMode === 'gross' ? amount < legalGrossFloor : amount < legalNetFloor;
+          if (belowFloor) {
+            amountInput.parentElement.classList.add('error');
+            amountInput.setAttribute('aria-invalid','true');
+            errors.push(MONTHS[idx] + ' asgari ücret sınırı');
+          } else {
+            months.push({monthIndex: idx, amount: round2(amount), days, note: noteInput.value.trim()});
+          }
         }
       });
       return {valid: months.length > 0 && errors.length === 0, months, errors};
@@ -1445,15 +1431,24 @@ const parseTR = (val) => {
       const input = buildMonthsToSimulate();
       if (!input.valid) return {valid:false, errors: input.errors || ['Eksik veri']};
       const rows = [];
-      let cumulativeBase = 0;
-      let cumulativeExemptBase = 0;
-      let totalNet = 0, totalGross = 0, totalEmpDeductions = 0, totalTax = 0, totalEmployerCost = 0, totalEmployerSgk = 0, totalEmployerUnemp = 0, totalDisability = 0;
+      const openingField = els.openingTaxBase.closest('.field');
+      openingField.classList.remove('error');
+      els.openingTaxBase.setAttribute('aria-invalid','false');
+      const openingRaw = els.openingTaxBase.value.trim();
+      const openingBaseParsed = openingRaw === '' ? 0 : parseTRNumber(openingRaw);
+      if (!Number.isFinite(openingBaseParsed) || openingBaseParsed < 0) {
+        openingField.classList.add('error');
+        els.openingTaxBase.setAttribute('aria-invalid','true');
+        return {valid:false, errors:['Dönem başı kümülatif vergi matrahı']};
+      }
+      const openingCumulativeBase = round2(openingBaseParsed);
+      let cumulativeBase = openingCumulativeBase;
+      let totalNet = 0, totalGross = 0, totalEmpDeductions = 0, totalTax = 0, totalEmployerCost = 0, totalEmployerSgk = 0, totalEmployerUnemp = 0, totalDisability = 0, totalWageSupport = 0;
       input.months.forEach(item => {
         const result = state.mainMode === 'gross'
-          ? calcMonthFromGross({gross:item.amount, days:item.days, cumulativeBase, cumulativeExemptBase})
-          : solveGrossForTargetNet(item.amount, item.days, cumulativeBase, cumulativeExemptBase);
+          ? calcMonthFromGross({gross:item.amount, days:item.days, monthIndex:item.monthIndex, cumulativeBase})
+          : solveGrossForTargetNet(item.amount, item.days, item.monthIndex, cumulativeBase);
         cumulativeBase = result.cumulativeBase;
-        cumulativeExemptBase = result.cumulativeExemptBase;
         totalNet += result.net;
         totalGross += result.gross;
         totalEmpDeductions += result.empSgk + result.empUnemp;
@@ -1462,6 +1457,7 @@ const parseTR = (val) => {
         totalEmployerSgk += result.employerSgk;
         totalEmployerUnemp += result.employerUnemployment;
         totalDisability += result.disabilityApplied;
+        totalWageSupport += result.wageSupport;
         rows.push({...item, ...result});
       });
 
@@ -1472,34 +1468,27 @@ const parseTR = (val) => {
       const effectiveNetRatio = avgGross > 0 ? (avgNet / avgGross) * 100 : 0;
       const taxPressure = avgGross > 0 ? ((totalTax / monthCount) / avgGross) * 100 : 0;
       const costGap = avgEmployerCost > 0 ? ((avgEmployerCost - avgNet) / avgEmployerCost) * 100 : 0;
-      const noIncentiveEmployerRate = getConfig().employerRates[0];
-      const selectedRate = getEmployerRate();
-      const incentiveSavings = rows.reduce((sum,row) => sum + round2(row.primeBase * (noIncentiveEmployerRate - selectedRate)), 0);
-      const disabilityNoneTotals = rows.reduce((sum,row) => sum + row.incomeTaxExemption, 0); // placeholder baseline label below
-      const noDisabilityRows = []; // compute separately for comparison
-      let base2 = 0, exempt2 = 0;
+      const incentiveSavings = rows.reduce((sum,row) => {
+        const noDiscountRate = getConfig().employerBaseRate;
+        const selectedRate = getEmployerRate(row.monthIndex);
+        return sum + round2(row.primeBase * Math.max(0, noDiscountRate - selectedRate));
+      }, 0);
+      const noDisabilityRows = [];
+      let base2 = openingCumulativeBase;
       input.months.forEach(item => {
         const old = els.disabilitySelect.value;
         els.disabilitySelect.value = '0';
         const r = state.mainMode === 'gross'
-          ? calcMonthFromGross({gross: state.mainMode === 'gross' ? item.amount : 0, days:item.days, cumulativeBase:base2, cumulativeExemptBase:exempt2})
-          : solveGrossForTargetNet(item.amount, item.days, base2, exempt2);
+          ? calcMonthFromGross({gross:item.amount, days:item.days, monthIndex:item.monthIndex, cumulativeBase:base2})
+          : solveGrossForTargetNet(item.amount, item.days, item.monthIndex, base2);
         els.disabilitySelect.value = old;
         base2 = r.cumulativeBase;
-        exempt2 = r.cumulativeExemptBase;
         noDisabilityRows.push(r);
       });
       const noDisabilityIncomeTax = round2(noDisabilityRows.reduce((sum,row) => sum + row.incomeTax, 0));
       const currentIncomeTax = round2(rows.reduce((sum,row) => sum + row.incomeTax, 0));
       const disabilityTaxSavings = round2(noDisabilityIncomeTax - currentIncomeTax);
 
-      const score = clamp(Math.round(
-        effectiveNetRatio * 0.7 +
-        Math.max(0, 100 - taxPressure * 2.8) * 0.15 +
-        Math.max(0, 100 - costGap * 1.4) * 0.10 +
-        Math.min(100, (incentiveSavings / Math.max(totalEmployerCost,1)) * 1200) * 0.05
-      ), 0, 100);
-      const decision = getDecision(score);
 
       return {
         valid:true,
@@ -1513,25 +1502,20 @@ const parseTR = (val) => {
         totalEmployerSgk: round2(totalEmployerSgk),
         totalEmployerUnemp: round2(totalEmployerUnemp),
         totalDisability: round2(totalDisability),
+        totalWageSupport: round2(totalWageSupport),
         avgNet, avgGross, avgEmployerCost,
         cumulativeBase: round2(cumulativeBase),
         effectiveNetRatio: round2(effectiveNetRatio),
         taxPressure: round2(taxPressure),
         costGap: round2(costGap),
         incentiveSavings: round2(incentiveSavings),
+        totalEmployerSavings: round2(incentiveSavings + totalWageSupport),
         disabilityTaxSavings,
-        score,
-        decision,
+        openingCumulativeBase,
         activeBracketRate: rows.length ? rows[rows.length - 1].marginalRate : getConfig().rates[0]
       };
     }
 
-    function getDecision(score){
-      if (score >= 80) return {text:'Görünüm güçlü', cls:'good', detail:'Netin brüte oranı ve maliyet dengesi görece güçlü.'};
-      if (score >= 65) return {text:'Dengeli görünüm', cls:'mid', detail:'Kesinti yükü yönetilebilir seviyede ama vergi baskısı izlenmeli.'};
-      if (score >= 50) return {text:'Vergi baskısı artıyor', cls:'mid', detail:'Yıl içi vergi dilimi veya düşük net verim dikkat çekiyor.'};
-      return {text:'Maliyet baskısı yüksek', cls:'bad', detail:'Nette kalan oran ve toplam maliyet farkı belirgin seviyede.'};
-    }
 
     function updateQuickLabels(){
       if (state.mainMode === 'gross') {
@@ -1571,15 +1555,16 @@ const parseTR = (val) => {
       els.analysisDisabilityDesc.textContent = 'Gelir vergisindeki aylık ve toplam etki burada görünür.';
       els.scoreValue.textContent = '—';
       els.scoreFill.style.width = '0%';
-      els.scorePill.textContent = 'Analiz bekliyor';
+      els.scorePill.textContent = 'Oransal görünüm';
       els.scorePill.className = 'pill';
       [els.scoreNetEfficiency,els.scoreTaxPressure,els.scoreCostGap,els.scoreIncentiveImpact].forEach(el=>el.textContent='—');
       els.metaYear.textContent = 'Yıl —';
       els.metaMode.textContent = 'Mod —';
       els.metaMonths.textContent = 'Ay —';
-      els.detailsBody.innerHTML = '<tr><td colspan="12"><div class="empty-state">Henüz hesap yapılmadı. Sol panelden verileri girip Sonucu Gör butonuna bas.</div></td></tr>';
+      els.detailsBody.innerHTML = '<tr><td colspan="13"><div class="empty-state">Henüz hesap yapılmadı. Sol panelden verileri girip Sonucu Gör butonuna bas.</div></td></tr>';
       els.calcStatusText.textContent = 'Sonuç alanı veri bekliyor';
       els.calcStatusSub.textContent = 'Yazdıkça hesap güncellenir. Sonucu Gör butonu sonuç alanına kaydırır ve vurgular.';
+      [els.copyBtn,els.shareBtn,els.printBtn].forEach(btn=>btn.disabled=true);
     }
 
     function renderResult(result){
@@ -1592,8 +1577,8 @@ const parseTR = (val) => {
         : `${result.monthCount} ay için hedef nete ulaşan aylık ortalama brüt ücret ${formatCurrency(result.avgGross)} seviyesinde oluştu.`;
       els.mainResultValue.textContent = formatCurrency(mainValue);
       els.mainResultDesc.textContent = mainDesc;
-      els.decisionPill.textContent = result.decision.text;
-      els.decisionPill.className = `pill ${result.decision.cls}`;
+      els.decisionPill.textContent = state.mainMode === 'gross' ? 'Brütten nete' : 'Netten brüte';
+      els.decisionPill.className = 'pill';
       els.activeBracketPill.textContent = `Vergi dilimi ${formatPercent(result.activeBracketRate * 100,0)}`;
       els.mini1Value.textContent = formatCurrency(result.avgNet);
       els.mini2Value.textContent = formatCurrency(result.avgGross);
@@ -1602,14 +1587,14 @@ const parseTR = (val) => {
       els.mini5Value.textContent = formatCurrency(result.avgEmployerCost);
       els.mini6Value.textContent = formatCurrency(result.cumulativeBase);
 
-      els.scoreValue.textContent = `${result.score}/100`;
-      els.scoreFill.style.width = `${result.score}%`;
-      els.scorePill.textContent = result.decision.text;
-      els.scorePill.className = `pill ${result.decision.cls}`;
+      els.scoreValue.textContent = formatPercent(result.effectiveNetRatio,1);
+      els.scoreFill.style.width = `${clamp(result.effectiveNetRatio,0,100)}%`;
+      els.scorePill.textContent = 'Oransal görünüm';
+      els.scorePill.className = 'pill';
       els.scoreNetEfficiency.textContent = formatPercent(result.effectiveNetRatio,1);
       els.scoreTaxPressure.textContent = formatPercent(result.taxPressure,1);
       els.scoreCostGap.textContent = formatPercent(result.costGap,1);
-      els.scoreIncentiveImpact.textContent = result.incentiveSavings > 0 ? formatCurrency(result.incentiveSavings) : 'İndirim yok';
+      els.scoreIncentiveImpact.textContent = result.totalEmployerSavings > 0 ? formatCurrency(result.totalEmployerSavings) : 'Yok';
 
       els.summaryNet.textContent = formatCurrency(result.avgNet);
       els.summaryNetDesc.textContent = state.mainMode === 'gross'
@@ -1621,10 +1606,10 @@ const parseTR = (val) => {
         ? `${formatCurrency(result.totalNet)} net / ${formatCurrency(result.totalEmployerCost)} maliyet`
         : `${formatCurrency(result.totalGross)} brüt / ${formatCurrency(result.totalEmployerCost)} maliyet`;
       els.summaryAnnualDesc.textContent = `${result.monthCount} aktif ayın toplam görünümü. Toplam vergi ve damga etkisi ${formatCurrency(result.totalTax)} oldu.`;
-      els.analysisIncentive.textContent = result.incentiveSavings > 0 ? formatCurrency(result.incentiveSavings) : '—';
-      els.analysisIncentiveDesc.textContent = result.incentiveSavings > 0
-        ? `Seçilen işveren indirimi, toplam maliyeti teşviksiz senaryoya göre yaklaşık ${formatCurrency(result.incentiveSavings)} azalttı.`
-        : 'İşveren maliyeti teşviksiz bazda hesaplandı.';
+      els.analysisIncentive.textContent = result.totalEmployerSavings > 0 ? formatCurrency(result.totalEmployerSavings) : '—';
+      els.analysisIncentiveDesc.textContent = result.totalEmployerSavings > 0
+        ? `Seçilen SGK indirimi ve varsa uygunluk varsayımıyla asgari ücret desteği toplam işveren maliyetini yaklaşık ${formatCurrency(result.totalEmployerSavings)} azalttı.`
+        : 'İşveren maliyeti SGK indirimi ve asgari ücret desteği uygulanmadan hesaplandı.';
       els.analysisDisability.textContent = result.disabilityTaxSavings > 0 ? formatCurrency(result.disabilityTaxSavings) : '—';
       els.analysisDisabilityDesc.textContent = result.disabilityTaxSavings > 0
         ? `Seçilen engellilik indirimi toplam gelir vergisini yaklaşık ${formatCurrency(result.disabilityTaxSavings)} azalttı.`
@@ -1633,10 +1618,11 @@ const parseTR = (val) => {
       els.metaYear.textContent = `Yıl ${els.yearSelect.value}`;
       els.metaMode.textContent = state.mainMode === 'gross' ? 'Brütten nete' : 'Netten brüte';
       els.metaMonths.textContent = `${result.monthCount} ay aktif`;
-      els.calcStatusText.textContent = result.decision.text;
-      els.calcStatusSub.textContent = result.decision.detail;
+      els.calcStatusText.textContent = 'Hesaplama tamamlandı';
+      els.calcStatusSub.textContent = `${result.monthCount} ay işlendi; son ay vergi dilimi ${formatPercent(result.activeBracketRate*100,0)}, dönem sonu kümülatif matrah ${formatCurrency(result.cumulativeBase)}.`;
 
       renderDetailsTable(result.rows);
+      [els.copyBtn,els.shareBtn,els.printBtn].forEach(btn=>btn.disabled=false);
     }
 
     function renderDetailsTable(rows){
@@ -1652,6 +1638,7 @@ const parseTR = (val) => {
             <td>${formatCurrency(row.stampTax)}</td>
             <td>${formatCurrency(row.employerSgk)}</td>
             <td>${formatCurrency(row.employerUnemployment)}</td>
+            <td>${row.wageSupport > 0 ? formatCurrency(row.wageSupport) : '—'}</td>
             <td>${formatCurrency(row.employerCost)}</td>
             <td>${formatCurrency(row.cumulativeBase)}</td>
             <td>${formatPercent(row.marginalRate * 100,0)}</td>
@@ -1761,6 +1748,8 @@ const parseTR = (val) => {
         year: els.yearSelect.value,
         disability: els.disabilitySelect.value,
         incentive: els.incentiveSelect.value,
+        openingTaxBase: els.openingTaxBase.value,
+        wageSupport: els.wageSupportSelect.value,
         quickAmount: els.quickAmount.value,
         quickDays: els.quickDays.value,
         quickStartMonth: els.quickStartMonth.value,
@@ -1795,6 +1784,8 @@ const parseTR = (val) => {
           if (parsed.disability) els.disabilitySelect.value = parsed.disability;
           updateIncentiveOptions();
           if (parsed.incentive && [...els.incentiveSelect.options].some(opt => opt.value === parsed.incentive)) els.incentiveSelect.value = parsed.incentive;
+          if (parsed.openingTaxBase != null) els.openingTaxBase.value = parsed.openingTaxBase;
+          if (parsed.wageSupport === '1') els.wageSupportSelect.value = '1';
           if (parsed.quickAmount) els.quickAmount.value = parsed.quickAmount;
           if (parsed.quickDays) els.quickDays.value = parsed.quickDays;
           setMainMode(parsed.mainMode || 'gross');
@@ -1811,7 +1802,7 @@ const parseTR = (val) => {
             });
           }
         }
-      } catch(_) {}
+      } catch(_) { try { localStorage.removeItem(STORAGE_KEY); } catch(__) {} }
       if (presetMode === 'netten-brute' || presetMode === 'net') setMainMode('net');
       if (presetMode === 'brutten-nete' || presetMode === 'gross') setMainMode('gross');
       if (presetView === 'detailed' || presetView === 'quick') setView(presetView);
@@ -1834,6 +1825,8 @@ const parseTR = (val) => {
       els.disabilitySelect.value = '0';
       updateIncentiveOptions();
       els.incentiveSelect.value = '0';
+      els.openingTaxBase.value = '0';
+      els.wageSupportSelect.value = '0';
       setMainMode('gross');
       setView('quick');
       els.quickAmount.value = '45.000';
@@ -1859,6 +1852,8 @@ const parseTR = (val) => {
       els.disabilitySelect.value = '0';
       updateIncentiveOptions();
       els.incentiveSelect.value = '0';
+      els.openingTaxBase.value = '0';
+      els.wageSupportSelect.value = '0';
       setMainMode('gross');
       setView('quick');
       els.quickAmount.value = '';
@@ -1884,6 +1879,22 @@ const parseTR = (val) => {
       return url.toString();
     }
 
+    function fallbackCopyText(text){
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly','');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      ta.style.pointerEvents = 'none';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch(_) { ok = false; }
+      ta.remove();
+      return ok;
+    }
+
     async function copyResult(){
       if (!state.lastValidResult) {
         alert('Önce geçerli bir sonuç üret.');
@@ -1902,16 +1913,11 @@ const parseTR = (val) => {
         `Toplam işveren maliyeti: ${formatCurrency(r.totalEmployerCost)}`
       ].join('\n');
       try {
+        if (!navigator.clipboard || !window.isSecureContext) throw new Error('clipboard_unavailable');
         await navigator.clipboard.writeText(text);
         alert('Sonuç kopyalandı.');
       } catch (_) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        ta.remove();
-        alert('Sonuç kopyalandı.');
+        alert(fallbackCopyText(text) ? 'Sonuç kopyalandı.' : 'Kopyalama başarısız oldu.');
       }
     }
 
@@ -1926,13 +1932,15 @@ const parseTR = (val) => {
         try {
           await navigator.share({title:'Maaş Brüt Net Hesaplama', text, url});
           return;
-        } catch (_) {}
+        } catch (err) { if (err && err.name === 'AbortError') return; }
       }
       try {
+        if (!navigator.clipboard || !window.isSecureContext) throw new Error('clipboard_unavailable');
         await navigator.clipboard.writeText(url);
         alert('Paylaşım bağlantısı kopyalandı.');
       } catch (_) {
-        window.prompt('Bağlantıyı kopyala:', url);
+        if (fallbackCopyText(url)) alert('Paylaşım bağlantısı kopyalandı.');
+        else window.prompt('Bağlantıyı kopyala:', url);
       }
     }
 
@@ -1949,7 +1957,7 @@ const parseTR = (val) => {
       els.modeNetBtn.addEventListener('click', () => setMainMode('net'));
       els.viewQuickBtn.addEventListener('click', () => setView('quick'));
       els.viewDetailedBtn.addEventListener('click', () => setView('detailed'));
-      [els.disabilitySelect, els.incentiveSelect, els.quickAmount, els.quickDays, els.quickMonthCount].forEach(el => {
+      [els.disabilitySelect, els.incentiveSelect, els.openingTaxBase, els.wageSupportSelect, els.quickAmount, els.quickDays, els.quickMonthCount].forEach(el => {
         el.addEventListener('input', () => { saveState(); debounceAutoCalculate(); });
         el.addEventListener('change', () => { saveState(); debounceAutoCalculate(); });
       });
@@ -2023,10 +2031,14 @@ const parseTR = (val) => {
   const pct = (v,d=2) => '%' + (Number(v)||0).toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
   const parseTR = (value) => {
     if (value == null) return null;
-    const s = String(value).trim().replace(/\./g,'').replace(',', '.').replace(/[^\d.-]/g,'');
-    if (!s || s === '-' || s === '.') return null;
-    const n = Number(s);
-    return Number.isFinite(n) ? n : null;
+    let s = String(value).trim().replace(/\s+/g,'').replace(/₺|TL/gi,'');
+    if (!s || /[^0-9,.-]/.test(s) || s.includes('-')) return null;
+    if (/^\d+$/.test(s)) return Number(s);
+    if (/^\d{1,3}(?:\.\d{3})+$/.test(s) || /^\d{1,3}(?:,\d{3})+$/.test(s)) return Number(s.replace(/[.,]/g,''));
+    if (/^\d{1,3}(?:\.\d{3})+,\d{1,2}$/.test(s)) return Number(s.replace(/\./g,'').replace(',','.'));
+    if (/^\d{1,3}(?:,\d{3})+\.\d{1,2}$/.test(s)) return Number(s.replace(/,/g,''));
+    if (/^\d+[,.]\d{1,2}$/.test(s)) return Number(s.replace(',','.'));
+    return null;
   };
   const clamp = (v,min,max) => Math.min(max, Math.max(min, v));
   function fallbackCopy(text){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
@@ -2069,16 +2081,15 @@ const parseTR = (val) => {
   function renderRaiseEmpty(){ raiseEls.empty.hidden = false; raiseEls.results.hidden = true; lastRaise = null; }
   function calcRaise(){
     const current = parseTR(raiseEls.salary.value); const nominal = parseTR(raiseEls.nominal.value); const extra = parseTR(raiseEls.extra.value) || 0; const infl = parseTR(raiseEls.infl.value) || 0;
-    if (!(current > 0) || nominal == null){ alert('Mevcut maaş ve zam oranını gir.'); return; }
+    if (!(current > 0) || nominal == null || nominal <= -100 || nominal > 1000 || extra <= -100 || extra > 1000 || infl <= -100 || infl > 1000){ alert('Maaş ve oran alanlarına geçerli değerler gir. Oranlar -%100’den büyük olmalı.'); return; }
     const totalNominal = nominal + extra;
     const newSalary = current * (1 + totalNominal / 100);
     const monthlyDiff = newSalary - current;
     const annualDiff = monthlyDiff * 12;
     const realRaise = ((1 + totalNominal / 100) / (1 + infl / 100) - 1) * 100;
-    const score = Math.round(clamp(58 + realRaise * 4 + Math.min(totalNominal, 18), 0, 100));
-    let tone = 'mid', title='Dengeli görünüm', text='Nominal artış var; reel etkisi enflasyonla birlikte izlenmeli.';
-    if (realRaise >= 6) { tone='good'; title='Güçlü reel artış'; text='Zam enflasyonun anlamlı biçimde üstünde kalıyor ve alım gücü artıyor.'; }
-    else if (realRaise < 0) { tone='bad'; title='Reel kayıp riski'; text='Nominal artış olsa da enflasyon sonrası satın alma gücü geriliyor.'; }
+    let tone = 'mid', title='Reel değişim yaklaşık sıfır', text='Girilen zam ve enflasyon varsayımları sonrası reel değişim sıfıra yakın.';
+    if (realRaise > 0.005) { tone='good'; title='Reel artış pozitif'; text=`Girilen enflasyon varsayımı sonrası reel artış ${pct(realRaise)}.`; }
+    else if (realRaise < -0.005) { tone='bad'; title='Reel değişim negatif'; text=`Girilen enflasyon varsayımı sonrası reel değişim ${pct(realRaise)}.`; }
     const salaryLabel = raiseEls.type.value === 'gross' ? 'Yeni brüt maaş' : 'Yeni net maaş';
     raiseEls.mainLabel.textContent = salaryLabel;
     raiseEls.mainValue.textContent = money(newSalary);
@@ -2088,7 +2099,7 @@ const parseTR = (val) => {
     raiseEls.nominalOut.textContent = pct(totalNominal);
     raiseEls.real.textContent = pct(realRaise);
     raiseEls.decisionCard.className = 'decision-card ' + tone;
-    raiseEls.decisionTitle.textContent = `${title} · Skor ${score}/100`;
+    raiseEls.decisionTitle.textContent = title;
     raiseEls.decisionText.textContent = text;
     const scenarios = [
       {name:'Düşük enflasyon', infl: Math.max(0, infl - 5)},
@@ -2101,7 +2112,7 @@ const parseTR = (val) => {
       return `<div class="scenario-card-lite"><strong>${item.name}</strong><span>${pct(rr)}</span><small>${pct(item.infl)} enflasyonda yeni maaş ${money(ns)} olur.</small></div>`;
     }).join('');
     raiseEls.empty.hidden = true; raiseEls.results.hidden = false;
-    lastRaise = {current, totalNominal, infl, newSalary, monthlyDiff, annualDiff, realRaise, score, salaryType: raiseEls.type.value};
+    lastRaise = {current, totalNominal, infl, newSalary, monthlyDiff, annualDiff, realRaise, salaryType: raiseEls.type.value};
     raiseEls.results.scrollIntoView({behavior:'smooth', block:'nearest'});
   }
   function raiseExample(){ raiseEls.salary.value='45000'; raiseEls.nominal.value='25'; raiseEls.extra.value='5'; raiseEls.infl.value='22'; raiseEls.type.value='net'; calcRaise(); }
@@ -2119,14 +2130,11 @@ const parseTR = (val) => {
   function renderHourlyEmpty(){ hourlyEls.empty.hidden=false; hourlyEls.results.hidden=true; lastHourly=null; }
   function calcHourly(){
     const salary = parseTR(hourlyEls.salary.value); const bonus = parseTR(hourlyEls.bonus.value) || 0; const weekly = parseTR(hourlyEls.weekly.value); const workdays = parseTR(hourlyEls.workdays.value); const dailyOverride = parseTR(hourlyEls.daily.value); const target = parseTR(hourlyEls.target.value);
-    if (!(salary > 0) || !(weekly > 0)) { alert('Aylık maaş ve haftalık çalışma saatini gir.'); return; }
-    const monthlyTotal = salary + bonus; const monthlyHours = weekly * 4.33; const hourly = monthlyTotal / monthlyHours; const weeklyIncome = monthlyTotal / 4.33; const dailyHours = dailyOverride > 0 ? dailyOverride : ((workdays > 0) ? (weekly / workdays) : null); const dailyIncome = dailyHours ? hourly * dailyHours : null; const targetGap = target ? (hourly - target) : null;
-    const loadPenalty = weekly > 45 ? (weekly - 45) * 1.4 : Math.max(0, (35 - weekly) * -0.2);
-    const targetBonus = target ? clamp((hourly / target) * 25, -20, 25) : 8;
-    const score = Math.round(clamp(62 + targetBonus - loadPenalty, 0, 100));
-    let tone='mid', title='Dengeli ücret', text='Saatlik kazanç ile çalışma yoğunluğu birbirine yakın görünüyor.';
-    if (target && targetGap >= 0) { tone='good'; title='Hedef üstü saatlik gelir'; text='Mevcut saatlik seviyen hedefinin üstünde ya da ona çok yakın.'; }
-    else if (weekly >= 50 || (target && targetGap < 0)) { tone='bad'; title='Saatlik baskı yüksek'; text='Çalışma saati yüksek veya hedef saatliğin altında kalıyorsun; ücret verimini gözden geçir.'; }
+    if (!(salary > 0) || bonus < 0 || !(weekly > 0) || weekly > 168 || (workdays != null && (!Number.isInteger(workdays) || workdays <= 0 || workdays > 7)) || (dailyOverride != null && (dailyOverride <= 0 || dailyOverride > 24)) || (target != null && target <= 0)) { alert('Maaş ve çalışma süresi alanlarına geçerli değerler gir.'); return; }
+    const monthlyTotal = salary + bonus; const weeksPerMonth = 52/12; const monthlyHours = weekly * weeksPerMonth; const hourly = monthlyTotal / monthlyHours; const weeklyIncome = monthlyTotal / weeksPerMonth; const dailyHours = dailyOverride > 0 ? dailyOverride : ((workdays > 0) ? (weekly / workdays) : null); const dailyIncome = dailyHours ? hourly * dailyHours : null; const targetGap = target ? (hourly - target) : null;
+    let tone='mid', title='Saatlik ücret hesaplandı', text=`Haftalık ${plain(weekly,1)} saat ve aylık ${money(monthlyTotal)} toplam gelir üzerinden sonuç üretildi.`;
+    if (target && targetGap >= 0) { tone='good'; title='Hedef saatliğin üzerinde'; text=`Hesaplanan saatlik ücret, girilen hedefin ${money(targetGap)} üzerinde.`; }
+    else if (target && targetGap < 0) { tone='bad'; title='Hedef saatliğin altında'; text=`Hesaplanan saatlik ücret, girilen hedefin ${money(Math.abs(targetGap))} altında.`; }
     hourlyEls.main.textContent = money(hourly);
     hourlyEls.mainSub.textContent = `${money(monthlyTotal)} aylık toplam gelir ve ${plain(monthlyHours,1)} saat varsayımıyla hesaplandı.`;
     hourlyEls.dailyVal.textContent = dailyIncome != null ? money(dailyIncome) : '—';
@@ -2135,15 +2143,15 @@ const parseTR = (val) => {
     hourlyEls.targetGap.textContent = targetGap != null ? money(targetGap) : '—';
     hourlyEls.targetGapSub.textContent = targetGap == null ? 'Hedef saatlik girersen fark görünür.' : (targetGap >= 0 ? 'Hedefin üzerindesin.' : 'Hedefinin altındasın.');
     hourlyEls.decisionCard.className = 'decision-card ' + tone;
-    hourlyEls.decisionTitle.textContent = `${title} · Skor ${score}/100`;
+    hourlyEls.decisionTitle.textContent = title;
     hourlyEls.decisionText.textContent = text;
     const scenarios = [weekly - 5, weekly, weekly + 5].map(v => Math.max(1, v));
     const labels = ['Daha hafif tempo','Baz tempo','Daha yoğun tempo'];
     hourlyEls.scenarioGrid.innerHTML = scenarios.map((hours, i) => {
-      const mh = hours * 4.33; const hv = monthlyTotal / mh; return `<div class="scenario-card-lite"><strong>${labels[i]}</strong><span>${money(hv)}</span><small>Haftalık ${plain(hours,1)} saat çalışmada saatlik karşılık.</small></div>`;
+      const mh = hours * weeksPerMonth; const hv = monthlyTotal / mh; return `<div class="scenario-card-lite"><strong>${labels[i]}</strong><span>${money(hv)}</span><small>Haftalık ${plain(hours,1)} saat çalışmada saatlik karşılık.</small></div>`;
     }).join('');
-    hourlyEls.empty.hidden=false; hourlyEls.empty.hidden=true; hourlyEls.results.hidden=false;
-    lastHourly = {salary, bonus, weekly, monthlyTotal, monthlyHours, hourly, weeklyIncome, dailyIncome, target, targetGap, score};
+    hourlyEls.empty.hidden=true; hourlyEls.results.hidden=false;
+    lastHourly = {salary, bonus, weekly, monthlyTotal, monthlyHours, hourly, weeklyIncome, dailyIncome, target, targetGap};
     hourlyEls.results.scrollIntoView({behavior:'smooth', block:'nearest'});
   }
   function hourlyExample(){ hourlyEls.salary.value='38000'; hourlyEls.bonus.value='2000'; hourlyEls.weekly.value='45'; hourlyEls.workdays.value='5'; hourlyEls.daily.value=''; hourlyEls.target.value='220'; calcHourly(); }
@@ -2159,8 +2167,6 @@ const parseTR = (val) => {
 </script>
 
 <script defer="" src="cookie-consent.js"></script>
-<script>window.HESAPICA_I18N_CONFIG={"trUrl": "https://hesapica.com/maas-brut-net-hesaplama", "enUrl": "https://hesapica.com/en/salary-calculator", "xDefaultUrl": "https://hesapica.com/maas-brut-net-hesaplama", "titleTr": "Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica", "descriptionTr": "Maaş ve gelir hesaplama merkezi: brütten nete, netten brüte, maaş zammı ve saatlik ücret analizini tek sayfada gör. Bordro etkisi, reel zam, saatlik kazanç ve yorum katmanı birlikte çalışır.", "titleEn": "Salary Calculator 2026 | Gross to Net and Net to Gross", "descriptionEn": "Convert gross salary to net and net to gross, estimate deductions, and compare salary scenarios quickly.", "scopeSelector": "body", "observeSelectors": ["main", ".results", "#resultArea", "#resultPanel"], "textMap": {"Maaş ve Gelir Hesaplama": "Salary & Income Calculator", "Brütten Nete": "Gross to Net", "Netten Brüte": "Net to Gross", "Maaş ve Gelir Hesaplama Merkezi": "Salary and Income Calculation Center", "Brütten nete": "gross to net", "Netten brüte": "Net to gross", "Maaş zammı analizi": "Salary raise analysis", "Saatlik ücret": "hourly wage", "Aylık bordro tablosu": "Monthly payroll table", "İşveren maliyeti": "Employer cost", "2025 ve 2026 desteği": "2025 and 2026 support", "Birleşik maaş akışı": "combined salary stream", "Aynı kullanıcı niyetini taşıyan maaş araçlarını tek merkezde topladık. İhtiyacına göre mod değiştir.": "We have gathered salary tools with the same user intention in a single center. Change mode according to your needs.", "Brüt-Net Bordro": "Gross-Net Payroll", "Maaş Zammı": "Salary Increase", "Saatlik Ücret": "Hourly Rate", "Hesap türü": "Account type", "Aynı resmi bordro motorunun iki yönünü kullan. İstersen hızlı modda tek maaşla, istersen detaylı modda ay ay ilerle.": "Use the same image in both aspects of the payroll engine. If you want, you can progress with a single salary in the fast mode, or month by month in the detailed mode.", "Hızlı Mod": "Quick Mode", "Detaylı Bordro": "Detailed Payroll", "Dönem": "Period", "Vergi tarifesi, asgari ücret ve tavanlar seçilen yıla göre değişir.": "Tax tariff, minimum wage and ceilings vary depending on the selected year.", "Gelir vergisi matrahından aylık engellilik indirimi düşülür.": "Monthly disability allowance is deducted from the income tax base.", "5510 / SGK işveren indirimi": "5510 / SSI employer discount", "Bu seçim çalışan netini değiştirmez. İşveren SGK payı ve toplam maliyeti etkiler.": "This selection does not change the employee net. It affects the employer SSI share and the total cost.", "Hızlı hesap girişi": "Quick account login", "Aynı maaşı seçtiğin ay sayısı boyunca uygula. Bu mod, tek maaş ve tek gün sayısıyla temiz bir bordro görünümü üretir.": "Apply the same salary for the number of months you choose. This mode produces a clean payroll view with a single salary and a single number of days.", "Aylık brüt ücret (TL)": "Monthly gross wage (TL)", "Brütten nete modunda aylık brüt maaşı yaz.": "Write the monthly gross salary in gross to net mode.", "Gün sayısı": "number of days", "Kısmi ay, ücretsiz izin veya eksik gün senaryosunda kullan.": "Use it in a partial month, unpaid leave or missing day scenario.", "Başlangıç ayı": "starting month", "Kümülatif vergi hesabı seçtiğin aydan başlar.": "Cumulative tax calculation starts from the month you selected.", "Kaç ay hesaplanacak?": "How many months will be calculated?", "Ocak’tan Aralık’a kadar kaç dönem simüle edeceğini seç.": "Choose how many periods to simulate from January to December.", "Detaylı bordro girişi": "Detailed payroll entry", "Detaylı modda yalnızca tutarı ve günü girmen yeterli. Açıklama alanı bordro notu içindir ve sonuçları değiştirmez.": "In detailed mode, you only need to enter the amount and the day. The Description field is for the payroll memo and does not change the results.", "Sonucu Gör": "Show Result", "Örnek Veri": "Sample Data", "Verileri Sıfırla": "Reset Inputs", "Paylaş": "Share", "Yazdır / PDF": "Print / PDF", "Brütten nete veya netten brüte hesap için gerekli alanları doldur.": "Fill in the required fields for gross to net or net to gross calculation.", "Net veya hedef net değeri burada görünür.": "Net or target net worth appears here.", "Seçilen SGK indirimi ile birlikte toplam işveren maliyeti.": "Total employer cost including the selected SSI deduction.", "Aktif ayların toplam net / brüt / maliyet görünümü.": "Total net / gross / cost view of active months.", "İşveren maliyetine etkisi hesaplandığında burada görünür.": "It appears here when the impact on employer costs is calculated.", "Gelir vergisindeki aylık ve toplam etki burada görünür.": "The monthly and total impact on income tax appears here.", "Sık sorulan sorular": "Frequently asked questions", "İlgili araçlar": "Related tools", "Maaş zam analizi": "Salary raise analysis", "Mevcut maaş (TL)": "Current salary (TL)", "Brüt ya da net maaşını seçtiğin tipe göre yaz.": "Write your gross or net salary according to the type you choose.", "Maaş tipi": "Salary type", "Sonuç metinleri seçtiğin maaş tipine göre güncellenir.": "Result texts are updated according to the salary type you selected.", "Nominal zam oranı (%)": "Nominal raise rate (%)", "Sözleşme, teklif veya beklenen zam oranını gir.": "Enter the contract, offer, or expected raise rate.", "Ek refah / ek artış (%)": "Additional welfare / additional increase (%)", "Memur refah payı veya ekstra şirket artışını ayrıca ekleyebilirsin.": "You can also add civil servant welfare share or extra company increase.", "Beklenen enflasyon (%)": "Expected inflation (%)", "Reel zam hesabı için beklenen enflasyonu gir. Boş bırakılırsa nominal etki gösterilir.": "Enter expected inflation to calculate real raise. If left blank, the nominal effect is shown.", "Yeni maaş, reel etki ve karar yorumu burada görünür.": "The new salary, real impact and decision commentary appear here.", "Sonuç üretildiğinde karar yorumu burada görünür.": "When the result is produced, the decision comment appears here.", "Saatlik ücret analizi": "Hourly wage analysis", "Aylık maaşını saatlik ve günlük değere çevir. Çalışma yoğunluğunu ve hedef saatlik ücretini birlikte kıyasla.": "Convert your monthly salary into hourly and daily value. Compare your work intensity and target hourly wage together.", "Aylık maaş (TL)": "Monthly salary (TL)", "Aylık net veya brüt maaşını temel tutar olarak gir.": "Enter your monthly net or gross salary as the base amount.", "Aylık ek ödeme (TL)": "Monthly additional payment (TL)", "Prim, ticket hariç nakit ek ödeme veya düzenli bonusu ekleyebilirsin.": "You can add bonuses, additional cash payments or regular bonuses excluding tickets.", "Haftalık çalışma saati": "Weekly working hours", "Aylık saat hesabı için haftalık toplam saati gir.": "Enter weekly total hours for monthly hours calculation.", "Haftalık çalışma günü": "Weekly working day", "Günlük gelir hesabını otomatik türetmek için kullanılır.": "It is used to automatically derive the daily income account.", "Manuel günlük saat": "Manual daily clock", "Günlük saatini kendin belirlemek istersen haftalık gün hesabını override eder.": "If you want to set your own daily time, it overrides the weekly day calculation.", "Hedef saatlik ücret (TL)": "Target hourly wage (TL)", "Mevcut seviyeni hedeflediğin saatlik gelirle karşılaştırır.": "It compares your current level to your target hourly income.", "Saatlik ücret sonucu": "Hourly wage result", "Saatlik kazanç, günlük karşılık ve yorum burada görünür.": "Hourly earnings, daily allowance and commentary appear here.", "Sonuç üretildiğinde iş yükü ve ücret dengesi yorumlanır.": "When the result is produced, the workload and wage balance are interpreted.", "Yoğunluk senaryosu": "Density scenario", "Örn. 45.000": "Ex. 45,000", "Örn. 30": "Ex. 30", "Örn. 25": "Ex. 25", "Örn. 20": "Ex. 20", "Örn. 38.000": "Ex. 38,000", "Örn. 45": "Ex. 45", "Örn. 5": "Ex. 5", "Brüt": "Gross", "Net": "Net", "Anapara": "Principal", "Faiz": "Interest", "Vade": "Term", "KDV": "VAT", "Bütçe": "Budget", "Maaş": "Salary", "Kredi": "Loan", "Kredi Kartı": "Credit Card", "Gelir Vergisi": "Income Tax", "Yatırım Getirisi": "Investment Return", "Kira Artış": "Rent Increase", "Enflasyon": "Inflation", "Temizle": "Clear", "Sonucu Kopyala": "Copy Result"}};</script>
-<script defer src="i18n-common.js"></script>
   <script src="ads-slot-manager.js"></script>
 </body>
 </html>
