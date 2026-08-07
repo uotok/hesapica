@@ -4,18 +4,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Yaş ve Geçen Süre Hesaplama 2026 | Hesapica</title>
+<title>Yaş ve Geçen Süre Hesaplama | Hesapica</title>
 <meta name="description" content="Yaşını ve geçen süreyi anında hesapla; yıl, ay ve gün bazında net sonucu öğren. Önemli tarihleri takip et, planını kolayca oluştur!"/>
 <meta content="yaş hesaplama, geçen süre hesaplama, evleneli kaç gün oldu, kaç yaşındayım, doğum tarihi yaş hesaplama, olay üzerinden geçen süre" name="keywords"/>
 <meta content="#4f46e5" name="theme-color"/>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 <link href="https://hesapica.com/yas-hesaplama" rel="canonical"/>
-<meta content="Yaş ve Geçen Süre Hesaplama 2026 | Hesapica" property="og:title"/>
+<meta content="Yaş ve Geçen Süre Hesaplama | Hesapica" property="og:title"/>
 <meta content="Yaşınızı hesaplayın veya evlilik, işe başlama, mezuniyet gibi bir olayın üzerinden geçen süreyi yıl, ay, gün, saat, dakika ve saniye bazında anında görün." property="og:description"/>
 <meta content="https://hesapica.com/yas-hesaplama" property="og:url"/>
 <meta property="og:image" content="https://hesapica.com/og-image.png"/>
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta content="website" property="og:type"/>
+<meta content="tr_TR" property="og:locale"/>
 <link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
 <link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
@@ -32,7 +32,7 @@
 
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Yaş ve Geçen Süre Hesaplama 2026 | Hesapica" name="twitter:title"/>
+<meta content="Yaş ve Geçen Süre Hesaplama | Hesapica" name="twitter:title"/>
 <meta content="Yaşınızı hesaplayın veya evlilik, işe başlama, mezuniyet gibi bir olayın üzerinden geçen süreyi yıl, ay, gün, saat, dakika ve saniye bazında anında görün." name="twitter:description"/>
 <meta content="https://hesapica.com/yas-hesaplama" name="twitter:url"/>
 <meta content="index,follow" name="robots"/>
@@ -254,10 +254,22 @@
       .time-input-row,.time-picker-grid,.time-picker-actions{grid-template-columns:1fr}
       .time-picker-separator{display:none}
     }
-  </style>
+  
+    .btn:disabled{opacity:.52;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+    .mode-btn:focus-visible,.btn:focus-visible,.inline-chip:focus-visible,.time-picker-trigger:focus-visible,.time-picker-close:focus-visible{outline:3px solid rgba(79,70,229,.22);outline-offset:2px}
+    @media print{
+      body{background:#fff!important;overflow:visible!important}
+      .topbar,.mode-switch,.inline-chip-row,.helper-box,.action-buttons,.time-picker-inline,.hc-ad-slot,.related-section,.footer-note{display:none!important}
+      .container{width:100%!important;max-width:none!important}
+      .hero,.card,.content-section,.faq-section,.result-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}
+      .tool-layout{grid-template-columns:1fr!important}
+      .result-card{position:static!important}
+      .content-section,.faq-section{margin-top:18px!important}
+    }
+</style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Yaş ve Geçen Süre Hesaplama 2026 | Hesapica","url":"https://hesapica.com/yas-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Yaş ve Geçen Süre Hesaplama | Hesapica","url":"https://hesapica.com/yas-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
 </script>
 <script type="application/ld+json">
   {
@@ -272,28 +284,8 @@
   }
   </script>
 <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Doğum veya olay saati gerekli mi?",
-        "acceptedAnswer":{"@type":"Answer","text":"Hayır. Sadece doğum tarihi veya olay tarihiyle temel sonuç alınabilir. Saat girilirse daha hassas sonuç oluşur."}
-      },
-      {
-        "@type":"Question",
-        "name":"Hesaplama anı nasıl belirlenir?",
-        "acceptedAnswer":{"@type":"Answer","text":"Araç hesaplama tarihini ve saatini sistemden otomatik alır. Kullanılan an sonuç panelinde ayrıca gösterilir."}
-      },
-      {
-        "@type":"Question",
-        "name":"Bir olayın üzerinden geçen süreyi ve sonraki yıldönümünü gösterir mi?",
-        "acceptedAnswer":{"@type":"Answer","text":"Evet. Yaş modunda bir sonraki doğum gününe, geçen süre modunda ise bir sonraki yıldönümüne kalan süre ayrıca gösterilir."}
-      }
-    ]
-  }
-  </script>
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Doğum veya olay saati gerekli mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Sadece tarih girerek temel sonucu alabilirsin. Saat girilmezse yıl/ay/gün tarih bazında; toplam hafta, gün, saat, dakika ve saniye değerleri 00:00 varsayımıyla yaklaşık gösterilir."}},{"@type":"Question","name":"Hesaplama anı nasıl belirlenir?","acceptedAnswer":{"@type":"Answer","text":"Araç hesaplama tarihini ve saatini sistemden otomatik alır. Kullanılan an sonuç panelinde ayrıca gösterilir; kullanıcıdan ek tarih veya saat girmesi istenmez."}},{"@type":"Question","name":"Evlilik, işe başlama veya sigarayı bırakma gibi olaylarda kullanabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet. Geçen Süre Hesaplama sekmesi bu tür olaylar için tasarlandı. Olay adı alanını doldurursan sonuç daha kişisel hale gelir."}},{"@type":"Question","name":"Bir sonraki doğum günü veya yıldönümüne kalan süreyi gösterir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Sonuç panelinde bir sonraki doğum günü veya yıldönümüne kalan gün sayısını ayrıca görebilirsin."}}]}
+</script>
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -456,33 +448,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
 <style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}
 .hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
 .hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
 @media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
+@media print{.hc-ad-slot{display:none!important}}
 </style>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<style id="hc-related-tools-style">
-.related-tools{margin-top:28px;padding:24px;border:1px solid #e5e7eb;border-radius:22px;background:#fff}
-.related-tools h2{margin:0 0 14px;color:#312e81;font-size:24px;letter-spacing:-.02em}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.related-card{display:block;padding:16px;border:1px solid #dbe4ff;border-radius:16px;background:linear-gradient(180deg,#fff,#f8faff);text-decoration:none}
-.related-card h3{margin:0 0 8px;font-size:17px;color:#1f2937}
-.related-card p{margin:0;color:#4b5563;font-size:14px;line-height:1.55}
-.related-home-link{display:inline-flex;margin-top:14px;font-weight:800;color:#4338ca}
-@media (max-width:720px){.related-tools{padding:18px}.related-grid{grid-template-columns:1fr}}
-</style>
-<script id="hc-financialproduct-schema" type="application/ld+json">
-{"@context": "https://schema.org", "@type": ["WebApplication", "FinancialProduct"], "name": "Yaş ve Geçen Süre Hesaplama 2026", "description": "Yaşını ve geçen süreyi anında hesapla; yıl, ay ve gün bazında net sonucu öğren. Önemli tarihleri takip et, planını kolayca oluştur!", "applicationCategory": "FinanceTool", "url": "https://hesapica.com/yas-hesaplama", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TRY"}, "featureList": ["Yaş ve Geçen Süre Hesaplama 2026 sonucu", "Hızlı hesaplama", "Senaryo karşılaştırması", "Mobil uyumlu kullanım"]}
-</script>
 </head>
 <body>
 <noscript>
@@ -490,7 +464,7 @@
       Bu araç en doğru sonucu gösterebilmek için JavaScript kullanır. Lütfen tarayıcınızda JavaScript'i etkinleştirin.
     </div>
 </noscript>
-<div class="container">
+<main class="container">
 <div class="topbar">
 <nav aria-label="Breadcrumb" class="breadcrumb">
 <a href="/">Ana Sayfa</a>
@@ -524,12 +498,12 @@
 </aside>
 </section>
 <section class="tool-layout">
-<div class="card">
+<form class="card" id="ageCalculatorForm" novalidate>
 <h2 id="toolTitle">Yaşını Hesapla</h2>
 <p class="section-note" id="sectionNote">Doğum tarihinizi girerek yaşınızı detaylı hesaplayın. İsterseniz ikinci sekmeye geçip bir olayın üzerinden ne kadar zaman geçtiğini de aynı araçta görebilirsiniz.</p>
 <div aria-label="Hesap modu seçimi" class="mode-switch">
-<button class="mode-btn active" id="modeAgeBtn" type="button">Yaş Hesaplama</button>
-<button class="mode-btn" id="modeElapsedBtn" type="button">Geçen Süre Hesaplama</button>
+<button aria-pressed="true" class="mode-btn active" id="modeAgeBtn" type="button">Yaş Hesaplama</button>
+<button aria-pressed="false" class="mode-btn" id="modeElapsedBtn" type="button">Geçen Süre Hesaplama</button>
 </div>
 <div class="inline-chip-row hidden" id="elapsedPresetRow">
 <button class="inline-chip" data-event="Evlilik" type="button">Evleneli ne kadar oldu</button>
@@ -540,27 +514,27 @@
 </div>
 <div class="helper-box">
 <h3 id="helperTitle">Kısa not</h3>
-<p id="helperText">Doğum tarihi tek başına yeterlidir. Hesaplama anı sistemden otomatik alınır ve sonuç alanında ayrıca gösterilir. Doğum saati girersen sonuç daha hassas olur.</p>
+<p id="helperText">Doğum tarihi tek başına yeterlidir. Hesaplama anı sistemden otomatik alınır. Doğum saati girilmezse yıl/ay/gün tarih bazında hesaplanır; toplam hafta, gün, saat, dakika ve saniye değerleri 00:00 varsayımıyla yaklaşık gösterilir.</p>
 </div>
 <div class="subhead" id="primarySubhead">Doğum Bilgileri</div>
 <div class="form-grid">
 <div class="field full hidden" id="eventNameFieldWrap">
 <label for="eventName" id="eventNameLabel">Olay adı (isteğe bağlı)</label>
-<input id="eventName" maxlength="60" placeholder="Örn: Evlilik, işe başlama, mezuniyet" type="text"/>
-<div class="helper">Bu alan sonucu daha kişisel hale getirir. Boş bırakırsan genel süre sonucu gösterilir.</div>
+<input aria-describedby="eventNameHelper eventNameError" aria-invalid="false" id="eventName" maxlength="60" placeholder="Örn: Evlilik, işe başlama, mezuniyet" type="text"/>
+<div class="helper" id="eventNameHelper">Bu alan sonucu daha kişisel hale getirir. Boş bırakırsan genel süre sonucu gösterilir.</div>
 <div class="field-error" id="eventNameError"></div>
 </div>
 <div class="field" id="birthDateField">
 <label for="birthDate" id="birthDateLabel">Doğum tarihi</label>
-<input autocomplete="bday" id="birthDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY" type="text"/>
+<input aria-describedby="birthDateHelper birthDateError" aria-invalid="false" aria-required="true" autocomplete="bday" id="birthDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY" required type="text"/>
 <div class="helper" id="birthDateHelper">Tarihi 17.08.1994 biçiminde yazabilirsin.</div>
 <div class="field-error" id="birthDateError"></div>
 </div>
 <div class="field" id="birthTimeField">
 <label for="birthTime" id="birthTimeLabel">Doğum saati (isteğe bağlı)</label>
 <div class="time-input-row">
-<input autocomplete="off" id="birthTime" inputmode="numeric" maxlength="5" placeholder="SS:DD" type="tel"/>
-<button class="time-picker-trigger" id="birthTimeTrigger" type="button">Saat Seç</button>
+<input aria-describedby="birthTimeHelper birthTimeError" aria-invalid="false" autocomplete="off" id="birthTime" inputmode="numeric" maxlength="5" placeholder="SS:DD" type="tel"/>
+<button aria-controls="timePickerInline" aria-expanded="false" class="time-picker-trigger" id="birthTimeTrigger" type="button">Saat Seç</button>
 </div>
 <div aria-hidden="true" class="time-picker-inline" id="timePickerInline">
 <div class="time-picker-head">
@@ -588,17 +562,17 @@
 <div class="field-error" id="birthTimeError"></div>
 </div>
 </div>
-<div class="validation-box" id="validationBox"></div>
+<div aria-live="polite" class="validation-box" id="validationBox"></div>
 <div class="action-buttons">
-<button class="btn btn-primary" id="calculateBtn" type="button">Sonucu Gör</button>
+<button class="btn btn-primary" id="calculateBtn" type="submit">Sonucu Gör</button>
 <button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
 <button class="btn btn-ghost" id="clearBtn" type="button">Verileri Sıfırla</button>
 <button class="btn btn-secondary" id="copyBtn" type="button">Sonucu Kopyala</button>
 <button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
 <button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button>
 </div>
-</div>
-<aside class="result-card" 
+</form>
+<aside class="result-card" id="resultPanel">
 <!-- HC_AD_SLOT:result -->
 <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
   <ins class="adsbygoogle"
@@ -609,20 +583,18 @@
        data-full-width-responsive="true"></ins>
 </div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-id="resultPanel">
 <div class="status-card">
 <div class="status-row">
 <div>
 <div class="status-title">Sonuç alanı durumu</div>
-<div class="status-text" id="statusText">Doğum tarihi veya olay tarihi girildiğinde sonuçlar otomatik oluşur.</div>
+<div aria-live="polite" class="status-text" id="statusText">Doğum tarihi veya olay tarihi girildiğinde sonuçlar otomatik oluşur.</div>
 </div>
 <span class="badge" id="statusBadge">Veri bekleniyor</span>
 </div>
 </div>
 <div class="result-main" id="mainBox">
 <div class="label" id="mainLabel">Yaşınız</div>
-<div class="value" id="mainResult">—</div>
+<div aria-live="polite" class="value" id="mainResult">—</div>
 <div class="subtext" id="mainSubtext">İlk zorunlu tarih girildiğinde ana sonuç burada görünür.</div>
 <div class="reference-text" id="referenceText">Baz alınan hesaplama anı: Veri bekleniyor</div>
 </div>
@@ -708,16 +680,6 @@ id="resultPanel">
         Toplam Gün = İki tarih arasındaki toplam süre
       </div>
 </section>
-<section id="hc-related-tools" class="related-tools">
-  <h2>İlgili Hesaplama Araçları</h2>
-  <div class="related-grid">
-<a href="/iki-tarih-arasi-gun-hesaplama" class="related-card"><h3>İki Tarih Arası Gün Hesaplama</h3><p>Tarihler arasındaki gün farkını anında hesapla.</p></a>
-<a href="/geri-sayim-hesaplama" class="related-card"><h3>Geri Sayım Hesaplama</h3><p>Hedef tarihe kalan süreyi gün ve saat bazında takip et.</p></a>
-<a href="/yuzde-hesaplama" class="related-card"><h3>Yüzde Hesaplama</h3><p>Yüzde artış, azalış ve değişim oranlarını saniyeler içinde bul.</p></a>
-<a href="/ortalama-hesaplama" class="related-card"><h3>Ortalama Hesaplama</h3><p>Aritmetik ve ağırlıklı ortalamayı tek ekranda hesapla.</p></a>
-  </div>
-  <a href="/" class="related-home-link">← Ana sayfaya dön ve tüm araçları keşfet</a>
-</section>
 <section class="faq-section">
 
 <!-- HC_AD_SLOT:faq -->
@@ -734,7 +696,7 @@ id="resultPanel">
 <h2>Sık Sorulan Sorular</h2>
 <div class="faq-item">
 <h3>Doğum veya olay saati gerekli mi?</h3>
-<p>Hayır. Sadece tarih girerek temel sonucu alabilirsin. Saat bilgisi eklersen sonuç daha hassas hale gelir.</p>
+<p>Hayır. Sadece tarih girerek temel sonucu alabilirsin. Saat girilmezse yıl/ay/gün tarih bazında; toplam hafta, gün, saat, dakika ve saniye değerleri 00:00 varsayımıyla yaklaşık gösterilir.</p>
 </div>
 <div class="faq-item">
 <h3>Hesaplama anı nasıl belirlenir?</h3>
@@ -762,26 +724,27 @@ id="resultPanel">
 <strong>Geri Sayım Hesaplama</strong>
 <p>Belirlediğin tarihe kaç gün kaldığını anında gör.</p>
 </a>
-<a class="related-card" href="/gunluk-su-ihtiyaci-hesaplama">
-<span class="small">İlgili Araç</span>
-<strong>Günlük Su İhtiyacı</strong>
-<p>Yaş, kilo ve aktiviteye göre günlük su ihtiyacını hesapla.</p>
+<a class="related-card" href="/yukselen-burc-ve-gunes-burcu-hesaplama">
+<span class="small">Doğum Bilgileri</span>
+<strong>Yükselen Burç ve Güneş Burcu</strong>
+<p>Doğum tarihi, saati ve yerine göre güneş burcu ile yükselen burcu hesapla.</p>
 </a>
 </div>
 </section>
 <div class="footer-note">
       Hesapica · Yaş ve Geçen Süre Hesaplama aracı hızlı sonuç için tasarlanmıştır. Hassas resmi işlemlerde ve kayıt gerektiren durumlarda ilgili kurum kayıtları esas alınmalıdır.
     </div>
-</div>
+</main>
 <script>
-    const STORAGE_KEY = 'hesapica_yas_gecen_sure_lock_v2';
+    const STORAGE_KEY = 'hesapica_yas_gecen_sure_v3';
+    const LEGACY_STORAGE_KEYS = ['hesapica_yas_gecen_sure_lock_v2'];
 
     const MODE_TEXTS = {
       age: {
         title: 'Yaşını Hesapla',
         sectionNote: 'Doğum tarihinizi girerek yaşınızı yıl, ay, gün, hafta, saat, dakika ve saniye olarak görün. Hesaplama anı sistemden otomatik alınır.',
         helperTitle: 'Kısa not',
-        helperText: 'Doğum tarihi tek başına yeterlidir. Hesaplama anı sistemden otomatik alınır ve sonuç alanında ayrıca gösterilir. Doğum saati girersen sonuç daha hassas olur.',
+        helperText: 'Doğum tarihi tek başına yeterlidir. Hesaplama anı sistemden otomatik alınır. Doğum saati girilmezse yıl/ay/gün tarih bazında hesaplanır; toplam hafta, gün, saat, dakika ve saniye değerleri 00:00 varsayımıyla yaklaşık gösterilir.',
         primarySubhead: 'Doğum Bilgileri',
         birthDateLabel: 'Doğum tarihi',
         birthTimeLabel: 'Doğum saati (isteğe bağlı)',
@@ -791,14 +754,14 @@ id="resultPanel">
         quickLabel1: 'Ana yaş',
         quickLabel3: 'Doğum günü',
         yearBarLabel: 'Bu yaş yılı içindeki ilerleme',
-        birthdayBarLabel: 'Doğum gününe yakınlık',
+        birthdayBarLabel: 'Sonraki doğum gününe kalan dönem',
         badgeReady: 'Hazır',
         badgeNear: 'Yakın',
         copyTitle: 'Yaş Hesaplama Sonucu',
         referencePrefix: 'Baz alınan hesaplama anı:',
         requiredMessage: 'Doğum tarihi zorunludur.',
         invalidOrder: 'Doğum tarihi hesaplama anından sonra olamaz.',
-        nextLabelText(days) { return days + ' gün'; },
+        nextLabelText(days) { return days === 0 ? 'Bugün' : days + ' gün'; },
         formatMainLong(y,m,d){ return 'Toplam yaş: ' + y + ' yıl, ' + m + ' ay ve ' + d + ' gün'; },
         quickPrimary(y,m,d){ return y + ' yıl'; },
         exampleName: '',
@@ -809,7 +772,7 @@ id="resultPanel">
         title: 'Bir Olayın Üzerinden Ne Kadar Zaman Geçti?',
         sectionNote: 'Evlilik, işe başlama, sigarayı bırakma, mezuniyet veya tanışma gibi bir olayın üzerinden geçen süreyi detaylı hesaplayın.',
         helperTitle: 'Geçen süre modu',
-        helperText: 'Olay tarihi tek başına yeterlidir. Olay adı alanı sonucu kişisel hale getirir. Hesaplama anı sistemden otomatik alınır ve sonuç alanında ayrıca gösterilir.',
+        helperText: 'Olay tarihi tek başına yeterlidir. Olay adı alanı sonucu kişisel hale getirir. Olay saati girilmezse toplam hafta, gün, saat, dakika ve saniye değerleri 00:00 varsayımıyla yaklaşık gösterilir.',
         primarySubhead: 'Olay Bilgileri',
         birthDateLabel: 'Olay tarihi',
         birthTimeLabel: 'Olay saati (isteğe bağlı)',
@@ -820,14 +783,14 @@ id="resultPanel">
         quickLabel1: 'Ana süre',
         quickLabel3: 'Yıldönümü',
         yearBarLabel: 'Bu yıldönümü dönemi içindeki ilerleme',
-        birthdayBarLabel: 'Yıldönümüne yakınlık',
+        birthdayBarLabel: 'Sonraki yıldönümüne kalan dönem',
         badgeReady: 'Hazır',
         badgeNear: 'Yakın',
         copyTitle: 'Geçen Süre Hesaplama Sonucu',
         referencePrefix: 'Baz alınan hesaplama anı:',
         requiredMessage: 'Olay tarihi zorunludur.',
         invalidOrder: 'Olay tarihi hesaplama anından sonra olamaz.',
-        nextLabelText(days) { return days + ' gün'; },
+        nextLabelText(days) { return days === 0 ? 'Bugün' : days + ' gün'; },
         formatMainLong(y,m,d,name){ return (name ? name + ' üzerinden geçen süre: ' : 'Geçen süre: ') + y + ' yıl, ' + m + ' ay ve ' + d + ' gün'; },
         quickPrimary(y,m,d){ if (y > 0) return y + ' yıl'; if (m > 0) return m + ' ay'; return d + ' gün'; },
         exampleName: 'Evlilik',
@@ -837,6 +800,7 @@ id="resultPanel">
     };
 
     const els = {
+      form: document.getElementById('ageCalculatorForm'),
       modeAgeBtn: document.getElementById('modeAgeBtn'),
       modeElapsedBtn: document.getElementById('modeElapsedBtn'),
       elapsedPresetRow: document.getElementById('elapsedPresetRow'),
@@ -896,7 +860,7 @@ id="resultPanel">
     }
 
     function summarizeLargeNumber(value, unit) {
-      if (!value) return 'Veri bekleniyor';
+      if (value == null || !Number.isFinite(Number(value))) return 'Veri bekleniyor';
       if (value >= 1000000000) return 'Yaklaşık ' + formatNumber(value / 1000000000, 2) + ' milyar ' + unit;
       if (value >= 1000000) return 'Yaklaşık ' + formatNumber(value / 1000000, 2) + ' milyon ' + unit;
       if (value >= 1000) return 'Yaklaşık ' + formatNumber(value / 1000, 2) + ' bin ' + unit;
@@ -943,9 +907,19 @@ id="resultPanel">
     }
 
     function formatTimeTyping(raw) {
-      const digits = String(raw || '').replace(/\D/g, '').slice(0, 4);
+      const value = String(raw || '').trim();
+      if (!value) return '';
+      if (value.includes(':')) {
+        const cleaned = value.replace(/[^0-9:]/g, '');
+        const firstColon = cleaned.indexOf(':');
+        const hours = cleaned.slice(0, firstColon).replace(/\D/g, '').slice(0, 2);
+        const minutes = cleaned.slice(firstColon + 1).replace(/\D/g, '').slice(0, 2);
+        return hours + ':' + minutes;
+      }
+      const digits = value.replace(/\D/g, '').slice(0, 4);
       if (!digits) return '';
       if (digits.length <= 2) return digits;
+      if (digits.length === 3) return digits.slice(0, 1) + ':' + digits.slice(1);
       return digits.slice(0, 2) + ':' + digits.slice(2);
     }
 
@@ -1052,6 +1026,7 @@ id="resultPanel">
       els.timeMinuteSelect.value = minutes;
       els.timePickerInline.classList.add('show');
       els.timePickerInline.setAttribute('aria-hidden', 'false');
+      els.birthTimeTrigger.setAttribute('aria-expanded', 'true');
       if (window.innerWidth < 900) {
         els.timePickerInline.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
@@ -1060,6 +1035,7 @@ id="resultPanel">
     function closeTimeModal() {
       els.timePickerInline.classList.remove('show');
       els.timePickerInline.setAttribute('aria-hidden', 'true');
+      els.birthTimeTrigger.setAttribute('aria-expanded', 'false');
     }
 
     function saveTimeFromModal() {
@@ -1083,16 +1059,20 @@ id="resultPanel">
     function clearFieldErrors() {
       ['eventName', 'birthDate', 'birthTime'].forEach(name => {
         const field = document.getElementById(name + 'Field') || document.getElementById(name + 'FieldWrap');
+        const input = document.getElementById(name);
         const error = document.getElementById(name + 'Error');
         if (field) field.classList.remove('has-error');
+        if (input) input.setAttribute('aria-invalid', 'false');
         if (error) error.textContent = '';
       });
     }
 
     function setFieldError(name, message) {
       const field = document.getElementById(name + 'Field') || document.getElementById(name + 'FieldWrap');
+      const input = document.getElementById(name);
       const error = document.getElementById(name + 'Error');
       if (field) field.classList.add('has-error');
+      if (input) input.setAttribute('aria-invalid', 'true');
       if (error) error.textContent = message || '';
     }
 
@@ -1129,34 +1109,31 @@ id="resultPanel">
       }
     }
 
+    function isValidSavedInputs(inputs) {
+      if (!inputs || typeof inputs !== 'object') return false;
+      if (!['age', 'elapsed'].includes(inputs.mode)) return false;
+      if (typeof inputs.eventName !== 'string' || inputs.eventName.length > 60) return false;
+      if (typeof inputs.birthDate !== 'string' || typeof inputs.birthTime !== 'string') return false;
+      const parsedDate = parseFlexibleDateInput(inputs.birthDate);
+      if (!parsedDate.valid) return false;
+      const parsedTime = parseFlexibleTimeInput(inputs.birthTime);
+      if (inputs.birthTime && !parsedTime.valid) return false;
+      const start = combineDateTime(parsedDate.iso, parsedTime.valid ? parsedTime.value : '00:00');
+      return Boolean(start && Number.isFinite(start.getTime()) && start <= new Date());
+    }
+
     function saveState() {
-      if (state.suppressSave || state.dataMode !== 'manual' || !hasManualContent()) return;
+      if (state.suppressSave || state.dataMode !== 'manual') return;
       const storage = getStorage();
       if (!storage) return;
       try {
-        storage.setItem(STORAGE_KEY, JSON.stringify({ inputs: state.inputs, isCalculated: state.isCalculated }));
+        if (!state.isValid || !state.isCalculated || !isValidSavedInputs(state.inputs)) {
+          storage.removeItem(STORAGE_KEY);
+          return;
+        }
+        storage.setItem(STORAGE_KEY, JSON.stringify({ version: 3, inputs: state.inputs }));
       } catch (error) {
         console.warn('State kaydedilemedi:', error);
-      }
-    }
-
-    function loadState() {
-      try {
-        const storage = getStorage();
-        if (!storage) return;
-        const raw = storage.getItem(STORAGE_KEY);
-        if (!raw) return;
-        const parsed = JSON.parse(raw);
-        if (!parsed || !parsed.inputs) return;
-        applyInputs(parsed.inputs);
-        state.dataMode = 'manual';
-        if (hasManualContent(parsed.inputs)) {
-          calculateTool({ save: false });
-        } else {
-          setEmptyState();
-        }
-      } catch (error) {
-        console.warn('State yüklenemedi:', error);
       }
     }
 
@@ -1165,8 +1142,31 @@ id="resultPanel">
       if (!storage) return;
       try {
         storage.removeItem(STORAGE_KEY);
+        LEGACY_STORAGE_KEYS.forEach(key => storage.removeItem(key));
       } catch (error) {
         console.warn('State temizlenemedi:', error);
+      }
+    }
+
+    function loadState() {
+      const storage = getStorage();
+      if (!storage) return;
+      try {
+        LEGACY_STORAGE_KEYS.forEach(key => storage.removeItem(key));
+        const raw = storage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (parsed?.version !== 3 || !isValidSavedInputs(parsed.inputs)) {
+          storage.removeItem(STORAGE_KEY);
+          return;
+        }
+        applyInputs(parsed.inputs);
+        state.dataMode = 'manual';
+        calculateTool({ save: false });
+        if (!state.isValid || !state.isCalculated) storage.removeItem(STORAGE_KEY);
+      } catch (error) {
+        try { storage.removeItem(STORAGE_KEY); } catch (_) {}
+        console.warn('State yüklenemedi:', error);
       }
     }
 
@@ -1185,58 +1185,93 @@ id="resultPanel">
       return new Date(finalDate + 'T' + finalTime + ':00');
     }
 
-    function createAnniversary(year, start) {
-      const month = start.getMonth();
-      const lastDay = new Date(year, month + 1, 0).getDate();
-      const day = Math.min(start.getDate(), lastDay);
-      return new Date(year, month, day, start.getHours(), start.getMinutes(), start.getSeconds());
+    function lastDayOfMonth(year, monthIndex) {
+      return new Date(year, monthIndex + 1, 0).getDate();
     }
 
-    function compareTimeOnly(a, b) {
-      if (a.getHours() !== b.getHours()) return a.getHours() - b.getHours();
-      if (a.getMinutes() !== b.getMinutes()) return a.getMinutes() - b.getMinutes();
-      return a.getSeconds() - b.getSeconds();
+    function createClampedDate(year, monthIndex, day, timeSource) {
+      const safeDay = Math.min(day, lastDayOfMonth(year, monthIndex));
+      return new Date(year, monthIndex, safeDay, timeSource.getHours(), timeSource.getMinutes(), timeSource.getSeconds(), 0);
+    }
+
+    function addCalendarYearsMonthsClamped(start, years, months) {
+      const absoluteMonth = start.getMonth() + months;
+      const year = start.getFullYear() + years + Math.floor(absoluteMonth / 12);
+      const month = ((absoluteMonth % 12) + 12) % 12;
+      return createClampedDate(year, month, start.getDate(), start);
+    }
+
+    function addCalendarYearsClamped(start, years) {
+      return addCalendarYearsMonthsClamped(start, years, 0);
+    }
+
+    function addCalendarMonthsClamped(start, months) {
+      return addCalendarYearsMonthsClamped(start, 0, months);
+    }
+
+    function addCalendarDays(start, days) {
+      return new Date(start.getFullYear(), start.getMonth(), start.getDate() + days, start.getHours(), start.getMinutes(), start.getSeconds(), 0);
     }
 
     function diffYMD(start, end) {
       let years = end.getFullYear() - start.getFullYear();
-      let months = end.getMonth() - start.getMonth();
-      let days = end.getDate() - start.getDate();
-      if (compareTimeOnly(end, start) < 0) days -= 1;
-      if (days < 0) {
-        const prevMonthDays = new Date(end.getFullYear(), end.getMonth(), 0).getDate();
-        days += prevMonthDays;
-        months -= 1;
+      if (addCalendarYearsMonthsClamped(start, years, 0) > end) years -= 1;
+
+      let months = 0;
+      for (let m = 1; m <= 11; m += 1) {
+        const candidate = addCalendarYearsMonthsClamped(start, years, m);
+        if (candidate <= end) months = m;
+        else break;
       }
-      if (months < 0) {
-        months += 12;
-        years -= 1;
+      const monthAnchor = addCalendarYearsMonthsClamped(start, years, months);
+
+      let days = 0;
+      for (let d = 1; d <= 31; d += 1) {
+        if (addCalendarDays(monthAnchor, d) <= end) days = d;
+        else break;
       }
       return { years, months, days };
     }
 
+    function startOfLocalDay(date) {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+
+    function calendarDayNumber(date) {
+      return Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86400000);
+    }
+
+    function createAnniversary(year, start) {
+      const day = Math.min(start.getDate(), lastDayOfMonth(year, start.getMonth()));
+      return new Date(year, start.getMonth(), day);
+    }
+
     function nextAnniversaryInfo(start, ref) {
-      let next = createAnniversary(ref.getFullYear(), start);
-      let previous = createAnniversary(ref.getFullYear() - 1, start);
-      if (next <= ref) {
-        previous = next;
-        next = createAnniversary(ref.getFullYear() + 1, start);
+      const today = startOfLocalDay(ref);
+      const thisYear = createAnniversary(today.getFullYear(), start);
+      let previous;
+      let next;
+
+      if (thisYear.getTime() === today.getTime()) {
+        previous = createAnniversary(today.getFullYear() - 1, start);
+        next = thisYear;
+      } else if (thisYear > today) {
+        previous = createAnniversary(today.getFullYear() - 1, start);
+        next = thisYear;
       } else {
-        const current = createAnniversary(ref.getFullYear(), start);
-        if (current <= ref) previous = current;
+        previous = thisYear;
+        next = createAnniversary(today.getFullYear() + 1, start);
       }
-      const diffMs = next - ref;
-      const totalMs = next - previous;
-      const days = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-      const ratio = totalMs > 0 ? ((totalMs - diffMs) / totalMs) * 100 : 0;
+
+      const days = Math.max(0, calendarDayNumber(next) - calendarDayNumber(today));
+      const totalDays = Math.max(1, calendarDayNumber(next) - calendarDayNumber(previous));
+      const elapsedDays = Math.max(0, totalDays - days);
+      const ratio = thisYear.getTime() === today.getTime() ? 100 : (elapsedDays / totalDays) * 100;
       return { days, ratio: Math.max(0, Math.min(100, ratio)), nextDate: next };
     }
 
     function yearProgressInfo(start, ref) {
-      const currentStart = createAnniversary(ref.getFullYear(), start) <= ref ? createAnniversary(ref.getFullYear(), start) : createAnniversary(ref.getFullYear() - 1, start);
-      const nextStart = createAnniversary(currentStart.getFullYear() + 1, start);
-      const ratio = ((ref - currentStart) / (nextStart - currentStart)) * 100;
-      return Math.max(0, Math.min(100, ratio));
+      return nextAnniversaryInfo(start, ref).ratio;
     }
 
     function fallbackCopyText(text) {
@@ -1283,14 +1318,18 @@ id="resultPanel">
         return;
       }
       const text = buildCopyText();
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
           await navigator.clipboard.writeText(text);
-        } else if (!fallbackCopyText(text)) {
-          throw new Error('copy-failed');
+          flashSmartNote('Sonuç panoya kopyalandı.');
+          return;
+        } catch (_) {
+          // Clipboard API başarısızsa eski yöntem denenir.
         }
+      }
+      if (fallbackCopyText(text)) {
         flashSmartNote('Sonuç panoya kopyalandı.');
-      } catch (error) {
+      } else {
         showValidation('Kopyalama başarısız oldu. Tarayıcı izinlerini kontrol et.');
       }
     }
@@ -1302,27 +1341,30 @@ id="resultPanel">
       }
       const text = buildCopyText();
       const url = window.location.href;
-      try {
-        if (navigator.share) {
+      if (navigator.share) {
+        try {
           await navigator.share({ title: textSet().copyTitle, text, url });
           flashSmartNote('Sonuç paylaşım menüsüne gönderildi.');
           return;
+        } catch (error) {
+          if (error && error.name === 'AbortError') return;
+          // Gerçek paylaşım hatasında panoya kopyalama fallback'i denenir.
         }
-        const fallbackText = text + '\n' + url;
-        if (navigator.clipboard && window.isSecureContext) {
+      }
+      const fallbackText = text + '\n' + url;
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
           await navigator.clipboard.writeText(fallbackText);
-          flashSmartNote('Paylaşım desteği yoktu; sonuç ve link panoya kopyalandı.');
+          flashSmartNote('Paylaşım tamamlanamadı; sonuç ve link panoya kopyalandı.');
           return;
+        } catch (_) {
+          // Aşağıdaki klasik kopyalama fallback'i denenir.
         }
-        if (fallbackCopyText(fallbackText)) {
-          flashSmartNote('Paylaşım desteği yoktu; sonuç ve link panoya kopyalandı.');
-          return;
-        }
-        throw new Error('share-failed');
-      } catch (error) {
-        if (error && error.name !== 'AbortError') {
-          showValidation('Paylaşım tamamlanamadı. Kopyala butonunu kullanabilirsin.');
-        }
+      }
+      if (fallbackCopyText(fallbackText)) {
+        flashSmartNote('Paylaşım tamamlanamadı; sonuç ve link panoya kopyalandı.');
+      } else {
+        showValidation('Paylaşım ve kopyalama tamamlanamadı. Tarayıcı izinlerini kontrol et.');
       }
     }
 
@@ -1359,6 +1401,7 @@ id="resultPanel">
       document.getElementById('helperText').textContent = t.helperText;
       document.getElementById('primarySubhead').textContent = t.primarySubhead;
       document.getElementById('birthDateLabel').textContent = t.birthDateLabel;
+      els.birthDate.setAttribute('autocomplete', state.mode === 'age' ? 'bday' : 'off');
       document.getElementById('birthDateHelper').textContent = state.mode === 'age'
         ? 'Tarihi 17.08.1994 biçiminde yazabilirsin.'
         : 'Tarihi 20.06.2020 biçiminde yazabilirsin.';
@@ -1372,6 +1415,8 @@ id="resultPanel">
       document.getElementById('birthdayBarLabel').textContent = t.birthdayBarLabel;
       els.modeAgeBtn.classList.toggle('active', state.mode === 'age');
       els.modeElapsedBtn.classList.toggle('active', state.mode === 'elapsed');
+      els.modeAgeBtn.setAttribute('aria-pressed', String(state.mode === 'age'));
+      els.modeElapsedBtn.setAttribute('aria-pressed', String(state.mode === 'elapsed'));
       els.eventNameWrap.classList.toggle('hidden', state.mode !== 'elapsed');
       els.elapsedPresetRow.classList.toggle('hidden', state.mode !== 'elapsed');
       if (!state.isCalculated) {
@@ -1435,7 +1480,7 @@ id="resultPanel">
         setFieldError('birthDate', t.requiredMessage);
         showValidation(state.mode === 'age' ? 'Önce doğum tarihini girmen gerekiyor.' : 'Önce olay tarihini girmen gerekiyor.');
         setEmptyState();
-        if (save && state.dataMode === 'manual' && hasManualContent()) saveState();
+        if (save && state.dataMode === 'manual') saveState();
         return;
       }
 
@@ -1446,13 +1491,13 @@ id="resultPanel">
         if (!forceValidation && isPartialDateInput(mainDateVal)) {
           showValidation('');
           setEmptyState();
-          if (save && state.dataMode === 'manual' && hasManualContent()) saveState();
+          if (save && state.dataMode === 'manual') saveState();
           return;
         }
         setFieldError('birthDate', 'Tarihi GG.AA.YYYY biçiminde gir.');
         showValidation('Tarih biçimi okunamadı. Örnek giriş: 17.08.1994.');
         setEmptyState();
-        if (save && state.dataMode === 'manual' && hasManualContent()) saveState();
+        if (save && state.dataMode === 'manual') saveState();
         return;
       }
 
@@ -1463,7 +1508,7 @@ id="resultPanel">
         setFieldError('birthTime', 'Saati SS:DD biçiminde gir.');
         showValidation('Saat biçimi okunamadı. Örnek giriş: 10:55.');
         setEmptyState();
-        if (save && state.dataMode === 'manual' && hasManualContent()) saveState();
+        if (save && state.dataMode === 'manual') saveState();
         return;
       }
 
@@ -1472,7 +1517,8 @@ id="resultPanel">
         state.inputs = collectInputs();
       }
 
-      const start = combineDateTime(parsedDate.iso, parsedTime.valid ? parsedTime.value : '00:00');
+      const timeWasProvided = parsedTime.valid;
+      const start = combineDateTime(parsedDate.iso, timeWasProvided ? parsedTime.value : '00:00');
       const ref = new Date();
 
       if (!start || Number.isNaN(start.getTime()) || !ref || Number.isNaN(ref.getTime())) {
@@ -1507,38 +1553,45 @@ id="resultPanel">
       const totalWeeks = Math.floor(totalDays / 7);
       const yearRatio = yearProgressInfo(start, ref);
       const anniv = nextAnniversaryInfo(start, ref);
+      const remainingRatio = anniv.days === 0 ? 0 : Math.max(0, 100 - anniv.ratio);
       const mainAge = diff.years + ' yıl ' + diff.months + ' ay ' + diff.days + ' gün';
 
       document.getElementById('statusText').textContent = 'Sonuç güncel verilere göre otomatik hesaplandı.';
-      document.getElementById('statusBadge').textContent = anniv.days <= 30 ? t.badgeNear : t.badgeReady;
-      document.getElementById('statusBadge').className = 'badge ' + (anniv.days <= 30 ? 'warn' : 'good');
+      document.getElementById('statusBadge').textContent = anniv.days === 0 ? 'Bugün' : (anniv.days <= 30 ? t.badgeNear : t.badgeReady);
+      document.getElementById('statusBadge').className = 'badge ' + (anniv.days === 0 ? 'good' : (anniv.days <= 30 ? 'warn' : 'good'));
       document.getElementById('mainResult').textContent = mainAge;
       document.getElementById('mainSubtext').textContent = state.mode === 'age' ? t.formatMainLong(diff.years, diff.months, diff.days) : t.formatMainLong(diff.years, diff.months, diff.days, eventNameVal);
-      document.getElementById('referenceText').textContent = t.referencePrefix + ' ' + formatDateTimeTR(ref);
+      const sourceLabel = state.mode === 'age' ? 'Doğum' : 'Olay';
+      const sourceTimeText = timeWasProvided ? ' ' + parsedTime.value : ' (saat belirtilmedi; 00:00 varsayımı)';
+      document.getElementById('referenceText').textContent = sourceLabel + ': ' + parsedDate.display + sourceTimeText + ' • ' + t.referencePrefix + ' ' + formatDateTimeTR(ref);
       document.getElementById('mainBox').classList.add('ready');
 
       document.getElementById('totalWeeks').textContent = formatNumber(totalWeeks);
       document.getElementById('totalDays').textContent = formatNumber(totalDays);
       document.getElementById('totalMinutes').textContent = formatNumber(totalMinutes);
       document.getElementById('totalSeconds').textContent = formatNumber(totalSeconds);
-      document.getElementById('totalWeeksText').textContent = summarizeLargeNumber(totalWeeks, 'hafta');
-      document.getElementById('totalDaysText').textContent = summarizeLargeNumber(totalDays, 'gün');
-      document.getElementById('totalMinutesText').textContent = summarizeLargeNumber(totalMinutes, 'dakika');
-      document.getElementById('totalSecondsText').textContent = summarizeLargeNumber(totalSeconds, 'saniye');
+      const approxSuffix = timeWasProvided ? '' : ' • Başlangıç saati bilinmediği için yaklaşık';
+      document.getElementById('totalWeeksText').textContent = summarizeLargeNumber(totalWeeks, 'hafta') + approxSuffix;
+      document.getElementById('totalDaysText').textContent = summarizeLargeNumber(totalDays, 'gün') + approxSuffix;
+      document.getElementById('totalMinutesText').textContent = summarizeLargeNumber(totalMinutes, 'dakika') + approxSuffix;
+      document.getElementById('totalSecondsText').textContent = summarizeLargeNumber(totalSeconds, 'saniye') + approxSuffix;
 
       ['item1','item2','item3','item4','health1','health2','health3','health4'].forEach(id => document.getElementById(id).classList.add('ready'));
       document.getElementById('quickAge').textContent = t.quickPrimary(diff.years, diff.months, diff.days);
-      document.getElementById('quickHours').textContent = formatNumber(totalHours);
+      document.getElementById('quickHours').textContent = (timeWasProvided ? '' : '≈ ') + formatNumber(totalHours);
       document.getElementById('quickBirthday').textContent = t.nextLabelText(anniv.days);
       document.getElementById('quickCalcDate').textContent = formatDateTR(ref);
       document.getElementById('quickCalcTime').textContent = new Intl.DateTimeFormat('tr-TR', { hour:'2-digit', minute:'2-digit' }).format(ref);
       document.getElementById('yearRatioLabel').textContent = '%' + formatNumber(yearRatio, 0);
-      document.getElementById('birthdayRatioLabel').textContent = '%' + formatNumber(anniv.ratio, 0);
+      document.getElementById('birthdayRatioLabel').textContent = '%' + formatNumber(remainingRatio, 0);
       document.getElementById('yearBar').style.width = yearRatio + '%';
-      document.getElementById('birthdayBar').style.width = anniv.ratio + '%';
+      document.getElementById('birthdayBar').style.width = remainingRatio + '%';
       let comment = 'Hesaplama anı sistemden otomatik alındı. ';
+      if (!timeWasProvided) comment += 'Başlangıç saati girilmediği için toplam hafta, gün, saat, dakika ve saniye değerleri 00:00 varsayımıyla yaklaşık gösterilir. ';
       if (state.mode === 'age') {
-        if (diff.years < 1) {
+        if (anniv.days === 0) {
+          comment += 'Doğum günün bugün.';
+        } else if (diff.years < 1) {
           comment += 'Henüz 1 yaşın altındaki bir yaş hesabı görünüyor. Saat bilgisi girildiğinde sonuç daha hassas olur.';
         } else if (anniv.days <= 7) {
           comment += 'Bir sonraki doğum günün çok yakın: sadece ' + anniv.days + ' gün kaldı.';
@@ -1704,7 +1757,10 @@ id="resultPanel">
       state.inputs = collectInputs();
       if (els.birthDate.value) calculateTool();
     }));
-    els.calculateBtn.addEventListener('click', () => calculateTool({ scroll: true, forceValidation: true }));
+    els.form.addEventListener('submit', event => {
+      event.preventDefault();
+      calculateTool({ scroll: true, forceValidation: true });
+    });
     els.exampleBtn.addEventListener('click', fillExample);
     els.copyBtn.addEventListener('click', copyResult);
     els.shareBtn.addEventListener('click', shareResult);
