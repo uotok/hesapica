@@ -2,6 +2,7 @@
 .hc-ad-slot{
   display:none;
   width:100%;
+  min-height:0;
   opacity:1;
   overflow:hidden;
 }
@@ -15,21 +16,43 @@ html[data-hc-environment="live"][data-cookie-marketing="granted"]
   overflow:visible;
 }
 
+/*
+ * Responsive AdSense birimi genişliğini buradan alır; yüksekliğini reklam dolduğunda
+ * AdSense belirler. Pending durumda yapay 240/250 px ayırmamak, reklam gelmeyen
+ * sayfalarda birkaç saniyelik büyük boşluk oluşmasını engeller.
+ */
 .hc-ad-slot .adsbygoogle{
   display:block;
   width:100%;
-  min-height:250px;
+  min-width:0;
+  min-height:0;
+}
+
+/* Eski sayfa-içi reklam stilleri pending aşamada boş alan üretmesin. */
+html[data-hc-environment="live"][data-cookie-marketing="granted"]
+.hc-ad-slot[data-hc-ad-state="pending"]{
+  height:auto !important;
+  min-height:0 !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  border-top-width:0 !important;
+  border-bottom-width:0 !important;
+}
+
+html[data-hc-environment="live"][data-cookie-marketing="granted"]
+.hc-ad-slot[data-hc-ad-state="pending"] .adsbygoogle{
+  min-height:0 !important;
 }
 
 html[data-hc-environment="live"][data-cookie-marketing="granted"] .hc-ad-slot.hc-ad-loaded{
   display:flex;
   align-items:center;
   justify-content:center;
+  min-height:0;
   opacity:1;
-}
-
-@media (max-width:720px){
-  .hc-ad-slot .adsbygoogle{min-height:240px}
+  overflow:visible;
 }
 
 @media print{

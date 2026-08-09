@@ -1624,7 +1624,12 @@
       .search-box{border-width:5px !important;}
       .search-box-inner{border-width:3px !important;}
     }
-  </style>
+  
+    /* Ana sayfada reklam beklenirken alan ayırma; yalnız dolu reklamın çevresine boşluk ver. */
+    main.container > .hc-ad-slot.hc-ad-loaded{
+      margin:26px 0;
+    }
+</style>
 
 <link href="ads-slot-manager.css" rel="stylesheet"/>
 </head>
@@ -1721,26 +1726,6 @@
 </div>
 </div>
 
-<!-- HC_AD_SLOT:top -->
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3615831363"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-
-<!-- HC_AD_SLOT:result -->
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3982292851"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-
  <main class="container">
 <section class="section other-categories" id="diger-kategoriler">
 <div class="section-header">
@@ -1761,6 +1746,17 @@
 <a class="category-chip" href="#gunluk">Günlük Hayat</a>
 </div>
 </section>
+
+<!-- HC_AD_SLOT:top -->
+<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="3615831363"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
 <section class="section searchable-section" id="popular">
 <div class="section-header">
 <div class="section-title">
@@ -1845,6 +1841,17 @@
 
 </div>
 </section>
+
+<!-- HC_AD_SLOT:result -->
+<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="3982292851"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
 <section class="section searchable-section collapsible collapsed" id="finans">
 <div class="section-header">
 <div class="section-title">
