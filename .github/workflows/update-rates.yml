@@ -1,0 +1,92 @@
+name: Update exchange rates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 16 * * 1-5'
+      timezone: 'Europe/Istanbul'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hesapica-update-rates
+  cancel-in-progress: false
+
+jobs:
+  update-rates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Rebuild rates.json
+        env:
+          HESAPICA_REQUIRE_TCMB: '1'
+          HESAPICA_REQUIRE_FRESH_TCMB: '1'
+        run: python scripts/update_rates.py
+
+      - name: Detect changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet -- rates.json; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate generated rates
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          path = Path('rates.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          rates = data.get('rates_try')
+
+          if data.get('schema_version') != 2:
+              raise SystemExit('Unexpected schema_version')
+          if not isinstance(rates, dict) or len(rates) < 10:
+              raise SystemExit('Not enough rates')
+          if rates.get('TRY') != 1.0:
+              raise SystemExit('TRY base rate must equal 1.0')
+          if 'TCMB' not in (data.get('source_priority') or []):
+              raise SystemExit('Scheduled run must include TCMB')
+
+          for code, value in rates.items():
+              if not isinstance(code, str) or len(code) != 3:
+                  raise SystemExit(f'Invalid code: {code!r}')
+              if not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
+                  raise SystemExit(f'Invalid rate for {code}: {value!r}')
+
+          jpy = rates.get('JPY')
+          usd = rates.get('USD')
+          if jpy is not None and usd is not None and not (0.001 <= jpy / usd <= 0.1):
+              raise SystemExit('JPY unit sanity check failed')
+
+          print(f'Validated {len(rates)} rates')
+          PY
+
+      - name: Commit rates.json when changed
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add rates.json
+          git commit -m 'chore: update exchange rates'
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
