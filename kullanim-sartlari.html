@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Kullanım Şartları | Hesapica</title>
-<meta name="description" content="Hesapica kullanım şartlarını incele; hizmet kapsamı, sorumluluklar ve haklarını net öğren. Platformu güvenle kullanmak için detayları keşfet!"/>
+<meta name="description" content="Hesapica kullanım şartları; hesaplama araçlarının bilgi amaçlı niteliğini, kullanıcı sorumluluklarını, içerik kullanımını ve hizmet sınırlarını açıklar."/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <link href="https://hesapica.com/kullanim-sartlari" rel="canonical"/>
 <meta content="website" property="og:type"/>
@@ -13,10 +13,15 @@
 <meta content="Hesapica kullanım şartları, araçların bilgi amaçlı niteliği ve temel kullanım çerçevesi hakkında açıklama sayfası." property="og:description"/>
 <meta content="https://hesapica.com/kullanim-sartlari" property="og:url"/>
 <meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün keşif araçları tek yerde"/>
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün keşif araçları tek yerde"/>
 <meta content="Hesapica" property="og:site_name"/>
+<meta content="tr_TR" property="og:locale"/>
 <meta content="#4f46e5" name="theme-color"/>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Kullanım Şartları | Hesapica" name="twitter:title"/>
 <meta content="Hesapica kullanım şartları, araçların bilgi amaçlı niteliği ve temel kullanım çerçevesi hakkında açıklama sayfası." name="twitter:description"/>
@@ -146,87 +151,48 @@ ul.clean{margin:0;padding-left:20px}
   .nav-link,.contact-link{min-height:58px}
 }
 </style>
-<link href="//pagead2.googlesyndication.com" rel="dns-prefetch">
-<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
-<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6BNBXVN9EW');
-</script>
-
-<script>
-const parseTR = (val) => {
-  if(val == null) return null;
-  let s = String(val).trim();
-  if(!s) return null;
-
-  s = s.replace(/\s+/g,'');
-
-  if(s.includes('.') && !s.includes(',')){
-    s = s.replace(/\./g,'');
-  }
-
-  if(s.includes(',') && s.includes('.')){
-    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      s = s.replace(/\./g,'').replace(',', '.');
-    } else {
-      s = s.replace(/,/g,'');
-    }
-  } else if(s.includes(',')) {
-    s = s.replace(',', '.');
-  }
-
-  s = s.replace(/[^0-9.\-]/g,'');
-  const n = Number(s);
-  if(n === 0 && s !== "0") return null;
-  return Number.isFinite(n) ? n : null;
-};
-</script>
 <link href="cookie-consent.css" rel="stylesheet"/>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
+<!-- Çerez/izin durumu isteğe bağlı Google etiketlerinden önce kurulmalıdır. -->
 <style>
-    button.nav-link{width:100%;font:inherit;color:inherit;cursor:pointer;text-align:left;border:none}
-    button.nav-link:focus-visible{outline:3px solid rgba(79,70,229,.22);outline-offset:2px}
+    button.nav-link{width:100%;font:inherit;color:inherit;cursor:pointer;text-align:left;border:1px solid var(--border);background:#fff}
+    .brand:focus-visible,.topnav a:focus-visible,.nav-link:focus-visible,.contact-link:focus-visible{outline:3px solid rgba(79,70,229,.22);outline-offset:2px}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.topnav a,.nav-link,.contact-link,.hc-ad-slot{transition:none!important}}
   </style>
 <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Kullanım Şartları",
-    "url":"https://hesapica.com/kullanim-sartlari",
-    "description":"Hesapica kullanım şartları, araçların bilgi amaçlı niteliği ve temel kullanım çerçevesi hakkında açıklama sayfası.",
-    "inLanguage":"tr-TR"
-  }
-  </script>
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Kullanım Şartları | Hesapica",
+  "url":"https://hesapica.com/kullanim-sartlari",
+  "description":"Hesapica kullanım şartları; hesaplama araçlarının bilgi amaçlı niteliğini, kullanıcı sorumluluklarını, içerik kullanımını ve hizmet sınırlarını açıklar.",
+  "inLanguage":"tr-TR",
+  "dateModified":"2026-08-08",
+  "isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}
+}
+</script>
 <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
-      {"@type":"ListItem","position":2,"name":"Kullanım Şartları","item":"https://hesapica.com/kullanim-sartlari"}
-    ]
-  }
-  </script>
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Hesapica",
+  "url":"https://hesapica.com/",
+  "logo":"https://hesapica.com/og-image.png",
+  "email":"hesapicaofficial@gmail.com",
+  "sameAs":["https://x.com/hesapica","https://instagram.com/hesapicanoktacom"]
+}
+</script>
 <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Hesapica",
-    "url":"https://hesapica.com/",
-    "logo":"https://hesapica.com/favicon.png",
-    "email":"hesapicaofficial@gmail.com",
-    "sameAs":[
-      "https://x.com/hesapica",
-      "https://instagram.com/hesapicanoktacom"
-    ]
-  }
-  </script>
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
+    {"@type":"ListItem","position":2,"name":"Kullanım Şartları","item":"https://hesapica.com/kullanim-sartlari"}
+  ]
+}
+</script>
 <style id="hesapica-global-typography-standard">
     :root{
       --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -377,20 +343,10 @@ const parseTR = (val) => {
 <meta content="https://hesapica.com/kullanim-sartlari" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
-<style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
-</style>
+
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
 </head>
 <body>
 <noscript>
@@ -402,7 +358,7 @@ const parseTR = (val) => {
 <div class="container">
 <div class="topbar">
 <a aria-label="Hesapica ana sayfa" class="brand" href="/"><span class="brand-mark">H</span><span>Hesapica</span></a>
-<nav aria-label="Sayfa bağlantıları" class="topnav"><a href="/">Ana Sayfa</a><a href="/iletisim">İletişim</a><a href="/gizlilik-politikasi">Gizlilik</a><a href="/hakkimizda">Hakkımızda</a><a class="active" href="/kullanim-sartlari">Kullanım Şartları</a></nav>
+<nav aria-label="Sayfa bağlantıları" class="topnav"><a href="/">Ana Sayfa</a><a href="/iletisim">İletişim</a><a href="/gizlilik-politikasi">Gizlilik</a><a href="/hakkimizda">Hakkımızda</a><a aria-current="page" class="active" href="/kullanim-sartlari">Kullanım Şartları</a></nav>
 </div>
 </div>
 </header>
@@ -416,9 +372,9 @@ const parseTR = (val) => {
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
 </div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-<main>
+
+<main class="page-shell">
 
 <!-- HC_AD_SLOT:result -->
 <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
@@ -429,59 +385,65 @@ const parseTR = (val) => {
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
 </div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
- class="page-shell">
+
 <div class="container layout">
 <div>
 <section class="card hero-card">
 <span class="eyebrow">Hesapica • Kullanım şartları</span>
 <h1>Araçların kullanım çerçevesi ve genel esaslar.</h1>
 <p class="lead">Bu sayfa, Hesapica üzerindeki araçların genel kullanım sınırlarını ve ziyaretçinin dikkat etmesi gereken temel noktaları özetler.</p>
-<div class="hero-chips"><span class="chip">Bilgi amaçlı kullanım</span><span class="chip">Açık çerçeve</span><span class="chip">Kolay erişim</span><span class="chip">Son güncelleme: 7 Nisan 2026</span></div>
+<div class="hero-chips"><span class="chip">Bilgi amaçlı kullanım</span><span class="chip">Açık çerçeve</span><span class="chip">Kolay erişim</span><span class="chip">Son güncelleme: 8 Ağustos 2026</span></div>
 </section>
 <div class="grid">
 <section class="card content-card">
 <h2 class="section-title">Genel kullanım çerçevesi</h2>
-<p>Hesapica’daki araçlar bilgi amaçlıdır ve kullanıcıya pratik hesaplama desteği sunmayı hedefler. Sonuçlar; girilen veriler, kullanılan varsayımlar ve sayfaya özgü hesaplama mantığına göre üretilir.</p>
-<p>Özellikle finansal, vergisel veya hukuki sonuç doğurabilecek konularda yalnızca bu sayfalardaki çıktılara dayanarak işlem yapılmaması önerilir.</p>
+<p>Hesapica’daki hesaplama araçları ve açıklayıcı içerikler genel bilgilendirme ve pratik hesaplama desteği amacıyla sunulur. Sonuçlar; kullanıcının girdiği verilere, seçilen seçeneklere, kullanılan formüllere, varsayımlara ve ilgili sayfanın güncellik tarihine göre değişebilir.</p>
+<p>Finans, vergi, yatırım, hukuk, sağlık veya benzeri alanlardaki sonuçlar tek başına resmî belge, profesyonel danışmanlık, tıbbi tanı ya da tedavi önerisi yerine geçmez. Nihai işlem veya karar öncesinde konuyla ilgili güncel resmî kaynakların ve gerektiğinde yetkili uzmanların ayrıca değerlendirilmesi gerekir.</p>
 </section>
 <section class="card content-card">
 <div class="note">
 <strong style="display:block;font-size:18px;margin-bottom:8px;color:#312e81;">Önemli not</strong>
-<p style="margin:0;">Hesapica araçları pratik bilgi ve hesaplama desteği sunar. Özellikle finans, vergi, hukuk ve yatırım gibi alanlarda sonuçların tek başına kesin karar dayanağı olarak kullanılmaması gerekir.</p>
+<p style="margin:0;">Hesapica, sonuçların anlaşılır ve doğru üretilmesi için makul özen göstermeyi hedefler; ancak mevzuat, piyasa verileri, kurum uygulamaları ve kişisel koşullar zamanla değişebilir. Bu nedenle yüksek etkili kararları yalnızca tek bir hesaplama sonucuna dayandırmamanı öneririz.</p>
 </div>
 </section>
 <section class="card content-card">
 <h2 class="section-title">Kullanım sınırları</h2>
 <ul class="clean">
-<li>Site altyapısına zarar vermeye, hizmeti aksatmaya veya güvenliği aşmaya yönelik kullanım kabul edilmez.</li>
-<li>Sayfalardaki içerikler izinsiz şekilde yanıltıcı, sahte veya zararlı amaçlarla yeniden kullanılamaz.</li>
-<li>Hesap sonuçlarının resmi belge, kesin uzman görüşü veya bağlayıcı hukuki/finansal çıktı yerine geçtiği varsayılmamalıdır.</li>
+<li>Site altyapısına zarar vermeye, hizmeti aksatmaya, güvenlik önlemlerini aşmaya veya yetkisiz erişim sağlamaya yönelik kullanım kabul edilmez.</li>
+<li>Site, araçlar veya içerikler; kullanıcıları yanıltmak, kötüye kullanım gerçekleştirmek ya da hukuka aykırı bir faaliyeti kolaylaştırmak amacıyla kullanılamaz.</li>
+<li>Hesap sonuçları resmî belge, bağlayıcı kurum kararı, kesin uzman görüşü veya kişiye özel profesyonel hizmet gibi sunulmamalıdır.</li>
 </ul>
 </section>
 <section class="card content-card">
 <h2 class="section-title">Kullanıcının sorumluluğu</h2>
 <ul class="clean">
-<li>Girilen verilerin doğruluğu kullanıcı sorumluluğundadır.</li>
-<li>Her araç kendi senaryosu içinde değerlendirilmelidir.</li>
-<li>Kesin karar gerektiren durumlarda resmî kaynaklar veya uzman görüşü esas alınmalıdır.</li>
+<li>Hesaplamaya girilen verilerin doğruluğunu ve kendi durumuna uygunluğunu kontrol etmek kullanıcıya aittir.</li>
+<li>Her aracın açıklamalarını, varsayımlarını, kapsamını ve varsa güncellik notlarını sonuçla birlikte değerlendirmek gerekir.</li>
+<li>Resmî işlem, sözleşme, ödeme, yatırım, sağlık veya hukuki karar gibi önemli sonuç doğuran durumlarda ilgili kurum veya uzman kaynağı ayrıca kontrol edilmelidir.</li>
 </ul>
 </section>
 <section class="card content-card">
-<h2 class="section-title">İçerik ve hizmet değişiklikleri</h2>
+<h2 class="section-title">İçerik, araç ve hizmet değişiklikleri</h2>
 <div class="split-2" style="margin-top:18px;">
-<div class="info-box"><strong>Güncellemeler</strong><p>Sayfa içerikleri, araç mantıkları ve metinler zaman içinde güncellenebilir.</p></div>
-<div class="info-box"><strong>Erişilebilirlik</strong><p>Bakım, geliştirme veya teknik nedenlerle bazı sayfalar dönemsel olarak değişebilir ya da kısa süreli erişilemeyebilir.</p></div>
+<div class="info-box"><strong>Güncellemeler</strong><p>Formüller, veri kaynakları, açıklamalar, sayfa yapıları ve bu kullanım şartları; doğruluk, güvenlik, mevzuat veya kullanıcı deneyimi gerekleri doğrultusunda güncellenebilir.</p></div>
+<div class="info-box"><strong>Erişilebilirlik</strong><p>Bakım, güvenlik, teknik arıza veya geliştirme nedeniyle bazı araçlar geçici olarak değişebilir, sınırlandırılabilir ya da erişilemeyebilir.</p></div>
 </div>
+<p class="muted" style="margin-bottom:0;">Bu şartların güncel sürümü her zaman bu sayfada yayımlanır; önemli değişikliklerde sayfadaki güncelleme tarihi yenilenir.</p>
 </section>
 <section class="card content-card">
 <h2 class="section-title">Sorumluluğun sınırları</h2>
-<p>Hesapica, araçların mümkün olduğunca anlaşılır ve güncel kalması için çalışır; ancak her aracın her kullanıcı senaryosuna tam uyum sağlayacağı garanti edilmez. Kullanıcı, kendi verilerini ve aldığı kararların sonuçlarını ayrıca değerlendirmelidir.</p>
-<p>Üçüncü taraf bağlantılar, resmi kurum verileri veya dış kaynaklar zaman içinde değişebilir. Bu nedenle nihai işlem öncesinde ilgili resmi kaynakların ayrıca kontrol edilmesi önerilir.</p>
+<p>Hesapica, araçların ve içeriklerin doğru, anlaşılır ve güncel kalması için makul özen göstermeyi amaçlar. Bununla birlikte her aracın tüm bireysel durumları, kurum uygulamalarını veya gelecekteki mevzuat ve veri değişikliklerini eksiksiz yansıtacağı garanti edilemez.</p>
+<p>Uygulanabilir hukukun izin verdiği ölçüde, yalnızca site çıktısına dayanılarak verilen kararların veya üçüncü taraf site ve hizmetlerin kullanımından doğan sonuçların ayrıca kullanıcı tarafından değerlendirilmesi gerekir. Bu kullanım şartlarındaki hiçbir ifade, yürürlükteki mevzuat uyarınca kaldırılamayan veya sınırlandırılamayan kullanıcı ya da tüketici haklarını ortadan kaldırmayı amaçlamaz.</p>
 </section>
 <section class="card content-card">
-<h2 class="section-title">Fikri içerik ve sayfa düzeni</h2>
-<p>Hesapica’daki sayfa metinleri, arayüz düzeni, açıklamalar ve araç yapıları marka bütünlüğü içinde sunulur. İçeriklerin birebir kopyalanması, yanıltıcı biçimde yeniden yayımlanması veya markayla bağlantılıymış gibi gösterilmesi uygun değildir.</p>
+<h2 class="section-title">İçerik, marka ve fikrî haklar</h2>
+<p>Hesapica’ya özgü metinler, arayüz bileşenleri, görseller, yazılım kodları, marka unsurları ve özgün düzenler; uygulanabilir fikrî mülkiyet kuralları kapsamında korunabilir. Üçüncü taraflara ait marka, veri, içerik veya bağlantıların hakları ilgili sahiplerine aittir.</p>
+<p>İçeriklerin kaynağı veya Hesapica ile ilişkisi hakkında yanıltıcı izlenim oluşturacak biçimde kopyalanması, yeniden yayımlanması veya markanın izinsiz kullanılması uygun değildir. Kanunun izin verdiği alıntı, kişisel kullanım ve diğer yasal istisnalar saklıdır.</p>
+</section>
+<section class="card content-card">
+<h2 class="section-title">Üçüncü taraf bağlantılar ve reklamlar</h2>
+<p>Hesapica’da üçüncü taraf sitelere yönlendiren bağlantılar veya reklam içerikleri bulunabilir. Bir bağlantının ya da reklamın gösterilmesi, ilgili üçüncü tarafın ürün, hizmet, içerik veya veri uygulamalarının Hesapica tarafından garanti edildiği anlamına gelmez.</p>
+<p>Üçüncü taraf hizmetlere geçtiğinde ilgili hizmetin kendi kullanım şartları ve gizlilik politikaları geçerli olabilir. Veri ve çerez uygulamalarımıza ilişkin ayrıntılar için <a href="/gizlilik-politikasi" style="color:var(--primary);font-weight:800;">Gizlilik Politikası</a> ile <a href="/cerez-politikasi" style="color:var(--primary);font-weight:800;">Çerez Politikası</a> sayfalarını inceleyebilirsin.</p>
 </section>
 <section class="card content-card">
 <h2 class="section-title">İletişim</h2>
@@ -504,7 +466,7 @@ const parseTR = (val) => {
 <span class="link-main"><span class="icon-box"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2 4.5 5v5.2c0 5.24 3.23 9.94 7.5 11.8 4.27-1.86 7.5-6.56 7.5-11.8V5zm0 2.04 5.7 2.28v3.88c0 4.36-2.57 8.33-5.7 10-3.13-1.67-5.7-5.64-5.7-10V6.32z" fill="currentColor"></path></svg></span><span class="text-stack"><strong>Gizlilik Politikası</strong><span>Veri ve çerezler</span></span></span><span class="arrow">→</span>
 </a><a class="nav-link" href="/hakkimizda">
 <span class="link-main"><span class="icon-box"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 4.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 12 6.75M10.9 10h1.9a.7.7 0 0 1 .7.7v5.6h1a.7.7 0 0 1 0 1.4h-4a.7.7 0 0 1 0-1.4h1.1v-4.9h-.7a.7.7 0 0 1 0-1.4" fill="currentColor"></path></svg></span><span class="text-stack"><strong>Hakkımızda</strong><span>Hesapica yaklaşımı</span></span></span><span class="arrow">→</span>
-</a><a class="nav-link" href="/kullanim-sartlari">
+</a><a aria-current="page" class="nav-link" href="/kullanim-sartlari">
 <span class="link-main"><span class="icon-box"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 2.75h7.2L19.25 7.8V19a2.25 2.25 0 0 1-2.25 2.25H7A2.25 2.25 0 0 1 4.75 19V5A2.25 2.25 0 0 1 7 2.75m6.5 1.8V8.5H17.45zM8.3 11.2h7.4a.75.75 0 0 0 0-1.5H8.3a.75.75 0 0 0 0 1.5m0 3.6h7.4a.75.75 0 0 0 0-1.5H8.3a.75.75 0 0 0 0 1.5m0 3.6h4.5a.75.75 0 1 0 0-1.5H8.3a.75.75 0 1 0 0 1.5" fill="currentColor"></path></svg></span><span class="text-stack"><strong>Kullanım Şartları</strong><span>Kullanım çerçevesi</span></span></span><span class="arrow">→</span>
 </a><a class="nav-link" href="/cerez-politikasi">
 <span class="link-main"><span class="icon-box"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1.8 4.2a1 1 0 1 1-1.42 1.4 1 1 0 0 1 1.42-1.4M8.3 8.4a1 1 0 1 1-1.42 1.42A1 1 0 0 1 8.3 8.4m6.9 2a1 1 0 1 1-1.42 1.41 1 1 0 0 1 1.42-1.42m-4.2.8a4 4 0 1 0 4 4c0-.18-.01-.36-.03-.53A2.6 2.6 0 0 1 12.6 12c-.56 0-1.08-.17-1.5-.46A4 4 0 0 0 11 11.2m-3.2 3.7a1 1 0 1 1-1.42 1.42 1 1 0 0 1 1.42-1.42m4.7 2.9a1 1 0 1 1-1.42 1.42 1 1 0 0 1 1.42-1.42" fill="currentColor"></path></svg></span><span class="text-stack"><strong>Çerez Politikası</strong><span>Çerez türleri ve tercih yönetimi</span></span></span><span class="arrow">→</span>
@@ -547,7 +509,6 @@ const parseTR = (val) => {
 </div>
 </div>
 </footer>
-<script defer="" src="cookie-consent.js"></script>
   <script src="ads-slot-manager.js"></script>
 </body>
 </html>

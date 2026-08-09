@@ -1,31 +1,52 @@
-# merge ve kanonik yönlendirmeler
-/aylik-tasarruf-hesaplama.html   /butce-hesaplama   301
-/aylik-tasarruf-hesaplama   /butce-hesaplama   301
-/altin-getirisi-hesaplama.html   /varlik-getirisi-hesaplama?varlik=altin   301
-/altin-getirisi-hesaplama   /varlik-getirisi-hesaplama?varlik=altin   301
-/dolar-getirisi-hesaplama.html   /varlik-getirisi-hesaplama?varlik=dolar   301
-/dolar-getirisi-hesaplama   /varlik-getirisi-hesaplama?varlik=dolar   301
-/euro-getirisi-hesaplama.html   /varlik-getirisi-hesaplama?varlik=euro   301
-/euro-getirisi-hesaplama   /varlik-getirisi-hesaplama?varlik=euro   301
-/gram-altin-kar-hesaplama.html   /varlik-getirisi-hesaplama?varlik=altin   301
-/gram-altin-kar-hesaplama   /varlik-getirisi-hesaplama?varlik=altin   301
-/bilesik-faiz-hesaplama.html   /faiz-hesaplama?mod=bilesik   301
-/bilesik-faiz-hesaplama   /faiz-hesaplama?mod=bilesik   301
-/mevduat-faizi-hesaplama.html   /faiz-hesaplama?mod=mevduat   301
-/mevduat-faizi-hesaplama   /faiz-hesaplama?mod=mevduat   301
-/netten-brute-maas-hesaplama.html   /maas-brut-net-hesaplama?yon=netten-brute   301
-/netten-brute-maas-hesaplama   /maas-brut-net-hesaplama?yon=netten-brute   301
-/kredi-erken-kapatma-hesaplama.html   /kredi-hesaplama?mod=erken   301
-/kredi-erken-kapatma-hesaplama   /kredi-hesaplama?mod=erken   301
-/taksit-hesaplama.html   /kredi-hesaplama?mod=taksit   301
-/taksit-hesaplama   /kredi-hesaplama?mod=taksit   301
-/maas-zam-hesaplama.html   /maas-brut-net-hesaplama?mod=zam   301
-/maas-zam-hesaplama   /maas-brut-net-hesaplama?mod=zam   301
-/saatlik-ucret-hesaplama.html   /maas-brut-net-hesaplama?mod=saatlik   301
-/saatlik-ucret-hesaplama   /maas-brut-net-hesaplama?mod=saatlik   301
-/kira-carpani-hesaplama.html   /ev-amortisman-hesaplama?mod=carpan   301
-/kira-carpani-hesaplama   /ev-amortisman-hesaplama?mod=carpan   301
+# Hesapica — kalıcı (301) kanonik yönlendirmeler
+# Cloudflare Pages _redirects sözdizimi: <source> <destination> <status>
 
-# uzantısız -> fiziksel .html rewrite kuralları (Cloudflare Pages)
-/roi-hesaplama /yatirim-getirisi-hesaplama?mod=roi 301
+# Aylık tasarruf -> Bütçe
+/aylik-tasarruf-hesaplama.html /butce-hesaplama 301
+/aylik-tasarruf-hesaplama /butce-hesaplama 301
+
+# Eski varlık bazlı araçlar -> birleşik Varlık Getirisi
+# Hedef sayfa şu anda yalnız paylaşım parametrelerini tam veri setiyle hydrate ediyor;
+# bu nedenle çalışmayan ?varlik=... parametreleri kullanılmıyor.
+/altin-getirisi-hesaplama.html /varlik-getirisi-hesaplama 301
+/altin-getirisi-hesaplama /varlik-getirisi-hesaplama 301
+/dolar-getirisi-hesaplama.html /varlik-getirisi-hesaplama 301
+/dolar-getirisi-hesaplama /varlik-getirisi-hesaplama 301
+/euro-getirisi-hesaplama.html /varlik-getirisi-hesaplama 301
+/euro-getirisi-hesaplama /varlik-getirisi-hesaplama 301
+/gram-altin-kar-hesaplama.html /varlik-getirisi-hesaplama 301
+/gram-altin-kar-hesaplama /varlik-getirisi-hesaplama 301
+
+# Faiz alt araçları -> birleşik Faiz aracı
+# Hedef JS'nin kabul ettiği gerçek mod anahtarları: compound / deposit
+/bilesik-faiz-hesaplama.html /faiz-hesaplama?mod=compound 301
+/bilesik-faiz-hesaplama /faiz-hesaplama?mod=compound 301
+/mevduat-faizi-hesaplama.html /faiz-hesaplama?mod=deposit 301
+/mevduat-faizi-hesaplama /faiz-hesaplama?mod=deposit 301
+
+# Maaş
+/netten-brute-maas-hesaplama.html /maas-brut-net-hesaplama?yon=netten-brute 301
+/netten-brute-maas-hesaplama /maas-brut-net-hesaplama?yon=netten-brute 301
+
+# Maaş alt araçları -> birleşik Maaş ve Gelir aracı
+# Hedef sayfa artık zam ve saatlik modlarını URL parametresiyle destekliyor.
+/maas-zam-hesaplama.html /maas-brut-net-hesaplama?mod=zam 301
+/maas-zam-hesaplama /maas-brut-net-hesaplama?mod=zam 301
+/saatlik-ucret-hesaplama.html /maas-brut-net-hesaplama?mod=saatlik 301
+/saatlik-ucret-hesaplama /maas-brut-net-hesaplama?mod=saatlik 301
+
+# Kredi alt araçları -> birleşik Kredi aracı
+/kredi-erken-kapatma-hesaplama.html /kredi-hesaplama?mod=erken 301
+/kredi-erken-kapatma-hesaplama /kredi-hesaplama?mod=erken 301
+/taksit-hesaplama.html /kredi-hesaplama?mod=taksit 301
+/taksit-hesaplama /kredi-hesaplama?mod=taksit 301
+
+# Kira çarpanı -> Ev Amortisman
+# Hedef sayfada ?mod=carpan desteği yok; kanonik araca yönlendir.
+/kira-carpani-hesaplama.html /ev-amortisman-hesaplama 301
+/kira-carpani-hesaplama /ev-amortisman-hesaplama 301
+
+# ROI -> Yatırım Getirisi
+# Hedef sayfa ROI modunu URL parametresiyle destekliyor.
 /roi-hesaplama.html /yatirim-getirisi-hesaplama?mod=roi 301
+/roi-hesaplama /yatirim-getirisi-hesaplama?mod=roi 301

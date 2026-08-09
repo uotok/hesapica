@@ -1,386 +1,230 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Çerez Politikası | Hesapica</title>
-<meta name="description" content="Hesapica çerez politikasını incele, hangi çerezlerin neden kullanıldığını öğren. Gizlilik tercihlerini yönet ve deneyimini güvenle kontrol et!"/>
-<link href="https://hesapica.com/cerez-politikasi" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="Çerez Politikası | Hesapica" property="og:title"/>
-<meta content="Hesapica çerez politikası; zorunlu, analitik ve reklam/pazarlama çerezlerinin kullanım amacı ve tercih yönetimi hakkında bilgi verir." property="og:description"/>
-<meta content="https://hesapica.com/cerez-politikasi" property="og:url"/>
-<meta property="og:image" content="https://hesapica.com/og-image.png"/>
-<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
-<meta content="Hesapica" property="og:site_name"/>
-<meta content="#4f46e5" name="theme-color"/>
-<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
-<meta content="tr_TR" property="og:locale"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Çerez Politikası | Hesapica" name="twitter:title"/>
-<meta content="Hesapica çerez politikası; zorunlu, analitik ve reklam/pazarlama çerezlerinin kullanım amacı ve tercih yönetimi hakkında bilgi verir." name="twitter:description"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<link href="//pagead2.googlesyndication.com" rel="dns-prefetch">
-<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
-<link crossorigin="" href="https://pagead2.googlesyndication.com" rel="preconnect"/>
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6BNBXVN9EW');
-</script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Çerez Politikası | Hesapica</title>
+  <meta name="description" content="Hesapica'da kullanılan çerezleri ve benzer depolama teknolojilerini, analitik ve reklam tercihlerini nasıl yöneteceğini öğren."/>
+  <meta name="robots" content="index,follow,max-image-preview:large"/>
+  <meta name="theme-color" content="#4f46e5"/>
+  <link rel="canonical" href="https://hesapica.com/cerez-politikasi"/>
 
-<script>
-const parseTR = (val) => {
-  if(val == null) return null;
-  let s = String(val).trim();
-  if(!s) return null;
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:site_name" content="Hesapica"/>
+  <meta property="og:title" content="Çerez Politikası | Hesapica"/>
+  <meta property="og:description" content="Hesapica çerez politikası; zorunlu depolama, analitik ve reklam/pazarlama teknolojilerinin kullanımını ve tercih yönetimini açıklar."/>
+  <meta property="og:url" content="https://hesapica.com/cerez-politikasi"/>
+  <meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün keşif araçları tek yerde"/>
 
-  s = s.replace(/\s+/g,'');
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@hesapica"/>
+  <meta name="twitter:title" content="Çerez Politikası | Hesapica"/>
+  <meta name="twitter:description" content="Hesapica çerez politikası; zorunlu depolama, analitik ve reklam/pazarlama teknolojilerinin kullanımını ve tercih yönetimini açıklar."/>
+  <meta name="twitter:url" content="https://hesapica.com/cerez-politikasi"/>
+  <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 
-  if(s.includes('.') && !s.includes(',')){
-    s = s.replace(/\./g,'');
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
 
-  if(s.includes(',') && s.includes('.')){
-    if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      s = s.replace(/\./g,'').replace(',', '.');
-    } else {
-      s = s.replace(/,/g,'');
-    }
-  } else if(s.includes(',')) {
-    s = s.replace(',', '.');
-  }
-
-  s = s.replace(/[^0-9.\-]/g,'');
-  const n = Number(s);
-  if(n === 0 && s !== "0") return null;
-  return Number.isFinite(n) ? n : null;
-};
-</script>
-<link href="cookie-consent.css" rel="stylesheet"/>
-<style>
+  <link href="cookie-consent.css" rel="stylesheet"/>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
+  <style>
     :root{
-      --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--card:#ffffff;--text:#111827;--muted:#6b7280;--border:#e5e7eb;--soft:#eef2ff;
+      --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--card:#fff;--text:#111827;
+      --muted:#64748b;--border:#e5e7eb;--border-strong:#c7d2fe;--soft:#eef2ff;
+      --shadow:0 18px 45px rgba(15,23,42,.07);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;background:linear-gradient(180deg,#f8faff 0%,#f6f8fc 100%);color:var(--text)}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#eef2ff 0,#f8faff 260px,var(--bg) 100%);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
     a{color:var(--primary);text-decoration:none}
     a:hover{text-decoration:underline}
+    button{font:inherit}
     .shell{max-width:1120px;margin:0 auto;padding:28px 18px 64px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:24px}
-    .crumb{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:var(--soft);border:1px solid #c7d2fe;color:var(--primary);font-weight:800;font-size:14px}
-    .home-link{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;background:#fff;border:1px solid var(--border);font-weight:700;color:#374151}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+    .crumb{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:var(--soft);border:1px solid var(--border-strong);color:#3730a3;font-weight:800;font-size:14px}
+    .home-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:11px 16px;border-radius:14px;background:#fff;border:1px solid var(--border);font-weight:800;color:#374151}
+    main{display:block}
     .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:24px;align-items:start}
-    .card{background:#fff;border:1px solid var(--border);border-radius:28px;box-shadow:0 20px 55px rgba(15,23,42,.07)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow)}
     .hero-main{padding:30px}
     .hero-side{padding:24px}
-    h1{margin:14px 0 12px;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.03em}
-    .lead{font-size:18px;line-height:1.75;color:#4b5563;margin:0}
+    h1{margin:14px 0 12px;font-size:clamp(2.125rem,4vw,3rem);line-height:1.1;letter-spacing:-.03em;font-weight:800}
+    h2{margin:0 0 14px;font-size:clamp(1.5rem,2.3vw,1.75rem);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+    h3{margin:22px 0 10px;font-size:1.15rem;line-height:1.35}
+    p,li{font-size:15.5px;line-height:1.75;color:#334155}
+    .lead{font-size:18px;line-height:1.75;color:#475569;margin:0}
     .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .hero-pills span{display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;border:1px solid #c7d2fe;background:var(--soft);color:var(--primary);font-size:14px;font-weight:800}
-    .side-title{font-size:24px;font-weight:900;margin:0 0 14px}
+    .hero-pills span{display:inline-flex;align-items:center;min-height:40px;padding:9px 13px;border-radius:999px;border:1px solid var(--border-strong);background:var(--soft);color:#3730a3;font-size:14px;font-weight:800}
+    .side-title{font-size:22px;margin:0 0 14px}
     .side-links{display:grid;gap:10px}
-    .side-links a,.side-links button{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-radius:16px;border:1px solid var(--border);background:#fff;color:#111827;font-weight:800;font-size:16px;text-align:left;cursor:pointer}
+    .side-links a,.side-links button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:52px;padding:13px 15px;border-radius:16px;border:1px solid var(--border);background:#fff;color:#111827;font-weight:800;font-size:15px;text-align:left;cursor:pointer;text-decoration:none}
+    .side-links a:hover,.side-links button:hover{border-color:var(--border-strong);background:#f8faff}
     .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-top:24px}
     .section{padding:26px}
-    h2{margin:0 0 14px;font-size:26px;line-height:1.15;letter-spacing:-.02em}
-    h3{margin:22px 0 10px;font-size:18px}
-    p,li{font-size:16px;line-height:1.8;color:#374151}
-    ul{margin:0;padding-left:18px}
-    .notice{margin-top:18px;padding:16px 18px;border-radius:18px;background:var(--soft);border:1px solid #c7d2fe;color:#312e81}
+    ul{margin:0;padding-left:20px}
+    .notice{margin-top:18px;padding:16px 18px;border-radius:18px;background:var(--soft);border:1px solid var(--border-strong);color:#312e81;font-size:14px;line-height:1.7}
+    .notice strong{display:block;margin-bottom:5px}
+    .table-wrap{overflow-x:auto;margin-top:16px;border:1px solid var(--border);border-radius:18px}
+    table{width:100%;border-collapse:collapse;min-width:680px;background:#fff}
+    th,td{padding:13px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border);font-size:14px;line-height:1.55}
+    th{background:#f8faff;color:#1f2937;font-weight:800}
+    td{color:#475569}
+    tr:last-child td{border-bottom:0}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;background:#f1f5f9;padding:2px 5px;border-radius:6px;color:#334155}
     .footer{margin-top:28px;padding:20px 24px;border-radius:24px;background:#fff;border:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
-    .footer-links{display:flex;flex-wrap:wrap;gap:12px}
-    .footer-links a,.footer-links button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:12px;border:1px solid rgba(99,102,241,.18);background:#fff;color:#374151;font-weight:700;cursor:pointer}
-    @media (max-width: 900px){.hero,.grid{grid-template-columns:1fr}.hero-main,.hero-side,.section{padding:22px}.topbar{flex-direction:column;align-items:flex-start}h1{font-size:34px}}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px}
+    .footer-links a,.footer-links button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:12px;border:1px solid rgba(99,102,241,.18);background:#fff;color:#374151;font-weight:700;cursor:pointer;text-decoration:none}
+    .hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;min-height:0}
+    .hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+    .hc-ad-slot.hc-ad-loaded{display:flex;align-items:center;justify-content:center;padding:12px;border:1px solid var(--border);border-radius:16px;background:#fff}
+    a:focus-visible,button:focus-visible{outline:3px solid rgba(79,70,229,.28);outline-offset:3px}
+    @media (max-width:900px){.hero,.grid{grid-template-columns:1fr}.hero-main,.hero-side,.section{padding:22px}}
+    @media (max-width:640px){.shell{padding:20px 14px 48px}.topbar{align-items:flex-start}.card{border-radius:22px}.lead{font-size:16px}.footer{padding:18px}.footer-links{display:grid;width:100%}.footer-links a,.footer-links button{width:100%;justify-content:flex-start}.hc-ad-slot .adsbygoogle{min-height:240px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   </style>
-<script type="application/ld+json">
+
+  <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebPage",
-    "name":"Çerez Politikası",
+    "name":"Çerez Politikası | Hesapica",
     "url":"https://hesapica.com/cerez-politikasi",
-    "description":"Hesapica çerez politikası; zorunlu, analitik ve reklam/pazarlama çerezlerinin kullanım amacı ve tercih yönetimi hakkında bilgi verir.",
+    "description":"Hesapica çerez politikası; zorunlu depolama, analitik ve reklam/pazarlama teknolojilerinin kullanımını ve tercih yönetimini açıklar.",
     "inLanguage":"tr-TR",
-    "isPartOf":{
-      "@type":"WebSite",
-      "name":"Hesapica",
-      "url":"https://hesapica.com"
-    },
-    "dateModified":"2026-03-28"
+    "dateModified":"2026-08-08",
+    "isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"},
+    "publisher":{"@type":"Organization","name":"Hesapica","url":"https://hesapica.com/"}
   }
   </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"BreadcrumbList",
     "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://hesapica.com/"},
+      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
       {"@type":"ListItem","position":2,"name":"Çerez Politikası","item":"https://hesapica.com/cerez-politikasi"}
     ]
   }
   </script>
-<style id="hesapica-global-typography-standard">
-    :root{
-      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-      --hc-type-body: 15.5px;
-      --hc-type-small: 14px;
-      --hc-type-label: 15px;
-      --hc-type-input: 18px;
-      --hc-type-button: 15px;
-      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
-      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
-      --hc-type-h3: 1.25rem;
-      --hc-type-card-title: 1.125rem;
-    }
-    html{font-size:16px}
-    body{
-      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      text-rendering:optimizeLegibility;
-    }
-    h1,
-    .hero h1{
-      font-size:var(--hc-type-h1) !important;
-      line-height:1.1 !important;
-      letter-spacing:-0.03em !important;
-      font-weight:800 !important;
-    }
-    h2,
-    .section h2,
-    .card h2,
-    .content-section h2,
-    .faq-section h2,
-    .related-section h2,
-    .section-title h2{
-      font-size:var(--hc-type-h2) !important;
-      line-height:1.2 !important;
-      letter-spacing:-0.02em !important;
-      font-weight:800 !important;
-    }
-    h3{
-      font-size:var(--hc-type-h3) !important;
-      line-height:1.3 !important;
-      font-weight:800 !important;
-    }
-    .card-title{
-      font-size:var(--hc-type-card-title) !important;
-      line-height:1.38 !important;
-      font-weight:800 !important;
-      letter-spacing:-0.01em !important;
-    }
-    p,
-    li,
-    .section-note,
-    .status-text,
-    .card-desc,
-    .hero p,
-    .comment-box,
-    .score-explain,
-    .mini-result .subline,
-    .health-card p,
-    .footer-brand p,
-    .search-box-help,
-    .search-status,
-    .footer-note,
-    .helper-box p,
-    .hero-box p,
-    .hero-box li,
-    .info-box p,
-    .faq-item p,
-    .accordion-card p{
-      font-size:var(--hc-type-body) !important;
-      line-height:1.7 !important;
-    }
-    label,
-    .form-title,
-    .subhead,
-    .highlight-label,
-    .hero-box .eyebrow,
-    .status-title,
-    .result-main .label,
-    .result-item .k,
-    .health-card h3,
-    .summary-note{
-      font-size:var(--hc-type-label) !important;
-    }
-    label,
-    .form-title,
-    .subhead,
-    .highlight-label,
-    .hero-box .eyebrow,
-    .status-title,
-    .result-main .label,
-    .result-item .k,
-    .health-card h3{
-      font-weight:800 !important;
-    }
-    .hint,
-    .helper,
-    .field-error,
-    .error-text,
-    .reference-text,
-    .helper-box p + p{
-      font-size:var(--hc-type-small) !important;
-      line-height:1.6 !important;
-    }
-    input,
-    select,
-    textarea{
-      font-family:var(--hc-font-sans) !important;
-      font-size:var(--hc-type-input) !important;
-      font-weight:600 !important;
-    }
-    input::placeholder,
-    textarea::placeholder{
-      font-size:15px !important;
-    }
-    button,
-    .btn,
-    .toggle-btn,
-    .hero-cta,
-    .hero-secondary,
-    .all-categories-btn,
-    .category-chip,
-    .share-btn,
-    .search-clear,
-    .footer-legal-link,
-    .footer-pref-btn,
-    .time-picker-trigger,
-    .all-categories-close,
-    .category-panel-link,
-    .inline-chip,
-    .mode-btn{
-      font-family:var(--hc-font-sans) !important;
-      font-size:var(--hc-type-button) !important;
-      font-weight:700 !important;
-    }
-    @media (max-width:760px){
-      :root{
-        --hc-type-body: 15px;
-        --hc-type-label: 14.5px;
-        --hc-type-small: 13.5px;
-        --hc-type-button: 14.5px;
-        --hc-type-card-title: 1.05rem;
-      }
-    }
-  </style>
-<meta content="https://hesapica.com/cerez-politikasi" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link rel="preload" as="image" href="https://hesapica.com/og-image.png" fetchpriority="high"/>
-<style id="hc-adsense-slot-style">
-.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-@media (max-width:720px){.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity 0.3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
-.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
-@media (max-width:720px){.hc-ad-slot .adsbygoogle{min-height:240px}}.hc-ad-slot .adsbygoogle{min-height:240px}}
-</style>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
 </head>
 <body>
+  <noscript>
+    <div style="max-width:1120px;margin:16px auto 0;padding:0 18px">
+      <div style="padding:14px 16px;border:1px solid #fdba74;border-radius:16px;background:#fff7ed;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif">JavaScript kapalıyken çerez tercih paneli çalışmaz. Tarayıcı ayarlarından depolama ve çerezleri yönetebilirsin.</div>
+    </div>
+  </noscript>
 
-<!-- HC_AD_SLOT:top -->
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3615831363"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="shell">
+    <header class="topbar">
+      <span class="crumb">Hesapica · Çerez Politikası</span>
+      <a class="home-link" href="/">Ana sayfaya dön</a>
+    </header>
 
-<div class="shell">
-<div class="topbar">
-<span class="crumb">Hesapica · Çerez Politikası</span>
-<a class="home-link" href="/">Ana sayfaya dön</a>
-</div>
+    <div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3615831363" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    
 
-<!-- HC_AD_SLOT:result -->
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3982292851"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <main>
+      <section class="hero">
+        <article class="card hero-main">
+          <span class="crumb">Çerezler · Depolama · Tercih yönetimi</span>
+          <h1>Çerez ve benzer teknolojiler üzerindeki tercihini sen yönet.</h1>
+          <p class="lead">Hesapica, sitenin temel işlevleri ve gizlilik tercihini hatırlamak için gerekli yerel depolamayı kullanır. Analitik ile reklam/pazarlama teknolojileri varsayılan olarak kapalıdır ve yalnızca ilgili kategoriye izin verdiğinde etkinleştirilir.</p>
+          <div class="hero-pills"><span>Zorunlu depolama</span><span>Analitik</span><span>Reklam / pazarlama</span></div>
+        </article>
+        <aside class="card hero-side" aria-label="Hızlı işlemler">
+          <h2 class="side-title">Hızlı işlemler</h2>
+          <div class="side-links">
+            <button type="button" data-open-cookie-preferences><span>Çerez tercihlerini aç</span><span aria-hidden="true">→</span></button>
+            <a href="/gizlilik-politikasi"><span>Gizlilik Politikası</span><span aria-hidden="true">→</span></a>
+            <a href="/iletisim"><span>İletişim</span><span aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </section>
 
-<section class="hero">
-<article class="card hero-main">
-<span class="crumb">Çerezler · Tercih yönetimi</span>
-<h1>Hangi çerezleri neden kullandığımızı açıkça gösteriyoruz.</h1>
-<p class="lead">Bu sayfa, Hesapica’da kullanılan çerez kategorilerini açık ve sade bir dille anlatır. Zorunlu çerezler sitenin çalışması içindir; analitik ve reklam/pazarlama çerezleri ise yalnızca izin verdiğinde etkinleşir.</p>
-<div class="hero-pills">
-<span>Zorunlu</span>
-<span>Analitik</span>
-<span>Reklam / pazarlama</span>
-</div>
-</article>
-<aside class="card hero-side">
-<h2 class="side-title">Hızlı işlemler</h2>
-<div class="side-links">
-<button aria-label="Çerez tercihlerini aç" data-open-cookie-preferences="" type="button"><span>Çerez tercihlerini aç</span><span>→</span></button>
-<a href="/gizlilik-politikasi"><span>Gizlilik Politikası</span><span>→</span></a>
-<a href="/iletisim"><span>İletişim</span><span>→</span></a>
-</div>
-</aside>
-</section>
-<section class="grid">
-<article class="card section">
-<h2>Çerez kategorileri</h2>
-<h3>Zorunlu çerezler</h3>
-<p>Sayfaların yüklenmesi, güvenlik önlemleri, form işleyişi ve çerez tercihlerinin hatırlanması için kullanılır. Bu çerezler kapatıldığında sitenin bazı bölümleri beklendiği gibi çalışmayabilir.</p>
-<h3>Analitik çerezler</h3>
-<p>Hangi araçların daha çok kullanıldığını, ziyaretçilerin hangi sayfalarda zorlandığını ve deneyimin nasıl iyileştirilebileceğini anlamaya yardımcı olur. Bu kategori yalnızca açık tercih verdiğinde etkinleşir.</p>
-<h3>Reklam / pazarlama çerezleri</h3>
-<p>Reklam gösterimi, reklam sıklığı kontrolü ve reklam performansı ölçümü gibi amaçlarla kullanılabilir. Google AdSense gibi reklam teknolojileri kullanıldığında bu kategori açık rıza tercihinle yönetilir.</p>
-</article>
-<article class="card section">
-<h2>Tercihlerini nasıl yönetebilirsin?</h2>
-<ul>
-<li>İlk ziyaretinde çerez bildirimi üzerinden seçim yapabilirsin.</li>
-<li>Footer’daki <strong>Çerez Tercihleri</strong> düğmesiyle kararını sonradan değiştirebilirsin.</li>
-<li>Tarayıcı ayarların üzerinden de çerezleri silebilir veya engelleyebilirsin; ancak bu durumda bazı bölümler düzgün çalışmayabilir.</li>
-</ul>
-<div class="notice">Hesapica şu anda tercih bilgisini cihazında saklayarak aynı bildirimi tekrar tekrar göstermemeye çalışır.</div>
-</article>
-</section>
-<section class="card section" style="margin-top:22px">
-<h2>Önemli not</h2>
-<p>Zorunlu olmayan çerezlerde açık tercih sunmak şeffaflığı güçlendirir. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre trafiğinde reklam gösterimi için Google’ın sertifikalı CMP gereklilikleri ayrıca devreye girebilir. Çerez tercihleri, kullanılan teknolojilere ve yasal gerekliliklere göre güncellenebilir.</p>
-<div class="notice">Son güncelleme: 28 Mart 2026</div>
-</section>
-<section class="card section" style="margin-top:22px">
-<h2>Çerezler ne kadar süre saklanabilir?</h2>
-<p>Çerezlerin saklama süresi amaçlarına göre değişebilir. Bazıları yalnızca oturum boyunca çalışır ve tarayıcı kapatıldığında silinir. Bazıları ise tercihlerini hatırlamak, güvenliği desteklemek veya reklam sıklığını yönetmek gibi nedenlerle daha uzun süre cihazında kalabilir.</p>
-<p>Tarayıcı ayarların üzerinden mevcut çerezleri görüntüleyebilir, silebilir veya belirli kategorileri engelleyebilirsin. Ancak tüm çerezleri kapatman durumunda Hesapica’nın bazı bölümleri beklediğin gibi çalışmayabilir.</p>
-</section>
-<div class="footer">
-<strong>Hesapica · Çerez tercihleri</strong>
-<div class="footer-links">
-<a href="/">Ana sayfa</a>
-<a href="/gizlilik-politikasi">Gizlilik Politikası</a>
-<a href="/iletisim">İletişim</a>
-<button aria-label="Çerez tercihlerini aç" data-open-cookie-preferences="" type="button">Çerez Tercihleri</button>
-</div>
-</div>
-</div>
-<script defer="" src="cookie-consent.js"></script>
+      <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+      
+
+      <section class="grid" aria-label="Çerez politikası bölümleri">
+        <article class="card section">
+          <h2>Kullandığımız kategoriler</h2>
+          <h3>Zorunlu depolama</h3>
+          <p>Çerez tercihinin hatırlanması ve sitenin temel işlevlerinin sürdürülebilmesi için kullanılır. Hesapica'nın kendi tercih yöneticisi seçimini <code>hesapica_cookie_preferences_v2</code> anahtarıyla tarayıcının <strong>localStorage</strong> alanında saklar. Bu kayıt analitik veya reklam izni vermediğin sürece bu kategorileri kendiliğinden açmaz.</p>
+          <h3>Analitik</h3>
+          <p>Google Analytics 4, yalnızca analitik kategorisine izin verdiğinde yüklenir. Amaç; ziyaret ve sayfa kullanımını ölçmek, hangi araçların daha faydalı olduğunu anlamak ve site deneyimini geliştirmektir.</p>
+          <h3>Reklam / pazarlama</h3>
+          <p>Google AdSense, yalnızca reklam/pazarlama kategorisine izin verdiğinde yüklenir. Reklam sunumu, ölçümü ve ilgili reklam teknolojileri bu kapsamda devreye girebilir.</p>
+        </article>
+
+        <article class="card section">
+          <h2>Tercihini nasıl yönetebilirsin?</h2>
+          <ul>
+            <li>İlk ziyaretinde <strong>Tümünü kabul et</strong>, <strong>Sadece zorunlu</strong> veya <strong>Tercihleri yönet</strong> seçeneklerinden birini kullanabilirsin.</li>
+            <li>Analitik ve reklam/pazarlama seçeneklerini birbirinden bağımsız açıp kapatabilirsin.</li>
+            <li>Bu sayfadaki veya sitenin footer bölümündeki <strong>Çerez Tercihleri</strong> düğmesiyle kararını sonradan değiştirebilirsin.</li>
+            <li>Tarayıcı ayarlarından çerezleri ve site verilerini silebilir veya engelleyebilirsin.</li>
+          </ul>
+          <div class="notice"><strong>Varsayılan davranış</strong>Karar verilmemiş yeni bir ziyarette analitik ve reklam/pazarlama tercihleri kapalı tutulur. Bir kategoriyi etkinleştirmek için kullanıcının aktif seçimi gerekir.</div>
+        </article>
+      </section>
+
+      <section class="card section" style="margin-top:22px">
+        <h2>Mevcut depolama ve üçüncü taraf teknolojileri</h2>
+        <p>Aşağıdaki tablo Hesapica'nın güncel teknik mimarisini kategori bazında özetler. Google ve reklam teknolojisi sağlayıcılarının kullandığı çerez veya yerel depolama adları, ürün yapılandırmasına ve sağlayıcı güncellemelerine göre değişebilir.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Teknoloji / sağlayıcı</th><th>Kategori</th><th>Amaç</th><th>Ne zaman etkin?</th><th>Saklama / kontrol</th></tr></thead>
+            <tbody>
+              <tr><td>Hesapica<br><code>hesapica_cookie_preferences_v2</code></td><td>Zorunlu depolama</td><td>Analitik ve reklam tercihlerini hatırlamak</td><td>Tercih kaydedildiğinde</td><td>Tarayıcı localStorage alanında; kullanıcı site verilerini silene veya kayıt yeni sürümle değiştirilene kadar</td></tr>
+              <tr><td>Google Analytics 4</td><td>Analitik</td><td>Kullanım ve trafik ölçümü</td><td>Analitik izni verildiğinde</td><td>Google Analytics yapılandırması ve tarayıcı kontrollerine göre değişebilir</td></tr>
+              <tr><td>Google AdSense ve ilgili reklam teknolojileri</td><td>Reklam / pazarlama</td><td>Reklam sunumu ve reklam performansı ölçümü</td><td>Reklam/pazarlama izni verildiğinde</td><td>Google ve ilgili sağlayıcıların yapılandırma ve politikalarına göre değişebilir</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card section" style="margin-top:22px">
+        <h2>Google Consent Mode v2</h2>
+        <p>Hesapica'nın consent yöneticisi Google servislerine ilişkin tercihleri <code>analytics_storage</code>, <code>ad_storage</code>, <code>ad_user_data</code> ve <code>ad_personalization</code> durumlarıyla eşleştirir. Karar verilmemiş durumda bu alanlar reddedilmiş olarak başlatılır; kullanıcı tercihi sonradan güncellenir.</p>
+        <div class="notice"><strong>Önemli ayrım</strong>Consent Mode, kullanıcı arayüzünün veya hukuki bilgilendirmenin yerine geçen bir onay ekranı değildir; Google etiketlerinin kullanıcının seçimine göre davranmasına yardımcı olan teknik bir mekanizmadır.</div>
+      </section>
+
+      <section class="card section" style="margin-top:22px">
+        <h2>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre</h2>
+        <p>Google AdSense'in bu bölgelerdeki trafik için ayrıca Google tarafından sertifikalı ve IAB TCF ile entegre bir CMP kullanımına ilişkin gereklilikleri bulunabilir. Hesapica'nın özel çerez tercih paneli tek başına bu Google sertifikasyonu anlamına gelmez. Reklam altyapısı yayına alınırken bu gereklilik ayrıca doğrulanmalıdır.</p>
+      </section>
+
+      <section class="card section" style="margin-top:22px">
+        <h2>Politikanın güncellenmesi ve iletişim</h2>
+        <p>Kullanılan servisler, teknik yapı veya mevzuat değişirse bu politika güncellenebilir. Gizlilik veya çerez tercihleriyle ilgili sorular için <a href="mailto:hesapicaofficial@gmail.com">hesapicaofficial@gmail.com</a> adresinden bize ulaşabilirsin.</p>
+        <div class="notice"><strong>Son güncelleme</strong>8 Ağustos 2026</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <strong>Hesapica · Çerez tercihleri</strong>
+      <nav class="footer-links" aria-label="Yasal bağlantılar">
+        <a href="/">Ana sayfa</a>
+        <a href="/gizlilik-politikasi">Gizlilik Politikası</a>
+        <a href="/iletisim">İletişim</a>
+        <button type="button" data-open-cookie-preferences>Çerez Tercihleri</button>
+      </nav>
+    </footer>
+  </div>
+
   <script src="ads-slot-manager.js"></script>
 </body>
 </html>

@@ -1,212 +1,263 @@
-# 📊 Google Analytics 4 ve Search Console Kurulum Rehberi
+# Hesapica — Analytics, Consent ve Search Console Kurulum Rehberi
 
-## ✅ Tamamlanan İşlemler
+> Son güncelleme: 8 Ağustos 2026  
+> Bu belge, Hesapica'nın güncel mimarisini esas alır. Eski “her HTML dosyasına doğrudan GA4/AdSense etiketi ekleme” yaklaşımı kullanılmaz.
 
-Tüm 52 HTML sayfasına aşağıdaki entegrasyonlar eklendi:
+## 1. Güncel mimari
 
-1. **Google Analytics 4 (GA4)** tracking kodu
-2. **Google Search Console** verification meta tag
-3. Kodlar AdSense script'lerinden sonra optimal konumda yerleştirildi
+Hesapica'da GA4 ve AdSense gibi analitik/reklam Google servisleri doğrudan HTML içinden koşulsuz yüklenmemelidir.
 
----
+Merkezi yapı:
 
-## 🚀 Adım 1: Google Analytics 4 Kurulumu
+- `cookie-consent.js`: kullanıcı tercihlerini yönetir, Google Consent Mode v2 varsayılanlarını kurar ve izin verilen GA4/AdSense servislerini dinamik yükler.
+- `cookie-consent.css`: banner ve tercih modalının görünümü/erişilebilirliği.
+- `ads-slot-manager.js`: reklam slotlarını consent ve AdSense doluluk durumuna göre yönetir; manuel reklam birimlerinin `push({})` isteğini merkezden ve bir kez başlatır.
+- `ads-slot-manager.css`: reklam slotlarının izin öncesi/sonrası görünümünü tüm sayfalarda merkezden yönetir.
+- GA4 Measurement ID: `G-6BNBXVN9EW`
+- AdSense publisher/client: `ca-pub-4334681065822132`
 
-### 1.1. GA4 Property Oluşturma
+### Temel kural
 
-1. [Google Analytics](https://analytics.google.com/) adresine gidin
-2. Sol alt köşeden **"Yönetici"** (Admin) bölümüne tıklayın
-3. **"+ Özellik Oluştur"** (Create Property) butonuna tıklayın
-4. Özellik bilgilerini doldurun:
-   - **Özellik adı**: Hesapica
-   - **Zaman dilimi**: Turkey (GMT+03:00)
-   - **Para birimi**: Turkish Lira (TRY)
-5. **"İleri"** butonuna tıklayın
-6. İşletme bilgilerini doldurun ve **"Oluştur"** butonuna tıklayın
+HTML sayfalarında aşağıdaki doğrudan yüklemeler bulunmamalıdır:
 
-### 1.2. Veri Akışı (Data Stream) Oluşturma
-
-1. Yeni oluşturulan property'de **"Veri Akışları"** (Data Streams) bölümüne gidin
-2. **"Akış ekle"** → **"Web"** seçin
-3. Bilgileri doldurun:
-   - **Web sitesi URL'si**: `https://hesapica.com`
-   - **Akış adı**: Hesapica Web
-4. **"Akış oluştur"** butonuna tıklayın
-
-### 1.3. Measurement ID'yi Kopyalayın
-
-- Akış oluşturulduktan sonra **"G-XXXXXXXXXX"** formatında bir **Measurement ID** göreceksiniz
-- Bu ID'yi kopyalayın (örnek: `G-ABC123XYZ`)
-
-### 1.4. Measurement ID'yi Güncelleyin
-
-Tüm HTML dosyalarında `G-XXXXXXXXXX` ifadesini kendi Measurement ID'nizle değiştirin:
-
-```bash
-# Tüm dosyalarda otomatik değiştirme (terminalde)
-cd /home/ubuntu/github_repos/hesapica
-find . -name "*.html" -type f -exec sed -i 's/G-XXXXXXXXXX/G-ABC123XYZ/g' {} +
-
-# Git commit ve push
-git add *.html
-git commit -m "config: Update GA4 Measurement ID"
-git push origin main
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=..."></script>
 ```
 
-**ÖNEMLİ**: `G-ABC123XYZ` yerine kendi Measurement ID'nizi yazın!
+GA4 ve AdSense'i `cookie-consent.js` izin durumuna göre yükler.
 
----
+Google Consent Mode v2 için kullanılan temel izin alanları:
 
-## 🔍 Adım 2: Google Search Console Kurulumu
+- `analytics_storage`
+- `ad_storage`
+- `ad_user_data`
+- `ad_personalization`
 
-### 2.1. Site Ekleme
+Varsayılan durum, Google ölçüm/reklam komutlarından önce kurulmalıdır.
 
-1. [Google Search Console](https://search.google.com/search-console) adresine gidin
-2. **"Özellik ekle"** (Add Property) butonuna tıklayın
-3. **"URL öneki"** (URL prefix) seçeneğini seçin
-4. `https://hesapica.com` yazın ve **"Devam"** butonuna tıklayın
+## 2. Her HTML sayfasında olması gereken yapı
 
-### 2.2. Mülkiyet Doğrulama
+### `<head>` içinde
 
-1. **"HTML etiketi"** (HTML tag) yöntemini seçin
-2. Gösterilen meta tag'deki **content değerini** kopyalayın
-   - Örnek: `<meta name="google-site-verification" content="abc123def456ghi789..." />`
-   - Sadece **content** kısmını kopyalayın: `abc123def456ghi789...`
-
-### 2.3. Verification Code'unu Güncelleyin
-
-Tüm HTML dosyalarında `YOUR_VERIFICATION_CODE_HERE` ifadesini kendi verification code'unuzla değiştirin:
-
-```bash
-# Tüm dosyalarda otomatik değiştirme
-cd /home/ubuntu/github_repos/hesapica
-find . -name "*.html" -type f -exec sed -i 's/YOUR_VERIFICATION_CODE_HERE/abc123def456ghi789.../g' {} +
-
-# Git commit ve push
-git add *.html
-git commit -m "config: Update Google Search Console verification code"
-git push origin main
+```html
+<link href="cookie-consent.css" rel="stylesheet">
+<script src="cookie-consent.js"></script>
+<!-- </head> öncesinde, sayfa içi reklam CSS’lerinden sonra -->
+<link href="ads-slot-manager.css" rel="stylesheet">
 ```
 
-**ÖNEMLİ**: `abc123def456ghi789...` yerine kendi verification code'unuzu yazın!
+Bu entegrasyonun tam konumu sayfa bazında son proje turunda kontrol edilmelidir.
 
-### 2.4. Doğrulamayı Tamamlayın
+### `</body>` öncesi
 
-1. Cloudflare Pages'de deployment tamamlandıktan sonra (yaklaşık 1-2 dakika)
-2. Google Search Console'a dönün
-3. **"Doğrula"** (Verify) butonuna tıklayın
-4. ✅ "Mülkiyet doğrulandı" mesajını görmelisiniz
+Sayfada reklam slotları varsa:
 
----
-
-## 📋 Adım 3: Search Console Ek Yapılandırma
-
-### 3.1. Sitemap Gönderimi
-
-1. Search Console'da **"Sitemap'ler"** (Sitemaps) bölümüne gidin
-2. Sitemap URL'sini ekleyin: `https://hesapica.com/sitemap.xml`
-3. **"Gönder"** butonuna tıklayın
-4. Durum: **"Başarılı"** olarak görünmelidir
-
-### 3.2. URL Denetimi
-
-Ana sayfayı test edin:
-1. **"URL Denetimi"** (URL Inspection) aracına gidin
-2. `https://hesapica.com` yazın
-3. **"Canlı URL'yi Test Et"** butonuna tıklayın
-4. Hata yoksa **"İndeksleme İste"** (Request Indexing) yapın
-
----
-
-## 🎯 Adım 4: GA4 Gelişmiş Yapılandırma (Opsiyonel)
-
-### 4.1. Gelişmiş Ölçüm (Enhanced Measurement)
-
-GA4 Admin → Veri Akışları → Web akışı → **Gelişmiş ölçüm**'e gidin ve şunları aktif edin:
-- ✅ Sayfa görüntülemeleri (otomatik açık)
-- ✅ Kaydırmalar (Scrolls)
-- ✅ Giden tıklamalar (Outbound clicks)
-- ✅ Site içi aramalar (Site search)
-- ✅ Form etkileşimleri (Form interactions)
-
-### 4.2. Dönüşüm Hedefleri (Conversion Goals)
-
-**Keşif** → **Olaylar** (Events) → Önemli olayları dönüşüm olarak işaretleyin:
-- Form gönderimleri
-- Düğme tıklamaları
-- Sayfa görüntülemeleri (önemli sayfalar için)
-
-### 4.3. Özel Boyutlar (Custom Dimensions)
-
-Admin → Veri Ayarları → **Özel tanımlar** (Custom definitions):
-- **Hesap Makinesi Türü**: Hangi hesaplama aracı kullanıldı
-- **Kullanıcı Segmenti**: Mobil/Desktop
-- **Sayfa Kategorisi**: Finans, Vergi, Emlak, vb.
-
----
-
-## ✅ Doğrulama Kontrol Listesi
-
-### GA4 Kontrolü
-- [ ] Measurement ID güncellendi (`G-XXXXXXXXXX` yok)
-- [ ] Cloudflare Pages'e deploy edildi
-- [ ] Tarayıcı DevTools Network sekmesinde `gtag/js` yüklemesi görünüyor
-- [ ] GA4 Admin → Gerçek zamanlı (Realtime) bölümünde aktif kullanıcılar görünüyor
-
-### Search Console Kontrolü
-- [ ] Verification code güncellendi (`YOUR_VERIFICATION_CODE_HERE` yok)
-- [ ] Cloudflare Pages'e deploy edildi
-- [ ] Search Console'da mülkiyet doğrulandı ✅
-- [ ] Sitemap gönderildi ve başarılı durumda
-- [ ] URL Denetimi başarılı
-
-### robots.txt Kontrolü
-```
-✅ Dosya mevcut ve uygun
-✅ Sitemap bildirimi var: https://hesapica.com/sitemap.xml
-✅ Cloudflare CDN yolları hariç tutulmuş
+```html
+<script src="ads-slot-manager.js"></script>
 ```
 
+Manuel `<ins class="adsbygoogle">` slotları HTML’de reklamın konumunu belirler; ancak sayfalarda ayrı `adsbygoogle.push({})` scriptleri tutulmaz. Reklam isteğini merkezi `ads-slot-manager.js` yapar.
+
+### Bulunmaması gereken eski kalıntılar
+
+- Doğrudan `gtag.js` yükleyen GA4 scripti
+- Doğrudan `adsbygoogle.js` yükleyen AdSense scripti
+- Eski `G-XXXXXXXXXX` placeholder'ı
+- Eski `YOUR_VERIFICATION_CODE_HERE` placeholder'ı
+- `i18n-common.js`
+- `HESAPICA_I18N_CONFIG`
+- Aynı HTML içinde TR/EN dil değiştirme sistemi
+
+## 3. GA4 doğrulaması
+
+Hesapica'nın mevcut GA4 Measurement ID'si:
+
+```text
+G-6BNBXVN9EW
+```
+
+Bu ID'yi tekrar tüm HTML dosyalarına elle yapıştırmayın. Merkezi consent sistemi kullanmalıdır.
+
+### Test senaryoları
+
+Tarayıcıda temiz site verisiyle aşağıdaki durumlar ayrı ayrı test edilmelidir.
+
+#### A. İlk ziyaret / karar verilmedi
+
+Beklenen:
+
+- Consent varsayılanları `denied`
+- GA4 doğrudan yüklenmez
+- AdSense doğrudan yüklenmez
+- Banner görünür
+
+#### B. Sadece analitik izni
+
+Beklenen:
+
+- GA4 yüklenir
+- Analytics consent `granted`
+- Reklam/marketing izni kapalıysa AdSense yüklenmez
+
+#### C. Reklam/marketing izni
+
+Beklenen:
+
+- AdSense consent durumuna uygun şekilde yüklenir
+- Reklam slotları `ads-slot-manager.js` tarafından yönetilir
+
+#### D. Opsiyonel çerezleri reddet
+
+Beklenen:
+
+- Analitik ve marketing izinleri kapalı
+- İlgili Google servisleri yüklenmez
+- Tercihler saklanır
+
+#### E. Tercihi sonradan değiştir
+
+Beklenen:
+
+- `Çerez Tercihleri` butonu modalı açar
+- Yeni tercih kalıcı hale gelir
+- İlgili servis durumu güncellenir
+
+### GA4 kontrolü
+
+Google Analytics içinde:
+
+1. Yönetici → Veri akışları → Hesapica web akışını açın.
+2. Measurement ID'nin `G-6BNBXVN9EW` olduğunu doğrulayın.
+3. Consent verilmiş bir test oturumunda Realtime/DebugView tarafını kontrol edin.
+4. Tarayıcı Network sekmesinde yalnız izin sonrasında Google tag isteğinin oluştuğunu doğrulayın.
+
+Not: Google, yeni kurulumlarda veri toplamaya başlamanın bir süre alabileceğini belirtir; anlık sonuç görünmemesi tek başına entegrasyon hatası anlamına gelmez.
+
+## 4. Search Console mülkiyet doğrulaması
+
+### Tercih edilen yöntem: Domain property + DNS
+
+Mümkünse Search Console'da:
+
+```text
+hesapica.com
+```
+
+Domain property oluşturun ve Google'ın verdiği DNS TXT kaydını DNS sağlayıcısına ekleyin.
+
+Bu yöntem alan adının protokol ve alt alan adı varyasyonlarını birlikte kapsar.
+
+### Alternatif yöntem: URL-prefix + HTML meta etiketi
+
+URL-prefix property kullanılıyorsa:
+
+```text
+https://hesapica.com/
+```
+
+Google'ın verdiği doğrulama etiketi yalnız mülkün ana sayfasının `<head>` bölümünde bulunmalıdır.
+
+Örnek:
+
+```html
+<meta name="google-site-verification" content="GOOGLE_TARAFINDAN_VERILEN_GERCEK_DEGER">
+```
+
+**Bu etiketi 52 HTML dosyasına kopyalamayın.**
+
+Search Console, HTML tag yönteminde doğrulama etiketini property'nin ana sayfasında arar.
+
+Doğrulama tamamlandıktan sonra etiketi silmeyin; Search Console mülkiyeti periyodik olarak yeniden kontrol edebilir.
+
+## 5. Sitemap
+
+Canlı sitemap adresi:
+
+```text
+https://hesapica.com/sitemap.xml
+```
+
+Search Console → Sitemaps bölümünden `sitemap.xml` gönderilebilir.
+
+Ayrıca `robots.txt` içinde şu bildirim bulunur:
+
+```text
+Sitemap: https://hesapica.com/sitemap.xml
+```
+
+Sitemap gönderimi Google için bir sinyaldir; indeksleme garantisi değildir.
+
+Güncel sitemap yalnız canonical, indexlenebilir URL'leri içermelidir.
+
+## 6. URL Inspection
+
+Önemli sayfalar için Search Console → URL Inspection kullanın.
+
+Öncelikli örnekler:
+
+- `https://hesapica.com/`
+- `https://hesapica.com/kredi-hesaplama`
+- `https://hesapica.com/doviz-cevirici`
+- `https://hesapica.com/kdv-hesaplama`
+
+Bir URL'de sorun düzelttikten sonra canlı URL testi yapın; gerektiğinde indeksleme isteği gönderin.
+
+## 7. robots.txt
+
+Beklenen temel yapı:
+
+```text
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+Sitemap: https://hesapica.com/sitemap.xml
+```
+
+`/cdn-cgi/` Cloudflare'ın teknik sistem yoludur ve normal arama içeriği değildir.
+
+## 8. Deploy öncesi global kontrol
+
+Aşağıdakilerin tamamı doğrulanmadan analytics/consent altyapısı final kabul edilmemelidir:
+
+- [ ] Tüm Türkçe HTML sayfalarında güncel `cookie-consent.js` kullanılıyor
+- [ ] Tüm ilgili sayfalarda güncel `cookie-consent.css` kullanılıyor
+- [ ] Tüm HTML sayfalarında güncel `ads-slot-manager.js` kullanılıyor
+- [ ] Tüm HTML sayfalarında güncel `ads-slot-manager.css` kullanılıyor
+- [ ] HTML sayfalarında bağımsız `adsbygoogle.push({})` çağrısı kalmadı
+- [ ] Statik GA4 `gtag.js` yüklemesi kalmadı
+- [ ] Statik AdSense `adsbygoogle.js` yüklemesi kalmadı
+- [ ] `G-XXXXXXXXXX` placeholder'ı yok
+- [ ] `YOUR_VERIFICATION_CODE_HERE` placeholder'ı yok
+- [ ] `i18n-common.js` referansı yok
+- [ ] Consent Mode v2 varsayılanları Google ölçüm komutlarından önce kuruluyor
+- [ ] İlk ziyarette opsiyonel Google servisleri izin politikasına uygun davranıyor
+- [ ] GA4/AdSense yalnız `hesapica.com` / `www.hesapica.com` canlı alan adında yükleniyor
+- [ ] Çerez tercihleri sonradan değiştirilebiliyor
+- [ ] GA4 Realtime/DebugView testi yapıldı
+- [ ] AdSense dolu/boş slot davranışı gerçek tarayıcıda test edildi
+- [ ] `sitemap.xml` parse oluyor ve yalnız canonical URL'leri içeriyor
+- [ ] `robots.txt` sitemap'i bildiriyor
+- [ ] Search Console mülkiyeti doğrulanmış
+- [ ] Sitemap Search Console'da işlenmiş
+
+## 9. AdSense ve Avrupa trafiği için not
+
+Özel Hesapica cookie banner'ı teknik consent yönetimini sağlar; ancak Google'ın EEA/UK/İsviçre reklam trafiği için geçerli CMP/TCF gereksinimleri ayrıca değerlendirilmelidir.
+
+Bu konu “cookie banner çalışıyor” kontrolünden ayrı tutulmalıdır.
+
+## 10. Bu belgede artık kullanılmayan eski yaklaşım
+
+Aşağıdaki eski adımlar geçersizdir ve uygulanmamalıdır:
+
+- 52 HTML dosyasında `sed` ile GA4 ID değiştirmek
+- 52 HTML dosyasına Search Console verification meta etiketi basmak
+- GA4 scriptini AdSense scriptinden sonra koşulsuz yüklemek
+- Consent alınmadan Google Analytics ve AdSense'i başlatmak
+- `YOUR_VERIFICATION_CODE_HERE` veya `G-XXXXXXXXXX` placeholder'larını deploy etmek
+
 ---
 
-## 🔗 Faydalı Linkler
-
-- **Google Analytics 4**: https://analytics.google.com/
-- **Google Search Console**: https://search.google.com/search-console
-- **GA4 Yardım Merkezi**: https://support.google.com/analytics/answer/9304153
-- **Search Console Yardım**: https://support.google.com/webmasters/
-- **GitHub Repo**: https://github.com/uotok/hesapica
-- **Canlı Site**: https://hesapica.com
-
----
-
-## 📞 Sorun Giderme
-
-### GA4 Veri Gelmiyor?
-1. Tarayıcıda `https://hesapica.com` açın
-2. F12 → Network → "gtag" ara → İstek başarılı mı?
-3. Console'da hata var mı?
-4. AdBlocker kapalı mı?
-5. 24-48 saat bekleyin (veriler gecikebilir)
-
-### Search Console Doğrulama Hatası?
-1. Meta tag doğru mu? (Boşluk, tire yanlışı var mı?)
-2. Cloudflare deployment tamamlandı mı?
-3. `https://hesapica.com` kaynak kodunda tag görünüyor mu?
-4. Cache temizlendi mi? (Ctrl+F5)
-
----
-
-## 🎉 Sonuç
-
-Tüm kurulum tamamlandıktan sonra:
-- ✅ **GA4**: Gerçek zamanlı ziyaretçi takibi başlar
-- ✅ **Search Console**: Google'da indeksleme ve performans takibi başlar
-- ✅ **Sitemap**: Google tüm 52 sayfayı düzenli tarar
-- ✅ **robots.txt**: Bot'lar sitemap'i otomatik bulur
-
-**İlk veri akışı**: GA4'te 5-10 dakika, Search Console'da 1-2 gün içinde görünmeye başlar.
-
----
-
-*Son güncelleme: 29 Temmuz 2026*
+Bu rehber Hesapica'nın merkezi consent + ayrı Türkçe/İngilizce dosya mimarisine göre tutulmalıdır.

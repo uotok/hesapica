@@ -14,32 +14,26 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Hesapica">
-<meta property="og:title" content="IBAN Doğrulama | TR IBAN Kontrolü ve MOD 97">
+<meta property="og:title" content="IBAN Doğrulama | TR IBAN Kontrolü ve MOD 97 | Hesapica">
 <meta property="og:description" content="Türkiye IBAN yapısını, kontrol basamaklarını, ödeme hizmeti sağlayıcısı kodunu, rezerv alanını ve MOD 97 sonucunu kontrol edin.">
 <meta property="og:url" content="https://hesapica.com/iban-dogrulama">
 <meta property="og:image" content="https://hesapica.com/og-image.png">
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Hesapica IBAN doğrulama aracı">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@hesapica">
-<meta name="twitter:title" content="IBAN Doğrulama | Hesapica">
+<meta name="twitter:title" content="IBAN Doğrulama | TR IBAN Kontrolü ve MOD 97 | Hesapica">
 <meta name="twitter:description" content="TR IBAN formatını, yapısal alanları ve MOD 97-10 kontrolünü ücretsiz doğrulayın.">
 <meta name="twitter:image" content="https://hesapica.com/og-image.png">
 <meta name="twitter:url" content="https://hesapica.com/iban-dogrulama">
 
 <link rel="stylesheet" href="cookie-consent.css">
-<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
-<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
-<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-<link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
-<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-6BNBXVN9EW');
-</script>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
+
 
 <style>
 :root{
@@ -183,16 +177,8 @@ textarea[aria-invalid="true"]{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Araçlar","item":"https://hesapica.com/#popular"},{"@type":"ListItem","position":3,"name":"IBAN Doğrulama","item":"https://hesapica.com/iban-dogrulama"}]}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Türkiye IBAN numarası kaç karakterdir?","acceptedAnswer":{"@type":"Answer","text":"Türkiye'de IBAN toplam 26 alfanümerik karakterden oluşur: TR ülke kodu, 2 kontrol basamağı, 5 haneli ödeme hizmeti sağlayıcısı kodu, 1 haneli rezerv alanı ve 16 karakterlik hesap numarası alanı."}},
-{"@type":"Question","name":"TR IBAN içindeki ödeme hizmeti sağlayıcısı kodu nerede bulunur?","acceptedAnswer":{"@type":"Answer","text":"Soldan sayıldığında 5-9. karakterler 5 haneli ödeme hizmeti sağlayıcısı kodudur. JavaScript dizininde bu bölüm 4-8 aralığına karşılık gelir."}},
-{"@type":"Question","name":"Rezerv alanı ne olmalıdır?","acceptedAnswer":{"@type":"Answer","text":"Türkiye IBAN yapısında 10. karakter rezerv alanıdır ve sıfır olmalıdır."}},
-{"@type":"Question","name":"IBAN kontrol basamakları nasıl doğrulanır?","acceptedAnswer":{"@type":"Answer","text":"Kontrol basamaklarının doğrulanmasında ISO 7064 standardındaki MOD 97-10 yöntemi kullanılır. Geçerli bir IBAN için kalan 1 olmalıdır."}},
-{"@type":"Question","name":"Geçerli IBAN hesap sahibini doğrular mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Bu araç biçim, yapısal alanlar ve matematiksel kontrol basamaklarını doğrular; hesabın açık olduğunu, hesap sahibinin kimliğini veya transferin kesin gerçekleşeceğini doğrulamaz."}},
-{"@type":"Question","name":"Toplu IBAN doğrulama yapılabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Her satıra bir IBAN yazarak en fazla 500 TR IBAN aynı işlemde kontrol edilebilir."}}
-]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Türkiye IBAN numarası kaç karakterdir?","acceptedAnswer":{"@type":"Answer","text":"Türkiye IBAN’ı toplam 26 karakterdir. İlk iki karakter TR ülke kodu, sonraki iki rakam kontrol basamaklarıdır."}},{"@type":"Question","name":"Ödeme hizmeti sağlayıcısı kodu nerede bulunur?","acceptedAnswer":{"@type":"Answer","text":"Soldan sayıldığında 5–9. karakterler 5 haneli ödeme hizmeti sağlayıcısı kodudur."}},{"@type":"Question","name":"Rezerv alanı ne olmalıdır?","acceptedAnswer":{"@type":"Answer","text":"10. karakter rezerv alanıdır ve Türkiye IBAN yapısında sıfır olmalıdır."}},{"@type":"Question","name":"IBAN kontrol basamakları nasıl doğrulanır?","acceptedAnswer":{"@type":"Answer","text":"ISO 7064 MOD 97-10 yöntemi kullanılır. Geçerli IBAN için kalan 1 olmalıdır."}},{"@type":"Question","name":"Geçerli IBAN hesap sahibini doğrular mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç yalnız biçim, yapısal alanlar ve matematiksel kontrol basamaklarını doğrular."}},{"@type":"Question","name":"Toplu IBAN doğrulama yapılabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Her satıra bir IBAN yazarak tek işlemde en fazla 500 satır kontrol edebilirsiniz."}}]}</script>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -344,14 +330,13 @@ textarea[aria-invalid="true"]{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220
     <div class="related-grid">
       <a class="related-card" href="/doviz-cevirici"><strong>Döviz Çevirici</strong><span>Para birimleri arasında kur dönüşümü yapın.</span></a>
       <a class="related-card" href="/kredi-hesaplama"><strong>Kredi Hesaplama</strong><span>Kredi taksiti ve toplam geri ödemeyi inceleyin.</span></a>
-      <a class="related-card" href="/banka-mevduat-faizi-hesaplama"><strong>Mevduat Faizi</strong><span>Vadeli mevduat getirisini hesaplayın.</span></a>
+      <a class="related-card" href="/faiz-hesaplama?mod=deposit"><strong>Mevduat Faizi</strong><span>Vadeli mevduat getirisini hesaplayın.</span></a>
     </div>
   </section>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script defer src="cookie-consent.js"></script>
 <script>
 (() => {
 'use strict';
@@ -678,10 +663,7 @@ function summaryText(){
 }
 
 async function copyText(text){
-  if(navigator.clipboard&&window.isSecureContext){
-    await navigator.clipboard.writeText(text);
-    return;
-  }
+  if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return;}catch(_clipboardError){}}
   const ta=document.createElement('textarea');
   ta.value=text;ta.readOnly=true;ta.style.position='fixed';ta.style.left='-9999px';
   document.body.appendChild(ta);ta.select();

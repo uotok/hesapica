@@ -3,44 +3,38 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ortalama Hesaplama | Aritmetik ve Ağırlıklı Ortalama</title>
+<title>Ortalama Hesaplama | Aritmetik ve Ağırlıklı | Hesapica</title>
 <meta name="description" content="Aritmetik ve ağırlıklı ortalamayı; medyan, mod, standart sapma, varyans, çeyrekler, IQR ve aykırı değer sinyaliyle birlikte hesapla."/>
 <meta name="keywords" content="ortalama hesaplama, aritmetik ortalama, ağırlıklı ortalama, medyan, mod, standart sapma, varyans, çeyrekler, IQR"/>
 <meta name="theme-color" content="#4f46e5"/>
 <link href="https://hesapica.com/ortalama-hesaplama" rel="canonical"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <meta property="og:type" content="website"/>
+<meta property="og:locale" content="tr_TR"/>
 <meta property="og:site_name" content="Hesapica"/>
-<meta property="og:title" content="Ortalama Hesaplama | Aritmetik ve Ağırlıklı Ortalama"/>
+<meta property="og:title" content="Ortalama Hesaplama | Aritmetik ve Ağırlıklı | Hesapica"/>
 <meta property="og:description" content="Aritmetik ve ağırlıklı ortalamayı; medyan, standart sapma, varyans, çeyrekler, IQR ve aykırı değer sinyaliyle birlikte hesapla."/>
 <meta property="og:url" content="https://hesapica.com/ortalama-hesaplama"/>
 <meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@hesapica"/>
-<meta name="twitter:title" content="Ortalama Hesaplama | Aritmetik ve Ağırlıklı Ortalama"/>
+<meta name="twitter:title" content="Ortalama Hesaplama | Aritmetik ve Ağırlıklı | Hesapica"/>
 <meta name="twitter:description" content="Aritmetik ve ağırlıklı ortalamayı; medyan, standart sapma, varyans, çeyrekler, IQR ve aykırı değer sinyaliyle birlikte hesapla."/>
 <meta name="twitter:url" content="https://hesapica.com/ortalama-hesaplama"/>
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 
-<link href="//pagead2.googlesyndication.com" rel="dns-prefetch"/>
-<link href="//googleads.g.doubleclick.net" rel="dns-prefetch"/>
-<link crossorigin href="https://pagead2.googlesyndication.com" rel="preconnect"/>
-<link crossorigin href="https://googleads.g.doubleclick.net" rel="preconnect"/>
-<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334681065822132"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BNBXVN9EW"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-6BNBXVN9EW');
-</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
 <link href="cookie-consent.css" rel="stylesheet"/>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
 
 <style>
 :root{
@@ -211,14 +205,7 @@ td{color:var(--text);font-weight:700}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Ortalama Hesaplama","url":"https://hesapica.com/ortalama-hesaplama","applicationCategory":"UtilitiesApplication","operatingSystem":"All","inLanguage":"tr-TR","description":"Aritmetik ve ağırlıklı ortalamayı; medyan, popülasyon standart sapması, varyans, çeyrekler, IQR ve aykırı değer sinyaliyle birlikte hesaplayan araç.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"Aritmetik ortalamada her değer eşit etkiye sahiptir. Ağırlıklı ortalamada her değerin katkısı, o değere verilen pozitif ağırlıkla çarpılır ve toplam katkı toplam ağırlığa bölünür."}},
-{"@type":"Question","name":"Standart sapma ve varyans hangi yöntemle hesaplanıyor?","acceptedAnswer":{"@type":"Answer","text":"Araç, girilen veri listesini incelenen veri kümesinin tamamı kabul ederek popülasyon varyansı ve popülasyon standart sapması hesaplar. Ağırlıklı modda aynı ölçüler pozitif ağırlıklar dikkate alınarak hesaplanır."}},
-{"@type":"Question","name":"Aykırı değer sinyali nasıl belirleniyor?","acceptedAnswer":{"@type":"Answer","text":"Basit modda en az dört değer, ağırlıklı modda en az dört veri satırı olduğunda 1,5 × IQR kuralı kullanılır. Basit modda Q1 ve Q3 doğrusal enterpolasyonla, ağırlıklı modda kümülatif ağırlık eşiklerine göre belirlenir. Bu sonuç bir sinyaldir; tek başına kesin aykırılık kararı değildir."}},
-{"@type":"Question","name":"Ağırlıklı ortalama verileri nasıl girilir?","acceptedAnswer":{"@type":"Answer","text":"Her satıra değer ve pozitif ağırlık, aralarında noktalı virgül olacak şekilde girilir. Örneğin 70;3 ve 85,5;4 geçerli satırlardır."}}
-]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"Aritmetik ortalamada her değer eşit etkiye sahiptir. Ağırlıklı ortalamada her değerin katkısı, o değere verilen pozitif ağırlıkla çarpılır ve toplam katkı toplam ağırlığa bölünür."}},{"@type":"Question","name":"Standart sapma ve varyans hangi yöntemle hesaplanıyor?","acceptedAnswer":{"@type":"Answer","text":"Araç, girilen veri listesini incelenen veri kümesinin tamamı kabul ederek popülasyon varyansı ve popülasyon standart sapması hesaplar. Ağırlıklı modda aynı ölçüler pozitif ağırlıklar dikkate alınarak hesaplanır."}},{"@type":"Question","name":"Aykırı değer sinyali nasıl belirleniyor?","acceptedAnswer":{"@type":"Answer","text":"Basit modda en az dört değer, ağırlıklı modda en az dört veri satırı olduğunda 1,5 × IQR kuralı kullanılır. Basit modda Q1 ve Q3 doğrusal enterpolasyonla, ağırlıklı modda kümülatif ağırlık eşiklerine göre belirlenir. Bu sonuç bir sinyaldir; tek başına kesin aykırılık kararı değildir."}},{"@type":"Question","name":"Ağırlıklı ortalama verileri nasıl girilir?","acceptedAnswer":{"@type":"Answer","text":"Her satıra değer ve pozitif ağırlık, aralarında noktalı virgül olacak şekilde girilir. Örneğin 70;3 ve 85,5;4 geçerli satırlardır."}}]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
@@ -226,6 +213,7 @@ td{color:var(--text);font-weight:700}
 {"@type":"ListItem","position":3,"name":"Ortalama Hesaplama","item":"https://hesapica.com/ortalama-hesaplama"}
 ]}
 </script>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
 </head>
 <body>
 <noscript><div style="margin:16px auto;width:min(1180px,calc(100% - 32px));padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fdba74;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu aracın çalışması için JavaScript etkin olmalıdır.</div></noscript>
@@ -272,7 +260,7 @@ td{color:var(--text);font-weight:700}
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3615831363" data-ad-format="auto" data-full-width-responsive="true"></ins>
 </div>
 </div>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
 
 <main class="container" style="padding:24px 0 56px">
 <section class="tool-layout">
@@ -350,7 +338,7 @@ td{color:var(--text);font-weight:700}
   <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </div>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  
 
   <div class="status-card">
     <div class="status-row">
@@ -433,7 +421,7 @@ td{color:var(--text);font-weight:700}
   <div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </div>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  
 
   <h2>Sık Sorulan Sorular</h2>
   <div class="faq-item">
@@ -1233,7 +1221,6 @@ td{color:var(--text);font-weight:700}
   if (!loadState()) setMode('simple',{recalculate:false});
 })();
 </script>
-<script defer src="cookie-consent.js"></script>
 <script src="ads-slot-manager.js"></script>
 </body>
 </html>

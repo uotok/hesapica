@@ -1,68 +1,313 @@
 (function(){
-  const STORAGE_KEY = 'hesapica_cookie_preferences_v1';
-  const defaultPrefs = {
+  'use strict';
+
+  const STORAGE_KEY = 'hesapica_cookie_preferences_v2';
+  const LEGACY_STORAGE_KEY = 'hesapica_cookie_preferences_v1';
+  const STORAGE_VERSION = 2;
+
+  const GA_MEASUREMENT_ID = 'G-6BNBXVN9EW';
+  const ADSENSE_CLIENT = 'ca-pub-4334681065822132';
+
+
+  function isLiveHost(){
+    try {
+      const host = String(window.location && window.location.hostname || '').toLowerCase();
+      return host === 'hesapica.com' || host === 'www.hesapica.com';
+    } catch(err){
+      return false;
+    }
+  }
+
+  const defaultPrefs = Object.freeze({
+    version: STORAGE_VERSION,
     necessary: true,
     analytics: false,
     marketing: false,
     decided: false,
     updatedAt: null
-  };
+  });
+
+  let currentPrefs = { ...defaultPrefs };
+  let lastFocusedElement = null;
+  let previousBodyOverflow = '';
+  let analyticsInitializedByConsent = false;
+  let adsenseInitializedByConsent = false;
+
+  function safeRemoveStorage(key){
+    try { localStorage.removeItem(key); } catch(err) {}
+  }
+
+  function isPlainObject(value){
+    return !!value && typeof value === 'object' && !Array.isArray(value);
+  }
+
+  function normalizePrefs(value, allowLegacy){
+    if(!isPlainObject(value)) return null;
+
+    if(!allowLegacy && value.version !== STORAGE_VERSION) return null;
+    if(typeof value.analytics !== 'boolean') return null;
+    if(typeof value.marketing !== 'boolean') return null;
+    if(typeof value.decided !== 'boolean') return null;
+
+    let updatedAt = null;
+    if(typeof value.updatedAt === 'string'){
+      const parsedDate = Date.parse(value.updatedAt);
+      if(Number.isFinite(parsedDate)) updatedAt = new Date(parsedDate).toISOString();
+    }
+
+    const decided = value.decided === true;
+
+    return {
+      version: STORAGE_VERSION,
+      necessary: true,
+      analytics: decided ? value.analytics : false,
+      marketing: decided ? value.marketing : false,
+      decided: decided,
+      updatedAt: decided ? updatedAt : null
+    };
+  }
+
+  function persistPrefs(prefs){
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+      safeRemoveStorage(LEGACY_STORAGE_KEY);
+      return true;
+    } catch(err){
+      return false;
+    }
+  }
 
   function readPrefs(){
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if(!raw) return { ...defaultPrefs };
-      const parsed = JSON.parse(raw);
-      return { ...defaultPrefs, ...parsed, necessary: true };
+      if(raw){
+        const normalized = normalizePrefs(JSON.parse(raw), false);
+        if(normalized) return normalized;
+        safeRemoveStorage(STORAGE_KEY);
+      }
     } catch(err){
-      return { ...defaultPrefs };
+      safeRemoveStorage(STORAGE_KEY);
+    }
+
+    try {
+      const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY);
+      if(legacyRaw){
+        const normalizedLegacy = normalizePrefs(JSON.parse(legacyRaw), true);
+        if(normalizedLegacy){
+          persistPrefs(normalizedLegacy);
+          return normalizedLegacy;
+        }
+        safeRemoveStorage(LEGACY_STORAGE_KEY);
+      }
+    } catch(err){
+      safeRemoveStorage(LEGACY_STORAGE_KEY);
+    }
+
+    return { ...defaultPrefs };
+  }
+
+  function ensureGtagQueue(){
+    window.dataLayer = window.dataLayer || [];
+    if(typeof window.gtag !== 'function'){
+      window.gtag = function(){ window.dataLayer.push(arguments); };
     }
   }
 
-  function writePrefs(prefs){
-    const finalPrefs = { ...defaultPrefs, ...prefs, necessary:true, decided:true, updatedAt:new Date().toISOString() };
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(finalPrefs)); } catch(err) {}
-    applyPrefs(finalPrefs);
-    window.dispatchEvent(new CustomEvent('hesapica:cookie-consent-changed', { detail: finalPrefs }));
-    return finalPrefs;
+  function consentPayload(prefs){
+    return {
+      analytics_storage: prefs.analytics ? 'granted' : 'denied',
+      ad_storage: prefs.marketing ? 'granted' : 'denied',
+      ad_user_data: prefs.marketing ? 'granted' : 'denied',
+      ad_personalization: prefs.marketing ? 'granted' : 'denied'
+    };
+  }
+
+  function initializeGoogleConsent(){
+    ensureGtagQueue();
+
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  }
+
+  function updateGoogleConsent(prefs){
+    ensureGtagQueue();
+    window.gtag('consent', 'update', consentPayload(prefs));
+  }
+
+  function findScriptBySrcPart(part){
+    return Array.from(document.scripts || []).find(function(script){
+      return typeof script.src === 'string' && script.src.indexOf(part) !== -1;
+    }) || null;
+  }
+
+  function loadAnalytics(){
+    if(!currentPrefs.analytics || !isLiveHost()) return;
+
+    window['ga-disable-' + GA_MEASUREMENT_ID] = false;
+    ensureGtagQueue();
+
+    const existing = findScriptBySrcPart('googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID);
+    if(existing){
+      analyticsInitializedByConsent = true;
+      return;
+    }
+
+    if(analyticsInitializedByConsent) return;
+    analyticsInitializedByConsent = true;
+
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+    script.id = 'hesapica-ga4-loader';
+    script.dataset.consentManaged = 'analytics';
+    document.head.appendChild(script);
+  }
+
+  function loadAdsense(){
+    if(!currentPrefs.marketing || !isLiveHost()) return;
+
+    const existing = findScriptBySrcPart('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
+    if(existing){
+      adsenseInitializedByConsent = true;
+      return;
+    }
+
+    if(adsenseInitializedByConsent) return;
+    adsenseInitializedByConsent = true;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(ADSENSE_CLIENT);
+    script.id = 'hesapica-adsense-loader';
+    script.dataset.consentManaged = 'marketing';
+    document.head.appendChild(script);
+  }
+
+  function hasUnmanagedGoogleScripts(){
+    return Array.from(document.scripts || []).some(function(script){
+      const src = typeof script.src === 'string' ? script.src : '';
+      const isGoogleMeasurement = src.indexOf('googletagmanager.com/gtag/js') !== -1;
+      const isAdsense = src.indexOf('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js') !== -1;
+      const consentManaged = !!(script.dataset && script.dataset.consentManaged);
+      return (isGoogleMeasurement || isAdsense) && !consentManaged;
+    });
+  }
+
+  function applyServiceState(previousPrefs){
+    window['ga-disable-' + GA_MEASUREMENT_ID] = !currentPrefs.analytics;
+    updateGoogleConsent(currentPrefs);
+
+    if(currentPrefs.analytics) loadAnalytics();
+    if(currentPrefs.marketing) loadAdsense();
+
+    const analyticsRevoked = !!(previousPrefs && previousPrefs.analytics && !currentPrefs.analytics);
+    const marketingRevoked = !!(previousPrefs && previousPrefs.marketing && !currentPrefs.marketing);
+
+    if(analyticsRevoked || marketingRevoked){
+      if(!hasUnmanagedGoogleScripts() && window.location && typeof window.location.reload === 'function'){
+        window.setTimeout(function(){ window.location.reload(); }, 80);
+      } else {
+        document.documentElement.dataset.cookieReloadRecommended = 'yes';
+      }
+    } else {
+      delete document.documentElement.dataset.cookieReloadRecommended;
+    }
+  }
+
+  function publicPrefs(){
+    return {
+      necessary: true,
+      analytics: currentPrefs.analytics,
+      marketing: currentPrefs.marketing,
+      decided: currentPrefs.decided,
+      updatedAt: currentPrefs.updatedAt
+    };
   }
 
   function applyPrefs(prefs){
-    document.documentElement.dataset.cookieAnalytics = prefs.analytics ? 'granted' : 'denied';
-    document.documentElement.dataset.cookieMarketing = prefs.marketing ? 'granted' : 'denied';
-    document.documentElement.dataset.cookieConsentReady = prefs.decided ? 'yes' : 'no';
+    currentPrefs = { ...prefs, necessary: true };
+
+    document.documentElement.dataset.cookieAnalytics = currentPrefs.analytics ? 'granted' : 'denied';
+    document.documentElement.dataset.cookieMarketing = currentPrefs.marketing ? 'granted' : 'denied';
+    document.documentElement.dataset.cookieConsentReady = currentPrefs.decided ? 'yes' : 'no';
+    document.documentElement.dataset.hcEnvironment = isLiveHost() ? 'live' : 'preview';
+
     window.HesapicaCookieConsent = {
-      getPreferences: function(){ return { ...prefs }; },
-      canRun: function(category){ return !!prefs[category]; },
+      getPreferences: function(){ return { ...publicPrefs() }; },
+      canRun: function(category){
+        if(category === 'necessary') return true;
+        if(category === 'analytics') return currentPrefs.analytics;
+        if(category === 'marketing') return currentPrefs.marketing;
+        return false;
+      },
       openPreferences: openModal,
       acceptAll: acceptAll,
       rejectOptional: rejectOptional
     };
   }
 
+  function dispatchConsentChanged(){
+    try {
+      window.dispatchEvent(new CustomEvent('hesapica:cookie-consent-changed', {
+        detail: { ...publicPrefs() }
+      }));
+    } catch(err) {}
+  }
+
+  function writePrefs(prefs){
+    const next = normalizePrefs({
+      version: STORAGE_VERSION,
+      analytics: prefs.analytics === true,
+      marketing: prefs.marketing === true,
+      decided: true,
+      updatedAt: new Date().toISOString()
+    }, false);
+
+    if(!next) return { ...publicPrefs() };
+
+    const previous = { ...currentPrefs };
+    persistPrefs(next);
+    applyPrefs(next);
+    applyServiceState(previous);
+    dispatchConsentChanged();
+
+    return { ...publicPrefs() };
+  }
+
   function createUI(){
-    if(document.getElementById('cookieBanner')) return;
+    if(document.getElementById('cookieBanner')) return true;
+    if(!document.body) return false;
+
     const banner = document.createElement('section');
     banner.className = 'cookie-banner';
     banner.id = 'cookieBanner';
-    banner.setAttribute('aria-label', 'Çerez bildirimi');
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-labelledby', 'cookieBannerTitle');
     banner.innerHTML = [
       '<div class="cookie-banner-card">',
         '<span class="cookie-badge">Hesapica · Çerez tercihleri</span>',
         '<div class="cookie-banner-top">',
           '<div>',
-            '<h2>Çerez tercihlerini sen yönet.</h2>',
-            '<p>Hesapica, sitenin düzgün çalışması için zorunlu çerezler kullanır. Analitik ve reklam/pazarlama çerezleri ise yalnızca sen izin verirsen etkinleşir. Türkiye için bu yaklaşım şeffaflık ve açık rıza akışını güçlendirir; Avrupa trafiği için ise AdSense tarafında ayrıca sertifikalı CMP yapılandırması gerekir.</p>',
+            '<h2 id="cookieBannerTitle">Çerez tercihlerini sen yönet.</h2>',
+            '<p>Hesapica, zorunlu site işlevleri için gerekli depolama teknolojilerini kullanır. Analitik ile reklam/pazarlama teknolojileri ise tercihlerine göre yönetilir. Ayrıntılar için Gizlilik ve Çerez Politikalarını inceleyebilirsin.</p>',
           '</div>',
         '</div>',
         '<div class="cookie-actions">',
           '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>Tümünü kabul et</button>',
-          '<button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-reject>Sadece zorunlu</button>',
-          '<button type="button" class="cookie-btn cookie-btn-primary" data-cookie-open>Tercihleri yönet</button>',
+          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>Sadece zorunlu</button>',
+          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-open>Tercihleri yönet</button>',
         '</div>',
         '<div class="cookie-mini-links">',
-          '<a href="gizlilik-politikasi.html">Gizlilik Politikası</a>',
-          '<a href="cerez-politikasi.html">Çerez Politikası</a>',
+          '<a href="/gizlilik-politikasi">Gizlilik Politikası</a>',
+          '<a href="/cerez-politikasi">Çerez Politikası</a>',
           '<button type="button" data-cookie-open>Detaylı ayarları aç</button>',
         '</div>',
       '</div>'
@@ -71,81 +316,162 @@
     const backdrop = document.createElement('div');
     backdrop.className = 'cookie-modal-backdrop';
     backdrop.id = 'cookieModalBackdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
     backdrop.innerHTML = [
-      '<div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">',
+      '<div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-describedby="cookieModalDescription">',
         '<div class="cookie-modal-head">',
           '<div>',
             '<h3 id="cookieModalTitle">Çerez tercihlerini düzenle</h3>',
-            '<p>Zorunlu çerezler sitenin temel çalışması için gereklidir ve kapatılamaz. Analitik çerezler kullanım istatistikleri üretir. Reklam/pazarlama çerezleri ise reklam gösterimi ve gelir optimizasyonunda kullanılır.</p>',
+            '<p id="cookieModalDescription">Zorunlu depolama site işlevleri ve gizlilik tercihini hatırlamak için gereklidir. Analitik, kullanım istatistiklerine; reklam/pazarlama ise reklam sunumuna ilişkin tercihini ifade eder.</p>',
           '</div>',
-          '<button type="button" class="cookie-close" aria-label="Kapat" data-cookie-close>×</button>',
+          '<button type="button" class="cookie-close" aria-label="Çerez tercihlerini kapat" data-cookie-close>×</button>',
         '</div>',
         '<div class="cookie-options">',
           '<div class="cookie-option">',
             '<div class="cookie-option-head">',
-              '<div><strong>Zorunlu çerezler</strong></div>',
-              '<label class="cookie-switch"><input type="checkbox" checked disabled><span class="cookie-slider"></span></label>',
+              '<div><strong>Zorunlu</strong></div>',
+              '<label class="cookie-switch"><input type="checkbox" checked disabled aria-label="Zorunlu depolama her zaman açık"><span class="cookie-slider"></span></label>',
             '</div>',
-            '<p>Oturumun sürmesi, güvenlik, formların çalışması ve seçtiğin gizlilik tercihinin hatırlanması için kullanılır.</p>',
+            '<p>Temel site işlevlerinin ve seçtiğin gizlilik tercihinin hatırlanması için kullanılır; kapatılamaz.</p>',
           '</div>',
           '<div class="cookie-option">',
             '<div class="cookie-option-head">',
-              '<div><strong>Analitik çerezler</strong></div>',
-              '<label class="cookie-switch"><input type="checkbox" id="cookieAnalytics"><span class="cookie-slider"></span></label>',
+              '<div><strong>Analitik</strong></div>',
+              '<label class="cookie-switch"><input type="checkbox" id="cookieAnalytics" aria-label="Analitik teknolojilere izin ver"><span class="cookie-slider"></span></label>',
             '</div>',
-            '<p>Hangi araçların daha çok kullanıldığını, hangi sayfaların iyileştirilmesi gerektiğini anlamaya yardımcı olur.</p>',
+            '<p>Hangi araçların ve sayfaların kullanıldığını anlamaya yardımcı olan ölçüm teknolojilerini yönetir.</p>',
           '</div>',
           '<div class="cookie-option">',
             '<div class="cookie-option-head">',
-              '<div><strong>Reklam ve pazarlama çerezleri</strong></div>',
-              '<label class="cookie-switch"><input type="checkbox" id="cookieMarketing"><span class="cookie-slider"></span></label>',
+              '<div><strong>Reklam ve pazarlama</strong></div>',
+              '<label class="cookie-switch"><input type="checkbox" id="cookieMarketing" aria-label="Reklam ve pazarlama teknolojilerine izin ver"><span class="cookie-slider"></span></label>',
             '</div>',
-            '<p>AdSense veya benzeri reklam çözümleri eklendiğinde reklam sunumu, frekans kontrolü ve gelir optimizasyonu için kullanılabilir.</p>',
+            '<p>Google AdSense gibi reklam teknolojilerinin yüklenmesi ve reklam sunumu için tercihini yönetir. Bazı bölgelerde ayrıca sertifikalı bir CMP gerekebilir.</p>',
           '</div>',
         '</div>',
         '<div class="cookie-modal-actions">',
-          '<button type="button" class="cookie-btn cookie-btn-primary" data-cookie-save>Tercihleri kaydet</button>',
+          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-save>Tercihleri kaydet</button>',
           '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>Tümünü kabul et</button>',
-          '<button type="button" class="cookie-btn cookie-btn-ghost" data-cookie-reject>Sadece zorunlu</button>',
+          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>Sadece zorunlu</button>',
         '</div>',
-        '<div class="cookie-status" id="cookieStatusText">Tercihini dilediğin zaman footer’daki “Çerez Tercihleri” düğmesinden güncelleyebilirsin.</div>',
+        '<div class="cookie-status" id="cookieStatusText" aria-live="polite">Tercihini dilediğin zaman footer’daki “Çerez Tercihleri” düğmesinden güncelleyebilirsin.</div>',
       '</div>'
     ].join('');
 
     document.body.appendChild(banner);
     document.body.appendChild(backdrop);
 
-    banner.querySelectorAll('[data-cookie-open]').forEach(btn => btn.addEventListener('click', openModal));
-    banner.querySelectorAll('[data-cookie-accept-all]').forEach(btn => btn.addEventListener('click', acceptAll));
-    banner.querySelectorAll('[data-cookie-reject]').forEach(btn => btn.addEventListener('click', rejectOptional));
-    backdrop.querySelectorAll('[data-cookie-close]').forEach(btn => btn.addEventListener('click', closeModal));
-    backdrop.querySelectorAll('[data-cookie-accept-all]').forEach(btn => btn.addEventListener('click', acceptAll));
-    backdrop.querySelectorAll('[data-cookie-reject]').forEach(btn => btn.addEventListener('click', rejectOptional));
-    backdrop.querySelector('[data-cookie-save]').addEventListener('click', saveFromModal);
-    backdrop.addEventListener('click', function(event){ if(event.target === backdrop) closeModal(); });
+    banner.querySelectorAll('[data-cookie-open]').forEach(function(btn){ btn.addEventListener('click', openModal); });
+    banner.querySelectorAll('[data-cookie-accept-all]').forEach(function(btn){ btn.addEventListener('click', acceptAll); });
+    banner.querySelectorAll('[data-cookie-reject]').forEach(function(btn){ btn.addEventListener('click', rejectOptional); });
+    backdrop.querySelectorAll('[data-cookie-close]').forEach(function(btn){ btn.addEventListener('click', closeModal); });
+    backdrop.querySelectorAll('[data-cookie-accept-all]').forEach(function(btn){ btn.addEventListener('click', acceptAll); });
+    backdrop.querySelectorAll('[data-cookie-reject]').forEach(function(btn){ btn.addEventListener('click', rejectOptional); });
 
-    document.querySelectorAll('[data-open-cookie-preferences]').forEach(btn => btn.addEventListener('click', openModal));
+    const saveButton = backdrop.querySelector('[data-cookie-save]');
+    if(saveButton) saveButton.addEventListener('click', saveFromModal);
+
+    backdrop.addEventListener('click', function(event){
+      if(event.target === backdrop) closeModal();
+    });
+
+    document.addEventListener('keydown', handleModalKeydown);
+
+    document.addEventListener('click', function(event){
+      const target = event.target instanceof Element ? event.target.closest('[data-open-cookie-preferences]') : null;
+      if(!target) return;
+      event.preventDefault();
+      openModal();
+    });
+
+    return true;
   }
 
   function syncModal(){
-    const prefs = readPrefs();
     const analytics = document.getElementById('cookieAnalytics');
     const marketing = document.getElementById('cookieMarketing');
-    if(analytics) analytics.checked = !!prefs.analytics;
-    if(marketing) marketing.checked = !!prefs.marketing;
+    if(analytics) analytics.checked = !!currentPrefs.analytics;
+    if(marketing) marketing.checked = !!currentPrefs.marketing;
+  }
+
+  function getFocusableElements(container){
+    if(!container) return [];
+    return Array.from(container.querySelectorAll([
+      'a[href]',
+      'button:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(','))).filter(function(el){
+      return !el.hasAttribute('hidden') && el.getAttribute('aria-hidden') !== 'true';
+    });
+  }
+
+  function handleModalKeydown(event){
+    const backdrop = document.getElementById('cookieModalBackdrop');
+    if(!backdrop || !backdrop.classList.contains('is-visible')) return;
+
+    if(event.key === 'Escape'){
+      event.preventDefault();
+      closeModal();
+      return;
+    }
+
+    if(event.key !== 'Tab') return;
+
+    const dialog = backdrop.querySelector('[role="dialog"]');
+    const focusable = getFocusableElements(dialog);
+    if(focusable.length === 0){
+      event.preventDefault();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if(event.shiftKey && document.activeElement === first){
+      event.preventDefault();
+      last.focus();
+    } else if(!event.shiftKey && document.activeElement === last){
+      event.preventDefault();
+      first.focus();
+    }
   }
 
   function openModal(){
+    if(!createUI()) return;
+
     syncModal();
-    const el = document.getElementById('cookieModalBackdrop');
-    if(el) el.classList.add('is-visible');
+    const backdrop = document.getElementById('cookieModalBackdrop');
+    if(!backdrop) return;
+
+    lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    previousBodyOverflow = document.body.style.overflow;
+
+    backdrop.classList.add('is-visible');
+    backdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    const focusTarget = document.getElementById('cookieAnalytics') || backdrop.querySelector('[data-cookie-close]');
+    if(focusTarget && typeof focusTarget.focus === 'function'){
+      window.setTimeout(function(){ focusTarget.focus(); }, 0);
+    }
   }
 
   function closeModal(){
-    const el = document.getElementById('cookieModalBackdrop');
-    if(el) el.classList.remove('is-visible');
-    document.body.style.overflow = '';
+    const backdrop = document.getElementById('cookieModalBackdrop');
+    if(backdrop){
+      backdrop.classList.remove('is-visible');
+      backdrop.setAttribute('aria-hidden', 'true');
+    }
+
+    if(document.body) document.body.style.overflow = previousBodyOverflow;
+
+    if(lastFocusedElement && lastFocusedElement.isConnected && typeof lastFocusedElement.focus === 'function'){
+      lastFocusedElement.focus();
+    }
+    lastFocusedElement = null;
   }
 
   function hideBanner(){
@@ -159,13 +485,13 @@
   }
 
   function acceptAll(){
-    writePrefs({ analytics:true, marketing:true });
+    writePrefs({ analytics: true, marketing: true });
     hideBanner();
     closeModal();
   }
 
   function rejectOptional(){
-    writePrefs({ analytics:false, marketing:false });
+    writePrefs({ analytics: false, marketing: false });
     hideBanner();
     closeModal();
   }
@@ -173,17 +499,56 @@
   function saveFromModal(){
     const analytics = document.getElementById('cookieAnalytics');
     const marketing = document.getElementById('cookieMarketing');
-    writePrefs({ analytics:!!(analytics && analytics.checked), marketing:!!(marketing && marketing.checked) });
+
+    writePrefs({
+      analytics: !!(analytics && analytics.checked),
+      marketing: !!(marketing && marketing.checked)
+    });
+
     hideBanner();
     closeModal();
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    createUI();
-    const prefs = readPrefs();
-    applyPrefs(prefs);
-    if(!prefs.decided){
-      setTimeout(showBanner, 250);
+  function initUI(){
+    if(!createUI()) return;
+    syncModal();
+    if(!currentPrefs.decided){
+      window.setTimeout(showBanner, 250);
+    } else {
+      hideBanner();
     }
-  });
+  }
+
+  function handleStorageChange(event){
+    if(!event || (event.key !== STORAGE_KEY && event.key !== LEGACY_STORAGE_KEY)) return;
+
+    try {
+      if(event.storageArea && event.storageArea !== window.localStorage) return;
+    } catch(err) {
+      return;
+    }
+
+    const previous = { ...currentPrefs };
+    const fresh = readPrefs();
+    applyPrefs(fresh);
+    applyServiceState(previous);
+    syncModal();
+    dispatchConsentChanged();
+
+    if(currentPrefs.decided) hideBanner();
+    else showBanner();
+  }
+
+  currentPrefs = readPrefs();
+  initializeGoogleConsent();
+  applyPrefs(currentPrefs);
+  applyServiceState(null);
+
+  window.addEventListener('storage', handleStorageChange);
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initUI, { once: true });
+  } else {
+    initUI();
+  }
 })();
