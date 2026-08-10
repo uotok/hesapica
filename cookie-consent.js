@@ -18,6 +18,17 @@
     }
   }
 
+  function isPolicyPage(){
+    try {
+      const rawPath = String(window.location && window.location.pathname || '/').toLowerCase();
+      const path = rawPath.length > 1 ? rawPath.replace(/\/+$/, '') : rawPath;
+      return path === '/gizlilik-politikasi' || path === '/gizlilik-politikasi.html' ||
+             path === '/cerez-politikasi' || path === '/cerez-politikasi.html';
+    } catch(err){
+      return false;
+    }
+  }
+
   const defaultPrefs = Object.freeze({
     version: STORAGE_VERSION,
     necessary: true,
@@ -148,7 +159,7 @@
   }
 
   function loadAnalytics(){
-    if(!currentPrefs.analytics || !isLiveHost()) return;
+    if(!currentPrefs.analytics || !isLiveHost() || isPolicyPage()) return;
 
     window['ga-disable-' + GA_MEASUREMENT_ID] = false;
     ensureGtagQueue();
@@ -185,7 +196,7 @@
   }
 
   function loadAdsenseFramework(){
-    if(!isLiveHost()) return;
+    if(!isLiveHost() || isPolicyPage()) return;
 
     syncAdsenseRequestPause();
 
