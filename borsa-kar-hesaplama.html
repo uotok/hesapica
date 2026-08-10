@@ -8,6 +8,8 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#4f46e5">
 <link rel="canonical" href="https://hesapica.com/borsa-kar-hesaplama">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <link rel="alternate" hreflang="tr" href="https://hesapica.com/borsa-kar-hesaplama">
 <link rel="alternate" hreflang="x-default" href="https://hesapica.com/borsa-kar-hesaplama">
 
@@ -28,6 +30,7 @@
 <meta name="twitter:title" content="Borsa Kâr Hesaplama | Hisse Net Kâr, Komisyon ve BSMV | Hesapica">
 <meta name="twitter:description" content="Hisse işlemlerinde net kâr/zarar, komisyon, BSMV, başa baş ve hedef satış fiyatını hesaplayın.">
 <meta name="twitter:image" content="https://hesapica.com/og-image.png">
+<meta name="twitter:image:alt" content="Hesapica borsa kâr hesaplama aracı"/>
 <meta name="twitter:url" content="https://hesapica.com/borsa-kar-hesaplama">
 
 <link rel="stylesheet" href="cookie-consent.css">
@@ -128,7 +131,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
 .related-card span{display:block;margin-top:4px;color:#ede9fe;font-size:14px}
 .hc-ad-slot{display:none;width:100%;margin:20px 0}
 .hc-ad-slot.hc-ad-loaded{display:flex;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
 .toast{position:fixed;right:18px;bottom:18px;z-index:9999;max-width:min(360px,calc(100% - 36px));padding:12px 16px;border-radius:13px;background:#111827;color:#fff;box-shadow:0 14px 34px rgba(15,23,42,.28);opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}
 .toast.show{opacity:1;transform:translateY(0)}
 @media(max-width:980px){
@@ -167,16 +170,164 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Borsa Kâr Hesaplama","url":"https://hesapica.com/borsa-kar-hesaplama","description":"Hisse senedi alış ve satış işlemlerinde net kâr/zarar, komisyon, komisyon BSMV'si, başa baş ve hedef satış fiyatı hesaplama aracı.","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Borsa Kâr Hesaplama","url":"https://hesapica.com/borsa-kar-hesaplama","description":"Hisse senedi alış ve satış işlemlerinde net kâr/zarar, komisyon, komisyon BSMV'si, başa baş ve hedef satış fiyatı hesaplama aracı.","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Borsa Kâr Hesaplama","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://hesapica.com/borsa-kar-hesaplama","description":"Hisse senedi işlemlerinin net kâr/zararını, komisyon ve komisyon BSMV'sini, başa baş ve hedef satış fiyatını hesaplar.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}
-</script>
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Yatırım","item":"https://hesapica.com/#yatirim"},{"@type":"ListItem","position":3,"name":"Borsa Kâr Hesaplama","item":"https://hesapica.com/borsa-kar-hesaplama"}]}
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Borsa kârı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Net satış gelirinden toplam alış maliyeti çıkarılır. Komisyon, komisyon BSMV'si ve girilen sabit giderler hesaplamaya dahil edilir."}},{"@type":"Question","name":"Komisyon BSMV'si nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"BSMV hisse işlem tutarına değil, aracı kurum komisyonuna uygulanır. Araç varsayılan olarak %5 kullanır ve oran değiştirilebilir."}},{"@type":"Question","name":"Hisse satış kazancına gelir vergisi ekleniyor mu?","acceptedAnswer":{"@type":"Answer","text":"Standart Borsa İstanbul pay işlemleri için araç ek gelir vergisi hesaplamaz. Özel menkul kıymet veya mükellefiyet durumları ayrıca değerlendirilmelidir."}},{"@type":"Question","name":"Başa baş fiyatı neyi gösterir?","acceptedAnswer":{"@type":"Answer","text":"Tüm alış maliyetleri ve satış giderleri dahil edildiğinde net sonucu sıfıra getiren birim satış fiyatını gösterir."}},{"@type":"Question","name":"Hedef fiyat bir yatırım tavsiyesi midir?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Girilen hedef net getiri yüzdesine matematiksel olarak ulaşmak için gereken satış seviyesidir."}},{"@type":"Question","name":"Hazır senaryolar ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Aracın hesaplama mantığını örnek sayılarla denemenizi sağlar. Al, sat veya bekle önerisi üretmez."}}]}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Borsa kârı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Net satış gelirinden toplam alış maliyeti çıkarılır. Komisyon, komisyon BSMV'si ve girilen sabit giderler hesaplamaya dahil edilir."}},{"@type":"Question","name":"Komisyon BSMV'si nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"BSMV hisse işlem tutarına değil, aracı kurum komisyonuna uygulanır. Araç varsayılan olarak %5 kullanır ve oran değiştirilebilir."}},{"@type":"Question","name":"Hisse satış kazancına gelir vergisi ekleniyor mu?","acceptedAnswer":{"@type":"Answer","text":"Standart Borsa İstanbul pay işlemleri için araç ek gelir vergisi hesaplamaz. Özel menkul kıymet veya mükellefiyet durumları ayrıca değerlendirilmelidir."}},{"@type":"Question","name":"Başa baş fiyatı neyi gösterir?","acceptedAnswer":{"@type":"Answer","text":"Tüm alış maliyetleri ve satış giderleri dahil edildiğinde net sonucu sıfıra getiren birim satış fiyatını gösterir."}},{"@type":"Question","name":"Hedef fiyat bir yatırım tavsiyesi midir?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Girilen hedef net getiri yüzdesine matematiksel olarak ulaşmak için gereken satış seviyesidir."}},{"@type":"Question","name":"Hazır senaryolar ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Aracın hesaplama mantığını örnek sayılarla denemenizi sağlar. Al, sat veya bekle önerisi üretmez."}}]}
+</script>
 <link href="ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
 </head>
 
 <body>
@@ -218,9 +369,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
 </header>
 
 <div class="container">
-  <div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3615831363" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
+  
+
 </div>
 
 <main class="container" style="padding:20px 0 56px">
@@ -334,9 +484,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
     </aside>
   </section>
 
-  <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
+  
+
 
   <section class="card content-card">
     <h2>Borsa kârı nasıl hesaplanır?</h2>
@@ -386,7 +535,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
   </section>
 
   <section class="card content-card related-section">
-    <h2>İlgili araçlar</h2>
+    <h2>İlgili Araçlar</h2>
     <div class="related-grid">
       <a class="related-card" href="/yatirim-getirisi-hesaplama"><strong>Yatırım Getirisi</strong><span>ROI ve uzun vadeli yatırım sonuçlarını inceleyin.</span></a>
       <a class="related-card" href="/varlik-getirisi-hesaplama"><strong>Varlık Getirisi</strong><span>Altın, dolar ve euro işlemlerini analiz edin.</span></a>
@@ -469,7 +618,7 @@ function parseNumber(value){
     if(parts.length>2){
       if(parts.slice(1).every(p=>p.length===3))s=parts.join('');
       else return null;
-    }else if(parts.length===2&&parts[1].length===3&&parts[0].length>=1){
+    }else if(parts.length===2&&parts[1].length===3&&parts[0].length>=1&&!/^0+$/.test(parts[0])){
       s=parts.join('');
     }
   }
@@ -835,7 +984,7 @@ $('copyBtn').addEventListener('click',async()=>{
 });
 
 $('shareBtn').addEventListener('click',shareResult);
-$('printBtn').addEventListener('click',()=>window.print());
+$('printBtn').addEventListener('click',()=>{if(!lastResult){showToast('Yazdırmadan önce geçerli bir sonuç oluşturun.');return;}window.print();});
 
 [els.buy,els.sell,els.lots,els.commission,els.bsmv,els.target,els.buyFixed,els.sellFixed].forEach(el=>{
   el.addEventListener('input',()=>{
@@ -856,5 +1005,56 @@ if(!restoreFromQuery())restore();
 </script>
 
 <script src="ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_clearBtn = document.getElementById('clearBtn');
+  if(button_clearBtn) button_clearBtn.addEventListener('click', () => clearToolQuery(['buy','sell','lots','commission','bsmv','target','buyFixed','sellFixed']));
+})();
+</script>
 </body>
 </html>

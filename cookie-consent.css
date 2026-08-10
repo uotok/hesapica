@@ -13,7 +13,9 @@
 .cookie-banner,
 .cookie-banner *,
 .cookie-modal-backdrop,
-.cookie-modal-backdrop *{
+.cookie-modal-backdrop *,
+.cookie-preference-entry,
+.cookie-preference-entry *{
   box-sizing:border-box;
 }
 
@@ -373,6 +375,62 @@
   }
 }
 
+
+/* Statik footer bulunmayan araç sayfalarında tercihleri sonradan açmak için ortak erişim noktası. */
+.cookie-preference-entry{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:10px 14px;
+  width:min(1180px,calc(100% - 32px));
+  margin:28px auto max(28px, env(safe-area-inset-bottom));
+  padding:14px 16px;
+  border:1px solid rgba(99,102,241,.14);
+  border-radius:16px;
+  background:rgba(255,255,255,.92);
+  color:#4b5563;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;
+  line-height:1.35;
+}
+
+.cookie-preference-entry[hidden]{display:none !important}
+
+.cookie-preference-entry-btn{
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:40px;
+  padding:8px 12px;
+  border:1px solid #c7d2fe;
+  border-radius:11px;
+  background:#eef2ff;
+  color:#4338ca;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.cookie-preference-entry a{
+  color:#4f46e5;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.cookie-preference-entry-btn:focus-visible,
+.cookie-preference-entry a:focus-visible{
+  outline:3px solid var(--cookie-focus);
+  outline-offset:2px;
+}
+
+@media (hover:hover){
+  .cookie-preference-entry-btn:hover{background:#e0e7ff;border-color:#a5b4fc}
+  .cookie-preference-entry a:hover{text-decoration:underline;text-underline-offset:3px}
+}
+
 /* Footer'daki "Çerez Tercihleri" erişim noktası için güvenli ortak stil. */
 .footer-legal{
   margin-top:22px;
@@ -579,5 +637,15 @@
   .cookie-slider,
   .cookie-slider::after{
     transition:none;
+  }
+}
+
+/* Madde 11 final regression: consent UI baskı/PDF çıktısına girmemelidir. */
+@media print{
+  .cookie-banner,
+  .cookie-modal-backdrop,
+  .cookie-modal,
+  .cookie-preference-entry{
+    display:none !important;
   }
 }

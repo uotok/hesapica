@@ -9,6 +9,8 @@
 <meta content="maaş ve gelir hesaplama, maaş brüt net hesaplama, netten brüte hesaplama, maaş zam hesaplama, saatlik ücret hesaplama, bordro hesaplama" name="keywords"/>
 <link href="https://hesapica.com/maas-brut-net-hesaplama" rel="canonical"/>
 
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <!-- Google Analytics 4 -->
 
 
@@ -24,6 +26,7 @@
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Maaş Brüt Net Hesaplama 2026 | Hesapica" name="twitter:title"/>
@@ -219,9 +222,9 @@
     .faq-item strong{display:block;font-size:18px;margin-bottom:8px}
     .faq-item p{margin:0;color:#667085}
     .related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .related-link{padding:18px;border-radius:22px;background:linear-gradient(135deg, rgba(79,70,229,.08), rgba(124,58,237,.08));border:1px solid rgba(79,70,229,.12)}
-    .related-link strong{display:block;margin-bottom:6px;color:#312e81}
-    .related-link span{display:block;color:#667085;font-size:14px}
+    .related-link{padding:18px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%,#8b5cf6 100%);border:0;color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-link strong{display:block;margin-bottom:6px;color:#fff}
+    .related-link span{display:block;color:rgba(255,255,255,.88);font-size:14px}
     .highlight-target{transition:box-shadow .28s ease, transform .28s ease}
     .highlight-target.flash{box-shadow:0 0 0 6px var(--highlight), var(--shadow);transform:translateY(-2px)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -288,22 +291,22 @@
   .details-table th,.details-table td{padding:6px 5px}
 }
 </style>
-<meta content="index,follow" name="robots"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type": "WebPage","name":"Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica","url":"https://hesapica.com/maas-brut-net-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type": "WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Maaş ve Gelir Hesaplama | Brüt-Net, Zam ve Saatlik Ücret Aracı - Hesapica","url":"https://hesapica.com/maas-brut-net-hesaplama","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}
 </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Maaş Brüt Net Hesaplama",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "url": "https://hesapica.com/maas-brut-net-hesaplama",
-    "inLanguage": "tr-TR"
-  }
-  </script>
+
+<meta content="https://hesapica.com/maas-brut-net-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
 <style id="hesapica-global-typography-standard">
     :root{
       --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -319,7 +322,7 @@
     }
     html{font-size:16px}
     body{
-      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-family:var(--hc-font-sans) !important;
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -363,6 +366,7 @@
     .hero p,
     .comment-box,
     .score-explain,
+    .metric-explain,
     .mini-result .subline,
     .health-card p,
     .footer-brand p,
@@ -443,37 +447,22 @@
     }
     @media (max-width:760px){
       :root{
-        --hc-type-body: 15px;
-        --hc-type-label: 14.5px;
-        --hc-type-small: 13.5px;
-        --hc-type-button: 14.5px;
-        --hc-type-card-title: 1.05rem;
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
       }
     }
-  </style>
-<meta content="https://hesapica.com/maas-brut-net-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
-<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
-<script src="cookie-consent.js"></script>
+</style>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<link href="ads-slot-manager.css" rel="stylesheet"/>
+<style id="hc-madde4-print-controls">
+@media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
+</style>
 </head>
 <body>
 <noscript><div style="margin:16px auto;max-width:1240px;padding:14px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu hesaplama aracı doğru çalışmak için JavaScript gerektirir. Lütfen JavaScript’i etkinleştirip sayfayı yeniden yükleyin.</div></noscript>
 
-<!-- HC_AD_SLOT:top -->
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="3615831363"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
 
 
 <main class="container">
@@ -519,9 +508,9 @@
   <h2 class="section-title">Birleşik maaş akışı</h2>
   <p class="section-subtitle">Aynı kullanıcı niyetini taşıyan maaş araçlarını tek merkezde topladık. İhtiyacına göre mod değiştir.</p>
   <div class="segmented" role="tablist" aria-label="Maaş ailesi modları">
-    <button type="button" class="active" id="familyModeBordro" data-family="bordro" aria-selected="true">Brüt-Net Bordro</button>
-    <button type="button" id="familyModeZam" data-family="zam" aria-selected="false">Maaş Zammı</button>
-    <button type="button" id="familyModeSaatlik" data-family="saatlik" aria-selected="false">Saatlik Ücret</button>
+    <button type="button" class="active" id="familyModeBordro" data-family="bordro" role="tab" aria-selected="true" tabindex="0">Brüt-Net Bordro</button>
+    <button type="button" id="familyModeZam" data-family="zam" role="tab" aria-selected="false" tabindex="-1">Maaş Zammı</button>
+    <button type="button" id="familyModeSaatlik" data-family="saatlik" role="tab" aria-selected="false" tabindex="-1">Saatlik Ücret</button>
   </div>
 </div>
 <section id="bordroFamilySection">
@@ -531,16 +520,16 @@
 <h2 class="section-title">Hesap türü</h2>
 <p class="section-subtitle">Aynı resmi bordro motorunun iki yönünü kullan. İstersen hızlı modda tek maaşla, istersen detaylı modda ay ay ilerle.</p>
 <div aria-label="Ana hesap modu" class="segmented two" role="tablist">
-<button aria-selected="true" class="active" data-mainmode="gross" id="modeGrossBtn" type="button">Brütten Nete</button>
-<button aria-selected="false" data-mainmode="net" id="modeNetBtn" type="button">Netten Brüte</button>
+<button aria-selected="true" class="active" data-mainmode="gross" id="modeGrossBtn" role="tab" tabindex="0" type="button">Brütten Nete</button>
+<button aria-selected="false" data-mainmode="net" id="modeNetBtn" role="tab" tabindex="-1" type="button">Netten Brüte</button>
 </div>
 <div class="scope-note" id="scopeNote">
 <strong>Bu araç neyi çözer?</strong><br/>
             Aylık maaşın çalışan tarafında ne kadar net kaldığını, işverene toplam maliyetini ve yıl içindeki vergi baskısını resmi 2025-2026 parametreleriyle görürsün.
           </div>
 <div aria-label="Kullanım modu" class="segmented two" role="tablist" style="margin-bottom:20px">
-<button aria-selected="true" class="active" data-view="quick" id="viewQuickBtn" type="button">Hızlı Mod</button>
-<button aria-selected="false" data-view="detailed" id="viewDetailedBtn" type="button">Detaylı Bordro</button>
+<button aria-selected="true" class="active" data-view="quick" id="viewQuickBtn" role="tab" tabindex="0" type="button">Hızlı Mod</button>
+<button aria-selected="false" data-view="detailed" id="viewDetailedBtn" role="tab" tabindex="-1" type="button">Detaylı Bordro</button>
 </div>
 <div class="form-grid">
 <div class="field">
@@ -648,10 +637,7 @@
 </div>
 </section>
 <aside class="panel results-panel highlight-target" id="resultArea">
-<!-- HC_AD_SLOT:result -->
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins>
-</div>
+
 
 
 <div class="result-card">
@@ -782,7 +768,7 @@
 <div class="official-links"><a href="https://www.gib.gov.tr/vergi-konulari/1_bireysel/11_ucret_geliri/11" target="_blank" rel="noopener noreferrer">GİB Ücret Geliri</a><a href="https://www.sgk.gov.tr/Content/Post/2e0c9e1a-2cfe-4456-af10-49d3de0c58ba/Prime-Esas-Kazanc-Miktarlari-2026-01-14-10-35-39" target="_blank" rel="noopener noreferrer">SGK PEK Sınırları</a><a href="https://www.sgk.gov.tr/Content/Post/c52f99f0-da6c-4029-9b9a-a0d6f96a6a42/Guncel-Sigorta-Primi-Tesvik-Destek-ve-Indirimleri-2026-01-12-03-04-11" target="_blank" rel="noopener noreferrer">SGK Teşvik ve Destekler</a><a href="https://www.csgb.gov.tr/tr/poco-pages/asgari-ucret/" target="_blank" rel="noopener noreferrer">Bakanlık Asgari Ücret</a></div>
 </div>
 <div class="related-card">
-<h2 class="section-title">İlgili araçlar</h2>
+<h2 class="section-title">İlgili Araçlar</h2>
 <div class="related-grid">
 <a class="related-link" href="/maas-brut-net-hesaplama?mod=zam">
 <strong>Maaş Zam Hesaplama</strong>
@@ -972,17 +958,11 @@
 
 </main>
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
-      {"@type": "ListItem","position":2,"name":"Maaş ve Çalışma","item":"https://hesapica.com/#maas"},
-      {"@type": "ListItem","position":3,"name":"Maaş Brüt Net Hesaplama","item":"https://hesapica.com/maas-brut-net-hesaplama"}
-    ]
-  }
-  </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu araç hangi bordro tipine göre hesap yapıyor?","acceptedAnswer":{"@type":"Answer","text":"Bu sayfa standart 4A özel sektör ücretli çalışan bordrosu için tasarlandı. 2025 ve 2026 asgari ücret, prime esas kazanç sınırı, ücret gelir vergisi tarifesi, damga vergisi oranı, engellilik indirimi ve temel SGK işveren indirimleri yıl seçimine göre uygulanır. Özel ücret istisnaları ve işyerine özgü diğer teşvikler kapsam dışıdır."}},{"@type":"Question","name":"Neden yıl ortasında net maaş değişebilir?","acceptedAnswer":{"@type":"Answer","text":"Ücret gelirlerinde gelir vergisi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu nedenle aynı brüt maaşla bazı aylarda gelir vergisi artabilir ve net ele geçen tutar düşebilir."}},{"@type":"Question","name":"Asgari ücret istisnası nasıl yansıtılıyor?","acceptedAnswer":{"@type":"Answer","text":"Asgari ücretin gelir vergisi ve damga vergisine isabet eden kısmı aylık istisna olarak düşülür. Gelir vergisi istisnası takvim ayındaki asgari ücretin kümülatif vergi dilimine göre, damga vergisi istisnası ise aylık brüt asgari ücret sınırına göre uygulanır; eksik gün nedeniyle istisna tavanı ayrıca gün sayısına bölünmez."}},{"@type":"Question","name":"Netten brüte hesap neden iteratif çalışıyor?","acceptedAnswer":{"@type":"Answer","text":"Netten brüte dönüş, vergi dilimi ve istisnalar nedeniyle doğrusal değildir. Bu yüzden araç hedef net ücret için uygun brütü resmi bordro mantığına yaklaşan iteratif çözümle bulur."}}]}</script>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Maaş ve Çalışma","item":"https://hesapica.com/#maas"},{"@type":"ListItem","position":3,"name":"Maaş Brüt Net Hesaplama","item":"https://hesapica.com/maas-brut-net-hesaplama"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu araç hangi bordro tipine göre hesap yapıyor?","acceptedAnswer":{"@type":"Answer","text":"Bu sayfa standart 4A özel sektör ücretli çalışan bordrosu için tasarlandı. 2025 ve 2026 asgari ücret, prime esas kazanç sınırı, ücret gelir vergisi tarifesi, damga vergisi oranı, engellilik indirimi ve temel SGK işveren indirimleri yıl seçimine göre uygulanır. Özel ücret istisnaları ve işyerine özgü diğer teşvikler kapsam dışıdır."}},{"@type":"Question","name":"Neden yıl ortasında net maaş değişebilir?","acceptedAnswer":{"@type":"Answer","text":"Ücret gelirlerinde gelir vergisi kümülatif matrah üzerinden ilerlediği için yıl içinde üst vergi dilimine geçiş olabilir. Bu nedenle aynı brüt maaşla bazı aylarda gelir vergisi artabilir ve net ele geçen tutar düşebilir."}},{"@type":"Question","name":"Asgari ücret istisnası nasıl yansıtılıyor?","acceptedAnswer":{"@type":"Answer","text":"Asgari ücretin gelir vergisi ve damga vergisine isabet eden kısmı aylık istisna olarak düşülür. Gelir vergisi istisnası takvim ayındaki asgari ücretin kümülatif vergi dilimine göre, damga vergisi istisnası ise aylık brüt asgari ücret sınırına göre uygulanır; eksik gün nedeniyle istisna tavanı ayrıca gün sayısına bölünmez."}},{"@type":"Question","name":"Netten brüte hesap neden iteratif çalışıyor?","acceptedAnswer":{"@type":"Answer","text":"Netten brüte dönüş, vergi dilimi ve istisnalar nedeniyle doğrusal değildir. Bu yüzden araç hedef net ücret için uygun brütü resmi bordro mantığına yaklaşan iteratif çözümle bulur."}}]}
+</script>
 <script>
     const MONTHS = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
     const STORAGE_KEY = "hesapica_maas_bordro_v3";
@@ -1111,6 +1091,7 @@
       let s = String(raw).trim().replace(/\s+/g,'').replace(/₺|TL/gi,'');
       if (!s || /[^0-9,.-]/.test(s) || (s.match(/-/g)||[]).length || s.includes('-')) return NaN;
       if (/^\d+$/.test(s)) return Number(s);
+      if (/^0[.,]\d{1,6}$/.test(s)) return Number(s.replace(',','.'));
       if (/^\d{1,3}(?:\.\d{3})+$/.test(s) || /^\d{1,3}(?:,\d{3})+$/.test(s)) return Number(s.replace(/[.,]/g,''));
       if (/^\d{1,3}(?:\.\d{3})+,\d{1,2}$/.test(s)) return Number(s.replace(/\./g,'').replace(',','.'));
       if (/^\d{1,3}(?:,\d{3})+\.\d{1,2}$/.test(s)) return Number(s.replace(/,/g,''));
@@ -1426,6 +1407,13 @@
         rows.push({...item, ...result});
       });
 
+      const finiteRowKeys = ['gross','net','empSgk','empUnemp','incomeTax','stampTax','employerSgk','employerUnemployment','employerCost','taxableBase','cumulativeBase','primeBase'];
+      const rowsFinite = rows.every(row => finiteRowKeys.every(key => Number.isFinite(row[key])));
+      const totalsFinite = [totalNet,totalGross,totalEmpDeductions,totalTax,totalEmployerCost,totalEmployerSgk,totalEmployerUnemp,totalDisability,totalWageSupport,cumulativeBase].every(Number.isFinite);
+      if (!rowsFinite || !totalsFinite) {
+        return {valid:false, errors:['Hesap sonucu sayısal sınırı aşıyor']};
+      }
+
       const monthCount = rows.length;
       const avgNet = round2(totalNet / monthCount);
       const avgGross = round2(totalGross / monthCount);
@@ -1530,6 +1518,10 @@
       els.calcStatusText.textContent = 'Sonuç alanı veri bekliyor';
       els.calcStatusSub.textContent = 'Yazdıkça hesap güncellenir. Sonucu Gör butonu sonuç alanına kaydırır ve vurgular.';
       [els.copyBtn,els.shareBtn,els.printBtn].forEach(btn=>btn.disabled=true);
+    }
+
+    function invalidateLastResult(message='Girdiler değişti; sonuç yeniden hesaplanıyor.'){
+      if (state.lastValidResult) renderEmpty(message);
     }
 
     function renderResult(result){
@@ -1694,6 +1686,7 @@
       els.modeNetBtn.setAttribute('aria-selected', mode === 'net');
       updateQuickLabels();
       saveState();
+      invalidateLastResult();
       debounceAutoCalculate();
     }
     function setView(view){
@@ -1703,6 +1696,7 @@
       els.quickModeSection.style.display = view === 'quick' ? '' : 'none';
       els.detailedModeSection.style.display = view === 'detailed' ? '' : 'none';
       saveState();
+      invalidateLastResult();
       debounceAutoCalculate();
     }
 
@@ -1923,13 +1917,13 @@
       els.viewQuickBtn.addEventListener('click', () => setView('quick'));
       els.viewDetailedBtn.addEventListener('click', () => setView('detailed'));
       [els.disabilitySelect, els.incentiveSelect, els.openingTaxBase, els.wageSupportSelect, els.quickAmount, els.quickDays, els.quickMonthCount].forEach(el => {
-        el.addEventListener('input', () => { saveState(); debounceAutoCalculate(); });
-        el.addEventListener('change', () => { saveState(); debounceAutoCalculate(); });
+        el.addEventListener('input', () => { saveState(); invalidateLastResult(); debounceAutoCalculate(); });
+        el.addEventListener('change', () => { saveState(); invalidateLastResult(); debounceAutoCalculate(); });
       });
-      els.yearSelect.addEventListener('change', () => { updateIncentiveOptions(); saveState(); debounceAutoCalculate(); });
-      els.quickStartMonth.addEventListener('change', () => { updateMonthCountOptions(); saveState(); debounceAutoCalculate(); });
+      els.yearSelect.addEventListener('change', () => { updateIncentiveOptions(); saveState(); invalidateLastResult(); debounceAutoCalculate(); });
+      els.quickStartMonth.addEventListener('change', () => { updateMonthCountOptions(); saveState(); invalidateLastResult(); debounceAutoCalculate(); });
       document.addEventListener('input', (e) => {
-        if (e.target.closest('.detail-row')) { saveState(); debounceAutoCalculate(); }
+        if (e.target.closest('.detail-row')) { saveState(); invalidateLastResult(); debounceAutoCalculate(); }
       });
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey && !e.target.matches('textarea')) {
@@ -2078,7 +2072,7 @@
     }).join('');
     raiseEls.empty.hidden = true; raiseEls.results.hidden = false;
     lastRaise = {current, totalNominal, infl, newSalary, monthlyDiff, annualDiff, realRaise, salaryType: raiseEls.type.value};
-    raiseEls.results.scrollIntoView({behavior:'smooth', block:'nearest'});
+    raiseEls.results.scrollIntoView({behavior:'smooth', block:'start'});
   }
   function raiseExample(){ raiseEls.salary.value='45000'; raiseEls.nominal.value='25'; raiseEls.extra.value='5'; raiseEls.infl.value='22'; raiseEls.type.value='net'; calcRaise(); }
   function raiseReset(){ ['salary','nominal','extra','infl'].forEach(k => raiseEls[k].value=''); raiseEls.type.value='net'; renderRaiseEmpty(); }
@@ -2117,7 +2111,7 @@
     }).join('');
     hourlyEls.empty.hidden=true; hourlyEls.results.hidden=false;
     lastHourly = {salary, bonus, weekly, monthlyTotal, monthlyHours, hourly, weeklyIncome, dailyIncome, target, targetGap};
-    hourlyEls.results.scrollIntoView({behavior:'smooth', block:'nearest'});
+    hourlyEls.results.scrollIntoView({behavior:'smooth', block:'start'});
   }
   function hourlyExample(){ hourlyEls.salary.value='38000'; hourlyEls.bonus.value='2000'; hourlyEls.weekly.value='45'; hourlyEls.workdays.value='5'; hourlyEls.daily.value=''; hourlyEls.target.value='220'; calcHourly(); }
   function hourlyReset(){ ['salary','bonus','weekly','workdays','daily','target'].forEach(k => hourlyEls[k].value=''); renderHourlyEmpty(); }
@@ -2132,5 +2126,92 @@
 </script>
 
 <script src="ads-slot-manager.js"></script>
+
+
+
+<script id="hc-tab-interaction-standard">
+(() => {
+  document.querySelectorAll('[role="tablist"]').forEach(tablist => {
+    const tabs = Array.from(tablist.querySelectorAll('button')).filter(button => button.closest('[role="tablist"]') === tablist);
+    if(tabs.length < 2) return;
+
+    const sync = () => {
+      tabs.forEach(tab => {
+        tab.setAttribute('role','tab');
+        const selected = tab.getAttribute('aria-selected') === 'true';
+        tab.tabIndex = selected ? 0 : -1;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.setAttribute('role','tab');
+      tab.addEventListener('click', () => requestAnimationFrame(sync));
+      tab.addEventListener('keydown', event => {
+        let targetIndex = null;
+        if(event.key === 'ArrowRight' || event.key === 'ArrowDown') targetIndex = (index + 1) % tabs.length;
+        else if(event.key === 'ArrowLeft' || event.key === 'ArrowUp') targetIndex = (index - 1 + tabs.length) % tabs.length;
+        else if(event.key === 'Home') targetIndex = 0;
+        else if(event.key === 'End') targetIndex = tabs.length - 1;
+        if(targetIndex === null) return;
+        event.preventDefault();
+        tabs[targetIndex].focus();
+        tabs[targetIndex].click();
+      });
+    });
+
+    sync();
+  });
+})();
+</script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_clearBtn = document.getElementById('clearBtn');
+  if(button_clearBtn) button_clearBtn.addEventListener('click', () => clearToolQuery(['yon','mode','view','year']));
+})();
+</script>
 </body>
 </html>

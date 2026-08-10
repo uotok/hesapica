@@ -31,7 +31,7 @@
   let lastFocusedElement = null;
   let previousBodyOverflow = '';
   let analyticsInitializedByConsent = false;
-  let adsenseInitializedByConsent = false;
+  let adsenseFrameworkInitialized = false;
 
   function safeRemoveStorage(key){
     try { localStorage.removeItem(key); } catch(err) {}
@@ -123,6 +123,9 @@
   }
 
   function initializeGoogleConsent(){
+    // Google-certified TCF CMP kullanıldığında Google tag'in TCF sinyallerini okuyabilmesini sağlar.
+    // TCF API yoksa bu bayrak mevcut özel tercih akışını değiştirmez.
+    window.gtag_enable_tcf_support = true;
     ensureGtagQueue();
 
     window.gtag('consent', 'default', {
@@ -167,27 +170,47 @@
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
     script.id = 'hesapica-ga4-loader';
     script.dataset.consentManaged = 'analytics';
+    script.addEventListener('error', function(){
+      analyticsInitializedByConsent = false;
+      try { script.remove(); } catch(err) {}
+    }, { once: true });
     document.head.appendChild(script);
   }
 
-  function loadAdsense(){
-    if(!currentPrefs.marketing || !isLiveHost()) return;
+  function syncAdsenseRequestPause(){
+    // AdSense'in resmi async tag kontrolü: script CMP/TCF için yüklü kalabilir,
+    // ancak Hesapica marketing izni yokken hiçbir publisher ad request gönderilmez.
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.pauseAdRequests = currentPrefs.marketing ? 0 : 1;
+  }
+
+  function loadAdsenseFramework(){
+    if(!isLiveHost()) return;
+
+    syncAdsenseRequestPause();
 
     const existing = findScriptBySrcPart('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
     if(existing){
-      adsenseInitializedByConsent = true;
+      adsenseFrameworkInitialized = true;
       return;
     }
 
-    if(adsenseInitializedByConsent) return;
-    adsenseInitializedByConsent = true;
+    if(adsenseFrameworkInitialized) return;
+    adsenseFrameworkInitialized = true;
 
+    // AdSense altyapı etiketi, Consent Mode varsayılanları DENIED kurulduktan sonra yüklenir.
+    // Bu erken yükleme Google'ın sertifikalı CMP / TCF mesajının uygun bölgelerde çalışabilmesini sağlar.
+    // Reklam birimleri ise ads-slot-manager.js tarafından ayrıca marketing iznine bağlı tutulur.
     const script = document.createElement('script');
     script.async = true;
     script.crossOrigin = 'anonymous';
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(ADSENSE_CLIENT);
     script.id = 'hesapica-adsense-loader';
-    script.dataset.consentManaged = 'marketing';
+    script.dataset.consentManaged = 'marketing-framework';
+    script.addEventListener('error', function(){
+      adsenseFrameworkInitialized = false;
+      try { script.remove(); } catch(err) {}
+    }, { once: true });
     document.head.appendChild(script);
   }
 
@@ -206,7 +229,10 @@
     updateGoogleConsent(currentPrefs);
 
     if(currentPrefs.analytics) loadAnalytics();
-    if(currentPrefs.marketing) loadAdsense();
+    // Google CMP/TCF mesajının ilk ziyarette çalışabilmesi için altyapı etiketi canlı hostta
+    // consent varsayılanları kurulduktan sonra yüklenir. pauseAdRequests marketing tercihine göre
+    // 1/0 durumuna çekildiği için izin yokken publisher ad request çıkmaz.
+    loadAdsenseFramework();
 
     const analyticsRevoked = !!(previousPrefs && previousPrefs.analytics && !currentPrefs.analytics);
     const marketingRevoked = !!(previousPrefs && previousPrefs.marketing && !currentPrefs.marketing);
@@ -346,7 +372,7 @@
               '<div><strong>Reklam ve pazarlama</strong></div>',
               '<label class="cookie-switch"><input type="checkbox" id="cookieMarketing" aria-label="Reklam ve pazarlama teknolojilerine izin ver"><span class="cookie-slider"></span></label>',
             '</div>',
-            '<p>Google AdSense gibi reklam teknolojilerinin yüklenmesi ve reklam sunumu için tercihini yönetir. Bazı bölgelerde ayrıca sertifikalı bir CMP gerekebilir.</p>',
+            '<p>Reklam alanlarının istenmesini ve reklam/pazarlama kullanımını yönetir. Google’ın sertifikalı CMP/TCF mesajı gereken bölgelerde ayrıca devreye girebilir.</p>',
           '</div>',
         '</div>',
         '<div class="cookie-modal-actions">',
@@ -354,12 +380,13 @@
           '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>Tümünü kabul et</button>',
           '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>Sadece zorunlu</button>',
         '</div>',
-        '<div class="cookie-status" id="cookieStatusText" aria-live="polite">Tercihini dilediğin zaman footer’daki “Çerez Tercihleri” düğmesinden güncelleyebilirsin.</div>',
+        '<div class="cookie-status" id="cookieStatusText" aria-live="polite">Tercihini dilediğin zaman sayfadaki “Çerez Tercihleri” erişim noktasından güncelleyebilirsin.</div>',
       '</div>'
     ].join('');
 
     document.body.appendChild(banner);
     document.body.appendChild(backdrop);
+    ensurePreferenceEntry();
 
     banner.querySelectorAll('[data-cookie-open]').forEach(function(btn){ btn.addEventListener('click', openModal); });
     banner.querySelectorAll('[data-cookie-accept-all]').forEach(function(btn){ btn.addEventListener('click', acceptAll); });
@@ -385,6 +412,35 @@
     });
 
     return true;
+  }
+
+  function ensurePreferenceEntry(){
+    // Bazı araç sayfalarında statik footer bulunmadığı için izin geri çekme / tercih değiştirme
+    // erişimini merkezi olarak garanti et. Var olan bir tercih düğmesi varsa ikinci kez ekleme.
+    let entry = document.getElementById('cookiePreferenceEntry');
+    if(entry) return entry;
+    if(document.querySelector('[data-open-cookie-preferences]')) return null;
+    if(!document.body) return null;
+
+    entry = document.createElement('div');
+    entry.className = 'cookie-preference-entry';
+    entry.id = 'cookiePreferenceEntry';
+    entry.hidden = true;
+    entry.innerHTML = [
+      '<button type="button" class="cookie-preference-entry-btn" data-open-cookie-preferences>',
+        '<span aria-hidden="true">⚙</span>',
+        '<span>Çerez Tercihleri</span>',
+      '</button>',
+      '<a href="/cerez-politikasi">Çerez Politikası</a>'
+    ].join('');
+    document.body.appendChild(entry);
+    return entry;
+  }
+
+  function syncPreferenceEntry(){
+    const entry = ensurePreferenceEntry();
+    if(!entry) return;
+    entry.hidden = !currentPrefs.decided;
   }
 
   function syncModal(){
@@ -477,11 +533,14 @@
   function hideBanner(){
     const el = document.getElementById('cookieBanner');
     if(el) el.classList.remove('is-visible');
+    syncPreferenceEntry();
   }
 
   function showBanner(){
     const el = document.getElementById('cookieBanner');
     if(el) el.classList.add('is-visible');
+    const entry = document.getElementById('cookiePreferenceEntry');
+    if(entry) entry.hidden = true;
   }
 
   function acceptAll(){
@@ -512,6 +571,7 @@
   function initUI(){
     if(!createUI()) return;
     syncModal();
+    syncPreferenceEntry();
     if(!currentPrefs.decided){
       window.setTimeout(showBanner, 250);
     } else {
@@ -533,6 +593,7 @@
     applyPrefs(fresh);
     applyServiceState(previous);
     syncModal();
+    syncPreferenceEntry();
     dispatchConsentChanged();
 
     if(currentPrefs.decided) hideBanner();

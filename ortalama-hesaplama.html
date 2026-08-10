@@ -8,6 +8,8 @@
 <meta name="keywords" content="ortalama hesaplama, aritmetik ortalama, ağırlıklı ortalama, medyan, mod, standart sapma, varyans, çeyrekler, IQR"/>
 <meta name="theme-color" content="#4f46e5"/>
 <link href="https://hesapica.com/ortalama-hesaplama" rel="canonical"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="tr_TR"/>
@@ -28,6 +30,7 @@
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 
 
+<meta name="twitter:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
@@ -167,7 +170,7 @@ td{color:var(--text);font-weight:700}
 .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
 
 .hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}
-.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
 .hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
 
 @media(max-width:1040px){
@@ -183,7 +186,7 @@ td{color:var(--text);font-weight:700}
   .mini-result,.status-row{flex-direction:column;align-items:flex-start}
   .mini-result .value{text-align:left}
   .hero h1{font-size:32px}.highlight-value{font-size:31px}
-  .hc-ad-slot .adsbygoogle{min-height:240px}
+  .hc-ad-slot .adsbygoogle{min-height:0}
 }
 @media print{
   body{background:#fff}
@@ -200,20 +203,164 @@ td{color:var(--text);font-weight:700}
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Ortalama Hesaplama | Aritmetik ve Ağırlıklı Ortalama","url":"https://hesapica.com/ortalama-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Ortalama Hesaplama | Aritmetik ve Ağırlıklı Ortalama","url":"https://hesapica.com/ortalama-hesaplama","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"Aritmetik ortalamada her değer eşit etkiye sahiptir. Ağırlıklı ortalamada her değerin katkısı, o değere verilen pozitif ağırlıkla çarpılır ve toplam katkı toplam ağırlığa bölünür."}},{"@type":"Question","name":"Standart sapma ve varyans hangi yöntemle hesaplanıyor?","acceptedAnswer":{"@type":"Answer","text":"Araç, girilen veri listesini incelenen veri kümesinin tamamı kabul ederek popülasyon varyansı ve popülasyon standart sapması hesaplar. Ağırlıklı modda aynı ölçüler pozitif ağırlıklar dikkate alınarak hesaplanır."}},{"@type":"Question","name":"Aykırı değer sinyali nasıl belirleniyor?","acceptedAnswer":{"@type":"Answer","text":"Basit modda en az dört değer, ağırlıklı modda en az dört veri satırı olduğunda 1,5 × IQR kuralı kullanılır. Basit modda Q1 ve Q3 doğrusal enterpolasyonla, ağırlıklı modda kümülatif ağırlık eşiklerine göre belirlenir. Bu sonuç bir sinyaldir; tek başına kesin aykırılık kararı değildir."}},{"@type":"Question","name":"Ağırlıklı ortalama verileri nasıl girilir?","acceptedAnswer":{"@type":"Answer","text":"Her satıra değer ve pozitif ağırlık, aralarında noktalı virgül olacak şekilde girilir. Örneğin 70;3 ve 85,5;4 geçerli satırlardır."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Ortalama Hesaplama","url":"https://hesapica.com/ortalama-hesaplama","applicationCategory":"UtilitiesApplication","operatingSystem":"All","inLanguage":"tr-TR","description":"Aritmetik ve ağırlıklı ortalamayı; medyan, popülasyon standart sapması, varyans, çeyrekler, IQR ve aykırı değer sinyaliyle birlikte hesaplayan araç.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Aritmetik ortalama ile ağırlıklı ortalama farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"Aritmetik ortalamada her değer eşit etkiye sahiptir. Ağırlıklı ortalamada her değerin katkısı, o değere verilen pozitif ağırlıkla çarpılır ve toplam katkı toplam ağırlığa bölünür."}},{"@type":"Question","name":"Standart sapma ve varyans hangi yöntemle hesaplanıyor?","acceptedAnswer":{"@type":"Answer","text":"Araç, girilen veri listesini incelenen veri kümesinin tamamı kabul ederek popülasyon varyansı ve popülasyon standart sapması hesaplar. Ağırlıklı modda aynı ölçüler pozitif ağırlıklar dikkate alınarak hesaplanır."}},{"@type":"Question","name":"Aykırı değer sinyali nasıl belirleniyor?","acceptedAnswer":{"@type":"Answer","text":"Basit modda en az dört değer, ağırlıklı modda en az dört veri satırı olduğunda 1,5 × IQR kuralı kullanılır. Basit modda Q1 ve Q3 doğrusal enterpolasyonla, ağırlıklı modda kümülatif ağırlık eşiklerine göre belirlenir. Bu sonuç bir sinyaldir; tek başına kesin aykırılık kararı değildir."}},{"@type":"Question","name":"Ağırlıklı ortalama verileri nasıl girilir?","acceptedAnswer":{"@type":"Answer","text":"Her satıra değer ve pozitif ağırlık, aralarında noktalı virgül olacak şekilde girilir. Örneğin 70;3 ve 85,5;4 geçerli satırlardır."}}]}</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
-{"@type":"ListItem","position":2,"name":"Matematik Araçları","item":"https://hesapica.com/#matematik"},
-{"@type":"ListItem","position":3,"name":"Ortalama Hesaplama","item":"https://hesapica.com/ortalama-hesaplama"}
-]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Matematik Araçları","item":"https://hesapica.com/#matematik"},{"@type":"ListItem","position":3,"name":"Ortalama Hesaplama","item":"https://hesapica.com/ortalama-hesaplama"}]}
 </script>
 <link href="ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
 </head>
 <body>
 <noscript><div style="margin:16px auto;width:min(1180px,calc(100% - 32px));padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fdba74;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif">Bu aracın çalışması için JavaScript etkin olmalıdır.</div></noscript>
@@ -256,9 +403,8 @@ td{color:var(--text);font-weight:700}
 
 <!-- HC_AD_SLOT:top -->
 <div class="container">
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3615831363" data-ad-format="auto" data-full-width-responsive="true"></ins>
-</div>
+
+
 </div>
 
 
@@ -334,10 +480,7 @@ td{color:var(--text);font-weight:700}
 </form>
 
 <aside class="results" id="resultPanel" aria-label="Hesaplama sonuçları">
-  <!-- HC_AD_SLOT:result -->
-  <div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
+
   
 
   <div class="status-card">
@@ -1222,5 +1365,34 @@ td{color:var(--text);font-weight:700}
 })();
 </script>
 <script src="ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

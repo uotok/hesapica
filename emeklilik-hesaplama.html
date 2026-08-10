@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Emeklilik Hesaplama 2026 | 4A, 4B, 4C | Hesapica</title>
 <meta name="description" content="İlk sigorta tarihi, statü, cinsiyet ve prim gününe göre 4A, 4B, 4C ve EYT kapsamında tahmini emeklilik şartlarını karşılaştır. Eksik primini ve olası tarihi gör."/>
-<meta name="robots" content="index,follow"/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
 <meta name="theme-color" content="#4f46e5"/>
 <link rel="canonical" href="https://hesapica.com/emeklilik-hesaplama"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="tr_TR"/>
 <meta property="og:site_name" content="Hesapica"/>
@@ -35,22 +37,177 @@
 
 <style>
 :root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--line:#e5e7eb;--muted:#667085;--text:#1f2937;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 38px rgba(79,70,229,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,#f6f8fc);color:var(--text);line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1160px,calc(100% - 28px));margin:0 auto}.topbar{padding:16px 0 8px}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}.hero{padding:32px;border-radius:28px;background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.15);box-shadow:var(--shadow)}.hero h1{margin:0 0 10px;font-size:clamp(31px,4vw,46px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#374151;font-size:17px;max-width:900px}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.chip{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-weight:800;color:#4338ca;font-size:13px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:22px;margin-top:22px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}.card h2{margin:0 0 10px;font-size:25px;color:#312e81;letter-spacing:-.02em}.note{margin:0 0 18px;color:#4b5563}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14.5px}.hint{margin-top:6px;color:var(--muted);font-size:13.5px}.error{display:none;margin-top:6px;color:var(--bad);font-size:13px;font-weight:700}.field.invalid .error{display:block}.field.invalid input,.field.invalid select{border-color:#fca5a5;background:#fff7f7}input,select{width:100%;min-height:54px;border:1px solid #d9def0;border-radius:15px;padding:10px 14px;font-size:16px;outline:none;background:#fff;color:var(--text)}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.11)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:none;border-radius:14px;padding:12px 15px;font-weight:800;cursor:pointer;transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.btn-soft{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}.results{position:sticky;top:18px;display:grid;gap:14px}.status{padding:14px 16px;border-radius:16px;background:#f8fafc;border:1px solid var(--line);font-size:14px}.status.good{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}.status.warn{background:#fff7ed;border-color:#fed7aa;color:#9a3412}.result-main{font-size:34px;font-weight:900;letter-spacing:-.03em;color:#111827;line-height:1.15}.result-sub{color:var(--muted);margin-top:6px}.kpi{display:grid;gap:10px;margin-top:14px}.kpi-row{display:flex;justify-content:space-between;gap:12px;padding:11px 13px;border:1px solid #e5e7eb;border-radius:13px;background:#fcfcff}.kpi-row span{text-align:right;font-weight:800}.plans{display:grid;gap:12px}.plan{padding:16px;border:1px solid #e0e7ff;border-radius:17px;background:linear-gradient(180deg,#fff,#fafbff)}.plan.best{border-color:#a5b4fc;box-shadow:0 10px 24px rgba(79,70,229,.10)}.plan-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.plan h3{margin:0;color:#312e81;font-size:17px}.pill{display:inline-flex;padding:6px 9px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:12px;font-weight:800}.plan-date{font-size:24px;font-weight:900;margin:10px 0 4px}.plan-meta{font-size:13.5px;color:var(--muted)}.warning-box{margin-top:16px;padding:15px 17px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#92400e;font-size:14px}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}.content-card h2{margin-bottom:12px}.content-card h3{font-size:18px;color:#312e81;margin:20px 0 8px}.content-card p,.content-card li{color:#374151}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}.table-wrap table{width:100%;border-collapse:collapse;min-width:650px}.table-wrap th,.table-wrap td{padding:11px 12px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}.table-wrap th{background:#f8fafc;color:#475467;font-size:13px}.faq details{border:1px solid #e5e7eb;border-radius:14px;padding:13px 15px;background:#fff}.faq details+details{margin-top:10px}.faq summary{font-weight:800;cursor:pointer;color:#312e81}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.rel{display:block;padding:18px;border-radius:19px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 14px 28px rgba(91,79,246,.18)}.rel strong{display:block;font-size:18px;margin-bottom:5px}.rel span{font-size:14px;color:rgba(255,255,255,.88)}.source-list{padding-left:20px}.source-list a{color:#4338ca;text-decoration:underline;text-underline-offset:3px}.hc-ad-slot{display:none;width:100%;margin:20px 0}.hc-ad-slot.hc-ad-loaded{display:flex;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}footer{padding:30px 14px 38px;text-align:center;color:var(--muted);font-size:13px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,#f6f8fc);color:var(--text);line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1160px,calc(100% - 28px));margin:0 auto}.topbar{padding:16px 0 8px}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}.hero{padding:32px;border-radius:28px;background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.15);box-shadow:var(--shadow)}.hero h1{margin:0 0 10px;font-size:clamp(31px,4vw,46px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#374151;font-size:17px;max-width:900px}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.chip{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-weight:800;color:#4338ca;font-size:13px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:22px;margin-top:22px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}.card h2{margin:0 0 10px;font-size:25px;color:#312e81;letter-spacing:-.02em}.note{margin:0 0 18px;color:#4b5563}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14.5px}.hint{margin-top:6px;color:var(--muted);font-size:13.5px}.error{display:none;margin-top:6px;color:var(--bad);font-size:13px;font-weight:700}.field.invalid .error{display:block}.field.invalid input,.field.invalid select{border-color:#fca5a5;background:#fff7f7}input,select{width:100%;min-height:54px;border:1px solid #d9def0;border-radius:15px;padding:10px 14px;font-size:16px;outline:none;background:#fff;color:var(--text)}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.11)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:none;border-radius:14px;padding:12px 15px;font-weight:800;cursor:pointer;transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.btn-soft{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}.results{position:sticky;top:18px;display:grid;gap:14px}.status{padding:14px 16px;border-radius:16px;background:#f8fafc;border:1px solid var(--line);font-size:14px}.status.good{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}.status.warn{background:#fff7ed;border-color:#fed7aa;color:#9a3412}.result-main{font-size:34px;font-weight:900;letter-spacing:-.03em;color:#111827;line-height:1.15}.result-sub{color:var(--muted);margin-top:6px}.kpi{display:grid;gap:10px;margin-top:14px}.kpi-row{display:flex;justify-content:space-between;gap:12px;padding:11px 13px;border:1px solid #e5e7eb;border-radius:13px;background:#fcfcff}.kpi-row span{text-align:right;font-weight:800}.plans{display:grid;gap:12px}.plan{padding:16px;border:1px solid #e0e7ff;border-radius:17px;background:linear-gradient(180deg,#fff,#fafbff)}.plan.best{border-color:#a5b4fc;box-shadow:0 10px 24px rgba(79,70,229,.10)}.plan-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.plan h3{margin:0;color:#312e81;font-size:17px}.pill{display:inline-flex;padding:6px 9px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:12px;font-weight:800}.plan-date{font-size:24px;font-weight:900;margin:10px 0 4px}.plan-meta{font-size:13.5px;color:var(--muted)}.warning-box{margin-top:16px;padding:15px 17px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#92400e;font-size:14px}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}.content-card h2{margin-bottom:12px}.content-card h3{font-size:18px;color:#312e81;margin:20px 0 8px}.content-card p,.content-card li{color:#374151}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}.table-wrap table{width:100%;border-collapse:collapse;min-width:650px}.table-wrap th,.table-wrap td{padding:11px 12px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}.table-wrap th{background:#f8fafc;color:#475467;font-size:13px}.faq details{border:1px solid #e5e7eb;border-radius:14px;padding:13px 15px;background:#fff}.faq details+details{margin-top:10px}.faq summary{font-weight:800;cursor:pointer;color:#312e81}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.rel{display:block;padding:18px;border-radius:19px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 14px 28px rgba(91,79,246,.18)}.rel strong{display:block;font-size:18px;margin-bottom:5px}.rel span{font-size:14px;color:rgba(255,255,255,.88)}.source-list{padding-left:20px}.source-list a{color:#4338ca;text-decoration:underline;text-underline-offset:3px}.hc-ad-slot{display:none;width:100%;margin:20px 0}.hc-ad-slot.hc-ad-loaded{display:flex;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}footer{padding:30px 14px 38px;text-align:center;color:var(--muted);font-size:13px}
 @media(max-width:1000px){.layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.container{width:min(100% - 20px,100%)}.hero,.card{padding:19px}.grid,.related{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{flex-direction:column}.btn{width:100%}.kpi-row,.plan-head{flex-direction:column}.kpi-row span{text-align:left}.result-main{font-size:29px}}
 @media print{body{background:#fff}.topbar,.actions,.chips,.hc-ad-slot,footer{display:none!important}.layout,.content-grid{grid-template-columns:1fr}.results{position:static}.card,.hero{box-shadow:none;border:1px solid #d1d5db;break-inside:avoid}.content-card{break-inside:auto}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Emeklilik Hesaplama 2026 | SGK 4A, 4B, 4C ve EYT Tahmini | Hesapica","url":"https://hesapica.com/emeklilik-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Emeklilik Hesaplama","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://hesapica.com/emeklilik-hesaplama","description":"4A, 4B, 4C ve EYT kapsamında standart emeklilik şartlarını karşılaştıran ücretsiz tahmin aracı.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Emeklilik Hesaplama","item":"https://hesapica.com/emeklilik-hesaplama"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu emeklilik hesaplama sonucu kesin midir?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç standart kurallarla planlama tahmini yapar. Kesin sonuç için SGK hizmet dökümün ve resmî “Ne Zaman Emekli Olabilirim?” uygulaması kullanılmalıdır."}},{"@type":"Question","name":"EYT kapsamında yaş şartı var mı?","acceptedAnswer":{"@type":"Answer","text":"8 Eylül 1999 ve öncesinde ilk defa sigortalı olan ve ilgili prim ile sigortalılık/hizmet süresi şartlarını sağlayan kişiler için yaş koşulu kaldırılmıştır."}},{"@type":"Question","name":"Prim tamamlama tarihi nasıl bulunuyor?","acceptedAnswer":{"@type":"Answer","text":"Eksik prim, ayda beklenen prim gününe bölünerek yaklaşık ay sayısı bulunur. Ayda 0 gün seçilirse araç primin kendiliğinden tamamlanacağını varsaymaz."}},{"@type":"Question","name":"4A, 4B ve 4C neden farklı sonuç verir?","acceptedAnswer":{"@type":"Answer","text":"Her statünün tabi olduğu hizmet ve prim koşulları farklıdır. 2008 sonrası normal emeklilikte 4A için 7.200, 4B ve 4C için 9.000 gün esastır."}},{"@type":"Question","name":"Askerlik veya doğum borçlanması dahil mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Borçlanmalar, yıpranma payı ve özel emeklilik halleri kişisel SGK kaydı üzerinden ayrıca değerlendirilmelidir."}}]}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Emeklilik Hesaplama 2026 | SGK 4A, 4B, 4C ve EYT Tahmini | Hesapica","url":"https://hesapica.com/emeklilik-hesaplama","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Emeklilik Hesaplama","item":"https://hesapica.com/emeklilik-hesaplama"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu emeklilik hesaplama sonucu kesin midir?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç standart kurallarla planlama tahmini yapar. Kesin sonuç için SGK hizmet dökümün ve resmî “Ne Zaman Emekli Olabilirim?” uygulaması kullanılmalıdır."}},{"@type":"Question","name":"EYT kapsamında yaş şartı var mı?","acceptedAnswer":{"@type":"Answer","text":"8 Eylül 1999 ve öncesinde ilk defa sigortalı olan ve ilgili prim ile sigortalılık/hizmet süresi şartlarını sağlayan kişiler için yaş koşulu kaldırılmıştır."}},{"@type":"Question","name":"Prim tamamlama tarihi nasıl bulunuyor?","acceptedAnswer":{"@type":"Answer","text":"Eksik prim, ayda beklenen prim gününe bölünerek yaklaşık ay sayısı bulunur. Ayda 0 gün seçilirse araç primin kendiliğinden tamamlanacağını varsaymaz."}},{"@type":"Question","name":"4A, 4B ve 4C neden farklı sonuç verir?","acceptedAnswer":{"@type":"Answer","text":"Her statünün tabi olduğu hizmet ve prim koşulları farklıdır. 2008 sonrası normal emeklilikte 4A için 7.200, 4B ve 4C için 9.000 gün esastır."}},{"@type":"Question","name":"Askerlik veya doğum borçlanması dahil mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Borçlanmalar, yıpranma payı ve özel emeklilik halleri kişisel SGK kaydı üzerinden ayrıca değerlendirilmelidir."}}]}
+</script>
 <link href="ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
 </head>
 <body>
 <noscript><div class="container warning-box">Bu aracın çalışması için JavaScript açık olmalıdır.</div></noscript>
 <div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><strong>Emeklilik Hesaplama</strong></nav></div>
 <header class="container"><section class="hero"><h1>Emeklilik Hesaplama</h1><p>İlk sigorta tarihin, SGK statün, cinsiyetin ve prim gününe göre standart emeklilik yollarını karşılaştır. EYT kapsamını, eksik primi, sigortalılık süresini ve tahmini hak kazanma tarihini tek ekranda gör.</p><div class="chips"><span class="chip">4A • SSK</span><span class="chip">4B • Bağ-Kur</span><span class="chip">4C • Emekli Sandığı</span><span class="chip">EYT değerlendirmesi</span></div></section></header>
-<div class="container"><div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="6788455111" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div>
+<div class="container">
+</div>
 <main class="container" style="padding:22px 0 50px">
 <section class="layout">
 <section class="card">
@@ -73,16 +230,17 @@
 <div class="plans" id="plans"></div>
 </aside>
 </section>
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="6788455111" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+
 <section class="content-grid">
-<article class="card content-card"><h2>Emeklilik hesaplama nasıl yapılır?</h2><p>Türkiye’de emeklilik hesabı yalnızca doğum yılına bakılarak yapılamaz. İlk defa uzun vadeli sigorta kapsamına girilen tarih, 4A/4B/4C statüsü, cinsiyet, prim ödeme gün sayısı ve bazı dönemlerde sigortalılık süresi birlikte değerlendirilir.</p><h3>8 Eylül 1999 ve öncesi: EYT dönemi</h3><p>Bu dönemde ilk defa sigortalı olanlarda standart tam emeklilik bakımından yaş şartı kaldırılmıştır. Ancak statüye göre prim veya hizmet koşulları devam eder. 4A’da kadınlar için 20, erkekler için 25 yıllık sigortalılık süresiyle birlikte gerekli prim günü ilk giriş tarihine göre 5.000 ile 5.975 gün arasında değişebilir; 4B ve 4C’de ise tam yıl prim/fiilî hizmet koşulları SGK kaydından doğrulanmalıdır.</p><h3>9 Eylül 1999–30 Nisan 2008</h3><p>4A’lılarda kadın için 58, erkek için 60 yaş ve 7.000 gün; alternatif olarak aynı yaş, 25 yıllık sigortalılık ve 4.500 gün yolu bulunur. 4B ve 4C’de genel olarak 25 tam yıl hizmet/9.000 gün ile kadın 58, erkek 60 yaş şartı uygulanır.</p><h3>1 Mayıs 2008 sonrası</h3><p>Normal emeklilik için 4A’da 7.200, 4B ve 4C’de 9.000 gün esastır. Prim şartı 2036’dan sonra tamamlanırsa yaş şartı kademeli olarak yükselir ve 2048’den itibaren kadın ve erkek için 65 yaşa ulaşır.</p></article>
+<article class="card content-card"><h2>Emeklilik hesaplama nasıl yapılır?</h2><p>Türkiye’de emeklilik hesabı yalnızca doğum yılına bakılarak yapılamaz. İlk defa uzun vadeli sigorta kapsamına girilen tarih, 4A/4B/4C statüsü, cinsiyet, prim ödeme gün sayısı ve bazı dönemlerde sigortalılık süresi birlikte değerlendirilir.</p><h3>8 Eylül 1999 ve öncesi: EYT dönemi</h3><p>Bu dönemde ilk defa sigortalı olanlarda standart tam emeklilik bakımından yaş şartı kaldırılmıştır. Ancak statüye göre prim veya hizmet koşulları devam eder. 4A’da kadınlar için 20, erkekler için 25 yıllık sigortalılık süresiyle birlikte gerekli prim günü ilk giriş tarihine göre 5.000 ile 5.975 gün arasında değişebilir; ayrıca 15 yıl + 3.600 günlü kısmi yol bulunur. 4B ve 4C’de tam yıl prim/fiilî hizmet koşullarının yanında kısmi yollar da vardır; tarihsel kademeler SGK kaydından doğrulanmalıdır.</p><h3>9 Eylül 1999–30 Nisan 2008</h3><p>4A’lılarda kadın için 58, erkek için 60 yaş ve 7.000 gün; alternatif olarak aynı yaş, 25 yıllık sigortalılık ve 4.500 gün yolu bulunur. 4B ve 4C’de genel olarak 25 tam yıl hizmet/9.000 gün ile kadın 58, erkek 60 yaş şartı uygulanır.</p><h3>1 Mayıs 2008 sonrası</h3><p>Normal emeklilik için 4A’da 7.200, 4B ve 4C’de 9.000 gün esastır. Prim şartı 2036’dan sonra tamamlanırsa yaş şartı kademeli olarak yükselir ve 2048’den itibaren kadın ve erkek için 65 yaşa ulaşır.</p></article>
 <article class="card content-card"><h2>Sonucun neden tahmini olduğunu bilin</h2><p>Bu araç girilen mevcut prim ile ayda kazanılması beklenen prim gününü kullanarak eksik günün hangi tarihte tamamlanabileceğini tahmin eder. İşsizlik, ücretsiz izin, eksik gün bildirimi veya statü değişikliği tahmini ileri taşıyabilir.</p><h3>Statü değişikliği neden önemlidir?</h3><p>Çalışma hayatında hem 4A hem 4B hem de 4C hizmeti bulunan kişilerde hangi statüden aylık bağlanacağı ayrıca incelenir. Özellikle eski mevzuat dönemlerinde son 2.520 günün dağılımı etkili olabilir. Araç yalnızca seçtiğin statünün standart koşullarını gösterir. Özellikle 4C’de 2008 öncesi 5434 iştirakçiliği bulunup bulunmadığı, yalnızca genel ilk sigorta tarihinden kesin olarak anlaşılamaz.</p><h3>Özel durumlar</h3><ul><li>Askerlik borçlanması ilk sigorta tarihini bazı koşullarda geri çekebilir.</li><li>Doğum ve yurt dışı borçlanması prim gününü artırabilir.</li><li>Fiilî hizmet süresi zammı yaş ve süre şartlarını etkileyebilir.</li><li>Engellilik veya malullük aylığı farklı şartlara tabidir.</li><li>4B prim borcu ve durdurulan hizmetler ayrıca değerlendirilir.</li></ul></article>
 </section>
-<section class="card content-card" style="margin-top:22px"><h2>Dönemlere göre temel standart şartlar</h2><div class="table-wrap"><table><thead><tr><th>Dönem</th><th>4A</th><th>4B</th><th>4C</th></tr></thead><tbody><tr><td>8 Eylül 1999 ve öncesi</td><td>EYT: 20/25 yıl + girişe göre 5.000–5.975 gün</td><td>EYT: kadın 20 tam yıl, erkek 25 tam yıl</td><td>EYT: kadın 20, erkek 25 fiilî hizmet yılı</td></tr><tr><td>9 Eylül 1999–30 Nisan 2008</td><td>58/60 yaş + 7.000 gün veya 25 yıl + 4.500 gün</td><td>58/60 yaş + 9.000 gün; kısmi yol 60/62 + 5.400 gün</td><td>58/60 yaş + 25 yıl; ayrıca 61 yaş + 15 yıl yolu</td></tr><tr><td>1 Mayıs 2008 sonrası</td><td>7.200 gün + kademeli yaş; daha düşük günlü alternatif</td><td>9.000 gün + kademeli yaş; 5.400 günlü alternatif</td><td>9.000 gün + kademeli yaş; 5.400 günlü alternatif</td></tr></tbody></table></div></section>
+<section class="card content-card" style="margin-top:22px"><h2>Dönemlere göre temel standart şartlar</h2><div class="table-wrap"><table><thead><tr><th>Dönem</th><th>4A</th><th>4B</th><th>4C</th></tr></thead><tbody><tr><td>8 Eylül 1999 ve öncesi</td><td>EYT: 20/25 yıl + girişe göre 5.000–5.975 gün; ayrıca 15 yıl + 3.600 gün</td><td>EYT tam yol + 15 tam yıl kısmi yol</td><td>EYT tam yol + 61 yaş / 15 yıl yolu</td></tr><tr><td>9 Eylül 1999–30 Nisan 2008</td><td>58/60 yaş + 7.000 gün veya 25 yıl + 4.500 gün</td><td>58/60 yaş + 9.000 gün; kısmi yol 60/62 + 5.400 gün</td><td>58/60 yaş + 25 yıl; ayrıca 61 yaş + 15 yıl yolu</td></tr><tr><td>1 Mayıs 2008 sonrası</td><td>7.200 gün + kademeli yaş; daha düşük günlü alternatif</td><td>9.000 gün + kademeli yaş; 5.400 günlü alternatif</td><td>9.000 gün + kademeli yaş; 5.400 günlü alternatif</td></tr></tbody></table></div></section>
 <div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="6788455111" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 <section class="card faq" style="margin-top:22px"><h2>Sık Sorulan Sorular</h2><details open><summary>Bu emeklilik hesaplama sonucu kesin midir?</summary><p>Hayır. Araç standart kurallarla planlama tahmini yapar. Kesin sonuç için SGK hizmet dökümün ve resmî “Ne Zaman Emekli Olabilirim?” uygulaması kullanılmalıdır.</p></details><details><summary>EYT kapsamında yaş şartı var mı?</summary><p>8 Eylül 1999 ve öncesinde ilk defa sigortalı olan ve ilgili prim ile sigortalılık/hizmet süresi şartlarını sağlayan kişiler için yaş koşulu kaldırılmıştır.</p></details><details><summary>Prim tamamlama tarihi nasıl bulunuyor?</summary><p>Eksik prim, ayda beklenen prim gününe bölünerek yaklaşık ay sayısı bulunur. Ayda 0 gün seçilirse araç primin kendiliğinden tamamlanacağını varsaymaz.</p></details><details><summary>4A, 4B ve 4C neden farklı sonuç verir?</summary><p>Her statünün tabi olduğu hizmet ve prim koşulları farklıdır. 2008 sonrası normal emeklilikte 4A için 7.200, 4B ve 4C için 9.000 gün esastır.</p></details><details><summary>Askerlik veya doğum borçlanması dahil mi?</summary><p>Hayır. Borçlanmalar, yıpranma payı ve özel emeklilik halleri kişisel SGK kaydı üzerinden ayrıca değerlendirilmelidir.</p></details></section>
-<section class="card content-card" style="margin-top:22px"><h2>Resmî kaynaklar ve doğrulama</h2><p>Hesaplama motoru SGK’nın 4A, 4B ve 4C yaşlılık aylığı açıklamalarındaki standart şartlara göre hazırlanmış ve 4 Ağustos 2026 tarihinde son kez yeniden gözden geçirilmiştir. Mevzuat ve kişisel hizmet kayıtları sonucu değiştirebileceği için kesin karar vermeden önce aşağıdaki resmî sayfalardan doğrulama yap.</p><ul class="source-list"><li><a href="https://www.sgk.gov.tr/Content/Post/785eac3b-d260-47b5-8103-ae591b2ac320/4a-Hizmet-Akdi-ile-Calisanlar-2024-01-11-02-39-38" rel="noopener noreferrer" target="_blank">SGK — 4A Hizmet Akdi ile Çalışanlar</a></li><li><a href="https://www.sgk.gov.tr/Content/Post/e528abf5-8e23-4ed5-b4ab-c016d7cd9ab2/4b-Kendi-Adina-ve-Hesabina-Bagimsiz-Calisanlar-ile-Koy-ve-Mahalle-Muhtarlari-2024-01-11-02-40-49" rel="noopener noreferrer" target="_blank">SGK — 4B Bağımsız Çalışanlar</a></li><li><a href="https://www.sgk.gov.tr/Content/Post/e0a7fb7f-d5a4-4361-aea8-24d7a9819e9e/4c-Bendine-Tabi-Sigortalilar-2026-04-28-04-25-27" rel="noopener noreferrer" target="_blank">SGK — 4C Kapsamındaki Sigortalılar</a></li><li><a href="https://uyg.sgk.gov.tr/nezaman/" rel="noopener noreferrer" target="_blank">SGK — Ne Zaman Emekli Olabilirim?</a></li></ul></section>
-<section class="card" style="margin-top:22px"><h2>İlgili Hesaplama Araçları</h2><div class="related"><a class="rel" href="/kidem-tazminati-hesaplama"><strong>Kıdem Tazminatı</strong><span>Çalışma süresi ve brüt ücrete göre tazminatını hesapla.</span></a><a class="rel" href="/maas-brut-net-hesaplama"><strong>Brüt Net Maaş</strong><span>Brüt ve net maaş arasındaki kesintileri karşılaştır.</span></a><a class="rel" href="/issizlik-maasi-hesaplama"><strong>İşsizlik Maaşı</strong><span>İşsizlik ödeneği şartlarını ve tahmini tutarı incele.</span></a></div></section>
+<section class="card content-card" style="margin-top:22px"><h2>Resmî kaynaklar ve doğrulama</h2><p>Hesaplama motoru SGK’nın 4A, 4B ve 4C yaşlılık aylığı açıklamalarındaki standart şartlara göre hazırlanmış ve 10 Ağustos 2026 tarihinde son kez yeniden gözden geçirilmiştir. Mevzuat ve kişisel hizmet kayıtları sonucu değiştirebileceği için kesin karar vermeden önce aşağıdaki resmî sayfalardan doğrulama yap.</p><ul class="source-list"><li><a href="https://www.sgk.gov.tr/Content/Post/785eac3b-d260-47b5-8103-ae591b2ac320/4a-Hizmet-Akdi-ile-Calisanlar-2024-01-11-02-39-38" rel="noopener noreferrer" target="_blank">SGK — 4A Hizmet Akdi ile Çalışanlar</a></li><li><a href="https://www.sgk.gov.tr/Content/Post/e528abf5-8e23-4ed5-b4ab-c016d7cd9ab2/4b-Kendi-Adina-ve-Hesabina-Bagimsiz-Calisanlar-ile-Koy-ve-Mahalle-Muhtarlari-2024-01-11-02-40-49" rel="noopener noreferrer" target="_blank">SGK — 4B Bağımsız Çalışanlar</a></li><li><a href="https://www.sgk.gov.tr/Content/Post/e0a7fb7f-d5a4-4361-aea8-24d7a9819e9e/4c-Bendine-Tabi-Sigortalilar-2026-04-28-04-25-27" rel="noopener noreferrer" target="_blank">SGK — 4C Kapsamındaki Sigortalılar</a></li><li><a href="https://uyg.sgk.gov.tr/nezaman/" rel="noopener noreferrer" target="_blank">SGK — Ne Zaman Emekli Olabilirim?</a></li></ul></section>
+<section class="card" style="margin-top:22px"><h2>İlgili Araçlar</h2><div class="related"><a class="rel" href="/kidem-tazminati-hesaplama"><strong>Kıdem Tazminatı</strong><span>Çalışma süresi ve brüt ücrete göre tazminatını hesapla.</span></a><a class="rel" href="/maas-brut-net-hesaplama"><strong>Brüt Net Maaş</strong><span>Brüt ve net maaş arasındaki kesintileri karşılaştır.</span></a><a class="rel" href="/issizlik-maasi-hesaplama"><strong>İşsizlik Maaşı</strong><span>İşsizlik ödeneği şartlarını ve tahmini tutarı incele.</span></a></div></section>
 </main><footer>© 2026 Hesapica.com · Sonuçlar bilgilendirme ve planlama amaçlıdır.</footer>
 <script>
 'use strict';
@@ -101,7 +259,7 @@ function pre99Days4A(gender,start){const t=start.getTime(), D=s=>dateUTC(s).getT
 [['1900-01-01','1980-11-23',5000],['1980-11-24','1982-05-23',5075],['1982-05-24','1983-11-23',5150],['1983-11-24','1985-05-23',5225],['1985-05-24','1986-11-23',5300],['1986-11-24','1988-05-23',5375],['1988-05-24','1989-11-23',5450],['1989-11-24','1991-05-23',5525],['1991-05-24','1992-11-23',5600],['1992-11-24','1994-05-23',5675],['1994-05-24','1995-11-23',5750],['1995-11-24','1997-05-23',5825],['1997-05-24','1998-11-23',5900],['1998-11-24','1999-09-08',5975]];for(const [a,b,n] of rows)if(t>=D(a)&&t<=D(b))return n;return 5975}
 function validate(){const premiumRaw=$('#currentPremium').value.trim(),monthlyRaw=$('#monthlyPremium').value.trim();const vals={birth:dateUTC($('#birthDate').value),gender:$('#gender').value,status:$('#status').value,start:dateUTC($('#startDate').value),premium:Number(premiumRaw),monthly:Number(monthlyRaw)};const tests={fieldBirth:Boolean(vals.birth&&vals.birth<TODAY&&vals.birth.getFullYear()>=1930),fieldGender:['female','male'].includes(vals.gender),fieldStatus:['4A','4B','4C'].includes(vals.status),fieldStart:Boolean(vals.start&&vals.start<=TODAY&&vals.birth&&vals.start>addYears(vals.birth,10)),fieldPremium:premiumRaw!==''&&Number.isInteger(vals.premium)&&vals.premium>=0&&vals.premium<=20000,fieldMonthly:monthlyRaw!==''&&Number.isInteger(vals.monthly)&&vals.monthly>=0&&vals.monthly<=30};Object.entries(tests).forEach(([id,ok])=>$('#'+id).classList.toggle('invalid',!ok));return Object.values(tests).every(Boolean)?vals:null}
 function makePlan(name,target,age,insuredYears,current,monthly,start,birth,note){const pc=completionDate(current,target,monthly),ageDate=age==null?null:addYears(birth,age),serviceDate=insuredYears?addYears(start,insuredYears):null;const eligible=pc?maxDate(pc,ageDate,serviceDate):null;return{name,target,age,insuredYears,premiumLeft:Math.max(0,target-current),premiumDate:pc,ageDate,serviceDate,eligible,note}}
-function buildPlans(v){const cutoff=dateUTC('1999-09-08'),post2008=dateUTC('2008-05-01');const plans=[];let regime='';if(v.start<=cutoff){regime='EYT kapsamındaki ilk giriş dönemi';if(v.status==='4A'){const target=pre99Days4A(v.gender,v.start);plans.push(makePlan('EYT tam emeklilik',target,null,v.gender==='female'?20:25,v.premium,v.monthly,v.start,v.birth,'Yaş şartı yok; giriş tarihine göre prim ve sigortalılık süresi birlikte aranır.'))}else{const target=v.gender==='female'?7200:9000;plans.push(makePlan('EYT tam emeklilik',target,null,0,v.premium,v.monthly,v.start,v.birth,v.status==='4B'?'Kadın için 20, erkek için 25 tam yıl prim esas alınır; prim borcu ve durdurulan hizmetler SGK kaydından doğrulanmalıdır.':'Kadın için 20, erkek için 25 fiilî hizmet yılı esas alınır; hizmet süresi SGK kaydından doğrulanmalıdır.'))}}
+function buildPlans(v){const cutoff=dateUTC('1999-09-08'),post2008=dateUTC('2008-05-01');const plans=[];let regime='';if(v.start<=cutoff){regime='EYT kapsamındaki ilk giriş dönemi';if(v.status==='4A'){const target=pre99Days4A(v.gender,v.start);plans.push(makePlan('EYT tam emeklilik',target,null,v.gender==='female'?20:25,v.premium,v.monthly,v.start,v.birth,'Yaş şartı yok; giriş tarihine göre prim ve sigortalılık süresi birlikte aranır.'));plans.push(makePlan('3.600 günlü kısmi yol',3600,v.gender==='female'?58:60,15,v.premium,v.monthly,v.start,v.birth,'15 yıl + 3.600 gün yoludur. Tarihsel kademede daha düşük yaşlar bulunabildiğinden araç mevcut/gelecek planlamada nihai 58/60 yaş sınırını kullanır; geçmiş hak kazanma tarihi SGK kaydıyla doğrulanmalıdır.'))}else if(v.status==='4B'){const target=v.gender==='female'?7200:9000;plans.push(makePlan('EYT tam emeklilik',target,null,0,v.premium,v.monthly,v.start,v.birth,'Kadın için 20, erkek için 25 tam yıl prim esas alınır; prim borcu ve durdurulan hizmetler SGK kaydından doğrulanmalıdır.'));plans.push(makePlan('15 tam yıl kısmi yol',5400,v.gender==='female'?56:58,0,v.premium,v.monthly,v.start,v.birth,'15 tam yıl primli kısmi yolda tarihsel yaş kademeleri vardır. Araç mevcut/gelecek planlamada son kademedeki 56/58 yaşı kullanır; geçmiş hak kazanma tarihi SGK tarafından doğrulanmalıdır.'))}else{const target=v.gender==='female'?7200:9000;plans.push(makePlan('EYT tam emeklilik',target,null,0,v.premium,v.monthly,v.start,v.birth,'Kadın için 20, erkek için 25 fiilî hizmet yılı esas alınır; hizmet süresi SGK kaydından doğrulanmalıdır.'));plans.push(makePlan('15 yıl hizmet yolu',5400,61,15,v.premium,v.monthly,v.start,v.birth,'61 yaş ve 15 yıl fiilî hizmet yolu; 5434/5510 iştirakçilik ayrımı SGK kaydından doğrulanmalıdır.'))}}
 else if(v.start<post2008){regime='9 Eylül 1999–30 Nisan 2008 dönemi';if(v.status==='4A'){const age=v.gender==='female'?58:60;plans.push(makePlan('7.000 gün yolu',7000,age,0,v.premium,v.monthly,v.start,v.birth,'Yaş ve prim şartı.'));plans.push(makePlan('4.500 gün + 25 yıl yolu',4500,age,25,v.premium,v.monthly,v.start,v.birth,'Yaş, 25 yıllık sigortalılık ve prim şartı.'))}else if(v.status==='4B'){plans.push(makePlan('Tam emeklilik',9000,v.gender==='female'?58:60,0,v.premium,v.monthly,v.start,v.birth,'25 tam yıl prim.'));plans.push(makePlan('Kısmi emeklilik',5400,v.gender==='female'?60:62,0,v.premium,v.monthly,v.start,v.birth,'15 tam yıl prim.'))}else{plans.push(makePlan('Tam emeklilik',9000,v.gender==='female'?58:60,25,v.premium,v.monthly,v.start,v.birth,'25 yıl hizmet.'));plans.push(makePlan('15 yıl hizmet yolu',5400,61,15,v.premium,v.monthly,v.start,v.birth,'61 yaş ve 15 yıl hizmet.'))}}
 else{regime='1 Mayıs 2008 sonrası 5510 dönemi';const normalTarget=v.status==='4A'?7200:9000;const normalCompletion=completionDate(v.premium,normalTarget,v.monthly);const normalAge=steppedAge(v.gender,normalCompletion,false);plans.push(makePlan('Normal emeklilik',normalTarget,normalAge,0,v.premium,v.monthly,v.start,v.birth,'Prim şartının tamamlandığı yıla göre kademeli yaş uygulanır.'));let partialTarget=5400;if(v.status==='4A'){const y=v.start.getFullYear();partialTarget=y===2008?4600:Math.min(5400,4600+Math.max(0,y-2008)*100)}const partCompletion=completionDate(v.premium,partialTarget,v.monthly);const partAge=steppedAge(v.gender,partCompletion,true);plans.push(makePlan('Daha düşük primli yaşlılık yolu',partialTarget,partAge,0,v.premium,v.monthly,v.start,v.birth,'Daha az prim, daha yüksek yaş şartı.'))}return{plans,regime}}
 function render(){const v=validate();if(!v){resetResult('Lütfen kırmızı işaretli alanları düzelt.');return}const {plans,regime}=buildPlans(v);const dated=plans.filter(p=>p.eligible).sort((a,b)=>a.eligible-b.eligible);const best=dated[0]||null;$('#statusBox').className='status '+(best?'good':'warn');$('#statusBox').textContent=best?`${regime}. En erken görünen standart yol: ${best.name}.`:'Eksik prim için aylık kazanım 0 seçildiğinden tarih üretilemedi.';$('#mainResult').textContent=best?fmtDate(best.eligible):'Tarih hesaplanamadı';$('#resultNote').textContent=best?`Tahmini yaş: ${ageOn(v.birth,best.eligible)} · Kesin sonuç SGK kaydıyla doğrulanmalıdır.`:'Prim ödemeye devam etmiyorsan eksik günün tamamlanma tarihi bilinemez.';$('#kpiList').innerHTML=`<div class="kpi-row"><strong>Mevcut yaş</strong><span>${ageOn(v.birth,TODAY)}</span></div><div class="kpi-row"><strong>Mevcut prim</strong><span>${fmtNum(v.premium)} gün</span></div><div class="kpi-row"><strong>İlk giriş dönemi</strong><span>${regime}</span></div>`;$('#plans').innerHTML=plans.map(p=>`<article class="plan ${best===p?'best':''}"><div class="plan-head"><h3>${p.name}</h3>${best===p?'<span class="pill">En erken tahmin</span>':''}</div><div class="plan-date">${p.eligible?fmtDate(p.eligible):'Belirsiz'}</div><div class="plan-meta">Hedef prim: ${fmtNum(p.target)} gün · Eksik: ${fmtNum(p.premiumLeft)} gün${p.age!=null?` · Yaş: ${p.age}`:''}${p.insuredYears?` · Süre: ${p.insuredYears} yıl`:''}</div><div class="plan-meta plan-dates" style="margin-top:7px">Prim şartı: ${p.premiumDate?fmtDate(p.premiumDate):(p.premiumLeft>0?'Aylık prim 0 olduğu için belirsiz':'Sağlandı')}${p.ageDate?` · Yaş şartı: ${fmtDate(p.ageDate)}`:''}${p.serviceDate?` · Süre şartı: ${fmtDate(p.serviceDate)}`:''}</div><div class="plan-meta" style="margin-top:7px">${p.note}</div></article>`).join('');lastResult={v,plans,regime,best};saveInputs(v)}
@@ -139,7 +297,36 @@ $('#calcBtn').addEventListener('click',()=>{
   if(lastResult&&lastResult.best){
     scrollToResult();
   }
-});$('#clearBtn').addEventListener('click',()=>{['birthDate','gender','status','startDate','currentPremium'].forEach(id=>$('#'+id).value='');$('#monthlyPremium').value='30';document.querySelectorAll('.field.invalid').forEach(x=>x.classList.remove('invalid'));try{localStorage.removeItem('hesapica_retirement_v5')}catch(e){}resetResult();$('#birthDate').focus()});$('#copyBtn').addEventListener('click',async()=>{try{await copyText(shareText());alert('Sonuç kopyalandı.')}catch(e){alert(lastResult?'Kopyalama başarısız oldu.':'Önce geçerli bir sonuç hesapla.')}});$('#shareBtn').addEventListener('click',async()=>{const text=shareText();if(!text){alert('Önce geçerli bir sonuç hesapla.');return}if(navigator.share){try{await navigator.share({title:'Emeklilik Hesaplama',text,url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}try{await copyText(text);alert('Paylaşım desteklenmediği için sonuç kopyalandı.')}catch(e){alert('Paylaşım işlemi tamamlanamadı.')}});$('#printBtn').addEventListener('click',()=>window.print());['birthDate','gender','status','startDate','currentPremium','monthlyPremium'].forEach(id=>$('#'+id).addEventListener('change',()=>{if($('#birthDate').value&&$('#gender').value&&$('#status').value&&$('#startDate').value&&$('#currentPremium').value!=='')render()}));loadInputs();if($('#birthDate').value)render();
+});$('#clearBtn').addEventListener('click',()=>{['birthDate','gender','status','startDate','currentPremium'].forEach(id=>$('#'+id).value='');$('#monthlyPremium').value='30';document.querySelectorAll('.field.invalid').forEach(x=>x.classList.remove('invalid'));try{localStorage.removeItem('hesapica_retirement_v5')}catch(e){}resetResult();$('#birthDate').focus()});$('#copyBtn').addEventListener('click',async()=>{try{await copyText(shareText());alert('Sonuç kopyalandı.')}catch(e){alert(lastResult?'Kopyalama başarısız oldu.':'Önce geçerli bir sonuç hesapla.')}});$('#shareBtn').addEventListener('click',async()=>{const fullText=shareText();if(!fullText){alert('Önce geçerli bir sonuç hesapla.');return}const url=location.href;const text=fullText.split('\n').filter(line=>line.trim()!==url).join('\n');if(navigator.share){try{await navigator.share({title:'Emeklilik Hesaplama',text,url});return}catch(e){if(e&&e.name==='AbortError')return}}try{await copyText(fullText);alert('Paylaşım desteklenmediği için sonuç kopyalandı.')}catch(e){alert('Paylaşım işlemi tamamlanamadı.')}});$('#printBtn').addEventListener('click',()=>{if(!lastResult||!lastResult.best){alert('Yazdırmadan önce geçerli bir sonuç hesapla.');return;}window.print();});const retirementInputIds=['birthDate','gender','status','startDate','currentPremium','monthlyPremium'];retirementInputIds.forEach(id=>$('#'+id).addEventListener('input',()=>{if(lastResult)resetResult('Girdi değişti. Yeni sonucu görmek için hesaplamayı güncelle.')}));retirementInputIds.forEach(id=>$('#'+id).addEventListener('change',()=>{if($('#birthDate').value&&$('#gender').value&&$('#status').value&&$('#startDate').value&&$('#currentPremium').value!=='')render()}));loadInputs();if($('#birthDate').value)render();
 </script>
 <script src="ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
 </body></html>

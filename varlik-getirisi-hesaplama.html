@@ -8,6 +8,8 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#4f46e5">
 <link rel="canonical" href="https://hesapica.com/varlik-getirisi-hesaplama">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta property="og:locale" content="tr_TR">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hesapica">
@@ -25,6 +27,7 @@
 <meta name="twitter:description" content="Altın, dolar ve euro yatırımlarında net kâr/zararı, getiri yüzdesini, başa baş ve hedef satış fiyatını hesaplayın.">
 <meta name="twitter:url" content="https://hesapica.com/varlik-getirisi-hesaplama">
 <meta name="twitter:image" content="https://hesapica.com/og-image.png">
+<meta name="twitter:image:alt" content="Hesapica Varlık Getirisi Hesaplama"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -36,19 +39,174 @@
 
 <style>
 :root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--text:#1f2937;--muted:#556274;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 42px rgba(79,70,229,.10);--radius:24px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff,var(--bg));line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.1);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow-pill{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#475569;font-size:17px}.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.1);color:#4338ca;font-size:14px;font-weight:700}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.1)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:25px;line-height:1.18;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#475569}.hero-box ul{margin:10px 0 0;padding-left:18px}.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:clamp(24px,2.3vw,28px);color:var(--primary);letter-spacing:-.02em}.section-note{margin:0 0 18px;color:#374151;font-size:16px;line-height:1.65}.notice{padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.24);margin-bottom:18px;color:#374151}.notice strong{display:block;color:var(--primary);margin-bottom:5px}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#273244}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:17px;font-weight:600;transition:.2s}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:62px}input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}input::placeholder{color:#7b8797;opacity:1;font-size:15px}.hint{margin-top:7px;font-size:14px;color:#526070;line-height:1.6}.error-text{min-height:18px;margin-top:6px;font-size:13px;font-weight:700;color:var(--bad)}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}.scenario-row{display:flex;flex-wrap:wrap;gap:10px}.scenario-chip{border:1px solid #dbe4ff;background:#f8faff;color:#4338ca;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.scenario-chip.active{background:#4338ca;color:#fff;border-color:#4338ca}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:0;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.validation-box{margin-top:14px;padding:13px 15px;border-radius:15px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}.hide{display:none!important}.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.highlight-card,.summary-card{padding:20px;border-radius:22px;border:1px solid rgba(79,70,229,.1);background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;background:#fff;color:var(--primary);border:1px solid rgba(79,70,229,.12);white-space:nowrap}.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}.highlight-card{background:linear-gradient(180deg,#f8faff,#eef2ff);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#475569}.mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:800}.mini-result .subline{font-size:13.5px;color:var(--muted);margin-top:5px}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.objective-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.objective-card{padding:14px;border-radius:16px;border:1px solid var(--line);background:#fff}.objective-card .k{font-size:13px;color:var(--muted);font-weight:700}.objective-card .v{margin-top:5px;font-size:18px;font-weight:900}.comment-box{padding:17px 19px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151}.details{margin-top:24px;display:grid;gap:14px}.details details{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}.details summary{cursor:pointer;font-weight:900;color:var(--primary)}.details-inner{margin-top:16px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}table{width:100%;border-collapse:collapse;font-size:14px}caption{text-align:left;padding:12px 14px;font-weight:800;color:var(--primary)}th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.04em}td{font-weight:700}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151}.seo-section{margin-top:24px}.seo-section p{color:#374151;margin:0 0 14px}.seo-section p:last-child{margin-bottom:0}.seo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.seo-box{padding:17px;border:1px solid var(--line);border-radius:18px;background:#fcfcff}.seo-box h3{margin:0 0 8px;color:#312e81;font-size:18px}.seo-box p{margin:0;color:#475569;font-size:14.5px}.formula-box{margin:14px 0;padding:15px 17px;border-radius:16px;background:#f8faff;border:1px solid #dbe4ff;color:#312e81;font-weight:800;line-height:1.7}.example-table{margin-top:14px}.example-table td,.example-table th{white-space:normal}.related-section{margin-top:24px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82)}.related-card strong{display:block;font-size:19px;line-height:1.28;margin-bottom:8px}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}.toast{position:fixed;right:18px;bottom:18px;z-index:9999;max-width:min(380px,calc(100% - 36px));padding:12px 16px;border-radius:13px;background:#111827;color:#fff;box-shadow:0 14px 34px rgba(15,23,42,.28);opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,100%)}.seo-grid{grid-template-columns:1fr}.hero,.card,.status-card,.highlight-card,.summary-card{padding:20px}.field-grid,.related-grid,.objective-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.highlight-value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:240px}}@media print{body{background:#fff}.topbar,.actions,.hero-chips,.hc-ad-slot,.related-section,.scenario-row,.toast{display:none!important}.hero,.card,.status-card,.highlight-card,.summary-card,.details details{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff,var(--bg));line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.1);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow-pill{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#475569;font-size:17px}.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.1);color:#4338ca;font-size:14px;font-weight:700}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.1)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:25px;line-height:1.18;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#475569}.hero-box ul{margin:10px 0 0;padding-left:18px}.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:clamp(24px,2.3vw,28px);color:var(--primary);letter-spacing:-.02em}.section-note{margin:0 0 18px;color:#374151;font-size:16px;line-height:1.65}.notice{padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.24);margin-bottom:18px;color:#374151}.notice strong{display:block;color:var(--primary);margin-bottom:5px}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#273244}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:17px;font-weight:600;transition:.2s}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:62px}input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}input::placeholder{color:#7b8797;opacity:1;font-size:15px}.hint{margin-top:7px;font-size:14px;color:#526070;line-height:1.6}.error-text{min-height:18px;margin-top:6px;font-size:13px;font-weight:700;color:var(--bad)}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}.scenario-row{display:flex;flex-wrap:wrap;gap:10px}.scenario-chip{border:1px solid #dbe4ff;background:#f8faff;color:#4338ca;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.scenario-chip.active{background:#4338ca;color:#fff;border-color:#4338ca}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:0;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.validation-box{margin-top:14px;padding:13px 15px;border-radius:15px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}.hide{display:none!important}.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.highlight-card,.summary-card{padding:20px;border-radius:22px;border:1px solid rgba(79,70,229,.1);background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;background:#fff;color:var(--primary);border:1px solid rgba(79,70,229,.12);white-space:nowrap}.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}.highlight-card{background:linear-gradient(180deg,#f8faff,#eef2ff);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#475569}.mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:800}.mini-result .subline{font-size:13.5px;color:var(--muted);margin-top:5px}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.objective-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.objective-card{padding:14px;border-radius:16px;border:1px solid var(--line);background:#fff}.objective-card .k{font-size:13px;color:var(--muted);font-weight:700}.objective-card .v{margin-top:5px;font-size:18px;font-weight:900}.comment-box{padding:17px 19px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151}.details{margin-top:24px;display:grid;gap:14px}.details details{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}.details summary{cursor:pointer;font-weight:900;color:var(--primary)}.details-inner{margin-top:16px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}table{width:100%;border-collapse:collapse;font-size:14px}caption{text-align:left;padding:12px 14px;font-weight:800;color:var(--primary)}th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.04em}td{font-weight:700}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151}.seo-section{margin-top:24px}.seo-section p{color:#374151;margin:0 0 14px}.seo-section p:last-child{margin-bottom:0}.seo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.seo-box{padding:17px;border:1px solid var(--line);border-radius:18px;background:#fcfcff}.seo-box h3{margin:0 0 8px;color:#312e81;font-size:18px}.seo-box p{margin:0;color:#475569;font-size:14.5px}.formula-box{margin:14px 0;padding:15px 17px;border-radius:16px;background:#f8faff;border:1px solid #dbe4ff;color:#312e81;font-weight:800;line-height:1.7}.example-table{margin-top:14px}.example-table td,.example-table th{white-space:normal}.related-section{margin-top:24px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82)}.related-card strong{display:block;font-size:19px;line-height:1.28;margin-bottom:8px}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}.toast{position:fixed;right:18px;bottom:18px;z-index:9999;max-width:min(380px,calc(100% - 36px));padding:12px 16px;border-radius:13px;background:#111827;color:#fff;box-shadow:0 14px 34px rgba(15,23,42,.28);opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,100%)}.seo-grid{grid-template-columns:1fr}.hero,.card,.status-card,.highlight-card,.summary-card{padding:20px}.field-grid,.related-grid,.objective-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.highlight-value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:0}}@media print{body{background:#fff}.topbar,.actions,.hero-chips,.hc-ad-slot,.related-section,.scenario-row,.toast{display:none!important}.hero,.card,.status-card,.highlight-card,.summary-card,.details details{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Varlık Getirisi Hesaplama","url":"https://hesapica.com/varlik-getirisi-hesaplama","inLanguage":"tr-TR","description":"Altın, dolar ve euro yatırımlarında net kâr/zarar, getiri oranı, başa baş ve hedef satış fiyatını hesaplayan araç.","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Varlık Getirisi Hesaplama","url":"https://hesapica.com/varlik-getirisi-hesaplama","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Altın, dolar ve euro yatırımlarının net kâr/zararını, işlem maliyetlerini, başa baş ve hedef satış fiyatını hesaplayan ücretsiz araç.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Yatırım","item":"https://hesapica.com/#yatirim"},{"@type":"ListItem","position":3,"name":"Varlık Getirisi Hesaplama","item":"https://hesapica.com/varlik-getirisi-hesaplama"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Makas ayrıca girilmeli mi?","acceptedAnswer":{"@type":"Answer","text":"Gerçek alış ve gerçek satış fiyatlarını kullanıyorsanız hayır. Makas zaten bu iki fiyat arasındaki farktır. Yalnız satış fiyatına ek olarak ayrıca kesilen yüzdesel komisyon veya platform kesintisi varsa “Satış kesintisi” alanını kullanın."}},{"@type":"Question","name":"Satış fiyatı güncel piyasa fiyatı olabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Olabilir; ancak en doğru net sonuç için mümkünse gerçekten satışta elde edeceğiniz birim fiyatı kullanın. Referans veya orta piyasa fiyatı, banka ya da platformun size uyguladığı gerçek satış fiyatından farklı olabilir."}},{"@type":"Question","name":"Negatif getiri hesaplanır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Net satış geliri toplam yatırım maliyetinin altındaysa araç zararı TL ve yüzde olarak gösterir; başa baş fiyatı da zararın sıfırlandığı yaklaşık seviyeyi verir."}},{"@type":"Question","name":"Hedef getiri alanı ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Örneğin %10 hedef getiri girildiğinde araç, mevcut miktar ve işlem giderleriyle bu net getiriye ulaşmak için gerekli yaklaşık satış birim fiyatını hesaplar."}},{"@type":"Question","name":"Altın, dolar ve euro için aynı hesap mantığı mı kullanılır?","acceptedAnswer":{"@type":"Answer","text":"Evet. Temel matematik aynıdır: birim alış fiyatı, birim satış fiyatı ve miktar çarpılır; varsa işlem giderleri eklenir veya düşülür. Yalnız gösterilen birim ve fiyat hassasiyeti seçilen varlığa göre değişir."}},{"@type":"Question","name":"Bu araç yatırım tavsiyesi verir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç yalnızca girdiğiniz fiyat, miktar ve maliyetlerden matematiksel kâr/zarar, getiri ve fiyat eşikleri üretir; al, sat veya bekle tavsiyesi vermez."}}]}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Varlık Getirisi Hesaplama","url":"https://hesapica.com/varlik-getirisi-hesaplama","inLanguage":"tr-TR","description":"Altın, dolar ve euro yatırımlarında net kâr/zarar, getiri oranı, başa baş ve hedef satış fiyatını hesaplayan araç.","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Yatırım","item":"https://hesapica.com/#yatirim"},{"@type":"ListItem","position":3,"name":"Varlık Getirisi Hesaplama","item":"https://hesapica.com/varlik-getirisi-hesaplama"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Makas ayrıca girilmeli mi?","acceptedAnswer":{"@type":"Answer","text":"Gerçek alış ve gerçek satış fiyatlarını kullanıyorsanız hayır. Makas zaten bu iki fiyat arasındaki farktır. Yalnız satış fiyatına ek olarak ayrıca kesilen yüzdesel komisyon veya platform kesintisi varsa “Satış kesintisi” alanını kullanın."}},{"@type":"Question","name":"Satış fiyatı güncel piyasa fiyatı olabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Olabilir; ancak en doğru net sonuç için mümkünse gerçekten satışta elde edeceğiniz birim fiyatı kullanın. Referans veya orta piyasa fiyatı, banka ya da platformun size uyguladığı gerçek satış fiyatından farklı olabilir."}},{"@type":"Question","name":"Negatif getiri hesaplanır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Net satış geliri toplam yatırım maliyetinin altındaysa araç zararı TL ve yüzde olarak gösterir; başa baş fiyatı da zararın sıfırlandığı yaklaşık seviyeyi verir."}},{"@type":"Question","name":"Hedef getiri alanı ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Örneğin %10 hedef getiri girildiğinde araç, mevcut miktar ve işlem giderleriyle bu net getiriye ulaşmak için gerekli yaklaşık satış birim fiyatını hesaplar."}},{"@type":"Question","name":"Altın, dolar ve euro için aynı hesap mantığı mı kullanılır?","acceptedAnswer":{"@type":"Answer","text":"Evet. Temel matematik aynıdır: birim alış fiyatı, birim satış fiyatı ve miktar çarpılır; varsa işlem giderleri eklenir veya düşülür. Yalnız gösterilen birim ve fiyat hassasiyeti seçilen varlığa göre değişir."}},{"@type":"Question","name":"Bu araç yatırım tavsiyesi verir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç yalnızca girdiğiniz fiyat, miktar ve maliyetlerden matematiksel kâr/zarar, getiri ve fiyat eşikleri üretir; al, sat veya bekle tavsiyesi vermez."}}]}
+</script>
 <link href="ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;border-radius:14px">Bu hesaplama aracı için JavaScript etkin olmalıdır.</div></noscript>
 <div class="container topbar"><nav aria-label="breadcrumb" class="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#yatirim">Yatırım</a><span>/</span><strong>Varlık Getirisi Hesaplama</strong></nav></div>
 <header class="container"><section class="hero"><div class="hero-grid"><div><span class="eyebrow-pill">Hesapica • Varlık Analizi</span><h1>Varlık Getirisi Hesaplama</h1><p>Altın, dolar ve euro yatırımlarında net kâr veya zararı, yüzdesel getiriyi, işlem maliyetlerinin etkisini, başa baş birim fiyatını ve hedef getiri için gereken satış fiyatını tek ekranda hesaplayın.</p><div class="hero-chips"><span class="hero-chip">Net kâr / zarar</span><span class="hero-chip">Başa baş fiyatı</span><span class="hero-chip">Hedef satış fiyatı</span><span class="hero-chip">İşlem maliyetleri</span></div></div><aside class="hero-box"><div class="eyebrow">Hesap mantığı</div><strong>Gerçek alış ve satış fiyatı üzerinden net sonuç</strong><p>Gerçek alış fiyatı ile satışta elde edeceğiniz birim fiyatı girin. Alış-satış farkını ayrıca “makas” olarak ikinci kez düşmeyiz.</p><ul><li>Opsiyonel sabit işlem giderleri</li><li>Opsiyonel satış komisyonu/kesintisi</li><li>Objektif fiyat senaryoları</li></ul></aside></div></section></header>
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3615831363" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+
 <main class="container" style="padding:24px 0 56px">
 <section class="tool-layout">
 <form class="card" id="assetForm" novalidate>
@@ -78,7 +236,8 @@
 <div class="comment-box" id="commentBox">Araç yalnız matematiksel sonuç üretir; al, sat veya bekle tavsiyesi vermez.</div>
 </aside>
 </section>
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+
 <section class="details"><details open><summary>Fiyat senaryoları</summary><div class="details-inner table-wrap"><table><caption>Mevcut satış fiyatına göre objektif senaryolar</caption><thead><tr><th>Senaryo</th><th>Birim fiyat</th><th>Net kâr / zarar</th><th>Getiri</th></tr></thead><tbody id="scenarioBody"><tr><td colspan="4">Hesaplama bekleniyor.</td></tr></tbody></table></div></details><details><summary>Hesap kırılımı</summary><div class="details-inner table-wrap"><table><caption>İşlem tutarları ve maliyetler</caption><tbody id="breakdownBody"><tr><td>Hesaplama bekleniyor.</td></tr></tbody></table></div></details></section>
 <section class="content-grid"><article class="card accordion-card"><h2>Varlık getirisi nasıl hesaplanır?</h2><p>Varlık getirisi, bir yatırımın alış maliyeti ile satıştan gerçekten elde edilen net tutar arasındaki farkı gösterir. Altın, dolar ve euro gibi varlıklarda yalnız fiyatın ne kadar yükseldiğine bakmak yeterli değildir; sabit işlem giderleri ve satışta ayrıca kesilen komisyonlar net sonucu değiştirebilir.</p><details open><summary>Net kâr / zarar formülü</summary><p>Toplam yatırım = alış fiyatı × miktar + alış sabit gideri. Net satış = satış fiyatı × miktar − satış yüzdesel kesintisi − satış sabit gideri. Net kâr/zarar = net satış − toplam yatırım.</p></details><details><summary>Net getiri oranı nasıl hesaplanır?</summary><p>Net getiri oranı, net kâr veya zararın toplam yatırım maliyetine bölünüp 100 ile çarpılmasıyla bulunur. Böylece farklı büyüklükteki işlemleri yüzde üzerinden karşılaştırmak kolaylaşır.</p></details><details><summary>Başa baş fiyatı nasıl bulunur?</summary><p>Başa baş fiyatı, net satış gelirini toplam yatırım maliyetine eşitleyen birim fiyattır. Satışta yüzdesel kesinti veya sabit gider varsa bu maliyetler ters hesaplamada dikkate alınır.</p></details><details><summary>Hedef fiyat nasıl bulunur?</summary><p>Toplam yatırım maliyetine seçtiğiniz hedef net getiri eklenir. Daha sonra satış giderleri de hesaba katılarak bu net tutarı sağlayacak yaklaşık birim satış fiyatı ters çözülür.</p></details></article><section class="card accordion-card"><h2>Sık sorulan sorular</h2><details open><summary>Makas ayrıca girilmeli mi?</summary><p>Gerçek alış ve gerçek satış fiyatlarını kullanıyorsanız hayır. Makas zaten bu iki fiyat arasındaki farktır. Yalnız satış fiyatına ek olarak ayrıca kesilen yüzdesel komisyon veya platform kesintisi varsa “Satış kesintisi” alanını kullanın.</p></details><details><summary>Satış fiyatı güncel piyasa fiyatı olabilir mi?</summary><p>Olabilir; ancak en doğru net sonuç için mümkünse gerçekten satışta elde edeceğiniz birim fiyatı kullanın. Referans veya orta piyasa fiyatı, banka ya da platformun size uyguladığı gerçek satış fiyatından farklı olabilir.</p></details><details><summary>Negatif getiri hesaplanır mı?</summary><p>Evet. Net satış geliri toplam yatırım maliyetinin altındaysa araç zararı TL ve yüzde olarak gösterir; başa baş fiyatı da zararın sıfırlandığı yaklaşık seviyeyi verir.</p></details><details><summary>Hedef getiri alanı ne işe yarar?</summary><p>Örneğin %10 hedef getiri girildiğinde araç, mevcut miktar ve işlem giderleriyle bu net getiriye ulaşmak için gerekli yaklaşık satış birim fiyatını hesaplar.</p></details><details><summary>Altın, dolar ve euro için aynı hesap mantığı mı kullanılır?</summary><p>Evet. Temel matematik aynıdır: birim alış fiyatı, birim satış fiyatı ve miktar çarpılır; varsa işlem giderleri eklenir veya düşülür. Yalnız gösterilen birim ve fiyat hassasiyeti seçilen varlığa göre değişir.</p></details><details><summary>Bu araç yatırım tavsiyesi verir mi?</summary><p>Hayır. Araç yalnızca girdiğiniz fiyat, miktar ve maliyetlerden matematiksel kâr/zarar, getiri ve fiyat eşikleri üretir; al, sat veya bekle tavsiyesi vermez.</p></details></section></section>
 <section class="card seo-section"><h2>Varlık getirisi nedir?</h2><p>Varlık getirisi, bir yatırımın başlangıç maliyetine kıyasla ne kadar kazandırdığını veya kaybettirdiğini ölçer. Altın, dolar ve euro yatırımlarında iki farklı göstergeyi birbirinden ayırmak önemlidir: <strong>birim fiyat değişimi</strong> yalnız alış ve satış fiyatını karşılaştırırken, <strong>net getiri</strong> işlem giderlerini de hesaba katar.</p><p>Bu nedenle bir varlığın fiyatı yükselmiş olsa bile sabit alış-satış giderleri veya satışta ayrıca uygulanan bir komisyon net kârı azaltabilir. Araç, fiyat hareketini ve net getiri oranını ayrı ayrı göstererek bu farkı görünür hale getirir.</p><div class="seo-grid"><div class="seo-box"><h3>Altın getirisi</h3><p>Gram altın alış fiyatı, satışta elde edilecek gram fiyatı ve toplam gram miktarıyla işlem sonucu hesaplanır. Banka veya platformun gerçek alış-satış fiyatlarını kullanmak makas etkisinin yeniden sayılmasını önler.</p></div><div class="seo-box"><h3>Dolar getirisi</h3><p>USD/TRY alış kuru, satışta elde edilecek kur ve dolar miktarı kullanılır. Varsa ayrıca kesilen işlem ücreti veya komisyon net satış gelirinden düşülür.</p></div><div class="seo-box"><h3>Euro getirisi</h3><p>EUR/TRY alış ve satış kuru ile euro miktarı üzerinden aynı net kâr/zarar mantığı uygulanır. Sonuç hem TL tutarı hem yüzde getiri olarak görüntülenir.</p></div></div></section><section class="card seo-section"><h2>Net getiri ile fiyat değişimi arasındaki fark</h2><p>Fiyat değişimi, satış birim fiyatının alış birim fiyatına göre yüzde olarak ne kadar değiştiğini gösterir. Net getiri ise yatırımın tamamına bakar ve varsa alış gideri, satış gideri ve yüzdesel satış kesintisini de hesaba katar. Bu yüzden iki oran her zaman aynı olmak zorunda değildir.</p><div class="formula-box">Fiyat değişimi (%) = (Satış fiyatı − Alış fiyatı) ÷ Alış fiyatı × 100<br>Net getiri (%) = Net kâr / zarar ÷ Toplam yatırım maliyeti × 100</div><p>Özellikle kısa vadeli veya küçük tutarlı işlemlerde sabit giderlerin yatırım tutarına oranı yükseldiği için fiyat artışı ile net getiri arasındaki fark daha belirgin olabilir.</p></section><section class="card seo-section"><h2>Altın ve döviz getirisi hesaplama örnekleri</h2><p>Aşağıdaki örnekler yalnız hesap mantığını göstermek için varsayımsaldır; güncel piyasa fiyatı veya yatırım önerisi değildir.</p><div class="table-wrap example-table"><table><thead><tr><th>Örnek</th><th>Alış</th><th>Satış</th><th>Miktar</th><th>Basit fiyat farkı</th></tr></thead><tbody><tr><td>Gram altın</td><td>2.450 TL/gr</td><td>2.680 TL/gr</td><td>10 gr</td><td>+2.300 TL (giderler öncesi)</td></tr><tr><td>Dolar</td><td>30,00 USD/TRY</td><td>34,50 USD/TRY</td><td>1.000 USD</td><td>+4.500 TL (giderler öncesi)</td></tr><tr><td>Euro</td><td>33,00 EUR/TRY</td><td>38,50 EUR/TRY</td><td>1.000 EUR</td><td>+5.500 TL (giderler öncesi)</td></tr></tbody></table></div><p>Gerçek net sonuç için varsa alış sabit giderini, satış sabit giderini ve satış fiyatına ek olarak ayrıca kesilen yüzdesel komisyonu da forma ekleyin.</p></section><div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="5127687114" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
@@ -99,7 +258,7 @@ const ASSETS={
 };
 const state={result:null,autoTimer:null,saveTimer:null,toastTimer:null};
 const fieldIds=['buyPrice','sellPrice','amount','buyCost','sellCost','sellFeeRate','targetRate'];
-function parseFlexibleNumber(value){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'').replace(/₺|TL|%|gr|USD|EUR/gi,'');if(!s)return null;if(!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||s.includes('-')&&!s.startsWith('-'))return null;const sign=s.startsWith('-')?-1:1;s=s.replace('-','');const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;if(dots&&commas){const dec=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';const group=dec==='.'?',':'.';s=s.split(group).join('');const parts=s.split(dec);if(parts.length!==2||!parts[0]||!parts[1])return null;s=parts[0]+'.'+parts[1];}else if(commas){const parts=s.split(',');if(parts.some(p=>p===''))return null;if(parts.length===2){s=parts[0]+'.'+parts[1];}else{if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}else if(dots){const parts=s.split('.');if(parts.some(p=>p===''))return null;if(parts.length===2){const right=parts[1];if(right.length===3&&/^\d{1,3}$/.test(parts[0]))s=parts[0]+right;else s=parts[0]+'.'+right;}else{if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}const n=Number(s)*sign;return Number.isFinite(n)?n:null;}
+function parseFlexibleNumber(value){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'').replace(/₺|TL|%|gr|USD|EUR/gi,'');if(!s)return null;if(!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||s.includes('-')&&!s.startsWith('-'))return null;const sign=s.startsWith('-')?-1:1;s=s.replace('-','');const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;if(dots&&commas){const dec=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';const group=dec==='.'?',':'.';s=s.split(group).join('');const parts=s.split(dec);if(parts.length!==2||!parts[0]||!parts[1])return null;s=parts[0]+'.'+parts[1];}else if(commas){const parts=s.split(',');if(parts.some(p=>p===''))return null;if(parts.length===2){s=parts[0]+'.'+parts[1];}else{if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}else if(dots){const parts=s.split('.');if(parts.some(p=>p===''))return null;if(parts.length===2){const right=parts[1];if(right.length===3&&/^\d{1,3}$/.test(parts[0])&&!/^0+$/.test(parts[0]))s=parts[0]+right;else s=parts[0]+'.'+right;}else{if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}const n=Number(s)*sign;return Number.isFinite(n)?n:null;}
 function formatTRY(v){return Number.isFinite(v)?new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(v):'—'}
 function formatPercent(v){return Number.isFinite(v)?'%'+new Intl.NumberFormat('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v):'—'}
 function formatNumber(v,digits=3){return Number.isFinite(v)?new Intl.NumberFormat('tr-TR',{maximumFractionDigits:digits}).format(v):''}
@@ -115,7 +274,7 @@ function compute(i){const grossBuy=i.buyPrice*i.amount;const totalInvestment=gro
 function scenarioCalc(r,price){const gross=price*r.amount;const fee=gross*r.sellFeeRate/100;const netSell=gross-fee-r.sellCost;const net=netSell-r.totalInvestment;return{net,rate:net/r.totalInvestment*100};}
 function render(r){const cfg=ASSETS[r.assetType];$('mainResult').textContent=formatTRY(r.netProfit);$('mainResult').style.color=r.netProfit>0?'var(--good)':r.netProfit<0?'var(--bad)':'var(--text)';$('mainResultText').textContent=`${cfg.label} için işlem giderleri sonrası net sonuç.`;$('totalInvestment').textContent=formatTRY(r.totalInvestment);$('netSell').textContent=formatTRY(r.netSell);$('returnRate').textContent=formatPercent(r.returnRate);$('breakEvenPrice').textContent=formatUnitPrice(r.breakEvenPrice,r.assetType);$('targetPrice').textContent=r.targetPrice===null?'Hedef girilmedi':formatUnitPrice(r.targetPrice,r.assetType);$('totalFees').textContent=formatTRY(r.totalFees);$('netStatus').textContent=r.netProfit>0?'Kâr':r.netProfit<0?'Zarar':'Başa baş';$('netStatus').style.color=r.netProfit>0?'var(--good)':r.netProfit<0?'var(--bad)':'var(--text)';$('priceChange').textContent=formatPercent(r.priceChange);$('breakEvenGap').textContent=formatPercent(r.breakEvenGap);$('statusBadge').textContent='Hesaplandı';$('statusBadge').className='badge '+(r.netProfit>0?'good':r.netProfit<0?'bad':'warn');$('statusText').textContent='Net sonuç, işlem giderleri ve fiyat eşikleri geçerli girdilerle hesaplandı.';$('commentBox').textContent=`Birim fiyat alışa göre ${formatPercent(r.priceChange)} değişti. İşlem giderlerinin toplam yatırıma oranı ${formatPercent(r.feeShare)}. Mevcut satış fiyatı başa baş seviyesine göre ${formatPercent(r.breakEvenGap)} konumunda. Bu metrikler matematiksel karşılaştırmadır; yatırım tavsiyesi değildir.`;const rows=[{name:'%5 fiyat düşüşü',price:r.sellPrice*.95},{name:'Mevcut fiyat',price:r.sellPrice},{name:'%5 fiyat artışı',price:r.sellPrice*1.05},{name:'Başa baş',price:r.breakEvenPrice}];if(r.targetPrice!==null)rows.push({name:'Hedef getiri',price:r.targetPrice});$('scenarioBody').innerHTML=rows.map(x=>{const s=scenarioCalc(r,x.price);return `<tr><td>${x.name}</td><td>${formatUnitPrice(x.price,r.assetType)}</td><td>${formatTRY(s.net)}</td><td>${formatPercent(s.rate)}</td></tr>`}).join('');$('breakdownBody').innerHTML=`<tr><th>Alış tutarı</th><td>${formatTRY(r.grossBuy)}</td></tr><tr><th>Alış sabit gideri</th><td>${formatTRY(r.buyCost)}</td></tr><tr><th>Toplam yatırım</th><td>${formatTRY(r.totalInvestment)}</td></tr><tr><th>Brüt satış tutarı</th><td>${formatTRY(r.grossSell)}</td></tr><tr><th>Yüzdesel satış kesintisi</th><td>${formatTRY(r.sellFee)}</td></tr><tr><th>Satış sabit gideri</th><td>${formatTRY(r.sellCost)}</td></tr><tr><th>Net satış geliri</th><td>${formatTRY(r.netSell)}</td></tr><tr><th><strong>Net kâr / zarar</strong></th><td><strong>${formatTRY(r.netProfit)}</strong></td></tr>`;['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=false);}
 function emptyState(){state.result=null;$('mainResult').textContent='—';$('mainResult').style.color='';$('mainResultText').textContent='İşlem maliyetleri sonrası net sonuç burada görünür.';['totalInvestment','netSell','returnRate','breakEvenPrice','targetPrice','totalFees','netStatus','priceChange','breakEvenGap'].forEach(id=>$(id).textContent='—');$('statusText').textContent='Alış fiyatı, satış fiyatı ve miktarı girerek hesaplamaya başlayın.';$('statusBadge').textContent='Veri bekleniyor';$('statusBadge').className='badge';$('commentBox').textContent='Araç yalnız matematiksel sonuç üretir; al, sat veya bekle tavsiyesi vermez.';$('scenarioBody').innerHTML='<tr><td colspan="4">Hesaplama bekleniyor.</td></tr>';$('breakdownBody').innerHTML='<tr><td>Hesaplama bekleniyor.</td></tr>';['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=true);}
-function calculate(show=true){const i=getInputs();if(!validate(i,show)){if(show)state.result=null;return null;}try{const r=compute(i);state.result=r;render(r);scheduleSave();return r;}catch{$('validationBox').textContent='Hesaplama sırasında geçersiz bir sonuç oluştu.';$('validationBox').classList.remove('hide');state.result=null;return null;}}
+function calculate(show=true){const i=getInputs();if(!validate(i,show)){emptyState();return null;}try{const r=compute(i);state.result=r;render(r);scheduleSave();return r;}catch{$('validationBox').textContent='Hesaplama sırasında geçersiz bir sonuç oluştu.';$('validationBox').classList.remove('hide');emptyState();return null;}}
 function scrollToResult(){const panel=$('resultsPanel');if(!panel)return;window.setTimeout(()=>{const top=panel.getBoundingClientRect().top+window.scrollY-12;window.scrollTo({top:Math.max(0,top),behavior:'smooth'});panel.setAttribute('tabindex','-1');panel.focus({preventScroll:true});},120);}
 function updateAssetUI(){const cfg=asset();$('buyPriceLabel').textContent=cfg.buyLabel;$('sellPriceLabel').textContent=cfg.sellLabel;$('amountLabel').textContent=cfg.amountLabel;$('amountSuffix').textContent=cfg.amountSuffix;$('buyPrice').placeholder=cfg.buyPlaceholder;$('sellPrice').placeholder=cfg.sellPlaceholder;$('amount').placeholder=cfg.amountPlaceholder;}
 function applyData(d){if(d.assetType&&ASSETS[d.assetType])$('assetType').value=d.assetType;updateAssetUI();['buyPrice','sellPrice','amount','buyCost','sellCost','sellFeeRate','targetRate'].forEach(id=>{if(d[id]!==undefined&&d[id]!==null)$(id).value=formatNumber(Number(d[id]),inputDigits(id));});}
@@ -141,4 +300,55 @@ updateAssetUI();emptyState();if(!loadQuery())loadSaved();
 })();
 </script>
 <script src="ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_resetBtn = document.getElementById('resetBtn');
+  if(button_resetBtn) button_resetBtn.addEventListener('click', () => clearToolQuery(['a','bp','sp','am','bc','sc','fr','tr']));
+})();
+</script>
 </body></html>

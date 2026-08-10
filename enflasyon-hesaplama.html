@@ -6,10 +6,12 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica</title>
 <meta name="description" content="Enflasyon etkisini anında hesapla; paranın alım gücündeki değişimi net öğren. Geçmişten bugüne değer farkını keşfet, kararını güçlendir!"/>
-<meta content="index,follow" name="robots"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
 <meta content="enflasyon hesaplama, alım gücü hesaplama, para değeri hesaplama, geçmiş para bugün ne eder, bugünkü para geçmişte ne ederdi, enflasyon analizi" name="keywords"/>
 <meta content="#4f46e5" name="theme-color"/>
 <link href="https://hesapica.com/enflasyon-hesaplama" rel="canonical"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <link rel="alternate" hreflang="tr" href="https://hesapica.com/enflasyon-hesaplama" />
 <link rel="alternate" hreflang="x-default" href="https://hesapica.com/enflasyon-hesaplama" />
 <meta content="website" property="og:type"/>
@@ -23,6 +25,7 @@
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta content="Hesapica" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica" name="twitter:title"/>
@@ -88,6 +91,8 @@
     .hero-box ul{margin:10px 0 0;padding-left:18px}
 
     .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .tool-main-column{display:grid;gap:24px;min-width:0;align-content:start}
+    .tool-main-column > .details-card{margin-top:0}
     .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
     .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
     .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
@@ -214,7 +219,10 @@
 
     @media (max-width:1040px){
       .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
-      .results{position:static}
+      .tool-main-column{display:contents}
+      .tool-main-column > .card{grid-column:1;grid-row:1}
+      .results{position:static;grid-column:1;grid-row:2}
+      .tool-main-column > .details-card{grid-column:1;grid-row:3;margin-top:0}
       .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:720px){
@@ -256,31 +264,25 @@
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica","url":"https://hesapica.com/enflasyon-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}
+{"@context":"https://schema.org","@type":"WebPage","name":"Enflasyon Hesaplama 2026 | Paranın Alım Gücü Analizi - Hesapica","url":"https://hesapica.com/enflasyon-hesaplama","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Finans","item":"https://hesapica.com/#finans"},{"@type":"ListItem","position":3,"name":"Enflasyon Hesaplama","item":"https://hesapica.com/enflasyon-hesaplama"}]}
 </script>
 <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"Enflasyon Hesaplama",
-    "url":"https://hesapica.com/enflasyon-hesaplama",
-    "applicationCategory":"FinanceApplication",
-    "operatingSystem":"Web",
-    "description":"Geçmiş ve bugünkü para değerini, alım gücü kaybını ve korunması gereken artış oranını analiz eden ücretsiz araç."
-  }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},
-      {"@type":"ListItem","position":2,"name":"Finans","item":"https://hesapica.com/#finans"},
-      {"@type":"ListItem","position":3,"name":"Enflasyon Hesaplama","item":"https://hesapica.com/enflasyon-hesaplama"}
-    ]
-  }
-  </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu araç neyi hesaplar?","acceptedAnswer":{"@type":"Answer","text":"Geçmişteki bir paranın bugünkü yaklaşık karşılığını veya bugünkü bir paranın geçmişteki yaklaşık değerini hesaplar. Ayrıca alım gücü kaybını ve aynı seviyeyi korumak için gereken artışı gösterir."}},{"@type":"Question","name":"Sonuçlar neden yaklaşık kabul edilir?","acceptedAnswer":{"@type":"Answer","text":"Kullanılan oran, dönem, resmi endeks türü ve harcama kalıpları sonucu etkileyebilir. Bu yüzden bu araç planlama ve genel farkındalık amacıyla kullanılmalıdır."}},{"@type":"Question","name":"Toplam ve yıllık ortalama yöntem ne zaman kullanılır?","acceptedAnswer":{"@type":"Answer","text":"Elinde tek bir dönemin toplam artışı varsa toplam yöntem uygundur. Yıllık ortalama verin varsa ve bileşik etkiyi görmek istiyorsan yıllık ortalama yöntemi daha anlamlıdır."}}]}</script>
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Bu araç neyi hesaplar?","acceptedAnswer":{"@type":"Answer","text":"Geçmişteki bir paranın bugünkü yaklaşık karşılığını veya bugünkü bir paranın geçmişteki yaklaşık değerini hesaplar. Ayrıca alım gücü kaybını ve aynı seviyeyi korumak için gereken artışı gösterir."}},{"@type":"Question","name":"Sonuçlar neden yaklaşık kabul edilir?","acceptedAnswer":{"@type":"Answer","text":"Kullanılan oran, dönem, resmî endeks türü ve harcama kalıpları sonucu etkileyebilir. TÜİK TÜFE, hanehalklarının tükettiği mal ve hizmetlerdeki genel fiyat değişimini ölçer; bu araç girilen oranı matematiksel olarak bileşikleştirir ve resmî TÜFE serisinin yerine geçmez."}},{"@type":"Question","name":"Toplam ve yıllık ortalama yöntem ne zaman kullanılır?","acceptedAnswer":{"@type":"Answer","text":"Elinde tek bir dönemin toplam artışı varsa toplam yöntem uygundur. Yıllık ortalama verin varsa ve bileşik etkiyi görmek istiyorsan yıllık ortalama yöntemi daha anlamlıdır."}}]}
+</script>
+<meta content="https://hesapica.com/enflasyon-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
 <style id="hesapica-global-typography-standard">
     :root{
       --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -296,7 +298,7 @@
     }
     html{font-size:16px}
     body{
-      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-family:var(--hc-font-sans) !important;
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -340,6 +342,7 @@
     .hero p,
     .comment-box,
     .score-explain,
+    .metric-explain,
     .mini-result .subline,
     .health-card p,
     .footer-brand p,
@@ -420,24 +423,14 @@
     }
     @media (max-width:760px){
       :root{
-        --hc-type-body: 15px;
-        --hc-type-label: 14.5px;
-        --hc-type-small: 13.5px;
-        --hc-type-button: 14.5px;
-        --hc-type-card-title: 1.05rem;
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
       }
     }
-  </style>
-<meta content="https://hesapica.com/enflasyon-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
-<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
-<script src="cookie-consent.js"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
-<link href="ads-slot-manager.css" rel="stylesheet"/>
+</style>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç etkileşimli hesaplama için JavaScript gerektirir. Sonuçları görmek için lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
@@ -477,18 +470,11 @@
 </div>
 </section>
 </header>
-<!-- HC_AD_SLOT:top -->
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="9492185017"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
+
 
 <main class="container" style="padding:24px 0 56px">
 <section class="tool-layout">
+<div class="tool-main-column">
 <div class="card">
 <h2>Hesaplama Paneli</h2>
 <p class="section-note">Tüm alanlar boş başlar. Temel sonuçlar için tutar, yıl farkı ve enflasyon bilgisini girmen yeterli. Bu araç yaklaşık karşılaştırma ve planlama amacıyla tasarlanmıştır.</p>
@@ -521,9 +507,9 @@
 <label for="amount">Tutar (TL)</label>
 <div class="input-wrap">
 <span class="prefix">₺</span>
-<input autocomplete="off" class="with-prefix" id="amount" inputmode="numeric" placeholder="Örn: 10.000" type="text"/>
+<input autocomplete="off" class="with-prefix" id="amount" inputmode="decimal" placeholder="Örn: 10.000" type="text"/>
 </div>
-<div class="hint">Büyük tutarlar otomatik olarak 10.000 gibi gösterilir.</div>
+<div class="hint">10.000, 10.000,50 veya 10000.50 gibi TR/EN para biçimleri kullanılabilir.</div>
 <div class="field-error" id="amountError"></div>
 </div>
 <div class="field">
@@ -566,7 +552,7 @@
 <button class="btn btn-ghost" onclick="clearAllFields()" type="button">Temizle</button>
 <button class="btn btn-ghost" onclick="copyResults()" type="button">Sonucu Kopyala</button>
 <button class="btn btn-ghost" onclick="shareResults()" type="button">Paylaş</button>
-<button class="btn btn-ghost" onclick="window.print()" type="button">Yazdır / PDF</button>
+<button class="btn btn-ghost" onclick="hasValidResult()?window.print():pulseStatus('Yazdırmadan önce geçerli bir sonuç üret.','warn','Sonuç yok')" type="button">Yazdır / PDF</button>
 </div>
 <div aria-hidden="true" class="flow-hint">
 <div class="flow-hint-text">
@@ -576,16 +562,61 @@
 <div class="flow-cue">↓</div>
 </div>
 </div>
-<!-- HC_AD_SLOT:result -->
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4334681065822132"
-       data-ad-slot="8240426600"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
 
+
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Temel sonuçlar ve ek metrikler</span>
+<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Hesaplanan eşdeğer değer</th><td id="stat1">—</td></tr>
+<tr><th>Nominal değer farkı</th><td id="stat2">—</td></tr>
+<tr><th id="stat3Label">Korunması gereken artış</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Aylık ortalama etki</th><td id="stat4">—</td></tr>
+<tr><th>Yıllık ortalama etki</th><td id="stat5">—</td></tr>
+<tr><th>Alım gücü kaybı</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Senaryo ve karşılaştırma tablosu</span>
+<span class="summary-note">Dönem etkisini daha hızlı kıyasla</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Senaryo</th><th>Eşdeğer değer</th><th>Yorum</th></tr></thead>
+<tbody id="scenarioBody"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Gösterge</th><th>Değer</th></tr></thead>
+<tbody>
+<tr><td>Seçilen yön</td><td id="directionStat">—</td></tr>
+<tr><td>Yöntem</td><td id="methodStat">—</td></tr>
+<tr><td>Dönem</td><td id="periodStat">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+</div>
 <aside class="results" id="resultsPanel">
 <div class="results-kicker">Sonuçlar aşağıda başlıyor<span>Ana çıktı, ara sonuçlar ve yorum blokları bu bölümde yer alır.</span></div>
 <div class="status-card">
@@ -690,58 +721,6 @@
 <div class="comment-box" id="smartComment">Bilgileri girip hesapladığında sistem, enflasyon etkisini ve alım gücü baskısını yorumlayacak.</div>
 </aside>
 </section>
-<section class="details-card accordion-stack">
-<details class="block" open="">
-<summary>
-<span>Temel sonuçlar ve ek metrikler</span>
-<span class="summary-note">İlk bakışta gereken ana sayı seti</span>
-</summary>
-<div class="details-inner table-grid">
-<div class="table-wrap">
-<table>
-<tbody>
-<tr><th>Hesaplanan eşdeğer değer</th><td id="stat1">—</td></tr>
-<tr><th>Nominal değer farkı</th><td id="stat2">—</td></tr>
-<tr><th id="stat3Label">Korunması gereken artış</th><td id="stat3">—</td></tr>
-</tbody>
-</table>
-</div>
-<div class="table-wrap">
-<table>
-<tbody>
-<tr><th>Aylık ortalama etki</th><td id="stat4">—</td></tr>
-<tr><th>Yıllık ortalama etki</th><td id="stat5">—</td></tr>
-<tr><th>Alım gücü kaybı</th><td id="stat6">—</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</details>
-<details class="block" open="">
-<summary>
-<span>Senaryo ve karşılaştırma tablosu</span>
-<span class="summary-note">Dönem etkisini daha hızlı kıyasla</span>
-</summary>
-<div class="details-inner table-grid">
-<div class="table-wrap">
-<table>
-<thead><tr><th>Senaryo</th><th>Eşdeğer değer</th><th>Yorum</th></tr></thead>
-<tbody id="scenarioBody"><tr><td colspan="3">Hesaplama bekleniyor.</td></tr></tbody>
-</table>
-</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>Gösterge</th><th>Değer</th></tr></thead>
-<tbody>
-<tr><td>Seçilen yön</td><td id="directionStat">—</td></tr>
-<tr><td>Yöntem</td><td id="methodStat">—</td></tr>
-<tr><td>Dönem</td><td id="periodStat">—</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</details>
-</section>
 <section class="content-grid">
 <section class="card accordion-card">
 <h2>Enflasyon hesaplama hakkında</h2>
@@ -751,7 +730,7 @@
 </details>
 <details>
 <summary>Sonuçlar neden yaklaşık kabul edilir?</summary>
-<p>Kullanılan oran, dönem, resmi endeks türü ve harcama kalıpları sonucu etkileyebilir. Bu yüzden bu araç planlama ve genel farkındalık amacıyla kullanılmalıdır.</p>
+<p>Kullanılan oran, dönem, resmî endeks türü ve harcama kalıpları sonucu etkileyebilir. TÜİK TÜFE, hanehalklarının tükettiği mal ve hizmetlerdeki genel fiyat değişimini ölçer; bu araç girilen oranı matematiksel olarak bileşikleştirir ve resmî TÜFE serisinin yerine geçmez.</p>
 </details>
 <details>
 <summary>Toplam ve yıllık ortalama yöntem ne zaman kullanılır?</summary>
@@ -759,7 +738,7 @@
 </details>
 </section>
 <section class="card">
-<h2>İlgili araçlar</h2>
+<h2>İlgili Araçlar</h2>
 <div class="related-grid">
 <a class="related-card" href="/faiz-hesaplama?mod=deposit">
 <span class="small">Finans</span>
@@ -827,40 +806,124 @@
       });
     }
 
-    function formatTrIntegerInput(value){
-      const num = Math.round(Number(value) || 0);
-      return num ? new Intl.NumberFormat('tr-TR').format(num) : '';
+    function formatTrMoneyInput(value){
+      const num = Number(value);
+      if(!Number.isFinite(num)) return '';
+      return num.toLocaleString('tr-TR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 6
+      });
     }
 
     function parseTrNumber(value){
-      if(value === null || value === undefined) return 0;
-      const cleaned = String(value).replace(/\./g,'').replace(/,/g,'.').replace(/[^0-9.\-]/g,'');
-      return Number(cleaned) || 0;
+      if(value === null || value === undefined) return NaN;
+      let raw = String(value).trim().replace(/\s+/g,'');
+      if(!raw) return NaN;
+
+      raw = raw.replace(/^(?:₺|TL)/i,'').replace(/(?:₺|TL)$/i,'');
+      if(!raw || /₺|TL/i.test(raw) || !/^[0-9.,]+$/.test(raw)) return NaN;
+
+      const dots = (raw.match(/\./g) || []).length;
+      const commas = (raw.match(/,/g) || []).length;
+      let normalized = raw;
+
+      if(dots && commas){
+        const decimalSep = raw.lastIndexOf(',') > raw.lastIndexOf('.') ? ',' : '.';
+        const thousandsSep = decimalSep === ',' ? '.' : ',';
+        if((raw.match(new RegExp('\\' + decimalSep, 'g')) || []).length !== 1) return NaN;
+
+        const index = raw.lastIndexOf(decimalSep);
+        const intRaw = raw.slice(0, index);
+        const fracRaw = raw.slice(index + 1);
+        if(!fracRaw || !/^\d+$/.test(fracRaw)) return NaN;
+
+        if(intRaw.includes(thousandsSep)){
+          const groups = intRaw.split(thousandsSep);
+          if(!groups.length || !/^\d{1,3}$/.test(groups[0]) || groups.slice(1).some(group => !/^\d{3}$/.test(group))) return NaN;
+          normalized = groups.join('') + '.' + fracRaw;
+        } else {
+          if(!/^\d+$/.test(intRaw)) return NaN;
+          normalized = intRaw + '.' + fracRaw;
+        }
+      } else if(dots || commas){
+        const sep = dots ? '.' : ',';
+        const count = dots || commas;
+        const parts = raw.split(sep);
+        if(parts.some(part => part === '' || !/^\d+$/.test(part))) return NaN;
+
+        if(count > 1){
+          if(!/^\d{1,3}$/.test(parts[0]) || parts.slice(1).some(group => !/^\d{3}$/.test(group))) return NaN;
+          normalized = parts.join('');
+        } else {
+          const [left, right] = parts;
+          const looksThousands = right.length === 3 && !/^0+$/.test(left);
+          normalized = looksThousands ? left + right : left + '.' + right;
+        }
+      } else if(!/^\d+$/.test(raw)){
+        return NaN;
+      }
+
+      const number = Number(normalized);
+      return Number.isFinite(number) ? number : NaN;
+    }
+
+    function sanitizeMoneyText(value){
+      return String(value || '').replace(/\s+/g,'').replace(/[^0-9.,]/g,'').slice(0, 24);
     }
 
     function parseDecimal(value){
       if(value === null || value === undefined) return NaN;
-      let cleaned = String(value).trim().replace(/\s+/g,'').replace(/%/g,'');
-      if(!cleaned) return NaN;
+      let raw = String(value).trim().replace(/\s+/g,'');
+      if(!raw) return NaN;
 
-      const negative = cleaned.startsWith('-');
-      cleaned = cleaned.replace(/[^0-9.,]/g,'');
-      if(!cleaned) return NaN;
+      raw = raw.replace(/^%/,'').replace(/%$/,'');
+      if(!raw || raw.includes('%') || !/^-?[0-9.,]+$/.test(raw)) return NaN;
 
-      const lastComma = cleaned.lastIndexOf(',');
-      const lastDot = cleaned.lastIndexOf('.');
-      const separatorIndex = Math.max(lastComma, lastDot);
+      const negative = raw.startsWith('-');
+      let s = negative ? raw.slice(1) : raw;
+      if(!s || !/\d/.test(s)) return NaN;
 
-      if(separatorIndex >= 0){
-        const whole = cleaned.slice(0, separatorIndex).replace(/[.,]/g,'');
-        const fraction = cleaned.slice(separatorIndex + 1).replace(/[.,]/g,'');
-        cleaned = (whole || '0') + (fraction ? '.' + fraction : '');
-      } else {
-        cleaned = cleaned.replace(/[.,]/g,'');
+      const dots = (s.match(/\./g) || []).length;
+      const commas = (s.match(/,/g) || []).length;
+
+      if(dots && commas){
+        const decimalSep = s.lastIndexOf(',') > s.lastIndexOf('.') ? ',' : '.';
+        const thousandsSep = decimalSep === ',' ? '.' : ',';
+        if((s.match(new RegExp('\\' + decimalSep, 'g')) || []).length !== 1) return NaN;
+
+        const index = s.lastIndexOf(decimalSep);
+        const intRaw = s.slice(0, index);
+        const fracRaw = s.slice(index + 1);
+        if(!fracRaw || !/^\d+$/.test(fracRaw)) return NaN;
+
+        let intDigits = intRaw;
+        if(intRaw.includes(thousandsSep)){
+          const groups = intRaw.split(thousandsSep);
+          if(!groups.length || !/^\d{1,3}$/.test(groups[0]) || groups.slice(1).some(group => !/^\d{3}$/.test(group))) return NaN;
+          intDigits = groups.join('');
+        } else if(!/^\d+$/.test(intRaw)){
+          return NaN;
+        }
+        s = intDigits + '.' + fracRaw;
+      } else if(dots || commas){
+        const sep = dots ? '.' : ',';
+        const count = dots || commas;
+        const parts = s.split(sep);
+        if(parts.some(part => part === '' || !/^\d+$/.test(part))) return NaN;
+
+        if(count > 1){
+          // Oran/yıl alanlarında birden fazla aynı ayraç sessizce başka bir
+          // değere çevrilmez. Gruplanmış büyük oran gerekiyorsa karma TR/EN
+          // biçimi (örn. 1.234,56) kullanılabilir.
+          return NaN;
+        }
+        s = parts[0] + '.' + parts[1];
+      } else if(!/^\d+$/.test(s)){
+        return NaN;
       }
 
-      if(negative) cleaned = '-' + cleaned;
-      const number = Number(cleaned);
+      if(negative) s = '-' + s;
+      const number = Number(s);
       return Number.isFinite(number) ? number : NaN;
     }
 
@@ -877,21 +940,9 @@
     }
 
     function sanitizeDecimalText(value){
-      let cleaned = String(value || '').replace(/[^0-9,.-]/g, '');
-      cleaned = cleaned.replace(/(?!^)-/g, '');
-
+      let cleaned = String(value || '').replace(/\s+/g,'').replace(/[^0-9,.-]/g, '');
       const negative = cleaned.startsWith('-');
-      cleaned = cleaned.replace(/-/g, '');
-
-      const firstSeparator = cleaned.search(/[.,]/);
-      if(firstSeparator >= 0){
-        const whole = cleaned.slice(0, firstSeparator).replace(/[.,]/g, '');
-        const fraction = cleaned.slice(firstSeparator + 1).replace(/[.,]/g, '');
-        cleaned = whole + ',' + fraction;
-      } else {
-        cleaned = cleaned.replace(/[.,]/g, '');
-      }
-
+      cleaned = cleaned.replace(/-/g, '').slice(0, 24);
       return (negative ? '-' : '') + cleaned;
     }
 
@@ -939,19 +990,23 @@
       }, 1800);
     }
 
+    function invalidateResult(){
+      resetOutputs();
+    }
+
     function setMoneyInput(input){
       input.addEventListener('input', () => {
         state.lastInputMode = 'manual';
         touchedFields.add(input.id);
-        const raw = input.value.replace(/\D/g, '');
-        input.value = raw ? new Intl.NumberFormat('tr-TR').format(Number(raw)) : '';
+        input.value = sanitizeMoneyText(input.value);
         updateStateInputs();
+        invalidateResult();
         scheduleAutoCalculate();
       });
       input.addEventListener('blur', () => {
         touchedFields.add(input.id);
         const val = parseTrNumber(input.value);
-        input.value = val ? formatTrIntegerInput(val) : '';
+        input.value = Number.isFinite(val) ? formatTrMoneyInput(val) : '';
         updateStateInputs();
         calculateAll({ silent:true, forceValidation:false });
       });
@@ -963,6 +1018,7 @@
         touchedFields.add(input.id);
         input.value = sanitizeDecimalText(input.value);
         updateStateInputs();
+        invalidateResult();
         scheduleAutoCalculate();
       });
       input.addEventListener('blur', () => {
@@ -984,6 +1040,7 @@
         item.addEventListener('change', () => {
           state.lastInputMode = 'manual';
           updateStateInputs();
+          invalidateResult();
           scheduleAutoCalculate();
         });
       });
@@ -1153,6 +1210,9 @@
       const rows = uniqueYears.map(years => {
         const factor = Math.pow(1 + annualRate / 100, years);
         const eq = direction === 'pastToToday' ? amount * factor : amount / factor;
+        if(!Number.isFinite(factor) || factor <= 0 || !Number.isFinite(eq)){
+          return `<tr><td>${formatDecimalInput(years, 1)} yıl</td><td>—</td><td>Sayısal sınır</td></tr>`;
+        }
         const absoluteAnnual = Math.abs(annualRate);
         let note = annualRate < 0 ? 'Deflasyon etkisi' : 'Görece sınırlı etki';
         if(annualRate >= 25) note = 'Belirgin baskı';
@@ -1264,6 +1324,28 @@ ${el('smartComment').textContent}`;
       const powerLoss = inflationFactor > 0 ? (1 - (1 / inflationFactor)) * 100 : 0;
       const powerMetricLabel = powerLoss >= 0 ? 'Alım gücü kaybı' : 'Alım gücü artışı';
       const protectionNeed = totalInflationPercent;
+
+      const criticalValues = [
+        totalInflationPercent,
+        annualInflationPercentValue,
+        monthlyInflationPercentValue,
+        inflationFactor,
+        equivalent,
+        difference,
+        powerLoss,
+        protectionNeed
+      ];
+      if(inflationFactor <= 0 || !criticalValues.every(Number.isFinite)){
+        resetOutputs();
+        setStatus(
+          'bad',
+          'Bu oran ve dönem kombinasyonu güvenli bir sayısal sonuç üretmiyor. Oranı veya dönem farkını daha makul bir aralığa çekin.',
+          'Sayısal sınır'
+        );
+        if(state.lastInputMode === 'manual') saveManualState();
+        return false;
+      }
+
       const absoluteTotal = Math.abs(totalInflationPercent);
       const absoluteAnnual = Math.abs(annualInflationPercentValue);
       const absolutePowerLoss = Math.abs(powerLoss);
@@ -1524,5 +1606,34 @@ ${el('smartComment').textContent}`;
     }
   </script>
 <script src="ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

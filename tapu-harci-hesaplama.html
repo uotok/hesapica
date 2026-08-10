@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tapu Harcı Hesaplama | Alıcı, Satıcı ve Toplam Masraf | Hesapica</title>
 <meta name="description" content="Gerçek satış bedeli ve emlak vergisi değerine göre alıcı ve satıcı tapu harcını, döner sermaye ve diğer masrafları ayrı ayrı hesaplayın.">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#4f46e5">
 <link rel="canonical" href="https://hesapica.com/tapu-harci-hesaplama">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta property="og:locale" content="tr_TR">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hesapica">
@@ -25,6 +27,7 @@
 <meta name="twitter:description" content="Alıcı, satıcı ve toplam tapu masrafını ayrıntılı biçimde hesaplayın.">
 <meta name="twitter:url" content="https://hesapica.com/tapu-harci-hesaplama">
 <meta name="twitter:image" content="https://hesapica.com/og-image.png">
+<meta name="twitter:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -36,25 +39,180 @@
 
 <style>
 :root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--text:#1f2937;--muted:#64748b;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 42px rgba(79,70,229,.09);--radius:24px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff,var(--bg));line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.1);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow-pill{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#475569;font-size:17px}.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.1);color:#4338ca;font-size:14px;font-weight:700}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.1)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:25px;line-height:1.18;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#475569}.hero-box ul{margin:10px 0 0;padding-left:18px}.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:clamp(24px,2.3vw,28px);color:var(--primary);letter-spacing:-.02em}.section-note{margin:0 0 18px;color:#475569}.notice{padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.24);margin-bottom:18px}.notice strong{display:block;color:var(--primary);margin-bottom:5px}.rate-status{display:grid;gap:8px;margin-top:12px;padding:13px 14px;border-radius:16px;background:#f8fafc;border:1px solid var(--line);font-size:14px}.rate-line{display:flex;justify-content:space-between;gap:12px}.rate-line span{color:var(--muted)}.rate-line b{text-align:right}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:.2s}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:46px}input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}.hint{margin-top:7px;font-size:14px;color:#556274;line-height:1.55}.error-text{min-height:18px;margin-top:6px;font-size:13px;font-weight:700;color:var(--bad)}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}.switch-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.switch{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;background:#fcfcfd;border:1px solid var(--line);font-weight:700}.switch input{width:18px;height:18px;accent-color:var(--primary)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:0;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.validation-box{margin-top:14px;padding:13px 15px;border-radius:15px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}.hide{display:none!important}.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.highlight-card,.summary-card{padding:20px;border-radius:22px;border:1px solid rgba(79,70,229,.1);background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;background:#fff;color:var(--primary);border:1px solid rgba(79,70,229,.12);white-space:nowrap}.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.highlight-card{background:linear-gradient(180deg,#f8faff,#eef2ff);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#475569}.mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:800}.mini-result .subline{font-size:13.5px;color:var(--muted);margin-top:5px}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.comment-box{padding:17px 19px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151}.details{margin-top:24px;display:grid;gap:14px}.details details{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}.details summary{cursor:pointer;font-weight:900;color:var(--primary)}.details-inner{margin-top:16px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}table{width:100%;border-collapse:collapse;font-size:14px}caption{text-align:left;padding:12px 14px;font-weight:800;color:var(--primary)}th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.04em}td{font-weight:700}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151}.related-section{margin-top:24px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82)}.related-card strong{display:block;font-size:19px;line-height:1.28;margin-bottom:8px}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:250px}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,.summary-card{padding:20px}.field-grid,.switch-row,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.highlight-value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:240px}}@media print{body{background:#fff}.topbar,.actions,.hero-chips,.hc-ad-slot,.related-section,.content-grid{display:none!important}.hero,.card,.status-card,.highlight-card,.summary-card,.details details{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff,var(--bg));line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.1);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow-pill{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#475569;font-size:17px}.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.1);color:#4338ca;font-size:14px;font-weight:700}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.1)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:25px;line-height:1.18;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#475569}.hero-box ul{margin:10px 0 0;padding-left:18px}.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:clamp(24px,2.3vw,28px);color:var(--primary);letter-spacing:-.02em}.section-note{margin:0 0 18px;color:#475569}.notice{padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.24);margin-bottom:18px}.notice strong{display:block;color:var(--primary);margin-bottom:5px}.rate-status{display:grid;gap:8px;margin-top:12px;padding:13px 14px;border-radius:16px;background:#f8fafc;border:1px solid var(--line);font-size:14px}.rate-line{display:flex;justify-content:space-between;gap:12px}.rate-line span{color:var(--muted)}.rate-line b{text-align:right}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:.2s}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:46px}input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}.hint{margin-top:7px;font-size:14px;color:#556274;line-height:1.55}.error-text{min-height:18px;margin-top:6px;font-size:13px;font-weight:700;color:var(--bad)}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}.switch-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.switch{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;background:#fcfcfd;border:1px solid var(--line);font-weight:700}.switch input{width:18px;height:18px;accent-color:var(--primary)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:0;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.validation-box{margin-top:14px;padding:13px 15px;border-radius:15px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}.hide{display:none!important}.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.highlight-card,.summary-card{padding:20px;border-radius:22px;border:1px solid rgba(79,70,229,.1);background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;background:#fff;color:var(--primary);border:1px solid rgba(79,70,229,.12);white-space:nowrap}.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.highlight-card{background:linear-gradient(180deg,#f8faff,#eef2ff);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#475569}.mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:800}.mini-result .subline{font-size:13.5px;color:var(--muted);margin-top:5px}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.comment-box{padding:17px 19px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151}.details{margin-top:24px;display:grid;gap:14px}.details details{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}.details summary{cursor:pointer;font-weight:900;color:var(--primary)}.details-inner{margin-top:16px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}table{width:100%;border-collapse:collapse;font-size:14px}caption{text-align:left;padding:12px 14px;font-weight:800;color:var(--primary)}th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.04em}td{font-weight:700}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151}.related-section{margin-top:24px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82)}.related-card strong{display:block;font-size:19px;line-height:1.28;margin-bottom:8px}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,.summary-card{padding:20px}.field-grid,.switch-row,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.highlight-value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:0}}@media print{body{background:#fff}.topbar,.actions,.hero-chips,.hc-ad-slot,.related-section,.content-grid{display:none!important}.hero,.card,.status-card,.highlight-card,.summary-card,.details details{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tapu Harcı Hesaplama","url":"https://hesapica.com/tapu-harci-hesaplama","inLanguage":"tr-TR","isPartOf":{"@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Tapu Harcı Hesaplama","url":"https://hesapica.com/tapu-harci-hesaplama","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Alıcı ve satıcı tapu harcını, döner sermaye ve işlem masraflarını hesaplayan ücretsiz araç.","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Emlak","item":"https://hesapica.com/#emlak"},{"@type":"ListItem","position":3,"name":"Tapu Harcı Hesaplama","item":"https://hesapica.com/tapu-harci-hesaplama"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Tapu harcı hangi bedel üzerinden hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Emlak vergisi değerinden az olmamak üzere beyan edilen gerçek satış veya devir bedeli üzerinden hesaplanır."}},{"@type":"Question","name":"Standart satışta oran nedir?","acceptedAnswer":{"@type":"Answer","text":"Standart satışlarda alıcı ve satıcı için ayrı ayrı %2 oranı kullanılır. Özel işlem ve istisnalar farklı olabilir."}},{"@type":"Question","name":"Kredi faizi bu hesapta var mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Kredi bölümü yalnızca yaklaşık peşin nakit ihtiyacını gösterir; faiz, vade ve aylık taksit için kredi hesaplama aracını kullanın."}}]}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Tapu Harcı Hesaplama","url":"https://hesapica.com/tapu-harci-hesaplama","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Emlak","item":"https://hesapica.com/#emlak"},{"@type":"ListItem","position":3,"name":"Tapu Harcı Hesaplama","item":"https://hesapica.com/tapu-harci-hesaplama"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Tapu harcı hangi bedel üzerinden hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Emlak vergisi değerinden az olmamak üzere beyan edilen gerçek satış veya devir bedeli üzerinden hesaplanır."}},{"@type":"Question","name":"Standart satışta oran nedir?","acceptedAnswer":{"@type":"Answer","text":"Standart satışlarda alıcı ve satıcı için ayrı ayrı %2 oranı kullanılır. Özel işlem ve istisnalar farklı olabilir."}},{"@type":"Question","name":"Kredi faizi bu hesapta var mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Kredi bölümü yalnızca yaklaşık peşin nakit ihtiyacını gösterir; faiz, vade ve aylık taksit için kredi hesaplama aracını kullanın."}}]}
+</script>
 <link href="ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;border-radius:14px">Bu hesaplama aracı için JavaScript etkin olmalıdır.</div></noscript>
 <div class="container topbar"><nav aria-label="breadcrumb" class="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#emlak">Emlak</a><span>/</span><strong>Tapu Harcı Hesaplama</strong></nav></div>
 <header class="container"><section class="hero"><div class="hero-grid"><div><span class="eyebrow-pill">Hesapica • Emlak işlem maliyeti</span><h1>Tapu Harcı Hesaplama</h1><p>Gerçek satış bedeli ile emlak vergisi değerini karşılaştırarak hesaplama matrahını belirle; alıcı ve satıcı harcını, döner sermaye ücretini, diğer işlem giderlerini ve kredi kullanılıyorsa alıcının yaklaşık nakit ihtiyacını tek ekranda gör.</p><div class="hero-chips"><span class="hero-chip">Alıcı ve satıcı ayrı</span><span class="hero-chip">Matrah güvenliği</span><span class="hero-chip">Yerleşik doğrulanmış oran</span><span class="hero-chip">Kredi nakit ihtiyacı</span></div></div><aside class="hero-box"><div class="eyebrow">Hesap kapsamı</div><strong>Doğrulanabilir harç ve masraf kırılımı</strong><ul><li>Gerçek bedel–emlak değeri karşılaştırması</li><li>Alıcı ve satıcı için ayrı harç</li><li>Döner sermaye ve diğer giderler</li><li>Oranlar form içinde değiştirilebilir</li></ul></aside></div></section></header>
-<div class="hc-ad-slot hc-ad-slot--top" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3615831363" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+
 <main class="container" style="padding:24px 0 56px">
 <section class="tool-layout">
 <form class="card" id="tapuForm" novalidate>
 <h2>Hesaplama Paneli</h2><p class="section-note">Standart satışlarda varsayılan alıcı ve satıcı harç oranları (%2) otomatik olarak gelir. Özel işlem, istisna veya farklı oran varsa alanları manuel değiştirebilirsin.</p>
-<div class="notice"><strong>Önemli matrah kuralı</strong>Tapu harcı, emlak vergisi değerinden düşük olmamak üzere beyan edilen gerçek satış bedeli üzerinden hesaplanır. Araç iki değerden yüksek olanı matrah kabul eder.
-<div class="rate-status" aria-live="polite"><div class="rate-line"><span>Varsayılan oran</span><b>Alıcı %2 · Satıcı %2</b></div><div class="rate-line"><span>Resmî dayanak</span><b>TKGM · 492 sayılı Kanun 4 sayılı tarife 20/a</b></div><div class="rate-line"><span>Son doğrulama</span><b>Ağustos 2026</b></div></div></div>
+<div class="notice"><strong>Önemli matrah kuralı</strong>Tapu harcı, emlak vergisi değerinden düşük olmamak üzere beyan edilen gerçek satış bedeli üzerinden hesaplanır. Araç iki değerden yüksek olanı matrah kabul eder. 2026 yılında nispi tapu harcının asgari tutarı taraf başına 346,10 TL'dir; oranı 0 olarak girilen özel senaryolarda asgari tutar uygulanmaz.
+<div class="rate-status" aria-live="polite"><div class="rate-line"><span>Varsayılan oran</span><b>Alıcı %2 · Satıcı %2</b></div><div class="rate-line"><span>Resmî dayanak</span><b>GİB · 492 sayılı Kanun (4) sayılı tarife I-20/a</b></div><div class="rate-line"><span>Son doğrulama</span><b>Ağustos 2026</b></div></div></div>
 <div class="form-section"><div class="form-title">İşlem ve matrah bilgileri</div><div class="field-grid">
 <div class="field"><label for="propertyType">Gayrimenkul tipi</label><select id="propertyType"><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="isyeri">İş yeri</option><option value="diger">Diğer</option></select><div class="hint">Standart satış hesabında oranı değiştirmez; açıklama ve paylaşım metninde kullanılır.</div></div>
 <div class="field" id="salePriceField"><label for="salePrice">Gerçek satış / devir bedeli (TL)</label><div class="input-wrap"><span class="prefix">₺</span><input id="salePrice" class="with-prefix" inputmode="decimal" autocomplete="off" aria-describedby="salePriceHint salePriceError" placeholder="Örn: 3.500.000"></div><div class="hint" id="salePriceHint">Tarafların gerçek işlem bedeli.</div><div class="error-text" id="salePriceError" role="alert"></div></div>
@@ -73,7 +231,8 @@
 <div id="validationBox" class="validation-box hide" role="alert"></div>
 <div class="actions"><button class="btn btn-primary" id="calculateBtn" type="submit">Tapu Masrafını Hesapla</button><button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button><button class="btn btn-ghost" id="resetBtn" type="button">Temizle</button><button class="btn btn-ghost" id="copyBtn" type="button" disabled>Sonucu Kopyala</button><button class="btn btn-ghost" id="shareBtn" type="button" disabled>Paylaş</button><button class="btn btn-ghost" id="printBtn" type="button" disabled>Yazdır / PDF</button></div>
 </form>
-<div class="hc-ad-slot hc-ad-slot--result" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="3982292851" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+
 <aside class="results" id="resultsPanel" aria-live="polite" aria-atomic="true">
 <div class="status-card"><div class="status-row"><div><div class="status-title">Hesap durumu</div><div class="status-text" id="statusText">Satış bedeli ve emlak vergisi değerini girerek hesaplamaya başlayın.</div></div><span class="badge" id="statusBadge">Veri bekleniyor</span></div></div>
 <div class="highlight-card"><div class="highlight-label">Toplam yasal tapu harcı</div><div class="highlight-value" id="mainResult">—</div><div class="highlight-sub" id="mainResultText">Alıcı ve satıcı harçlarının toplamı burada görünür.</div></div>
@@ -89,26 +248,26 @@
 'use strict';
 const PAGE_URL='https://hesapica.com/tapu-harci-hesaplama';
 const STORAGE_KEY='hesapica_tapu_harci_v3';
-const VERIFIED_RATES=Object.freeze({buyerRatePercent:2,sellerRatePercent:2,lastVerified:'2026-08-04',sourceName:'Tapu ve Kadastro Genel Müdürlüğü'});
+const VERIFIED_RATES=Object.freeze({buyerRatePercent:2,sellerRatePercent:2,lastVerified:'2026-08-10',sourceName:'Gelir İdaresi Başkanlığı'});const MIN_NISPI_HARC_2026=346.10;
 const state={results:null,isCalculated:false,suppressSave:false,rateData:VERIFIED_RATES};
 const $=id=>document.getElementById(id);
 const fieldIds=['salePrice','taxValue','buyerRate','sellerRate','revolvingFee','otherBuyerCost','otherSellerCost','creditAmount'];
-function parseFlexibleNumber(value){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'').replace(/₺|TL|%/gi,'');if(!s)return null;if(!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||s.includes('-')&&!s.startsWith('-'))return null;const sign=s.startsWith('-')?-1:1;s=s.replace('-','');const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;if(dots&&commas){const dec=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';const group=dec==='.'?',':'.';s=s.split(group).join('');const parts=s.split(dec);if(parts.length!==2||!parts[0]||!parts[1])return null;s=parts[0]+'.'+parts[1];}else if(dots||commas){const sep=dots?'.':',';const parts=s.split(sep);if(parts.some(p=>p===''))return null;if(parts.length===2){const right=parts[1];if(right.length<=2)s=parts[0]+'.'+right;else if(/^\d{1,3}$/.test(parts[0])&&right.length===3)s=parts[0]+right;else return null;}else if(parts.length>2){if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}const n=Number(s)*sign;return Number.isFinite(n)?n:null;}
+function parseFlexibleNumber(value){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'').replace(/₺|TL|%/gi,'');if(!s)return null;if(!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||s.includes('-')&&!s.startsWith('-'))return null;const sign=s.startsWith('-')?-1:1;s=s.replace('-','');const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;if(dots&&commas){const dec=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';const group=dec==='.'?',':'.';s=s.split(group).join('');const parts=s.split(dec);if(parts.length!==2||!parts[0]||!parts[1])return null;s=parts[0]+'.'+parts[1];}else if(dots||commas){const sep=dots?'.':',';const parts=s.split(sep);if(parts.some(p=>p===''))return null;if(parts.length===2){const right=parts[1];if(right.length<=2||Number(parts[0])===0)s=parts[0]+'.'+right;else if(/^\d{1,3}$/.test(parts[0])&&right.length===3)s=parts[0]+right;else return null;}else if(parts.length>2){if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}const n=Number(s)*sign;return Number.isFinite(n)?n:null;}function parseRateNumber(value){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'').replace(/%/g,'');if(!s||!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||s.includes('-')&&!s.startsWith('-'))return null;const sign=s.startsWith('-')?-1:1;s=s.replace('-','');const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;if(dots&&commas){const dec=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';const group=dec==='.'?',':'.';if((s.match(new RegExp('\\'+dec,'g'))||[]).length!==1)return null;s=s.split(group).join('').replace(dec,'.');}else if(dots+commas===1){s=s.replace(',','.');}else if(dots+commas>1)return null;const n=Number(s)*sign;return Number.isFinite(n)?n:null;}
 function formatTRY(v){return Number.isFinite(v)?new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',minimumFractionDigits:2,maximumFractionDigits:2}).format(v):'—'}
 function formatPercent(v){return Number.isFinite(v)?'%'+new Intl.NumberFormat('tr-TR',{maximumFractionDigits:2}).format(v):'—'}
 function formatInput(v,digits=2){return Number.isFinite(v)?new Intl.NumberFormat('tr-TR',{maximumFractionDigits:digits}).format(v):''}
 function setFieldError(id,message=''){const input=$(id),field=$(id+'Field'),err=$(id+'Error');if(input)input.setAttribute('aria-invalid',message?'true':'false');if(field)field.classList.toggle('invalid',!!message);if(err)err.textContent=message;}
 function clearErrors(){fieldIds.forEach(id=>setFieldError(id));$('validationBox').classList.add('hide');$('validationBox').textContent='';}
 function invalidate(){state.results=null;state.isCalculated=false;['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=true);}
-function getInputs(){return{propertyType:$('propertyType').value,salePrice:parseFlexibleNumber($('salePrice').value),taxValue:parseFlexibleNumber($('taxValue').value),buyerRate:parseFlexibleNumber($('buyerRate').value),sellerRate:parseFlexibleNumber($('sellerRate').value),revolvingFee:parseFlexibleNumber($('revolvingFee').value)??0,revolvingPayer:$('revolvingPayer').value,otherBuyerCost:parseFlexibleNumber($('otherBuyerCost').value)??0,otherSellerCost:parseFlexibleNumber($('otherSellerCost').value)??0,paymentMode:$('paymentMode').value,useCredit:$('useCredit').checked,includeCostsInCash:$('includeCostsInCash').checked,creditAmount:parseFlexibleNumber($('creditAmount').value)??0};}
+function getInputs(){return{propertyType:$('propertyType').value,salePrice:parseFlexibleNumber($('salePrice').value),taxValue:parseFlexibleNumber($('taxValue').value),buyerRate:parseRateNumber($('buyerRate').value),sellerRate:parseRateNumber($('sellerRate').value),revolvingFee:parseFlexibleNumber($('revolvingFee').value)??0,revolvingPayer:$('revolvingPayer').value,otherBuyerCost:parseFlexibleNumber($('otherBuyerCost').value)??0,otherSellerCost:parseFlexibleNumber($('otherSellerCost').value)??0,paymentMode:$('paymentMode').value,useCredit:$('useCredit').checked,includeCostsInCash:$('includeCostsInCash').checked,creditAmount:parseFlexibleNumber($('creditAmount').value)??0};}
 function validate(i,show=true){clearErrors();const errors={};if(!(i.salePrice>0&&i.salePrice<=1e12))errors.salePrice='Gerçek satış bedelini 0’dan büyük ve geçerli girin.';if(!(i.taxValue>0&&i.taxValue<=1e12))errors.taxValue='Emlak vergisi değerini 0’dan büyük ve geçerli girin.';if(!(i.buyerRate>=0&&i.buyerRate<=20))errors.buyerRate='Alıcı oranını 0–20 aralığında girin.';if(!(i.sellerRate>=0&&i.sellerRate<=20))errors.sellerRate='Satıcı oranını 0–20 aralığında girin.';for(const id of ['revolvingFee','otherBuyerCost','otherSellerCost'])if(!(i[id]>=0&&i[id]<=1e9))errors[id]='0 veya daha büyük geçerli bir gider girin.';if(i.useCredit&&!(i.creditAmount>0&&i.creditAmount<=i.salePrice))errors.creditAmount='Kredi tutarı 0’dan büyük ve satış bedelini aşmayacak şekilde girilmelidir.';if(show){Object.entries(errors).forEach(([id,msg])=>setFieldError(id,msg));if(Object.keys(errors).length){$('validationBox').textContent='Lütfen işaretlenen alanları düzeltin.';$('validationBox').classList.remove('hide');}}return Object.keys(errors).length===0;}
-function compute(i){const base=Math.max(i.salePrice,i.taxValue);const buyerTax=base*i.buyerRate/100;const sellerTax=base*i.sellerRate/100;const legalTotal=buyerTax+sellerTax;let buyerRevolving=0,sellerRevolving=0;if(i.revolvingPayer==='buyer')buyerRevolving=i.revolvingFee;else if(i.revolvingPayer==='seller')sellerRevolving=i.revolvingFee;else{buyerRevolving=i.revolvingFee/2;sellerRevolving=i.revolvingFee/2;}let buyerPaidTax=buyerTax,sellerPaidTax=sellerTax;if(i.paymentMode==='buyerAll'){buyerPaidTax=legalTotal;sellerPaidTax=0;}else if(i.paymentMode==='sellerAll'){buyerPaidTax=0;sellerPaidTax=legalTotal;}const buyerTotal=buyerPaidTax+buyerRevolving+i.otherBuyerCost;const sellerTotal=sellerPaidTax+sellerRevolving+i.otherSellerCost;const grandTotal=legalTotal+i.revolvingFee+i.otherBuyerCost+i.otherSellerCost;const cashNeed=i.useCredit?Math.max(0,i.salePrice-i.creditAmount)+(i.includeCostsInCash?buyerTotal:0):null;const burdenRate=grandTotal/i.salePrice*100;const declaredBelowTax=i.salePrice<i.taxValue;const result={base,buyerTax,sellerTax,legalTotal,buyerTotal,sellerTotal,grandTotal,cashNeed,burdenRate,declaredBelowTax,buyerRevolving,sellerRevolving};if(!Object.values(result).every(v=>v===null||typeof v==='boolean'||Number.isFinite(v)))throw new Error('Geçersiz hesap sonucu');return result;}
-function render(i,r){$('mainResult').textContent=formatTRY(r.legalTotal);$('mainResultText').textContent=`${formatTRY(r.base)} matrah üzerinden alıcı ${formatPercent(i.buyerRate)}, satıcı ${formatPercent(i.sellerRate)}.`;$('baseValue').textContent=formatTRY(r.base);$('buyerTax').textContent=formatTRY(r.buyerTax);$('sellerTax').textContent=formatTRY(r.sellerTax);$('grandTotal').textContent=formatTRY(r.grandTotal);$('buyerTotal').textContent=formatTRY(r.buyerTotal);$('sellerTotal').textContent=formatTRY(r.sellerTotal);$('cashNeed').textContent=i.useCredit?formatTRY(r.cashNeed):'Kredi modu kapalı';$('statusBadge').textContent=r.declaredBelowTax?'Matrah yükseltildi':'Hesaplandı';$('statusBadge').className='badge '+(r.declaredBelowTax?'warn':'good');$('statusText').textContent=r.declaredBelowTax?'Gerçek satış bedeli emlak vergisi değerinden düşük olduğu için matrah emlak vergisi değeri olarak alındı.':'Matrah ve harçlar geçerli girdilerle hesaplandı.';$('commentBox').textContent=`Toplam işlem gideri satış bedelinin ${formatPercent(r.burdenRate)} oranındadır. Bu sonuç standart satış varsayımıyla bütçe planlaması içindir; özel işlem ve istisnaları tapu müdürlüğü veya mali müşavirle doğrulayın.`;$('breakdownBody').innerHTML=`<tr><td>Yasal tapu harcı</td><td>${formatTRY(r.buyerTax)}</td><td>${formatTRY(r.sellerTax)}</td><td>${formatTRY(r.legalTotal)}</td></tr><tr><td>Döner sermaye / hizmet</td><td>${formatTRY(r.buyerRevolving)}</td><td>${formatTRY(r.sellerRevolving)}</td><td>${formatTRY(i.revolvingFee)}</td></tr><tr><td>Diğer giderler</td><td>${formatTRY(i.otherBuyerCost)}</td><td>${formatTRY(i.otherSellerCost)}</td><td>${formatTRY(i.otherBuyerCost+i.otherSellerCost)}</td></tr><tr><td><strong>Fiilî toplam yük</strong></td><td><strong>${formatTRY(r.buyerTotal)}</strong></td><td><strong>${formatTRY(r.sellerTotal)}</strong></td><td><strong>${formatTRY(r.grandTotal)}</strong></td></tr>`;const modes=[['Yasal paylaşım','legal'],['Tüm harcı alıcı üstlenir','buyerAll'],['Tüm harcı satıcı üstlenir','sellerAll']];$('scenarioBody').innerHTML=modes.map(([name,mode])=>{const rr=compute({...i,paymentMode:mode});return `<tr><td>${name}</td><td>${formatTRY(rr.buyerTotal)}</td><td>${formatTRY(rr.sellerTotal)}</td><td>${formatTRY(rr.grandTotal)}</td></tr>`}).join('');['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=false);}
+function compute(i){const base=Math.max(i.salePrice,i.taxValue);const rawBuyerTax=base*i.buyerRate/100;const rawSellerTax=base*i.sellerRate/100;const buyerTax=i.buyerRate>0?Math.max(rawBuyerTax,MIN_NISPI_HARC_2026):0;const sellerTax=i.sellerRate>0?Math.max(rawSellerTax,MIN_NISPI_HARC_2026):0;const minimumApplied=buyerTax>rawBuyerTax||sellerTax>rawSellerTax;const legalTotal=buyerTax+sellerTax;let buyerRevolving=0,sellerRevolving=0;if(i.revolvingPayer==='buyer')buyerRevolving=i.revolvingFee;else if(i.revolvingPayer==='seller')sellerRevolving=i.revolvingFee;else{buyerRevolving=i.revolvingFee/2;sellerRevolving=i.revolvingFee/2;}let buyerPaidTax=buyerTax,sellerPaidTax=sellerTax;if(i.paymentMode==='buyerAll'){buyerPaidTax=legalTotal;sellerPaidTax=0;}else if(i.paymentMode==='sellerAll'){buyerPaidTax=0;sellerPaidTax=legalTotal;}const buyerTotal=buyerPaidTax+buyerRevolving+i.otherBuyerCost;const sellerTotal=sellerPaidTax+sellerRevolving+i.otherSellerCost;const grandTotal=legalTotal+i.revolvingFee+i.otherBuyerCost+i.otherSellerCost;const cashNeed=i.useCredit?Math.max(0,i.salePrice-i.creditAmount)+(i.includeCostsInCash?buyerTotal:0):null;const burdenRate=grandTotal/i.salePrice*100;const declaredBelowTax=i.salePrice<i.taxValue;const result={base,rawBuyerTax,rawSellerTax,buyerTax,sellerTax,minimumApplied,legalTotal,buyerTotal,sellerTotal,grandTotal,cashNeed,burdenRate,declaredBelowTax,buyerRevolving,sellerRevolving};if(!Object.values(result).every(v=>v===null||typeof v==='boolean'||Number.isFinite(v)))throw new Error('Geçersiz hesap sonucu');return result;}
+function render(i,r){$('mainResult').textContent=formatTRY(r.legalTotal);$('mainResultText').textContent=`${formatTRY(r.base)} matrah üzerinden alıcı ${formatPercent(i.buyerRate)}, satıcı ${formatPercent(i.sellerRate)}.${r.minimumApplied?' 2026 asgari nispi harç tutarı uygulandı.':''}`;$('baseValue').textContent=formatTRY(r.base);$('buyerTax').textContent=formatTRY(r.buyerTax);$('sellerTax').textContent=formatTRY(r.sellerTax);$('grandTotal').textContent=formatTRY(r.grandTotal);$('buyerTotal').textContent=formatTRY(r.buyerTotal);$('sellerTotal').textContent=formatTRY(r.sellerTotal);$('cashNeed').textContent=i.useCredit?formatTRY(r.cashNeed):'Kredi modu kapalı';$('statusBadge').textContent=r.declaredBelowTax?'Matrah yükseltildi':'Hesaplandı';$('statusBadge').className='badge '+(r.declaredBelowTax?'warn':'good');$('statusText').textContent=r.declaredBelowTax?'Gerçek satış bedeli emlak vergisi değerinden düşük olduğu için matrah emlak vergisi değeri olarak alındı.':(r.minimumApplied?'Hesaplanan nispi harç 2026 asgari tutarının altında kaldığı için asgari harç uygulandı.':'Matrah ve harçlar geçerli girdilerle hesaplandı.');$('commentBox').textContent=`Toplam işlem gideri satış bedelinin ${formatPercent(r.burdenRate)} oranındadır. Bu sonuç standart satış varsayımıyla bütçe planlaması içindir; özel işlem ve istisnaları tapu müdürlüğü veya mali müşavirle doğrulayın.`;$('breakdownBody').innerHTML=`<tr><td>Yasal tapu harcı</td><td>${formatTRY(r.buyerTax)}</td><td>${formatTRY(r.sellerTax)}</td><td>${formatTRY(r.legalTotal)}</td></tr><tr><td>Döner sermaye / hizmet</td><td>${formatTRY(r.buyerRevolving)}</td><td>${formatTRY(r.sellerRevolving)}</td><td>${formatTRY(i.revolvingFee)}</td></tr><tr><td>Diğer giderler</td><td>${formatTRY(i.otherBuyerCost)}</td><td>${formatTRY(i.otherSellerCost)}</td><td>${formatTRY(i.otherBuyerCost+i.otherSellerCost)}</td></tr><tr><td><strong>Fiilî toplam yük</strong></td><td><strong>${formatTRY(r.buyerTotal)}</strong></td><td><strong>${formatTRY(r.sellerTotal)}</strong></td><td><strong>${formatTRY(r.grandTotal)}</strong></td></tr>`;const modes=[['Yasal paylaşım','legal'],['Tüm harcı alıcı üstlenir','buyerAll'],['Tüm harcı satıcı üstlenir','sellerAll']];$('scenarioBody').innerHTML=modes.map(([name,mode])=>{const rr=compute({...i,paymentMode:mode});return `<tr><td>${name}</td><td>${formatTRY(rr.buyerTotal)}</td><td>${formatTRY(rr.sellerTotal)}</td><td>${formatTRY(rr.grandTotal)}</td></tr>`}).join('');['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=false);}
 function saveState(){if(state.suppressSave)return;try{const data={...getInputs(),version:3};localStorage.setItem(STORAGE_KEY,JSON.stringify(data));}catch{}}
 function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;const d=JSON.parse(raw);if(!d||d.version!==3||typeof d!=='object')throw new Error('invalid');applyData(d);return true;}catch{try{localStorage.removeItem(STORAGE_KEY)}catch{}return false;}}
 function applyData(d){const ids=['salePrice','taxValue','buyerRate','sellerRate','revolvingFee','otherBuyerCost','otherSellerCost','creditAmount'];ids.forEach(id=>{if(d[id]!==undefined&&d[id]!==null)$(id).value=formatInput(Number(d[id]),2)});['propertyType','revolvingPayer','paymentMode'].forEach(id=>{if(typeof d[id]==='string'&&[...$(id).options].some(o=>o.value===d[id]))$(id).value=d[id]});$('useCredit').checked=!!d.useCredit;$('includeCostsInCash').checked=d.includeCostsInCash!==false;toggleCredit();}
 function buildShareUrl(){const i=getInputs(),u=new URL(PAGE_URL);const map={sp:i.salePrice,tv:i.taxValue,br:i.buyerRate,sr:i.sellerRate,rf:i.revolvingFee,rp:i.revolvingPayer,ob:i.otherBuyerCost,os:i.otherSellerCost,pm:i.paymentMode,uc:i.useCredit?1:0,ic:i.includeCostsInCash?1:0,ca:i.creditAmount,pt:i.propertyType};Object.entries(map).forEach(([k,v])=>u.searchParams.set(k,String(v)));return u.toString();}
-function loadQuery(){const q=new URLSearchParams(location.search);if(!q.has('sp'))return false;const d={salePrice:parseFlexibleNumber(q.get('sp')),taxValue:parseFlexibleNumber(q.get('tv')),buyerRate:parseFlexibleNumber(q.get('br')),sellerRate:parseFlexibleNumber(q.get('sr')),revolvingFee:parseFlexibleNumber(q.get('rf'))??0,revolvingPayer:q.get('rp'),otherBuyerCost:parseFlexibleNumber(q.get('ob'))??0,otherSellerCost:parseFlexibleNumber(q.get('os'))??0,paymentMode:q.get('pm'),useCredit:q.get('uc')==='1',includeCostsInCash:q.get('ic')!=='0',creditAmount:parseFlexibleNumber(q.get('ca'))??0,propertyType:q.get('pt')};state.suppressSave=true;applyData(d);state.suppressSave=false;return true;}
+function loadQuery(){const q=new URLSearchParams(location.search);if(!q.has('sp'))return false;const d={salePrice:parseFlexibleNumber(q.get('sp')),taxValue:parseFlexibleNumber(q.get('tv')),buyerRate:parseRateNumber(q.get('br')),sellerRate:parseRateNumber(q.get('sr')),revolvingFee:parseFlexibleNumber(q.get('rf'))??0,revolvingPayer:q.get('rp'),otherBuyerCost:parseFlexibleNumber(q.get('ob'))??0,otherSellerCost:parseFlexibleNumber(q.get('os'))??0,paymentMode:q.get('pm'),useCredit:q.get('uc')==='1',includeCostsInCash:q.get('ic')!=='0',creditAmount:parseFlexibleNumber(q.get('ca'))??0,propertyType:q.get('pt')};state.suppressSave=true;applyData(d);state.suppressSave=false;return true;}
 async function writeClipboard(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return;}catch(_clipboardError){}}const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();if(!ok)throw new Error('copy failed');}
 function resultText(){const i=getInputs(),r=state.results;return `Tapu Harcı Hesabı\nMatrah: ${formatTRY(r.base)}\nAlıcı yasal harcı: ${formatTRY(r.buyerTax)}\nSatıcı yasal harcı: ${formatTRY(r.sellerTax)}\nToplam yasal harç: ${formatTRY(r.legalTotal)}\nToplam işlem gideri: ${formatTRY(r.grandTotal)}\nAlıcı fiilî yükü: ${formatTRY(r.buyerTotal)}\nSatıcı fiilî yükü: ${formatTRY(r.sellerTotal)}${i.useCredit?`\nYaklaşık nakit ihtiyacı: ${formatTRY(r.cashNeed)}`:''}\nHesapica`}
 async function copyResult(){if(!state.results)return;try{await writeClipboard(resultText());$('statusText').textContent='Sonuç panoya kopyalandı.'}catch{$('statusText').textContent='Kopyalama başarısız oldu.'}}
@@ -148,7 +307,7 @@ $('tapuForm').addEventListener('submit',e=>{
     invalidate();
   }
 });
-fieldIds.forEach(id=>{$(id).addEventListener('input',()=>{invalidate();saveState()});$(id).addEventListener('blur',()=>{const n=parseFlexibleNumber($(id).value);if(n!==null)$(id).value=formatInput(n,id.includes('Rate')?2:2)})});['propertyType','revolvingPayer','paymentMode','includeCostsInCash'].forEach(id=>$(id).addEventListener('change',()=>{invalidate();saveState()}));$('useCredit').addEventListener('change',()=>{toggleCredit();invalidate();saveState()});$('exampleBtn').addEventListener('click',()=>{
+fieldIds.forEach(id=>{$(id).addEventListener('input',()=>{invalidate();saveState()});$(id).addEventListener('blur',()=>{const isRate=id.includes('Rate');const n=isRate?parseRateNumber($(id).value):parseFlexibleNumber($(id).value);if(n!==null)$(id).value=formatInput(n,isRate?6:2)})});['propertyType','revolvingPayer','paymentMode','includeCostsInCash'].forEach(id=>$(id).addEventListener('change',()=>{invalidate();saveState()}));$('useCredit').addEventListener('change',()=>{toggleCredit();invalidate();saveState()});$('exampleBtn').addEventListener('click',()=>{
   applyData({
     salePrice:3500000,
     taxValue:1800000,
@@ -185,4 +344,55 @@ fieldIds.forEach(id=>{$(id).addEventListener('input',()=>{invalidate();saveState
 (()=>{if(!$('buyerRate').value)$('buyerRate').value=formatInput(state.rateData.buyerRatePercent);if(!$('sellerRate').value)$('sellerRate').value=formatInput(state.rateData.sellerRatePercent);const fromQuery=loadQuery();if(!fromQuery)loadState();const i=getInputs();if(fromQuery&&validate(i,false)){state.results=compute(i);state.isCalculated=true;render(i,state.results)}})();
 </script>
 <script src="ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_resetBtn = document.getElementById('resetBtn');
+  if(button_resetBtn) button_resetBtn.addEventListener('click', () => clearToolQuery(['sp','tv','br','sr','rf','rp','ob','os','pm','uc','ic','ca','pt']));
+})();
+</script>
 </body></html>
