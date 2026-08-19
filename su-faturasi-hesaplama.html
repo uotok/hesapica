@@ -249,7 +249,13 @@
 
 
 <section class="card" style="margin-top:24px"><h2>Senaryo Analizi</h2><p class="section-note">Her senaryo seçilen tarife motoruyla baştan hesaplanır; kademeli tarifede kademe geçişleri hesaba katılır.</p><div class="scenario-grid"><div class="scenario-card"><div class="eyebrow">%20 tasarruf</div><div class="big" id="scenarioLowBill">—</div><div class="small" id="scenarioLowText">—</div></div><div class="scenario-card"><div class="eyebrow">Mevcut kullanım</div><div class="big" id="scenarioBaseBill">—</div><div class="small" id="scenarioBaseText">—</div></div><div class="scenario-card"><div class="eyebrow">%20 artış</div><div class="big" id="scenarioHighBill">—</div><div class="small" id="scenarioHighText">—</div></div></div></section>
-<section class="content-grid"><article class="card"><h2>Su faturası nasıl hesaplanır?</h2><p>Basit tarifede tüketim, su ve atık su birim fiyatlarıyla çarpılır. Kademeli tarifede tüketimin her bölümü kendi kademesindeki fiyatla hesaplanır. KDV’ye tabi ek giderler matraha eklenir; KDV dışı giderler son aşamada toplama katılır.</p><p>Okuma günü, kişi sayısı ve tarife sınırları toplam faturanın yanında günlük ve kişi başı tüketimi anlamaya yardımcı olur. Belediyelerin abone türü, indirim, ortak sayaç ve ek bedel kuralları farklı olabileceğinden sonuç tahminidir.</p></article><section class="card accordion-card"><h2>Sık Sorulan Sorular</h2><details open><summary>Su faturası nasıl hesaplanır?</summary><p>Tüketim su ve atık su fiyatlarıyla çarpılır. Kademeli tarifede her aralık kendi fiyatıyla hesaplanır; KDV ve ek giderler ayrıca eklenir.</p></details><details><summary>Kademeli su tarifesi nedir?</summary><p>Tüketim arttıkça farklı birim fiyatların uygulandığı yapıdır. Örneğin ilk 15 m³ birinci, sonraki 15 m³ ikinci, kalan tüketim üçüncü kademe fiyatıyla hesaplanabilir.</p></details><details><summary>Fiyatlar KDV dahilse ne yapmalıyım?</summary><p>Girdiğiniz su ve atık su fiyatları KDV dahilse KDV oranını 0 girin. Aksi halde vergi iki kez eklenmiş olur.</p></details><details><summary>Sonuç gerçek faturayla aynı çıkar mı?</summary><p>Tarife, abone türü, okuma dönemi, indirimler ve ek kalemler değişebildiği için sonuç tahminidir.</p></details></section></section>
+
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<section class="content-grid"><article class="card"><h2>Su faturası nasıl hesaplanır?</h2><p>Basit tarifede tüketim, su ve atık su birim fiyatlarıyla çarpılır. Kademeli tarifede tüketimin her bölümü kendi kademesindeki fiyatla hesaplanır. KDV’ye tabi ek giderler matraha eklenir; KDV dışı giderler son aşamada toplama katılır.</p><p>Okuma günü, kişi sayısı ve tarife sınırları toplam faturanın yanında günlük ve kişi başı tüketimi anlamaya yardımcı olur. Belediyelerin abone türü, indirim, ortak sayaç ve ek bedel kuralları farklı olabileceğinden sonuç tahminidir.</p></article>
+
+
+<section class="card accordion-card"><h2>Sık Sorulan Sorular</h2><details open><summary>Su faturası nasıl hesaplanır?</summary><p>Tüketim su ve atık su fiyatlarıyla çarpılır. Kademeli tarifede her aralık kendi fiyatıyla hesaplanır; KDV ve ek giderler ayrıca eklenir.</p></details><details><summary>Kademeli su tarifesi nedir?</summary><p>Tüketim arttıkça farklı birim fiyatların uygulandığı yapıdır. Örneğin ilk 15 m³ birinci, sonraki 15 m³ ikinci, kalan tüketim üçüncü kademe fiyatıyla hesaplanabilir.</p></details><details><summary>Fiyatlar KDV dahilse ne yapmalıyım?</summary><p>Girdiğiniz su ve atık su fiyatları KDV dahilse KDV oranını 0 girin. Aksi halde vergi iki kez eklenmiş olur.</p></details><details><summary>Sonuç gerçek faturayla aynı çıkar mı?</summary><p>Tarife, abone türü, okuma dönemi, indirimler ve ek kalemler değişebildiği için sonuç tahminidir.</p></details></section></section>
 <section class="card related-tools"><h2>İlgili Araçlar</h2><div class="related-grid"><a class="related-card" href="/elektrik-faturasi-hesaplama"><strong>Elektrik Faturası Hesaplama</strong><p>kWh tüketiminin aylık maliyetini hesapla.</p></a><a class="related-card" href="/dogalgaz-faturasi-hesaplama"><strong>Doğalgaz Faturası Hesaplama</strong><p>Tüketim ve birim fiyatla tahmini faturayı gör.</p></a><a class="related-card" href="/butce-hesaplama"><strong>Bütçe Hesaplama</strong><p>Faturaların aylık bütçeye etkisini incele.</p></a></div></section>
 </main>
 <script>
@@ -308,8 +314,9 @@ $('waterBillForm').addEventListener('submit',e=>{
 empty();const fromUrl=hydrateUrl();if(!fromUrl)safeLoad();if(fieldIds.some(id=>els[id].value.trim())){state.suppressSave=fromUrl;calculate(false);state.suppressSave=false;}
 })();
 </script>
-<script src="ads-slot-manager.js"></script>
 
+
+<script src="ads-slot-manager.js"></script>
 
 <script id="hc-reset-scroll-standard">
 (() => {

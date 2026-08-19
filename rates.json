@@ -1,61 +1,58 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-08-19T14:09:18Z",
-  "updated_at_utc": "2026-08-19T14:09:18Z",
-  "generated_at_utc": "2026-08-19T14:09:18Z",
+  "updated_at": "2026-08-08T12:03:48Z",
+  "updated_at_utc": "2026-08-08T12:03:48Z",
+  "generated_at_utc": "2026-08-08T12:03:48Z",
   "source_priority": [
-    "TCMB",
     "Truncgil"
   ],
   "source_updates": {
-    "tcmb": "19.08.2026",
-    "truncgil": "2026-08-19 17:09:01"
+    "tcmb": null,
+    "truncgil": "2026-08-08 10:45:02"
   },
   "notes": {
-    "tr": "Bu dosya update_rates.py çalıştırıldığında kaynaklardan yeniden üretilir. Otomatik çalışma sıklığı sunucu/GitHub Actions zamanlayıcısına bağlıdır. Kurlar bilgilendirme amaçlıdır; kurumların işlem kurları ve makasları farklı olabilir.",
-    "en": "This file is rebuilt from its sources whenever update_rates.py runs. Automatic refresh frequency depends on the server/GitHub Actions scheduler. Rates are informational; institution transaction rates and spreads may differ."
+    "tr": "Bu başlangıç dosyası erişilebilen güncel yedek kaynaktan oluşturuldu. GitHub Actions iş günlerinde TCMB verisi yayımlandıktan sonra dosyayı yeniden üretir. Kurlar bilgilendirme amaçlıdır; kurumların işlem kurları ve makasları farklı olabilir.",
+    "en": "This bootstrap file was created from the available current fallback source. GitHub Actions rebuilds it on business days after TCMB data is published. Rates are informational; institution transaction rates and spreads may differ."
   },
   "rates_try": {
     "TRY": 1.0,
-    "USD": 47.9329,
-    "EUR": 55.6061,
-    "GBP": 65.083,
-    "CHF": 59.2703,
-    "JPY": 0.301898,
-    "SAR": 12.7666,
-    "AED": 13.1245,
-    "CAD": 34.5934,
-    "AUD": 33.9937,
-    "CNY": 7.1536,
-    "RUB": 0.5659,
-    "KWD": 156.9301,
-    "NOK": 5.1117,
-    "SEK": 5.0585,
-    "DKK": 7.4497,
-    "QAR": 13.223,
-    "AZN": 28.3536,
-    "XAU": 6890.78,
-    "XAG": 100.53
+    "USD": 47.7436,
+    "EUR": 55.251,
+    "GBP": 64.4811,
+    "CHF": 59.1179,
+    "SAR": 12.7093,
+    "AED": 12.9992,
+    "CAD": 34.2339,
+    "AUD": 33.75,
+    "CNY": 7.0812,
+    "RUB": 0.5825,
+    "KWD": 154.7974,
+    "NOK": 5.0328,
+    "SEK": 5.0442,
+    "DKK": 7.3848,
+    "QAR": 13.1095,
+    "AZN": 28.0845,
+    "XAU": 6660.55,
+    "XAG": 97.57
   },
   "rate_sources": {
     "TRY": "system",
-    "USD": "TCMB",
-    "EUR": "TCMB",
-    "GBP": "TCMB",
-    "CHF": "TCMB",
-    "JPY": "TCMB",
-    "SAR": "TCMB",
-    "AED": "TCMB",
-    "CAD": "TCMB",
-    "AUD": "TCMB",
-    "CNY": "TCMB",
-    "RUB": "TCMB",
-    "KWD": "TCMB",
-    "NOK": "TCMB",
-    "SEK": "TCMB",
-    "DKK": "TCMB",
-    "QAR": "TCMB",
-    "AZN": "TCMB",
+    "USD": "Truncgil",
+    "EUR": "Truncgil",
+    "GBP": "Truncgil",
+    "CHF": "Truncgil",
+    "SAR": "Truncgil",
+    "AED": "Truncgil",
+    "CAD": "Truncgil",
+    "AUD": "Truncgil",
+    "CNY": "Truncgil",
+    "RUB": "Truncgil",
+    "KWD": "Truncgil",
+    "NOK": "Truncgil",
+    "SEK": "Truncgil",
+    "DKK": "Truncgil",
+    "QAR": "Truncgil",
+    "AZN": "Truncgil",
     "XAU": "Truncgil",
     "XAG": "Truncgil"
   },
@@ -83,11 +80,6 @@
     "CHF": {
       "name_tr": "İsviçre Frangı",
       "name_en": "Swiss Franc",
-      "type": "currency"
-    },
-    "JPY": {
-      "name_tr": "Japon Yeni",
-      "name_en": "Japanese Yen",
       "type": "currency"
     },
     "SAR": {
@@ -162,6 +154,6 @@
     }
   },
   "source_warnings": [
-    "Truncgil JPY ignored because its unit ratio was implausible"
+    "JPY was omitted from the bootstrap file because the live fallback value failed the unit sanity check. Scheduled updates use TCMB for JPY and other currencies."
   ]
 }

@@ -1,0 +1,37 @@
+/* Hesapica shared language-link treatment for Turkish calculator counterparts. */
+.breadcrumb a.hc-language-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:38px;
+  padding:8px 13px;
+  margin-left:3px;
+  border:1px solid rgba(99,102,241,.28);
+  border-radius:999px;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  box-shadow:0 7px 18px rgba(79,70,229,.20);
+  color:#fff !important;
+  font-size:13px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.01em;
+  white-space:nowrap;
+  text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+.breadcrumb a.hc-language-link:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(79,70,229,.26);
+  filter:brightness(1.04);
+}
+.breadcrumb a.hc-language-link:focus-visible{
+  outline:3px solid rgba(99,102,241,.30);
+  outline-offset:3px;
+}
+@media(max-width:640px){
+  .breadcrumb a.hc-language-link{min-height:40px;padding:9px 12px;margin-left:0}
+}
+@media print{
+  .breadcrumb a.hc-language-link{display:none !important}
+}

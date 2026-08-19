@@ -10,6 +10,8 @@
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <link href="https://hesapica.com/" rel="canonical"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta content="website" property="og:type"/>
@@ -212,6 +214,124 @@
     }
 
     .hero-cta:hover, .hero-secondary:hover{transform:translateY(-1px)}
+
+    .hero-feature-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(270px,320px);
+      align-items:center;
+      gap:36px;
+    }
+
+    .hero-copy{min-width:0}
+
+    .global-english-card{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      min-width:0;
+      padding:24px;
+      border-radius:24px;
+      background:linear-gradient(160deg,#ffffff 0%,#f7f9ff 100%);
+      border:1px solid rgba(255,255,255,.72);
+      color:#1f2a66;
+      box-shadow:0 20px 42px rgba(15,23,42,.20);
+      overflow:hidden;
+      isolation:isolate;
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .global-english-card::before{
+      content:"";
+      position:absolute;
+      width:150px;
+      height:150px;
+      right:-58px;
+      top:-66px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(79,70,229,.18) 0%,rgba(79,70,229,0) 72%);
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .global-english-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 26px 52px rgba(15,23,42,.24);
+      border-color:rgba(199,210,254,.95);
+    }
+
+    .global-english-card:focus-visible{
+      outline:3px solid rgba(255,255,255,.88);
+      outline-offset:4px;
+    }
+
+    .global-english-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:#eef2ff;
+      border:1px solid #dbe4ff;
+      color:#4338ca;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.055em;
+      text-transform:uppercase;
+    }
+
+    .global-english-title{
+      margin-top:16px;
+      font-size:26px;
+      line-height:1.08;
+      letter-spacing:-.025em;
+      font-weight:900;
+      color:#1f2a66;
+    }
+
+    .global-english-desc{
+      margin-top:10px;
+      color:#667085;
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .global-english-action{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      margin-top:20px;
+      color:#4338ca;
+      font-size:14px;
+      font-weight:900;
+    }
+
+    .global-english-action-arrow{
+      display:grid;
+      place-items:center;
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      background:#4338ca;
+      color:#fff;
+      font-size:16px;
+      line-height:1;
+      transition:transform .2s ease;
+    }
+
+    .global-english-card:hover .global-english-action-arrow{transform:translateX(2px)}
+
+    @media (max-width:900px){
+      .hero-feature-grid{grid-template-columns:1fr;gap:24px}
+      .global-english-card{width:100%;max-width:none}
+    }
+
+    @media (max-width:640px){
+      .global-english-card{padding:19px 18px;border-radius:20px}
+      .global-english-title{font-size:22px}
+      .global-english-desc{font-size:14px}
+      .global-english-action{margin-top:16px}
+    }
 
     .hero-nav{
       display:flex;
@@ -1634,10 +1754,16 @@
 </style>
 
 <link href="ads-slot-manager.css" rel="stylesheet"/>
+
+<style id="hc-print-ad-hide">
+@media print { .hc-ad-slot { display: none !important; } }
+</style>
 </head>
 <body>
 <header class="hero">
 <div class="hero-inner">
+<div class="hero-feature-grid">
+<div class="hero-copy">
 <div class="brand">
 <div class="brand-icon">🧮</div>
 <span>Hesapica</span>
@@ -1652,6 +1778,14 @@
 <span class="hero-premium-pill">Seçilmiş canlı araçlar</span>
 <span class="hero-premium-pill">Karar destekli sonuçlar</span>
 <span class="hero-premium-pill">Mobil odaklı yapı</span>
+</div>
+</div>
+<a class="global-english-card" href="/en/" hreflang="en" lang="en" aria-label="Open Hesapica Global English Tools">
+<span class="global-english-kicker">🌍 Global English</span>
+<strong class="global-english-title">Global English Tools</strong>
+<span class="global-english-desc">Explore our calculators in English.</span>
+<span class="global-english-action">Explore English Tools <span class="global-english-action-arrow" aria-hidden="true">→</span></span>
+</a>
 </div>
 <div class="hero-nav">
 <div class="quick-links">

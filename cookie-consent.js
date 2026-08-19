@@ -18,17 +18,6 @@
     }
   }
 
-  function isPolicyPage(){
-    try {
-      const rawPath = String(window.location && window.location.pathname || '/').toLowerCase();
-      const path = rawPath.length > 1 ? rawPath.replace(/\/+$/, '') : rawPath;
-      return path === '/gizlilik-politikasi' || path === '/gizlilik-politikasi.html' ||
-             path === '/cerez-politikasi' || path === '/cerez-politikasi.html';
-    } catch(err){
-      return false;
-    }
-  }
-
   const defaultPrefs = Object.freeze({
     version: STORAGE_VERSION,
     necessary: true,
@@ -159,7 +148,7 @@
   }
 
   function loadAnalytics(){
-    if(!currentPrefs.analytics || !isLiveHost() || isPolicyPage()) return;
+    if(!currentPrefs.analytics || !isLiveHost()) return;
 
     window['ga-disable-' + GA_MEASUREMENT_ID] = false;
     ensureGtagQueue();
@@ -196,7 +185,7 @@
   }
 
   function loadAdsenseFramework(){
-    if(!isLiveHost() || isPolicyPage()) return;
+    if(!isLiveHost()) return;
 
     syncAdsenseRequestPause();
 
@@ -319,133 +308,82 @@
     return { ...publicPrefs() };
   }
 
+  function uiLang(){
+    try { return String(document.documentElement.lang || '').toLowerCase().startsWith('en') ? 'en' : 'tr'; }
+    catch(err){ return 'tr'; }
+  }
+
+  function uiCopy(){
+    if(uiLang() === 'en') return {
+      badge:'Hesapica · Cookie preferences', title:'You control your cookie preferences.',
+      intro:'Hesapica uses necessary storage technologies for core site functions. Analytics and advertising/marketing technologies are managed according to your choices. See the Privacy and Cookie Policies for details.',
+      accept:'Accept all', reject:'Necessary only', manage:'Manage preferences', privacy:'Privacy Policy', cookies:'Cookie Policy', details:'Open detailed settings',
+      modalTitle:'Edit cookie preferences', modalDesc:'Necessary storage is required for core site functions and remembering your privacy choice. Analytics covers usage measurement; advertising/marketing covers ad-related technologies.', close:'Close cookie preferences',
+      necessary:'Necessary', necessaryAria:'Necessary storage is always enabled', necessaryText:'Used for essential site functions and to remember your privacy choice; it cannot be disabled.',
+      analytics:'Analytics', analyticsAria:'Allow analytics technologies', analyticsText:'Controls measurement technologies that help us understand which calculators and pages are used.',
+      marketing:'Advertising and marketing', marketingAria:'Allow advertising and marketing technologies', marketingText:'Controls ad requests and advertising/marketing use. A certified Google CMP/TCF message may also appear in regions where it is required.',
+      save:'Save preferences', status:'You can update your choice at any time from the “Cookie preferences” control on the page.', preference:'Cookie preferences', privacyHref:'/en/privacy-policy', cookieHref:'/en/cookie-policy'
+    };
+    return {
+      badge:'Hesapica · Çerez tercihleri', title:'Çerez tercihlerini sen yönet.',
+      intro:'Hesapica, zorunlu site işlevleri için gerekli depolama teknolojilerini kullanır. Analitik ile reklam/pazarlama teknolojileri ise tercihlerine göre yönetilir. Ayrıntılar için Gizlilik ve Çerez Politikalarını inceleyebilirsin.',
+      accept:'Tümünü kabul et', reject:'Sadece zorunlu', manage:'Tercihleri yönet', privacy:'Gizlilik Politikası', cookies:'Çerez Politikası', details:'Detaylı ayarları aç',
+      modalTitle:'Çerez tercihlerini düzenle', modalDesc:'Zorunlu depolama site işlevleri ve gizlilik tercihini hatırlamak için gereklidir. Analitik, kullanım istatistiklerine; reklam/pazarlama ise reklam sunumuna ilişkin tercihini ifade eder.', close:'Çerez tercihlerini kapat',
+      necessary:'Zorunlu', necessaryAria:'Zorunlu depolama her zaman açık', necessaryText:'Temel site işlevlerinin ve seçtiğin gizlilik tercihinin hatırlanması için kullanılır; kapatılamaz.',
+      analytics:'Analitik', analyticsAria:'Analitik teknolojilere izin ver', analyticsText:'Hangi araçların ve sayfaların kullanıldığını anlamaya yardımcı olan ölçüm teknolojilerini yönetir.',
+      marketing:'Reklam ve pazarlama', marketingAria:'Reklam ve pazarlama teknolojilerine izin ver', marketingText:'Reklam alanlarının istenmesini ve reklam/pazarlama kullanımını yönetir. Google’ın sertifikalı CMP/TCF mesajı gereken bölgelerde ayrıca devreye girebilir.',
+      save:'Tercihleri kaydet', status:'Tercihini dilediğin zaman sayfadaki “Çerez Tercihleri” erişim noktasından güncelleyebilirsin.', preference:'Çerez Tercihleri', privacyHref:'/gizlilik-politikasi', cookieHref:'/cerez-politikasi'
+    };
+  }
+
   function createUI(){
     if(document.getElementById('cookieBanner')) return true;
     if(!document.body) return false;
-
+    const c = uiCopy();
     const banner = document.createElement('section');
-    banner.className = 'cookie-banner';
-    banner.id = 'cookieBanner';
-    banner.setAttribute('role', 'region');
-    banner.setAttribute('aria-labelledby', 'cookieBannerTitle');
+    banner.className = 'cookie-banner'; banner.id = 'cookieBanner'; banner.setAttribute('role','region'); banner.setAttribute('aria-labelledby','cookieBannerTitle');
     banner.innerHTML = [
-      '<div class="cookie-banner-card">',
-        '<span class="cookie-badge">Hesapica · Çerez tercihleri</span>',
-        '<div class="cookie-banner-top">',
-          '<div>',
-            '<h2 id="cookieBannerTitle">Çerez tercihlerini sen yönet.</h2>',
-            '<p>Hesapica, zorunlu site işlevleri için gerekli depolama teknolojilerini kullanır. Analitik ile reklam/pazarlama teknolojileri ise tercihlerine göre yönetilir. Ayrıntılar için Gizlilik ve Çerez Politikalarını inceleyebilirsin.</p>',
-          '</div>',
-        '</div>',
-        '<div class="cookie-actions">',
-          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>Tümünü kabul et</button>',
-          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>Sadece zorunlu</button>',
-          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-open>Tercihleri yönet</button>',
-        '</div>',
-        '<div class="cookie-mini-links">',
-          '<a href="/gizlilik-politikasi">Gizlilik Politikası</a>',
-          '<a href="/cerez-politikasi">Çerez Politikası</a>',
-          '<button type="button" data-cookie-open>Detaylı ayarları aç</button>',
-        '</div>',
-      '</div>'
+      '<div class="cookie-banner-card">','<span class="cookie-badge">'+c.badge+'</span>','<div class="cookie-banner-top"><div>',
+      '<h2 id="cookieBannerTitle">'+c.title+'</h2>','<p>'+c.intro+'</p>','</div></div>',
+      '<div class="cookie-actions">','<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>'+c.accept+'</button>',
+      '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>'+c.reject+'</button>',
+      '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-open>'+c.manage+'</button>','</div>',
+      '<div class="cookie-mini-links">','<a href="'+c.privacyHref+'">'+c.privacy+'</a>','<a href="'+c.cookieHref+'">'+c.cookies+'</a>',
+      '<button type="button" data-cookie-open>'+c.details+'</button>','</div></div>'
     ].join('');
-
-    const backdrop = document.createElement('div');
-    backdrop.className = 'cookie-modal-backdrop';
-    backdrop.id = 'cookieModalBackdrop';
-    backdrop.setAttribute('aria-hidden', 'true');
-    backdrop.innerHTML = [
+    const backdrop=document.createElement('div'); backdrop.className='cookie-modal-backdrop';backdrop.id='cookieModalBackdrop';backdrop.setAttribute('aria-hidden','true');
+    backdrop.innerHTML=[
       '<div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-describedby="cookieModalDescription">',
-        '<div class="cookie-modal-head">',
-          '<div>',
-            '<h3 id="cookieModalTitle">Çerez tercihlerini düzenle</h3>',
-            '<p id="cookieModalDescription">Zorunlu depolama site işlevleri ve gizlilik tercihini hatırlamak için gereklidir. Analitik, kullanım istatistiklerine; reklam/pazarlama ise reklam sunumuna ilişkin tercihini ifade eder.</p>',
-          '</div>',
-          '<button type="button" class="cookie-close" aria-label="Çerez tercihlerini kapat" data-cookie-close>×</button>',
-        '</div>',
-        '<div class="cookie-options">',
-          '<div class="cookie-option">',
-            '<div class="cookie-option-head">',
-              '<div><strong>Zorunlu</strong></div>',
-              '<label class="cookie-switch"><input type="checkbox" checked disabled aria-label="Zorunlu depolama her zaman açık"><span class="cookie-slider"></span></label>',
-            '</div>',
-            '<p>Temel site işlevlerinin ve seçtiğin gizlilik tercihinin hatırlanması için kullanılır; kapatılamaz.</p>',
-          '</div>',
-          '<div class="cookie-option">',
-            '<div class="cookie-option-head">',
-              '<div><strong>Analitik</strong></div>',
-              '<label class="cookie-switch"><input type="checkbox" id="cookieAnalytics" aria-label="Analitik teknolojilere izin ver"><span class="cookie-slider"></span></label>',
-            '</div>',
-            '<p>Hangi araçların ve sayfaların kullanıldığını anlamaya yardımcı olan ölçüm teknolojilerini yönetir.</p>',
-          '</div>',
-          '<div class="cookie-option">',
-            '<div class="cookie-option-head">',
-              '<div><strong>Reklam ve pazarlama</strong></div>',
-              '<label class="cookie-switch"><input type="checkbox" id="cookieMarketing" aria-label="Reklam ve pazarlama teknolojilerine izin ver"><span class="cookie-slider"></span></label>',
-            '</div>',
-            '<p>Reklam alanlarının istenmesini ve reklam/pazarlama kullanımını yönetir. Google’ın sertifikalı CMP/TCF mesajı gereken bölgelerde ayrıca devreye girebilir.</p>',
-          '</div>',
-        '</div>',
-        '<div class="cookie-modal-actions">',
-          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-save>Tercihleri kaydet</button>',
-          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>Tümünü kabul et</button>',
-          '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>Sadece zorunlu</button>',
-        '</div>',
-        '<div class="cookie-status" id="cookieStatusText" aria-live="polite">Tercihini dilediğin zaman sayfadaki “Çerez Tercihleri” erişim noktasından güncelleyebilirsin.</div>',
-      '</div>'
+      '<div class="cookie-modal-head"><div><h3 id="cookieModalTitle">'+c.modalTitle+'</h3><p id="cookieModalDescription">'+c.modalDesc+'</p></div>',
+      '<button type="button" class="cookie-close" aria-label="'+c.close+'" data-cookie-close>×</button></div>',
+      '<div class="cookie-options">',
+      '<div class="cookie-option"><div class="cookie-option-head"><div><strong>'+c.necessary+'</strong></div><label class="cookie-switch"><input type="checkbox" checked disabled aria-label="'+c.necessaryAria+'"><span class="cookie-slider"></span></label></div><p>'+c.necessaryText+'</p></div>',
+      '<div class="cookie-option"><div class="cookie-option-head"><div><strong>'+c.analytics+'</strong></div><label class="cookie-switch"><input type="checkbox" id="cookieAnalytics" aria-label="'+c.analyticsAria+'"><span class="cookie-slider"></span></label></div><p>'+c.analyticsText+'</p></div>',
+      '<div class="cookie-option"><div class="cookie-option-head"><div><strong>'+c.marketing+'</strong></div><label class="cookie-switch"><input type="checkbox" id="cookieMarketing" aria-label="'+c.marketingAria+'"><span class="cookie-slider"></span></label></div><p>'+c.marketingText+'</p></div>',
+      '</div><div class="cookie-modal-actions">','<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-save>'+c.save+'</button>',
+      '<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-accept-all>'+c.accept+'</button>','<button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-reject>'+c.reject+'</button>',
+      '</div><div class="cookie-status" id="cookieStatusText" aria-live="polite">'+c.status+'</div></div>'
     ].join('');
-
-    document.body.appendChild(banner);
-    document.body.appendChild(backdrop);
-    ensurePreferenceEntry();
-
+    document.body.appendChild(banner); document.body.appendChild(backdrop); ensurePreferenceEntry();
     banner.querySelectorAll('[data-cookie-open]').forEach(function(btn){ btn.addEventListener('click', openModal); });
     banner.querySelectorAll('[data-cookie-accept-all]').forEach(function(btn){ btn.addEventListener('click', acceptAll); });
     banner.querySelectorAll('[data-cookie-reject]').forEach(function(btn){ btn.addEventListener('click', rejectOptional); });
     backdrop.querySelectorAll('[data-cookie-close]').forEach(function(btn){ btn.addEventListener('click', closeModal); });
     backdrop.querySelectorAll('[data-cookie-accept-all]').forEach(function(btn){ btn.addEventListener('click', acceptAll); });
     backdrop.querySelectorAll('[data-cookie-reject]').forEach(function(btn){ btn.addEventListener('click', rejectOptional); });
-
-    const saveButton = backdrop.querySelector('[data-cookie-save]');
-    if(saveButton) saveButton.addEventListener('click', saveFromModal);
-
-    backdrop.addEventListener('click', function(event){
-      if(event.target === backdrop) closeModal();
-    });
-
-    document.addEventListener('keydown', handleModalKeydown);
-
-    document.addEventListener('click', function(event){
-      const target = event.target instanceof Element ? event.target.closest('[data-open-cookie-preferences]') : null;
-      if(!target) return;
-      event.preventDefault();
-      openModal();
-    });
-
+    const saveButton=backdrop.querySelector('[data-cookie-save]'); if(saveButton) saveButton.addEventListener('click',saveFromModal);
+    backdrop.addEventListener('click',function(event){if(event.target===backdrop)closeModal();});
+    document.addEventListener('keydown',handleModalKeydown);
+    document.addEventListener('click',function(event){const target=event.target instanceof Element?event.target.closest('[data-open-cookie-preferences]'):null;if(!target)return;event.preventDefault();openModal();});
     return true;
   }
 
   function ensurePreferenceEntry(){
-    // Bazı araç sayfalarında statik footer bulunmadığı için izin geri çekme / tercih değiştirme
-    // erişimini merkezi olarak garanti et. Var olan bir tercih düğmesi varsa ikinci kez ekleme.
-    let entry = document.getElementById('cookiePreferenceEntry');
-    if(entry) return entry;
-    if(document.querySelector('[data-open-cookie-preferences]')) return null;
-    if(!document.body) return null;
-
-    entry = document.createElement('div');
-    entry.className = 'cookie-preference-entry';
-    entry.id = 'cookiePreferenceEntry';
-    entry.hidden = true;
-    entry.innerHTML = [
-      '<button type="button" class="cookie-preference-entry-btn" data-open-cookie-preferences>',
-        '<span aria-hidden="true">⚙</span>',
-        '<span>Çerez Tercihleri</span>',
-      '</button>',
-      '<a href="/cerez-politikasi">Çerez Politikası</a>'
-    ].join('');
-    document.body.appendChild(entry);
-    return entry;
+    let entry=document.getElementById('cookiePreferenceEntry'); if(entry)return entry;
+    if(document.querySelector('[data-open-cookie-preferences]'))return null; if(!document.body)return null;
+    const c=uiCopy(); entry=document.createElement('div');entry.className='cookie-preference-entry';entry.id='cookiePreferenceEntry';entry.hidden=true;
+    entry.innerHTML=['<button type="button" class="cookie-preference-entry-btn" data-open-cookie-preferences>','<span aria-hidden="true">⚙</span>','<span>'+c.preference+'</span>','</button>','<a href="'+c.cookieHref+'">'+c.cookies+'</a>'].join('');
+    document.body.appendChild(entry); return entry;
   }
 
   function syncPreferenceEntry(){

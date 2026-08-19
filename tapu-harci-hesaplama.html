@@ -211,7 +211,7 @@
 <section class="tool-layout">
 <form class="card" id="tapuForm" novalidate>
 <h2>Hesaplama Paneli</h2><p class="section-note">Standart satışlarda varsayılan alıcı ve satıcı harç oranları (%2) otomatik olarak gelir. Özel işlem, istisna veya farklı oran varsa alanları manuel değiştirebilirsin.</p>
-<div class="notice"><strong>Önemli matrah kuralı</strong>Tapu harcı, emlak vergisi değerinden düşük olmamak üzere beyan edilen gerçek satış bedeli üzerinden hesaplanır. Araç iki değerden yüksek olanı matrah kabul eder. 2026 yılında nispi tapu harcının asgari tutarı taraf başına 346,10 TL'dir; oranı 0 olarak girilen özel senaryolarda asgari tutar uygulanmaz.
+<div class="notice"><strong>Önemli matrah kuralı</strong>Tapu harcı, emlak vergisi değerinden düşük olmamak üzere beyan edilen gerçek satış bedeli üzerinden hesaplanır. Araç iki değerden yüksek olanı matrah kabul eder. 2026 yılında nispi tapu harcının asgari tutarı taraf başına 411,60 TL'dir; oranı 0 olarak girilen özel senaryolarda asgari tutar uygulanmaz.
 <div class="rate-status" aria-live="polite"><div class="rate-line"><span>Varsayılan oran</span><b>Alıcı %2 · Satıcı %2</b></div><div class="rate-line"><span>Resmî dayanak</span><b>GİB · 492 sayılı Kanun (4) sayılı tarife I-20/a</b></div><div class="rate-line"><span>Son doğrulama</span><b>Ağustos 2026</b></div></div></div>
 <div class="form-section"><div class="form-title">İşlem ve matrah bilgileri</div><div class="field-grid">
 <div class="field"><label for="propertyType">Gayrimenkul tipi</label><select id="propertyType"><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="isyeri">İş yeri</option><option value="diger">Diğer</option></select><div class="hint">Standart satış hesabında oranı değiştirmez; açıklama ve paylaşım metninde kullanılır.</div></div>
@@ -248,7 +248,7 @@
 'use strict';
 const PAGE_URL='https://hesapica.com/tapu-harci-hesaplama';
 const STORAGE_KEY='hesapica_tapu_harci_v3';
-const VERIFIED_RATES=Object.freeze({buyerRatePercent:2,sellerRatePercent:2,lastVerified:'2026-08-10',sourceName:'Gelir İdaresi Başkanlığı'});const MIN_NISPI_HARC_2026=346.10;
+const VERIFIED_RATES=Object.freeze({buyerRatePercent:2,sellerRatePercent:2,lastVerified:'2026-08-17',sourceName:'Gelir İdaresi Başkanlığı'});const MIN_NISPI_HARC_2026=411.60;
 const state={results:null,isCalculated:false,suppressSave:false,rateData:VERIFIED_RATES};
 const $=id=>document.getElementById(id);
 const fieldIds=['salePrice','taxValue','buyerRate','sellerRate','revolvingFee','otherBuyerCost','otherSellerCost','creditAmount'];

@@ -15,6 +15,8 @@
 <meta content="indirimli fiyat hesaplama, iskonto hesaplama, kampanya hesaplama, kupon hesaplama, efektif indirim hesaplama, sepet indirimi hesaplama" name="keywords"/>
 <meta content="#4f46e5" name="theme-color"/>
 <link href="https://hesapica.com/indirimli-fiyat-hesaplama" rel="canonical"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/indirimli-fiyat-hesaplama"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/discount-calculator"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta content="website" property="og:type"/>
@@ -440,6 +442,7 @@
       }
     }
 </style>
+<link rel="stylesheet" href="/language-switch.css"/>
 </head>
 <body>
 
@@ -452,8 +455,7 @@
 <nav aria-label="breadcrumb" class="breadcrumb">
 <a href="/">Ana Sayfa</a>
 <span>/</span>
-<strong>İndirimli Fiyat Hesaplama</strong>
-</nav>
+<strong>İndirimli Fiyat Hesaplama</strong> <span aria-hidden="true">/</span> <a class="hc-language-link" href="/en/discount-calculator" hreflang="en" lang="en" title="İngilizce sürümü aç" aria-label="İngilizce sürümü aç"><span aria-hidden="true">🌐</span><span>EN · English</span></a></nav>
 </div>
 <header class="container">
 <section class="hero">
@@ -1423,7 +1425,9 @@
           url
         }).catch(error => {
           if (error && error.name === 'AbortError') return;
-          flashButton(els.shareBtn, 'Paylaşılamadı');
+          writeTextWithFallback(url)
+            .then(() => flashButton(els.shareBtn, 'Link Kopyalandı'))
+            .catch(() => flashButton(els.shareBtn, 'Paylaşılamadı'));
         });
         return;
       }
