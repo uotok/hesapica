@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Debt Payoff Calculator: Avalanche vs Snowball Plan | Hesapica</title>
+<meta content="Plan debt payoff with avalanche or snowball. Estimate payoff time, interest cost, minimum-payment pressure, monthly spending room and strategy trade-offs." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/debt-payoff-calculator" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Debt Payoff Calculator: Avalanche vs Snowball Plan | Hesapica" property="og:title"/>
+<meta content="Plan debt payoff with avalanche or snowball. Estimate payoff time, interest cost, minimum-payment pressure, monthly spending room and strategy trade-offs." property="og:description"/>
+<meta content="https://hesapica.com/en/debt-payoff-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica Debt Payoff Calculator &amp; Budget Pressure Analysis" property="og:image:alt"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica Debt Payoff Calculator &amp; Budget Pressure Analysis" name="twitter:image:alt"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Debt Payoff Calculator: Avalanche vs Snowball Plan | Hesapica" name="twitter:title"/>
+<meta content="Plan debt payoff with avalanche or snowball. Estimate payoff time, interest cost, minimum-payment pressure, monthly spending room and strategy trade-offs." name="twitter:description"/>
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p{font-size:15px;color:#4b5563;line-height:1.65}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .info-banner{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22);color:#374151;font-size:14.5px}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;font-size:18px;font-weight:600;
+    }
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    .input-invalid{border-color:#ef4444 !important;box-shadow:0 0 0 4px rgba(239,68,68,.10) !important;background:#fff7f7}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text,.section-error{display:none;margin-top:8px;font-size:14px;font-weight:700;line-height:1.5;color:var(--bad)}
+    .error-text.show,.section-error.show{display:block}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .debt-stack{display:grid;gap:14px}
+    .debt-row{background:#fbfcff;border:1px solid var(--line);border-radius:20px;padding:18px}
+    .debt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .debt-title{font-weight:900;font-size:16px;color:var(--primary)}
+    .tag{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:var(--surface-soft);color:var(--primary);font-size:12px;font-weight:800;white-space:nowrap}
+    .debt-actions{display:flex;justify-content:flex-end;margin-top:14px}
+    .btn-danger{background:#fef2f2;color:var(--bad);border:1px solid #fecaca}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .result-focus-flash{animation:resultFlash 1.35s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,0)}25%{box-shadow:0 0 0 6px rgba(79,70,229,.10)}70%{box-shadow:0 0 0 12px rgba(79,70,229,.06)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .accordion-stack{display:grid;gap:14px;margin-top:24px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{color:#4b5563;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .small{font-size:14px;color:#4b5563;line-height:1.65}
+    .good{color:var(--good)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row,.debt-top{flex-direction:column;align-items:flex-start}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .hero-chip:nth-child(n+3){display:none}
+    }
+  
+#resultsPanel{scroll-margin-top:16px}
+.related-card{color:#fff}
+.related-card strong{color:#fff}
+.related-card .small{color:rgba(255,255,255,.86)}
+.related-card p{color:rgba(255,255,255,.88)}
+.plan-warning{margin-top:12px;padding:12px 14px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:14px;font-weight:700;line-height:1.55}
+
+
+@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related-section,.footer-note,.flow-hint{display:none!important}.hero,.card,.status-card,.highlight-card,.score-card,.comment-card,.table-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}.container{width:100%!important}}
+</style>
+<!-- Google Analytics 4 -->
+<meta content="https://hesapica.com/en/debt-payoff-calculator" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement/advertising services load only after user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<style id="hc-responsive-fix-madde2">
+@media (max-width:720px){
+  .accordion-stack,.accordion-stack>*,.details-inner,.table-grid{min-width:0;max-width:100%;}
+  details.block{min-width:0;max-width:100%;}
+  details.block summary{min-width:0;flex-wrap:wrap;}
+  details.block summary>span{min-width:0;overflow-wrap:anywhere;}
+  .table-wrap{min-width:0;max-width:100%;}
+}
+</style>
+<style id="hc-madde4-print-controls">
+@media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
+</style>
+<link href="https://hesapica.com/en/debt-payoff-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/borc-kapama-plani" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Debt Payoff Calculator & Budget Pressure Analysis","url":"https://hesapica.com/en/debt-payoff-calculator","description":"Plan debt payoff with avalanche or snowball. Estimate payoff time, interest cost, minimum-payment pressure, monthly spending room and strategy trade-offs.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://hesapica.com/en/#finance"},{"@type":"ListItem","position":3,"name":"Debt Payoff Calculator & Budget Pressure Analysis","item":"https://hesapica.com/en/debt-payoff-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this calculator work for interest-free debt?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter 0 for the monthly interest rate and the debt will be included without interest charges."}},{"@type":"Question","name":"How is a one-time payment used?","acceptedAnswer":{"@type":"Answer","text":"The lump-sum contribution is applied at the start of the plan according to the selected payoff strategy, reducing priority balances before the monthly simulation begins."}},{"@type":"Question","name":"Why is the payoff result only an estimate?","acceptedAnswer":{"@type":"Answer","text":"Real-life balances can change because of new charges, missed payments, changing rates, fees or refinancing. This calculator is a planning simulation, not a lender payoff quote."}},{"@type":"Question","name":"Avalanche or snowball: which strategy is better?","acceptedAnswer":{"@type":"Answer","text":"Avalanche usually reduces total interest by prioritizing higher rates. Snowball prioritizes smaller balances and may provide faster motivational wins. The better choice depends on your costs and ability to stay consistent."}},{"@type":"Question","name":"What does the daily safe-spending amount mean?","acceptedAnswer":{"@type":"Answer","text":"It divides the monthly amount left after modeled living costs, reserve and debt payments by the selected days in the month. It is a planning indicator, not a guarantee that every expense is covered."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *, .grid > *{min-width:0}
+  .hc-language-switch{box-sizing:border-box;max-width:100%;flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a><span>/</span><a href="/en/#finance">Finance</a><span>/</span><strong>Debt Payoff Calculator &amp; Budget Pressure Analysis</strong>
+</nav>
+<div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/borc-kapama-plani" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<h1>Debt Payoff Calculator &amp; Budget Pressure Analysis</h1>
+<p>Estimate when your debts could be paid off while accounting for income, living costs, minimum payments, extra payments and your chosen avalanche or snowball strategy.</p>
+<div class="hero-chips">
+<span class="hero-chip">Payoff timeline</span>
+<span class="hero-chip">Budget pressure analysis</span>
+<span class="hero-chip">Avalanche / snowball comparison</span>
+<span class="hero-chip">Daily safe-spending amount</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Tool summary</div>
+<strong>Payoff timeline + financial pressure + daily spending room</strong>
+<p>Core results, strategy comparison and advanced analysis help show whether the plan is practical in everyday life. Large amounts are formatted according to the selected display currency.</p>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Debt Planning Panel</h2>
+<p class="section-note">Fields start empty and results update automatically as the required information is entered. Money inputs stay easy to edit while typing and are formatted for easier reading when you leave the field.</p>
+<div class="info-banner">
+<strong>Why is this tool detailed?</strong> It evaluates more than total debt: budget pressure, daily spending room, strategy fit and plan fragility. The simulation uses the monthly interest rates you enter; taxes, fees, insurance and new borrowing are not included unless you model them separately.
+        </div>
+<div class="form-section">
+<div class="form-title">Debts</div>
+<div class="debt-stack" id="debtsContainer"></div>
+<div class="actions" style="margin-top:14px">
+<button class="btn btn-secondary" onclick="addDebt()" type="button">+ Add Debt</button>
+</div>
+<div class="section-error" id="debtsError">Enter a remaining balance for at least one debt.</div>
+</div>
+<div class="form-section">
+<div class="form-title">Monthly living costs</div>
+<div class="field-grid">
+<div class="field">
+<label for="rent">Rent / housing</label>
+<input class="money-input" id="rent" inputmode="decimal" placeholder="e.g. 1,500" type="text"/>
+<div class="hint">Your fixed housing cost.</div>
+</div>
+<div class="field">
+<label for="bills">Utilities / bills</label>
+<input class="money-input" id="bills" inputmode="decimal" placeholder="e.g. 350" type="text"/>
+<div class="hint">Electricity, water, internet and similar bills.</div>
+</div>
+<div class="field">
+<label for="market">Groceries / household</label>
+<input class="money-input" id="market" inputmode="decimal" placeholder="e.g. 800" type="text"/>
+<div class="hint">Monthly groceries and essential household spending.</div>
+</div>
+<div class="field">
+<label for="transport">Transport</label>
+<input class="money-input" id="transport" inputmode="decimal" placeholder="e.g. 350" type="text"/>
+<div class="hint">Fuel, public transit or other transport costs.</div>
+</div>
+<div class="field">
+<label for="otherFixed">Other fixed costs</label>
+<input class="money-input" id="otherFixed" inputmode="decimal" placeholder="e.g. 300" type="text"/>
+<div class="hint">Subscriptions, school, dues and other recurring fixed costs.</div>
+</div>
+<div class="field">
+<label for="safetyReserve">Safety / emergency reserve</label>
+<input class="money-input" id="safetyReserve" inputmode="decimal" placeholder="e.g. 200" type="text"/>
+<div class="hint">A buffer you want to keep so the plan can absorb unexpected costs.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Income and strategy</div>
+<div class="field-grid">
+<div class="field">
+<label for="monthlyIncome">Monthly income</label>
+<input aria-describedby="monthlyIncomeError" class="money-input" id="monthlyIncome" inputmode="decimal" placeholder="e.g. 6,500" type="text"/>
+<div class="hint">Net monthly income used for this plan.</div>
+<div class="error-text" id="monthlyIncomeError">Monthly income is required.</div>
+</div><div class="field"><label for="currency">Currency</label><select id="currency"><option value="USD">US Dollar ($)</option><option value="EUR">Euro (€)</option><option value="GBP">British Pound (£)</option><option value="CAD">Canadian Dollar (CA$)</option><option value="AUD">Australian Dollar (A$)</option><option value="NZD">New Zealand Dollar (NZ$)</option><option value="CHF">Swiss Franc (CHF)</option><option value="JPY">Japanese Yen (¥)</option><option value="INR">Indian Rupee (₹)</option><option value="SGD">Singapore Dollar (S$)</option><option value="SEK">Swedish Krona (SEK)</option><option value="NOK">Norwegian Krone (NOK)</option><option value="DKK">Danish Krone (DKK)</option><option value="PLN">Polish Zloty (PLN)</option><option value="ZAR">South African Rand (ZAR)</option></select><div class="hint">Changes display formatting only; no FX conversion is performed.</div></div>
+<div class="field">
+<label for="extraPayment">Extra monthly debt payment</label>
+<input class="money-input" id="extraPayment" inputmode="decimal" placeholder="e.g. 500" type="text"/>
+<div class="hint">Regular amount you can add on top of minimum payments each month.</div>
+</div>
+<div class="field">
+<label for="oneTimePayment">One-time lump-sum payment</label>
+<input class="money-input" id="oneTimePayment" inputmode="decimal" placeholder="e.g. 2,000" type="text"/>
+<div class="hint">One-time amount available at the start of the plan.</div>
+</div>
+<div class="field">
+<label for="daysInMonth">Days in the month</label>
+<input id="daysInMonth" min="1" placeholder="30" step="1" type="number"/>
+<div class="hint">Used to estimate the daily safe-spending amount.</div>
+</div>
+<div class="field full">
+<label for="strategy">Payoff strategy</label>
+<select id="strategy">
+<option value="avalanche">Avalanche (highest rate first)</option>
+<option value="snowball">Snowball (smallest balance first)</option>
+</select>
+<div class="hint">Avalanche typically targets interest cost; snowball may provide faster motivational wins.</div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateAll({focusResult:true})" type="button">Calculate</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Example Data</button>
+<button class="btn btn-ghost" onclick="resetTool()" type="button">Reset</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Copy Result</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Share</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Print / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Score, core results and strategy notes start on the right</strong>
+<span>On mobile, scroll after the input card to see budget pressure, the payoff schedule and decision-support sections.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Result status</div>
+<div aria-live="polite" class="status-text" id="statusText" role="status">Enter at least one debt and monthly income to see results.</div>
+</div>
+<span class="badge" id="statusBadge">Waiting for data</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Main result</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Estimated payoff time will appear here.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="small">Hesapica Debt Plan Score</div>
+<div class="score-value" id="healthScore">0/100</div>
+</div>
+<span class="pill" id="difficultyBadge">Waiting for data</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="small" id="scoreText" style="margin-top:10px">This site-specific score summarizes budget pressure, interest burden, daily spending room and payoff time. It is not a credit score or official financial-health measure.</div>
+<div class="score-explain">
+<strong>What does this score mean?</strong>
+<div class="small" id="scoreExplainText">0 indicates a weak plan profile and 100 a stronger one. It is a Hesapica decision-support score, not an official financial measure.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Monthly breathing room</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Minimum-payment safety</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Interest pressure</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Payoff time</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty"><div class="label">Total debt</div><div class="value" id="totalDebtResult">—</div></div>
+<div class="mini-result is-empty"><div class="label">Living costs + minimum payments</div><div class="value" id="requiredMonthlyResult">—</div></div>
+<div class="mini-result is-empty"><div class="label">Remaining after modeled payments</div><div class="value" id="remainingAfterAllResult">—</div></div>
+<div class="mini-result is-empty"><div class="label">Daily safe-spending amount</div><div class="value" id="dailySpendingLimitResult">—</div></div>
+<div class="mini-result is-empty"><div class="label">Total interest cost</div><div class="value" id="totalInterestResult">—</div></div>
+<div class="mini-result is-empty"><div class="label">Estimated debt-free date</div><div class="value" id="freedomDateResult">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Quick status summary</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Pressure level</h3><div class="big" id="healthPressure">—</div><div class="small" id="healthPressureSub">—</div></div>
+<div class="health-card"><h3>Interest intensity</h3><div class="big" id="healthInterest">—</div><div class="small" id="healthInterestSub">—</div></div>
+<div class="health-card"><h3>Strategy fit</h3><div class="big" id="healthStrategy">—</div><div class="small" id="healthStrategySub">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Enter your information and calculate. The tool will summarize whether the modeled plan looks fragile or more sustainable.</div>
+</aside>
+</section>
+<section class="accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Core results and additional metrics</span>
+<span class="summary-note">Key numbers at a glance</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Estimated payoff time</th><td id="monthsToFreedomResult">—</td></tr>
+<tr><th>Plan pressure level</th><td id="planStatusResult">—</td></tr>
+<tr><th>Total principal + interest paid</th><td id="totalPaidResult">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Total living costs</th><td id="livingCostsResult">—</td></tr>
+<tr><th>Monthly debt budget used in simulation</th><td id="debtBudgetResult">—</td></tr>
+<tr><th>Total minimum payments</th><td id="minimumOnlyResult">—</td></tr>
+<tr><th>Requested extra payment</th><td id="requestedExtraResult">—</td></tr>
+<tr><th>Extra payment used in simulation</th><td id="usedExtraResult">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Advanced analysis tables</span>
+<span class="summary-note">Payoff schedule and strategy comparison</span>
+</summary>
+<div class="details-inner">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Total payment</th>
+<th>Interest</th>
+<th>Debts closed</th>
+<th>Remaining debt</th>
+</tr>
+</thead>
+<tbody id="scheduleBody">
+<tr><td colspan="5">Waiting for calculation.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap" style="margin-top:16px">
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Payoff time</th>
+<th>Total interest</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody id="strategyCompareBody">
+<tr><td colspan="4">Strategy comparison appears after calculation.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section class="content-grid">
+<div class="card">
+<h2>Interpretation / decision support</h2>
+<p class="section-note">Read the score and key metrics together to judge practical affordability rather than relying on one number.</p>
+<div class="accordion-card">
+<details open="">
+<summary>When does a debt plan look healthier?</summary>
+<p>A plan generally looks healthier when minimum payments are covered, some positive room remains after modeled payments, and the daily spending amount is not extremely tight. Very long plans or plans that leave almost no room are easier to derail in real life.</p>
+</details>
+<details>
+<summary>Avalanche or snowball: which is better?</summary>
+<p>Avalanche usually reduces total interest by targeting higher rates first. Snowball closes smaller balances first and can provide quicker motivational wins. The better choice depends on cost and which method you can follow consistently.</p>
+</details>
+<details>
+<summary>Why does the daily safe-spending amount matter?</summary>
+<p>A plan can look fine on paper but fail in daily life. This amount shows the modeled spending room left after the costs, reserve and debt budget in the plan. Very little room indicates greater fragility.</p>
+</details>
+</div>
+</div>
+<div class="card">
+<!-- HC_AD_SLOT:faq -->
+<div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="4903929326" data-full-width-responsive="true" style="display:block"></ins>
+</div>
+<h2>Frequently Asked Questions</h2>
+<div class="accordion-card">
+<details open="">
+<summary>Does this calculator work for interest-free debt?</summary>
+<p>Yes. Enter 0 for the monthly interest rate and the debt will be included without interest charges.</p>
+</details>
+<details>
+<summary>How is a one-time payment used?</summary>
+<p>The lump-sum contribution is applied at the start of the plan according to the selected payoff strategy, reducing priority balances before the monthly simulation begins.</p>
+</details>
+<details>
+<summary>Why is the payoff result only an estimate?</summary>
+<p>Real-life balances can change because of new charges, missed payments, changing rates, fees or refinancing. This calculator is a planning simulation, not a lender payoff quote.</p>
+</details>
+<details><summary>Avalanche or snowball: which strategy is better?</summary><p>Avalanche usually reduces total interest by prioritizing higher rates. Snowball prioritizes smaller balances and may provide faster motivational wins. The better choice depends on your costs and ability to stay consistent.</p></details><details><summary>What does the daily safe-spending amount mean?</summary><p>It divides the monthly amount left after modeled living costs, reserve and debt payments by the selected days in the month. It is a planning indicator, not a guarantee that every expense is covered.</p></details></div>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/loan-calculator">
+<span class="small">Related calculator</span>
+<strong>Loan Calculator</strong>
+<p>Estimate loan payments and understand repayment costs.</p>
+</a>
+<a class="related-card" href="/en/interest-calculator">
+<span class="small">Related calculator</span>
+<strong>Interest Calculator</strong>
+<p>Compare simple and compound interest scenarios.</p>
+</a>
+<a class="related-card" href="/en/budget-calculator">
+<span class="small">Related calculator</span>
+<strong>Budget Calculator</strong>
+<p>Estimate monthly cash flow, spending room and savings capacity.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const debtsContainer = document.getElementById("debtsContainer");
+    const moneySelectors = () => document.querySelectorAll(".money-input");
+    let debtIdCounter = 0;
+    const STORAGE_KEY = "hesapica_en_debt_payoff_v3";
+    const PAGE_URL = "https://hesapica.com/en/debt-payoff-calculator";
+    let currentInputMode = "manual";
+    let calcTimer = null;
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false
+    };
+
+    const els = {
+      monthlyIncome: document.getElementById("monthlyIncome"),
+      extraPayment: document.getElementById("extraPayment"),
+      oneTimePayment: document.getElementById("oneTimePayment"),
+      daysInMonth: document.getElementById("daysInMonth"),
+      strategy: document.getElementById("strategy"),
+      rent: document.getElementById("rent"),
+      bills: document.getElementById("bills"),
+      market: document.getElementById("market"),
+      transport: document.getElementById("transport"),
+      otherFixed: document.getElementById("otherFixed"),
+      safetyReserve: document.getElementById("safetyReserve"),
+      currency: document.getElementById("currency")
+    };
+
+
+const CURRENCY_CODES = new Set(['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR']);
+function currentCurrency(){ const el=document.getElementById('currency'); return el && CURRENCY_CODES.has(el.value) ? el.value : 'USD'; }
+function formatGlobalMoney(value, digits=2){
+  const n=Number(value); if(!Number.isFinite(n)) return '—';
+  return new Intl.NumberFormat('en-US',{style:'currency',currency:currentCurrency(),minimumFractionDigits:digits,maximumFractionDigits:digits}).format(n);
+}
+function parseGlobalNumber(value){
+  if(value===null||value===undefined) return NaN;
+  if(typeof value==='number') return Number.isFinite(value)?value:NaN;
+  let raw=String(value).trim().replace(/\s+/g,'').replace(/[\$€£¥₹]/g,'');
+  if(!raw) return 0;
+  if(!/^[+-]?[0-9][0-9.,]*$/.test(raw)) return NaN;
+  let sign=''; if(raw[0]==='+'||raw[0]==='-'){sign=raw[0];raw=raw.slice(1);}
+  const dots=(raw.match(/\./g)||[]).length, commas=(raw.match(/,/g)||[]).length;
+  let normalized=raw;
+  if(dots&&commas){
+    const dec=raw.lastIndexOf('.')>raw.lastIndexOf(',')?'.':','; const group=dec==='.'?',':'.';
+    normalized=raw.split(group).join('').replace(dec,'.');
+  } else if(commas){
+    const parts=raw.split(',');
+    if(parts.length>2) normalized=raw.replace(/,/g,'');
+    else if(parts[1].length===3 && parts[0] !== '0') normalized=parts[0]+parts[1];
+    else normalized=parts[0]+'.'+parts[1];
+  } else if(dots){
+    const parts=raw.split('.');
+    if(parts.length>2) normalized=raw.replace(/\./g,'');
+    else normalized=raw;
+  }
+  const n=Number(sign+normalized); return Number.isFinite(n)?n:NaN;
+}
+
+    function formatTR(value, digits = 0){ const n=Number(value); if(!Number.isFinite(n)) return '—'; return new Intl.NumberFormat('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(n); }
+    function formatCurrency(value){ return formatGlobalMoney(value, 0); }
+    function formatPercent(value, digits = 1){ return formatTR(value, digits) + "%"; }
+    function parseMoney(v){ const n=parseGlobalNumber(v); return Number.isFinite(n)?n:0; }
+    function parsePercent(v){ const n=parseGlobalNumber(String(v??'').replace(/%/g,'')); return Number.isFinite(n)?n:0; }
+    function formatPercentInputValue(raw){ const text=String(raw??'').trim(); if(!text) return ''; const n=parseGlobalNumber(text.replace(/%/g,'')); return Number.isFinite(n)?new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n):text; }
+    function formatMoneyInputValue(raw){ const text=String(raw??'').trim(); if(!text) return ''; const n=parseGlobalNumber(text); return Number.isFinite(n)?new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(Math.round(n)):text; }
+    function moneyInputHandler(e){
+      e.target.value = formatMoneyInputValue(e.target.value);
+      try{ e.target.setSelectionRange(e.target.value.length, e.target.value.length); }catch(err){}
+    }
+    function markManual(){
+      currentInputMode = "manual";
+    }
+    function scheduleCalculate(){
+      clearTimeout(calcTimer);
+      calcTimer = setTimeout(calculateAll, 180);
+    }
+    function clearValidationErrors(){
+      document.querySelectorAll(".input-invalid").forEach(el=>{ el.classList.remove("input-invalid"); el.removeAttribute("aria-invalid"); });
+      const debtErr = document.getElementById("debtsError");
+      const incomeErr = document.getElementById("monthlyIncomeError");
+      if (debtErr) debtErr.classList.remove("show");
+      if (incomeErr) incomeErr.classList.remove("show");
+    }
+    function showDebtValidation(){
+      document.querySelectorAll(".debt-balance").forEach(el=>markInvalidInput(el));
+      const debtErr = document.getElementById("debtsError");
+      if (debtErr) debtErr.classList.add("show");
+    }
+    function showIncomeValidation(){
+      markInvalidInput(els.monthlyIncome);
+      const incomeErr = document.getElementById("monthlyIncomeError");
+      if (incomeErr) incomeErr.classList.add("show");
+    }
+    function markInvalidInput(input){
+      if (input){ input.classList.add("input-invalid"); input.setAttribute("aria-invalid","true"); }
+    }
+    function validatePlanInputs(values){
+      const messages = [];
+      const debts = document.querySelectorAll('.debt-row');
+      debts.forEach((row, index) => {
+        const balanceInput = row.querySelector('.debt-balance');
+        const rateInput = row.querySelector('.debt-rate');
+        const minInput = row.querySelector('.debt-min');
+        const balanceRaw = String(balanceInput.value).trim();
+        const rateRaw = String(rateInput.value).trim();
+        const minRaw = String(minInput.value).trim();
+        const balanceParsed = balanceRaw ? parseGlobalNumber(balanceRaw) : 0;
+        const rateParsed = rateRaw ? parseGlobalNumber(rateRaw.replace(/%/g,'')) : 0;
+        const minParsed = minRaw ? parseGlobalNumber(minRaw) : 0;
+        if (balanceRaw && !Number.isFinite(balanceParsed)){ markInvalidInput(balanceInput); messages.push(`Debt ${index + 1} balance is not a valid number.`); }
+        else if (balanceRaw && balanceParsed < 0){ markInvalidInput(balanceInput); messages.push(`Debt ${index + 1} balance cannot be negative.`); }
+        if (rateRaw && !Number.isFinite(rateParsed)){ markInvalidInput(rateInput); messages.push(`Debt ${index + 1} monthly interest rate is not a valid number.`); }
+        else if (rateRaw && (rateParsed < 0 || rateParsed > 100)){ markInvalidInput(rateInput); messages.push(`Debt ${index + 1} monthly interest rate must be between 0 and 100.`); }
+        if (minRaw && !Number.isFinite(minParsed)){ markInvalidInput(minInput); messages.push(`Debt ${index + 1} minimum payment is not a valid number.`); }
+        else if (minRaw && minParsed < 0){ markInvalidInput(minInput); messages.push(`Debt ${index + 1} minimum payment cannot be negative.`); }
+      });
+      const fieldChecks = [
+        ['monthlyIncome', values.income, 'Monthly income must be greater than 0.'],
+        ['extraPayment', values.extraPayment, 'Extra monthly payment cannot be negative.'],
+        ['oneTimePayment', values.oneTimePayment, 'One-time payment cannot be negative.'],
+        ['rent', values.rent, 'Housing cost cannot be negative.'],
+        ['bills', values.bills, 'Bills cannot be negative.'],
+        ['market', values.market, 'Groceries cost cannot be negative.'],
+        ['transport', values.transport, 'Transport cost cannot be negative.'],
+        ['otherFixed', values.otherFixed, 'Other fixed costs cannot be negative.'],
+        ['safetyReserve', values.safetyReserve, 'Safety reserve cannot be negative.']
+      ];
+      fieldChecks.forEach(([id,val,msg]) => {
+        const raw = String(els[id]?.value ?? '').trim();
+        if (raw && !Number.isFinite(parseGlobalNumber(raw))){ markInvalidInput(els[id]); messages.push(`${els[id].previousElementSibling?.textContent?.trim() || 'This field'} must be a valid number.`); }
+        else if (val < 0){ markInvalidInput(els[id]); messages.push(msg); }
+      });
+      if (!(values.daysInMonth >= 1 && values.daysInMonth <= 31)){
+        markInvalidInput(els.daysInMonth);
+        messages.push('Days in the month must be between 1 and 31.');
+      }
+      return messages;
+    }
+    function setValueTone(id, tone = "") {
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.className = `value${tone ? ` ${tone}` : ""}`;
+    }
+    function setHealthTone(id, tone = "") {
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.className = `big${tone ? ` ${tone}` : ""}`;
+    }
+    function focusResultsPanel(){
+      const panel = document.getElementById("resultsPanel") || document.getElementById("highlightCard");
+      if (!panel) return;
+      panel.scrollIntoView({behavior:"smooth", block:"start"});
+      panel.classList.remove("result-focus-flash");
+      void panel.offsetWidth;
+      panel.classList.add("result-focus-flash");
+      setTimeout(()=>panel.classList.remove("result-focus-flash"), 1400);
+    }
+    function safeWriteClipboard(text, successMsg, errorMsg){
+      if (!text) return Promise.reject(new Error("empty"));
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        return navigator.clipboard.writeText(text).then(()=>alert(successMsg)).catch(()=>fallbackCopy(text, successMsg, errorMsg));
+      }
+      return fallbackCopy(text, successMsg, errorMsg);
+    }
+    function fallbackCopy(text, successMsg, errorMsg){
+      try{
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly','');
+        ta.style.position='fixed';
+        ta.style.opacity='0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        alert(successMsg);
+        return Promise.resolve();
+      }catch(err){
+        alert(errorMsg);
+        return Promise.reject(err);
+      }
+    }
+    function bindMoneyInputs(scope=document){
+      scope.querySelectorAll(".money-input").forEach(inp=>{
+        if (inp.dataset.bound === "1") return;
+        inp.dataset.bound = "1";
+        inp.addEventListener("input", ()=>{ markManual(); scheduleCalculate(); });
+        inp.addEventListener("blur", moneyInputHandler);
+        inp.addEventListener("keydown", (e)=>{ if (e.key === "Enter"){ e.preventDefault(); calculateAll({focusResult:true}); }});
+      });
+    }
+    function bindPercentInputs(scope=document){
+      scope.querySelectorAll(".percent-input").forEach(inp=>{
+        if (inp.dataset.percentBound === "1") return;
+        inp.dataset.percentBound = "1";
+        inp.addEventListener("input", ()=>{ markManual(); scheduleCalculate(); });
+        inp.addEventListener("blur", (e)=>{ e.target.value = formatPercentInputValue(e.target.value); });
+        inp.addEventListener("keydown", (e)=>{ if (e.key === "Enter"){ e.preventDefault(); calculateAll({focusResult:true}); }});
+      });
+    }
+    function bindAutoCalculate(scope=document){
+      scope.querySelectorAll("input,select").forEach(el=>{
+        if (el.dataset.autoBound === "1") return;
+        el.dataset.autoBound = "1";
+        const hasSpecialInputBinding = el.classList.contains("money-input") || el.classList.contains("percent-input");
+        if (!hasSpecialInputBinding) {
+          el.addEventListener("input", ()=>{ markManual(); scheduleCalculate(); });
+          el.addEventListener("keydown", (e)=>{ if (e.key === "Enter"){ e.preventDefault(); calculateAll({focusResult:true}); }});
+        }
+        el.addEventListener("change", ()=>{ markManual(); scheduleCalculate(); });
+      });
+    }
+    function saveManualState(){
+      if (currentInputMode !== "manual") return;
+      const payload = {
+        version: 3,
+        source: "manual",
+        debts: getDebts(),
+        fields: {
+          monthlyIncome: els.monthlyIncome.value,
+          extraPayment: els.extraPayment.value,
+          oneTimePayment: els.oneTimePayment.value,
+          daysInMonth: els.daysInMonth.value,
+          strategy: els.strategy.value,
+          rent: els.rent.value,
+          bills: els.bills.value,
+          market: els.market.value,
+          transport: els.transport.value,
+          otherFixed: els.otherFixed.value,
+          safetyReserve: els.safetyReserve.value,
+          currency: currentCurrency()
+        }
+      };
+      try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); }catch(err){}
+    }
+    function loadManualState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        const payload = JSON.parse(raw);
+        if (!payload || payload.source !== "manual" || payload.version !== 3) {
+          try{ localStorage.removeItem(STORAGE_KEY); }catch(_removeErr){}
+          return false;
+        }
+        debtsContainer.innerHTML = "";
+        debtIdCounter = 0;
+        const debts = Array.isArray(payload.debts) ? payload.debts : [];
+        if (debts.length){
+          debts.forEach(d=>addDebt(d));
+        }else{
+          addDebt();
+        }
+        const fields = payload.fields || {};
+        Object.keys(fields).forEach(key=>{
+          if (els[key]) els[key].value = fields[key] || "";
+        });
+        currentInputMode = "manual";
+        calculateAll();
+        return true;
+      }catch(err){
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(_removeErr){}
+        return false;
+      }
+    }
+
+    function addDebt(data = {}){
+      debtIdCounter += 1;
+      const row = document.createElement("div");
+      row.className = "debt-row";
+      row.innerHTML = `
+        <div class="debt-top">
+          <div class="debt-title">Debt #${debtIdCounter}</div>
+          <span class="tag">Interest optional</span>
+        </div>
+        <div class="field full">
+          <label for="debtName${debtIdCounter}">Debt name</label>
+          <input id="debtName${debtIdCounter}" type="text" class="debt-name" placeholder="e.g. credit card / personal loan / family loan" value="${escapeHtml(data.name || "")}">
+          <div class="hint">This name is used in the schedule and comments.</div>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="debtBalance${debtIdCounter}">Remaining balance</label>
+            <input id="debtBalance${debtIdCounter}" type="text" inputmode="decimal" class="debt-balance money-input" placeholder="e.g. 12,000" value="${data.balance ? formatMoneyInputValue(data.balance) : ""}">
+            <div class="hint">Remaining principal or current debt balance.</div>
+          </div>
+          <div class="field">
+            <label for="debtRate${debtIdCounter}">Monthly interest rate (%)</label>
+            <input id="debtRate${debtIdCounter}" type="text" inputmode="decimal" class="debt-rate percent-input" placeholder="e.g. 1.80" value="${data.rate != null && data.rate !== "" ? formatPercentInputValue(data.rate) : ""}">
+            <div class="hint">Use 0 for interest-free debt.</div>
+          </div>
+          <div class="field">
+            <label for="debtMin${debtIdCounter}">Minimum payment</label>
+            <input id="debtMin${debtIdCounter}" type="text" inputmode="decimal" class="debt-min money-input" placeholder="e.g. 200" value="${data.minPayment ? formatMoneyInputValue(data.minPayment) : ""}">
+            <div class="hint">Required minimum amount you plan to pay each month.</div>
+          </div>
+          <div class="field">
+            <label for="debtNote${debtIdCounter}">Note / type</label>
+            <input id="debtNote${debtIdCounter}" type="text" class="debt-note" placeholder="e.g. card, loan, interest-free" value="${escapeHtml(data.note || "")}">
+            <div class="hint">Optional note for your own tracking.</div>
+          </div>
+        </div>
+        <div class="debt-actions">
+          <button class="btn btn-danger" type="button" onclick="removeDebt(this)">Remove Debt</button>
+        </div>`;
+      debtsContainer.appendChild(row);
+      bindMoneyInputs(row);
+      bindPercentInputs(row);
+      bindAutoCalculate(row);
+      scheduleCalculate();
+    }
+
+    function removeDebt(button){
+      const rows = debtsContainer.querySelectorAll(".debt-row");
+      if (rows.length <= 1){
+        alert("At least one debt row must remain.");
+        return;
+      }
+      button.closest(".debt-row").remove();
+      scheduleCalculate();
+    }
+
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#39;");
+    }
+
+    function getDebts(){
+      const debts = [];
+      document.querySelectorAll(".debt-row").forEach((row, index)=>{
+        const name = row.querySelector(".debt-name").value.trim() || `Debt ${index + 1}`;
+        const balance = parseMoney(row.querySelector(".debt-balance").value);
+        const rate = parsePercent(row.querySelector(".debt-rate").value);
+        const minPayment = parseMoney(row.querySelector(".debt-min").value);
+        const note = row.querySelector(".debt-note").value.trim();
+        if (balance > 0){
+          debts.push({ name, balance, rate, minPayment, note });
+        }
+      });
+      return debts;
+    }
+
+    function choosePriorityDebts(debts, strategy){
+      const active = debts.filter(d => d.balance > 0.009);
+      if (strategy === "snowball") return [...active].sort((a,b)=>a.balance - b.balance || b.rate - a.rate);
+      return [...active].sort((a,b)=>b.rate - a.rate || a.balance - b.balance);
+    }
+
+    function applyOneTimePayment(baseDebts, amount, strategy){
+      const debts = baseDebts.map(d => ({...d}));
+      let remaining = Math.max(Number(amount) || 0, 0);
+      let used = 0;
+      if (remaining > 0){
+        const targets = choosePriorityDebts(debts, strategy);
+        for (const debt of targets){
+          if (remaining <= 0) break;
+          if (debt.balance <= 0.009) continue;
+          const payment = Math.min(debt.balance, remaining);
+          debt.balance -= payment;
+          remaining -= payment;
+          used += payment;
+          if (debt.balance <= 0.009) debt.balance = 0;
+        }
+      }
+      return { debts, used, unused: remaining };
+    }
+
+    function firstMonthMinimumTotal(debts){
+      return debts.reduce((sum, debt) => {
+        if (debt.balance <= 0.009) return sum;
+        const firstMonthBalance = debt.balance * (1 + Math.max(debt.rate, 0) / 100);
+        return sum + Math.min(firstMonthBalance, Math.max(debt.minPayment, 0));
+      }, 0);
+    }
+
+    function monthLabelFromNow(monthOffset){
+      const now = new Date();
+      const target = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
+      return target.toLocaleDateString("en-US", { month:"long", year:"numeric" });
+    }
+
+    function simulatePlan(baseDebts, config, strategy){
+      const lumpSum = applyOneTimePayment(baseDebts, config.oneTimePayment, strategy);
+      const simDebts = lumpSum.debts;
+      let totalInterest = 0;
+      let totalPaid = lumpSum.used;
+      let month = 0;
+      const rows = [];
+      const limit = 600;
+
+      while (simDebts.some(d => d.balance > 0.009) && month < limit){
+        month += 1;
+        let monthInterest = 0;
+        let monthPayment = 0;
+        const monthClosed = [];
+
+        // Interest is applied to the remaining balance after the lump-sum payment.
+        simDebts.forEach(debt => {
+          if (debt.balance <= 0.009) return;
+          const interest = debt.balance * (debt.rate / 100);
+          debt.balance += interest;
+          monthInterest += interest;
+        });
+        totalInterest += monthInterest;
+
+        let remainingPool = Math.max(config.debtBudget, 0);
+        const activeDebts = simDebts.filter(d => d.balance > 0.009);
+        const requestedMinimumTotal = activeDebts.reduce(
+          (sum, debt) => sum + Math.min(debt.balance, Math.max(debt.minPayment, 0)),
+          0
+        );
+
+        // If the budget cannot cover all minimums, available money is distributed proportionally.
+        const minimumScale = requestedMinimumTotal > 0
+          ? Math.min(1, remainingPool / requestedMinimumTotal)
+          : 0;
+
+        activeDebts.forEach(debt => {
+          if (remainingPool <= 0) return;
+          const requested = Math.min(debt.balance, Math.max(debt.minPayment, 0));
+          const plannedMinimum = requested * minimumScale;
+          const payment = Math.min(debt.balance, remainingPool, plannedMinimum);
+          debt.balance -= payment;
+          remainingPool -= payment;
+          monthPayment += payment;
+          totalPaid += payment;
+          if (debt.balance <= 0.009){
+            debt.balance = 0;
+            monthClosed.push(debt.name);
+          }
+        });
+
+        // Any remaining pool after rounding or closed debts goes to the priority debt.
+        const priorityList = choosePriorityDebts(simDebts, strategy);
+        for (const debt of priorityList){
+          if (remainingPool <= 0) break;
+          if (debt.balance <= 0.009) continue;
+          const payment = Math.min(debt.balance, remainingPool);
+          debt.balance -= payment;
+          remainingPool -= payment;
+          monthPayment += payment;
+          totalPaid += payment;
+          if (debt.balance <= 0.009){
+            debt.balance = 0;
+            monthClosed.push(debt.name);
+          }
+        }
+
+        const remainingDebt = simDebts.reduce((sum, debt) => sum + debt.balance, 0);
+        rows.push({
+          month,
+          payment: monthPayment,
+          interest: monthInterest,
+          closed: monthClosed.length ? [...new Set(monthClosed)].join(", ") : "-",
+          remainingDebt
+        });
+
+        if (remainingDebt <= 0.009) break;
+
+        // If the monthly debt budget cannot cover interest, balances may keep growing.
+        if (monthPayment <= monthInterest + 0.009 && month >= 24){
+          // Continue up to 600 months; hitLimit communicates that the plan is excessively long.
+        }
+      }
+
+      return {
+        months: month,
+        rows,
+        totalInterest,
+        totalPaid,
+        remainingDebt: simDebts.reduce((sum, debt) => sum + debt.balance, 0),
+        hitLimit: month >= limit && simDebts.some(d => d.balance > 0.009)
+      };
+    }
+
+    function setBadge(state, text){
+      const badge = document.getElementById("statusBadge");
+      badge.textContent = text;
+      badge.className = "badge " + (state || "");
+    }
+
+    function setDifficulty(state, text){
+      const el = document.getElementById("difficultyBadge");
+      el.textContent = text;
+      el.className = "pill " + (state || "");
+    }
+
+    function setEmptyState(msg="Enter at least one debt and monthly income to see results."){
+      document.getElementById("statusText").textContent = msg;
+      setBadge("", "Waiting for data");
+      document.getElementById("highlightCard").classList.add("is-empty");
+      document.getElementById("mainResult").textContent = "—";
+      document.getElementById("mainResultText").textContent = "Estimated payoff time will appear here.";
+      document.getElementById("healthScore").textContent = "0/100";
+      document.getElementById("scoreBar").style.width = "0%";
+      setDifficulty("", "Waiting for data");
+      document.getElementById("totalDebtResult").textContent = "—";
+      document.getElementById("requiredMonthlyResult").textContent = "—";
+      document.getElementById("remainingAfterAllResult").textContent = "—";
+      document.getElementById("dailySpendingLimitResult").textContent = "—";
+      document.getElementById("totalInterestResult").textContent = "—";
+      document.getElementById("freedomDateResult").textContent = "—";
+      ["totalDebtResult","requiredMonthlyResult","remainingAfterAllResult","dailySpendingLimitResult","totalInterestResult","freedomDateResult"].forEach(id=>setValueTone(id));
+      document.getElementById("monthsToFreedomResult").textContent = "—";
+      document.getElementById("planStatusResult").textContent = "—";
+      document.getElementById("totalPaidResult").textContent = "—";
+      document.getElementById("livingCostsResult").textContent = "—";
+      document.getElementById("debtBudgetResult").textContent = "—";
+      document.getElementById("minimumOnlyResult").textContent = "—";
+      document.getElementById("requestedExtraResult").textContent = "—";
+      document.getElementById("usedExtraResult").textContent = "—";
+      document.getElementById("healthPressure").textContent = "—";
+      document.getElementById("healthPressureSub").textContent = "—";
+      document.getElementById("healthInterest").textContent = "—";
+      document.getElementById("healthInterestSub").textContent = "—";
+      document.getElementById("healthStrategy").textContent = "—";
+      document.getElementById("healthStrategySub").textContent = "—";
+      ["healthPressure","healthInterest","healthStrategy"].forEach(id=>setHealthTone(id));
+      document.getElementById("smartComment").textContent = "Enter your information and calculate. The tool will summarize whether the modeled plan looks fragile or more sustainable.";
+      document.getElementById("scheduleBody").innerHTML = '<tr><td colspan="5">Waiting for calculation.</td></tr>';
+      document.getElementById("strategyCompareBody").innerHTML = '<tr><td colspan="4">Strategy comparison appears after calculation.</td></tr>';
+      document.getElementById("scoreBreakdown").innerHTML = `
+        <div class="score-breakdown-row"><span class="name">Monthly breathing room</span><span class="val">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Minimum-payment safety</span><span class="val">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Interest pressure</span><span class="val">—</span></div>
+        <div class="score-breakdown-row"><span class="name">Payoff time</span><span class="val">—</span></div>`;
+    }
+
+    function renderSchedule(rows){
+      const body = document.getElementById("scheduleBody");
+      if (!rows.length){
+        body.innerHTML = '<tr><td colspan="5">No payoff schedule was produced.</td></tr>';
+        return;
+      }
+      body.innerHTML = rows.map(row => `
+        <tr>
+          <td>Month ${row.month}</td>
+          <td>${formatCurrency(row.payment)}</td>
+          <td>${formatCurrency(row.interest)}</td>
+          <td>${row.closed}</td>
+          <td>${formatCurrency(Math.max(row.remainingDebt, 0))}</td>
+        </tr>`).join("");
+    }
+
+    function renderStrategyCompare(mainStrategy, mainSim, otherSim){
+      const body = document.getElementById("strategyCompareBody");
+      const mainLabel = mainStrategy === "avalanche" ? "Avalanche" : "Snowball";
+      const otherLabel = mainStrategy === "avalanche" ? "Snowball" : "Avalanche";
+      body.innerHTML = `
+        <tr>
+          <td>${mainLabel}</td>
+          <td>${mainSim.hitLimit ? "Very long" : mainSim.months + " months"}</td>
+          <td>${formatCurrency(mainSim.totalInterest)}</td>
+          <td>${mainStrategy === "avalanche" ? "Focuses on reducing interest" : "Motivation-focused payoff order"}</td>
+        </tr>
+        <tr>
+          <td>${otherLabel}</td>
+          <td>${otherSim.hitLimit ? "Very long" : otherSim.months + " months"}</td>
+          <td>${formatCurrency(otherSim.totalInterest)}</td>
+          <td>${mainStrategy === "avalanche" ? "Closes smaller balances sooner" : "Usually lowers total interest"}</td>
+        </tr>`;
+    }
+
+    function calculateAll(options = {}){
+      const { focusResult = false } = options;
+      const forceValidation = !!focusResult;
+      clearValidationErrors();
+      const debts = getDebts();
+      const income = parseMoney(els.monthlyIncome.value);
+      const extraPayment = parseMoney(els.extraPayment.value);
+      const oneTimePayment = parseMoney(els.oneTimePayment.value);
+      const daysInMonth = Math.max(parseInt(els.daysInMonth.value || "30", 10), 1);
+      const strategy = els.strategy.value;
+      const rent = parseMoney(els.rent.value);
+      const bills = parseMoney(els.bills.value);
+      const market = parseMoney(els.market.value);
+      const transport = parseMoney(els.transport.value);
+      const otherFixed = parseMoney(els.otherFixed.value);
+      const safetyReserve = parseMoney(els.safetyReserve.value);
+
+      if (!debts.length && income <= 0){
+        state.inputs = { debts, income, extraPayment, oneTimePayment, daysInMonth, strategy, rent, bills, market, transport, otherFixed, safetyReserve };
+        state.results = null;
+        state.isValid = false;
+        state.isCalculated = false;
+        setEmptyState();
+        return;
+      }
+      if (!debts.length){
+        state.isValid = false;
+        state.isCalculated = false;
+        setEmptyState(forceValidation ? "Enter at least one valid debt first." : "Add at least one debt to build the plan.");
+        if (forceValidation){
+          showDebtValidation();
+          setBadge("warn","Debt missing");
+        }
+        return;
+      }
+      if (income <= 0){
+        state.isValid = false;
+        state.isCalculated = false;
+        setEmptyState(forceValidation ? "Enter monthly income for a meaningful result." : "Enter monthly income to complete the plan.");
+        if (forceValidation){
+          showIncomeValidation();
+          setBadge("warn","Income missing");
+        }
+        return;
+      }
+      const planValidationErrors = validatePlanInputs({ debts, income, extraPayment, oneTimePayment, daysInMonth, strategy, rent, bills, market, transport, otherFixed, safetyReserve });
+      if (planValidationErrors.length){
+        state.isValid = false;
+        state.isCalculated = false;
+        setEmptyState(planValidationErrors[0]);
+        setBadge('warn','Check field');
+        document.getElementById('statusText').textContent = planValidationErrors[0];
+        return;
+      }
+      state.inputs = { debts, income, extraPayment, oneTimePayment, daysInMonth, strategy, rent, bills, market, transport, otherFixed, safetyReserve };
+      state.isValid = true;
+      state.isCalculated = true;
+
+      const totalDebtStart = debts.reduce((sum,d)=>sum+d.balance,0);
+      const postLumpPlan = applyOneTimePayment(debts, oneTimePayment, strategy);
+      const planningDebts = postLumpPlan.debts;
+      const totalMin = firstMonthMinimumTotal(planningDebts);
+      const livingCosts = rent + bills + market + transport + otherFixed;
+      const requiredMonthly = totalMin + livingCosts;
+      const monthlyCapacity = income - livingCosts - safetyReserve;
+      const availableForDebt = Math.max(monthlyCapacity, 0);
+      const safeExtraPayment = Math.max(
+        Math.min(extraPayment, Math.max(availableForDebt - totalMin, 0)),
+        0
+      );
+      const requestedDebtBudget = totalMin + safeExtraPayment;
+      const debtBudget = Math.min(availableForDebt, requestedDebtBudget);
+      const remainingAfterAll = income - livingCosts - safetyReserve - debtBudget;
+      const dailyLimit = Math.max(remainingAfterAll, 0) / daysInMonth;
+      const remainingRatio = income > 0 ? remainingAfterAll / income : -1;
+
+      document.getElementById("totalDebtResult").textContent = formatCurrency(totalDebtStart);
+      document.getElementById("requiredMonthlyResult").textContent = formatCurrency(requiredMonthly);
+      document.getElementById("remainingAfterAllResult").textContent = formatCurrency(remainingAfterAll);
+      document.getElementById("dailySpendingLimitResult").textContent = formatCurrency(dailyLimit);
+      document.getElementById("livingCostsResult").textContent = formatCurrency(livingCosts);
+      document.getElementById("debtBudgetResult").textContent = formatCurrency(debtBudget);
+      document.getElementById("minimumOnlyResult").textContent = formatCurrency(totalMin);
+      document.getElementById("requestedExtraResult").textContent = formatCurrency(extraPayment);
+      document.getElementById("usedExtraResult").textContent = formatCurrency(safeExtraPayment);
+      setValueTone("totalDebtResult");
+      setValueTone("requiredMonthlyResult", requiredMonthly > income ? "bad" : "");
+      setValueTone("remainingAfterAllResult", remainingAfterAll < 0 ? "bad" : remainingRatio < 0.05 ? "warn" : "good");
+      setValueTone("dailySpendingLimitResult", remainingRatio < 0.05 ? "bad" : remainingRatio < 0.15 ? "warn" : "good");
+      setValueTone("totalInterestResult");
+      setValueTone("freedomDateResult");
+
+      if (monthlyCapacity <= 0){
+        setBadge("bad","Plan cannot run");
+        document.getElementById("statusText").textContent = "Living costs and the safety reserve exceed monthly income.";
+        document.getElementById("smartComment").textContent = "Consider reducing expenses, increasing income or restructuring debt first. Under these inputs, there is no recurring monthly capacity for debt repayment.";
+        document.getElementById("healthPressure").textContent = "Very high";
+        document.getElementById("healthPressureSub").textContent = "Living costs exceed income";
+        document.getElementById("healthInterest").textContent = "Uncertain";
+        document.getElementById("healthInterestSub").textContent = "No viable payoff flow";
+        document.getElementById("healthStrategy").textContent = strategy === "avalanche" ? "Avalanche" : "Snowball";
+        document.getElementById("healthStrategySub").textContent = "Balance the monthly budget first";
+        setHealthTone("healthPressure","bad");
+        setHealthTone("healthInterest","warn");
+        setHealthTone("healthStrategy");
+        document.getElementById("highlightCard").classList.add("is-empty");
+        document.getElementById("mainResult").textContent = "Fragile plan";
+        document.getElementById("mainResultText").textContent = "A sustainable payoff plan cannot run until the basic monthly budget is balanced.";
+        document.getElementById("healthScore").textContent = "10/100";
+        document.getElementById("scoreBar").style.width = "10%";
+        setDifficulty("bad","Very weak");
+        document.getElementById("scoreBreakdown").innerHTML = `
+          <div class="score-breakdown-row"><span class="name">Monthly breathing room</span><span class="val bad">2/30</span></div>
+          <div class="score-breakdown-row"><span class="name">Minimum-payment safety</span><span class="val bad">2/25</span></div>
+          <div class="score-breakdown-row"><span class="name">Interest pressure</span><span class="val bad">3/20</span></div>
+          <div class="score-breakdown-row"><span class="name">Payoff time</span><span class="val bad">3/25</span></div>`;
+        document.getElementById("strategyCompareBody").innerHTML = '<tr><td colspan="4">Strategy comparison is unavailable because no viable payoff flow was produced.</td></tr>';
+        document.getElementById("scheduleBody").innerHTML = '<tr><td colspan="5">No viable payoff flow.</td></tr>';
+        document.getElementById("monthsToFreedomResult").textContent = "Uncertain";
+        document.getElementById("planStatusResult").textContent = "Very tight";
+        document.getElementById("totalPaidResult").textContent = "Uncertain";
+        document.getElementById("totalInterestResult").textContent = "Uncertain";
+        document.getElementById("freedomDateResult").textContent = "Uncertain";
+        setValueTone("totalInterestResult","warn");
+        setValueTone("freedomDateResult","warn");
+        if (focusResult) focusResultsPanel();
+        return;
+      }
+
+      if (monthlyCapacity < totalMin){
+        setBadge("bad","Insufficient capacity");
+        document.getElementById("statusText").textContent = `Only ${formatCurrency(debtBudget)} remains for debt after living costs, while minimum payments total ${formatCurrency(totalMin)}. The simulation uses the actual available capacity.`;
+        document.getElementById("smartComment").textContent = "The plan looks high-risk because available monthly capacity does not cover all minimum payments. Instead of assuming money that is not available, the simulation allocates the real debt budget proportionally. Restructuring, lower expenses or higher income may be needed.";
+      } else {
+        setBadge("good","Plan created");
+        document.getElementById("statusText").textContent = "The payoff simulation is ready. Review pressure, payoff time and strategy fit together.";
+      }
+      if (extraPayment > safeExtraPayment){
+        const clippedMessage = `${formatCurrency(extraPayment - safeExtraPayment)} of the requested extra payment exceeds the modeled safe budget and was excluded from the simulation.`;
+        if (monthlyCapacity < totalMin){
+          document.getElementById("statusText").textContent += " " + clippedMessage;
+        } else {
+          setBadge("warn","Extra payment capped");
+          document.getElementById("statusText").textContent = clippedMessage;
+        }
+      }
+
+      const weakMinimumDebts = planningDebts.filter(debt =>
+        debt.balance > 0 &&
+        debt.minPayment <= debt.balance * (debt.rate / 100)
+      );
+      if (weakMinimumDebts.length){
+        const names = weakMinimumDebts.map(debt => debt.name).join(", ");
+        const warning = `For ${names}, the minimum payment does not cover or barely covers first-month interest, so the balance may grow.`;
+        document.getElementById("statusText").textContent += " " + warning;
+      }
+
+      const config = { oneTimePayment, debtBudget };
+      const mainSim = simulatePlan(debts, config, strategy);
+      const altStrategy = strategy === "avalanche" ? "snowball" : "avalanche";
+      const otherSim = simulatePlan(debts, config, altStrategy);
+
+      renderSchedule(mainSim.rows);
+      renderStrategyCompare(strategy, mainSim, otherSim);
+
+      if (mainSim.hitLimit){
+        setDifficulty("bad","Very long");
+        document.getElementById("highlightCard").classList.remove("is-empty");
+        document.getElementById("mainResult").textContent = "600+ months";
+        document.getElementById("mainResultText").textContent = "The plan takes too long under the current budget.";
+        document.getElementById("monthsToFreedomResult").textContent = "Very long";
+        document.getElementById("freedomDateResult").textContent = "Uncertain";
+        document.getElementById("totalInterestResult").textContent = formatCurrency(mainSim.totalInterest);
+        document.getElementById("totalPaidResult").textContent = formatCurrency(mainSim.totalPaid);
+        setValueTone("totalInterestResult","bad");
+        setValueTone("freedomDateResult","warn");
+        document.getElementById("planStatusResult").textContent = "Very fragile";
+        document.getElementById("healthPressure").textContent = "High";
+        document.getElementById("healthPressureSub").textContent = "Payoff time is extremely long";
+        document.getElementById("healthInterest").textContent = "Heavy";
+        document.getElementById("healthInterestSub").textContent = "Interest burden keeps growing";
+        document.getElementById("healthStrategy").textContent = strategy === "avalanche" ? "Avalanche" : "Snowball";
+        document.getElementById("healthStrategySub").textContent = "More debt-payment capacity may be needed";
+        setHealthTone("healthPressure","bad");
+        setHealthTone("healthInterest","bad");
+        setHealthTone("healthStrategy");
+        document.getElementById("healthScore").textContent = "18/100";
+        document.getElementById("scoreBar").style.width = "18%";
+        document.getElementById("scoreBreakdown").innerHTML = `
+          <div class="score-breakdown-row"><span class="name">Monthly breathing room</span><span class="val warn">6/30</span></div>
+          <div class="score-breakdown-row"><span class="name">Minimum-payment safety</span><span class="val warn">5/25</span></div>
+          <div class="score-breakdown-row"><span class="name">Interest pressure</span><span class="val bad">3/20</span></div>
+          <div class="score-breakdown-row"><span class="name">Payoff time</span><span class="val bad">4/25</span></div>`;
+        document.getElementById("smartComment").textContent = "Even if the simulation technically progresses, the payoff time is extremely long. This can indicate heavy interest-bearing balances, insufficient extra-payment capacity or minimum payments that do not reduce principal effectively.";
+        if (focusResult) focusResultsPanel();
+        return;
+      }
+
+      const months = mainSim.months;
+      const freedomDate = monthLabelFromNow(months);
+      const interestRatio = totalDebtStart > 0 ? (mainSim.totalInterest / totalDebtStart) * 100 : 0;
+      const minCoverageRatio = totalMin > 0 ? (availableForDebt / totalMin) : 3;
+      const pressureScore = Math.max(0, Math.min(30, (remainingAfterAll <= 0 ? 5 : remainingRatio < 0.05 ? 14 : remainingRatio < 0.15 ? 22 : 30)));
+      const safetyScore = Math.max(0, Math.min(25, minCoverageRatio < 1 ? 4 : minCoverageRatio < 1.2 ? 10 : minCoverageRatio < 1.6 ? 18 : 25));
+      const interestScore = Math.max(0, Math.min(20, interestRatio > 50 ? 4 : interestRatio > 25 ? 10 : interestRatio > 12 ? 15 : 20));
+      const timeScore = Math.max(0, Math.min(25, months > 48 ? 6 : months > 24 ? 14 : months > 12 ? 20 : 25));
+      const totalScore = Math.round(pressureScore + safetyScore + interestScore + timeScore);
+
+      document.getElementById("highlightCard").classList.remove("is-empty");
+      document.getElementById("mainResult").textContent = `${months} months`;
+      document.getElementById("mainResultText").textContent = `Estimated payoff is around ${freedomDate}.`;
+      document.getElementById("monthsToFreedomResult").textContent = `${months} months`;
+      document.getElementById("freedomDateResult").textContent = freedomDate;
+      document.getElementById("totalInterestResult").textContent = formatCurrency(mainSim.totalInterest);
+      document.getElementById("totalPaidResult").textContent = formatCurrency(mainSim.totalPaid);
+      setValueTone("totalInterestResult", interestRatio > 40 ? "bad" : interestRatio > 18 ? "warn" : "good");
+      setValueTone("freedomDateResult");
+      document.getElementById("healthScore").textContent = `${totalScore}/100`;
+      document.getElementById("scoreBar").style.width = `${totalScore}%`;
+
+      let difficultyText = "Weak";
+      let difficultyState = "bad";
+      if (totalScore >= 75){ difficultyText = "Strong"; difficultyState = "good"; }
+      else if (totalScore >= 50){ difficultyText = "Moderate"; difficultyState = "warn"; }
+      setDifficulty(difficultyState, difficultyText);
+
+      const breakdownRows = [
+        ["Monthly breathing room", `${pressureScore}/30`, pressureScore >= 22 ? "good" : pressureScore >= 12 ? "warn" : "bad"],
+        ["Minimum-payment safety", `${safetyScore}/25`, safetyScore >= 18 ? "good" : safetyScore >= 10 ? "warn" : "bad"],
+        ["Interest pressure", `${interestScore}/20`, interestScore >= 15 ? "good" : interestScore >= 9 ? "warn" : "bad"],
+        ["Payoff time", `${timeScore}/25`, timeScore >= 20 ? "good" : timeScore >= 12 ? "warn" : "bad"]
+      ];
+      document.getElementById("scoreBreakdown").innerHTML = breakdownRows.map(r =>
+        `<div class="score-breakdown-row"><span class="name">${r[0]}</span><span class="val ${r[2]}">${r[1]}</span></div>`
+      ).join("");
+
+      let planStatus = monthlyCapacity < totalMin ? "Minimums not covered" : "Healthier";
+      let pressure = monthlyCapacity < totalMin ? "High" : "Comfortable";
+      let pressureSub = monthlyCapacity < totalMin ? "Monthly capacity is below minimums" : "Some room remains after the plan";
+      if (monthlyCapacity >= totalMin){
+        if (remainingAfterAll < 0 || remainingRatio < 0.05){
+          planStatus = "Very tight"; pressure = "High"; pressureSub = "Daily spending room is very tight";
+        } else if (remainingRatio < 0.15){
+          planStatus = "Needs discipline"; pressure = "Moderate"; pressureSub = "Requires discipline";
+        }
+      }
+
+      document.getElementById("planStatusResult").textContent = planStatus;
+      document.getElementById("healthPressure").textContent = pressure;
+      document.getElementById("healthPressureSub").textContent = pressureSub;
+      setHealthTone("healthPressure", pressure === "Comfortable" ? "good" : pressure === "Moderate" ? "warn" : "bad");
+
+      let interestText = "Light";
+      let interestSub = "Interest burden is controlled";
+      if (interestRatio > 40){ interestText = "Heavy"; interestSub = "Interest cost is high relative to starting debt"; }
+      else if (interestRatio > 18){ interestText = "Moderate"; interestSub = "Interest pressure is noticeable"; }
+      document.getElementById("healthInterest").textContent = interestText;
+      document.getElementById("healthInterestSub").textContent = interestSub;
+      setHealthTone("healthInterest", interestText === "Light" ? "good" : interestText === "Moderate" ? "warn" : "bad");
+
+      const strategyLabel = strategy === "avalanche" ? "Avalanche" : "Snowball";
+      let strategySub = strategy === "avalanche" ? "Focuses on lowering interest cost" : "Closes smaller balances first for quicker wins";
+      const monthDiff = otherSim.hitLimit ? null : otherSim.months - mainSim.months;
+      const interestDiff = otherSim.totalInterest - mainSim.totalInterest;
+      if (strategy === "avalanche" && interestDiff > 0){
+        strategySub = `Produces about ${formatCurrency(Math.abs(interestDiff))} less interest than the alternative in this simulation.`;
+      } else if (strategy === "snowball" && monthDiff !== null && monthDiff <= 0){
+        strategySub = `Finishes at a similar pace to the alternative and may offer stronger motivational wins.`;
+      }
+      document.getElementById("healthStrategy").textContent = strategyLabel;
+      document.getElementById("healthStrategySub").textContent = strategySub;
+      setHealthTone("healthStrategy");
+
+      let comment = `With the ${strategyLabel} strategy, the current simulation reaches payoff in about ${months} months, around ${freedomDate}. `;
+      if (monthlyCapacity < totalMin){
+        comment += `Minimum payments total ${formatCurrency(totalMin)}, but actual monthly debt capacity is ${formatCurrency(debtBudget)}. The simulation therefore allocates payments proportionally to available capacity. `;
+      }
+      if (extraPayment > safeExtraPayment){
+        comment += `The portion of the requested extra payment above the modeled safe budget, ${formatCurrency(extraPayment - safeExtraPayment)}, was excluded. The simulation uses ${formatCurrency(safeExtraPayment)} as the extra payment. `;
+      }
+      if (weakMinimumDebts.length){
+        comment += `For ${weakMinimumDebts.map(debt => debt.name).join(", ")}, the minimum payment does not cover or barely covers first-month interest, so the balance may grow. `;
+      }
+      comment += `After living costs, reserve and the modeled debt budget, about ${formatCurrency(Math.max(remainingAfterAll,0))} remains for other spending, or roughly ${formatCurrency(dailyLimit)} per day. `;
+      if (remainingRatio < 0.05) comment += `This is a very tight buffer; even small unexpected costs could disrupt the plan. `;
+      else if (remainingRatio < 0.15) comment += `The plan may work but requires discipline. `;
+      else comment += `This indicates a more comfortable level of everyday spending room. `;
+      if (interestRatio > 40) comment += `Interest burden is high, so additional debt-payment capacity would likely have its biggest effect here. `;
+      else if (interestRatio > 18) comment += `Interest burden is moderate, so avalanche may be a sensible cost-focused option. `;
+      else comment += `Interest pressure is relatively controlled. `;
+      document.getElementById("smartComment").textContent = comment;
+      state.results = { months, freedomDate, totalDebtStart, requiredMonthly, remainingAfterAll, dailyLimit, totalInterest: mainSim.totalInterest, totalPaid: mainSim.totalPaid, totalScore, planStatus, strategyLabel, requestedExtra: extraPayment, usedExtra: safeExtraPayment, debtBudget };
+      saveManualState();
+      if (focusResult) focusResultsPanel();
+    }
+
+    function printResult(){
+      if (!state.isCalculated || !state.results){ alert('Create a valid result before printing.'); return; }
+      window.print();
+    }
+
+    function copyResult(){
+      if (!state.isCalculated || !state.results){
+        alert("Create a valid result first.");
+        return;
+      }
+      const text = `Debt Payoff Plan Result
+
+Estimated Payoff Time: ${document.getElementById("monthsToFreedomResult").textContent}
+Estimated Debt-Free Date: ${document.getElementById("freedomDateResult").textContent}
+Total Debt: ${document.getElementById("totalDebtResult").textContent}
+Living Costs + Minimum Payments: ${document.getElementById("requiredMonthlyResult").textContent}
+Remaining After Modeled Payments: ${document.getElementById("remainingAfterAllResult").textContent}
+Daily Safe-Spending Amount: ${document.getElementById("dailySpendingLimitResult").textContent}
+Total Interest Cost: ${document.getElementById("totalInterestResult").textContent}
+Hesapica Debt Plan Score: ${document.getElementById("healthScore").textContent}
+Plan Pressure Level: ${document.getElementById("planStatusResult").textContent}
+
+Comment:
+${document.getElementById("smartComment").textContent}
+
+Page:
+${PAGE_URL}`;
+      safeWriteClipboard(text, "Result copied.", "Copy failed.");
+    }
+
+    async function shareResult(){
+      if (!state.isCalculated || !state.results){
+        alert("Create a valid result before sharing.");
+        return;
+      }
+      const text = `Debt Payoff Plan Result
+Payoff time: ${document.getElementById("monthsToFreedomResult").textContent}
+Total Debt: ${document.getElementById("totalDebtResult").textContent}
+Score: ${document.getElementById("healthScore").textContent}
+Comment: ${document.getElementById("smartComment").textContent}`;
+      if (navigator.share){
+        try{
+          await navigator.share({ title:"Debt Payoff Calculator", text, url: PAGE_URL });
+          return;
+        }catch(err){
+          if (err && err.name === "AbortError") return;
+        }
+      }
+      safeWriteClipboard(text + "\n" + PAGE_URL, "Share text copied.", "Sharing failed.");
+    }
+
+    function fillMoney(el, value){
+      el.value = value ? formatMoneyInputValue(value) : "";
+    }
+
+    function fillExample(){
+      currentInputMode = "example";
+      debtsContainer.innerHTML = "";
+      debtIdCounter = 0;
+      addDebt({name:"Credit Card", balance:12000, rate:1.80, minPayment:400, note:"card"});
+      addDebt({name:"Personal Loan", balance:18000, rate:0.80, minPayment:550, note:"loan"});
+      addDebt({name:"Family Loan", balance:3000, rate:0, minPayment:150, note:"interest-free"});
+
+      fillMoney(els.monthlyIncome, 6500);
+      fillMoney(els.extraPayment, 500);
+      fillMoney(els.oneTimePayment, 2000);
+      els.daysInMonth.value = "30";
+      els.strategy.value = "avalanche";
+      fillMoney(els.rent, 1800);
+      fillMoney(els.bills, 450);
+      fillMoney(els.market, 800);
+      fillMoney(els.transport, 350);
+      fillMoney(els.otherFixed, 300);
+      fillMoney(els.safetyReserve, 500);
+      calculateAll({focusResult:true});
+    }
+
+    function resetTool(clearSaved = true){
+      currentInputMode = "manual";
+      debtsContainer.innerHTML = "";
+      debtIdCounter = 0;
+      addDebt();
+      [els.monthlyIncome, els.extraPayment, els.oneTimePayment, els.rent, els.bills, els.market, els.transport, els.otherFixed, els.safetyReserve].forEach(el=>el.value="");
+      els.daysInMonth.value = "";
+      els.strategy.value = "avalanche";
+      if (els.currency) els.currency.value = "USD";
+      state.inputs = {};
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      if (clearSaved){
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(err){}
+      }
+      setEmptyState();
+    }
+
+    bindMoneyInputs(document);
+    bindPercentInputs(document);
+    bindAutoCalculate(document);
+    if (!loadManualState()){
+      resetTool(false);
+    }
+  </script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','reset data','clear','clear data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crypto Profit Calculator: ROI, Fees &amp; Market Cap | Hesapica</title>
+<meta content="Calculate crypto profit or loss after buy and sell fees, ROI, market cap, dilution-adjusted ATH and supply-change scenarios." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/crypto-profit-calculator" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Crypto Profit Calculator: ROI, Fees &amp; Market Cap | Hesapica" property="og:title"/>
+<meta content="Calculate crypto profit or loss after buy and sell fees, ROI, market cap, dilution-adjusted ATH and supply-change scenarios." property="og:description"/>
+<meta content="https://hesapica.com/en/crypto-profit-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — global online calculators" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Crypto Profit Calculator: ROI, Fees &amp; Market Cap | Hesapica" name="twitter:title"/>
+<meta content="Calculate crypto profit or loss after buy and sell fees, ROI, market cap, dilution-adjusted ATH and supply-change scenarios." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — global online calculators" name="twitter:image:alt"/>
+<meta content="https://hesapica.com/en/crypto-profit-calculator" name="twitter:url"/>
+<meta content="@hesapica" name="twitter:site"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Measurement and advertising services load only according to user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+
+
+
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 42px rgba(79,70,229,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff,var(--bg));line-height:1.65}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:0 auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#4b5563;font-size:17px}.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.chip{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;color:#4338ca;font-size:13px;font-weight:800}.hero-box{padding:22px;border-radius:22px;background:#fff;border:1px solid #dbe4ff}.hero-box strong{display:block;font-size:22px;color:#312e81;margin-bottom:8px}.hero-box p{font-size:14px}
+.tool-layout{display:grid;grid-template-columns:minmax(0,1.08fr) 410px;gap:24px;align-items:start;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;color:#312e81;font-size:25px}.section-note{margin:0 0 18px;color:#4b5563}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{font-size:18px;font-weight:900;color:var(--primary);margin-bottom:14px}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14px}input,select{width:100%;height:54px;border:1px solid #d9def0;border-radius:15px;padding:0 14px;background:#fff;outline:none;font-size:17px;font-weight:600}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.10)}.hint{margin-top:6px;color:#6b7280;font-size:13px}.field-error{display:none;margin-top:6px;color:var(--bad);font-size:13px;font-weight:700}.field.invalid .field-error{display:block}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff7f7}
+.source-box{margin-top:14px;padding:14px 16px;border-radius:16px;background:#f8faff;border:1px dashed #c7d2fe;color:#4b5563;font-size:14px}.source-box a{color:#4338ca;font-weight:800}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:none;border-radius:14px;padding:13px 16px;font-weight:800;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}.btn:disabled{opacity:.5;cursor:not-allowed}.validation{display:none;margin-top:14px;padding:12px 14px;border-radius:14px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-weight:700;font-size:14px}.validation.show{display:block}
+.results{position:sticky;top:20px;display:grid;gap:14px}.highlight{padding:22px;border-radius:22px;background:linear-gradient(180deg,#f8faff,#eef2ff);border:1px solid #c7d2fe}.highlight .label{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#4338ca;font-weight:900}.highlight .value{font-size:40px;line-height:1.1;font-weight:900;margin:7px 0}.highlight .sub{font-size:14px;color:#4b5563}.positive{color:var(--good)}.negative{color:var(--bad)}
+.kpi{display:grid;gap:10px}.kpi-row{display:flex;justify-content:space-between;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:#fcfcff}.kpi-row .v{text-align:right;font-weight:900}.info-card{padding:16px;border-radius:17px;background:#fff;border:1px solid var(--line)}.info-card strong{display:block;margin-bottom:5px;color:#312e81}.warning{padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:14px}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.metric-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}.metric-card h2{margin:0 0 12px;color:#312e81}.metric-list{display:grid;gap:10px}.metric{padding:12px 14px;border-radius:14px;background:#f8faff;border:1px solid #e3e8ff}.metric .k{font-size:13px;color:#6b7280}.metric .v{font-size:20px;font-weight:900;margin-top:3px}.formula{margin-top:12px;padding:13px 15px;border-radius:14px;background:#f8fafc;border:1px solid var(--line);font-size:14px;font-weight:700;color:#334155}
+.faq details{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:#fff}.faq details+details{margin-top:10px}.faq summary{font-weight:800;cursor:pointer}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.related{display:block;padding:18px;border-radius:18px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 14px 28px rgba(91,79,246,.20)}.related strong{display:block;margin-bottom:6px}.related span{font-size:13px;color:rgba(255,255,255,.88)}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}.footer-note{padding:28px 0 36px;text-align:center;color:#6b7280;font-size:14px}
+@media(max-width:1040px){.hero-grid,.tool-layout,.details-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.metric-card,.highlight{padding:20px}.field-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.kpi-row{flex-direction:column}.kpi-row .v{text-align:left}.hero h1{font-size:32px}.highlight .value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:0}}
+@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related-section,.footer-note,.source-box{display:none!important}.hero,.card,.metric-card,.highlight{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout,.details-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+</style>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<link href="https://hesapica.com/en/crypto-profit-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/kripto-kar-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Crypto Profit Calculator","url":"https://hesapica.com/en/crypto-profit-calculator","description":"Calculate crypto profit or loss after buy and sell fees, ROI, market cap, dilution-adjusted ATH and supply-change scenarios.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Investing","item":"https://hesapica.com/en/#investing"},{"@type":"ListItem","position":3,"name":"Crypto Profit Calculator","item":"https://hesapica.com/en/crypto-profit-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is crypto profit calculated after trading fees?","acceptedAnswer":{"@type":"Answer","text":"The buy fee is added to acquisition cost and the sell fee is deducted from sale proceeds. Net profit or loss is net sale proceeds minus total acquisition cost."}},{"@type":"Question","name":"How is dilution-adjusted ATH calculated?","acceptedAnswer":{"@type":"Answer","text":"The old ATH price is multiplied by circulating supply at the ATH to estimate the ATH market cap. Dividing that market cap by current circulating supply gives the theoretical price that would represent the same market cap today."}},{"@type":"Question","name":"What does the post-unlock price at constant market cap mean?","acceptedAnswer":{"@type":"Answer","text":"It is only a mathematical scenario. Current market cap is divided by the projected circulating supply after the event. Real market cap and price are not required to stay constant."}},{"@type":"Question","name":"How is the market cap required for a target price calculated?","acceptedAnswer":{"@type":"Answer","text":"Target price is multiplied by current circulating supply. If a planned supply event is selected, the calculator also shows the market cap required at the projected post-event supply."}},{"@type":"Question","name":"Does this calculator provide investment advice or a price forecast?","acceptedAnswer":{"@type":"Answer","text":"No. It only produces mathematical scenarios from the prices, fees and supply data you enter. It does not estimate the probability of future price movements."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *{min-width:0}
+  .hc-language-switch{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<noscript><div style="max-width:1180px;margin:12px auto;padding:12px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.5 Inter,system-ui,sans-serif">This calculator requires JavaScript. Enable JavaScript in your browser to use it.</div></noscript>
+<div class="container topbar"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#investing">Investing</a><span>/</span><strong>Crypto Profit Calculator</strong></nav><div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/kripto-kar-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container"><section class="hero"><div class="hero-grid">
+<div><h1>Crypto Profit &amp; Tokenomics Calculator</h1><p>Review your crypto trade’s <strong>net profit/loss and ROI</strong>, together with supply changes, market cap, ATH and planned token-supply scenarios.</p><div class="chips"><span class="chip">Buy + sell fees</span><span class="chip">ROI</span><span class="chip">Market cap</span><span class="chip">ATH / dilution</span></div></div>
+<aside class="hero-box"><strong>Mathematical scenarios, not forecasts</strong><p>The calculator does not score the probability of historical or target prices being reached. It only produces verifiable calculations from the prices, supply figures and fees you enter.</p></aside>
+</div></section></header>
+<div class="container">
+<main style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Calculation Panel</h2>
+<p class="section-note">Enter price, quantity and fees for the basic trade calculation. Add tokenomics inputs for ATH and market-cap analysis.</p>
+<form id="cryptoForm" novalidate="">
+<div class="form-section"><div class="form-title">Trade Inputs</div><div class="field-grid">
+<div class="field" id="fieldBuyPrice"><label for="buyPrice">Buy price (USD)</label><input aria-describedby="buyPriceHint buyPriceError" autocomplete="off" id="buyPrice" inputmode="decimal" type="text"/><div class="hint" id="buyPriceHint">Purchase price per token.</div><div class="field-error" id="buyPriceError">Enter a valid buy price greater than zero.</div></div>
+<div class="field" id="fieldSellPrice"><label for="sellPrice">Sell / current price (USD)</label><input aria-describedby="sellPriceHint sellPriceError" autocomplete="off" id="sellPrice" inputmode="decimal" type="text"/><div class="hint" id="sellPriceHint">Executed sale price or scenario price.</div><div class="field-error" id="sellPriceError">Enter a valid price greater than zero.</div></div>
+<div class="field" id="fieldAmount"><label for="amount">Token quantity</label><input aria-describedby="amountHint amountError" autocomplete="off" id="amount" inputmode="decimal" type="text"/><div class="hint" id="amountHint">Number of tokens in the trade.</div><div class="field-error" id="amountError">Enter a valid quantity greater than zero.</div></div>
+<div class="field" id="fieldBuyFee"><label for="buyFee">Buy fee (%)</label><input autocomplete="off" id="buyFee" inputmode="decimal" placeholder="0" type="text"/><div class="hint">Fee rate applied to the buy transaction.</div><div class="field-error" id="buyFeeError">Enter a rate from 0% to 100%.</div></div>
+<div class="field" id="fieldSellFee"><label for="sellFee">Sell fee (%)</label><input autocomplete="off" id="sellFee" inputmode="decimal" placeholder="0" type="text"/><div class="hint">Fee rate applied to the sell transaction.</div><div class="field-error" id="sellFeeError">Enter a rate from 0% to 100%.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Tokenomics Inputs</div><div class="field-grid">
+<div class="field" id="fieldPurchaseSupply"><label for="purchaseSupply">Circulating supply at purchase</label><input autocomplete="off" id="purchaseSupply" inputmode="decimal" type="text"/><div class="hint">Approximate circulating supply at the time of purchase.</div><div class="field-error" id="purchaseSupplyError">Enter a valid supply greater than zero.</div></div>
+<div class="field" id="fieldCurrentSupply"><label for="currentSupply">Current circulating supply</label><input autocomplete="off" id="currentSupply" inputmode="decimal" type="text"/><div class="hint">Current circulating supply.</div><div class="field-error" id="currentSupplyError">Enter a valid supply greater than zero.</div></div>
+<div class="field" id="fieldAthPrice"><label for="athPrice">Historical ATH price (USD)</label><input autocomplete="off" id="athPrice" inputmode="decimal" type="text"/><div class="hint">Historical all-time-high price.</div><div class="field-error" id="athPriceError">Enter a valid ATH price greater than zero.</div></div>
+<div class="field" id="fieldAthSupply"><label for="athSupply">Circulating supply at ATH</label><input autocomplete="off" id="athSupply" inputmode="decimal" type="text"/><div class="hint">Approximate circulating supply at the ATH; required for the dilution-adjusted ATH calculation.</div><div class="field-error" id="athSupplyError">Enter a valid ATH-period circulating supply greater than zero.</div></div>
+<div class="field" id="fieldTotalSupply"><label for="totalSupply">Total supply <span class="hint">(optional)</span></label><input autocomplete="off" id="totalSupply" inputmode="decimal" type="text"/><div class="hint">Enter total supply if known; it cannot be lower than current circulating supply.</div><div class="field-error" id="totalSupplyError">Total supply cannot be lower than current circulating supply.</div></div>
+<div class="field" id="fieldTargetPrice"><label for="targetPrice">Target price (USD) <span class="hint">(optional)</span></label><input autocomplete="off" id="targetPrice" inputmode="decimal" type="text"/><div class="hint">Used to calculate the market cap required for the target price.</div><div class="field-error" id="targetPriceError">Enter a target price greater than zero.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Planned Supply Scenario <span class="hint">(optional)</span></div><div class="field-grid">
+<div class="field"><label for="eventType">Event type</label><select id="eventType"><option value="none">None</option><option value="unlock">Unlock / supply entering circulation</option><option value="increase">Other supply increase</option><option value="burn">Burn / supply reduction</option></select></div>
+<div class="field" id="fieldEventAmount"><label for="eventAmount">Token amount</label><input autocomplete="off" id="eventAmount" inputmode="decimal" type="text"/><div class="hint">Tokens added to or removed from circulating supply by the selected event.</div><div class="field-error" id="eventAmountError">Enter a valid event amount greater than zero.</div></div>
+</div></div>
+<div class="source-box">Verify supply and ATH data against the project’s official documentation where possible. Secondary references: <a href="https://www.coingecko.com/" rel="noopener noreferrer" target="_blank">CoinGecko</a> · <a href="https://coinmarketcap.com/" rel="noopener noreferrer" target="_blank">CoinMarketCap</a>. Supply definitions and historical values can differ across data providers.</div>
+<div class="actions">
+<button class="btn btn-primary" type="submit">Calculate</button>
+<button class="btn btn-secondary" id="sampleBtn" type="button">Example Data</button>
+<button class="btn btn-secondary" id="resetBtn" type="button">Reset Data</button>
+<button class="btn btn-ghost" disabled="" id="copyBtn" type="button">Copy Result</button>
+<button class="btn btn-ghost" disabled="" id="shareBtn" type="button">Share</button>
+<button class="btn btn-ghost" disabled="" id="printBtn" type="button">Print / PDF</button>
+</div>
+<div aria-live="assertive" class="validation" id="validationBox" role="alert"></div>
+</form>
+</div>
+<aside aria-live="polite" class="results" id="resultsPanel">
+<div class="highlight"><div class="label">Net profit / loss</div><div class="value" id="profitResult">—</div><div class="sub" id="profitSub">Buy and sell fees are calculated separately.</div></div>
+<div class="kpi">
+<div class="kpi-row"><strong>ROI</strong><span class="v" id="roiResult">—</span></div>
+<div class="kpi-row"><strong>Total acquisition cost</strong><span class="v" id="costResult">—</span></div>
+<div class="kpi-row"><strong>Net sale proceeds</strong><span class="v" id="proceedsResult">—</span></div>
+<div class="kpi-row"><strong>Total fees</strong><span class="v" id="feesResult">—</span></div>
+</div>
+<div class="info-card"><strong>Supply change</strong><div id="supplyChangeResult">—</div></div>
+<div class="info-card"><strong>Dilution-adjusted ATH</strong><div id="adjustedAthResult">—</div><div class="hint">The estimated ATH-period market cap is divided by current circulating supply.</div></div>
+<div class="warning" id="resultNote">This calculator does not provide investment advice or a price forecast.</div>
+</aside>
+</section>
+<section class="details-grid">
+<article class="metric-card"><h2>Market Cap &amp; ATH Analysis</h2><div class="metric-list">
+<div class="metric"><div class="k">Approx. market cap at purchase</div><div class="v" id="purchaseMcResult">—</div></div>
+<div class="metric"><div class="k">Approx. current market cap</div><div class="v" id="currentMcResult">—</div></div>
+<div class="metric"><div class="k">Approx. market cap at ATH</div><div class="v" id="athMcResult">—</div></div>
+<div class="metric"><div class="k">Market cap required today for the historical ATH price</div><div class="v" id="athNeededMcResult">—</div></div>
+<div class="metric"><div class="k">Current market-cap multiple required for ATH</div><div class="v" id="athMultipleResult">—</div></div>
+<div class="metric"><div class="k">Theoretical price at today’s supply if market cap returns to the purchase-period level</div><div class="v" id="purchaseMcPriceResult">—</div></div>
+</div><div class="formula">Market cap ≈ price × circulating supply. Historical ATH market cap should use the circulating supply that existed at the ATH.</div></article>
+<article class="metric-card"><h2>Target &amp; Supply Scenario</h2><div class="metric-list">
+<div class="metric"><div class="k">Market cap required for target price (current supply)</div><div class="v" id="targetMcResult">—</div></div>
+<div class="metric"><div class="k">Circulating supply after event</div><div class="v" id="futureSupplyResult">—</div></div>
+<div class="metric"><div class="k">Theoretical post-event price if market cap stays constant</div><div class="v" id="postEventPriceResult">—</div></div>
+<div class="metric"><div class="k">Market cap required for target price (post-event supply)</div><div class="v" id="targetFutureMcResult">—</div></div>
+<div class="metric"><div class="k">Non-circulating supply gap</div><div class="v" id="undistributedResult">—</div></div>
+</div><div class="formula">The “constant market cap” result is only a mathematical comparison; in real markets, price and market cap can change together.</div></article>
+</section>
+<section class="details-grid">
+<article class="metric-card faq"><h2>Frequently Asked Questions</h2>
+<details><summary>How is crypto profit calculated after trading fees?</summary><p>The buy fee is added to acquisition cost and the sell fee is deducted from sale proceeds. Net profit or loss is net sale proceeds minus total acquisition cost.</p></details>
+<details><summary>How is dilution-adjusted ATH calculated?</summary><p>The old ATH price is multiplied by circulating supply at the ATH to estimate the ATH market cap. Dividing that market cap by current circulating supply gives the theoretical price that would represent the same market cap today.</p></details>
+<details><summary>What does the post-unlock price at constant market cap mean?</summary><p>It is only a mathematical scenario. Current market cap is divided by the projected circulating supply after the event. Real market cap and price are not required to stay constant.</p></details>
+<details><summary>How is the market cap required for a target price calculated?</summary><p>Target price is multiplied by current circulating supply. If a planned supply event is selected, the calculator also shows the market cap required at the projected post-event supply.</p></details>
+<details><summary>Does this calculator provide investment advice or a price forecast?</summary><p>No. It only produces mathematical scenarios from the prices, fees and supply data you enter. It does not estimate the probability of future price movements.</p></details>
+</article>
+<article class="metric-card"><h2>Formulas &amp; Assumptions</h2>
+<div class="formula">Total acquisition cost = (buy price × quantity) + buy fee</div>
+<div class="formula">Net sale proceeds = (sell price × quantity) − sell fee</div>
+<div class="formula">Net profit/loss = net sale proceeds − total acquisition cost</div>
+<div class="formula">ROI = net profit/loss ÷ total acquisition cost × 100</div>
+<div class="formula">Dilution-adjusted ATH = (historical ATH × supply at ATH) ÷ current supply</div>
+<div class="formula">Theoretical post-event price = current market cap ÷ post-event circulating supply</div>
+<div class="warning"><strong>Important:</strong> “Dilution-adjusted ATH,” “target market cap” and “price if market cap stays constant” are not probability forecasts. Liquidity, demand, order books, token utility and market conditions are outside these simple market-cap identities.</div>
+</article>
+</section>
+<div aria-label="Advertisement area" class="hc-ad-slot hc-ad-slot--faq"><ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="4903929326" data-full-width-responsive="true" style="display:block"></ins></div>
+<section class="card related-section"><h2>Related Calculators</h2><div class="related-grid">
+<a class="related" href="/en/investment-return-calculator"><strong>Investment Return Calculator</strong><span>Analyze investment performance with ROI and return metrics.</span></a>
+<a class="related" href="/en/percentage-calculator"><strong>Percentage Calculator</strong><span>Compare price changes and percentage returns.</span></a>
+<a class="related" href="/en/asset-return-calculator"><strong>Asset Return Calculator</strong><span>Analyze asset gains, losses and return rates.</span></a>
+</div></section>
+<div class="footer-note">Hesapica · This calculator is for mathematical calculation and scenario analysis; it is not investment advice.</div>
+</main></div>
+<script>
+(function(){
+'use strict';
+const STORAGE_KEY='hesapica_en_crypto_profit_v3';
+const required=['buyPrice','sellPrice','amount','purchaseSupply','currentSupply','athPrice','athSupply'];
+const optionalNumeric=['buyFee','sellFee','totalSupply','targetPrice','eventAmount'];
+const eventTypes=['none','unlock','increase','burn'];
+const $=id=>document.getElementById(id);
+const form=$('cryptoForm');
+let last=null,timer=null;
+
+function parseDecimal(v){
+ if(v===null||v===undefined)return null;
+ let s=String(v).trim().replace(/\s+/g,'');
+ if(!s||!/^[0-9][0-9.,]*$/.test(s))return null;
+ const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;
+ let normalized=s;
+ if(dots&&commas){
+  const decimalSep=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';
+  const groupSep=decimalSep==='.'?',':'.';
+  const parts=s.split(decimalSep);
+  if(parts.length!==2||!/^\d+$/.test(parts[1]))return null;
+  const integerPart=parts[0].split(groupSep).join('');
+  if(!/^\d+$/.test(integerPart))return null;
+  normalized=integerPart+'.'+parts[1];
+ }else if(commas){
+  if(commas>1){if(!/^\d{1,3}(?:,\d{3})+$/.test(s))return null;normalized=s.replace(/,/g,'');}
+  else if(/^0,\d+$/.test(s))normalized=s.replace(',','.');
+  else if(/^\d{1,3},\d{3}$/.test(s))normalized=s.replace(',','');
+  else normalized=s.replace(',','.');
+ }else if(dots){
+  if(dots>1){if(!/^\d{1,3}(?:\.\d{3})+$/.test(s))return null;normalized=s.replace(/\./g,'');}
+  else normalized=s;
+ }
+ const n=Number(normalized);
+ return Number.isFinite(n)?n:null;
+}
+
+function parseQuantity(v){
+ if(v===null||v===undefined)return null;
+ let s=String(v).trim().replace(/\s+/g,'');
+ if(!s)return null;
+ const suffix=s.slice(-1).toUpperCase();
+ if(['K','M','B','T'].includes(suffix)){
+  const mult={K:1e3,M:1e6,B:1e9,T:1e12}[suffix];
+  const base=parseDecimal(s.slice(0,-1));
+  return base===null?null:base*mult;
+ }
+ return parseDecimal(s);
+}
+function money(v){
+ if(!Number.isFinite(v))return '—';
+ const sign=v<0?'-':'',a=Math.abs(v);
+ if(a>=1e12)return sign+'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+'T';
+ if(a>=1e9)return sign+'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:2})+'B';
+ if(a>=1e6)return sign+'$'+(a/1e6).toLocaleString('en-US',{maximumFractionDigits:2})+'M';
+ return sign+'$'+a.toLocaleString('en-US',{minimumFractionDigits:a<1?0:2,maximumFractionDigits:a<1?10:2});
+}
+function price(v){return Number.isFinite(v)?'$'+v.toLocaleString('en-US',{maximumFractionDigits:10}):'—'}
+function pct(v){return Number.isFinite(v)?v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+'%':'—'}
+function count(v){return Number.isFinite(v)?v.toLocaleString('en-US',{maximumFractionDigits:2}):'—'}
+function fieldNode(id){return $('field'+id[0].toUpperCase()+id.slice(1))}
+function setInvalid(id,on){
+ const input=$(id),field=fieldNode(id);
+ if(field)field.classList.toggle('invalid',on);
+ if(input)input.setAttribute('aria-invalid',on?'true':'false');
+}
+function read(){
+ const d={};
+ ['buyPrice','sellPrice','amount','buyFee','sellFee','athPrice','targetPrice'].forEach(id=>d[id]=parseDecimal($(id).value));
+ ['purchaseSupply','currentSupply','athSupply','totalSupply','eventAmount'].forEach(id=>d[id]=parseQuantity($(id).value));
+ d.eventType=$('eventType').value;
+ return d;
+}
+function validate(d){
+ const e={};
+ required.forEach(id=>{if(d[id]===null||d[id]<=0)e[id]=true});
+ ['buyFee','sellFee'].forEach(id=>{if(d[id]!==null&&(d[id]<0||d[id]>100))e[id]=true});
+ if(d.totalSupply!==null&&(d.totalSupply<=0||(d.currentSupply!==null&&d.totalSupply<d.currentSupply)))e.totalSupply=true;
+ if(d.targetPrice!==null&&d.targetPrice<=0)e.targetPrice=true;
+ if(!eventTypes.includes(d.eventType))d.eventType='none';
+ if(d.eventType!=='none'){
+  if(d.eventAmount===null||d.eventAmount<=0)e.eventAmount=true;
+  if(d.eventType==='burn'&&d.currentSupply!==null&&d.eventAmount!==null&&d.eventAmount>=d.currentSupply)e.eventAmount=true;
+  if(d.eventType==='unlock'&&d.totalSupply!==null&&d.currentSupply!==null&&d.eventAmount!==null&&d.currentSupply+d.eventAmount>d.totalSupply)e.eventAmount=true;
+ }else if(d.eventAmount!==null&&d.eventAmount<0)e.eventAmount=true;
+ [...required,...optionalNumeric].forEach(id=>setInvalid(id,!!e[id]));
+ return e;
+}
+function compute(d){
+ const buyFeeRate=(d.buyFee||0)/100,sellFeeRate=(d.sellFee||0)/100;
+ const grossBuy=d.buyPrice*d.amount,buyFeeCost=grossBuy*buyFeeRate,totalCost=grossBuy+buyFeeCost;
+ const grossSell=d.sellPrice*d.amount,sellFeeCost=grossSell*sellFeeRate,netProceeds=grossSell-sellFeeCost;
+ const profit=netProceeds-totalCost,roi=profit/totalCost*100,totalFees=buyFeeCost+sellFeeCost;
+
+ const purchaseMc=d.buyPrice*d.purchaseSupply;
+ const currentMc=d.sellPrice*d.currentSupply;
+ const supplyChange=(d.currentSupply-d.purchaseSupply)/d.purchaseSupply*100;
+ const athMc=d.athPrice*d.athSupply;
+ const adjustedAth=athMc/d.currentSupply;
+ const athNeededMc=d.athPrice*d.currentSupply;
+ const athMultiple=currentMc>0?athNeededMc/currentMc:null;
+ const purchaseMcPrice=purchaseMc/d.currentSupply;
+ const undistributed=d.totalSupply!==null?(d.totalSupply-d.currentSupply):null;
+ const undistributedPct=d.totalSupply!==null&&d.totalSupply>0?undistributed/d.totalSupply*100:null;
+
+ let futureSupply=null,eventChangePct=null,postEventPrice=null;
+ if(d.eventType!=='none'&&d.eventAmount!==null){
+  futureSupply=d.eventType==='burn'?d.currentSupply-d.eventAmount:d.currentSupply+d.eventAmount;
+  eventChangePct=(futureSupply-d.currentSupply)/d.currentSupply*100;
+  postEventPrice=currentMc/futureSupply;
+ }
+ const targetMc=d.targetPrice!==null?d.targetPrice*d.currentSupply:null;
+ const targetFutureMc=d.targetPrice!==null&&futureSupply!==null?d.targetPrice*futureSupply:null;
+ const result={grossBuy,buyFeeCost,totalCost,grossSell,sellFeeCost,netProceeds,profit,roi,totalFees,purchaseMc,currentMc,supplyChange,athMc,adjustedAth,athNeededMc,athMultiple,purchaseMcPrice,undistributed,undistributedPct,futureSupply,eventChangePct,postEventPrice,targetMc,targetFutureMc};
+ for(const [key,value] of Object.entries(result)){
+  if(typeof value==='number'&&!Number.isFinite(value))throw new Error('Invalid result: '+key);
+ }
+ return result;
+}
+function enable(on){$('copyBtn').disabled=!on;$('shareBtn').disabled=!on;$('printBtn').disabled=!on}
+function clearResults(){
+ last=null;enable(false);
+ ['profitResult','roiResult','costResult','proceedsResult','feesResult','supplyChangeResult','adjustedAthResult','purchaseMcResult','currentMcResult','athMcResult','athNeededMcResult','athMultipleResult','purchaseMcPriceResult','targetMcResult','futureSupplyResult','postEventPriceResult','targetFutureMcResult','undistributedResult'].forEach(id=>$(id).textContent='—');
+ $('profitResult').className='value';$('resultNote').textContent='This calculator does not provide investment advice or a price forecast.';
+}
+function render(r,d){
+ last={r,d};enable(true);
+ $('profitResult').textContent=money(r.profit);$('profitResult').className='value '+(r.profit>0?'positive':r.profit<0?'negative':'');
+ $('roiResult').textContent=pct(r.roi);$('costResult').textContent=money(r.totalCost);$('proceedsResult').textContent=money(r.netProceeds);$('feesResult').textContent=money(r.totalFees);
+ $('profitSub').textContent=money(r.totalCost)+' total cost → '+money(r.netProceeds)+' net sale proceeds';
+ $('supplyChangeResult').textContent=pct(r.supplyChange)+(r.supplyChange>0?' increase':r.supplyChange<0?' decrease':' no change');
+ $('adjustedAthResult').textContent=price(r.adjustedAth);
+ $('purchaseMcResult').textContent=money(r.purchaseMc);$('currentMcResult').textContent=money(r.currentMc);$('athMcResult').textContent=money(r.athMc);
+ $('athNeededMcResult').textContent=money(r.athNeededMc);$('athMultipleResult').textContent=Number.isFinite(r.athMultiple)?r.athMultiple.toLocaleString('en-US',{maximumFractionDigits:2})+'x':'—';
+ $('purchaseMcPriceResult').textContent=price(r.purchaseMcPrice);$('targetMcResult').textContent=money(r.targetMc);$('futureSupplyResult').textContent=count(r.futureSupply);
+ $('postEventPriceResult').textContent=price(r.postEventPrice);$('targetFutureMcResult').textContent=money(r.targetFutureMc);
+ $('undistributedResult').textContent=r.undistributed===null?'—':count(r.undistributed)+' token ('+pct(r.undistributedPct)+')';
+ const notes=[];
+ if(r.supplyChange>0)notes.push('Circulating supply is '+pct(r.supplyChange)+' higher than at purchase.');
+ else if(r.supplyChange<0)notes.push('Circulating supply is '+pct(Math.abs(r.supplyChange))+' lower than at purchase.');
+ if(Number.isFinite(r.eventChangePct))notes.push('The selected supply event changes circulating supply mathematically by '+pct(Math.abs(r.eventChangePct))+' '+(r.eventChangePct>=0?'upward.':'downward.'));
+ notes.push('These metrics do not predict what price the token will reach in the future.');
+ $('resultNote').textContent=notes.join(' ');
+}
+function safeSet(x){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(x))}catch(e){}}
+function safeGet(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return null;const p=JSON.parse(raw);if(!p||p.version!==3||typeof p.inputs!=='object')throw new Error('bad');return p}catch(e){try{localStorage.removeItem(STORAGE_KEY)}catch(_){}return null}}
+function safeRemove(){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}}
+function save(){
+ const data={};
+ [...required,...optionalNumeric].forEach(id=>data[id]=String($(id).value).slice(0,30));
+ data.eventType=$('eventType').value;
+ safeSet({version:3,inputs:data});
+}
+function calculate({focus=false,showErrors=true}={}){
+ const d=read(),e=validate(d),bad=Object.keys(e),box=$('validationBox');
+ if(bad.length){
+  clearResults();
+  if(showErrors){box.textContent='Check the highlighted fields.';box.classList.add('show');if(focus){const first=$(bad[0]);first&&first.focus()}}
+  else box.classList.remove('show');
+  return false;
+ }
+ box.classList.remove('show');
+ try{
+  render(compute(d),d);save();
+ }catch{
+  clearResults();
+  if(showErrors){box.textContent='The calculation exceeded safe numeric limits. Enter smaller valid values.';box.classList.add('show');}
+  return false;
+ }
+ if(focus)$('resultsPanel').scrollIntoView({behavior:'smooth',block:'start'});
+ return true;
+}
+function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);return ok}
+async function copyText(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return true}catch(e){}}return fallbackCopy(text)}
+function resultText(){
+ if(!last)return '';
+ return ['Hesapica - Crypto Profit & Tokenomics','Net profit/loss: '+money(last.r.profit),'ROI: '+pct(last.r.roi),'Total acquisition cost: '+money(last.r.totalCost),'Net sale proceeds: '+money(last.r.netProceeds),'Supply change: '+pct(last.r.supplyChange),'Dilution-adjusted ATH: '+price(last.r.adjustedAth),'Market cap required for ATH: '+money(last.r.athNeededMc),'Note: This is a mathematical scenario, not investment advice.','https://hesapica.com/en/crypto-profit-calculator'].join('\n');
+}
+form.addEventListener('submit',e=>{e.preventDefault();calculate({focus:true,showErrors:true})});
+[...required,...optionalNumeric].forEach(id=>$(id).addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>calculate({showErrors:false}),250)}));
+$('eventType').addEventListener('change',()=>calculate({showErrors:false}));
+$('sampleBtn').addEventListener('click',()=>{
+ const x={buyPrice:'0.18',sellPrice:'0.30',amount:'25000',buyFee:'0.10',sellFee:'0.10',purchaseSupply:'150000000',currentSupply:'750000000',athPrice:'2.40',athSupply:'220000000',totalSupply:'1500000000',targetPrice:'1',eventAmount:'120000000'};
+ Object.entries(x).forEach(([k,v])=>$(k).value=v);$('eventType').value='unlock';calculate({focus:true,showErrors:true});
+});
+$('resetBtn').addEventListener('click',()=>{form.reset();[...required,...optionalNumeric].forEach(id=>setInvalid(id,false));$('validationBox').classList.remove('show');safeRemove();clearResults()});
+$('copyBtn').addEventListener('click',async()=>{if(last)await copyText(resultText())});
+$('shareBtn').addEventListener('click',async()=>{if(!last)return;if(navigator.share){try{await navigator.share({title:'Crypto Profit Calculator - Hesapica',text:'Net result: '+money(last.r.profit)+' · ROI '+pct(last.r.roi),url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}await copyText(resultText())});
+$('printBtn').addEventListener('click',()=>{if(!last){const box=$('validationBox');box.textContent='Create a valid result before printing.';box.classList.add('show');return;}window.print();});
+(function init(){
+ clearResults();
+ const p=safeGet();
+ if(p){
+  const x=p.inputs||{};
+  [...required,...optionalNumeric].forEach(id=>{if(typeof x[id]==='string')$(id).value=x[id]});
+  if(eventTypes.includes(x.eventType))$('eventType').value=x.eventType;
+  const ok=calculate({showErrors:false});
+  if(!ok)safeRemove();
+ }
+})();
+})();
+</script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset data','clear data','clear','reset']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

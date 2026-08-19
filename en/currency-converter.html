@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Currency Converter: Reference Rates &amp; Cross Rates | Hesapica</title>
+<meta content="Convert USD, EUR, GBP, TRY and other supported currencies with current reference rates. See the source, update time, cross rate and inverse rate." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/currency-converter" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Currency Converter: Reference Rates &amp; Cross Rates | Hesapica" property="og:title"/>
+<meta content="Convert USD, EUR, GBP, TRY and other supported currencies with current reference rates. See the source, update time, cross rate and inverse rate." property="og:description"/>
+<meta content="https://hesapica.com/en/currency-converter" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — global online calculators" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Currency Converter: Reference Rates &amp; Cross Rates | Hesapica" name="twitter:title"/>
+<meta content="Convert USD, EUR, GBP, TRY and other supported currencies with current reference rates. See the source, update time, cross rate and inverse rate." name="twitter:description"/>
+<meta content="https://hesapica.com/en/currency-converter" name="twitter:url"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — global online calculators" name="twitter:image:alt"/>
+<meta content="@hesapica" name="twitter:site"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Measurement and advertising services load only according to user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--line:#e5e7eb;--muted:#6b7280;--text:#1f2937;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 38px rgba(79,70,229,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,#f6f8fc);color:var(--text);line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1140px,calc(100% - 28px));margin:0 auto}.topbar{padding:16px 0 8px}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}.hero{padding:30px;border-radius:26px;background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.16);box-shadow:var(--shadow)}.hero h1{margin:0 0 8px;font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.03em}.hero p{margin:0;color:#374151;font-size:17px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-weight:700;color:#4338ca;font-size:13px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:20px;margin-top:20px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}.card h2{margin:0 0 12px;font-size:24px;color:#312e81}.note{margin:0 0 14px;color:#4b5563}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14px}input,select{width:100%;min-height:52px;border:1px solid #d9def0;border-radius:14px;padding:10px 14px;font-size:16px;outline:none;background:#fff;color:var(--text)}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}input[readonly]{background:#f8fafc;color:#4b5563}.field.has-error input{border-color:#fca5a5;background:#fff7f7;box-shadow:0 0 0 4px rgba(185,28,28,.08)}.error{display:none;margin-top:7px;color:var(--bad);font-size:13px;font-weight:700}.field.has-error .error{display:block}.hint{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.55}.pair-row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end}.swap-btn{width:48px;height:52px;border:1px solid #dbe4ff;border-radius:14px;background:#eef2ff;color:#4338ca;font-size:20px;font-weight:900;cursor:pointer}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.btn{border:none;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer;transition:transform .18s ease,opacity .18s ease}.btn:hover{transform:translateY(-1px);opacity:.97}.btn:disabled{cursor:not-allowed;opacity:.55;transform:none}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.btn-soft{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}.status{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:13px 14px;margin-top:16px;border-radius:16px;border:1px solid #dbe4ff;background:#f8faff}.status strong{display:block;font-size:14px}.status span{display:block;color:var(--muted);font-size:13px;line-height:1.5}.status-badge{flex:0 0 auto;padding:7px 10px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:12px;font-weight:800}.status-badge.good{background:#ecfdf5;color:var(--good)}.status-badge.warn{background:#fff7ed;color:var(--warn)}.status-badge.bad{background:#fef2f2;color:var(--bad)}.result-card{position:sticky;top:18px}.result-main{font-size:38px;font-weight:900;letter-spacing:-.03em;color:#111827;overflow-wrap:anywhere}.muted{color:#6b7280}.kpi{display:grid;gap:10px;margin-top:12px}.kpi-row{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px;background:#fcfcff}.kpi-row span{text-align:right;overflow-wrap:anywhere}.disclaimer{margin-top:14px;padding:12px 14px;border-radius:14px;background:#fffbeb;border:1px solid #fde68a;color:#92400e;font-size:13px;line-height:1.55}.content-section{margin-top:18px}.content-section>p{margin:0 0 14px;color:#374151}.content-section h2{margin-bottom:10px}.content-section h3{margin:0 0 9px;color:#312e81;font-size:19px;line-height:1.35}.content-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.content-box{padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:linear-gradient(180deg,#fff,#fbfcff)}.content-box p{margin:0;color:#374151}.content-box p+p{margin-top:10px}.content-list{margin:10px 0 0;padding-left:20px;color:#374151}.content-list li+li{margin-top:7px}.formula-box{margin:16px 0;padding:16px 18px;border-radius:18px;background:#eef2ff;border:1px solid #c7d2fe;color:#312e81}.formula-box strong{display:block;margin-bottom:7px}.formula{font-size:17px;font-weight:800;overflow-wrap:anywhere}.example-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}.example-card{padding:16px;border:1px solid #dbe4ff;border-radius:16px;background:#f8faff}.example-card strong{display:block;color:#312e81;margin-bottom:7px}.trust-note{margin-top:16px;padding:15px 17px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#78350f}.steps{counter-reset:step;display:grid;gap:10px;margin-top:14px}.step{position:relative;padding:13px 14px 13px 50px;border:1px solid #e5e7eb;border-radius:15px;background:#fff}.step:before{counter-increment:step;content:counter(step);position:absolute;left:13px;top:12px;width:27px;height:27px;display:grid;place-items:center;border-radius:999px;background:#eef2ff;color:#4338ca;font-weight:900}.step strong{display:block;color:#312e81;margin-bottom:2px}.step span{color:#4b5563;font-size:14px}.seo-table-wrap{overflow:auto;margin-top:14px;border:1px solid #e5e7eb;border-radius:16px}.seo-table{width:100%;border-collapse:collapse;min-width:620px}.seo-table th,.seo-table td{padding:12px 14px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}.seo-table th{background:#f8fafc;color:#374151;font-size:13px}.seo-table td{color:#374151}.seo-table tr:last-child td{border-bottom:none}.faq details{border:1px solid #e5e7eb;border-radius:14px;padding:12px 14px;background:#fff}.faq details+details{margin-top:10px}.faq summary{font-weight:800;cursor:pointer;color:#312e81}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rel{display:block;padding:18px;border-radius:18px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 14px 26px rgba(91,79,246,.18)}.rel .muted{color:rgba(255,255,255,.88);font-size:14px;margin-top:5px}.hc-ad-slot{display:none;width:100%;margin:20px 0}.hc-ad-slot.hc-ad-loaded{display:block}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:11px 15px;border-radius:999px;background:#111827;color:#fff;font-weight:700;font-size:14px;transition:.2s ease;z-index:9999}.toast.show{opacity:1;transform:translate(-50%,0)}footer{padding:30px 14px 42px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.result-card{position:static}.related{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid,.related,.pair-row,.content-columns,.example-grid{grid-template-columns:1fr}.swap-btn{width:100%;height:46px}.actions{flex-direction:column}.btn{width:100%}.result-main{font-size:32px}.kpi-row{flex-direction:column}.kpi-row span{text-align:left}.hero,.card{padding:19px}}
+@media print{body{background:#fff}.topbar,.actions,.status,.hc-ad-slot,.toast{display:none!important}.layout{grid-template-columns:1fr}.card{box-shadow:none;border:1px solid #d1d5db;break-inside:avoid}.result-card{position:static}.hero{box-shadow:none}}
+</style>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<style id="hc-madde4-print-controls">
+@media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
+</style>
+<link href="https://hesapica.com/en/currency-converter" hreflang="en" rel="alternate"/><link href="https://hesapica.com/doviz-cevirici" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Currency Converter","url":"https://hesapica.com/en/currency-converter","description":"Convert USD, EUR, GBP, TRY and other supported currencies with current reference rates. See the source, update time, cross rate and inverse rate.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://hesapica.com/en/#finance"},{"@type":"ListItem","position":3,"name":"Currency Converter","item":"https://hesapica.com/en/currency-converter"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which exchange rates does this converter use?","acceptedAnswer":{"@type":"Answer","text":"The calculator first tries Hesapica's current rates.json file on the same site. If it is unavailable, the calculator can try supported fallback sources. The active source, rate type and update time are shown in the result panel."}},{"@type":"Question","name":"How is a cross rate calculated?","acceptedAnswer":{"@type":"Answer","text":"The source amount is converted through the common TRY reference base, then divided by the target currency’s TRY rate. This allows pairs such as USD/EUR to be calculated without a direct quote."}},{"@type":"Question","name":"Why can a TCMB reference rate differ from a bank rate?","acceptedAnswer":{"@type":"Answer","text":"TCMB data can be indicative. Banks, card issuers and exchange services can apply their own buy/sell spreads, fees and transaction conditions."}},{"@type":"Question","name":"Are rates published per 100 units handled correctly?","acceptedAnswer":{"@type":"Answer","text":"Yes. When the TCMB XML source is used, the Unit field is taken into account and the published quote is normalized to one currency unit."}},{"@type":"Question","name":"What happens if live rates cannot be loaded?","acceptedAnswer":{"@type":"Answer","text":"If current sources cannot be reached, the last successful browser-cached dataset may be used for up to 48 hours. Older cached data is not used automatically."}},{"@type":"Question","name":"Are fees and exchange-rate spreads included?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator provides a reference conversion. Bank fees, card rates, taxes, buy/sell spreads and other transaction costs are not included."}},{"@type":"Question","name":"Are gold and silver results the same as retail dealer prices?","acceptedAnswer":{"@type":"Answer","text":"No. The result uses the supported source’s reference gram value. Retail workmanship, product premiums and buy/sell spreads are not included."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *{min-width:0}
+  .hc-language-switch{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1140px;padding:14px 16px;border-radius:16px;border:1px solid #fde68a;background:#fffbeb;color:#92400e;font:600 14px/1.6 Inter,system-ui,sans-serif">This converter requires JavaScript. Enable JavaScript in your browser to use it.</div></noscript>
+<div class="container topbar"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#finance">Finance</a><span>/</span><strong>Currency Converter</strong></nav><div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/doviz-cevirici" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container"><section class="hero"><h1>Currency Converter</h1><p>Convert currencies with current reference-rate data and clearly see the data source, update time, cross rate and inverse rate.</p><div class="chips"><span class="chip">Current reference data</span><span class="chip">Cross rates</span><span class="chip">Source transparency</span><span class="chip">Fallback sources</span></div></section></header>
+<div class="container">
+</div>
+<main class="container" style="padding:20px 0 52px">
+<section class="layout">
+<section aria-labelledby="panelTitle" class="card">
+<h2 id="panelTitle">Calculation Panel</h2>
+<p class="note">Enter an amount and choose the source and target currencies. Results update automatically.</p>
+<div class="grid">
+<div class="field full" id="amountField"><label for="amount">Amount</label><input aria-describedby="amountHint amountError" autocomplete="off" id="amount" inputmode="decimal" placeholder="e.g. 1,000" type="text"/><div class="hint" id="amountHint">Enter an amount greater than zero.</div><div class="error" id="amountError" role="alert">Enter a valid amount greater than zero.</div></div>
+<div class="field full"><div class="pair-row"><div><label for="from">From currency</label><select aria-label="From currency" id="from"></select></div><button aria-label="Swap currencies" class="swap-btn" id="swapBtn" title="Swap currencies" type="button">⇄</button><div><label for="to">To currency</label><select aria-label="To currency" id="to"></select></div></div></div>
+<div class="field"><label for="rateInfo">Rate source</label><input id="rateInfo" readonly="" value="Loading..."/></div>
+<div class="field"><label for="updateTime">Update time</label><input id="updateTime" readonly="" value="Checking..."/></div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calcBtn" type="button">Calculate</button>
+<button class="btn btn-soft" id="refreshBtn" type="button">Refresh Rates</button>
+<button class="btn btn-soft" id="sampleBtn" type="button">Example Data</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Clear Data</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Copy Result</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Share</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Print / PDF</button>
+</div>
+<div aria-live="polite" class="status" id="loadStatus" role="status"><div><strong id="statusTitle">Loading rate data</strong><span id="statusText">Checking the best available data source.</span></div><span class="status-badge" id="statusBadge">Please wait</span></div>
+</section>
+<aside aria-labelledby="resultTitle" class="card result-card" id="resultArea">
+<h2 id="resultTitle">Results</h2>
+<div aria-live="polite" class="result-main" id="mainResult">—</div>
+<p class="muted" id="resultNote">The conversion will appear here when rate data is ready.</p>
+<div class="kpi" id="kpiList"></div>
+<div class="disclaimer">This result is for reference only. Bank, card, exchange-service and payment-provider spreads or fees are not included.</div>
+</aside>
+</section>
+<section aria-labelledby="guideTitle" class="card content-section">
+<h2 id="guideTitle">How to use the currency converter</h2>
+<p>Hesapica Currency Converter performs reference conversions between TRY, USD, EUR, GBP and other supported currencies. Enter an amount and choose the source and target currencies. Once rate data is loaded, the result updates automatically and the result panel shows the source, rate type, data time, cross rate and inverse rate.</p>
+<div class="steps">
+<div class="step"><strong>Enter the amount</strong><span>Enter the positive amount you want to convert.</span></div>
+<div class="step"><strong>Choose source and target</strong><span>For example, convert USD to TRY or EUR to GBP.</span></div>
+<div class="step"><strong>Check the source</strong><span>Verify the rate source, rate type and update time in the result panel.</span></div>
+<div class="step"><strong>Consider transaction costs separately</strong><span>Remember that bank spreads, card rates and commissions can make the executable amount differ from the reference result.</span></div>
+</div>
+</section>
+<section aria-labelledby="calculationTitle" class="card content-section">
+<h2 id="calculationTitle">How is currency conversion calculated?</h2>
+<p>The current rate table is normalized to a common TRY reference base. The calculator first finds the source amount’s TRY-equivalent reference value, then divides it by the target currency’s TRY rate. The same method works for both TRY pairs and cross-currency pairs.</p>
+<div class="formula-box"><strong>Core calculation</strong><div class="formula">TRY-equivalent value = Amount × Source rate<br/>Target amount = TRY-equivalent value ÷ Target rate</div></div>
+<div class="example-grid">
+<div class="example-card"><strong>USD → TRY example</strong><div>If 1 USD = 40 TRY, then 100 USD corresponds to 4,000 TRY.</div></div>
+<div class="example-card"><strong>USD → EUR cross-rate example</strong><div>If USD/TRY is 40 and EUR/TRY is 50, then 100 USD corresponds to 4,000 ÷ 50 = 80 EUR.</div></div>
+</div>
+<p class="trust-note"><strong>Important:</strong> Example numbers only explain the method; they are not current rates. Actual calculations use the data source shown in the result panel.</p>
+</section>
+<section aria-labelledby="crossRateTitle" class="card content-section">
+<h2 id="crossRateTitle">What is a cross rate?</h2>
+<div class="content-columns">
+<div class="content-box"><h3>The rate between two currencies</h3><p>A cross rate expresses the value of one currency in another without requiring a direct pair quote. Examples include USD/EUR, EUR/GBP and CHF/USD. The calculator derives the pair from each currency’s value against the common TRY reference base.</p></div>
+<div class="content-box"><h3>What does the inverse rate show?</h3><p>The cross rate answers “How many target units equal 1 source unit?” The inverse rate reverses the relationship and shows how many source units equal 1 target unit.</p></div>
+</div>
+</section>
+<section aria-labelledby="rateDifferenceTitle" class="card content-section">
+<h2 id="rateDifferenceTitle">Why can central-bank, bank and exchange-service rates differ?</h2>
+<p>There is no single executable exchange rate. The provider, trade direction, payment method and market conditions can change the final amount. This calculator uses the selling or reference values available from its data source and does not guarantee a transaction quote.</p>
+<div class="seo-table-wrap"><table class="seo-table"><thead><tr><th>Rate type</th><th>What does it represent?</th><th>Why can the result differ?</th></tr></thead><tbody>
+<tr><td>Indicative / reference rate</td><td>A rate published for comparison and general valuation.</td><td>It may not be a directly executable buy/sell price.</td></tr>
+<tr><td>Bank buy rate</td><td>The rate a bank applies when buying foreign currency from you.</td><td>It is usually lower than the bank’s sell rate.</td></tr>
+<tr><td>Bank sell rate</td><td>The rate a bank applies when selling foreign currency to you.</td><td>The provider’s spread and pricing policy can affect it.</td></tr>
+<tr><td>Card / payment-provider rate</td><td>The conversion rate used for foreign-currency card or payment transactions.</td><td>Posting time, authorization, fees and the card network can affect it.</td></tr>
+<tr><td>Exchange-service rate</td><td>The buy/sell price offered by a physical or online exchange service.</td><td>Location, cash conditions and market moves can affect it.</td></tr>
+</tbody></table></div>
+</section>
+<section aria-labelledby="spreadTitle" class="card content-section">
+<h2 id="spreadTitle">How do spreads and fees affect the result?</h2>
+<div class="content-columns">
+<div class="content-box"><h3>Exchange-rate spread</h3><p>The difference between a provider’s buy and sell rates is the spread. When you buy foreign currency, the provider’s sell rate normally applies; when you sell it back, the buy rate normally applies. That is why an immediate round trip commonly produces a loss.</p></div>
+<div class="content-box"><h3>Additional costs</h3><p>Some transactions may include commissions, taxes, card-processing charges or weekend pricing adjustments. The calculator does not estimate these automatically, so check the provider’s final amount before transacting.</p></div>
+</div>
+</section>
+<section aria-labelledby="metalsTitle" class="card content-section">
+<h2 id="metalsTitle">What should you know about gold and silver conversions?</h2>
+<p>When the active data source provides gram-based gold and silver values, the calculator can include them as XAU and XAG options. These are precious-metal reference values rather than currencies. Results do not include retail workmanship, product purity, physical-delivery costs or dealer spreads.</p>
+<ul class="content-list">
+<li>Do not confuse gram gold with troy-ounce gold; many international sources publish precious-metal prices per troy ounce.</li>
+<li>Physical gold products can include workmanship charges and retail premiums.</li>
+<li>Silver prices can vary with purity, product type and physical-delivery costs.</li>
+<li>Check the source and rate type shown in the result panel for every calculation.</li>
+</ul>
+</section>
+<section aria-labelledby="mistakesTitle" class="card content-section">
+<h2 id="mistakesTitle">Common currency-conversion mistakes</h2>
+<div class="content-columns">
+<div class="content-box"><h3>Treating a reference result as an executable quote</h3><p>The calculated value is not a guaranteed quote from a bank or exchange service. Use the provider’s final transaction screen for the amount you can actually execute.</p></div>
+<div class="content-box"><h3>Mixing up buy and sell directions</h3><p>When buying foreign currency, the provider’s sell rate matters; when selling it, the buy rate matters. Changing direction can change the applicable rate.</p></div>
+<div class="content-box"><h3>Ignoring the data timestamp</h3><p>In fast-moving markets, an older rate can become stale quickly. The calculator therefore shows the source and data time prominently.</p></div>
+<div class="content-box"><h3>Ignoring fees</h3><p>Card, transfer or platform fees can change the effective conversion rate even on relatively small transactions.</p></div>
+</div>
+</section>
+
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<section aria-labelledby="faqTitle" class="card faq" style="margin-top:18px"><h2 id="faqTitle">Frequently Asked Questions</h2><details open=""><summary>Which exchange rates does this converter use?</summary><p>The calculator first tries Hesapica's current <code>rates.json</code> file on the same site. If it is unavailable, the calculator can try supported fallback sources. The active source, rate type and update time are shown in the result panel.</p></details><details><summary>How is a cross rate calculated?</summary><p>The source amount is converted through the common TRY reference base, then divided by the target currency’s TRY rate. This allows pairs such as USD/EUR to be calculated without a direct quote.</p></details><details><summary>Why can a TCMB reference rate differ from a bank rate?</summary><p>TCMB data can be indicative. Banks, card issuers and exchange services can apply their own buy/sell spreads, fees and transaction conditions.</p></details><details><summary>Are rates published per 100 units handled correctly?</summary><p>Yes. When the TCMB XML source is used, the <code>Unit</code> field is taken into account and the published quote is normalized to one currency unit.</p></details><details><summary>What happens if live rates cannot be loaded?</summary><p>If current sources cannot be reached, the last successful browser-cached dataset may be used for up to 48 hours. Older cached data is not used automatically.</p></details><details><summary>Are fees and exchange-rate spreads included?</summary><p>No. The calculator provides a reference conversion. Bank fees, card rates, taxes, buy/sell spreads and other transaction costs are not included.</p></details><details><summary>Are gold and silver results the same as retail dealer prices?</summary><p>No. The result uses the supported source’s reference gram value. Retail workmanship, product premiums and buy/sell spreads are not included.</p></details></section>
+<section class="card" style="margin-top:18px"><h2>Related Calculators</h2><div class="related"><a class="rel" href="/en/asset-return-calculator"><strong>Asset Return Calculator</strong><div class="muted">Analyze gains and losses on assets such as currencies and metals.</div></a><a class="rel" href="/en/inflation-calculator"><strong>Inflation Calculator</strong><div class="muted">Compare purchasing power over time.</div></a><a class="rel" href="/en/interest-calculator"><strong>Interest Calculator</strong><div class="muted">Estimate simple and compound interest.</div></a></div></section>
+</main>
+<footer>© 2026 Hesapica.com · Exchange-rate results are for reference only.</footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script>
+'use strict';
+const STORAGE_KEY='hesapica_en_fx_rates_v3';
+const CACHE_MAX_AGE=48*60*60*1000;
+const REQUEST_TIMEOUT=7000;
+const MAX_AMOUNT=1e15;
+const $=selector=>document.querySelector(selector);
+const els={amount:$('#amount'),amountField:$('#amountField'),from:$('#from'),to:$('#to'),rateInfo:$('#rateInfo'),updateTime:$('#updateTime'),mainResult:$('#mainResult'),resultNote:$('#resultNote'),kpiList:$('#kpiList'),statusTitle:$('#statusTitle'),statusText:$('#statusText'),statusBadge:$('#statusBadge'),calcBtn:$('#calcBtn'),refreshBtn:$('#refreshBtn'),sampleBtn:$('#sampleBtn'),clearBtn:$('#clearBtn'),copyBtn:$('#copyBtn'),shareBtn:$('#shareBtn'),printBtn:$('#printBtn'),swapBtn:$('#swapBtn'),toast:$('#toast')};
+let rates={TRY:1};
+let rateMeta={source:'',updatedAt:null,rateType:'Selling / reference rate',isFallback:false};
+let hasUsableRates=false;
+let toastTimer=null;
+const currencyMeta={TRY:'Turkish Lira',USD:'US Dollar',EUR:'Euro',GBP:'British Pound',CHF:'Swiss Franc',JPY:'Japanese Yen',SAR:'Saudi Riyal',AED:'UAE Dirham',CAD:'Canadian Dollar',AUD:'Australian Dollar',CNY:'Chinese Yuan',RUB:'Russian Ruble',KWD:'Kuwaiti Dinar',NOK:'Norwegian Krone',SEK:'Swedish Krona',DKK:'Danish Krone',QAR:'Qatari Riyal',AZN:'Azerbaijani Manat',XAU:'Gold (gram)',XAG:'Silver (gram)'};
+const preferredCurrencies=['USD','EUR','GBP','CAD','AUD','CHF','JPY','CNY','SEK','NOK','DKK','SAR','AED','QAR','KWD','AZN','RUB','TRY','XAU','XAG'];
+function showToast(message){clearTimeout(toastTimer);els.toast.textContent=message;els.toast.classList.add('show');toastTimer=setTimeout(()=>els.toast.classList.remove('show'),2200);}
+function parseLocaleNumber(value){if(typeof value==='number')return Number.isFinite(value)?value:NaN;if(typeof value!=='string')return NaN;let raw=value.trim().replace(/\s+/g,'').replace(/[₺$€£¥]/g,'');if(!raw||!/^[+-]?\d[\d.,]*$/.test(raw))return NaN;const sign=raw[0]==='-'?'-':raw[0]==='+'?'+':'';if(sign)raw=raw.slice(1);if(!raw)return NaN;const dots=(raw.match(/\./g)||[]).length,commas=(raw.match(/,/g)||[]).length;let normalized=raw;if(dots&&commas){const decimalSep=raw.lastIndexOf('.')>raw.lastIndexOf(',')?'.':',';const groupSep=decimalSep==='.'?',':'.';const parts=raw.split(decimalSep);if(parts.length!==2||!parts[0]||!parts[1]||!/^\d+$/.test(parts[1]))return NaN;const integerPart=parts[0].split(groupSep).join('');if(!/^\d+$/.test(integerPart))return NaN;normalized=`${integerPart}.${parts[1]}`;}else if(commas){if(commas>1){if(!/^\d{1,3}(,\d{3})+$/.test(raw))return NaN;normalized=raw.replace(/,/g,'');}else if(/^0,\d+$/.test(raw)){normalized=raw.replace(',','.');}else if(/^\d{1,3},\d{3}$/.test(raw)){normalized=raw.replace(',','');}else{normalized=raw.replace(',','.');}}else if(dots){if(dots>1){if(!/^\d{1,3}(\.\d{3})+$/.test(raw))return NaN;normalized=raw.replace(/\./g,'');}else{normalized=raw;}}const number=Number(sign+normalized);return Number.isFinite(number)?number:NaN;}
+function parseApiNumber(value){if(typeof value==='number')return Number.isFinite(value)&&value>0?value:null;if(typeof value!=='string')return null;const raw=value.trim().replace(/\s+/g,'');if(!raw)return null;let normalized=raw;if(raw.includes(',')&&raw.includes('.')){normalized=raw.lastIndexOf(',')>raw.lastIndexOf('.')?raw.replace(/\./g,'').replace(',','.'):raw.replace(/,/g,'');}else if(raw.includes(',')){const commaCount=(raw.match(/,/g)||[]).length;normalized=commaCount===1?raw.replace(',','.'):raw.replace(/,/g,'');}else{normalized=raw;}normalized=normalized.replace(/[^0-9.+-]/g,'');const number=Number(normalized);return Number.isFinite(number)&&number>0?number:null;}
+function formatAmountInput(value){return new Intl.NumberFormat('en-US',{maximumFractionDigits:6}).format(value);}
+function formatNumber(value,max=4){return new Intl.NumberFormat('en-US',{minimumFractionDigits:0,maximumFractionDigits:max}).format(value);}
+function formatDate(value){if(!value)return 'Source time not provided';let date;if(typeof value==='string'){const match=value.trim().match(/^(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{4})$/);date=match?new Date(Number(match[3]),Number(match[2])-1,Number(match[1])):new Date(value);}else{date=new Date(value);}return Number.isNaN(date.getTime())?String(value):new Intl.DateTimeFormat('en-US',{dateStyle:'medium',timeStyle:date.getHours()||date.getMinutes()?'short':undefined}).format(date);}
+function setStatus(type,title,text,badge){els.statusTitle.textContent=title;els.statusText.textContent=text;els.statusBadge.textContent=badge;els.statusBadge.className='status-badge'+(type?' '+type:'');}
+function displayName(code){return `${code} - ${currencyMeta[code]||code}`;}
+function validateRates(candidate){if(!candidate||typeof candidate!=='object')return null;const clean={TRY:1};for(const [code,value] of Object.entries(candidate)){const n=parseApiNumber(value);if(/^[A-Z]{3}$/.test(code)&&n!==null&&n<1e12)clean[code]=n;}if(clean.JPY&&clean.USD){const ratio=clean.JPY/clean.USD;if(!(ratio>=0.001&&ratio<=0.1))delete clean.JPY;}return Object.keys(clean).length>=4?clean:null;}
+function fillSelects(preserve=true){const oldFrom=preserve?els.from.value:'USD';const oldTo=preserve?els.to.value:'EUR';const available=preferredCurrencies.filter(code=>Number.isFinite(rates[code])&&rates[code]>0);const html=available.map(code=>`<option value="${code}">${displayName(code)}</option>`).join('');els.from.innerHTML=html;els.to.innerHTML=html;els.from.value=available.includes(oldFrom)?oldFrom:(available.includes('USD')?'USD':available[0]);els.to.value=available.includes(oldTo)?oldTo:(available.includes('EUR')?'EUR':available[1]||available[0]);}
+function setRateData(newRates,meta,{writeCache=true}={}){const valid=validateRates(newRates);if(!valid)throw new Error('Invalid rate data');rates=valid;rateMeta={...rateMeta,...meta};hasUsableRates=true;fillSelects(true);els.rateInfo.value=rateMeta.source;els.updateTime.value=formatDate(rateMeta.updatedAt);setStatus(rateMeta.isFallback?'warn':'good','Rate data ready',rateMeta.isFallback?'Fallback data is being used. Do not treat the result as an executable transaction quote.':'Source and timestamp information verified.','Ready');if(writeCache)saveCache();recalc(false);}
+function saveCache(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({savedAt:Date.now(),rates,meta:rateMeta}));}catch(error){}
+}
+function readCache(){try{const parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');const savedAt=Number(parsed?.savedAt);if(!parsed||!Number.isFinite(savedAt)||savedAt<=0||Date.now()-savedAt>CACHE_MAX_AGE||savedAt>Date.now()+5*60*1000){try{localStorage.removeItem(STORAGE_KEY)}catch(_removeErr){}return null;}const valid=validateRates(parsed.rates);if(!valid){try{localStorage.removeItem(STORAGE_KEY)}catch(_removeErr){}return null;}const originalSource=String(parsed.meta?.source||'last successful source').replace(/^(Cache · )+/, '');return{rates:valid,meta:{...parsed.meta,source:`Cache · ${originalSource}`,isFallback:true},savedAt};}catch(error){try{localStorage.removeItem(STORAGE_KEY)}catch(_removeErr){}return null;}}
+async function fetchWithTimeout(url,options={}){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),REQUEST_TIMEOUT);try{const response=await fetch(url,{...options,signal:controller.signal});if(!response.ok)throw new Error(`HTTP ${response.status}`);return response;}finally{clearTimeout(timer);}}
+async function loadLocalRates(){const response=await fetchWithTimeout(`../rates.json?ts=${Date.now()}`,{cache:'no-store'});const data=await response.json();const candidate=data.rates_try||data.rates||data;const sourceList=Array.isArray(data.source_priority)?data.source_priority.map(value=>String(value)):[];const source=sourceList.join(' + ')||data.source||'Hesapica rate data';const updatedAt=data.updated_at||data.date||data.timestamp||null;const updatedMs=updatedAt?Date.parse(updatedAt):NaN;const hasValidTime=Number.isFinite(updatedMs)&&updatedMs<=Date.now()+5*60*1000;const isStale=!hasValidTime||Date.now()-updatedMs>72*60*60*1000;if(isStale)throw new Error('Local rate data is stale');const hasTcmb=sourceList.some(value=>value.toUpperCase()==='TCMB');return{rates:candidate,meta:{source:`${source} · selling/reference`,updatedAt,rateType:'Selling / reference rate',isFallback:!hasTcmb||isStale}};}
+async function loadTcmbRates(){const response=await fetchWithTimeout('https://www.tcmb.gov.tr/kurlar/today.xml',{cache:'no-store'});const xml=await response.text();const doc=new DOMParser().parseFromString(xml,'application/xml');if(doc.querySelector('parsererror'))throw new Error('TCMB XML could not be parsed');const out={TRY:1};doc.querySelectorAll('Currency').forEach(node=>{const code=node.getAttribute('CurrencyCode');const unit=Number(node.querySelector('Unit')?.textContent||1);const selling=parseApiNumber(node.querySelector('ForexSelling')?.textContent||'');if(code&&selling&&Number.isFinite(unit)&&unit>0)out[code]=selling/unit;});const date=doc.documentElement.getAttribute('Date')||doc.documentElement.getAttribute('Tarih')||null;return{rates:out,meta:{source:'TCMB indicative FX selling rate',updatedAt:date,rateType:'Indicative FX selling rate',isFallback:false}};}
+async function loadTruncgilRates(){const response=await fetchWithTimeout('https://finans.truncgil.com/v4/today.json',{cache:'no-store'});const data=await response.json();const out={TRY:1};for(const code of preferredCurrencies.filter(code=>!['TRY','XAU','XAG'].includes(code))){const value=parseApiNumber(data?.[code]?.Selling);if(value)out[code]=value;}const gold=parseApiNumber(data?.GRA?.Selling);const silver=parseApiNumber(data?.GUMUS?.Selling);if(gold)out.XAU=gold;if(silver)out.XAG=silver;return{rates:out,meta:{source:'Truncgil selling-rate data',updatedAt:data.Update_Date||data.update_date||null,rateType:'Selling rate',isFallback:true}};}
+async function loadOpenErRates(){const response=await fetchWithTimeout('https://open.er-api.com/v6/latest/TRY',{cache:'no-store'});const data=await response.json();if(data.result&&data.result!=='success')throw new Error('OpenER data error');const out={TRY:1};const TROY_OUNCE_GRAMS=31.1034768;for(const [code,value] of Object.entries(data.rates||{})){const n=Number(value);if(!Number.isFinite(n)||n<=0)continue;const tryPerUnit=1/n;if(code==='XAU'||code==='XAG')out[code]=tryPerUnit/TROY_OUNCE_GRAMS;else out[code]=tryPerUnit;}return{rates:out,meta:{source:'OpenER cross-rate fallback',updatedAt:data.time_last_update_unix?data.time_last_update_unix*1000:null,rateType:'Reference cross rate',isFallback:true}};}
+function sourceTimeMs(value){if(value===null||value===undefined||value==='')return 0;if(typeof value==='number'){if(!Number.isFinite(value)||value<=0)return 0;return value<1e12?value*1000:value;}const raw=String(value).trim();const match=raw.match(/^(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{4})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?$/);if(match){const ms=new Date(Number(match[3]),Number(match[2])-1,Number(match[1]),Number(match[4]||0),Number(match[5]||0),Number(match[6]||0)).getTime();return Number.isFinite(ms)?ms:0;}const ms=Date.parse(raw);return Number.isFinite(ms)?ms:0;}
+function chooseFallback(current,candidate){if(!current)return candidate;const currentTime=sourceTimeMs(current.meta?.updatedAt);const candidateTime=sourceTimeMs(candidate.meta?.updatedAt);return candidateTime>currentTime?candidate:current;}
+async function loadRates(force=false){els.refreshBtn.disabled=true;els.calcBtn.disabled=true;hasUsableRates=false;clearResult('Rate data is refreshing; the previous result is withheld until a new source is validated.');setStatus('','Loading rate data','Checking available sources in order.','Please wait');const loaders=[loadLocalRates,loadTcmbRates,loadTruncgilRates,loadOpenErRates];let fallback=null;for(const loader of loaders){try{const result=await loader();const valid=validateRates(result?.rates);if(!valid)continue;const candidate={rates:valid,meta:result?.meta||{}};if(candidate.meta.isFallback){fallback=chooseFallback(fallback,candidate);continue;}setRateData(candidate.rates,candidate.meta);els.refreshBtn.disabled=false;els.calcBtn.disabled=false;if(force)showToast('Rate data refreshed');return;}catch(error){}}
+if(fallback){setRateData(fallback.rates,fallback.meta);els.refreshBtn.disabled=false;els.calcBtn.disabled=false;if(force)showToast('Rate data refreshed from a fallback source');return;}
+const cached=readCache();if(cached){setRateData(cached.rates,cached.meta,{writeCache:false});setStatus('warn','Using cached rate data','Current sources could not be reached; the last successful dataset, no more than 48 hours old, is shown.','Fallback');}else{hasUsableRates=false;els.rateInfo.value='Data unavailable';els.updateTime.value='—';setStatus('bad','Rate data unavailable','Check your internet connection and press Refresh Rates.','Error');clearResult('A conversion cannot be calculated without rate data.');}els.refreshBtn.disabled=false;els.calcBtn.disabled=!hasUsableRates;}
+function validateAmount(show=true){const amount=parseLocaleNumber(els.amount.value);const valid=Number.isFinite(amount)&&amount>0&&amount<=MAX_AMOUNT;if(show)els.amountField.classList.toggle('has-error',!valid&&els.amount.value.trim()!=='');return valid?amount:null;}
+function clearResult(note='Enter an amount and choose currencies.'){els.mainResult.textContent='—';els.resultNote.textContent=note;els.kpiList.replaceChildren();}
+function recalc(showError=true){const amount=validateAmount(showError);if(amount===null||!hasUsableRates){clearResult(amount===null?'Enter a valid amount.':'Rate data is not ready yet.');return;}const from=els.from.value;const to=els.to.value;const fromRate=Number(rates[from]);const toRate=Number(rates[to]);if(!Number.isFinite(fromRate)||!Number.isFinite(toRate)||fromRate<=0||toRate<=0){clearResult('No valid rate is available for the selected pair.');return;}const tryValue=amount*fromRate;const converted=tryValue/toRate;if(!Number.isFinite(converted)||converted<0){clearResult('The calculation produced an invalid result.');return;}const cross=fromRate/toRate;els.mainResult.textContent=`${formatNumber(converted,6)} ${to}`;els.resultNote.textContent=`Reference conversion for ${formatNumber(amount,6)} ${from}.`;const rows=[['Cross rate',`1 ${from} = ${formatNumber(cross,8)} ${to}`],['Inverse rate',`1 ${to} = ${formatNumber(1/cross,8)} ${from}`],['TRY-equivalent value',`${formatNumber(tryValue,6)} TRY`],['Rate type',rateMeta.rateType],['Source',rateMeta.source],['Data time',formatDate(rateMeta.updatedAt)]];els.kpiList.replaceChildren(...rows.map(([label,value])=>{const row=document.createElement('div');row.className='kpi-row';const strong=document.createElement('strong');const span=document.createElement('span');strong.textContent=label;span.textContent=value;row.append(strong,span);return row;}));}
+function resultText(){return [`Hesapica Currency Converter`,els.resultNote.textContent,els.mainResult.textContent,...Array.from(els.kpiList.querySelectorAll('.kpi-row')).map(row=>`${row.firstElementChild.textContent}: ${row.lastElementChild.textContent}`),location.href].join('\n');}
+async function copyText(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return;}catch(_clipboardError){}}const area=document.createElement('textarea');area.value=text;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const success=document.execCommand('copy');area.remove();if(!success)throw new Error('Copy failed');}
+els.amount.addEventListener('input',()=>{els.amountField.classList.remove('has-error');recalc(false);});els.amount.addEventListener('blur',()=>{const value=validateAmount(true);if(value!==null)els.amount.value=formatAmountInput(value);});els.from.addEventListener('change',()=>recalc(false));els.to.addEventListener('change',()=>recalc(false));function scrollToResult(){
+  const resultArea=document.getElementById('resultArea');
+  if(!resultArea)return;
+  window.setTimeout(()=>{
+    const top=resultArea.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    resultArea.setAttribute('tabindex','-1');
+    resultArea.focus({preventScroll:true});
+  },120);
+}
+els.calcBtn.addEventListener('click',()=>{
+  recalc(true);
+  if(els.mainResult.textContent!=='—'){
+    scrollToResult();
+  }
+});els.swapBtn.addEventListener('click',()=>{const current=els.from.value;els.from.value=els.to.value;els.to.value=current;recalc(false);});els.refreshBtn.addEventListener('click',()=>loadRates(true));els.sampleBtn.addEventListener('click',()=>{els.amount.value='250';if([...els.from.options].some(o=>o.value==='EUR'))els.from.value='EUR';if([...els.to.options].some(o=>o.value==='USD'))els.to.value='USD';els.amountField.classList.remove('has-error');recalc(false);if(els.mainResult.textContent!=='—')scrollToResult();});els.clearBtn.addEventListener('click',()=>{els.amount.value='';els.amountField.classList.remove('has-error');if([...els.from.options].some(o=>o.value==='USD'))els.from.value='USD';if([...els.to.options].some(o=>o.value==='EUR'))els.to.value='EUR';clearResult();els.amount.focus();showToast('Panel cleared');});els.copyBtn.addEventListener('click',async()=>{if(els.mainResult.textContent==='—'){showToast('Create a valid result first');return;}try{await copyText(resultText());showToast('Result copied');}catch(error){showToast('Copy failed');}});els.shareBtn.addEventListener('click',async()=>{if(els.mainResult.textContent==='—'){showToast('Create a valid result first');return;}const url=location.href,fullText=resultText();const text=fullText.split('\n').filter(line=>line.trim()!==url).join('\n');if(navigator.share){try{await navigator.share({title:'Hesapica Currency Converter',text,url});return;}catch(error){if(error?.name==='AbortError')return;}}try{await copyText(fullText);showToast('Share text copied');}catch(error){showToast('Sharing is not supported');}});els.printBtn.addEventListener('click',()=>{if(els.mainResult.textContent==='—'){showToast('Create a valid result before printing.');return;}window.print();});
+loadRates(false);
+</script>
+<script src="../ads-slot-manager.js"></script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset data','clear data','clear','reset']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

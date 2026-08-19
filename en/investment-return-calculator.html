@@ -1,0 +1,3016 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Investment Return & ROI Calculator | Hesapica</title>
+<meta name="description" content="Project investment growth and ROI with recurring contributions, fees, inflation, annualized returns and weak/base/strong scenarios in one detailed calculator."/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="investment return calculator, ROI calculator, compound investment calculator, real return calculator, investment growth calculator" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/investment-return-calculator" rel="canonical"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/investment-return-calculator"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/yatirim-getirisi-hesaplama"/>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
+<meta content="website" property="og:type"/>
+<meta content="Investment Return & ROI Calculator | Hesapica" property="og:title"/>
+<meta content="Project investment growth and analyze ROI on one page. Compare net profit, real return, annualized return, target gaps and weak/base/strong scenarios." property="og:description"/>
+<meta content="https://hesapica.com/en/investment-return-calculator" property="og:url"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Investment Return & ROI Calculator | Hesapica" name="twitter:title"/>
+<meta content="Project investment growth and analyze ROI on one page. Compare net profit, real return, annualized return, target gaps and weak/base/strong scenarios." name="twitter:description"/>
+<meta content="https://hesapica.com/en/investment-return-calculator" name="twitter:url"/>
+
+<!-- Google Analytics 4 -->
+
+
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFundt, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:7px;font-size:13px;font-weight:700;color:var(--bad)}
+    .field.has-error input,.field.has-error select{border-color:#fca5a5;background:#fff7f7;box-shadow:0 0 0 4px rgba(185,28,28,.06)}
+    .field.has-error .error-text{display:block}
+    .field.has-error .hint{display:none}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;transition:all .18s ease}
+    .chip:hover,.chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe;transform:translateY(-1px)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .actions-secondary{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+    .btn:disabled:hover{transform:none;opacity:.55}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10);transition:background .25s ease,border-color .25s ease}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:var(--text);transition:color .25s ease}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value,.health-card.is-empty .big,.scorebox.is-empty .score-value{color:#9ca3af}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%;transition:width .35s ease}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .score-breakdown-row .val.pos{color:var(--good)}
+    .score-breakdown-row .val.neg{color:var(--bad)}
+    .score-breakdown-row .val.neu{color:var(--muted)}
+
+    .decision-card{padding:18px;border-radius:20px;background:#fff;border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+    .decision-card h3{margin:0 0 8px;font-size:18px;color:var(--primary)}
+    .decision-card p{margin:0;color:#374151;font-size:15px;line-height:1.7}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd;transition:background .2s ease}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .results.flash-target .highlight-card{
+      border-color:rgba(79,70,229,.34);
+      box-shadow:0 0 0 6px rgba(79,70,229,.10), 0 18px 42px rgba(79,70,229,.16);
+      background:linear-gradient(180deg,#ffffff 0%, #eef2ff 100%);
+      animation:resultPulse .9s ease;
+    }
+    @keyframes resultPulse{
+      0%{transform:translateY(0);}
+      35%{transform:translateY(-2px);}
+      100%{transform:translateY(0);}
+    }
+
+    .bar-card{padding:18px;border-radius:20px;border:1px solid var(--line);background:#fbfcff}
+    .bar-row + .bar-row{margin-top:12px}
+    .bar-top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#374151;margin-bottom:7px}
+    .bar{height:10px;border-radius:999px;background:#eef2f7;overflow:hidden}
+    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0%;transition:width .35s ease}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .share-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .micro-status{display:none;margin-top:10px;font-size:13px;font-weight:700;color:#4338ca}
+    .micro-status.show{display:block}
+    .loading-dot{display:inline-block;width:8px;height:8px;border-radius:999px;background:#6366f1;margin-right:8px;animation:pulseDot 1s ease infinite}
+    @keyframes pulseDot{0%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1)}100%{opacity:.3;transform:scale(.8)}}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.decision-card,.bar-card,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions,.actions-secondary{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row,.score-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.share-actions,.btn,.hc-ad-slot{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.decision-card,.bar-card,details.block{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}
+      .tool-layout,.content-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  
+#resultsPanel,#roi-resultArea{scroll-margin-top:16px}
+.related-card{color:#fff}
+.related-card strong{color:#fff}
+.related-card .small{color:rgba(255,255,255,.86)}
+.related-card p{color:rgba(255,255,255,.88)}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Investment Return & ROI Calculator | Growth, Real Return & Scenarios | Hesapica","url":"https://hesapica.com/en/investment-return-calculator","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Investing","item":"https://hesapica.com/en/#investing"},{"@type":"ListItem","position":3,"name":"Investment Return & ROI Calculator","item":"https://hesapica.com/en/investment-return-calculator"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the projected return guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator projects a scenario from the assumptions you enter. Actual returns can differ because of market performance, timing, taxes, fees and other costs."}},{"@type":"Question","name":"Can monthly contributions materially change the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Recurring contributions can become a large share of ending value over medium and long horizons, so the calculator reports contributed principal separately."}},{"@type":"Question","name":"Can I model a negative-return scenario?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter a negative expected annual return to test a loss scenario and compare it with the base and stronger cases."}},{"@type":"Question","name":"What does negative ROI mean?","acceptedAnswer":{"@type":"Answer","text":"Negative ROI means the net result is below total cost and the scenario produces a loss."}},{"@type":"Question","name":"Why can annualized ROI look different?","acceptedAnswer":{"@type":"Answer","text":"The same total return earned over a shorter period annualizes to a higher rate. Annualized ROI makes the time dimension more visible."}},{"@type":"Question","name":"Is ROI the same as profit margin?","acceptedAnswer":{"@type":"Answer","text":"No. Profit margin measures profit relative to revenue, while ROI measures net return relative to the capital/cost base."}}]}
+</script>
+<meta content="@hesapica" name="twitter:site"/><style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFundt, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 28%), linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg, rgba(79,70,229,.11), rgba(124,58,237,.11));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}
+    .prefix{left:16px}.suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .error-text{display:none;margin-top:7px;font-size:13px;color:var(--bad);font-weight:700}
+    .field.has-error input,.field.has-error select{border-color:#fca5a5;background:#fff7f7;box-shadow:0 0 0 4px rgba(220,38,38,.08)}
+    .field.has-error .error-text{display:block}
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px;scroll-margin-top:18px}
+    .results.flash-highlight{animation:resultsFlash 1.2s ease}
+    @keyframes resultsFlash{0%{transform:translateY(0);box-shadow:none}20%{transform:translateY(-2px);box-shadow:0 0 0 4px rgba(79,70,229,.10), 0 18px 42px rgba(79,70,229,.18)}100%{transform:translateY(0);box-shadow:none}}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .badge.info,.pill.info{background:#eef2ff;color:#4338ca;border-color:#c7d2fe}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value,.health-card.is-empty .big,.scorebox.is-empty .score-value,.scenario-card.is-empty .scenario-value{color:#9ca3af}
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .decision-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .decision-box strong{display:block;font-size:17px;color:var(--primary);margin-bottom:6px}
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+    .scenario-section{margin-top:24px}
+    .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .scenario-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .scenario-title{font-size:14px;font-weight:900;color:var(--primary);margin-bottom:8px}
+    .scenario-value{font-size:26px;font-weight:900;line-height:1.1;margin-bottom:6px}
+    .scenario-sub{font-size:14px;color:#4b5563;line-height:1.5}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid,.scenario-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.decision-box,.scenario-card{padding:20px}
+      .field-grid,.health-grid,.related-grid,.scenario-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row,.score-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,.decision-box,.scenario-card{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}
+      .tool-layout,.content-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  </style><style>
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFundt, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:Inter, -apple-system, BlinkMacSystemFundt, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body: 15px;
+        --hc-type-label: 14.5px;
+        --hc-type-small: 13.5px;
+        --hc-type-button: 14.5px;
+        --hc-type-card-title: 1.05rem;
+      }
+    }
+  </style><style>
+.mode-switch-card{display:flex;flex-direction:column;gap:12px;margin:18px 0 26px;padding:18px 20px;border-radius:20px;background:linear-gradient(180deg,#ffffff 0%,#f7f7ff 100%);border:1px solid rgba(79,70,229,.12);box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.mode-switch-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+.mode-switch-head strong{font-size:1rem;color:#111827}
+.mode-switch-head span{font-size:.95rem;color:#667085}
+.mode-switch-actions{display:flex;flex-wrap:wrap;gap:10px}
+.mode-switch-btn{border:1px solid rgba(79,70,229,.18);background:#fff;color:#312e81;padding:11px 14px;border-radius:14px;font-weight:700;cursor:pointer;transition:all .2s ease;min-height:46px}
+.mode-switch-btn.is-active{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(79,70,229,.22)}
+.mode-switch-note{font-size:.92rem;color:#667085}
+[hidden]{display:none!important}
+@media (max-width: 640px){
+  .mode-switch-actions{flex-direction:column}
+  .mode-switch-btn{width:100%}
+}
+</style><link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFundt, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-madde4-print-controls">
+@media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
+</style>
+
+<style id="hc-language-switch-style">
+.hc-lang-switch-wrap{display:flex;justify-content:flex-end;margin:10px 0 0}
+.hc-lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #c7d2fe;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 22px rgba(79,70,229,.10);font-size:13px;font-weight:800}
+.hc-lang-switch .globe{padding:0 5px 0 7px;font-size:15px;line-height:1}
+.hc-lang-switch a,.hc-lang-switch span.lang-active{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:999px;white-space:nowrap}
+.hc-lang-switch a{color:#4338ca;background:#fff}
+.hc-lang-switch a:hover{background:#eef2ff}
+.hc-lang-switch .lang-active{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 5px 14px rgba(79,70,229,.22)}
+@media(max-width:640px){.hc-lang-switch-wrap{margin-top:12px}.hc-lang-switch{width:100%;display:grid;grid-template-columns:auto 1fr 1fr;border-radius:18px}.hc-lang-switch a,.hc-lang-switch span.lang-active{min-width:0;padding:0 8px}.hc-lang-switch .globe{text-align:center}}
+</style>
+</head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">This calculator requires JavaScript. Please enable JavaScript and reload the page.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a>
+<span>/</span>
+<a href="/en/#investing">Investing</a>
+<span>/</span>
+<strong>Investment Return & ROI Calculator</strong>
+</nav>
+<div class="hc-lang-switch-wrap"><div class="hc-lang-switch" aria-label="Language"><span class="globe" aria-hidden="true">🌐</span><a href="/yatirim-getirisi-hesaplama" hreflang="tr" lang="tr">TR · Türkçe</a><span class="lang-active" aria-current="page">EN · English</span></div></div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Investment Analysis Tool</span>
+<h1>Investment Return & ROI Calculator</h1>
+<p>This tool analyzes more than how large a portfolio could become; <strong>net profit</strong>, <strong>real return</strong>, <strong>cost pressure</strong>, <strong>scenario-quality score</strong> and <strong>strong / weak scenarios</strong> in one detailed workflow.</p>
+<div class="hero-chips">
+<span class="hero-chip">Blank start</span>
+<span class="hero-chip">Nominal → real view</span>
+<span class="hero-chip">Decision summary</span>
+<span class="hero-chip">Scenario table</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">What does this calculator show?</div>
+<strong>Main result first, risk and quality context immediately below</strong>
+<ul>
+<li>Total contributed principal</li>
+<li>Projected ending portfolio value</li>
+<li>Net vs. inflation-adjusted return</li>
+<li>Cost pressure and scenario score</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+
+
+
+<section aria-label="Investment analysis mode" class="container">
+<div class="mode-switch-card">
+<div class="mode-switch-head">
+<strong>Two investment analyses on one page</strong>
+<span>Switch between a recurring-investment projection and a standalone ROI analysis.</span>
+</div>
+<div aria-label="Investing hesap modu" class="mode-switch-actions" role="tablist">
+<button aria-controls="yatirimModeSection" aria-selected="true" class="mode-switch-btn is-active" data-mode="yatirim" id="modeBtnYatirim" role="tab" tabindex="0" type="button">Investment Return</button>
+<button aria-controls="roiModeSection" aria-selected="false" class="mode-switch-btn" data-mode="roi" id="modeBtnRoi" role="tab" tabindex="-1" type="button">ROI Analysis</button>
+</div>
+<div class="mode-switch-note">Choose ROI Analysis for a standalone cost/revenue return calculation. Both workflows live on this page.</div>
+</div>
+</section>
+
+<main class="container" style="padding:24px 0 56px"><div id="yatirimModeSection">
+<section class="tool-layout">
+<div class="card">
+<h2>Calculator Panel</h2>
+<p class="section-note">Fields start blank. Enter a starting amount, time horizon and expected annual return to generate the projection.</p>
+<div class="helper-box">
+<h3>Who is this useful for?</h3>
+<p>Useful for people comparing recurring contributions, return assumptions, fees and inflation instead of looking only at nominal portfolio growth.</p>
+</div>
+<div class="form-section"><div class="field full"><label for="displayCurrency">Display currency</label><select id="displayCurrency"><option value="USD">USD · US Dollar</option><option value="EUR">EUR · Euro</option><option value="GBP">GBP · British Pound</option><option value="CAD">CAD · Canadian Dollar</option><option value="AUD">AUD · Australian Dollar</option><option value="NZD">NZD · New Zealand Dollar</option><option value="CHF">CHF · Swiss Franc</option><option value="JPY">JPY · Japanese Yen</option><option value="INR">INR · Indian Rupee</option><option value="SGD">SGD · Singapore Dollar</option><option value="SEK">SEK · Swedish Krona</option><option value="NOK">NOK · Norwegian Krone</option><option value="DKK">DKK · Danish Krone</option><option value="PLN">PLN · Polish Zloty</option><option value="ZAR">ZAR · South African Rand</option></select><div class="hint">Formatting only. Changing currency does not perform an exchange-rate conversion.</div><div class="error-text"></div></div></div>
+<div class="form-section">
+<div class="form-title">Core investment inputs</div>
+<div class="field-grid">
+<div class="field" id="field-investmentType">
+<label for="investmentType">Investment type</label>
+<div class="input-wrap">
+<select id="investmentType">
+<option value="general">General investment</option>
+<option value="fund">Fund</option>
+<option value="stock">Stock</option>
+<option value="gold">Gold</option>
+<option value="crypto">Crypto</option>
+</select>
+</div>
+<div class="hint">Interpretation and confidence wording adapt to the selected type.</div>
+<div class="error-text">Choose a valid investment type.</div>
+</div>
+<div class="field" id="field-calcMode">
+<label for="calcMode">Growth mode</label>
+<div class="input-wrap">
+<select id="calcMode">
+<option value="compound">Compound growth</option>
+<option value="simple">Simple growth</option>
+</select>
+</div>
+<div class="hint">Compound mode assumes returns are reinvested over time.</div>
+<div class="error-text">Choose a valid growth mode.</div>
+</div>
+<div class="field" id="field-initialAmount">
+<label for="initialAmount">Starting amount</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input class="with-prefix js-format-money" id="initialAmount" inputmode="decimal" placeholder="e.g. 100,000" type="text"/>
+</div>
+<div class="hint">Initial principal invested at the start.</div>
+<div class="error-text">Starting amount must be 0 or greater.</div>
+</div>
+<div class="field" id="field-monthlyContribution">
+<label for="monthlyContribution">Monthly contribution</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input class="with-prefix js-format-money" id="monthlyContribution" inputmode="decimal" placeholder="e.g. 500" type="text"/>
+</div>
+<div class="hint">Amount contributed at the end of each month.</div>
+<div class="error-text">Monthly contribution must be 0 or greater.</div>
+</div>
+<div class="field" id="field-investmentMonths">
+<label for="investmentMonths">Investment horizon</label>
+<div class="input-wrap">
+<input class="with-suffix js-format-int" id="investmentMonths" inputmode="numeric" placeholder="e.g. 24" type="text"/>
+<span class="suffix">ay</span>
+</div>
+<div class="hint">How many months will the investment run?</div>
+<div class="error-text">Investment horizon must be at least 1 month.</div>
+</div>
+<div class="field" id="field-annualReturnRate">
+<label for="annualReturnRate">Expected annual return</label>
+<div class="input-wrap">
+<input class="with-suffix js-format-percent signed" id="annualReturnRate" inputmode="decimal" placeholder="e.g. 8" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">You can enter a negative rate to test a loss scenario.</div>
+<div class="error-text">Expected return must be greater than -100%.</div>
+</div>
+</div>
+<div class="chip-row" id="termChips" style="margin-top:14px">
+<button class="chip" data-months="12" type="button">12 Months</button>
+<button class="chip" data-months="24" type="button">24 Months</button>
+<button class="chip" data-months="36" type="button">36 Months</button>
+<button class="chip" data-months="60" type="button">60 Months</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Costs & real return</div>
+<div class="field-grid">
+<div class="field" id="field-taxCostRate">
+<label for="taxCostRate">Cost / deduction rate</label>
+<div class="input-wrap">
+<input class="with-suffix js-format-percent" id="taxCostRate" inputmode="decimal" placeholder="e.g. 1.5" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Total cost/deduction rate applied to positive gross profit in this model.</div>
+<div class="error-text">Cost rate must be 0 or greater.</div>
+</div>
+<div class="field" id="field-inflationRate">
+<label for="inflationRate">Annual inflation assumption</label>
+<div class="input-wrap">
+<input class="with-suffix js-format-percent" id="inflationRate" inputmode="decimal" placeholder="e.g. 2.5" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Used to estimate inflation-adjusted annualized return. Negative values above -100% can model deflation.</div>
+<div class="error-text">Inflation/deflation assumption must be greater than -100%.</div>
+</div>
+</div>
+<div class="chip-row" id="returnChips" style="margin-top:14px">
+<button class="chip" data-return="15" type="button">%15</button>
+<button class="chip" data-return="25" type="button">%25</button>
+<button class="chip" data-return="35" type="button">%35</button>
+<button class="chip" data-return="55" type="button">%55</button>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Preset scenarios</div>
+<div class="chip-row">
+<button class="chip js-scenario" data-scenario="steady" type="button">Balanced recurring investment</button>
+<button class="chip js-scenario" data-scenario="growth" type="button">Growth-focused portfolio</button>
+<button class="chip js-scenario" data-scenario="defensive" type="button">Conservative scenario</button>
+<button class="chip js-scenario" data-scenario="volatile" type="button">High-volatility scenario</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calculateBtn" type="button">Calculate</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Example Data</button>
+<button class="btn btn-ghost" id="resetBtn" type="button">Reset</button>
+</div>
+<div class="actions-secondary">
+<button class="btn btn-secondary" id="copyBtn" type="button">Copy Result</button>
+<button class="btn btn-secondary" id="shareBtn" type="button">Share</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Print / PDF</button>
+</div>
+<div class="flow-hint">
+<div class="flow-hint-text">
+<strong>Result flow:</strong>
+<span>Main result → score → decision → details → scenarios</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+<div aria-live="polite" class="micro-status" id="calcStatus"><span class="loading-dot"></span>Calculating…</div>
+</div>
+<aside class="results" id="resultsPanel">
+
+
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Quick status summary</div>
+<div class="status-text" id="statusText">Waiting for calculation. Enter a horizon and return assumption to see the scenario-quality and risk context.</div>
+</div>
+<div class="badge" id="statusBadge">Waiting</div>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard" tabindex="-1">
+<div class="highlight-label">Projected ending portfolio value</div>
+<div class="highlight-value" id="finalValueMain">—</div>
+<div class="highlight-sub" id="finalValueSub">The result starts blank. A valid input set will generate the portfolio projection here.</div>
+</div>
+<div class="scorebox is-empty" id="scoreCard">
+<div class="score-row">
+<div>
+<div class="status-title" style="margin:0">Hesapica Investment Scenario Score</div>
+<div class="score-explain" style="margin-top:10px;padding:12px 14px">
+<strong>What does the score measure?</strong>
+                Return strength, inflation-adjusted performance and cost pressure are considered together. This is a site-specific scenario indicator, not investment advice or an official performance measure.
+              </div>
+</div>
+<div>
+<div class="score-value" id="scoreValue">—</div>
+<div class="pill" id="scoreLabel">Waiting</div>
+</div>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-breakdown">
+<div class="score-breakdown-row"><span class="name">Return strength</span><span class="val neu" id="scoreReturn">—</span></div>
+<div class="score-breakdown-row"><span class="name">Real-return view</span><span class="val neu" id="scoreReal">—</span></div>
+<div class="score-breakdown-row"><span class="name">Cost pressure</span><span class="val neu" id="scoreCost">—</span></div>
+</div>
+</div>
+<div class="decision-card">
+<h3>Decision Summary</h3>
+<p id="decisionText">Enter the investment assumptions first. The calculator will summarize net return, real-return view and cost pressure.</p>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="principalCard"><div><div class="label">Total contributed principal</div><div class="subline">Starting amount + all monthly contributions</div></div><div class="value" id="principalValue">—</div></div>
+<div class="mini-result is-empty" id="netProfitCard"><div><div class="label">Net investment profit</div><div class="subline">After modeled costs/deductions</div></div><div class="value" id="netProfitValue">—</div></div>
+<div class="mini-result is-empty" id="annualizedCard"><div><div class="label">Annualized return</div><div class="subline">Time-normalized portfolio performance</div></div><div class="value" id="annualizedValue">—</div></div>
+<div class="mini-result is-empty" id="realCard"><div><div class="label">Real annualized return</div><div class="subline">Inflation-adjusted purchasing-power effect</div></div><div class="value" id="realValue">—</div></div>
+<div class="mini-result is-empty" id="roiCard"><div><div class="label">Net return on contributed principal</div><div class="subline">Relative to total contributed principal</div></div><div class="value" id="roiValue">—</div></div>
+<div class="mini-result is-empty" id="costCard"><div><div class="label">Cost / deduction impact</div><div class="subline">Amount deducted from positive gross profit</div></div><div class="value" id="costValue">—</div></div>
+</div>
+<div class="health-grid">
+<div class="health-card is-empty" id="confidenceCard"><h3>Projection Confidence</h3><div class="big" id="confidenceValue">—</div></div>
+<div class="health-card is-empty" id="contribCard"><h3>Contribution Impact</h3><div class="big" id="contribValue">—</div></div>
+<div class="health-card is-empty" id="costHealthCard"><h3>Cost Pressure</h3><div class="big" id="costHealthValue">—</div></div>
+</div>
+<div class="bar-card">
+<div class="status-title" style="margin-bottom:12px">Portfolio composition</div>
+<div class="bar-row">
+<div class="bar-top"><span>Principal share</span><strong id="principalShareText">—</strong></div>
+<div class="bar"><div class="bar-fill" id="principalBar"></div></div>
+</div>
+<div class="bar-row">
+<div class="bar-top"><span>Net-profit share</span><strong id="profitShareText">—</strong></div>
+<div class="bar"><div class="bar-fill" id="profitBar"></div></div>
+</div>
+<div class="bar-row">
+<div class="bar-top"><span>Cost/deduction share</span><strong id="costShareText">—</strong></div>
+<div class="bar"><div class="bar-fill" id="costBar"></div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Enter investment inputs to receive detailed context based on type, horizon, contribution pattern and real-return view.</div>
+</aside>
+</section>
+<section class="details-card">
+<div class="accordion-stack">
+<details class="block" open="">
+<summary>Main results & metrics <span class="summary-note">The key figures at a glance</span></summary>
+<div class="details-inner">
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
+</thead>
+<tbody id="coreMetricsBody">
+<tr><td>Starting amount</td><td>—</td><td>Waiting for calculation.</td></tr>
+<tr><td>Total monthly contributions</td><td>—</td><td>Waiting for calculation.</td></tr>
+<tr><td>Gross profit / loss</td><td>—</td><td>Waiting for calculation.</td></tr>
+<tr><td>Net profit</td><td>—</td><td>Waiting for calculation.</td></tr>
+<tr><td>Ending portfolio</td><td>—</td><td>Waiting for calculation.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block">
+<summary>Scenario analysis <span class="summary-note">Weak / base / strong outlook</span></summary>
+<div class="details-inner">
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Scenario</th><th>Annual Return</th><th>Ending Portfolio</th><th>Net Profit</th><th>Interpretation</th></tr>
+</thead>
+<tbody id="scenarioBody">
+<tr><td>Base</td><td>—</td><td>—</td><td>—</td><td>Waiting for calculation.</td></tr>
+<tr><td>Weak</td><td>—</td><td>—</td><td>—</td><td>Waiting for calculation.</td></tr>
+<tr><td>Strong</td><td>—</td><td>—</td><td>—</td><td>Waiting for calculation.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section class="content-grid">
+<div class="card accordion-card">
+<h2>How Investment Return & ROI Are Calculated</h2>
+<p>The projection first totals the starting amount and recurring monthly contributions. Depending on the selected mode, returns are applied either with compounding or as simple time-weighted growth. The modeled cost/deduction rate is then applied to positive gross profit to estimate the ending portfolio value.</p>
+<p>When inflation is entered, the calculator also estimates an inflation-adjusted annualized return, separating nominal growth from purchasing-power growth.</p>
+</div>
+<div class="card accordion-card">
+<h2>What Is This Tool For?</h2>
+<p>Use it to compare contribution levels, return assumptions, modeled costs and inflation over a chosen horizon.</p>
+<details open=""><summary>When is it especially useful?</summary><p>It is useful for recurring-investment planning and for comparing mathematical scenarios across funds, stocks, gold, crypto or a general portfolio.</p></details>
+<details><summary>What does the score mean?</summary><p>The score is not investment advice. It summarizes the mathematical quality of the entered scenario; a higher score reflects stronger modeled net/real performance and lower cost pressure.</p></details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+
+<!-- HC_AD_SLOT:faq -->
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement area">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4334681065822132"
+       data-ad-slot="4903929326"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<div class="accordion-card">
+<details open=""><summary>Is the projected return guaranteed?</summary><p>No. The calculator projects a scenario from the assumptions you enter. Actual returns can differ because of market performance, timing, taxes, fees and other costs.</p></details>
+<details><summary>Can monthly contributions materially change the result?</summary><p>Yes. Recurring contributions can become a large share of ending value over medium and long horizons, so the calculator reports contributed principal separately.</p></details>
+<details><summary>Can I model a negative-return scenario?</summary><p>Yes. Enter a negative expected annual return to test a loss scenario and compare it with the base and stronger cases.</p></details>
+</div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2>Related Tools</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/asset-return-calculator"><span class="small">Related Tool</span><strong>Asset Return Calculator</strong><p>Compare purchase/sale price, quantity, fees and break-even for an individual asset.</p></a>
+<a class="related-card" href="/en/average-calculator"><span class="small">Related Tool</span><strong>Average Calculator</strong><p>Compare arithmetic and weighted averages, median and dispersion statistics.</p></a>
+<a class="related-card" href="/en/crypto-profit-calculator"><span class="small">Related Tool</span><strong>Crypto Profit Calculator</strong><p>Analyze crypto profit, fees, market cap, supply and dilution scenarios.</p></a>
+<a class="related-card" href="/en/interest-calculator?mod=compound"><span class="small">Related Tool</span><strong>Interest Calculator</strong><p>Compare simple interest, fixed-term interest and compound growth with recurring contributions.</p></a>
+</div>
+</section>
+</div><div hidden="hidden" id="roiModeSection"><section class="tool-layout">
+<div class="card">
+<h2>ROI Panel</h2>
+<p class="section-note">Fields start blank. Enter cost, revenue and duration or load example data to generate ROI results.</p>
+<div class="helper-box">
+<h3>When can ROI be misleading?</h3>
+<p>ROI alone does not capture time, risk or omitted costs. This panel therefore also shows annualized ROI, target/alternative comparisons and scenario context.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Core investment inputs</div>
+<div class="field-grid">
+<div class="field" data-field="roiType">
+<label for="roi-roiType">ROI type</label>
+<select id="roi-roiType">
+<option value="investment">Investment / portfolio</option>
+<option value="business">Business / trade</option>
+<option value="ads">Advertising / marketing</option>
+<option value="product">Product / e-commerce</option>
+</select>
+<div class="hint">Used only to tailor the interpretation wording.</div>
+<div class="error-text">Choose a valid ROI type.</div>
+</div>
+<div class="field" data-field="baseCost">
+<label for="roi-baseCost">Base cost</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input class="with-prefix" id="roi-baseCost" inputmode="numeric" placeholder="e.g. 50,000" type="text"/>
+</div>
+<div class="hint">Initial investment or primary operating cost.</div>
+<div class="error-text">Base cost must be greater than 0.</div>
+</div>
+<div class="field" data-field="extraCost">
+<label for="roi-extraCost">Additional costs</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input class="with-prefix" id="roi-extraCost" inputmode="numeric" placeholder="e.g. 3,000" type="text"/>
+</div>
+<div class="hint">Fees, advertising or other additional costs.</div>
+<div class="error-text">Additional costs cannot be negative.</div>
+</div>
+<div class="field" data-field="revenue">
+<label for="roi-revenue">Total revenue / exit value</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input class="with-prefix" id="roi-revenue" inputmode="numeric" placeholder="e.g. 78,000" type="text"/>
+</div>
+<div class="hint">Sales revenue or total exit value.</div>
+<div class="error-text">Revenue must be 0 or greater.</div>
+</div>
+<div class="field" data-field="months">
+<label for="roi-months">Duration</label>
+<div class="input-wrap">
+<input class="with-suffix" id="roi-months" inputmode="numeric" placeholder="e.g. 12" type="text"/>
+<span class="suffix">ay</span>
+</div>
+<div class="hint">How many months did it take to reach this result?</div>
+<div class="error-text">Duration must be at least 1 month.</div>
+</div>
+<div class="field" data-field="taxRate">
+<label for="roi-taxRate">Deduction rate</label>
+<div class="input-wrap">
+<input class="with-suffix" id="roi-taxRate" inputmode="decimal" placeholder="e.g. 5" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Optional tax/deduction rate applied to positive pre-deduction profit.</div>
+<div class="error-text">Deduction rate must be between 0 and 100%.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Comparison inputs</div>
+<div class="field-grid">
+<div class="field" data-field="targetRoi">
+<label for="roi-targetRoi">Target ROI</label>
+<div class="input-wrap">
+<input class="with-suffix" id="roi-targetRoi" inputmode="decimal" placeholder="e.g. 25" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Optional. Shows the difference from your target.</div>
+<div class="error-text">Target ROI is outside the supported range.</div>
+</div>
+<div class="field" data-field="compareAlt">
+<label for="roi-compareAlt">Alternative return</label>
+<div class="input-wrap">
+<input class="with-suffix" id="roi-compareAlt" inputmode="decimal" placeholder="e.g. 18" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Optional. Compares the result with an alternative-return benchmark.</div>
+<div class="error-text">Alternative return is outside the supported range.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Shortcuts & examples</div>
+<div class="field-grid">
+<div class="field full">
+<label>Duration shortcuts</label>
+<div class="chip-row" id="roi-termChips">
+<button class="chip" data-roi-months="3" type="button">3 Months</button>
+<button class="chip" data-roi-months="6" type="button">6 Months</button>
+<button class="chip" data-roi-months="12" type="button">12 Months</button>
+<button class="chip" data-roi-months="24" type="button">24 Months</button>
+</div>
+</div>
+<div class="field full">
+<label>Target ROI shortcuts</label>
+<div class="chip-row" id="roi-targetChips">
+<button class="chip" data-roi-target="10" type="button">%10</button>
+<button class="chip" data-roi-target="25" type="button">%25</button>
+<button class="chip" data-roi-target="50" type="button">%50</button>
+<button class="chip" data-roi-target="100" type="button">%100</button>
+</div>
+</div>
+<div class="field full">
+<label>Preset scenarios</label>
+<div class="chip-row">
+<button class="chip" data-roi-scenario="ads" type="button">Ad campaign</button>
+<button class="chip" data-roi-scenario="business" type="button">Business transaction</button>
+<button class="chip" data-roi-scenario="product" type="button">Product sale</button>
+<button class="chip" data-roi-scenario="loss" type="button">Loss scenario</button>
+</div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="roi-calculateBtn" type="button">Calculate</button>
+<button class="btn btn-secondary" id="roi-exampleBtn" type="button">Example Data</button>
+<button class="btn btn-ghost" id="roi-resetBtn" type="button">Reset</button>
+<button aria-disabled="true" class="btn btn-ghost" disabled="" id="roi-copyBtn" type="button">Copy Result</button>
+<button aria-disabled="true" class="btn btn-ghost" disabled="" id="roi-shareBtn" type="button">Share</button>
+<button aria-disabled="true" class="btn btn-ghost" disabled="" id="roi-printBtn" type="button">Print / PDF</button>
+</div>
+<div class="flow-hint">
+<div class="flow-hint-text">
+<strong>Flow</strong>
+<span>Main result → Score → Decision → Details → Scenarios</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="roi-resultArea">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Status Summary</div>
+<div class="status-text" id="roi-statusText">No calculation yet. Enter the core values to see ROI quality and scenario context.</div>
+</div>
+<div class="badge info" id="roi-statusBadge">Waiting</div>
+</div>
+</div>
+<div class="highlight-card is-empty" id="roi-highlightCard">
+<div class="highlight-label">Main Result</div>
+<div class="highlight-value" id="roi-mainResult">—</div>
+<div class="highlight-sub" id="roi-mainResultSub">Net ROI and the primary result will appear here.</div>
+</div>
+<div class="scorebox is-empty" id="roi-scoreBox">
+<div class="score-row">
+<div>
+<div class="highlight-label" style="margin-bottom:6px">ROI Score</div>
+<div class="score-value" id="roi-scoreValue">—</div>
+</div>
+<div class="pill info" id="roi-scorePill">Waiting for data</div>
+</div>
+<div class="progress"><span id="roi-scoreProgress"></span></div>
+<div class="score-explain"><strong>How should the score be read?</strong><span id="roi-scoreExplainText">The score combines profitability, time efficiency, target alignment and cost pressure.</span></div>
+<div class="score-breakdown">
+<div class="score-breakdown-row"><span class="name">Profitability</span><span class="val" id="roi-profitabilityScore">—</span></div>
+<div class="score-breakdown-row"><span class="name">Time efficiency</span><span class="val" id="roi-speedScore">—</span></div>
+<div class="score-breakdown-row"><span class="name">Cost pressure</span><span class="val" id="roi-costPressureScore">—</span></div>
+<div class="score-breakdown-row"><span class="name">Target alignment</span><span class="val" id="roi-targetScore">—</span></div>
+</div>
+</div>
+<div class="decision-box">
+<strong>Decision Summary</strong>
+<span id="roi-decisionText">Enter the data first. The calculator will produce a concise interpretation and action-oriented summary.</span>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="roi-totalCostCard">
+<div>
+<div class="label">Total cost</div>
+<div class="subline">Base cost + additional costs</div>
+</div>
+<div class="value" id="roi-totalCostResult">—</div>
+</div>
+<div class="mini-result is-empty" id="roi-revenueCard">
+<div>
+<div class="label">Total revenue</div>
+<div class="subline">Sales revenue / exit value</div>
+</div>
+<div class="value" id="roi-revenueResult">—</div>
+</div>
+<div class="mini-result is-empty" id="roi-netCard">
+<div>
+<div class="label">Net result after deductions</div>
+<div class="subline">Profit or loss</div>
+</div>
+<div class="value" id="roi-netResult">—</div>
+</div>
+<div class="mini-result is-empty" id="roi-annualizedCard">
+<div>
+<div class="label">Annualized ROI</div>
+<div class="subline">Including time effect</div>
+</div>
+<div class="value" id="roi-annualizedResult">—</div>
+</div>
+<div class="mini-result is-empty" id="roi-targetCard">
+<div>
+<div class="label">Difference vs. target</div>
+<div class="subline">Positive means the target was exceeded</div>
+</div>
+<div class="value" id="roi-targetDiffResult">—</div>
+</div>
+<div class="mini-result is-empty" id="roi-altCard">
+<div>
+<div class="label">Difference vs. alternative</div>
+<div class="subline">Opportunity-cost comparison</div>
+</div>
+<div class="value" id="roi-altDiffResult">—</div>
+</div>
+</div>
+<div class="health-grid">
+<div class="health-card is-empty" id="roi-breakevenCard">
+<h3>Break-even Revenue</h3>
+<div class="big" id="roi-breakevenResult">—</div>
+</div>
+<div class="health-card is-empty" id="roi-confidenceCard">
+<h3>Confidence Level</h3>
+<div class="big" id="roi-confidenceResult">—</div>
+</div>
+<div class="health-card is-empty" id="roi-costShareCard">
+<h3>Cost Pressure</h3>
+<div class="big" id="roi-costShareResult">—</div>
+</div>
+</div>
+<div class="comment-box" id="roi-smartComment">The calculator will interpret ROI, net result and scenario quality from the values you enter.</div>
+</aside>
+</section><section class="scenario-section">
+<div class="card">
+<h2>Scenario Analysis</h2>
+<p class="section-note">The base case uses current revenue. Weak and strong cases assume revenue is 10% lower and 10% higher, respectively.</p>
+<div class="scenario-grid">
+<div class="scenario-card is-empty" id="roi-weakScenarioCard">
+<div class="scenario-title">Weak Scenario</div>
+<div class="scenario-value" id="roi-weakScenarioValue">—</div>
+<div class="scenario-sub" id="roi-weakScenarioSub">Revenue 10% below the base case.</div>
+</div>
+<div class="scenario-card is-empty" id="roi-baseScenarioCard">
+<div class="scenario-title">Base Scenario</div>
+<div class="scenario-value" id="roi-baseScenarioValue">—</div>
+<div class="scenario-sub" id="roi-baseScenarioSub">ROI from the current inputs.</div>
+</div>
+<div class="scenario-card is-empty" id="roi-strongScenarioCard">
+<div class="scenario-title">Strong Scenario</div>
+<div class="scenario-value" id="roi-strongScenarioValue">—</div>
+<div class="scenario-sub" id="roi-strongScenarioSub">Revenue 10% above the base case.</div>
+</div>
+</div>
+</div>
+</section><section class="content-grid">
+<div class="card">
+<h2>How is ROI calculated?</h2>
+<p>ROI expresses the net result as a percentage of total cost. The core formula is: <strong>ROI = Net Result / Total Cost × 100</strong>.</p>
+<p>The panel first calculates total cost. Revenue minus total cost produces the pre-deduction result; an optional deduction is then applied to positive profit. ROI, annualized ROI, target difference and alternative-return comparison are derived from that result.</p>
+</div>
+<div class="card accordion-card">
+<h2>Frequently Asked Questions</h2>
+<details>
+<summary>What does negative ROI mean?</summary>
+<p>Negative ROI means the net result is below total cost and the scenario produces a loss.</p>
+</details>
+<details>
+<summary>Why can annualized ROI look different?</summary>
+<p>The same total return earned over a shorter period annualizes to a higher rate. Annualized ROI makes the time dimension more visible.</p>
+</details>
+<details>
+<summary>Is ROI the same as profit margin?</summary>
+<p>No. Profit margin measures profit relative to revenue, while ROI measures net return relative to the capital/cost base.</p>
+</details>
+</div>
+</section></div></main>
+<script>
+    const state = {
+      inputs: {},
+      results: null,
+      errors: {},
+      isValid: false,
+      isCalculated: false,
+      lastInputSource: 'manual'
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const storageKey = 'hesapica_en_investment_return_v3';
+    let calcTimer = null;
+    let microTimer = null;
+
+    function clamp(value, min, max){
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function roundValue(value, type = 'money'){
+      if (!Number.isFinite(value)) return 0;
+      if (type === 'money') return Math.round(value * 100) / 100;
+      if (type === 'percent1') return Math.round(value * 10) / 10;
+      if (type === 'percent2') return Math.round(value * 100) / 100;
+      return Math.round(value * 1000) / 1000;
+    }
+
+    function parseLocaleNumber(str){
+      if(str===null||str===undefined)return 0;
+      let raw=String(str).trim().replace(/\s+/g,'');
+      if(!raw)return 0;
+      const sign=raw.startsWith('-')?-1:1;
+      if(raw[0]==='-'||raw[0]==='+')raw=raw.slice(1);
+      raw=raw.replace(/^[\$€£¥₹]/,'').replace(/[\$€£¥₹]$/,'');
+      if(!/^[0-9][0-9.,]*$/.test(raw))return 0;
+      let normalized;
+      if(/^\d+$/.test(raw))normalized=raw;
+      else if(/^\d{1,3}(?:,\d{3})+(?:\.\d+)?$/.test(raw))normalized=raw.replace(/,/g,'');
+      else if(/^\d{1,3}(?:\.\d{3})+,\d+$/.test(raw))normalized=raw.replace(/\./g,'').replace(',','.');
+      else if(/^\d+\.\d+$/.test(raw))normalized=raw;
+      else if(/^\d+,\d+$/.test(raw)){const [a,b]=raw.split(',');normalized=(b.length===3&&a!=='0')?a+b:a+'.'+b;}
+      else return 0;
+      const n=sign*Number(normalized);return Number.isFinite(n)?n:0;
+    }
+
+    function formatInputValue(value, decimals = 0){
+      if (value === '' || value === null || value === undefined || !Number.isFinite(Number(value))) return '';
+      const num = Number(value);
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: decimals
+      }).format(num);
+    }
+
+    function sanitizeTypedValue(value, decimals = 0, signed = false){
+      let raw = String(value || '').replace(/\s+/g, '');
+      let sign = '';
+      if (signed && raw.startsWith('-')) {
+        sign = '-';
+        raw = raw.slice(1);
+      }
+      raw = raw.replace(/[^0-9.,]/g, '');
+
+      let integerPart = '';
+      let decimalPart = '';
+      if(decimals > 0){
+        const separator = Math.max(raw.lastIndexOf(','), raw.lastIndexOf('.'));
+        if(separator >= 0){
+          integerPart = raw.slice(0, separator).replace(/[.,]/g, '');
+          decimalPart = raw.slice(separator + 1).replace(/[.,]/g, '').slice(0, decimals);
+        }else{
+          integerPart = raw.replace(/[.,]/g, '');
+        }
+      }else{
+        integerPart = raw.replace(/[.,]/g, '');
+      }
+
+      const formattedInt = integerPart ? Number(integerPart).toLocaleString('en-US') : '';
+      const decimalSeparator = decimalPart !== '' ? '.' + decimalPart : '';
+      return sign + formattedInt + decimalSeparator;
+    }
+
+    function formatCurrency(value){ return new Intl.NumberFormat('en-US',{style:'currency',currency:(document.getElementById('displayCurrency')?.value||'USD'),minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(value)||0); }
+
+    function formatPercent(value, digits = 1){
+      if (!Number.isFinite(value)) return '—';
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      }).format(value) + '%';
+    }
+
+    function formatNumber(value, digits = 2){
+      if (!Number.isFinite(value)) return '—';
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      }).format(value);
+    }
+
+    function attachFormatting(){
+      document.querySelectorAll('.js-format-money').forEach(el => {
+        el.addEventListener('input', () => {
+          el.value = sanitizeTypedValue(el.value, 0, false);
+        });
+        el.addEventListener('blur', () => {
+          const val = parseLocaleNumber(el.value);
+          el.value = el.value.trim() ? formatInputValue(val, 0) : '';
+        });
+      });
+
+      document.querySelectorAll('.js-format-percent').forEach(el => {
+        el.addEventListener('input', () => {
+          el.value = sanitizeTypedValue(el.value, 2, el.classList.contains('signed'));
+        });
+      });
+
+      document.querySelectorAll('.js-format-int').forEach(el => {
+        el.addEventListener('input', () => {
+          el.value = sanitizeTypedValue(el.value, 0, false);
+        });
+      });
+    }
+
+    function getInputs(){
+      return {
+        investmentType: $('investmentType').value,
+        calcMode: $('calcMode').value,
+        initialAmount: parseLocaleNumber($('initialAmount').value),
+        monthlyContribution: parseLocaleNumber($('monthlyContribution').value),
+        investmentMonths: parseLocaleNumber($('investmentMonths').value),
+        annualReturnRate: parseLocaleNumber($('annualReturnRate').value),
+        taxCostRate: parseLocaleNumber($('taxCostRate').value),
+        inflationRate: parseLocaleNumber($('inflationRate').value)
+      };
+    }
+
+    function validate(inputs){
+      const errors = {};
+      if (!Number.isFinite(inputs.initialAmount) || inputs.initialAmount < 0 || inputs.initialAmount > 1e15) errors.initialAmount = 'Starting amount must be between 0 and the supported safe numeric limit.';
+      if (!Number.isFinite(inputs.monthlyContribution) || inputs.monthlyContribution < 0 || inputs.monthlyContribution > 1e12) errors.monthlyContribution = 'Monthly contribution must be between 0 and the supported safe numeric limit.';
+      if (inputs.initialAmount <= 0 && inputs.monthlyContribution <= 0) {
+        errors.initialAmount = 'At least one of starting amount or monthly contribution must be greater than 0.';
+      }
+      if (!Number.isInteger(inputs.investmentMonths) || inputs.investmentMonths < 1 || inputs.investmentMonths > 1200) errors.investmentMonths = 'Investment horizon must be a whole number from 1 to 1,200 months.';
+      if (!Number.isFinite(inputs.annualReturnRate) || inputs.annualReturnRate <= -100 || inputs.annualReturnRate > 1000) errors.annualReturnRate = 'Expected annual return must be greater than -100% and no more than 1,000%.';
+      if (!Number.isFinite(inputs.taxCostRate) || inputs.taxCostRate < 0 || inputs.taxCostRate > 100) errors.taxCostRate = 'Cost / deduction rate must be between 0 and 100%.';
+      if (!Number.isFinite(inputs.inflationRate) || inputs.inflationRate <= -100 || inputs.inflationRate > 1000) errors.inflationRate = 'Inflation/deflation assumption must be greater than -100% and no more than 1,000%.';
+      return errors;
+    }
+
+
+    function calculateMonthlyIrr(cashFlows){
+      if(!Array.isArray(cashFlows) || cashFlows.length < 2) return null;
+      const hasNegative = cashFlows.some(value => value < 0);
+      const hasPositive = cashFlows.some(value => value > 0);
+      if(!hasNegative || !hasPositive) return null;
+
+      const npv = rate => cashFlows.reduce(
+        (sum, value, index) => sum + value / Math.pow(1 + rate, index),
+        0
+      );
+
+      let low = -0.999999;
+      let high = 1;
+      let lowValue = npv(low);
+      let highValue = npv(high);
+
+      while(lowValue * highValue > 0 && high < 1024){
+        high *= 2;
+        highValue = npv(high);
+      }
+      if(!Number.isFinite(lowValue) || !Number.isFinite(highValue) || lowValue * highValue > 0){
+        return null;
+      }
+
+      for(let i = 0; i < 180; i += 1){
+        const mid = (low + high) / 2;
+        const midValue = npv(mid);
+        if(Math.abs(midValue) < 1e-8) return mid;
+        if(lowValue * midValue <= 0){
+          high = mid;
+          highValue = midValue;
+        }else{
+          low = mid;
+          lowValue = midValue;
+        }
+      }
+      return (low + high) / 2;
+    }
+
+    function computeProjection(inputs){
+      const months = Math.round(inputs.investmentMonths);
+      const annualRate = inputs.annualReturnRate / 100;
+      const monthlyRate = Math.pow(1 + annualRate, 1 / 12) - 1;
+      let grossFinalValue = 0;
+
+      if(inputs.calcMode === 'compound'){
+        grossFinalValue = inputs.initialAmount;
+        for(let i = 0; i < months; i += 1){
+          grossFinalValue *= (1 + monthlyRate);
+          // Recurring contributions are assumed to be made at the end of each month.
+          grossFinalValue += inputs.monthlyContribution;
+        }
+      }else{
+        // In simple-growth mode, each contribution earns return only for the time it remains invested.
+        grossFinalValue = Math.max(
+          0,
+          inputs.initialAmount * (1 + annualRate * (months / 12))
+        );
+        for(let month = 1; month <= months; month += 1){
+          const remainingMonths = months - month;
+          const contributionValue = inputs.monthlyContribution *
+            (1 + annualRate * (remainingMonths / 12));
+          grossFinalValue += Math.max(0, contributionValue);
+        }
+      }
+
+      const totalContribution = inputs.monthlyContribution * months;
+      const totalPrincipal = inputs.initialAmount + totalContribution;
+      const grossProfit = grossFinalValue - totalPrincipal;
+      const costAmount = grossProfit > 0
+        ? grossProfit * (inputs.taxCostRate / 100)
+        : 0;
+      const finalValue = Math.max(0, grossFinalValue - costAmount);
+      const netProfit = finalValue - totalPrincipal;
+      const roi = totalPrincipal > 0 ? (netProfit / totalPrincipal) * 100 : 0;
+
+      // Because recurring contributions occur at different dates, annualization uses monthly IRR
+      // instead of treating all contributed principal as if it were invested on one date.
+      const cashFlows = [-inputs.initialAmount];
+      for(let month = 1; month <= months; month += 1){
+        const finalReceipt = month === months ? finalValue : 0;
+        cashFlows.push(finalReceipt - inputs.monthlyContribution);
+      }
+      const monthlyIrr = calculateMonthlyIrr(cashFlows);
+      let annualized = monthlyIrr === null
+        ? null
+        : (Math.pow(1 + monthlyIrr, 12) - 1) * 100;
+
+      // A complete loss is represented as -100% annualized return.
+      if(finalValue === 0 && totalPrincipal > 0) annualized = -100;
+
+      let realAnnualized = null;
+      if(annualized !== null && inputs.inflationRate > -100){
+        realAnnualized = (
+          ((1 + annualized / 100) / (1 + inputs.inflationRate / 100)) - 1
+        ) * 100;
+      }
+
+      const principalShare = finalValue > 0
+        ? clamp((totalPrincipal / finalValue) * 100, 0, 100)
+        : 0;
+      const profitShare = finalValue > 0 && netProfit > 0
+        ? clamp((netProfit / finalValue) * 100, 0, 100)
+        : 0;
+      const costShare = grossFinalValue > 0
+        ? clamp((costAmount / grossFinalValue) * 100, 0, 100)
+        : 0;
+      const contributionWeight = totalPrincipal > 0
+        ? clamp((totalContribution / totalPrincipal) * 100, 0, 100)
+        : 0;
+      const costBurden = grossProfit > 0
+        ? clamp((costAmount / grossProfit) * 100, 0, 100)
+        : 0;
+
+      const returnScore = annualized === null
+        ? 0
+        : clamp((annualized + 10) * 1.2, 0, 45);
+      const realScore = realAnnualized === null
+        ? 10
+        : clamp((realAnnualized + 5) * 1.1, 0, 30);
+      const costScore = clamp(25 - costBurden * 1.2, 0, 25);
+      const totalScore = roundValue(returnScore + realScore + costScore, 'percent1');
+
+      return {
+        inputs,
+        months,
+        grossFinalValue: roundValue(grossFinalValue),
+        totalContribution: roundValue(totalContribution),
+        totalPrincipal: roundValue(totalPrincipal),
+        grossProfit: roundValue(grossProfit),
+        costAmount: roundValue(costAmount),
+        finalValue: roundValue(finalValue),
+        netProfit: roundValue(netProfit),
+        roi: roundValue(roi, 'percent2'),
+        annualized: annualized === null ? null : roundValue(annualized, 'percent2'),
+        realAnnualized: realAnnualized === null ? null : roundValue(realAnnualized, 'percent2'),
+        principalShare: roundValue(principalShare, 'percent1'),
+        profitShare: roundValue(profitShare, 'percent1'),
+        costShare: roundValue(costShare, 'percent1'),
+        contributionWeight: roundValue(contributionWeight, 'percent1'),
+        costBurden: roundValue(costBurden, 'percent1'),
+        score: {
+          total: clamp(totalScore, 0, 100),
+          returnScore: roundValue(returnScore, 'percent1'),
+          realScore: roundValue(realScore, 'percent1'),
+          costScore: roundValue(costScore, 'percent1')
+        }
+      };
+    }
+
+    function getConfidence(inputs){
+      if (inputs.investmentType === 'crypto' || inputs.annualReturnRate >= 40) return 'Low';
+      if (inputs.annualReturnRate >= 20 || inputs.investmentMonths > 36) return 'Orta';
+      return 'High';
+    }
+
+    function getStatus(result){
+      if (result.netProfit < 0) {
+        return { badge:'Weak', badgeClass:'bad', quick:'Negative outlook', decision:'In this scenario, the ending portfolio is below contributed principal. Reconsider the return assumption, horizon or modeled cost rate.' };
+      }
+      if (result.realAnnualized !== null && result.realAnnualized <= 0) {
+        return { badge:'Real-return pressure', badgeClass:'warn', quick:'Nominal gain, weak real return', decision:'The portfolio grows nominally, but the inflation-adjusted annualized return is weak. Review the return, cost and inflation assumptions rather than relying on nominal growth alone.' };
+      }
+      if (result.inputs.investmentType === 'crypto' && result.annualized !== null && result.annualized >= 40) {
+        return { badge:'Agresif', badgeClass:'warn', quick:'Strong ama riskli', decision:'The projection looks strong, but a high return assumption and volatility make it more fragile. Compare it with the weak scenario before relying on the base case.' };
+      }
+      if (result.score.total >= 75) {
+        return { badge:'Strong', badgeClass:'good', quick:'Strong modeled outlook', decision:'This scenario has strong modeled net and real-return metrics. Keep the return, inflation and cost assumptions under review over time.' };
+      }
+      if (result.score.total >= 50) {
+        return { badge:'Balanced', badgeClass:'warn', quick:'Mid-range quality', decision:'The modeled result is positive but mid-range. Costs and inflation remain important to the outcome.' };
+      }
+      return { badge:'Limited', badgeClass:'bad', quick:'Weak return', decision:'The scenario may still be positive, but weak real return or high modeled costs are suppressing the quality score.' };
+    }
+
+    function buildScenarioRows(inputs){
+      const delta = inputs.annualReturnRate >= 25 ? 10 : 6;
+      const weak = { ...inputs, annualReturnRate: Math.max(-99.99, inputs.annualReturnRate - delta) };
+      const base = { ...inputs };
+      const strong = { ...inputs, annualReturnRate: inputs.annualReturnRate + delta };
+      return [
+        { label:'Weak', returnLabel: formatPercent(weak.annualReturnRate, 1), result: computeProjection(weak), comment:'Return assumption reduced.' },
+        { label:'Base', returnLabel: formatPercent(base.annualReturnRate, 1), result: computeProjection(base), comment:'Current entered scenario.' },
+        { label:'Strong', returnLabel: formatPercent(strong.annualReturnRate, 1), result: computeProjection(strong), comment:'Return assumption increased.' }
+      ];
+    }
+
+    function buildCoreRows(result){
+      return [
+        ['Starting amount', formatCurrency(result.inputs.initialAmount), 'Initial principal contribution.'],
+        ['Total monthly contributions', formatCurrency(result.totalContribution), 'All recurring contributions added over the horizon.'],
+        ['Gross profit / loss', formatCurrency(result.grossProfit), 'Result before modeled costs/deductions.'],
+        ['Net profit', formatCurrency(result.netProfit), result.netProfit >= 0 ? 'Net result after modeled costs/deductions.' : 'Ending value is below contributed principal.'],
+        ['Ending portfolio', formatCurrency(result.finalValue), 'Estimated total portfolio value at the end of the horizon.']
+      ];
+    }
+
+    function clearValidationVisuals(){
+      applyValidation({});
+    }
+
+    function setSecondaryActionsEnabled(enabled){
+      ['copyBtn','shareBtn','printBtn'].forEach(id => {
+        const btn = $(id);
+        if (!btn) return;
+        btn.disabled = !enabled;
+        btn.setAttribute('aria-disabled', String(!enabled));
+      });
+    }
+
+    function renderEmpty(){
+      setSecondaryActionsEnabled(false);
+      $('highlightCard').classList.add('is-empty');
+      $('scoreCard').classList.add('is-empty');
+      document.querySelectorAll('.mini-result').forEach(el => el.classList.add('is-empty'));
+      document.querySelectorAll('.health-card').forEach(el => el.classList.add('is-empty'));
+
+      $('statusBadge').className = 'badge';
+      $('statusBadge').textContent = 'Waiting';
+      $('statusText').textContent = 'Waiting for calculation. Enter a horizon and return assumption to see the scenario-quality and risk context.';
+      $('finalValueMain').textContent = '—';
+      $('finalValueSub').textContent = 'The result starts blank. A valid input set will generate the portfolio projection here.';
+      $('scoreValue').textContent = '—';
+      $('scoreLabel').className = 'pill';
+      $('scoreLabel').textContent = 'Waiting';
+      $('scoreBar').style.width = '0%';
+      $('scoreReturn').textContent = '—'; $('scoreReturn').className = 'val neu';
+      $('scoreReal').textContent = '—'; $('scoreReal').className = 'val neu';
+      $('scoreCost').textContent = '—'; $('scoreCost').className = 'val neu';
+      $('decisionText').textContent = 'Enter the investment assumptions first. The calculator will summarize net return, real-return view and cost pressure.';
+
+      ['principalValue','netProfitValue','annualizedValue','realValue','roiValue','costValue','confidenceValue','contribValue','costHealthValue','principalShareText','profitShareText','costShareText'].forEach(id => $(id).textContent = '—');
+      ['principalBar','profitBar','costBar'].forEach(id => $(id).style.width = '0%');
+      $('smartComment').textContent = 'Enter investment inputs to receive detailed context based on type, horizon, contribution pattern and real-return view.';
+
+      $('coreMetricsBody').innerHTML = `
+        <tr><td>Starting amount</td><td>—</td><td>Waiting for calculation.</td></tr>
+        <tr><td>Total monthly contributions</td><td>—</td><td>Waiting for calculation.</td></tr>
+        <tr><td>Gross profit / loss</td><td>—</td><td>Waiting for calculation.</td></tr>
+        <tr><td>Net profit</td><td>—</td><td>Waiting for calculation.</td></tr>
+        <tr><td>Ending portfolio</td><td>—</td><td>Waiting for calculation.</td></tr>`;
+
+      $('scenarioBody').innerHTML = `
+        <tr><td>Base</td><td>—</td><td>—</td><td>—</td><td>Waiting for calculation.</td></tr>
+        <tr><td>Weak</td><td>—</td><td>—</td><td>—</td><td>Waiting for calculation.</td></tr>
+        <tr><td>Strong</td><td>—</td><td>—</td><td>—</td><td>Waiting for calculation.</td></tr>`;
+    }
+
+    function render(result){
+      setSecondaryActionsEnabled(true);
+      const status = getStatus(result);
+      const confidence = getConfidence(result.inputs);
+      $('highlightCard').classList.remove('is-empty');
+      $('scoreCard').classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach(el => el.classList.remove('is-empty'));
+      document.querySelectorAll('.health-card').forEach(el => el.classList.remove('is-empty'));
+
+      $('statusBadge').className = 'badge ' + status.badgeClass;
+      $('statusBadge').textContent = status.badge;
+      $('statusText').textContent = status.quick;
+      $('finalValueMain').textContent = formatCurrency(result.finalValue);
+      $('finalValueSub').textContent = `${result.months} months · projected from total contributed principal of ${formatCurrency(result.totalPrincipal)}.`;
+
+      $('scoreValue').textContent = formatNumber(result.score.total, 0);
+      $('scoreLabel').textContent = result.score.total >= 75 ? 'Strong kalite' : result.score.total >= 50 ? 'Orta kalite' : 'Weak kalite';
+      $('scoreLabel').className = 'pill ' + (result.score.total >= 75 ? 'good' : result.score.total >= 50 ? 'warn' : 'bad');
+      $('scoreBar').style.width = clamp(result.score.total, 0, 100) + '%';
+
+      const setScoreCell = (id, value) => {
+        const el = $(id);
+        el.textContent = formatNumber(value, 1);
+        el.className = 'val ' + (value >= 15 ? 'pos' : value >= 8 ? 'neu' : 'neg');
+      };
+      setScoreCell('scoreReturn', result.score.returnScore);
+      setScoreCell('scoreReal', result.score.realScore);
+      setScoreCell('scoreCost', result.score.costScore);
+
+      $('decisionText').textContent = status.decision;
+      $('principalValue').textContent = formatCurrency(result.totalPrincipal);
+      $('netProfitValue').textContent = formatCurrency(result.netProfit);
+      $('netProfitValue').style.color = result.netProfit >= 0 ? 'var(--good)' : 'var(--bad)';
+      $('annualizedValue').textContent = result.annualized === null ? '—' : formatPercent(result.annualized, 1);
+      $('annualizedValue').style.color = result.annualized === null ? 'var(--muted)' : result.annualized > 0 ? 'var(--good)' : 'var(--bad)';
+      $('realValue').textContent = result.realAnnualized === null ? 'Inflation not entered' : formatPercent(result.realAnnualized, 1);
+      $('realValue').style.color = result.realAnnualized !== null && result.realAnnualized > 0 ? 'var(--good)' : (result.realAnnualized !== null ? 'var(--bad)' : 'var(--text)');
+      $('roiValue').textContent = formatPercent(result.roi, 1);
+      $('roiValue').style.color = result.roi >= 0 ? 'var(--good)' : 'var(--bad)';
+      $('costValue').textContent = formatCurrency(result.costAmount);
+
+      $('confidenceValue').textContent = confidence;
+      $('contribValue').textContent = formatPercent(result.contributionWeight, 1);
+      $('costHealthValue').textContent = result.costBurden > 0 ? formatPercent(result.costBurden, 1) : '%0,0';
+      $('principalShareText').textContent = formatPercent(result.principalShare, 1);
+      $('profitShareText').textContent = formatPercent(Math.max(0, result.profitShare), 1);
+      $('costShareText').textContent = formatPercent(result.costShare, 1);
+      $('principalBar').style.width = clamp(result.principalShare, 0, 100) + '%';
+      $('profitBar').style.width = clamp(result.profitShare, 0, 100) + '%';
+      $('costBar').style.width = clamp(result.costShare, 0, 100) + '%';
+
+      const typeMap = {
+        general:'general investment',
+        fund:'fund investment',
+        stock:'stock investment',
+        gold:'gold investment',
+        crypto:'crypto investment'
+      };
+      let comment = `For the ${typeMap[result.inputs.investmentType]} scenario, total contributed principal is ${formatCurrency(result.totalPrincipal)} and projected ending portfolio value is ${formatCurrency(result.finalValue)}. `;
+      comment += `Net profit ${formatCurrency(result.netProfit)} seviyesinde. `;
+      if (result.inputs.monthlyContribution > 0) {
+        comment += `Recurring contributions represent ${formatPercent(result.contributionWeight,1)} of total contributed principal. `;
+      }
+      if (result.realAnnualized !== null) {
+        comment += `The inflation-adjusted annualized return is ${formatPercent(result.realAnnualized,1)}. `;
+      }
+      if (result.costAmount > 0) {
+        comment += `Modeled costs/deductions reduce positive gross profit by ${formatCurrency(result.costAmount)}.`;
+      }
+      $('smartComment').textContent = comment;
+
+      $('coreMetricsBody').innerHTML = buildCoreRows(result).map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`).join('');
+
+      const scenarioRows = buildScenarioRows(result.inputs);
+      $('scenarioBody').innerHTML = scenarioRows.map(item => `
+        <tr>
+          <td>${item.label}</td>
+          <td>${item.returnLabel}</td>
+          <td>${formatCurrency(item.result.finalValue)}</td>
+          <td>${formatCurrency(item.result.netProfit)}</td>
+          <td>${item.comment}</td>
+        </tr>
+      `).join('');
+    }
+
+    function applyValidation(errors){
+      ['initialAmount','monthlyContribution','investmentMonths','annualReturnRate','taxCostRate','inflationRate','investmentType','calcMode'].forEach(id => {
+        const field = $('field-' + id);
+        if (!field) return;
+        if (errors[id]) {
+          field.classList.add('has-error');
+          const error = field.querySelector('.error-text');
+          if (error) error.textContent = errors[id];
+        } else {
+          field.classList.remove('has-error');
+        }
+      });
+    }
+
+    function saveState(source = 'manual'){
+      if (source !== 'manual') return;
+      try{ localStorage.setItem(storageKey, JSON.stringify(state.inputs)); }catch(err){}
+    }
+
+    function loadState(){
+      const fromQuery = new URLSearchParams(window.location.search);
+      if (fromQuery.has('months')) {
+        state.lastInputSource = 'shared';
+        $('investmentType').value = fromQuery.get('type') || 'general';
+        $('calcMode').value = fromQuery.get('mode') || 'compound';
+        $('initialAmount').value = formatInputValue(Number(fromQuery.get('initial') || 0), 0);
+        $('monthlyContribution').value = formatInputValue(Number(fromQuery.get('monthly') || 0), 0);
+        $('investmentMonths').value = formatInputValue(Number(fromQuery.get('months') || 0), 0);
+        $('annualReturnRate').value = formatInputValue(Number(fromQuery.get('return') || 0), 2);
+        $('taxCostRate').value = formatInputValue(Number(fromQuery.get('cost') || 0), 2);
+        $('inflationRate').value = formatInputValue(Number(fromQuery.get('inflation') || 0), 2);
+        return;
+      }
+      state.lastInputSource = 'manual';
+      let raw = null;
+      try {
+        raw = localStorage.getItem(storageKey);
+      } catch (err) {
+        return;
+      }
+      if (!raw) return;
+      try {
+        const saved = JSON.parse(raw);
+        $('investmentType').value = saved.investmentType || 'general';
+        $('calcMode').value = saved.calcMode || 'compound';
+        $('initialAmount').value = saved.initialAmount || saved.initialAmount === 0 ? formatInputValue(saved.initialAmount, 0) : '';
+        $('monthlyContribution').value = saved.monthlyContribution || saved.monthlyContribution === 0 ? formatInputValue(saved.monthlyContribution, 0) : '';
+        $('investmentMonths').value = saved.investmentMonths ? formatInputValue(saved.investmentMonths, 0) : '';
+        $('annualReturnRate').value = saved.annualReturnRate || saved.annualReturnRate === 0 ? formatInputValue(saved.annualReturnRate, 2) : '';
+        $('taxCostRate').value = saved.taxCostRate || saved.taxCostRate === 0 ? formatInputValue(saved.taxCostRate, 2) : '';
+        $('inflationRate').value = saved.inflationRate || saved.inflationRate === 0 ? formatInputValue(saved.inflationRate, 2) : '';
+      } catch (e) {
+      try{ localStorage.removeItem(storageKey); }catch(err){}
+      }
+    }
+
+    function buildShareUrl(){
+      const inputs = getInputs();
+      const params = new URLSearchParams({
+        type: inputs.investmentType,
+        mode: inputs.calcMode,
+        initial: String(inputs.initialAmount),
+        monthly: String(inputs.monthlyContribution),
+        months: String(inputs.investmentMonths),
+        return: String(inputs.annualReturnRate),
+        cost: String(inputs.taxCostRate),
+        inflation: String(inputs.inflationRate)
+      });
+      return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    }
+
+    function hasAnyMeaningfulInput(){
+      return ['initialAmount','monthlyContribution','investmentMonths','annualReturnRate','taxCostRate','inflationRate'].some(id => $(id).value.trim() !== '');
+    }
+
+    function hasCoreInput(){
+      const inputs = getInputs();
+      return inputs.investmentMonths > 0 && (inputs.initialAmount > 0 || inputs.monthlyContribution > 0);
+    }
+
+    function calculateNow(source = 'manual', shouldFocus = false){
+      state.lastInputSource = source;
+      clearTimeout(microTimer);
+      hideStatusMessage();
+      state.inputs = getInputs();
+      state.errors = validate(state.inputs);
+      state.isValid = Object.keys(state.errors).length === 0 && (state.inputs.initialAmount > 0 || state.inputs.monthlyContribution > 0);
+      applyValidation(state.errors);
+      saveState(source);
+
+      if (!state.isValid) {
+        state.results = null;
+        state.isCalculated = false;
+        hideStatusMessage();
+        renderEmpty();
+
+        const anyInput = hasAnyMeaningfulInput();
+        const coreReady = hasCoreInput();
+
+        if (!anyInput) {
+          clearValidationVisuals();
+          return;
+        }
+
+        if (!coreReady) {
+          clearValidationVisuals();
+          $('statusBadge').className = 'badge warn';
+          $('statusBadge').textContent = 'Partial input';
+          $('statusText').textContent = 'Enter the investment horizon and at least one of starting amount or monthly contribution to complete the projection.';
+          $('decisionText').textContent = 'Enter the investment horizon and at least one of starting amount or monthly contribution; the projection will then update automatically.';
+          return;
+        }
+
+        $('statusBadge').className = 'badge bad';
+        $('statusBadge').textContent = 'Incomplete data';
+        $('statusText').textContent = 'Correct the highlighted fields before calculating the projection.';
+        $('decisionText').textContent = 'Correct the highlighted fields first. A valid horizon, return assumption and cost inputs are required for the model.';
+        return;
+      }
+
+      state.results = computeProjection(state.inputs);
+      state.isCalculated = true;
+      render(state.results);
+      if (shouldFocus) {
+        focusResults();
+      }
+    }
+
+    function scheduleCalculation(immediate = false, source = 'manual'){
+      clearTimeout(calcTimer);
+      clearTimeout(microTimer);
+      if (!immediate) {
+        microTimer = setTimeout(() => $('calcStatus').classList.add('show'), 120);
+        calcTimer = setTimeout(() => calculateNow(source, false), 180);
+      } else {
+        calculateNow(source, true);
+      }
+    }
+
+    function applyScenario(type){
+      const scenarios = {
+        steady:{investmentType:'fund', initialAmount:100000, monthlyContribution:5000, investmentMonths:24, annualReturnRate:28, calcMode:'compound', taxCostRate:2, inflationRate:22},
+        growth:{investmentType:'stock', initialAmount:250000, monthlyContribution:10000, investmentMonths:36, annualReturnRate:35, calcMode:'compound', taxCostRate:1.5, inflationRate:20},
+        defensive:{investmentType:'gold', initialAmount:150000, monthlyContribution:3000, investmentMonths:12, annualReturnRate:15, calcMode:'simple', taxCostRate:1, inflationRate:18},
+        volatile:{investmentType:'crypto', initialAmount:80000, monthlyContribution:4000, investmentMonths:18, annualReturnRate:55, calcMode:'compound', taxCostRate:3, inflationRate:25}
+      };
+      const s = scenarios[type];
+      if (!s) return;
+      $('investmentType').value = s.investmentType;
+      $('calcMode').value = s.calcMode;
+      $('initialAmount').value = formatInputValue(s.initialAmount, 0);
+      $('monthlyContribution').value = formatInputValue(s.monthlyContribution, 0);
+      $('investmentMonths').value = formatInputValue(s.investmentMonths, 0);
+      $('annualReturnRate').value = formatInputValue(s.annualReturnRate, 2);
+      $('taxCostRate').value = formatInputValue(s.taxCostRate, 2);
+      $('inflationRate').value = formatInputValue(s.inflationRate, 2);
+      document.querySelectorAll('.js-scenario').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.js-scenario[data-scenario="${type}"]`)?.classList.add('active');
+      scheduleCalculation(true, 'demo');
+    }
+
+    function resetForm(){
+      ['initialAmount','monthlyContribution','investmentMonths','annualReturnRate','taxCostRate','inflationRate'].forEach(id => $(id).value = '');
+      $('investmentType').value = 'general';
+      $('calcMode').value = 'compound';
+      document.querySelectorAll('.chip').forEach(btn => btn.classList.remove('active'));
+      state.inputs = {};
+      state.results = null;
+      state.errors = {};
+      state.isValid = false;
+      state.isCalculated = false;
+      try{ localStorage.removeItem(storageKey); }catch(err){}
+      applyValidation({});
+      hideStatusMessage();
+      renderEmpty();
+    }
+
+    function setStatusMessage(message){
+      $('calcStatus').innerHTML = `<span class="loading-dot"></span>${message}`;
+      $('calcStatus').classList.add('show');
+    }
+
+    function hideStatusMessage(){
+      clearTimeout(microTimer);
+      $('calcStatus').classList.remove('show');
+    }
+
+    function focusResults(){
+      const panel = $('resultsPanel');
+      const card = $('highlightCard');
+      if (!panel || !card) return;
+      panel.classList.remove('flash-target');
+      void panel.offsetWidth;
+      const top = panel.getBoundingClientRect().top + window.pageYOffset - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+      panel.classList.add('flash-target');
+      card.focus({ preventScroll: true });
+      setTimeout(() => panel.classList.remove('flash-target'), 1600);
+    }
+
+    async function writeClipboardText(text){
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (e) {}
+
+      try {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        area.style.left = '-9999px';
+        document.body.appendChild(area);
+        area.focus();
+        area.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(area);
+        return ok;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    async function copyResult(){
+      if (!state.isCalculated || !state.results) {
+        setStatusMessage('Calculate a valid result first.');
+        return;
+      }
+      const text = [
+        'Hesapica - Investment Return & ROI Calculator',
+        `Ending Portfolio: ${$('finalValueMain').textContent}`,
+        `Total Contributed Principal: ${$('principalValue').textContent}`,
+        `Net Investment Profit: ${$('netProfitValue').textContent}`,
+        `Annualized Return: ${$('annualizedValue').textContent}`,
+        `Real Return: ${$('realValue').textContent}`,
+        `Score: ${$('scoreValue').textContent}`,
+        '',
+        'Decision Summary:',
+        $('decisionText').textContent
+      ].join('\n');
+      const ok = await writeClipboardText(text);
+      if (ok) {
+        setStatusMessage('Result copied to the clipboard.');
+      } else {
+        alert('Copy failed. Check browser clipboard permissions.');
+      }
+    }
+
+    async function copyShareLink(){
+      if (!state.isCalculated || !state.results) {
+        setStatusMessage('Calculate a valid result first.');
+        return;
+      }
+
+      const url = buildShareUrl();
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Investment Return & ROI Calculator',
+            text: 'Review my investment-return scenario on Hesapica.',
+            url
+          });
+          setStatusMessage('Share dialog opened.');
+          return;
+        } catch (e) {
+          if (e && e.name === 'AbortError') return;
+        }
+      }
+
+      const ok = await writeClipboardText(url);
+      if (ok) {
+        setStatusMessage('Share link copied to the clipboard.');
+      } else {
+        alert('The link could not be copied.');
+      }
+    }
+
+    function printResult(){
+      if (!state.isCalculated || !state.results) {
+        setStatusMessage('Calculate a valid result before printing.');
+        return;
+      }
+      window.print();
+    }
+
+    function attachEvents(){
+      attachFormatting();
+      document.querySelectorAll('#yatirimModeSection input, #yatirimModeSection select').forEach(el => {
+        el.addEventListener('input', () => scheduleCalculation(false, 'manual'));
+        el.addEventListener('change', () => scheduleCalculation(false, 'manual'));
+        el.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            scheduleCalculation(true, 'manual');
+          }
+        });
+      });
+
+      document.querySelectorAll('#termChips .chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#termChips .chip').forEach(item => item.classList.remove('active'));
+          btn.classList.add('active');
+          $('investmentMonths').value = formatInputValue(Number(btn.dataset.months), 0);
+          scheduleCalculation(true, 'manual');
+        });
+      });
+
+      document.querySelectorAll('#returnChips .chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#returnChips .chip').forEach(item => item.classList.remove('active'));
+          btn.classList.add('active');
+          $('annualReturnRate').value = formatInputValue(Number(btn.dataset.return), 2);
+          scheduleCalculation(true, 'manual');
+        });
+      });
+
+      document.querySelectorAll('.js-scenario').forEach(btn => {
+        btn.addEventListener('click', () => applyScenario(btn.dataset.scenario));
+      });
+
+      $('calculateBtn').addEventListener('click', () => scheduleCalculation(true, 'manual'));
+      $('exampleBtn').addEventListener('click', () => applyScenario('steady'));
+      $('resetBtn').addEventListener('click', resetForm);
+      $('copyBtn').addEventListener('click', copyResult);
+      $('shareBtn').addEventListener('click', copyShareLink);
+      $('printBtn').addEventListener('click', printResult);
+    }
+
+    window.addEventListener('load', () => {
+      attachEvents();
+      renderEmpty();
+      loadState();
+      if ($('initialAmount').value || $('monthlyContribution').value || $('investmentMonths').value || $('annualReturnRate').value) {
+        scheduleCalculation(true, state.lastInputSource || 'manual');
+      }
+    });
+  </script>
+<script>
+(function(){
+  const modeButtons = Array.from(document.querySelectorAll('.mode-switch-btn'));
+  const yatirimSection = document.getElementById('yatirimModeSection');
+  const roiSection = document.getElementById('roiModeSection');
+  function setMode(mode, replaceUrl = true) {
+    const activeMode = mode === 'roi' ? 'roi' : 'yatirim';
+    if (activeMode === 'roi') {
+      yatirimSection.setAttribute('hidden','hidden');
+      roiSection.removeAttribute('hidden');
+    } else {
+      roiSection.setAttribute('hidden','hidden');
+      yatirimSection.removeAttribute('hidden');
+    }
+    modeButtons.forEach((btn) => {
+      const isActive = btn.dataset.mode === activeMode;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    if (replaceUrl) {
+      const url = new URL(window.location.href);
+      if (activeMode === 'roi') {
+        url.searchParams.set('mod', 'roi');
+      } else {
+        url.searchParams.delete('mod');
+      }
+      window.history.replaceState({}, '', url.toString());
+    }
+  }
+  modeButtons.forEach((btn) => btn.addEventListener('click', () => setMode(btn.dataset.mode)));
+  const initialMode = new URLSearchParams(window.location.search).get('mod') === 'roi' ? 'roi' : 'yatirim';
+  setMode(initialMode, false);
+})();
+</script>
+<script>
+(function(){
+
+    const state = {
+      inputs: {},
+      results: null,
+      errors: {},
+      isValid: false,
+      isCalculated: false,
+      inputSource: 'manual'
+    };
+
+    const STORAGE_KEY = 'hesapica_en_roi_analysis_v3';
+    let debounceTimer = null;
+
+    const formIds = ['roi-roiType','roi-baseCost','roi-extraCost','roi-revenue','roi-months','roi-targetRoi','roi-compareAlt','roi-taxRate'];
+    const formattedIntegerIds = ['roi-baseCost','roi-extraCost','roi-revenue'];
+    const formattedDecimalIds = ['roi-taxRate','roi-targetRoi','roi-compareAlt'];
+
+    function scrollToResults() {
+      const target = document.getElementById('roi-resultArea') || document.getElementById('roi-highlightCard');
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.classList.remove('flash-highlight');
+      requestAnimationFrame(() => target.classList.add('flash-highlight'));
+      setTimeout(() => target.classList.remove('flash-highlight'), 1300);
+    }
+
+    function syncShortcutChips() {
+      const monthValue = parseTRNumber(document.getElementById('roi-months').value);
+      document.querySelectorAll('#roi-termChips .chip').forEach(chip => chip.classList.remove('active'));
+      if (monthValue != null) {
+        document.querySelectorAll('#roi-termChips .chip').forEach(chip => {
+          const match = chip.textContent.replace(/[^0-9]/g, '');
+          if (match && Number(match) === monthValue) chip.classList.add('active');
+        });
+      }
+
+      const targetValue = parseTRNumber(document.getElementById('roi-targetRoi').value);
+      document.querySelectorAll('#roi-targetChips .chip').forEach(chip => chip.classList.remove('active'));
+      if (targetValue != null) {
+        document.querySelectorAll('#roi-targetChips .chip').forEach(chip => {
+          const match = chip.textContent.replace(/[^0-9]/g, '');
+          if (match && Number(match) === targetValue) chip.classList.add('active');
+        });
+      }
+    }
+
+    function setActionButtonsDisabled(disabled = true) {
+      ['roi-copyBtn','roi-shareBtn','roi-printBtn'].forEach(id => {
+        const button = document.getElementById(id);
+        if (!button) return;
+        button.disabled = disabled;
+        button.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      });
+    }
+
+    function normalizeVisibleInputs() {
+      formattedIntegerIds.forEach(id => {
+        const input = document.getElementById(id);
+        if (!input || !input.value) return;
+        const value = parseTRNumber(input.value);
+        if (value != null) input.value = formatTRInput(value, 0);
+      });
+      formattedDecimalIds.forEach(id => {
+        const input = document.getElementById(id);
+        if (!input || !input.value) return;
+        const value = parseTRNumber(input.value);
+        if (value != null) input.value = formatTRInput(value, 1);
+      });
+    }
+
+    function parseTRNumber(value) {
+      if(value==null)return null;
+      let raw=String(value).trim().replace(/\s+/g,'');
+      if(!raw)return null;
+      const sign=raw.startsWith('-')?-1:1;
+      if(raw[0]==='-'||raw[0]==='+')raw=raw.slice(1);
+      raw=raw.replace(/^[\$€£¥₹]/,'').replace(/[\$€£¥₹]$/,'');
+      if(!/^[0-9][0-9.,]*$/.test(raw))return null;
+      let normalized;
+      if(/^\d+$/.test(raw))normalized=raw;
+      else if(/^\d{1,3}(?:,\d{3})+(?:\.\d+)?$/.test(raw))normalized=raw.replace(/,/g,'');
+      else if(/^\d{1,3}(?:\.\d{3})+,\d+$/.test(raw))normalized=raw.replace(/\./g,'').replace(',','.');
+      else if(/^\d+\.\d+$/.test(raw))normalized=raw;
+      else if(/^\d+,\d+$/.test(raw)){const [a,b]=raw.split(',');normalized=(b.length===3&&a!=='0')?a+b:a+'.'+b;}
+      else return null;
+      const n=sign*Number(normalized);return Number.isFinite(n)?n:null;
+    }
+
+    function formatTRInput(value, digits = 0) {
+      if (value == null || value === '' || !Number.isFinite(Number(value))) return '';
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      }).format(Number(value));
+    }
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat('en-US',{style:'currency',currency:(document.getElementById('displayCurrency')?.value||'USD'),minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(value)||0);
+    }
+
+    function formatPercent(value, digits = 1) {
+      return new Intl.NumberFormat('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number(value)||0) + '%';
+    }
+
+    function roundValue(value, type = 'money') {
+      if (!Number.isFinite(value)) return 0;
+      if (type === 'money') return Math.round(value * 100) / 100;
+      if (type === 'percent') return Math.round(value * 10) / 10;
+      if (type === 'score') return Math.round(value);
+      return value;
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function getInputs() {
+      return {
+        roiType: document.getElementById('roi-roiType').value,
+        baseCost: parseTRNumber(document.getElementById('roi-baseCost').value),
+        extraCost: parseTRNumber(document.getElementById('roi-extraCost').value),
+        revenue: parseTRNumber(document.getElementById('roi-revenue').value),
+        months: parseTRNumber(document.getElementById('roi-months').value),
+        targetRoi: parseTRNumber(document.getElementById('roi-targetRoi').value),
+        compareAlt: parseTRNumber(document.getElementById('roi-compareAlt').value),
+        taxRate: parseTRNumber(document.getElementById('roi-taxRate').value)
+      };
+    }
+
+    function validateInputs(inputs) {
+      const errors = {};
+      if (!inputs.roiType) errors['roi-roiType'] = 'ROI type gerekli';
+      if (inputs.baseCost == null || !Number.isFinite(inputs.baseCost) || inputs.baseCost <= 0 || inputs.baseCost > 1e15) errors['roi-baseCost'] = 'Base cost must be greater than 0 and within the supported safe numeric limit';
+      if (inputs.extraCost != null && (!Number.isFinite(inputs.extraCost) || inputs.extraCost < 0 || inputs.extraCost > 1e15)) errors['roi-extraCost'] = 'Additional costs must be between 0 and the supported safe numeric limit';
+      if (inputs.revenue == null || !Number.isFinite(inputs.revenue) || inputs.revenue < 0 || inputs.revenue > 1e15) errors['roi-revenue'] = 'Revenue must be between 0 and the supported safe numeric limit';
+      if (inputs.months == null || !Number.isInteger(inputs.months) || inputs.months < 1 || inputs.months > 1200) errors['roi-months'] = 'Duration must be a whole number from 1 to 1,200 months';
+      if (inputs.taxRate != null && (inputs.taxRate < 0 || inputs.taxRate > 100)) errors['roi-taxRate'] = 'Deduction rate must be between 0 and 100%';
+      if (inputs.targetRoi != null && (inputs.targetRoi < -100 || inputs.targetRoi > 10000)) errors['roi-targetRoi'] = 'Target ROI is outside the supported range';
+      if (inputs.compareAlt != null && (inputs.compareAlt < -100 || inputs.compareAlt > 10000)) errors['roi-compareAlt'] = 'Alternative return is outside the supported range';
+      return errors;
+    }
+
+    function compute(inputs) {
+      const baseCost = inputs.baseCost || 0;
+      const extraCost = inputs.extraCost || 0;
+      const revenue = inputs.revenue || 0;
+      const months = inputs.months || 0;
+      const taxRate = inputs.taxRate || 0;
+      const totalCost = baseCost + extraCost;
+      const gross = revenue - totalCost;
+      const taxAmount = gross > 0 ? gross * (taxRate / 100) : 0;
+      const net = gross - taxAmount;
+      const roi = totalCost > 0 ? (net / totalCost) * 100 : 0;
+      const finalValue = revenue - taxAmount;
+      let annualized = null;
+      if (months > 0 && totalCost > 0 && finalValue > 0) {
+        annualized = (Math.pow(finalValue / totalCost, 12 / months) - 1) * 100;
+      } else if (months > 0 && totalCost > 0 && finalValue === 0) {
+        annualized = -100;
+      }
+      const targetDiff = inputs.targetRoi != null ? roi - inputs.targetRoi : null;
+      const altDiff = inputs.compareAlt != null ? roi - inputs.compareAlt : null;
+      const breakeven = totalCost;
+      const costPressure = revenue > 0 ? (totalCost / revenue) * 100 : 0;
+      const taxDrag = revenue > 0 ? (taxAmount / revenue) * 100 : 0;
+      const profitMargin = revenue > 0 ? (net / revenue) * 100 : 0;
+
+      const profitabilityScore = clamp(((roi + 20) / 1.2), 0, 100);
+      const speedScore = clamp(100 - ((months - 1) * 4), 20, 100);
+      const costPressureScore = clamp(100 - costPressure, 0, 100);
+      const targetScore = inputs.targetRoi == null
+        ? clamp(50 + roi / 2, 0, 100)
+        : targetDiff >= 0
+          ? 100
+          : clamp(100 - Math.abs(targetDiff) * 2, 0, 100);
+      const score = roundValue((profitabilityScore + speedScore + costPressureScore + targetScore) / 4, 'score');
+
+      const status = getStatus(roi, score, targetDiff);
+      const confidence = getConfidence(inputs);
+      const decision = getDecision(inputs, { roi, net, costPressure, annualized, targetDiff, altDiff, score, status });
+      const comment = getComment(inputs, { totalCost, revenue, gross, net, roi, annualized, taxAmount, targetDiff, altDiff, costPressure, taxDrag, profitMargin, status });
+
+      const weakInputs = { ...inputs, revenue: revenue * 0.9 };
+      const strongInputs = { ...inputs, revenue: revenue * 1.1 };
+      const weakScenario = computeScenario(weakInputs);
+      const baseScenario = computeScenario(inputs);
+      const strongScenario = computeScenario(strongInputs);
+
+      return {
+        totalCost: roundValue(totalCost),
+        revenue: roundValue(revenue),
+        gross: roundValue(gross),
+        taxAmount: roundValue(taxAmount),
+        net: roundValue(net),
+        roi: roundValue(roi, 'percent'),
+        annualized: annualized == null ? null : roundValue(annualized, 'percent'),
+        targetDiff: targetDiff == null ? null : roundValue(targetDiff, 'percent'),
+        altDiff: altDiff == null ? null : roundValue(altDiff, 'percent'),
+        breakeven: roundValue(breakeven),
+        costPressure: roundValue(costPressure, 'percent'),
+        taxDrag: roundValue(taxDrag, 'percent'),
+        profitMargin: roundValue(profitMargin, 'percent'),
+        profitabilityScore: roundValue(profitabilityScore, 'score'),
+        speedScore: roundValue(speedScore, 'score'),
+        costPressureScore: roundValue(costPressureScore, 'score'),
+        targetScore: roundValue(targetScore, 'score'),
+        score,
+        status,
+        confidence,
+        decision,
+        comment,
+        scenarios: { weak: weakScenario, base: baseScenario, strong: strongScenario }
+      };
+    }
+
+    function computeScenario(inputs) {
+      const totalCost = (inputs.baseCost || 0) + (inputs.extraCost || 0);
+      const revenue = inputs.revenue || 0;
+      const gross = revenue - totalCost;
+      const taxAmount = gross > 0 ? gross * ((inputs.taxRate || 0) / 100) : 0;
+      const net = gross - taxAmount;
+      const roi = totalCost > 0 ? (net / totalCost) * 100 : 0;
+      return { revenue: roundValue(revenue), roi: roundValue(roi, 'percent'), net: roundValue(net) };
+    }
+
+    function getConfidence(inputs) {
+      const optionalCount = [inputs.targetRoi, inputs.compareAlt, inputs.taxRate].filter(v => v != null).length;
+      if (optionalCount >= 2) return 'High';
+      if (optionalCount === 1) return 'Orta';
+      return 'Temel';
+    }
+
+    function getStatus(roi, score, targetDiff) {
+      if (roi < 0) return { label: 'Negatif', badgeClass: 'bad', scorePill: 'Weak outlook' };
+      if (score >= 75 && (targetDiff == null || targetDiff >= 0)) return { label: 'Strong', badgeClass: 'good', scorePill: 'Strong kalite' };
+      if (score >= 50) return { label: 'Balanced', badgeClass: 'warn', scorePill: 'Mid-range quality' };
+      return { label: 'Limited', badgeClass: 'bad', scorePill: 'Low quality' };
+    }
+
+    function getDecision(inputs, result) {
+      if (result.roi < 0) {
+        return 'This scenario produces a loss. Improving revenue or reducing costs would be necessary to move the modeled result above break-even.';
+      }
+      if (result.targetDiff != null && result.targetDiff < 0) {
+        return 'The scenario is profitable but below the entered target ROI. Review revenue efficiency, costs and the target before drawing a conclusion.';
+      }
+      if (result.costPressure > 80) {
+        return 'Costs consume a large share of revenue. Even with a positive ROI, the modeled result is sensitive to cost pressure.';
+      }
+      if (result.score >= 75) {
+        return 'Modeled ROI is strong on profitability and efficiency. Still consider duration, risk and any costs not entered here.';
+      }
+      return 'The modeled scenario is acceptable but not exceptional. Compare it with the alternative return and the time required.';
+    }
+
+    function getComment(inputs, result) {
+      const typeMap = {
+        investment: 'investment',
+        business: 'business transaction',
+        ads: 'ad campaign',
+        product: 'product sale'
+      };
+      let text = `For the ${typeMap[inputs.roiType] || 'scenario'}, total cost is ${formatCurrency(result.totalCost)} and revenue is ${formatCurrency(result.revenue)}. `;
+      text += `Net result after deductions is ${formatCurrency(result.net)}, producing ROI of ${formatPercent(result.roi, 1)}. `;
+      if (result.targetDiff != null) {
+        text += result.targetDiff >= 0 ? `The target ROI is exceeded by ${formatPercent(result.targetDiff, 1)}. ` : `The result is ${formatPercent(Math.abs(result.targetDiff), 1)} below the target ROI. `;
+      }
+      if (result.altDiff != null) {
+        text += result.altDiff >= 0 ? `The modeled ROI is above the alternative-return benchmark. ` : `The alternative-return benchmark is higher, indicating an opportunity-cost gap. `;
+      }
+      text += `Cost pressure is ${formatPercent(result.costPressure, 1)}, while the modeled deduction drag is ${formatPercent(result.taxDrag, 1)}.`;
+      return text;
+    }
+
+    function renderValidation(errors) {
+      document.querySelectorAll('[data-field]').forEach(field => field.classList.remove('has-error'));
+      Object.keys(errors).forEach(key => {
+        const field = document.querySelector(`[data-field="${key}"]`);
+        if (field) field.classList.add('has-error');
+      });
+    }
+
+    function clearValidation() {
+      document.querySelectorAll('[data-field]').forEach(field => field.classList.remove('has-error'));
+    }
+
+    function resetOutput() {
+      const ids = ['roi-mainResult','roi-totalCostResult','roi-revenueResult','roi-netResult','roi-annualizedResult','roi-targetDiffResult','roi-altDiffResult','roi-breakevenResult','roi-confidenceResult','roi-costShareResult','roi-weakScenarioValue','roi-baseScenarioValue','roi-strongScenarioValue','roi-profitabilityScore','roi-speedScore','roi-costPressureScore','roi-targetScore'];
+      ids.forEach(id => document.getElementById(id).textContent = '—');
+      document.getElementById('roi-mainResultSub').textContent = 'Net ROI and the primary result will appear here.';
+      document.getElementById('roi-statusText').textContent = 'No calculation yet. Enter the core values to see ROI quality and scenario context.';
+      document.getElementById('roi-statusBadge').textContent = 'Waiting';
+      document.getElementById('roi-statusBadge').className = 'badge info';
+      document.getElementById('roi-scoreValue').textContent = '—';
+      document.getElementById('roi-scorePill').textContent = 'Waiting for data';
+      document.getElementById('roi-scorePill').className = 'pill info';
+      document.getElementById('roi-scoreProgress').style.width = '0%';
+      document.getElementById('roi-scoreExplainText').textContent = 'The score combines profitability, time efficiency, target alignment and cost pressure.';
+      document.getElementById('roi-decisionText').textContent = 'Enter the data first. The calculator will produce a concise interpretation and action-oriented summary.';
+      document.getElementById('roi-smartComment').textContent = 'The calculator will interpret ROI, net result and scenario quality from the values you enter.';
+      document.getElementById('roi-weakScenarioSub').textContent = 'Revenue 10% below the base case.';
+      document.getElementById('roi-baseScenarioSub').textContent = 'ROI from the current inputs.';
+      document.getElementById('roi-strongScenarioSub').textContent = 'Revenue 10% above the base case.';
+      ['roi-highlightCard','roi-scoreBox','roi-totalCostCard','roi-revenueCard','roi-netCard','roi-annualizedCard','roi-targetCard','roi-altCard','roi-breakevenCard','roi-confidenceCard','roi-costShareCard','roi-weakScenarioCard','roi-baseScenarioCard','roi-strongScenarioCard'].forEach(id => document.getElementById(id).classList.add('is-empty'));
+      setActionButtonsDisabled(true);
+      syncShortcutChips();
+    }
+
+    function renderResults(result) {
+      const readyIds = ['roi-highlightCard','roi-scoreBox','roi-totalCostCard','roi-revenueCard','roi-netCard','roi-annualizedCard','roi-targetCard','roi-altCard','roi-breakevenCard','roi-confidenceCard','roi-costShareCard','roi-weakScenarioCard','roi-baseScenarioCard','roi-strongScenarioCard'];
+      readyIds.forEach(id => document.getElementById(id).classList.remove('is-empty'));
+
+      document.getElementById('roi-statusText').textContent = result.comment;
+      const roiStatusBadge = document.getElementById('roi-statusBadge');
+      roiStatusBadge.textContent = result.status.label;
+      roiStatusBadge.className = `badge ${result.status.badgeClass}`;
+
+      document.getElementById('roi-mainResult').textContent = formatPercent(result.roi, 1);
+      document.getElementById('roi-mainResultSub').textContent = `${result.status.label} outlook • Net result ${formatCurrency(result.net)} • Annualized ROI ${result.annualized == null ? '—' : formatPercent(result.annualized, 1)}`;
+
+      document.getElementById('roi-scoreValue').textContent = result.score;
+      const roiScorePill = document.getElementById('roi-scorePill');
+      roiScorePill.textContent = result.status.scorePill;
+      roiScorePill.className = `pill ${result.status.badgeClass}`;
+      document.getElementById('roi-scoreProgress').style.width = `${result.score}%`;
+      document.getElementById('roi-scoreExplainText').textContent = result.score >= 75
+        ? 'The score is strong; modeled profitability and efficiency are both positive.'
+        : result.score >= 50
+        ? 'The score is balanced; the result is positive but still sensitive to optimization.'
+        : 'The score is weak; profitability or efficiency is under pressure.';
+      document.getElementById('roi-profitabilityScore').textContent = result.profitabilityScore;
+      document.getElementById('roi-speedScore').textContent = result.speedScore;
+      document.getElementById('roi-costPressureScore').textContent = result.costPressureScore;
+      document.getElementById('roi-targetScore').textContent = result.targetScore;
+
+      document.getElementById('roi-decisionText').textContent = result.decision;
+      document.getElementById('roi-totalCostResult').textContent = formatCurrency(result.totalCost);
+      document.getElementById('roi-revenueResult').textContent = formatCurrency(result.revenue);
+      document.getElementById('roi-netResult').textContent = formatCurrency(result.net);
+      document.getElementById('roi-annualizedResult').textContent = result.annualized == null ? '—' : formatPercent(result.annualized, 1);
+      document.getElementById('roi-targetDiffResult').textContent = result.targetDiff == null ? 'Target not entered' : formatPercent(result.targetDiff, 1);
+      document.getElementById('roi-altDiffResult').textContent = result.altDiff == null ? 'Alternatif girilmedi' : formatPercent(result.altDiff, 1);
+      document.getElementById('roi-breakevenResult').textContent = formatCurrency(result.breakeven);
+      document.getElementById('roi-confidenceResult').textContent = result.confidence;
+      document.getElementById('roi-costShareResult').textContent = formatPercent(result.costPressure, 1);
+      document.getElementById('roi-smartComment').textContent = result.comment;
+
+      document.getElementById('roi-weakScenarioValue').textContent = formatPercent(result.scenarios.weak.roi, 1);
+      document.getElementById('roi-weakScenarioSub').textContent = `Net result ${formatCurrency(result.scenarios.weak.net)} • Revenue ${formatCurrency(result.scenarios.weak.revenue)}`;
+      document.getElementById('roi-baseScenarioValue').textContent = formatPercent(result.scenarios.base.roi, 1);
+      document.getElementById('roi-baseScenarioSub').textContent = `Net result ${formatCurrency(result.scenarios.base.net)} • Revenue ${formatCurrency(result.scenarios.base.revenue)}`;
+      document.getElementById('roi-strongScenarioValue').textContent = formatPercent(result.scenarios.strong.roi, 1);
+      document.getElementById('roi-strongScenarioSub').textContent = `Net result ${formatCurrency(result.scenarios.strong.net)} • Revenue ${formatCurrency(result.scenarios.strong.revenue)}`;
+      setActionButtonsDisabled(false);
+      syncShortcutChips();
+    }
+
+    function saveState() {
+      if (state.inputSource !== 'manual') return;
+      const raw = {};
+      formIds.forEach(id => raw[id] = document.getElementById(id).value);
+      try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(raw)); }catch(err){}
+    }
+
+    function loadState() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        if (!raw || typeof raw !== 'object' || Array.isArray(raw)) throw new Error('invalid saved state');
+        formIds.forEach(id => {
+          if (raw[id] != null) document.getElementById(id).value = raw[id];
+        });
+        state.inputSource = 'manual';
+      } catch (e) {
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(_removeErr){}
+      }
+    }
+
+    function calculateAndRender(force = false) {
+      const inputs = getInputs();
+      state.inputs = inputs;
+      state.errors = validateInputs(inputs);
+      state.isValid = Object.keys(state.errors).length === 0;
+      renderValidation(state.errors);
+
+      if (!state.isValid) {
+        state.results = null;
+        state.isCalculated = false;
+        resetOutput();
+        if (force) {
+          document.getElementById('roi-statusText').textContent = 'Some fields are missing or invalid. Correct the highlighted inputs first.';
+          document.getElementById('roi-statusBadge').textContent = 'Invalid input';
+          document.getElementById('roi-statusBadge').className = 'badge bad';
+        }
+        saveState();
+        return;
+      }
+
+      clearValidation();
+      state.results = compute(inputs);
+      state.isCalculated = true;
+      renderResults(state.results);
+      saveState();
+      if (force) scrollToResults();
+    }
+
+    function debounceCalculate() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => calculateAndRender(false), 180);
+    }
+
+    function setMonths(months, button) {
+      document.getElementById('roi-months').value = String(months);
+      document.querySelectorAll('#roi-termChips .chip').forEach(chip => chip.classList.remove('active'));
+      if (button) button.classList.add('active');
+      calculateAndRender(false);
+    }
+
+    function setTarget(target, button) {
+      document.getElementById('roi-targetRoi').value = String(target);
+      document.querySelectorAll('#roi-targetChips .chip').forEach(chip => chip.classList.remove('active'));
+      if (button) button.classList.add('active');
+      calculateAndRender(false);
+    }
+
+    function applyScenario(type, shouldFocus = false) {
+      const scenarios = {
+        ads: { 'roi-roiType':'ads', 'roi-baseCost':'15.000', 'roi-extraCost':'2.500', 'roi-revenue':'32.000', 'roi-months':'3', 'roi-targetRoi':'25', 'roi-compareAlt':'18', 'roi-taxRate':'3' },
+        business: { 'roi-roiType':'business', 'roi-baseCost':'80.000', 'roi-extraCost':'10.000', 'roi-revenue':'125.000', 'roi-months':'6', 'roi-targetRoi':'25', 'roi-compareAlt':'20', 'roi-taxRate':'5' },
+        product: { 'roi-roiType':'product', 'roi-baseCost':'40.000', 'roi-extraCost':'6.000', 'roi-revenue':'65.000', 'roi-months':'4', 'roi-targetRoi':'30', 'roi-compareAlt':'15', 'roi-taxRate':'4' },
+        loss: { 'roi-roiType':'investment', 'roi-baseCost':'50.000', 'roi-extraCost':'5.000', 'roi-revenue':'45.000', 'roi-months':'6', 'roi-targetRoi':'20', 'roi-compareAlt':'10', 'roi-taxRate':'0' }
+      };
+      const s = scenarios[type];
+      if (!s) return;
+      Object.entries(s).forEach(([key, value]) => document.getElementById(key).value = value);
+      state.inputSource = 'demo';
+      normalizeVisibleInputs();
+      calculateAndRender(shouldFocus);
+    }
+
+    function fillExample() {
+      applyScenario('business', true);
+    }
+
+    function resetForm() {
+      formIds.forEach(id => document.getElementById(id).value = '');
+      document.getElementById('roi-roiType').value = 'investment';
+      document.querySelectorAll('#roi-termChips .chip').forEach(chip => chip.classList.remove('active'));
+      document.querySelectorAll('#roi-targetChips .chip').forEach(chip => chip.classList.remove('active'));
+      state.inputs = {};
+      state.results = null;
+      state.errors = {};
+      state.isValid = false;
+      state.isCalculated = false;
+      state.inputSource = 'manual';
+      clearValidation();
+      resetOutput();
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(err){}
+    }
+
+    function safeCopyText(text, onSuccess) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopyText(text, onSuccess));
+        return;
+      }
+      fallbackCopyText(text, onSuccess);
+    }
+
+    function fallbackCopyText(text, onSuccess) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      textarea.style.pointerEvents = 'none';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(textarea);
+      if (typeof onSuccess === 'function') onSuccess();
+    }
+
+    function copyResult() {
+      if (!state.results) {
+        document.getElementById('roi-statusText').textContent = 'Calculate a valid result before copying.';
+        document.getElementById('roi-statusBadge').textContent = 'Result required';
+        document.getElementById('roi-statusBadge').className = 'badge warn';
+        return;
+      }
+      const text = [
+        'Hesapica - ROI Calculator',
+        `ROI: ${document.getElementById('roi-mainResult').textContent}`,
+        `Total Cost: ${document.getElementById('roi-totalCostResult').textContent}`,
+        `Total Revenue: ${document.getElementById('roi-revenueResult').textContent}`,
+        `Net Result: ${document.getElementById('roi-netResult').textContent}`,
+        `Annualized ROI: ${document.getElementById('roi-annualizedResult').textContent}`,
+        `Karar: ${document.getElementById('roi-decisionText').textContent}`
+      ].join('\n');
+      safeCopyText(text, () => {
+        const old = document.getElementById('roi-smartComment').textContent;
+        document.getElementById('roi-smartComment').textContent = 'Result summary copied to the clipboard.';
+        setTimeout(() => {
+          if (state.results) document.getElementById('roi-smartComment').textContent = state.results.comment;
+          else document.getElementById('roi-smartComment').textContent = old;
+        }, 1500);
+      });
+    }
+
+    function printResult() {
+      if (!state.results) {
+        document.getElementById('roi-statusText').textContent = 'Calculate a valid result before printing or saving as PDF.';
+        document.getElementById('roi-statusBadge').textContent = 'Result required';
+        document.getElementById('roi-statusBadge').className = 'badge warn';
+        return;
+      }
+      window.print();
+    }
+
+    function shareResult() {
+      if (!state.results) {
+        document.getElementById('roi-statusText').textContent = 'Calculate a valid result before sharing.';
+        document.getElementById('roi-statusBadge').textContent = 'Result required';
+        document.getElementById('roi-statusBadge').className = 'badge warn';
+        return;
+      }
+      const params = new URLSearchParams();
+      params.set('mod', 'roi');
+      formIds.forEach(id => {
+        const value = document.getElementById(id).value;
+        if (value) params.set(id, value);
+      });
+      const url = `${location.origin}${location.pathname}?${params.toString()}`;
+      const sharePayload = {
+        title: 'ROI Calculator',
+        text: `ROI sonucu: ${document.getElementById('roi-mainResult').textContent}`,
+        url
+      };
+      if (navigator.share) {
+        navigator.share(sharePayload).catch((err) => {
+          if(err && err.name === 'AbortError') return;
+          safeCopyText(url, () => {
+            const old = document.getElementById('roi-statusText').textContent;
+            document.getElementById('roi-statusText').textContent = 'Share link copied to the clipboard.';
+            setTimeout(() => {
+              document.getElementById('roi-statusText').textContent = state.results ? state.results.comment : old;
+            }, 1500);
+          });
+        });
+        return;
+      }
+      safeCopyText(url, () => {
+        const old = document.getElementById('roi-statusText').textContent;
+        document.getElementById('roi-statusText').textContent = 'Share link copied to the clipboard.';
+        setTimeout(() => {
+          document.getElementById('roi-statusText').textContent = state.results ? state.results.comment : old;
+        }, 1500);
+      });
+    }
+
+    function formatInputOnBlur(event) {
+      const input = event.target;
+      const id = input.id;
+      const value = parseTRNumber(input.value);
+      if (value == null) {
+        input.value = '';
+        return;
+      }
+      if (['roi-taxRate','roi-targetRoi','roi-compareAlt'].includes(id)) {
+        input.value = formatTRInput(value, 1);
+      } else if (id === 'roi-months') {
+        input.value = Number.isInteger(value) ? formatTRInput(value, 0) : formatTRInput(value, 1);
+      } else {
+        input.value = formatTRInput(value, 0);
+      }
+      syncShortcutChips();
+    }
+
+    function hydrateFromQuery() {
+      const params = new URLSearchParams(location.search);
+      let hasQuery = false;
+      formIds.forEach(id => {
+        const value = params.get(id);
+        if (value != null) {
+          document.getElementById(id).value = value;
+          hasQuery = true;
+        }
+      });
+      if (hasQuery) state.inputSource = 'share';
+      return hasQuery;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-roi-months]').forEach(button => {
+        button.addEventListener('click', () => setMonths(Number(button.dataset.roiMonths), button));
+      });
+      document.querySelectorAll('[data-roi-target]').forEach(button => {
+        button.addEventListener('click', () => setTarget(Number(button.dataset.roiTarget), button));
+      });
+      document.querySelectorAll('[data-roi-scenario]').forEach(button => {
+        button.addEventListener('click', () => applyScenario(button.dataset.roiScenario));
+      });
+      document.getElementById('roi-calculateBtn')?.addEventListener('click', () => calculateAndRender(true));
+      document.getElementById('roi-exampleBtn')?.addEventListener('click', fillExample);
+      document.getElementById('roi-resetBtn')?.addEventListener('click', resetForm);
+      document.getElementById('roi-copyBtn')?.addEventListener('click', copyResult);
+      document.getElementById('roi-shareBtn')?.addEventListener('click', shareResult);
+      document.getElementById('roi-printBtn')?.addEventListener('click', printResult);
+
+      loadState();
+      const hasQuery = hydrateFromQuery();
+      normalizeVisibleInputs();
+      syncShortcutChips();
+      formIds.forEach(id => {
+        const el = document.getElementById(id);
+        el.addEventListener('input', () => { state.inputSource = 'manual'; debounceCalculate(); });
+        el.addEventListener('change', () => { state.inputSource = 'manual'; debounceCalculate(); });
+        if (el.tagName === 'INPUT') el.addEventListener('blur', formatInputOnBlur);
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') calculateAndRender(true);
+        });
+      });
+      resetOutput();
+      const hasRestorableInput = formIds.some(id => id !== 'roi-roiType' && String(document.getElementById(id).value || '').trim() !== '');
+      if (hasRestorableInput) {
+        calculateAndRender(false);
+      }
+    });
+  
+})();
+</script><script src="../ads-slot-manager.js"></script>
+
+
+
+<script id="hc-tab-interaction-standard">
+(() => {
+  document.querySelectorAll('[role="tablist"]').forEach(tablist => {
+    const tabs = Array.from(tablist.querySelectorAll('button')).filter(button => button.closest('[role="tablist"]') === tablist);
+    if(tabs.length < 2) return;
+
+    const sync = () => {
+      tabs.forEach(tab => {
+        tab.setAttribute('role','tab');
+        const selected = tab.getAttribute('aria-selected') === 'true';
+        tab.tabIndex = selected ? 0 : -1;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.setAttribute('role','tab');
+      tab.addEventListener('click', () => requestAnimationFrame(sync));
+      tab.addEventListener('keydown', event => {
+        let targetIndex = null;
+        if(event.key === 'ArrowRight' || event.key === 'ArrowDown') targetIndex = (index + 1) % tabs.length;
+        else if(event.key === 'ArrowLeft' || event.key === 'ArrowUp') targetIndex = (index - 1 + tabs.length) % tabs.length;
+        else if(event.key === 'Home') targetIndex = 0;
+        else if(event.key === 'End') targetIndex = tabs.length - 1;
+        if(targetIndex === null) return;
+        event.preventDefault();
+        tabs[targetIndex].focus();
+        tabs[targetIndex].click();
+      });
+    });
+
+    sync();
+  });
+})();
+</script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset data','clear data','reset','reset']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_resetBtn = document.getElementById('resetBtn');
+  if(button_resetBtn) button_resetBtn.addEventListener('click', () => clearToolQuery(['type','mode','initial','monthly','months','return','cost','inflation']));
+  const button_roi_resetBtn = document.getElementById('roi-resetBtn');
+  if(button_roi_resetBtn) button_roi_resetBtn.addEventListener('click', () => clearToolQuery(['roi-roiType','roi-baseCost','roi-extraCost','roi-revenue','roi-months','roi-targetRoi','roi-compareAlt','roi-taxRate']));
+})();
+</script>
+<script id="hc-investment-currency-sync">
+(() => {
+  const select=document.getElementById('displayCurrency'); if(!select)return;
+  const KEY='hesapica_en_investment_currency_v1';
+  const supported=['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR'];
+  try{const saved=localStorage.getItem(KEY);if(supported.includes(saved))select.value=saved;else if(saved!==null)localStorage.removeItem(KEY);}catch(_e){}
+  const symbol=()=>{try{return new Intl.NumberFormat('en-US',{style:'currency',currency:select.value,currencyDisplay:'narrowSymbol',maximumFractionDigits:0}).formatToParts(0).find(p=>p.type==='currency')?.value||select.value}catch(_e){return select.value}};
+  const sync=()=>document.querySelectorAll('.currency-prefix').forEach(el=>el.textContent=symbol());
+  sync();
+  select.addEventListener('change',()=>{if(!supported.includes(select.value))select.value='USD';try{localStorage.setItem(KEY,select.value)}catch(_e){}sync();
+    if(!document.getElementById('yatirimModeSection')?.hasAttribute('hidden')){try{if(typeof calculateNow==='function'&&typeof hasCoreInput==='function'&&hasCoreInput())calculateNow(false,'manual')}catch(_e){}}
+    else {const input=document.getElementById('roi-baseCost');if(input)input.dispatchEvent(new Event('input',{bubbles:true}));}
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cost per Kilometer Calculator: Fuel & Ownership | Hesapica</title>
+<meta name="description" content="Calculate cost per kilometer and per 100 km from fuel, insurance, vehicle tax, maintenance and other annual vehicle expenses.">
+<meta content="cost per kilometer calculator, vehicle running cost calculator, fuel cost per km, car operating cost, 100 km cost" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/cost-per-kilometer-calculator" rel="canonical"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/cost-per-kilometer-calculator">
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/km-maliyet-hesaplama">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+
+<!-- Google Analytics 4 -->
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Cost per Kilometer Calculator: Fuel & Ownership | Hesapica">
+<meta property="og:description" content="Estimate fuel-only or broader vehicle cost per kilometer, per 100 km, per month and per year from the expenses you enter.">
+<meta property="og:url" content="https://hesapica.com/en/cost-per-kilometer-calculator">
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — Practical calculators for everyday decisions"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — Practical calculators for everyday decisions"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cost per Kilometer Calculator: Fuel & Ownership | Hesapica">
+<meta name="twitter:description" content="Estimate fuel-only or broader vehicle cost per kilometer, per 100 km, per month and per year from the expenses you enter.">
+<style>
+    :root{
+      --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--surface-soft:#eef2ff;--surface-soft-2:#f8faff;
+      --text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);--radius-xl:24px;--radius-lg:18px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text);background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);line-height:1.6}
+    a{text-decoration:none;color:inherit} button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+    .hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)} .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}.hero-box ul{margin:10px 0 0;padding-left:18px}
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}.section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)} .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)} .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)} .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)} .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-size:16px;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}
+    input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease} input.with-prefix{padding-left:38px} input.with-suffix{padding-right:46px} input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)} input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}.chip-row{display:flex;flex-wrap:wrap;gap:10px}.chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}.chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+    .toggle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.toggle-pill{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;background:#fcfcfd;border:1px solid var(--line);font-weight:700;color:#374151}.toggle-pill input{width:18px;height:18px;accent-color:var(--primary)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}.btn:hover{transform:translateY(-1px);opacity:.97}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}.flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}.flow-hint-text span{display:block;font-size:13px;color:#6366f1}.flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px}
+    .results{position:sticky;top:20px;display:grid;gap:16px}.status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge,.pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}.good{background:#ecfdf5 !important;color:var(--good)!important;border-color:#a7f3d0!important}.warn{background:#fff7ed !important;color:var(--warn)!important;border-color:#fed7aa!important}.bad{background:#fef2f2 !important;color:var(--bad)!important;border-color:#fecaca!important}
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#4b5563}.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:700;color:#374151}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}.health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}.health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}.details-card{margin-top:24px}.accordion-stack{display:grid;gap:14px} details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px} details.block[open]{padding-bottom:20px} details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)} details.block summary::-webkit-details-marker{display:none}.summary-note{font-size:13.5px;color:#6366f1;font-weight:700}.details-inner{margin-top:16px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff} table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top} th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em} td{color:var(--text);font-weight:700}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .field.error-state .hint{color:#991b1b}.field.error-state label{color:#991b1b}.error-text{display:none;margin-top:8px;font-size:14px;font-weight:700;line-height:1.5;color:#b91c1c}.field.error-state .error-text{display:block}.input-error{border-color:rgba(185,28,28,.55)!important;box-shadow:0 0 0 4px rgba(185,28,28,.10)!important;background:#fff7f7!important}
+    .result-flash{animation:resultFlash 1.1s ease}
+    @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,.00), var(--shadow)}35%{box-shadow:0 0 0 8px rgba(79,70,229,.14), 0 18px 38px rgba(79,70,229,.18)}100%{box-shadow:var(--shadow)}}
+
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,details.block{padding:20px}.field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.hero h1{font-size:32px}.highlight-value{font-size:31px}details.block summary{align-items:flex-start;flex-direction:column}.summary-note{width:100%}}
+    @media print{body{background:#fff}.topbar,.input-card,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.hc-ad-slot,.content-grid,.related-tools{display:none!important}.hero,.card,.status-card,.highlight-card,details.block{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}.result-column{width:100%!important}}
+  
+    .result-column,.details-card,.accordion-stack,details.block,.details-inner,.table-wrap{min-width:0;max-width:100%}
+    details.block summary{min-width:0;flex-wrap:wrap}
+    .summary-note{max-width:100%;overflow-wrap:anywhere}
+    .table-wrap{-webkit-overflow-scrolling:touch}
+    .table-wrap table{min-width:720px}
+    .btn:disabled{cursor:not-allowed;opacity:.48;transform:none!important;box-shadow:none!important}
+    input:disabled{background:#f3f4f6;color:#9ca3af;cursor:not-allowed}
+    .fixed-cost-field.is-disabled{opacity:.7}
+    .related-tools{margin-top:24px}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Cost per Kilometer Calculator","url":"https://hesapica.com/en/cost-per-kilometer-calculator","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"},"description":"Calculate cost per kilometer and per 100 km from fuel, insurance, vehicle tax, maintenance and other annual vehicle expenses."}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Cars","item":"https://hesapica.com/en/#cars"},{"@type":"ListItem","position":3,"name":"Cost per Kilometer Calculator","item":"https://hesapica.com/en/cost-per-kilometer-calculator"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I have to enter annual distance?","acceptedAnswer":{"@type":"Answer","text":"No. If annual distance is blank, the calculator multiplies monthly distance by 12."}},{"@type":"Question","name":"Why should I include fixed annual costs?","acceptedAnswer":{"@type":"Answer","text":"Insurance, vehicle tax, maintenance and other annual costs show the non-fuel portion of running the vehicle. Their cost per kilometer becomes more noticeable when annual distance is low."}},{"@type":"Question","name":"Should I include vehicle depreciation?","acceptedAnswer":{"@type":"Answer","text":"If you want a broader ownership-cost estimate, you can add estimated annual depreciation under “Other annual costs”. The calculator does not assume a depreciation amount because it varies widely by vehicle and market."}}]}
+</script>
+<meta property="og:site_name" content="Hesapica"><meta name="twitter:url" content="https://hesapica.com/en/cost-per-kilometer-calculator"><meta name="twitter:site" content="@hesapica"><link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only after user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-language-switch-standard">
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *{min-width:0}
+  .hc-language-switch{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    padding:5px;
+    border:1px solid #c7d2fe;
+    border-radius:999px;
+    background:#fff;
+    box-shadow:0 8px 20px rgba(79,70,229,.10);
+  }
+  .hc-language-switch::before{
+    content:"🌐";
+    margin:0 4px 0 6px;
+    font-size:15px;
+    line-height:1;
+  }
+  .hc-language-switch a,
+  .hc-language-switch strong{
+    min-height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 13px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:800;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .hc-language-switch a{
+    color:#3730a3;
+    background:#eef2ff;
+    border:1px solid #dbe4ff;
+    transition:transform .18s ease,background .18s ease,border-color .18s ease;
+  }
+  .hc-language-switch a:hover,
+  .hc-language-switch a:focus-visible{
+    background:#e0e7ff;
+    border-color:#a5b4fc;
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .hc-language-switch strong{
+    color:#fff;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    box-shadow:0 6px 14px rgba(79,70,229,.20);
+  }
+  @media (max-width:760px){
+    .topbar{
+      align-items:stretch;
+      flex-direction:column;
+      gap:10px;
+    }
+    .hc-language-switch{
+      width:100%;
+      justify-content:center;
+      padding:6px;
+    }
+    .hc-language-switch a,
+    .hc-language-switch strong{
+      flex:1 1 0;
+      min-height:42px;
+    }
+  }
+</style>
+
+</head>
+<body>
+<noscript><div style="margin:16px auto;padding:14px 16px;max-width:1180px;border:1px solid #fecaca;border-radius:16px;background:#fef2f2;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">This calculator requires JavaScript. Enable JavaScript in your browser to use the tool.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a><span>/</span><a href="/en/#cars">Cars</a><span>/</span><strong>Cost per Kilometer Calculator</strong>
+</nav>
+  <div class="hc-language-switch" role="group" aria-label="Language switch"><a href="/km-maliyet-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Vehicle cost analysis</span>
+<h1>Cost per Kilometer Calculator</h1>
+<p>Use fuel consumption and price together with insurance, vehicle tax, maintenance and other annual costs to estimate <strong>cost per kilometer</strong>, <strong>cost per 100 km</strong>, <strong>the monthly average</strong>, and <strong>the annual total cost</strong>.</p>
+<div class="hero-chips">
+<span class="hero-chip">Cost per kilometer</span>
+<span class="hero-chip">Fuel + fixed-cost breakdown</span>
+<span class="hero-chip">Scenario comparison</span>
+<span class="hero-chip">Liter-based fuel calculation</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Transparent calculation</div>
+<strong>Results use only the cost items you enter</strong>
+<p>If you want to include depreciation, financing, parking or other costs, add them to the “Other annual costs” field yourself.</p>
+<ul>
+<li>Separate fuel and fixed-cost shares</li>
+<li>See 100 km and annual totals together</li>
+<li>Compare fuel, maintenance and usage changes</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+
+
+
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card input-card">
+<h2>Operating Cost Panel</h2>
+<p class="section-note">Either monthly or annual distance is enough. If annual distance is entered, it takes priority. Enter your real-world average fuel consumption in liters per 100 km.</p>
+<div class="helper-box">
+<h3>What is included?</h3>
+<p>Fuel cost is always calculated. In “Fuel + entered annual costs” mode, insurance, vehicle tax, maintenance and other annual costs are added. Depreciation and financing are not assumed automatically; add them under “Other annual costs” if you want to include them.</p>
+</div>
+<form id="kmCostForm" novalidate>
+<div class="form-section">
+<div class="form-title">Core usage inputs</div>
+<div class="field-grid">
+<div class="field">
+<label for="currencyCode">Currency</label>
+<div class="input-wrap">
+<select id="currencyCode" aria-describedby="currencyCodeHint">
+<option value="USD" selected>USD — US Dollar</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — British Pound</option>
+<option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="NZD">NZD — New Zealand Dollar</option>
+<option value="CHF">CHF — Swiss Franc</option><option value="JPY">JPY — Japanese Yen</option><option value="INR">INR — Indian Rupee</option>
+<option value="SGD">SGD — Singapore Dollar</option><option value="SEK">SEK — Swedish Krona</option><option value="NOK">NOK — Norwegian Krone</option>
+<option value="DKK">DKK — Danish Krone</option><option value="PLN">PLN — Polish Zloty</option><option value="ZAR">ZAR — South African Rand</option>
+</select>
+</div>
+<div class="hint" id="currencyCodeHint">Enter every cost in the same currency. This selector changes display formatting only; it does not convert existing values.</div>
+</div>
+<div class="field">
+<label for="monthlyKm">Average monthly distance</label>
+<div class="input-wrap"><input aria-describedby="monthlyKmHint monthlyKmError" autocomplete="off" id="monthlyKm" inputmode="numeric" placeholder="e.g. 1,200" type="text"/></div>
+<div class="hint" id="monthlyKmHint">If annual distance is blank, this value is multiplied by 12.</div>
+<div aria-live="polite" class="error-text" id="monthlyKmError"></div>
+</div>
+<div class="field">
+<label for="annualKmManual">Annual distance <span style="color:#6b7280;font-weight:600">(optional)</span></label>
+<div class="input-wrap"><input aria-describedby="annualKmManualHint annualKmManualError" autocomplete="off" id="annualKmManual" inputmode="numeric" placeholder="e.g. 15,000" type="text"/></div>
+<div class="hint" id="annualKmManualHint">If entered, this value is used instead of monthly distance.</div>
+<div aria-live="polite" class="error-text" id="annualKmManualError"></div>
+</div>
+<div class="field">
+<label for="consumption">Average fuel consumption (L / 100 km)</label>
+<div class="input-wrap"><input aria-describedby="consumptionHint consumptionError" aria-required="true" autocomplete="off" id="consumption" inputmode="decimal" placeholder="e.g. 6.8" required type="text"/></div>
+<div class="hint" id="consumptionHint">Use your real-world average where possible; no extra driving factor is applied.</div>
+<div aria-live="polite" class="error-text" id="consumptionError"></div>
+</div>
+<div class="field">
+<label for="fuelPrice">Fuel price per liter</label>
+<div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="fuelPriceHint fuelPriceError" aria-required="true" autocomplete="off" class="with-prefix" id="fuelPrice" inputmode="decimal" placeholder="e.g. 1.60" required type="text"/></div>
+<div class="hint" id="fuelPriceHint">Enter the price you pay per liter of fuel.</div>
+<div aria-live="polite" class="error-text" id="fuelPriceError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Calculation scope & annual costs</div>
+<div class="field-grid">
+<div class="field full">
+<label for="fixedCostMode">Calculation scope</label>
+<select id="fixedCostMode">
+<option selected value="include">Fuel + entered annual costs</option>
+<option value="fuelOnly">Fuel only</option>
+</select>
+<div class="hint">In fuel-only mode, the annual costs below are excluded.</div>
+</div>
+<div class="field fixed-cost-field">
+<label for="annualInsurance">Annual insurance</label>
+<div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="annualInsuranceHint annualInsuranceError" autocomplete="off" class="with-prefix" id="annualInsurance" inputmode="decimal" placeholder="e.g. 900" type="text"/></div>
+<div class="hint" id="annualInsuranceHint">Total amount per year.</div>
+<div aria-live="polite" class="error-text" id="annualInsuranceError"></div>
+</div>
+<div class="field fixed-cost-field">
+<label for="annualTax">Annual vehicle tax / registration</label>
+<div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="annualTaxHint annualTaxError" autocomplete="off" class="with-prefix" id="annualTax" inputmode="decimal" placeholder="e.g. 600" type="text"/></div>
+<div class="hint" id="annualTaxHint">Vehicle tax, registration fees or other recurring annual vehicle charges.</div>
+<div aria-live="polite" class="error-text" id="annualTaxError"></div>
+</div>
+<div class="field fixed-cost-field">
+<label for="annualMaintenance">Annual maintenance / tires / service</label>
+<div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="annualMaintenanceHint annualMaintenanceError" autocomplete="off" class="with-prefix" id="annualMaintenance" inputmode="decimal" placeholder="e.g. 800" type="text"/></div>
+<div class="hint" id="annualMaintenanceHint">Maintenance, tires, servicing and similar annual costs.</div>
+<div aria-live="polite" class="error-text" id="annualMaintenanceError"></div>
+</div>
+<div class="field fixed-cost-field">
+<label for="otherAnnualCosts">Other annual costs</label>
+<div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="otherAnnualCostsHint otherAnnualCostsError" autocomplete="off" class="with-prefix" id="otherAnnualCosts" inputmode="decimal" placeholder="e.g. 300" type="text"/></div>
+<div class="hint" id="otherAnnualCostsHint">Add inspections, parking, finance cost, estimated depreciation or any other annual cost you want to include.</div>
+<div aria-live="polite" class="error-text" id="otherAnnualCostsError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Quick example scenarios</div>
+<p class="hint" style="margin:0 0 12px">These values are examples only and should not be treated as current fuel prices or market costs.</p>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="fillScenario('economy', this)" type="button">Low-consumption example</button>
+<button class="chip" onclick="fillScenario('city', this)" type="button">City-driving example</button>
+<button class="chip" onclick="fillScenario('high', this)" type="button">High-consumption example</button>
+<button class="chip" onclick="fillScenario('fuelonly', this)" type="button">Fuel-only example</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" type="submit">Calculate</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Example Data</button>
+<button class="btn btn-ghost" onclick="resetForm()" type="button">Reset</button>
+<button class="btn btn-ghost" disabled id="copyBtn" onclick="copyResult()" type="button">Copy Result</button>
+<button class="btn btn-ghost" disabled id="shareBtn" onclick="shareResult()" type="button">Share</button>
+<button class="btn btn-ghost" disabled id="printBtn" onclick="printResult()" type="button">Print / PDF</button>
+</div>
+</form>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Cost breakdown and scenario table continue below</strong>
+<span>On mobile, compare fuel, maintenance and usage changes after the result cards.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<div class="result-column">
+
+
+<aside class="results" id="resultPanel">
+<div class="status-card">
+<div class="status-row"><div><div class="status-title">Result status</div><div aria-live="polite" class="status-text" id="statusText">Enter the required values or use Example Data to see a result.</div></div><span class="badge" id="statusBadge">Waiting for data</span></div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Cost per kilometer</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Your calculated cost per kilometer will appear here.</div>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1"><div class="label">Cost per 100 km</div><div class="value" id="per100KmResult">—</div></div>
+<div class="mini-result is-empty" id="mini2"><div class="label">Average monthly cost</div><div class="value" id="monthlyCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini3"><div class="label">Annual total cost</div><div class="value" id="annualCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini4"><div class="label">Annual distance</div><div class="value" id="annualKmResult">—</div></div>
+<div class="mini-result is-empty" id="mini5"><div><div class="label">Annual fuel cost</div><div class="subline" id="fuelSubline">Based on consumption × fuel price</div></div><div class="value" id="annualFuelCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini6"><div><div class="label">Annual fixed costs included</div><div class="subline" id="fixedSubline">Insurance + vehicle tax + maintenance + other</div></div><div class="value" id="annualFixedCostResult">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Cost Breakdown</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Fuel share</h3><div class="big" id="health1">—</div></div>
+<div class="health-card"><h3>Fixed-cost share</h3><div class="big" id="health2">—</div></div>
+<div class="health-card"><h3>Consumption</h3><div aria-live="polite" class="big" id="health3">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="commentBox">Waiting for data. After calculation, this area shows the distance basis and cost breakdown.</div>
+</aside>
+</div>
+</section>
+<section class="details-card">
+<div class="accordion-stack">
+<details class="block" open>
+<summary>Breakdown & scenario analysis <span class="summary-note">Base / fuel / maintenance or consumption / usage</span></summary>
+<div class="details-inner"><div class="table-wrap"><table>
+<thead><tr><th>Scenario</th><th>Cost per kilometer</th><th>100 km</th><th>Annual total cost</th><th>Compared with base</th></tr></thead>
+<tbody id="scenarioTableBody">
+<tr><td>Base scenario</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+<tr><td>Fuel +10%</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+<tr><td>Maintenance +20%</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+<tr><td>Distance +20%</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+</tbody></table></div></div>
+</details>
+</div>
+</section>
+<section class="content-grid">
+<div class="accordion-card">
+<h2>How is cost per kilometer calculated?</h2>
+<details open><summary>Core formula</summary><p>First, annual distance is determined. Annual fuel cost = annual distance × (L/100 km ÷ 100) × fuel price. In “Fuel + entered annual costs” mode, insurance, vehicle tax, maintenance and other costs are added. Cost per kilometer = annual total cost ÷ annual distance; cost per 100 km is that result × 100.</p></details>
+<details><summary>How is the monthly cost calculated?</summary><p>The monthly result is the annual total cost divided by 12. If annual distance is entered, it takes priority in the distance calculation.</p></details>
+<details><summary>Is this the same as total cost of ownership?</summary><p>No. The result includes only the cost items you enter. Add depreciation, finance interest, parking or other costs under “Other annual costs” if you want a broader ownership-cost estimate.</p></details>
+</div>
+<div class="accordion-card">
+<h2>Frequently Asked Questions</h2>
+<details open><summary>Do I have to enter annual distance?</summary><p>No. If annual distance is blank, the calculator multiplies monthly distance by 12.</p></details>
+<details><summary>Why should I include fixed annual costs?</summary><p>Insurance, vehicle tax, maintenance and other annual costs show the non-fuel portion of running the vehicle. Their cost per kilometer becomes more noticeable when annual distance is low.</p></details>
+<details><summary>Should I include vehicle depreciation?</summary><p>If you want a broader ownership-cost estimate, you can add estimated annual depreciation under “Other annual costs”. The calculator does not assume a depreciation amount because it varies widely by vehicle and market.</p></details>
+</div>
+</section>
+<!-- HC_AD_SLOT:faq -->
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<section class="card related-tools" id="relatedTools">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/fuel-cost-calculator"><span class="small">Cars</span><strong>Fuel Cost Calculator</strong><p>Estimate fuel use, trip cost and cost sharing for a journey.</p></a>
+<a class="related-card" href="/en/car-monthly-cost-calculator"><span class="small">Cars</span><strong>Car Monthly Cost Calculator</strong><p>Estimate monthly vehicle costs from fuel and other recurring expenses.</p></a>
+<a class="related-card" href="/en/budget-calculator"><span class="small">Finance</span><strong>Budget Calculator</strong><p>See how recurring vehicle costs fit into your monthly budget.</p></a>
+<a class="related-card" href="/en/investment-return-calculator"><span class="small">Investing</span><strong>Investment Return Calculator</strong><p>Compare vehicle spending with a simple investment-growth scenario.</p></a>
+</div>
+</section>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica-en-cost-per-km-v1';
+    const STORAGE_VERSION = 3;
+    const LEGACY_STORAGE_KEYS = [];
+    const $ = (id) => document.getElementById(id);
+    const FIXED_COST_IDS = ['annualInsurance','annualTax','annualMaintenance','otherAnnualCosts'];
+    const TEXT_INPUT_IDS = ['monthlyKm','annualKmManual','consumption','fuelPrice', ...FIXED_COST_IDS];
+    const els = {
+      currencyCode: $('currencyCode'),
+      monthlyKm: $('monthlyKm'),
+      annualKmManual: $('annualKmManual'),
+      consumption: $('consumption'),
+      fuelPrice: $('fuelPrice'),
+      fixedCostMode: $('fixedCostMode'),
+      annualInsurance: $('annualInsurance'),
+      annualTax: $('annualTax'),
+      annualMaintenance: $('annualMaintenance'),
+      otherAnnualCosts: $('otherAnnualCosts')
+    };
+
+    const state = {
+      inputs: {}, results: null, isValid: false, isCalculated: false,
+      source: 'manual', touched: {}, hasAttemptedSubmit: false
+    };
+
+    const SUPPORTED_CURRENCIES = new Set(['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR']);
+    const formatTR = (value, digits=2) => new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 0, maximumFractionDigits: digits
+    }).format(value);
+    const getCurrencyCode = () => SUPPORTED_CURRENCIES.has(els.currencyCode?.value) ? els.currencyCode.value : 'USD';
+    const getCurrencySymbol = () => {
+      try{
+        const parts = new Intl.NumberFormat('en-US',{style:'currency',currency:getCurrencyCode(),currencyDisplay:'narrowSymbol',maximumFractionDigits:0}).formatToParts(0);
+        return (parts.find(p=>p.type==='currency')||{}).value || getCurrencyCode();
+      }catch{return getCurrencyCode();}
+    };
+    const updateCurrencyUI = () => document.querySelectorAll('.currency-prefix').forEach(node => node.textContent=getCurrencySymbol());
+    const money = (v,d=2) => Number.isFinite(v)
+      ? new Intl.NumberFormat('en-US',{style:'currency',currency:getCurrencyCode(),minimumFractionDigits:0,maximumFractionDigits:d}).format(v)
+      : '—';
+    const km = (v) => formatTR(v,0) + ' km';
+    const pct = (v,d=1) => formatTR(v,d) + '%';
+
+    function cleanNumericText(value, allowMoney=false){
+      let raw = String(value ?? '').trim();
+      if(!raw) return '';
+      if(allowMoney){
+        raw = raw.replace(/[^0-9.,\-\s\u00A0\u202F]/g,'');
+      }
+      return raw.replace(/[\s\u00A0\u202F]+/g,'');
+    }
+
+    function splitSign(raw){
+      if(!raw) return {sign:1, body:''};
+      if(raw[0] === '-') return {sign:-1, body:raw.slice(1)};
+      return {sign:1, body:raw};
+    }
+
+    function validGroupedInteger(part, sep){
+      if(!part) return false;
+      if(!part.includes(sep)) return /^\d+$/.test(part);
+      const groups = part.split(sep);
+      return /^\d{1,3}$/.test(groups[0]) && groups.slice(1).every(g => /^\d{3}$/.test(g));
+    }
+
+    function parseDecimalInput(value){
+      const raw = cleanNumericText(value, false);
+      if(!raw) return null;
+      if(!/^-?[0-9.,]+$/.test(raw)) return NaN;
+      const {sign, body} = splitSign(raw);
+      if(!body) return NaN;
+      const commaCount = (body.match(/,/g) || []).length;
+      const dotCount = (body.match(/\./g) || []).length;
+      let normalized = '';
+
+      if(commaCount && dotCount){
+        const decimalSep = body.lastIndexOf(',') > body.lastIndexOf('.') ? ',' : '.';
+        const groupSep = decimalSep === ',' ? '.' : ',';
+        const decimalCount = decimalSep === ',' ? commaCount : dotCount;
+        if(decimalCount !== 1) return NaN;
+        const idx = body.lastIndexOf(decimalSep);
+        const intPart = body.slice(0, idx);
+        const fracPart = body.slice(idx + 1);
+        if(!/^\d+$/.test(fracPart) || !validGroupedInteger(intPart, groupSep)) return NaN;
+        normalized = intPart.split(groupSep).join('') + '.' + fracPart;
+      } else if(commaCount || dotCount){
+        const sep = commaCount ? ',' : '.';
+        const count = commaCount || dotCount;
+        if(count === 1){
+          const [intPart, fracPart] = body.split(sep);
+          if(!/^\d+$/.test(intPart) || !/^\d+$/.test(fracPart)) return NaN;
+          normalized = intPart + '.' + fracPart;
+        } else {
+          if(!validGroupedInteger(body, sep)) return NaN;
+          normalized = body.split(sep).join('');
+        }
+      } else {
+        if(!/^\d+$/.test(body)) return NaN;
+        normalized = body;
+      }
+      const n = Number(normalized) * sign;
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function parseMoneyInput(value){
+      const raw = cleanNumericText(value, true);
+      if(!raw) return null;
+      if(!/^-?[0-9.,]+$/.test(raw)) return NaN;
+      const {sign, body} = splitSign(raw);
+      if(!body) return NaN;
+      const commaCount = (body.match(/,/g) || []).length;
+      const dotCount = (body.match(/\./g) || []).length;
+      let normalized = '';
+
+      if(commaCount && dotCount){
+        const decimalSep = body.lastIndexOf(',') > body.lastIndexOf('.') ? ',' : '.';
+        const groupSep = decimalSep === ',' ? '.' : ',';
+        const decimalCount = decimalSep === ',' ? commaCount : dotCount;
+        if(decimalCount !== 1) return NaN;
+        const idx = body.lastIndexOf(decimalSep);
+        const intPart = body.slice(0, idx);
+        const fracPart = body.slice(idx + 1);
+        if(!/^\d+$/.test(fracPart) || !validGroupedInteger(intPart, groupSep)) return NaN;
+        normalized = intPart.split(groupSep).join('') + '.' + fracPart;
+      } else if(commaCount || dotCount){
+        const sep = commaCount ? ',' : '.';
+        const count = commaCount || dotCount;
+        if(count === 1){
+          const [left, right] = body.split(sep);
+          if(!/^\d+$/.test(left) || !/^\d+$/.test(right)) return NaN;
+          normalized = right.length === 3 && left !== '0' ? left + right : left + '.' + right;
+        } else {
+          if(!validGroupedInteger(body, sep)) return NaN;
+          normalized = body.split(sep).join('');
+        }
+      } else {
+        if(!/^\d+$/.test(body)) return NaN;
+        normalized = body;
+      }
+      const n = Number(normalized) * sign;
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function parseIntegerInput(value){
+      const raw = cleanNumericText(value, false);
+      if(!raw) return null;
+      if(!/^-?[0-9.,]+$/.test(raw)) return NaN;
+      const {sign, body} = splitSign(raw);
+      if(!body || (body.includes(',') && body.includes('.'))) return NaN;
+      if(/^\d+$/.test(body)) return Number(body) * sign;
+      const sep = body.includes(',') ? ',' : '.';
+      if(!validGroupedInteger(body, sep)) return NaN;
+      const n = Number(body.split(sep).join('')) * sign;
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function serializeInputs(){
+      return {
+        currencyCode: getCurrencyCode(),
+        monthlyKm: els.monthlyKm.value,
+        annualKmManual: els.annualKmManual.value,
+        consumption: els.consumption.value,
+        fuelPrice: els.fuelPrice.value,
+        fixedCostMode: els.fixedCostMode.value,
+        annualInsurance: els.annualInsurance.value,
+        annualTax: els.annualTax.value,
+        annualMaintenance: els.annualMaintenance.value,
+        otherAnnualCosts: els.otherAnnualCosts.value
+      };
+    }
+
+    function applySerializedInputs(data){
+      Object.keys(serializeInputs()).forEach(key => {
+        if(key === 'fixedCostMode') return;
+        if(key === 'currencyCode'){ if(els.currencyCode && SUPPORTED_CURRENCIES.has(data?.currencyCode)) els.currencyCode.value=data.currencyCode; return; }
+        if(els[key] && typeof data?.[key] === 'string') els[key].value = data[key];
+      });
+      els.fixedCostMode.value = data?.fixedCostMode === 'fuelOnly' ? 'fuelOnly' : 'include';
+    }
+
+    function saveManualState(){
+      if(state.source !== 'manual' || !state.isValid) return;
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          version: STORAGE_VERSION, source: 'manual', inputs: serializeInputs()
+        }));
+      }catch{}
+    }
+
+    function clearSavedState(){
+      try{ localStorage.removeItem(STORAGE_KEY); }catch{}
+    }
+
+    function clearLegacyStorageKeys(){
+      LEGACY_STORAGE_KEYS.forEach(key => {
+        try{ localStorage.removeItem(key); }catch{}
+      });
+    }
+
+    function isSavedPayloadShapeValid(saved){
+      if(!saved || saved.version !== STORAGE_VERSION || saved.source !== 'manual' || !saved.inputs || typeof saved.inputs !== 'object') return false;
+      const keys = Object.keys(serializeInputs());
+      if(saved.inputs.fixedCostMode !== 'include' && saved.inputs.fixedCostMode !== 'fuelOnly') return false;
+      if(!SUPPORTED_CURRENCIES.has(saved.inputs.currencyCode)) return false;
+      return keys.every(key => typeof saved.inputs[key] === 'string' && saved.inputs[key].length <= 80);
+    }
+
+    function loadSavedState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return false;
+        if(raw.length > 5000){ clearSavedState(); return false; }
+        const saved = JSON.parse(raw);
+        if(!isSavedPayloadShapeValid(saved)){ clearSavedState(); return false; }
+        applySerializedInputs(saved.inputs);
+        state.source = 'manual';
+        resetValidationState();
+        setFixedCostInputsState();
+        validateAndCalc(false);
+        if(!state.isValid){
+          clearSavedState();
+          clearTextInputs();
+          els.fixedCostMode.value = 'include';
+          setFixedCostInputsState();
+          setEmptyState();
+          return false;
+        }
+        return true;
+      }catch{
+        clearSavedState();
+        return false;
+      }
+    }
+
+    const ERROR_IDS = ['monthlyKm','annualKmManual','consumption','fuelPrice', ...FIXED_COST_IDS];
+    function clearInputErrors(){
+      ERROR_IDS.forEach(id => {
+        const input = els[id];
+        const field = input?.closest('.field');
+        const errorEl = $(id + 'Error');
+        input?.classList.remove('input-error');
+        input?.setAttribute('aria-invalid', 'false');
+        field?.classList.remove('error-state');
+        if(errorEl) errorEl.textContent = '';
+      });
+    }
+
+    function setFieldError(id, message){
+      const input = els[id];
+      if(!input) return;
+      input.classList.add('input-error');
+      input.setAttribute('aria-invalid', 'true');
+      input.closest('.field')?.classList.add('error-state');
+      const errorEl = $(id + 'Error');
+      if(errorEl) errorEl.textContent = message;
+    }
+
+    function resetValidationState(){
+      state.touched = {};
+      state.hasAttemptedSubmit = false;
+      clearInputErrors();
+    }
+
+    function shouldShowError(id, force=false){
+      return !!(force || state.hasAttemptedSubmit || state.touched[id]);
+    }
+
+    function getData(){
+      const raw = serializeInputs();
+      const data = {
+        raw,
+        monthlyKm: parseIntegerInput(raw.monthlyKm),
+        annualKmManual: parseIntegerInput(raw.annualKmManual),
+        consumption: parseDecimalInput(raw.consumption),
+        fuelPrice: parseDecimalInput(raw.fuelPrice),
+        fixedCostMode: raw.fixedCostMode === 'fuelOnly' ? 'fuelOnly' : 'include',
+        annualInsurance: parseMoneyInput(raw.annualInsurance),
+        annualTax: parseMoneyInput(raw.annualTax),
+        annualMaintenance: parseMoneyInput(raw.annualMaintenance),
+        otherAnnualCosts: parseMoneyInput(raw.otherAnnualCosts)
+      };
+      state.inputs = data;
+      return data;
+    }
+
+    function validateInputs(d, force=false){
+      clearInputErrors();
+      let valid = true;
+      const fail = (id, message) => {
+        valid = false;
+        if(shouldShowError(id, force)) setFieldError(id, message);
+      };
+      const rawFilled = id => String(d.raw[id] ?? '').trim() !== '';
+
+      if(rawFilled('annualKmManual') && !Number.isFinite(d.annualKmManual)) fail('annualKmManual', 'Enter a whole-number distance. Example: 15,000');
+      else if(Number.isFinite(d.annualKmManual) && (d.annualKmManual < 0 || d.annualKmManual > 12000000)) fail('annualKmManual', 'Annual distance must be between 0 and 12,000,000 km.');
+
+      const annualPositive = Number.isFinite(d.annualKmManual) && d.annualKmManual > 0;
+      if(!annualPositive){
+        if(rawFilled('monthlyKm') && !Number.isFinite(d.monthlyKm)) fail('monthlyKm', 'Enter a whole-number distance. Example: 1,200');
+        else if(Number.isFinite(d.monthlyKm) && (d.monthlyKm < 0 || d.monthlyKm > 1000000)) fail('monthlyKm', 'Monthly distance must be between 0 and 1,000,000 km.');
+      }
+
+      const monthlyPositive = Number.isFinite(d.monthlyKm) && d.monthlyKm > 0;
+      if(!annualPositive && !monthlyPositive){
+        fail('monthlyKm', 'Enter either monthly or annual distance greater than 0.');
+        fail('annualKmManual', 'Enter either monthly or annual distance greater than 0.');
+      }
+
+      if(!rawFilled('consumption')) fail('consumption', 'Average fuel consumption is required.');
+      else if(!Number.isFinite(d.consumption)) fail('consumption', 'Enter a valid decimal number. Example: 6.8');
+      else if(d.consumption <= 0 || d.consumption > 1000) fail('consumption', 'Consumption must be greater than 0 and no more than 1,000 L/100 km.');
+
+      if(!rawFilled('fuelPrice')) fail('fuelPrice', 'Fuel price is required.');
+      else if(!Number.isFinite(d.fuelPrice)) fail('fuelPrice', 'Enter a valid price. Example: 1.60');
+      else if(d.fuelPrice <= 0 || d.fuelPrice > 1000000) fail('fuelPrice', 'Fuel price must be greater than 0 and within the supported range.');
+
+      if(d.fixedCostMode === 'include'){
+        FIXED_COST_IDS.forEach(id => {
+          if(!rawFilled(id)) return;
+          const value = d[id];
+          if(!Number.isFinite(value)) fail(id, 'Enter a valid amount. Example: 1,800 or 1,800.50');
+          else if(value < 0) fail(id, 'Amount cannot be negative.');
+          else if(value > 1000000000000) fail(id, 'Amount exceeds the supported maximum.');
+        });
+      }
+      return valid;
+    }
+
+    function compute(d){
+      const annualKm = Number.isFinite(d.annualKmManual) && d.annualKmManual > 0
+        ? d.annualKmManual
+        : (Number.isFinite(d.monthlyKm) ? d.monthlyKm * 12 : 0);
+      if(!(annualKm > 0) || !(d.consumption > 0) || !(d.fuelPrice > 0)) return null;
+
+      const annualFuelLiters = annualKm * d.consumption / 100;
+      const annualFuelCost = annualFuelLiters * d.fuelPrice;
+      const rawFixedCost = FIXED_COST_IDS.reduce((sum,id) => sum + (Number.isFinite(d[id]) && d[id] > 0 ? d[id] : 0), 0);
+      const includedFixedCost = d.fixedCostMode === 'fuelOnly' ? 0 : rawFixedCost;
+      const annualTotalCost = annualFuelCost + includedFixedCost;
+      const monthlyCost = annualTotalCost / 12;
+      const perKm = annualTotalCost / annualKm;
+      const per100Km = perKm * 100;
+      const fuelShare = annualTotalCost > 0 ? annualFuelCost / annualTotalCost * 100 : 0;
+      const fixedShare = annualTotalCost > 0 ? includedFixedCost / annualTotalCost * 100 : 0;
+      const fuelPerKm = annualFuelCost / annualKm;
+      const fixedPerKm = includedFixedCost / annualKm;
+      const values = [annualFuelLiters,annualFuelCost,rawFixedCost,includedFixedCost,annualTotalCost,monthlyCost,perKm,per100Km,fuelShare,fixedShare,fuelPerKm,fixedPerKm];
+      if(values.some(v => !Number.isFinite(v))) return null;
+      return {annualKm, annualFuelLiters, annualFuelCost, rawFixedCost, includedFixedCost, annualTotalCost, monthlyCost, perKm, per100Km, fuelShare, fixedShare, fuelPerKm, fixedPerKm};
+    }
+
+    function updateActionButtons(enabled){
+      ['copyBtn','shareBtn','printBtn'].forEach(id => { const el=$(id); if(el) el.disabled = !enabled; });
+    }
+
+    function setEmptyState(clearValidation=true){
+      $('statusText').textContent = 'Enter the required fields or use Example Data to see a result.';
+      $('statusBadge').textContent = 'Waiting for data';
+      $('statusBadge').className = 'badge';
+      $('highlightCard').classList.add('is-empty');
+      $('mainResult').textContent = '—';
+      $('mainResultText').textContent = 'Your calculated cost per kilometer will appear here.';
+      ['per100KmResult','monthlyCostResult','annualCostResult','annualKmResult','annualFuelCostResult','annualFixedCostResult'].forEach(id => $(id).textContent='—');
+      ['mini1','mini2','mini3','mini4','mini5','mini6'].forEach(id => $(id).classList.add('is-empty'));
+      $('fuelSubline').textContent = 'Based on consumption × fuel price';
+      $('fixedSubline').textContent = 'Insurance + vehicle tax + maintenance + other';
+      $('health1').textContent='—';
+      $('health2').textContent='—';
+      $('health3').textContent='—';
+      $('commentBox').textContent='Waiting for data. After calculation, this area shows the distance basis and cost breakdown.';
+      $('scenarioTableBody').innerHTML = `
+        <tr><td>Base scenario</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+        <tr><td>Fuel +10%</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+        <tr><td>Maintenance +20%</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>
+        <tr><td>Distance +20%</td><td>—</td><td>—</td><td>—</td><td>Waiting for data</td></tr>`;
+      if(clearValidation) clearInputErrors();
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      updateActionButtons(false);
+    }
+
+    function focusFirstInvalidField(){
+      document.querySelector('.input-error')?.focus();
+    }
+
+    function render(result, d){
+      state.results = result;
+      state.isValid = true;
+      state.isCalculated = true;
+      $('statusText').textContent = 'Calculation complete. The cost breakdown is ready.';
+      $('statusBadge').textContent = 'Ready';
+      $('statusBadge').className = 'badge good';
+      $('highlightCard').classList.remove('is-empty');
+      $('mainResult').textContent = money(result.perKm,2);
+      $('mainResultText').textContent = d.fixedCostMode === 'fuelOnly'
+        ? 'This result divides fuel cost by distance only.'
+        : 'This result divides fuel plus the annual costs you entered by distance.';
+      $('per100KmResult').textContent = money(result.per100Km,2);
+      $('monthlyCostResult').textContent = money(result.monthlyCost,2);
+      $('annualCostResult').textContent = money(result.annualTotalCost,2);
+      $('annualKmResult').textContent = km(result.annualKm);
+      $('annualFuelCostResult').textContent = money(result.annualFuelCost,2);
+      $('annualFixedCostResult').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded' : money(result.includedFixedCost,2);
+      $('fuelSubline').textContent = `${formatTR(d.consumption,3)} L/100 km × ${money(d.fuelPrice,2)}/L`;
+      $('fixedSubline').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded in this mode' : 'Insurance + vehicle tax + maintenance + other';
+      ['mini1','mini2','mini3','mini4','mini5','mini6'].forEach(id => $(id).classList.remove('is-empty'));
+      $('health1').textContent = pct(result.fuelShare,1);
+      $('health2').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded' : pct(result.fixedShare,1);
+      $('health3').textContent = `${formatTR(d.consumption,2)} L`;
+      $('commentBox').textContent = buildComment(result, d);
+      renderScenarios(d, result);
+      clearInputErrors();
+      updateActionButtons(true);
+    }
+
+    function buildComment(r, d){
+      const kmSource = Number.isFinite(d.annualKmManual) && d.annualKmManual > 0
+        ? 'The annual-distance field was used directly.'
+        : 'Annual distance was estimated as monthly distance × 12.';
+      let text = `${kmSource} At ${formatTR(r.annualKm,0)} km per year, fuel costs about ${money(r.annualFuelCost,2)} annually and ${money(r.fuelPerKm,2)} per km. `;
+      if(d.fixedCostMode === 'fuelOnly'){
+        text += 'Fixed annual costs are excluded in this mode.';
+      }else{
+        text += `Entered annual fixed costs total ${money(r.includedFixedCost,2)} and account for ${pct(r.fixedShare,1)} of the annual cost. `;
+        text += 'Depreciation, financing or other items are included only if you enter them under “Other annual costs”.';
+      }
+      return text;
+    }
+
+    function signedDeltaText(value){
+      const abs = Math.abs(value);
+      if(abs < 0.05) return 'no change';
+      return `%${formatTR(abs,1)} ${value > 0 ? 'increases' : 'decreases'}`;
+    }
+
+    function scenarioDeltaNote(res, base){
+      const perDelta = (res.perKm / base.perKm - 1) * 100;
+      const totalDelta = (res.annualTotalCost / base.annualTotalCost - 1) * 100;
+      return `Cost per km ${signedDeltaText(perDelta)}; annual total ${signedDeltaText(totalDelta)}.`;
+    }
+
+    function scenarioRow(name, res, base, note=null){
+      return `<tr><td>${name}</td><td>${money(res.perKm,2)}</td><td>${money(res.per100Km,2)}</td><td>${money(res.annualTotalCost,2)}</td><td>${note || scenarioDeltaNote(res,base)}</td></tr>`;
+    }
+
+    function renderScenarios(d, base){
+      const fuelUp = compute({...d, fuelPrice: d.fuelPrice * 1.10});
+      const middleName = d.fixedCostMode === 'fuelOnly' ? 'Consumption -10%' : 'Maintenance +20%';
+      const middle = d.fixedCostMode === 'fuelOnly'
+        ? compute({...d, consumption: d.consumption * 0.90})
+        : compute({...d, annualMaintenance: (Number.isFinite(d.annualMaintenance) ? d.annualMaintenance : 0) * 1.20});
+      const kmUp = Number.isFinite(d.annualKmManual) && d.annualKmManual > 0
+        ? compute({...d, annualKmManual: d.annualKmManual * 1.20})
+        : compute({...d, monthlyKm: d.monthlyKm * 1.20});
+      $('scenarioTableBody').innerHTML = [
+        scenarioRow('Base scenario', base, base, 'Result using the current inputs.'),
+        scenarioRow('Fuel +10%', fuelUp, base),
+        scenarioRow(middleName, middle, base),
+        scenarioRow('Distance +20%', kmUp, base)
+      ].join('');
+    }
+
+    function validateAndCalc(showError=true){
+      const d = getData();
+      const inputsAreValid = validateInputs(d, showError);
+      const result = inputsAreValid ? compute(d) : null;
+      if(!result){
+        if(state.source === 'manual') clearSavedState();
+        setEmptyState(false);
+        if(showError || state.hasAttemptedSubmit){
+          $('statusText').textContent = 'Valid distance, consumption and fuel-price values are required.';
+          $('statusBadge').textContent = 'Check your inputs';
+          $('statusBadge').className = 'badge bad';
+          $('mainResult').textContent = 'Invalid input';
+          $('mainResultText').textContent = 'Check the highlighted fields.';
+          focusFirstInvalidField();
+        }
+        return false;
+      }
+      render(result, d);
+      if(state.source === 'manual') saveManualState();
+      return true;
+    }
+
+    function flashAndScrollToResults(){
+      if(!state.isValid || !state.results) return;
+      const panel = $('resultPanel');
+      if(!panel) return;
+      panel.classList.remove('result-flash');
+      void panel.offsetWidth;
+      panel.classList.add('result-flash');
+      panel.scrollIntoView({behavior:'smooth', block:'start'});
+      setTimeout(() => panel.classList.remove('result-flash'), 1200);
+    }
+
+    function calculateKmCost(){
+      state.source = 'manual';
+      state.hasAttemptedSubmit = true;
+      if(validateAndCalc(true)) flashAndScrollToResults();
+    }
+
+    function setScenarioValues(values){
+      Object.entries(values).forEach(([key,value]) => { if(els[key]) els[key].value = value; });
+      setFixedCostInputsState();
+    }
+
+    function fillExample(){
+      clearTimeout(debounceTimer);
+      state.source = 'example';
+      resetValidationState();
+      setScenarioValues({monthlyKm:'1200',annualKmManual:'',consumption:'6.8',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'900',annualTax:'600',annualMaintenance:'800',otherAnnualCosts:'300'});
+      clearChipActive();
+      clearSavedState();
+      validateAndCalc(false);
+      flashAndScrollToResults();
+    }
+
+    function fillScenario(type, btn){
+      clearTimeout(debounceTimer);
+      state.source = 'scenario';
+      resetValidationState();
+      clearChipActive();
+      if(btn) btn.classList.add('active');
+      const scenarios = {
+        economy:{monthlyKm:'1500',annualKmManual:'',consumption:'5.5',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'800',annualTax:'450',annualMaintenance:'650',otherAnnualCosts:'200'},
+        city:{monthlyKm:'1100',annualKmManual:'',consumption:'8.2',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'1000',annualTax:'650',annualMaintenance:'900',otherAnnualCosts:'300'},
+        high:{monthlyKm:'1400',annualKmManual:'',consumption:'10.5',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'1100',annualTax:'750',annualMaintenance:'1200',otherAnnualCosts:'400'},
+        fuelonly:{monthlyKm:'1200',annualKmManual:'',consumption:'6.8',fuelPrice:'1.60',fixedCostMode:'fuelOnly',annualInsurance:'',annualTax:'',annualMaintenance:'',otherAnnualCosts:''}
+      };
+      if(!scenarios[type]) return;
+      setScenarioValues(scenarios[type]);
+      clearSavedState();
+      validateAndCalc(false);
+      flashAndScrollToResults();
+    }
+
+    function clearChipActive(){
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    }
+
+    function clearTextInputs(){
+      TEXT_INPUT_IDS.forEach(id => { if(els[id]) els[id].value=''; });
+    }
+
+    function resetForm(){
+      clearTimeout(debounceTimer);
+      resetValidationState();
+      clearTextInputs();
+      els.currencyCode.value='USD';
+      updateCurrencyUI();
+      els.fixedCostMode.value='include';
+      setFixedCostInputsState();
+      clearChipActive();
+      clearSavedState();
+      state.source = 'manual';
+      setEmptyState();
+    }
+
+    function fallbackCopy(text){
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch { ok = false; }
+      textarea.remove();
+      return ok;
+    }
+
+    function hasValidResult(){
+      return !!(state.isValid && state.results);
+    }
+
+    function buildResultSummary(){
+      return `Cost per Kilometer Calculator Result\n\nCost per kilometer: ${$('mainResult').textContent}\nCost per 100 km: ${$('per100KmResult').textContent}\nAverage monthly cost: ${$('monthlyCostResult').textContent}\nAnnual total cost: ${$('annualCostResult').textContent}\nAnnual distance: ${$('annualKmResult').textContent}\nAnnual fuel cost: ${$('annualFuelCostResult').textContent}\nAnnual fixed costs included: ${$('annualFixedCostResult').textContent}\nFuel share: ${$('health1').textContent}\nFixed-cost share: ${$('health2').textContent}\nConsumption: ${$('health3').textContent}/100 km\n\nNote: ${$('commentBox').textContent}`;
+    }
+
+    async function copyTextWithFallback(text, successMessage){
+      let copied = false;
+      if(navigator.clipboard && window.isSecureContext){
+        try{ await navigator.clipboard.writeText(text); copied = true; }catch{}
+      }
+      if(!copied) copied = fallbackCopy(text);
+      alert(copied ? successMessage : 'Copy failed.');
+      return copied;
+    }
+
+    function copyResult(){
+      if(!hasValidResult()) return;
+      copyTextWithFallback(buildResultSummary(), 'Result copied.');
+    }
+
+    async function shareResult(){
+      if(!hasValidResult()) return;
+      const shareText = `Cost per Kilometer Calculator result: ${$('mainResult').textContent}/km, ${$('annualCostResult').textContent} annual total.`;
+      if(navigator.share){
+        try{
+          await navigator.share({title:'Cost per Kilometer Calculator', text:shareText, url:window.location.href});
+          return;
+        }catch(error){
+          if(error?.name === 'AbortError') return;
+        }
+      }
+      await copyTextWithFallback(`${shareText}\n${window.location.href}`, 'Share text copied.');
+    }
+
+    function printResult(){
+      if(hasValidResult()) window.print();
+    }
+
+    function setFixedCostInputsState(){
+      const disabled = els.fixedCostMode.value === 'fuelOnly';
+      FIXED_COST_IDS.forEach(id => {
+        els[id].disabled = disabled;
+        els[id].closest('.fixed-cost-field')?.classList.toggle('is-disabled', disabled);
+      });
+    }
+
+    function formatFieldOnBlur(id){
+      const el = els[id];
+      if(!el || !el.value.trim()) return;
+      let value = NaN;
+      let digits = 2;
+      if(id === 'monthlyKm' || id === 'annualKmManual'){
+        value = parseIntegerInput(el.value); digits = 0;
+      }else if(id === 'consumption'){
+        value = parseDecimalInput(el.value); digits = 3;
+      }else if(id === 'fuelPrice'){
+        value = parseDecimalInput(el.value); digits = 3;
+      }else{
+        value = parseMoneyInput(el.value); digits = 2;
+      }
+      if(Number.isFinite(value) && value >= 0) el.value = formatTR(value, digits);
+    }
+
+    let debounceTimer;
+    function debouncedCalc(){
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => validateAndCalc(false), 250);
+    }
+
+    function setupManualEvents(){
+      $('kmCostForm').addEventListener('submit', event => {
+        event.preventDefault();
+        calculateKmCost();
+      });
+      TEXT_INPUT_IDS.forEach(id => {
+        els[id].addEventListener('input', () => {
+          state.source = 'manual';
+          clearChipActive();
+          debouncedCalc();
+        });
+        els[id].addEventListener('blur', () => {
+          state.source = 'manual';
+          state.touched[id] = true;
+          formatFieldOnBlur(id);
+          validateAndCalc(false);
+        });
+      });
+      els.fixedCostMode.addEventListener('change', () => {
+        state.source = 'manual';
+        clearChipActive();
+        setFixedCostInputsState();
+        debouncedCalc();
+      });
+      els.currencyCode.addEventListener('change', () => {
+        state.source = 'manual';
+        clearChipActive();
+        updateCurrencyUI();
+        validateAndCalc(false);
+        if(state.isValid) saveManualState();
+      });
+    }
+
+    setupManualEvents();
+    updateCurrencyUI();
+    setFixedCostInputsState();
+    setEmptyState();
+    clearLegacyStorageKeys();
+    loadSavedState();
+    updateCurrencyUI();
+    if(state.isValid) validateAndCalc(false);
+  </script>
+<script src="../ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','clear','clear data','reset data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

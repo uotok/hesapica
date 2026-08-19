@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calorie Calculator: REE, TDEE &amp; Maintenance Calories | Hesapica</title>
+<meta content="Estimate resting energy expenditure (REE) and daily maintenance calories with the Mifflin–St Jeor equation, activity factors and a ±10% uncertainty range." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Calorie Calculator: REE, TDEE &amp; Maintenance Calories | Hesapica" property="og:title"/>
+<meta content="Estimate resting energy expenditure (REE) and daily maintenance calories with the Mifflin–St Jeor equation, activity factors and a ±10% uncertainty range." property="og:description"/>
+<meta content="https://hesapica.com/en/calorie-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Calorie Calculator: REE, TDEE &amp; Maintenance Calories | Hesapica" name="twitter:title"/>
+<meta content="Estimate resting energy expenditure (REE) and daily maintenance calories with the Mifflin–St Jeor equation, activity factors and a ±10% uncertainty range." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" name="twitter:image:alt"/>
+<meta content="https://hesapica.com/en/calorie-calculator" name="twitter:url"/>
+<meta content="@hesapica" name="twitter:site"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--line:#e5e7eb;--muted:#6b7280;--text:#1f2937;--bad:#b91c1c;--shadow:0 16px 38px rgba(79,70,229,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,#f6f8fc);color:var(--text);line-height:1.65}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1140px,calc(100% - 28px));margin:0 auto}.topbar{padding:16px 0 8px}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.hero{padding:30px;border-radius:26px;background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.16);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center}.hero h1{margin:0 0 8px;font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-.03em}.hero p{margin:0;color:#374151;font-size:17px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-weight:700;color:#4338ca;font-size:13px}.hero-note{padding:20px;border-radius:20px;background:#fff;border:1px solid #dbe4ff}.hero-note strong{display:block;font-size:20px;color:#312e81;margin-bottom:8px}.hero-note p{font-size:14px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:20px;margin-top:20px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}.card h2{margin:0 0 12px;font-size:24px;color:#312e81}.note{margin:0 0 14px;color:#4b5563}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14px}input,select{width:100%;min-height:52px;border:1px solid #d9def0;border-radius:14px;padding:10px 14px;font-size:16px;outline:none;background:#fff}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}.hint{margin-top:6px;font-size:13px;color:#6b7280}.error{display:none;margin-top:6px;font-size:13px;color:var(--bad);font-weight:700}.field.invalid .error{display:block}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff7f7}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:none;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.btn-soft{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}.btn:disabled{opacity:.5;cursor:not-allowed}.validation{display:none;margin-top:14px;padding:12px 14px;border-radius:14px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-weight:700;font-size:14px}.validation.show{display:block}
+.results{position:sticky;top:20px;display:grid;gap:12px}.result-main{font-size:40px;font-weight:900;letter-spacing:-.03em;color:#111827}.muted{color:#6b7280}.kpi{display:grid;gap:10px;margin-top:12px}.kpi-row{display:flex;justify-content:space-between;gap:12px;padding:12px;border:1px solid #e5e7eb;border-radius:12px;background:#fcfcff}.kpi-row span{text-align:right;font-weight:800}.status{padding:14px 16px;border-radius:16px;background:#f8faff;border:1px solid #dbe4ff;color:#374151}.status strong{color:#4338ca}.range-box{padding:16px;border-radius:16px;background:#eef2ff;border:1px solid #c7d2fe}.range-box .big{font-size:24px;font-weight:900;color:#312e81}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.content-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}.content-card h2{margin:0 0 12px;color:#312e81}.formula{padding:14px 16px;border-radius:14px;background:#f8faff;border:1px solid #dbe4ff;font-weight:700;color:#334155}.notice{margin-top:14px;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}.faq details{border:1px solid #e5e7eb;border-radius:14px;padding:12px 14px;background:#fff}.faq details+details{margin-top:10px}.faq summary{font-weight:800;cursor:pointer}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rel{display:block;padding:18px;border-radius:18px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 14px 26px rgba(91,79,246,.18)}.rel strong{display:block;margin-bottom:6px}.rel .muted{color:rgba(255,255,255,.88)}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}.footer-note{padding:28px 0 36px;text-align:center;color:#6b7280;font-size:14px}
+@media(max-width:980px){.hero-grid,.layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid,.related{grid-template-columns:1fr}.result-main{font-size:32px}.hero,.card,.content-card{padding:20px}.actions{flex-direction:column}.btn{width:100%}.kpi-row{flex-direction:column}.kpi-row span{text-align:left}.hc-ad-slot .adsbygoogle{min-height:0}}
+@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related-section,.footer-note{display:none!important}.hero,.card,.content-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.layout,.content-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+</style>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .tool-layout > *, .layout > *{min-width:0}
+  .hc-language-switch{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style>
+<link href="https://hesapica.com/en/calorie-calculator" rel="canonical"/><link href="https://hesapica.com/en/calorie-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/kalori-ihtiyaci-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Calorie Calculator: REE, TDEE & Maintenance Calories","url":"https://hesapica.com/en/calorie-calculator","description":"Estimate resting energy expenditure (REE) and daily maintenance calories with the Mifflin–St Jeor equation, activity factors and a ±10% uncertainty range.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Health","item":"https://hesapica.com/en/#health"},{"@type":"ListItem","position":3,"name":"Calorie Calculator: REE, TDEE & Maintenance Calories","item":"https://hesapica.com/en/calorie-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are calorie needs calculated?","acceptedAnswer":{"@type":"Answer","text":"The Mifflin–St Jeor equation first estimates resting energy expenditure. The selected activity factor then produces an approximate daily maintenance-calorie estimate."}},{"@type":"Question","name":"Why is the result not an exact number?","acceptedAnswer":{"@type":"Answer","text":"The equations do not directly measure metabolism or daily movement. Body composition, actual activity and individual metabolic differences can change real energy needs, so the result is an estimate."}},{"@type":"Question","name":"How many calories should I eat to lose or gain weight?","acceptedAnswer":{"@type":"Answer","text":"This calculator does not prescribe a personal calorie target for weight change. Goals should be considered with health status, starting weight, eating pattern and other individual factors."}},{"@type":"Question","name":"How should I choose an activity level?","acceptedAnswer":{"@type":"Answer","text":"Consider normal daily movement and regular exercise together. Because activity factors are approximate, choosing a level above your routine can overestimate maintenance calories."}},{"@type":"Question","name":"Can this calculator replace a dietitian or doctor?","acceptedAnswer":{"@type":"Answer","text":"No. The result is a general planning estimate and does not replace individualized medical or nutrition advice."}}]}</script></head>
+<body>
+<noscript><div style="max-width:1140px;margin:12px auto;padding:12px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.5 Inter,system-ui,sans-serif">This calculator requires JavaScript. Please enable JavaScript in your browser.</div></noscript>
+<div class="container topbar"><nav aria-label="breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#health">Health</a><span>/</span><strong>Calorie Calculator</strong></nav><div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/kalori-ihtiyaci-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container"><section class="hero"><div class="hero-grid"><div><h1>Calorie Calculator</h1><p>Use height, weight, age, sex and daily activity level to estimate <strong>resting energy expenditure (REE)</strong> and <strong>daily maintenance calories</strong> with the Mifflin–St Jeor equation.</p><div class="chips"><span class="chip">Mifflin–St Jeor</span><span class="chip">Estimated REE</span><span class="chip">Activity factor</span><span class="chip">Uncertainty range</span></div></div><aside class="hero-note"><strong>There is no single exact calorie requirement</strong><p>Predictive equations do not directly measure metabolism. Actual energy expenditure can vary with body composition, daily movement and individual metabolic differences.</p></aside></div></section></header>
+<div class="container">
+<main>
+<section class="layout">
+<section class="card"><h2>Calculation Panel</h2><p class="note">This tool provides a general energy estimate for adults age 19 and older. Pregnancy, breastfeeding, growth or specific medical conditions require individualized assessment.</p>
+<form id="calorieForm" novalidate="">
+<div class="grid">
+<div class="field" id="fieldWeight"><label for="cWeight">Weight (kg)</label><input aria-describedby="weightHint weightError" aria-invalid="false" autocomplete="off" id="cWeight" inputmode="decimal" placeholder="e.g. 78" type="text"/><div class="hint" id="weightHint">Enter 30–300 kg; both 78.5 and 78,5 are accepted.</div><div class="error" id="weightError">Enter a valid weight from 30–300 kg.</div></div>
+<div class="field" id="fieldHeight"><label for="cHeight">Height (cm)</label><input aria-describedby="heightHint heightError" aria-invalid="false" autocomplete="off" id="cHeight" inputmode="decimal" placeholder="e.g. 178" type="text"/><div class="hint" id="heightHint">Enter height from 120–250 cm.</div><div class="error" id="heightError">Enter a valid height from 120–250 cm.</div></div>
+<div class="field" id="fieldAge"><label for="cAge">Age</label><input aria-describedby="ageHint ageError" aria-invalid="false" autocomplete="off" id="cAge" inputmode="numeric" placeholder="e.g. 30" type="text"/><div class="hint" id="ageHint">The original Mifflin–St Jeor sample covered ages 19–78; individual estimation error may increase at older ages.</div><div class="error" id="ageError">Enter a whole-number age from 19–100.</div></div>
+<div class="field" id="fieldSex"><label for="cSex">Sex used by formula</label><select aria-describedby="sexHint sexError" aria-invalid="false" id="cSex"><option value="">Select</option><option value="male">Male equation</option><option value="female">Female equation</option></select><div class="hint" id="sexHint">Selects the biological-sex constant used in the Mifflin–St Jeor equation.</div><div class="error" id="sexError">Choose a formula option.</div></div>
+<div class="field full" id="fieldActivity"><label for="activity">Daily activity level</label><select aria-describedby="activityHint activityError" aria-invalid="false" id="activity"><option value="">Select</option><option value="1.2">Very low · mostly seated</option><option value="1.375">Light · light exercise 1–3 days/week</option><option value="1.55">Moderate · exercise 3–5 days/week</option><option value="1.725">High · hard activity 6–7 days/week</option><option value="1.9">Very high · heavy physical work / intense training</option></select><div class="hint" id="activityHint">Activity factors are approximate, so choose the level that best reflects your normal routine.</div><div class="error" id="activityError">Choose an activity level.</div></div>
+</div>
+<div class="actions"><button class="btn btn-primary" type="submit">Calculate</button><button class="btn btn-soft" id="sampleBtn" type="button">Example Data</button><button class="btn btn-soft" id="resetBtn" type="button">Reset</button><button class="btn btn-ghost" disabled="" id="copyBtn" type="button">Copy Result</button><button class="btn btn-ghost" disabled="" id="shareBtn" type="button">Share</button><button class="btn btn-ghost" disabled="" id="printBtn" type="button">Print / PDF</button></div>
+<div aria-live="assertive" class="validation" id="validationBox" role="alert"></div>
+</form></section>
+<aside aria-live="polite" class="card results" id="resultsPanel"><div><h2>Results</h2><div class="result-main" id="mainResult">—</div><p class="muted" id="resultNote">Enter your information to see estimated daily maintenance calories.</p></div><div class="range-box"><div class="muted">Approximate daily range</div><div class="big" id="rangeResult">—</div><div class="muted">±10% around the central estimate to emphasize uncertainty in the equation and activity factor.</div></div><div class="kpi"><div class="kpi-row"><strong>Estimated REE</strong><span id="bmrResult">—</span></div><div class="kpi-row"><strong>Activity factor</strong><span id="activityResult">—</span></div><div class="kpi-row"><strong>Weekly central estimate</strong><span id="weeklyResult">—</span></div></div><div class="status" id="statusBox"><strong>Note:</strong> This result is not a personalized nutrition prescription.</div></aside>
+</section>
+<section class="content-grid"><article class="content-card"><h2>How are calorie needs estimated?</h2><p>First, the Mifflin–St Jeor equation estimates resting energy expenditure. The selected activity factor is then applied to estimate daily maintenance calories.</p><div class="formula">Male: 10 × weight + 6.25 × height − 5 × age + 5<br/>Female: 10 × weight + 6.25 × height − 5 × age − 161</div><p>This is not a direct measurement. Methods such as indirect calorimetry can assess individual energy expenditure more directly than predictive equations.</p><div class="notice"><strong>Weight-loss / weight-gain goals:</strong> This calculator does not automatically prescribe a “−500 kcal” deficit or “+300 kcal” surplus. Weight-change plans should consider starting weight, health status and eating behavior.</div></article>
+<article class="content-card faq"><h2>Frequently Asked Questions</h2><details><summary>How are calorie needs calculated?</summary><p>The Mifflin–St Jeor equation first estimates resting energy expenditure. The selected activity factor then produces an approximate daily maintenance-calorie estimate.</p></details><details><summary>Why is the result not an exact number?</summary><p>The equations do not directly measure metabolism or daily movement. Body composition, actual activity and individual metabolic differences can change real energy needs, so the result is an estimate.</p></details><details><summary>How many calories should I eat to lose or gain weight?</summary><p>This calculator does not prescribe a personal calorie target for weight change. Goals should be considered with health status, starting weight, eating pattern and other individual factors.</p></details><details><summary>How should I choose an activity level?</summary><p>Consider normal daily movement and regular exercise together. Because activity factors are approximate, choosing a level above your routine can overestimate maintenance calories.</p></details><details><summary>Can this calculator replace a dietitian or doctor?</summary><p>No. The result is a general planning estimate and does not replace individualized medical or nutrition advice.</p></details></article></section>
+<div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq"><ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="6788455111" data-full-width-responsive="true" style="display:block"></ins></div>
+<section class="card related-section" style="margin-top:20px"><h2>Related Calculators</h2><div class="related"><a class="rel" href="/en/bmi-calculator"><strong>BMI Calculator</strong><div class="muted">Calculate adult BMI and a BMI-based reference weight range.</div></a><a class="rel" href="/en/water-intake-calculator"><strong>Water Intake Calculator</strong><div class="muted">Estimate a daily water-intake plan.</div></a><a class="rel" href="/en/age-calculator"><strong>Age Calculator</strong><div class="muted">Calculate calendar age and elapsed time from your date of birth.</div></a></div></section>
+<div class="footer-note">Hesapica · Calorie results are estimates and are not medical or personalized nutrition advice.</div>
+</main></div>
+<script>
+(function(){
+'use strict';
+const STORAGE_KEY='hesapica_en_calorie_v3';
+const allowedActivities=['1.2','1.375','1.55','1.725','1.9'],allowedSex=['male','female'];
+const $=id=>document.getElementById(id);
+const refs={form:$('calorieForm'),weight:$('cWeight'),height:$('cHeight'),age:$('cAge'),sex:$('cSex'),activity:$('activity'),validation:$('validationBox'),main:$('mainResult'),note:$('resultNote'),range:$('rangeResult'),bmr:$('bmrResult'),act:$('activityResult'),weekly:$('weeklyResult'),status:$('statusBox'),copy:$('copyBtn'),share:$('shareBtn'),print:$('printBtn')};
+let last=null,timer=null;
+function parseDecimal(v){if(v===null||v===undefined)return null;let s=String(v).trim().replace(/\s+/g,'');if(!s||!/^\d+(?:[.,]\d+)?$/.test(s))return null;const n=Number(s.replace(',','.'));return Number.isFinite(n)?n:null}
+function parseInteger(v){const n=parseDecimal(v);return n!==null&&Number.isInteger(n)?n:null}
+function setInvalid(name,on){const map={weight:refs.weight,height:refs.height,age:refs.age,sex:refs.sex,activity:refs.activity};const field=$('field'+name[0].toUpperCase()+name.slice(1));if(field)field.classList.toggle('invalid',on);if(map[name])map[name].setAttribute('aria-invalid',on?'true':'false')}
+function read(){return{weight:parseDecimal(refs.weight.value),height:parseDecimal(refs.height.value),age:parseInteger(refs.age.value),sex:refs.sex.value,activity:refs.activity.value}}
+function validate(d){const e={};if(d.weight===null||d.weight<30||d.weight>300)e.weight=true;if(d.height===null||d.height<120||d.height>250)e.height=true;if(d.age===null||d.age<19||d.age>100)e.age=true;if(!allowedSex.includes(d.sex))e.sex=true;if(!allowedActivities.includes(d.activity))e.activity=true;['weight','height','age','sex','activity'].forEach(k=>setInvalid(k,!!e[k]));return e}
+function compute(d){const ree=d.sex==='male'?10*d.weight+6.25*d.height-5*d.age+5:10*d.weight+6.25*d.height-5*d.age-161;const factor=Number(d.activity),tdee=ree*factor;return{ree,tdee,low:tdee*.90,high:tdee*1.10,weekly:tdee*7,factor}}
+function kcal(v){return Math.round(v).toLocaleString('en-US')+' kcal'}
+function enable(on){refs.copy.disabled=!on;refs.share.disabled=!on;refs.print.disabled=!on}
+function empty(){last=null;enable(false);refs.main.textContent='—';refs.note.textContent='Enter your information to see estimated daily maintenance calories.';refs.range.textContent='—';refs.bmr.textContent='—';refs.act.textContent='—';refs.weekly.textContent='—';refs.status.innerHTML='<strong>Note:</strong> This result is not a personalized nutrition prescription.'}
+function render(r,d){last={r,d};enable(true);refs.main.textContent=kcal(r.tdee)+'/day';refs.note.textContent='Estimated daily maintenance calories. The equation and activity factor do not directly measure actual energy expenditure.';refs.range.textContent=kcal(r.low)+' – '+kcal(r.high);refs.bmr.textContent=kcal(r.ree)+'/day';refs.act.textContent='× '+r.factor.toLocaleString('en-US',{maximumFractionDigits:3});refs.weekly.textContent=kcal(r.weekly)+'/week';const bmi=d.weight/Math.pow(d.height/100,2);if(d.age>78)refs.status.innerHTML='<strong>Higher uncertainty:</strong> The original Mifflin–St Jeor sample covered ages 19–78. Individual error can increase at older ages; indirect calorimetry is a more direct measurement method.';else refs.status.innerHTML=bmi>=35?'<strong>Use caution:</strong> Individual accuracy of predictive equations can decrease at higher BMI ranges. Treat the result as an approximate starting point.':'<strong>Approximate result:</strong> If your actual daily movement differs from the selected factor, your true maintenance needs will differ too. Real weight trends over several weeks can provide additional context.'}
+function safeSet(x){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(x))}catch(e){}}
+function safeGet(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return null;const p=JSON.parse(raw);if(!p||p.version!==3||typeof p.inputs!=='object')throw new Error('bad');return p}catch(e){try{localStorage.removeItem(STORAGE_KEY)}catch(_){}return null}}
+function safeRemove(){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}}
+function save(d){safeSet({version:3,inputs:{weight:String(refs.weight.value).slice(0,10),height:String(refs.height.value).slice(0,10),age:String(refs.age.value).slice(0,3),sex:d.sex,activity:d.activity}})}
+function calculate({focus=false,showErrors=true}={}){const d=read(),e=validate(d),bad=Object.keys(e);if(bad.length){empty();if(showErrors){refs.validation.textContent='Please check the highlighted fields.';refs.validation.classList.add('show');if(focus){const first={weight:refs.weight,height:refs.height,age:refs.age,sex:refs.sex,activity:refs.activity}[bad[0]];first&&first.focus()}}else refs.validation.classList.remove('show');return false}refs.validation.classList.remove('show');const r=compute(d);if(![r.ree,r.tdee,r.low,r.high,r.weekly,r.factor].every(Number.isFinite)){empty();refs.validation.textContent='A safe energy estimate could not be produced from the entered values.';refs.validation.classList.add('show');return false}render(r,d);save(d);if(focus)$('resultsPanel').scrollIntoView({behavior:'smooth',block:'start'});return true}
+function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);return ok}
+async function copyText(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return true}catch(e){}}return fallbackCopy(text)}
+function resultText(){if(!last)return'';return['Hesapica - Calorie Calculator','Estimated maintenance calories: '+kcal(last.r.tdee)+'/day','Approximate range: '+kcal(last.r.low)+' – '+kcal(last.r.high),'Estimated REE: '+kcal(last.r.ree)+'/day','Note: This is a general planning estimate, not a personalized nutrition prescription.','https://hesapica.com/en/calorie-calculator'].join('\n')}
+refs.form.addEventListener('submit',e=>{e.preventDefault();calculate({focus:true,showErrors:true})});
+[refs.weight,refs.height,refs.age].forEach(node=>node.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>calculate({showErrors:false}),250)}));
+[refs.sex,refs.activity].forEach(node=>node.addEventListener('change',()=>calculate({showErrors:false})));
+$('sampleBtn').addEventListener('click',()=>{refs.weight.value='78';refs.height.value='178';refs.age.value='30';refs.sex.value='male';refs.activity.value='1.55';calculate({focus:true,showErrors:true})});
+$('resetBtn').addEventListener('click',()=>{refs.form.reset();['weight','height','age','sex','activity'].forEach(k=>setInvalid(k,false));refs.validation.classList.remove('show');safeRemove();empty()});
+refs.copy.addEventListener('click',async()=>{if(last)await copyText(resultText())});
+refs.share.addEventListener('click',async()=>{if(!last)return;if(navigator.share){try{await navigator.share({title:'Calorie Calculator - Hesapica',text:'Estimated maintenance calories: '+kcal(last.r.tdee)+'/day',url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}await copyText(location.href)});
+refs.print.addEventListener('click',()=>{if(!last){refs.validation.textContent='Create a valid result before printing.';refs.validation.classList.add('show');return;}window.print();});
+(function init(){empty();const p=safeGet();if(p){const x=p.inputs||{};if(typeof x.weight==='string'&&typeof x.height==='string'&&typeof x.age==='string'&&allowedSex.includes(x.sex)&&allowedActivities.includes(x.activity)){refs.weight.value=x.weight;refs.height.value=x.height;refs.age.value=x.age;refs.sex.value=x.sex;refs.activity.value=x.activity;const restored=read();if(Object.keys(validate(restored)).length===0){render(compute(restored),restored)}else{safeRemove();refs.form.reset();['weight','height','age','sex','activity'].forEach(k=>setInvalid(k,false));empty()}}else safeRemove()}})();
+})();
+</script>
+<script src="../ads-slot-manager.js"></script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','clear','clear data','reset data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || document.querySelector('main');
+        if(target && typeof target.scrollIntoView === 'function') target.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

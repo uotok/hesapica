@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Percentage Calculator: Increase, Decrease & Change | Hesapica</title>
+<meta name="description" content="Calculate percentages, ratios, percentage increases, decreases and changes between values. See formulas, comparisons and quick scenarios instantly."/>
+<meta name="keywords" content="percentage calculator, percentage increase calculator, percentage decrease calculator, percent change calculator, percent of a number"/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta name="theme-color" content="#4f46e5"/>
+<link rel="canonical" href="https://hesapica.com/en/percentage-calculator"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/percentage-calculator"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/yuzde-hesaplama"/>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Hesapica"/>
+<meta property="og:title" content="Percentage Calculator: Increase, Decrease & Change | Hesapica"/>
+<meta property="og:description" content="Calculate percentages, ratios, percentage increases, decreases and changes between values. See formulas, comparisons and quick scenarios instantly."/>
+<meta property="og:url" content="https://hesapica.com/en/percentage-calculator"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@hesapica"/>
+<meta name="twitter:title" content="Percentage Calculator: Increase, Decrease & Change | Hesapica"/>
+<meta name="twitter:description" content="Calculate percentages, ratios, percentage increases, decreases and changes between values. See formulas, comparisons and quick scenarios instantly."/>
+<meta name="twitter:url" content="https://hesapica.com/en/percentage-calculator"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+
+
+<style>
+:root{
+  --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;
+  --text:#1f2937;--muted:#667085;--line:#e5e7eb;--line-strong:#c7d2fe;
+  --good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 40px rgba(79,70,229,.09);
+  --radius-xl:24px;--radius-lg:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff 0%,var(--bg) 100%);line-height:1.65}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.container{width:min(1160px,calc(100% - 32px));margin:0 auto;min-width:0}
+.topbar{padding:18px 0 8px}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center;min-width:0}
+.eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,46px);line-height:1.08;letter-spacing:-.035em}
+.hero p{margin:0;color:#4b5563;font-size:16.5px;max-width:760px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.hero-chip{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.11);color:#4338ca;font-size:13px;font-weight:800}
+.hero-box{padding:22px;border-radius:22px;background:#fff;border:1px solid rgba(79,70,229,.12);min-width:0}
+.hero-box strong{display:block;font-size:22px;line-height:1.2;color:#312e81;margin-bottom:8px}
+.hero-box p,.hero-box li{color:#4b5563;font-size:14.5px}
+.hero-box p{margin:0}.hero-box ul{margin:10px 0 0;padding-left:18px}
+.tool-layout{display:grid;grid-template-columns:minmax(0,1.02fr) 420px;gap:24px;align-items:start;margin-top:24px;min-width:0}
+.card,.status-card,.highlight-card,.summary-card,.mini-result,.formula-card,.scenario-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);min-width:0}
+.card{padding:26px}
+.card h2{margin:0 0 10px;font-size:clamp(24px,2.4vw,28px);line-height:1.2;color:#312e81}
+.section-note{margin:0 0 18px;color:#4b5563;font-size:15px}
+.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.form-title{margin:0 0 14px;font-size:18px;font-weight:900;color:#312e81}
+.mode-row{display:flex;flex-wrap:wrap;gap:9px}
+.mode-btn{border:1px solid #dbe4ff;cursor:pointer;padding:10px 13px;border-radius:999px;background:#f8faff;color:#374151;font-size:13px;font-weight:800}
+.mode-btn.active{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-color:transparent;box-shadow:0 10px 20px rgba(79,70,229,.18)}
+.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field.full{grid-column:1/-1}
+.field label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+.input-wrap{position:relative}
+.suffix{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-weight:800;color:#6b7280;pointer-events:none}
+input{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600}
+input.with-suffix{padding-right:45px}
+input:focus{border-color:rgba(79,70,229,.5);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+input::placeholder{color:#9ca3af;font-size:15px}
+.hint{margin-top:7px;color:#667085;font-size:13.5px;line-height:1.55}
+.error-text{display:none;margin-top:7px;color:var(--bad);font-size:13px;font-weight:800}
+.field.has-error input{border-color:#fca5a5;background:#fff8f8}.field.has-error .error-text{display:block}
+.validation-box{display:none;margin-top:16px;padding:12px 14px;border-radius:15px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:13px;font-weight:800}
+.validation-box.show{display:block}
+.quick-row{display:flex;flex-wrap:wrap;gap:9px}
+.quick-btn{border:1px solid #dbe4ff;background:#f8faff;color:#4338ca;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:800;cursor:pointer}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
+.btn{border:0;border-radius:15px;padding:13px 17px;font-weight:800;cursor:pointer;font-size:14px}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 12px 24px rgba(79,70,229,.18)}
+.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+.btn:disabled{opacity:.48;cursor:not-allowed;box-shadow:none}
+.status-inline{margin-top:16px;padding:12px 14px;border:1px solid #dbe4ff;border-radius:15px;background:#f8faff;color:#4b5563;font-size:14px;font-weight:700}
+.results{position:sticky;top:20px;display:grid;gap:14px;min-width:0}.results>*{min-width:0}
+.status-card{padding:17px 18px;background:linear-gradient(180deg,#fbfcff,#f4f7ff)}
+.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-weight:900;color:#312e81}.status-text{margin-top:5px;color:#4b5563;font-size:14px;overflow-wrap:anywhere}
+.badge{display:inline-flex;padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;color:#4338ca;font-size:12px;font-weight:900;white-space:nowrap}
+.badge.good{background:#ecfdf5;border-color:#a7f3d0;color:var(--good)}.badge.bad{background:#fef2f2;border-color:#fecaca;color:var(--bad)}
+.highlight-card{padding:22px;background:linear-gradient(180deg,#f8faff,#eef2ff)}
+.highlight-label{font-size:12px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:#4338ca}.highlight-value{margin:8px 0;font-size:39px;font-weight:900;line-height:1.05;letter-spacing:-.03em;overflow-wrap:anywhere;color:#9ca3af}.highlight-sub{color:#4b5563;font-size:14px;overflow-wrap:anywhere}
+.summary-card{padding:17px 18px;box-shadow:none}.summary-card strong{display:block;color:#312e81;margin-bottom:5px}.summary-card p{margin:0;color:#4b5563;font-size:14px;overflow-wrap:anywhere}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini-result{padding:15px;box-shadow:none}.mini-label{color:#667085;font-size:12px;font-weight:800}.mini-value{margin-top:5px;font-size:19px;font-weight:900;overflow-wrap:anywhere;color:#9ca3af}.mini-sub{margin-top:4px;color:#667085;font-size:12px;line-height:1.45}
+.formula-card{padding:16px 18px;box-shadow:none;background:#fff}.formula-card strong{display:block;color:#312e81;font-size:13px;margin-bottom:6px}.formula-card code{display:block;white-space:normal;overflow-wrap:anywhere;color:#374151;font-family:inherit;font-weight:800}
+.scenario-card{margin-top:24px}.scenario-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}.scenario-box{padding:16px;box-shadow:none;background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.scenario-tag{font-size:12px;font-weight:900;color:#4338ca}.scenario-box strong{display:block;margin-top:6px;font-size:20px;overflow-wrap:anywhere}.scenario-box p{margin:6px 0 0;color:#667085;font-size:13px}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.content-card h2{font-size:22px}.content-card p,.content-card li{color:#4b5563;font-size:14.5px}.content-card ul{padding-left:18px}
+.faq details{border:1px solid var(--line);border-radius:15px;padding:14px 15px;background:#fff}.faq details+details{margin-top:10px}.faq summary{cursor:pointer;font-weight:800;color:#312e81}.faq p{margin:9px 0 0}
+.related-tools{margin-top:24px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}.related-tools h2{margin:0 0 14px;color:#312e81;font-size:24px}.related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.related-card{display:block;padding:16px;border:0;border-radius:16px;background:linear-gradient(135deg,#5b4ff6 0%,#8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card h3{margin:0 0 7px;font-size:16px;color:#fff}.related-card p{margin:0;color:rgba(255,255,255,.88);font-size:13px;line-height:1.5}.related-home-link{display:inline-flex;margin-top:14px;color:#4338ca;font-weight:800;font-size:14px}
+.hc-ad-slot{width:100%;margin:20px auto;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease;max-width:1160px}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.result-flash{animation:resultFlash 1.1s ease}@keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,.15)}35%{box-shadow:0 0 0 8px rgba(79,70,229,.11)}100%{box-shadow:var(--shadow)}}
+@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.related-tools{padding:19px}.hero h1{font-size:32px}.field-grid,.result-grid,.related-grid,.scenario-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.status-row{flex-direction:column}.highlight-value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:0}}
+@media(max-width:360px){.container{width:calc(100% - 16px)}.hero,.card,.related-tools{padding:16px}.highlight-card,.status-card,.summary-card,.formula-card{padding:15px}}
+@media print{body{background:#fff}.topbar,.actions,.quick-row,.mode-row,.hero-chips,.hc-ad-slot,.related-tools{display:none!important}.hero,.card,.status-card,.highlight-card,.summary-card,.mini-result,.formula-card,.scenario-box{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout,.content-grid,.scenario-grid,.result-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Percentage Calculator: Increase, Decrease & Change | Hesapica","url":"https://hesapica.com/en/percentage-calculator","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Math","item":"https://hesapica.com/en/#math"},{"@type":"ListItem","position":3,"name":"Percentage Calculator","item":"https://hesapica.com/en/percentage-calculator"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate a percentage of a number?","acceptedAnswer":{"@type":"Answer","text":"Multiply the number by the percentage rate and divide by 100. For example, 18% of 1,000 is 1,000 × 18 / 100 = 180."}},{"@type":"Question","name":"How do I find what percent one number is of another?","acceptedAnswer":{"@type":"Answer","text":"Divide the first number by the second and multiply by 100. For example, 25 is 12.5% of 200. The second number cannot be zero."}},{"@type":"Question","name":"How are percentage increases and decreases calculated?","acceptedAnswer":{"@type":"Answer","text":"For an increase, multiply the starting value by 1 + rate/100. For a decrease, multiply it by 1 − rate/100. For example, increasing 1,000 by 20% gives 1,200."}},{"@type":"Question","name":"How do I calculate percentage change between two values?","acceptedAnswer":{"@type":"Answer","text":"For a positive starting value, percentage change is (new − old) / old × 100. Standard percentage change is undefined when the starting value is zero."}},{"@type":"Question","name":"Can a percentage decrease exceed 100%?","acceptedAnswer":{"@type":"Answer","text":"Mathematically, yes. A 100% decrease reduces a value to zero; a decrease above 100% produces a negative result. The calculator shows that mathematical result as entered."}}]}
+</script>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-language-switch-style">
+.hc-lang-switch-wrap{display:flex;justify-content:flex-end;margin:10px 0 0}
+.hc-lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #c7d2fe;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 22px rgba(79,70,229,.10);font-size:13px;font-weight:800}
+.hc-lang-switch .globe{padding:0 5px 0 7px;font-size:15px;line-height:1}
+.hc-lang-switch a,.hc-lang-switch span.lang-active{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:999px;white-space:nowrap}
+.hc-lang-switch a{color:#4338ca;background:#fff}
+.hc-lang-switch a:hover{background:#eef2ff}
+.hc-lang-switch .lang-active{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 5px 14px rgba(79,70,229,.22)}
+@media(max-width:640px){.hc-lang-switch-wrap{margin-top:12px}.hc-lang-switch{width:100%;display:grid;grid-template-columns:auto 1fr 1fr;border-radius:18px}.hc-lang-switch a,.hc-lang-switch span.lang-active{min-width:0;padding:0 8px}.hc-lang-switch .globe{text-align:center}}
+</style>
+</head>
+<body>
+<noscript><div style="margin:16px auto;max-width:1160px;padding:14px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.6 Inter,system-ui,sans-serif">This calculator requires JavaScript. Please enable JavaScript and reload the page.</div></noscript>
+<div class="container topbar"><nav aria-label="breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#math">Math</a><span>/</span><strong>Percentage Calculator</strong></nav><div class="hc-lang-switch-wrap"><div class="hc-lang-switch" aria-label="Language"><span class="globe" aria-hidden="true">🌐</span><a href="/yuzde-hesaplama" hreflang="tr" lang="tr">TR · Türkçe</a><span class="lang-active" aria-current="page">EN · English</span></div></div></div>
+<header class="container">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow-pill">Hesapica • Math Tool</span>
+        <h1>Percentage Calculator</h1>
+        <p>Calculate a percentage of a number, what percent one number is of another, percentage increase, decrease and percent change from a positive starting value. See the formula and useful comparison scenarios with the result.</p>
+        <div class="hero-chips"><span class="hero-chip">5 calculation modes</span><span class="hero-chip">Flexible number formats</span><span class="hero-chip">Instant calculation</span><span class="hero-chip">Formula explanation</span></div>
+      </div>
+      <aside class="hero-box">
+        <strong>What can you calculate?</strong>
+        <p>Handle common percentage calculations in one panel without switching between separate tools.</p>
+        <ul><li>A percentage of a number</li><li>What percent is one number of another?</li><li>Percentage increase and decrease</li><li>Percent change from an old value to a new value</li></ul>
+      </aside>
+    </div>
+  </section>
+</header>
+
+
+<main class="container" style="padding:24px 0 56px">
+  <section class="tool-layout">
+    <form class="card" id="percentageForm" novalidate>
+      <h2>Calculator Panel</h2>
+      <p class="section-note">Choose a calculation type and enter two values. The result updates automatically; Calculate also brings the result into focus.</p>
+      <div class="form-section">
+        <div class="form-title">Calculation type</div>
+        <div class="mode-row" role="tablist" aria-label="Percentage calculation type">
+          <button class="mode-btn active" type="button" data-mode="basic" role="tab" aria-selected="true" tabindex="0">Percent of a number</button>
+          <button class="mode-btn" type="button" data-mode="ratio" role="tab" aria-selected="false" tabindex="-1">What percent?</button>
+          <button class="mode-btn" type="button" data-mode="increase" role="tab" aria-selected="false" tabindex="-1">Percentage increase</button>
+          <button class="mode-btn" type="button" data-mode="decrease" role="tab" aria-selected="false" tabindex="-1">Percentage decrease</button>
+          <button class="mode-btn" type="button" data-mode="change" role="tab" aria-selected="false" tabindex="-1">Percentage change</button>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-title">Values</div>
+        <div class="field-grid">
+          <div class="field" id="field-num1"><label for="num1" id="label1">Number</label><input id="num1" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 1,000" aria-describedby="hint1 error1"/><div class="hint" id="hint1">The number whose percentage you want to calculate.</div><div class="error-text" id="error1" aria-live="polite"></div></div>
+          <div class="field" id="field-num2"><label for="num2" id="label2">Percentage rate</label><div class="input-wrap"><input class="with-suffix" id="num2" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 18" aria-describedby="hint2 error2"/><span class="suffix" id="suffix2">%</span></div><div class="hint" id="hint2">The percentage rate to apply.</div><div class="error-text" id="error2" aria-live="polite"></div></div>
+        </div>
+        <div class="validation-box" id="validationBox" role="alert"></div>
+      </div>
+      <div class="form-section">
+        <div class="form-title">Quick examples</div>
+        <div class="quick-row"><button type="button" class="quick-btn" data-example="1">1,000 and 18</button><button type="button" class="quick-btn" data-example="2">250 and 40</button><button type="button" class="quick-btn" data-example="3">45.5 and 12.5</button></div>
+        <div class="hint">Tip: English-style values such as 1,234.56 and 0.125 are supported. Pasted European-style values such as 1.234,56 are also recognized.</div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="calcBtn" type="submit">Calculate</button>
+        <button class="btn btn-secondary" id="exampleBtn" type="button">Example Data</button>
+        <button class="btn btn-ghost" id="copyBtn" type="button" disabled>Copy Result</button>
+        <button class="btn btn-ghost" id="shareBtn" type="button" disabled>Share</button>
+        <button class="btn btn-ghost" id="clearBtn" type="button">Reset</button>
+        <button class="btn btn-ghost" id="printBtn" type="button" disabled>Print / PDF</button>
+      </div>
+      <div class="status-inline" id="calcStatus" role="status" aria-live="polite">Status: waiting for data</div>
+    </form>
+    <aside class="results" id="resultsArea" aria-live="polite">
+
+      
+      <div class="status-card"><div class="status-row"><div><div class="status-title">Result status</div><div class="status-text" id="statusText">Enter both values to see the result here.</div></div><span class="badge" id="statusBadge">Waiting</span></div></div>
+      <div class="highlight-card" id="resultPanel" tabindex="-1"><div class="highlight-label" id="mainLabel">Main result</div><div class="highlight-value" id="mainResult">—</div><div class="highlight-sub" id="mainSub">Waiting for data.</div></div>
+      <div class="summary-card"><strong>Quick interpretation</strong><p id="summaryText">Choose a mode and fill both fields to see a short explanation here.</p></div>
+      <div class="result-grid">
+        <div class="mini-result"><div class="mini-label" id="extraLabel">Additional detail</div><div class="mini-value" id="extraResult">—</div><div class="mini-sub" id="extraSub">Supporting result for the selected calculation.</div></div>
+        <div class="mini-result"><div class="mini-label">Direction</div><div class="mini-value" id="directionResult">—</div><div class="mini-sub" id="directionSub">Direction or comparison of the result.</div></div>
+      </div>
+      <div class="formula-card"><strong>Formula used</strong><code id="formulaResult">Number × Rate / 100</code></div>
+    </aside>
+  </section>
+  <section class="card scenario-card">
+    <h2>Quick scenarios</h2><p class="section-note">Three useful scenarios based on the first value are shown for the selected mode.</p>
+    <div class="scenario-grid">
+      <div class="scenario-box"><span class="scenario-tag" id="scTag1">Scenario 1</span><strong id="scValue1">—</strong><p id="scText1">Waiting for data.</p></div>
+      <div class="scenario-box"><span class="scenario-tag" id="scTag2">Scenario 2</span><strong id="scValue2">—</strong><p id="scText2">Waiting for data.</p></div>
+      <div class="scenario-box"><span class="scenario-tag" id="scTag3">Scenario 3</span><strong id="scValue3">—</strong><p id="scText3">Waiting for data.</p></div>
+    </div>
+  </section>
+  <section class="content-grid">
+    <article class="card content-card">
+      <h2>How do percentage calculations work?</h2>
+      <p>A percentage of a number is calculated with <strong>number × rate / 100</strong>. For example, 18% of 1,000 is 180.</p>
+      <p>To find what percent one number is of another, use <strong>part / whole × 100</strong>. For percentage change from a positive starting value, use <strong>(new − old) / old × 100</strong>.</p>
+      <p>Percent change and percentage points are not the same. If a rate rises from 20% to 25%, that is an increase of 5 percentage points but a relative increase of 25%.</p>
+    </article>
+    <article class="card content-card faq">
+      <!-- HC_AD_SLOT:faq -->
+      <div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+      
+      <h2>Frequently Asked Questions</h2>
+      <details open><summary>How do I calculate a percentage of a number?</summary><p>Multiply the number by the percentage rate and divide by 100. For example, 18% of 1,000 is 1,000 × 18 / 100 = 180.</p></details>
+      <details><summary>How do I find what percent one number is of another?</summary><p>Divide the first number by the second and multiply by 100. For example, 25 is 12.5% of 200. The second number cannot be zero.</p></details>
+      <details><summary>How are percentage increases and decreases calculated?</summary><p>For an increase, multiply the starting value by 1 + rate/100. For a decrease, multiply it by 1 − rate/100. For example, increasing 1,000 by 20% gives 1,200.</p></details>
+      <details><summary>How do I calculate percentage change between two values?</summary><p>For a positive starting value, percentage change is (new − old) / old × 100. Standard percentage change is undefined when the starting value is zero.</p></details>
+      <details><summary>Can a percentage decrease exceed 100%?</summary><p>Mathematically, yes. A 100% decrease reduces a value to zero; a decrease above 100% produces a negative result. The calculator shows that mathematical result as entered.</p></details>
+    </article>
+  </section>
+  <section id="hc-related-tools" class="related-tools">
+    <h2>Related Tools</h2>
+    <div class="related-grid">
+      <a href="/en/discount-calculator" class="related-card"><h3>Discount Calculator</h3><p>Calculate a discounted price and total savings.</p></a>
+      <a href="/en/average-calculator" class="related-card"><h3>Average Calculator</h3><p>Calculate arithmetic and weighted averages, median and other statistics.</p></a>
+      <a href="/en/investment-return-calculator" class="related-card"><h3>Investment Return Calculator</h3><p>Project investment growth, contributions, fees and inflation.</p></a>
+    </div>
+    <a href="/en/" class="related-home-link">← Back to Home and explore all calculators</a>
+  </section>
+</main>
+<script>
+"use strict";
+const STORAGE_KEY="hesapica_en_percentage_calculator_v4";
+const STORAGE_VERSION=4;
+const PAGE_URL="https://hesapica.com/en/percentage-calculator";
+const MAX_ABS_INPUT=1e15;
+const state={mode:"basic",inputs:{num1:"",num2:""},result:null,valid:false};
+let debounceTimer=null;
+const MODES={
+  basic:{label1:"Number",label2:"Percentage rate",hint1:"The number whose percentage you want to calculate.",hint2:"The percentage rate to apply.",suffix:"%",ph1:"e.g. 1,000",ph2:"e.g. 18",formula:"Number × Rate / 100"},
+  ratio:{label1:"Part / first number",label2:"Whole / second number",hint1:"The first number in the ratio.",hint2:"The whole or reference value; it cannot be zero.",suffix:"",ph1:"e.g. 25",ph2:"e.g. 200",formula:"First number / Second number × 100"},
+  increase:{label1:"Starting value",label2:"Increase rate",hint1:"Value before the increase; must be zero or positive.",hint2:"Percentage to add; cannot be negative.",suffix:"%",ph1:"e.g. 1,000",ph2:"e.g. 25",formula:"Start × (1 + Rate / 100)"},
+  decrease:{label1:"Starting value",label2:"Decrease rate",hint1:"Value before the decrease; must be zero or positive.",hint2:"Percentage to subtract; cannot be negative.",suffix:"%",ph1:"e.g. 1,000",ph2:"e.g. 10",formula:"Start × (1 − Rate / 100)"},
+  change:{label1:"Old value",label2:"New value",hint1:"For standard percentage change, the starting value must be greater than zero.",hint2:"The new value to compare.",suffix:"",ph1:"e.g. 1,000",ph2:"e.g. 1,250",formula:"(New − Old) / Old × 100"}
+};
+const els={
+  form:document.getElementById("percentageForm"),num1:document.getElementById("num1"),num2:document.getElementById("num2"),
+  label1:document.getElementById("label1"),label2:document.getElementById("label2"),hint1:document.getElementById("hint1"),hint2:document.getElementById("hint2"),suffix2:document.getElementById("suffix2"),
+  field1:document.getElementById("field-num1"),field2:document.getElementById("field-num2"),error1:document.getElementById("error1"),error2:document.getElementById("error2"),validationBox:document.getElementById("validationBox"),
+  calcBtn:document.getElementById("calcBtn"),exampleBtn:document.getElementById("exampleBtn"),copyBtn:document.getElementById("copyBtn"),shareBtn:document.getElementById("shareBtn"),clearBtn:document.getElementById("clearBtn"),printBtn:document.getElementById("printBtn"),
+  calcStatus:document.getElementById("calcStatus"),statusText:document.getElementById("statusText"),statusBadge:document.getElementById("statusBadge"),resultPanel:document.getElementById("resultPanel"),mainLabel:document.getElementById("mainLabel"),mainResult:document.getElementById("mainResult"),mainSub:document.getElementById("mainSub"),summaryText:document.getElementById("summaryText"),extraLabel:document.getElementById("extraLabel"),extraResult:document.getElementById("extraResult"),extraSub:document.getElementById("extraSub"),directionResult:document.getElementById("directionResult"),directionSub:document.getElementById("directionSub"),formulaResult:document.getElementById("formulaResult"),
+  scTag1:document.getElementById("scTag1"),scTag2:document.getElementById("scTag2"),scTag3:document.getElementById("scTag3"),scValue1:document.getElementById("scValue1"),scValue2:document.getElementById("scValue2"),scValue3:document.getElementById("scValue3"),scText1:document.getElementById("scText1"),scText2:document.getElementById("scText2"),scText3:document.getElementById("scText3")
+};
+function safeGet(){try{return localStorage.getItem(STORAGE_KEY);}catch(_){return null;}}
+function safeSet(value){try{localStorage.setItem(STORAGE_KEY,value);return true;}catch(_){return false;}}
+function safeRemove(){try{localStorage.removeItem(STORAGE_KEY);}catch(_){}}
+function parseFlexibleNumber(value){
+  if(value===null||value===undefined)return NaN;
+  const raw=String(value).trim().replace(/\s+/g,"");
+  if(!raw||/[^0-9.,+\-]/.test(raw)||!/^[+-]?[0-9][0-9.,]*$/.test(raw))return NaN;
+  const sign=raw[0]==="-"?-1:1;
+  const unsigned=(raw[0]==="-"||raw[0]==="+")?raw.slice(1):raw;
+  let normalized;
+  if(/^\d+$/.test(unsigned)) normalized=unsigned;
+  else if(/^\d{1,3}(?:,\d{3})+(?:\.\d+)?$/.test(unsigned)) normalized=unsigned.replace(/,/g,"");
+  else if(/^\d{1,3}(?:\.\d{3})+,\d+$/.test(unsigned)) normalized=unsigned.replace(/\./g,"").replace(",", ".");
+  else if(/^\d+\.\d+$/.test(unsigned)) normalized=unsigned;
+  else if(/^\d+,\d+$/.test(unsigned)){
+    const parts=unsigned.split(",");
+    normalized=(parts[1].length===3&&parts[0]!=="0")?parts.join(""):parts[0]+"."+parts[1];
+  }else return NaN;
+  const num=sign*Number(normalized);
+  return Number.isFinite(num)?num:NaN;
+}
+function formatNumber(value){
+  if(!Number.isFinite(value))return "—";
+  if(Object.is(value,-0))value=0;
+  const abs=Math.abs(value);
+  let max=4;
+  if(abs!==0&&abs<0.0001)max=10;
+  else if(abs<1)max=8;
+  else if(abs<100)max=6;
+  return new Intl.NumberFormat("en-US",{maximumFractionDigits:max,useGrouping:true}).format(value);
+}
+function formatPercent(value){return `${formatNumber(Math.abs(value))}%`;}
+function clearErrors(){
+  [els.field1,els.field2].forEach(x=>x.classList.remove("has-error"));
+  [els.num1,els.num2].forEach(x=>x.removeAttribute("aria-invalid"));
+  els.error1.textContent="";els.error2.textContent="";els.validationBox.textContent="";els.validationBox.classList.remove("show");
+}
+function showError(which,msg){
+  const field=which===1?els.field1:els.field2,input=which===1?els.num1:els.num2,error=which===1?els.error1:els.error2;
+  field.classList.add("has-error");input.setAttribute("aria-invalid","true");error.textContent=msg;
+  if(!els.validationBox.classList.contains("show")){els.validationBox.textContent=msg;els.validationBox.classList.add("show");}
+}
+function readInputs(){return {a:parseFlexibleNumber(els.num1.value),b:parseFlexibleNumber(els.num2.value),raw1:els.num1.value.trim(),raw2:els.num2.value.trim()};}
+function validate(input,show=false){
+  const errors=[];
+  if(!input.raw1)errors.push([1,"Enter the first value."]);else if(!Number.isFinite(input.a))errors.push([1,"Enter a valid number."]);else if(Math.abs(input.a)>MAX_ABS_INPUT)errors.push([1,"The value exceeds the supported safe numeric range."]);
+  if(!input.raw2)errors.push([2,"Enter the second value."]);else if(!Number.isFinite(input.b))errors.push([2,"Enter a valid number."]);else if(Math.abs(input.b)>MAX_ABS_INPUT)errors.push([2,"The value exceeds the supported safe numeric range."]);
+  if(!errors.length&&state.mode==="ratio"&&input.b===0)errors.push([2,"The second number cannot be zero; division by zero is undefined for a percentage ratio."]);
+  if(!errors.length&&(state.mode==="increase"||state.mode==="decrease")&&input.a<0)errors.push([1,"The starting value cannot be negative in increase/decrease mode because the direction becomes ambiguous."]);
+  if(!errors.length&&(state.mode==="increase"||state.mode==="decrease")&&input.b<0)errors.push([2,"The percentage rate cannot be negative in this mode. Use the opposite mode instead."]);
+  if(!errors.length&&state.mode==="change"&&input.a<=0)errors.push([1,"For standard percentage change, the old value must be greater than zero."]);
+  if(show){clearErrors();errors.forEach(([n,m])=>showError(n,m));}
+  return {ok:errors.length===0,errors};
+}
+function setButtons(ready){[els.copyBtn,els.shareBtn,els.printBtn].forEach(btn=>btn.disabled=!ready);}
+function resetScenarios(){
+  [[els.scTag1,els.scValue1,els.scText1],[els.scTag2,els.scValue2,els.scText2],[els.scTag3,els.scValue3,els.scText3]].forEach((arr,i)=>{arr[0].textContent=`Senaryo ${i+1}`;arr[1].textContent="—";arr[2].textContent="Waiting for data.";});
+}
+function setEmptyState(message="Enter both values to see the result here."){
+  state.result=null;state.valid=false;els.calcStatus.textContent="Status: waiting for data";els.statusText.textContent=message;els.statusBadge.className="badge";els.statusBadge.textContent="Waiting";els.mainResult.textContent="—";els.mainResult.style.color="#9ca3af";els.mainSub.textContent="Waiting for data.";els.summaryText.textContent="Choose a mode and fill both fields to see a short explanation here.";els.extraResult.textContent="—";els.extraResult.style.color="#9ca3af";els.extraSub.textContent="Supporting result for the selected calculation.";els.directionResult.textContent="—";els.directionResult.style.color="#9ca3af";els.directionSub.textContent="Direction or comparison of the result.";els.formulaResult.textContent=MODES[state.mode].formula;resetScenarios();setButtons(false);
+}
+function compute(a,b){
+  if(state.mode==="basic"){
+    const part=a*b/100;
+    return {main:part,mainText:formatNumber(part),sub:`${formatNumber(b)}% of ${formatNumber(a)}`,extra:a+part,extraLabel:"Value after adding the percentage",extraSub:`${formatNumber(a)} + ${formatNumber(part)}`,direction:b===0?"No change":b>0?"Positive rate":"Negative rate",directionSub:"Sign of the rate",summary:`${formatNumber(a)} × ${formatNumber(b)} / 100 = ${formatNumber(part)}.`};
+  }
+  if(state.mode==="ratio"){
+    const pct=a/b*100;
+    return {main:pct,mainText:`${formatNumber(pct)}%`,sub:`${formatNumber(a)} as a percentage of ${formatNumber(b)}`,extra:b-a,extraLabel:"Difference from reference",extraSub:`${formatNumber(b)} − ${formatNumber(a)}`,direction:Math.abs(pct)===100?"100%":Math.abs(pct)<100?"Below 100%":"Above 100%",directionSub:"Absolute ratio comparison",summary:`${formatNumber(a)} / ${formatNumber(b)} × 100 = ${formatNumber(pct)}%.`};
+  }
+  if(state.mode==="increase"){
+    const delta=a*b/100,total=a+delta;
+    return {main:total,mainText:formatNumber(total),sub:"Value after percentage increase",extra:delta,extraLabel:"Increase amount",extraSub:`${formatNumber(a)} × ${formatNumber(b)} / 100`,direction:b===0?"No change":"Increase",directionSub:`+${formatNumber(b)}%`,summary:`Increasing ${formatNumber(a)} by ${formatNumber(b)}% adds ${formatNumber(delta)}, giving ${formatNumber(total)}.`};
+  }
+  if(state.mode==="decrease"){
+    const delta=a*b/100,total=a-delta;
+    return {main:total,mainText:formatNumber(total),sub:"Value after percentage decrease",extra:delta,extraLabel:"Decrease amount",extraSub:`${formatNumber(a)} × ${formatNumber(b)} / 100`,direction:b===0?"No change":b===100?"Falls to zero":b>100?"Falls below zero":"Decrease",directionSub:`−${formatNumber(b)}%`,summary:`Decreasing ${formatNumber(a)} by ${formatNumber(b)}% subtracts ${formatNumber(delta)}, giving ${formatNumber(total)}.`};
+  }
+  const diff=b-a,pct=diff/a*100;
+  return {main:pct,mainText:`${pct>0?"+":pct<0?"−":""}${formatNumber(Math.abs(pct))}%`,sub:"Percentage change from old value to new value",extra:diff,extraLabel:"Numeric difference",extraSub:`${formatNumber(b)} − ${formatNumber(a)}`,direction:pct>0?"Increase":pct<0?"Decrease":"No change",directionSub:`${formatNumber(a)} → ${formatNumber(b)}`,summary:`The change from ${formatNumber(a)} to ${formatNumber(b)} is ${formatNumber(diff)}; percentage change is ${pct>0?"+":pct<0?"−":""}${formatNumber(Math.abs(pct))}%.`};
+}
+function renderScenarios(a,b){
+  let items;
+  if(state.mode==="basic")items=[["10%",a*.1,`10% of ${formatNumber(a)}`],["25%",a*.25,`25% of ${formatNumber(a)}`],["50%",a*.5,`50% of ${formatNumber(a)}`]];
+  else if(state.mode==="ratio")items=[["Reverse ratio",a===0?NaN:b/a*100,a===0?"Reverse ratio is undefined because the first number is zero":`${formatNumber(b)} as a percentage of ${formatNumber(a)}`],["Half",a/2,`Half of ${formatNumber(a)}`],["Double",a*2,`Twice ${formatNumber(a)}`]];
+  else if(state.mode==="increase")items=[["+10%",a*1.1,"After a 10% increase"],["+25%",a*1.25,"After a 25% increase"],["+50%",a*1.5,"After a 50% increase"]];
+  else if(state.mode==="decrease")items=[["−10%",a*.9,"After a 10% decrease"],["−25%",a*.75,"After a 25% decrease"],["−50%",a*.5,"After a 50% decrease"]];
+  else items=[["+10%",a*1.1,"10% above the starting value"],["+25%",a*1.25,"25% above the starting value"],["−10%",a*.9,"10% below the starting value"]];
+  const refs=[[els.scTag1,els.scValue1,els.scText1],[els.scTag2,els.scValue2,els.scText2],[els.scTag3,els.scValue3,els.scText3]];
+  items.forEach((item,i)=>{refs[i][0].textContent=item[0];refs[i][1].textContent=Number.isFinite(item[1])?(state.mode==="ratio"&&i===0?`${formatNumber(item[1])}%`:formatNumber(item[1])):"—";refs[i][2].textContent=item[2];});
+}
+function render(a,b,result){
+  state.result={a,b,...result};state.valid=true;els.calcStatus.textContent="Status: calculated";els.statusText.textContent="Result calculated from the current inputs.";els.statusBadge.className="badge good";els.statusBadge.textContent="Ready";els.mainResult.textContent=result.mainText;els.mainResult.style.color="#1f2937";els.mainSub.textContent=result.sub;els.summaryText.textContent=result.summary;els.extraLabel.textContent=result.extraLabel;els.extraResult.textContent=formatNumber(result.extra);els.extraResult.style.color="#1f2937";els.extraSub.textContent=result.extraSub;els.directionResult.textContent=result.direction;els.directionResult.style.color="#1f2937";els.directionSub.textContent=result.directionSub;els.formulaResult.textContent=MODES[state.mode].formula;renderScenarios(a,b);setButtons(true);
+}
+function saveState(){
+  if(!state.valid)return;
+  safeSet(JSON.stringify({version:STORAGE_VERSION,mode:state.mode,num1:els.num1.value,num2:els.num2.value}));
+}
+function calculate({showErrors=false,focus=false,persist=true}={}){
+  const raw1=els.num1.value.trim(),raw2=els.num2.value.trim();
+  state.inputs={num1:raw1,num2:raw2};
+  if(!raw1&&!raw2){clearErrors();setEmptyState();if(persist)safeRemove();return null;}
+  if(!raw1||!raw2){clearErrors();setEmptyState("The result will be calculated when both fields are filled.");els.calcStatus.textContent="Status: partial input";return null;}
+  const input=readInputs(),check=validate(input,showErrors);
+  if(!check.ok){if(!showErrors)clearErrors();state.result=null;state.valid=false;els.calcStatus.textContent="Status: invalid input";els.statusText.textContent=check.errors[0][1];els.statusBadge.className="badge bad";els.statusBadge.textContent="Check input";els.mainResult.textContent="—";els.mainResult.style.color="#9ca3af";els.mainSub.textContent=check.errors[0][1];els.summaryText.textContent=check.errors[0][1];els.extraResult.textContent="—";els.directionResult.textContent="—";resetScenarios();setButtons(false);return null;}
+  clearErrors();const result=compute(input.a,input.b);
+  const numericFields=[result.main,result.extra];if(numericFields.some(v=>!Number.isFinite(v))){setEmptyState("The result exceeds the supported safe numeric range.");els.statusBadge.className="badge bad";els.statusBadge.textContent="Check input";return null;}
+  render(input.a,input.b,result);if(persist)saveState();if(focus){els.resultPanel.classList.remove("result-flash");void els.resultPanel.offsetWidth;els.resultPanel.classList.add("result-flash");els.resultPanel.scrollIntoView({behavior:"smooth",block:"start"});}return result;
+}
+function updateModeUI(){
+  const m=MODES[state.mode];els.label1.textContent=m.label1;els.label2.textContent=m.label2;els.hint1.textContent=m.hint1;els.hint2.textContent=m.hint2;els.suffix2.textContent=m.suffix;els.num1.placeholder=m.ph1;els.num2.placeholder=m.ph2;els.num2.classList.toggle("with-suffix",!!m.suffix);els.formulaResult.textContent=m.formula;document.querySelectorAll(".mode-btn").forEach(btn=>{const active=btn.dataset.mode===state.mode;btn.classList.toggle("active",active);btn.setAttribute("aria-selected",String(active));});
+}
+function loadState(){
+  const raw=safeGet();if(!raw)return false;
+  try{const saved=JSON.parse(raw);if(!saved||saved.version!==STORAGE_VERSION||!MODES[saved.mode]||typeof saved.num1!=="string"||typeof saved.num2!=="string")throw new Error("invalid");state.mode=saved.mode;els.num1.value=saved.num1;els.num2.value=saved.num2;updateModeUI();const input=readInputs();if(!validate(input,false).ok)throw new Error("invalid-values");return !!calculate({showErrors:false,focus:false,persist:false});}catch(_){safeRemove();return false;}
+}
+function fillExample(){
+  const data={basic:["1000","18"],ratio:["25","200"],increase:["1000","25"],decrease:["1000","10"],change:["1000","1250"]}[state.mode];els.num1.value=data[0];els.num2.value=data[1];calculate({showErrors:true,focus:true,persist:false});
+}
+function fillQuick(index){const sets={1:["1000","18"],2:["250","40"],3:["45.5","12.5"]};const data=sets[index];if(!data)return;els.num1.value=data[0];els.num2.value=data[1];calculate({showErrors:true,focus:false,persist:false});}
+function clearAll(){clearTimeout(debounceTimer);els.form.reset();state.mode="basic";state.inputs={num1:"",num2:""};updateModeUI();clearErrors();safeRemove();setEmptyState();els.num1.focus();}
+function schedule(){clearTimeout(debounceTimer);els.calcStatus.textContent="Status: calculating…";debounceTimer=setTimeout(()=>calculate({showErrors:false,focus:false,persist:true}),180);}
+function normalizeInput(el){const v=parseFlexibleNumber(el.value);if(Number.isFinite(v))el.value=formatNumber(v);}
+function fallbackCopy(text){const ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();let ok=false;try{ok=document.execCommand("copy");}catch(_){}document.body.removeChild(ta);return ok;}
+async function copyText(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return true;}catch(_){}}return fallbackCopy(text);}
+function resultText(){if(!state.valid||!state.result)return "";return ["Hesapica - Percentage Calculator",`Calculation: ${document.querySelector('.mode-btn.active').textContent}`,`${els.label1.textContent}: ${els.num1.value}`,`${els.label2.textContent}: ${els.num2.value}`,`Result: ${els.mainResult.textContent}`,`${els.extraLabel.textContent}: ${els.extraResult.textContent}`,`Formula: ${els.formulaResult.textContent}`,PAGE_URL].join("\n");}
+async function copyResult(){if(!state.valid)return;const ok=await copyText(resultText());els.calcStatus.textContent=ok?"Status: result copied to clipboard":"Status: copy failed";}
+async function shareResult(){if(!state.valid)return;const url=PAGE_URL,fullText=resultText();const text=fullText.split('\n').filter(line=>line.trim()!==url).join('\n');if(navigator.share){try{await navigator.share({title:"Percentage Calculator",text,url});return;}catch(err){if(err&&err.name==="AbortError")return;}}const ok=await copyText(fullText);els.calcStatus.textContent=ok?"Status: share text copied to clipboard":"Status: sharing failed";}
+els.form.addEventListener("submit",e=>{e.preventDefault();calculate({showErrors:true,focus:true,persist:true});});
+document.querySelectorAll(".mode-btn").forEach(btn=>btn.addEventListener("click",()=>{state.mode=btn.dataset.mode;updateModeUI();calculate({showErrors:false,focus:false,persist:true});}));
+[els.num1,els.num2].forEach(el=>{el.addEventListener("input",schedule);el.addEventListener("blur",()=>{normalizeInput(el);calculate({showErrors:false,focus:false,persist:true});});});
+els.exampleBtn.addEventListener("click",fillExample);document.querySelectorAll("[data-example]").forEach(btn=>btn.addEventListener("click",()=>fillQuick(btn.dataset.example)));els.copyBtn.addEventListener("click",copyResult);els.shareBtn.addEventListener("click",shareResult);els.clearBtn.addEventListener("click",clearAll);els.printBtn.addEventListener("click",()=>{if(!state.valid){els.calcStatus.textContent="Status: calculate a valid result before printing";return;}window.print();});
+updateModeUI();setEmptyState();if(!loadState())clearErrors();
+</script>
+<script src="../ads-slot-manager.js"></script>
+
+
+
+<script id="hc-tab-interaction-standard">
+(() => {
+  document.querySelectorAll('[role="tablist"]').forEach(tablist => {
+    const tabs = Array.from(tablist.querySelectorAll('button')).filter(button => button.closest('[role="tablist"]') === tablist);
+    if(tabs.length < 2) return;
+
+    const sync = () => {
+      tabs.forEach(tab => {
+        tab.setAttribute('role','tab');
+        const selected = tab.getAttribute('aria-selected') === 'true';
+        tab.tabIndex = selected ? 0 : -1;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.setAttribute('role','tab');
+      tab.addEventListener('click', () => requestAnimationFrame(sync));
+      tab.addEventListener('keydown', event => {
+        let targetIndex = null;
+        if(event.key === 'ArrowRight' || event.key === 'ArrowDown') targetIndex = (index + 1) % tabs.length;
+        else if(event.key === 'ArrowLeft' || event.key === 'ArrowUp') targetIndex = (index - 1 + tabs.length) % tabs.length;
+        else if(event.key === 'Home') targetIndex = 0;
+        else if(event.key === 'End') targetIndex = tabs.length - 1;
+        if(targetIndex === null) return;
+        event.preventDefault();
+        tabs[targetIndex].focus();
+        tabs[targetIndex].click();
+      });
+    });
+
+    sync();
+  });
+})();
+</script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset data','clear data','clear','reset']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
