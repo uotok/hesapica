@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Asset Return Calculator: Profit, ROI &amp; Break-Even Price | Hesapica</title>
+<meta content="Calculate asset profit or loss, net return, break-even price and target sale price after fixed costs and percentage sale fees." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/asset-return-calculator" rel="canonical"/><link href="https://hesapica.com/en/asset-return-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/varlik-getirisi-hesaplama" hreflang="tr" rel="alternate"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Asset Return Calculator: Profit, ROI &amp; Break-Even Price | Hesapica" property="og:title">
+<meta content="Calculate net asset return, transaction-cost impact, break-even price and target sale price for gold, currencies or other assets." property="og:description"/>
+<meta content="https://hesapica.com/en/asset-return-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@hesapica" name="twitter:site"/>
+<meta content="Asset Return Calculator: Profit, ROI &amp; Break-Even Price | Hesapica" name="twitter:title"/>
+<meta content="Calculate net asset return, transaction-cost impact, break-even price and target sale price for gold, currencies or other assets." name="twitter:description"/>
+<meta content="https://hesapica.com/en/asset-return-calculator" name="twitter:url"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" name="twitter:image:alt"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--text:#1f2937;--muted:#556274;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 42px rgba(79,70,229,.10);--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff,var(--bg));line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.1);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow-pill{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#475569;font-size:17px}.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.1);color:#4338ca;font-size:14px;font-weight:700}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.1)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:25px;line-height:1.18;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#475569}.hero-box ul{margin:10px 0 0;padding-left:18px}.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:clamp(24px,2.3vw,28px);color:var(--primary);letter-spacing:-.02em}.section-note{margin:0 0 18px;color:#374151;font-size:16px;line-height:1.65}.notice{padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.24);margin-bottom:18px;color:#374151}.notice strong{display:block;color:var(--primary);margin-bottom:5px}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#273244}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:17px;font-weight:600;transition:.2s}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:62px}input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}input::placeholder{color:#7b8797;opacity:1;font-size:15px}.hint{margin-top:7px;font-size:14px;color:#526070;line-height:1.6}.error-text{min-height:18px;margin-top:6px;font-size:13px;font-weight:700;color:var(--bad)}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}.scenario-row{display:flex;flex-wrap:wrap;gap:10px}.scenario-chip{border:1px solid #dbe4ff;background:#f8faff;color:#4338ca;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.scenario-chip.active{background:#4338ca;color:#fff;border-color:#4338ca}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:0;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:.18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.validation-box{margin-top:14px;padding:13px 15px;border-radius:15px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}.hide{display:none!important}.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.highlight-card,.summary-card{padding:20px;border-radius:22px;border:1px solid rgba(79,70,229,.1);background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:17px;font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14.5px;color:#374151}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;background:#fff;color:var(--primary);border:1px solid rgba(79,70,229,.12);white-space:nowrap}.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}.highlight-card{background:linear-gradient(180deg,#f8faff,#eef2ff);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}.highlight-sub{font-size:15px;color:#475569}.mini-result-grid{display:grid;gap:12px}.mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}.mini-result .label{font-size:15px;font-weight:800}.mini-result .subline{font-size:13.5px;color:var(--muted);margin-top:5px}.mini-result .value{font-size:20px;font-weight:900;text-align:right}.objective-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.objective-card{padding:14px;border-radius:16px;border:1px solid var(--line);background:#fff}.objective-card .k{font-size:13px;color:var(--muted);font-weight:700}.objective-card .v{margin-top:5px;font-size:18px;font-weight:900}.comment-box{padding:17px 19px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151}.details{margin-top:24px;display:grid;gap:14px}.details details{min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}.details summary{cursor:pointer;font-weight:900;color:var(--primary)}.details-inner{margin-top:16px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}table{width:100%;border-collapse:collapse;font-size:14px}caption{text-align:left;padding:12px 14px;font-weight:800;color:var(--primary)}th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.04em}td{font-weight:700}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151}.seo-section{margin-top:24px}.seo-section p{color:#374151;margin:0 0 14px}.seo-section p:last-child{margin-bottom:0}.seo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.seo-box{padding:17px;border:1px solid var(--line);border-radius:18px;background:#fcfcff}.seo-box h3{margin:0 0 8px;color:#312e81;font-size:18px}.seo-box p{margin:0;color:#475569;font-size:14.5px}.formula-box{margin:14px 0;padding:15px 17px;border-radius:16px;background:#f8faff;border:1px solid #dbe4ff;color:#312e81;font-weight:800;line-height:1.7}.example-table{margin-top:14px}.example-table td,.example-table th{white-space:normal}.related-section{margin-top:24px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82)}.related-card strong{display:block;font-size:19px;line-height:1.28;margin-bottom:8px}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}.toast{position:fixed;right:18px;bottom:18px;z-index:9999;max-width:min(380px,calc(100% - 36px));padding:12px 16px;border-radius:13px;background:#111827;color:#fff;box-shadow:0 14px 34px rgba(15,23,42,.28);opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,100%)}.seo-grid{grid-template-columns:1fr}.hero,.card,.status-card,.highlight-card,.summary-card{padding:20px}.field-grid,.related-grid,.objective-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.highlight-value{font-size:31px}.hc-ad-slot .adsbygoogle{min-height:0}}@media print{body{background:#fff}.topbar,.actions,.hero-chips,.hc-ad-slot,.related-section,.scenario-row,.toast{display:none!important}.hero,.card,.status-card,.highlight-card,.summary-card,.details details{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}}
+
+.card,.seo-section,.details details{min-width:0}
+.table-wrap{max-width:100%;min-width:0;overflow-x:auto}
+.seo-section{overflow:hidden}
+@media(max-width:360px){.example-table table{min-width:620px}}
+
+.money-prefix{font-size:13px;min-width:30px}.money-prefix + input.with-prefix{padding-left:55px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Asset Return Calculator","url":"https://hesapica.com/en/asset-return-calculator","inLanguage":"en","description":"Calculate asset profit or loss, net return, break-even price and target sale price after fixed costs and percentage sale fees.","isPartOf":{"@id":"https://hesapica.com/#website"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Investing","item":"https://hesapica.com/en/#calculators"},{"@type":"ListItem","position":3,"name":"Asset Return Calculator","item":"https://hesapica.com/en/asset-return-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I enter the bid/ask spread separately?","acceptedAnswer":{"@type":"Answer","text":"No, not if your purchase and sale prices already reflect the broker or platform quote. Enter only additional exit commissions or percentage fees that are charged separately."}},{"@type":"Question","name":"Can I use the current market price as the sale price?","acceptedAnswer":{"@type":"Answer","text":"Yes, but for the most realistic net result use the unit price you could actually receive on sale. A reference or mid-market price may differ from your executable price."}},{"@type":"Question","name":"Can the calculator show a negative return?","acceptedAnswer":{"@type":"Answer","text":"Yes. If net sale proceeds are below total acquisition cost, the result shows a loss and the break-even price needed to bring net profit back to zero."}},{"@type":"Question","name":"What does the target return field do?","acceptedAnswer":{"@type":"Answer","text":"For example, with a 10% target return, the calculator estimates the unit sale price needed to reach that net ROI after the entered transaction costs."}},{"@type":"Question","name":"Can I use the same calculation for gold, currencies and other assets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The core math is the same: purchase price, sale price and quantity determine gross amounts, while entered transaction costs adjust the net result."}},{"@type":"Question","name":"Does this calculator provide investment advice?","acceptedAnswer":{"@type":"Answer","text":"No. It only calculates profit/loss, returns and price thresholds from your inputs; it does not recommend buying, selling or holding."}}]}</script>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-language-switch-standard">
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+  .breadcrumb{min-width:0}
+  .tool-layout > *{min-width:0}
+  .hc-language-switch{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    padding:5px;
+    border:1px solid #c7d2fe;
+    border-radius:999px;
+    background:#fff;
+    box-shadow:0 8px 20px rgba(79,70,229,.10);
+  }
+  .hc-language-switch::before{
+    content:"🌐";
+    margin:0 4px 0 6px;
+    font-size:15px;
+    line-height:1;
+  }
+  .hc-language-switch a,
+  .hc-language-switch strong{
+    min-height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 13px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:800;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .hc-language-switch a{
+    color:#3730a3;
+    background:#eef2ff;
+    border:1px solid #dbe4ff;
+    transition:transform .18s ease,background .18s ease,border-color .18s ease;
+  }
+  .hc-language-switch a:hover,
+  .hc-language-switch a:focus-visible{
+    background:#e0e7ff;
+    border-color:#a5b4fc;
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .hc-language-switch strong{
+    color:#fff;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    box-shadow:0 6px 14px rgba(79,70,229,.20);
+  }
+  @media (max-width:760px){
+    .topbar{
+      align-items:stretch;
+      flex-direction:column;
+      gap:10px;
+    }
+    .hc-language-switch{
+      width:100%;
+      justify-content:center;
+      padding:6px;
+    }
+    .hc-language-switch a,
+    .hc-language-switch strong{
+      flex:1 1 0;
+      min-height:42px;
+    }
+  }
+</style>
+
+</head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;background:#fef2f2;color:#991b1b;border-radius:14px">This calculator requires JavaScript to work.</div></noscript>
+<div class="container topbar"><nav aria-label="breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#calculators">Investing</a><span>/</span><strong>Asset Return Calculator</strong></nav>
+<div class="hc-language-switch" role="group" aria-label="Language switch"><a href="/varlik-getirisi-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container"><section class="hero"><div class="hero-grid"><div><span class="eyebrow-pill">Hesapica • Asset Analysis</span><h1>Asset Return Calculator</h1><p>Calculate net profit or loss, ROI, transaction-cost impact, break-even unit price and the sale price needed for a target return for gold, currencies or other assets.</p><div class="hero-chips"><span class="hero-chip">Net profit / loss</span><span class="hero-chip">Break-even price</span><span class="hero-chip">Target sale price</span><span class="hero-chip">Transaction costs</span></div></div><aside class="hero-box"><div class="eyebrow">Calculation logic</div><strong>Net result from your actual purchase and sale prices</strong><p>Enter the actual purchase price and the unit price you expect to receive when selling. Do not deduct the bid/ask spread a second time if it is already reflected in those prices.</p><ul><li>Optional fixed transaction costs</li><li>Optional sale commission or fee</li><li>Objective price scenarios</li></ul></aside></div></section></header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<form class="card" id="assetForm" novalidate="">
+<h2>Calculation Panel</h2><p class="section-note">For the core calculation, choose an asset type and enter purchase price, sale/current price and quantity. Transaction costs and target return are optional.</p>
+<div class="notice"><strong>Important note about spreads</strong>If your purchase and sale prices already come from the broker or platform, the bid/ask spread is already reflected in the difference. Do not subtract it again. Enter a sale fee only if an additional commission or percentage charge is applied at exit.</div>
+<div class="form-section"><div class="form-title">Core transaction data</div><div class="field-grid">
+<div class="field full"><label for="assetType">Asset type</label><select id="assetType"><option value="gold">Gold</option><option value="usd">US Dollar (vs. base currency)</option><option value="eur">Euro (vs. base currency)</option></select><div class="hint">Price and quantity labels update for the selected asset.</div></div><div class="field full" id="baseCurrencyField"><label for="baseCurrency">Base currency</label><select aria-describedby="baseCurrencyHint baseCurrencyError" aria-invalid="false" id="baseCurrency"><option selected="selected" value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CAD">CAD</option><option value="AUD">AUD</option><option value="JPY">JPY</option><option value="CHF">CHF</option><option value="NZD">NZD</option><option value="SGD">SGD</option></select><div class="hint" id="baseCurrencyHint">All prices and fixed costs are interpreted in this currency. For a currency position, choose a base currency different from the asset currency.</div><div class="error-text" id="baseCurrencyError" role="alert"></div></div>
+<div class="field" id="buyPriceField"><label for="buyPrice" id="buyPriceLabel">Purchase price per gram</label><div class="input-wrap"><span class="prefix money-prefix">¤</span><input aria-describedby="buyPriceHint buyPriceError" autocomplete="off" class="with-prefix" id="buyPrice" inputmode="decimal" placeholder="e.g. 245.00"/></div><div class="hint" id="buyPriceHint">The actual price paid per unit.</div><div class="error-text" id="buyPriceError" role="alert"></div></div>
+<div class="field" id="sellPriceField"><label for="sellPrice" id="sellPriceLabel">Sale / current price per gram</label><div class="input-wrap"><span class="prefix money-prefix">¤</span><input aria-describedby="sellPriceHint sellPriceError" autocomplete="off" class="with-prefix" id="sellPrice" inputmode="decimal" placeholder="e.g. 268.00"/></div><div class="hint" id="sellPriceHint">The actual unit price you expect to receive at sale, or the current price you want to analyze.</div><div class="error-text" id="sellPriceError" role="alert"></div></div>
+<div class="field" id="amountField"><label for="amount" id="amountLabel">Quantity</label><div class="input-wrap"><input aria-describedby="amountHint amountError" autocomplete="off" class="with-suffix" id="amount" inputmode="decimal" placeholder="e.g. 10"/><span class="suffix" id="amountSuffix">g</span></div><div class="hint" id="amountHint">Enter the total asset quantity.</div><div class="error-text" id="amountError" role="alert"></div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Optional transaction costs</div><div class="field-grid">
+<div class="field" id="buyCostField"><label for="buyCost">Fixed purchase cost</label><div class="input-wrap"><span class="prefix money-prefix">¤</span><input aria-describedby="buyCostHint buyCostError" autocomplete="off" class="with-prefix" id="buyCost" inputmode="decimal" placeholder="optional fee"/></div><div class="hint" id="buyCostHint">Any fixed fee paid in addition to the purchase amount.</div><div class="error-text" id="buyCostError" role="alert"></div></div>
+<div class="field" id="sellCostField"><label for="sellCost">Fixed sale cost</label><div class="input-wrap"><span class="prefix money-prefix">¤</span><input aria-describedby="sellCostHint sellCostError" autocomplete="off" class="with-prefix" id="sellCost" inputmode="decimal" placeholder="optional fee"/></div><div class="hint" id="sellCostHint">Any fixed fee deducted at sale.</div><div class="error-text" id="sellCostError" role="alert"></div></div>
+<div class="field" id="sellFeeRateField"><label for="sellFeeRate">Sale fee / commission (%)</label><div class="input-wrap"><input aria-describedby="sellFeeRateHint sellFeeRateError" autocomplete="off" class="with-suffix" id="sellFeeRate" inputmode="decimal" placeholder="e.g. 0.20"/><span class="suffix">%</span></div><div class="hint" id="sellFeeRateHint">Enter an additional percentage fee applied at sale; otherwise leave it at 0.</div><div class="error-text" id="sellFeeRateError" role="alert"></div></div>
+<div class="field" id="targetRateField"><label for="targetRate">Target net return (%)</label><div class="input-wrap"><input aria-describedby="targetRateHint targetRateError" autocomplete="off" class="with-suffix" id="targetRate" inputmode="decimal" placeholder="e.g. 10"/><span class="suffix">%</span></div><div class="hint" id="targetRateHint">Desired net return relative to total acquisition cost.</div><div class="error-text" id="targetRateError" role="alert"></div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Quick scenarios</div><div class="scenario-row" id="scenarioRow"><button class="scenario-chip" data-scenario="smallProfit" type="button">Small profit</button><button class="scenario-chip" data-scenario="mediumProfit" type="button">Medium return</button><button class="scenario-chip" data-scenario="lossCase" type="button">Loss scenario</button><button class="scenario-chip" data-scenario="costHeavy" type="button">Cost-heavy scenario</button></div></div>
+<div class="validation-box hide" id="validationBox" role="alert"></div>
+<div class="actions"><button class="btn btn-primary" id="calculateBtn" type="submit">Calculate</button><button class="btn btn-secondary" id="exampleBtn" type="button">Example Data</button><button class="btn btn-ghost" id="resetBtn" type="button">Reset</button><button class="btn btn-ghost" disabled="" id="copyBtn" type="button">Copy Result</button><button class="btn btn-ghost" disabled="" id="shareBtn" type="button">Share</button><button class="btn btn-ghost" disabled="" id="printBtn" type="button">Print / PDF</button></div>
+</form>
+<aside aria-atomic="true" aria-live="polite" class="results" id="resultsPanel">
+<div class="status-card"><div class="status-row"><div><div class="status-title">Calculation status</div><div class="status-text" id="statusText">Enter purchase price, sale price and quantity to begin.</div></div><span class="badge" id="statusBadge">Waiting for data</span></div></div>
+<div class="highlight-card"><div class="highlight-label">Net profit / loss</div><div class="highlight-value" id="mainResult">—</div><div class="highlight-sub" id="mainResultText">Your net result after transaction costs appears here.</div></div>
+<div class="mini-result-grid"><div class="mini-result"><div><div class="label">Total acquisition cost</div><div class="subline">Purchase amount + fixed purchase cost</div></div><div class="value" id="totalInvestment">—</div></div><div class="mini-result"><div><div class="label">Net sale proceeds</div><div class="subline">Gross sale amount − percentage and fixed sale costs</div></div><div class="value" id="netSell">—</div></div><div class="mini-result"><div><div class="label">Net return rate</div><div class="subline">Net profit ÷ total acquisition cost</div></div><div class="value" id="returnRate">—</div></div><div class="mini-result"><div><div class="label">Break-even unit price</div><div class="subline">Approximate sale price that produces zero net profit</div></div><div class="value" id="breakEvenPrice">—</div></div><div class="mini-result"><div><div class="label">Target sale price</div><div class="subline">When a target return is entered</div></div><div class="value" id="targetPrice">—</div></div><div class="mini-result"><div><div class="label">Total transaction costs</div><div class="subline">Purchase costs + sale costs</div></div><div class="value" id="totalFees">—</div></div></div>
+<div class="summary-card"><div class="objective-grid"><div class="objective-card"><div class="k">Net position</div><div class="v" id="netStatus">—</div></div><div class="objective-card"><div class="k">Unit price change</div><div class="v" id="priceChange">—</div></div><div class="objective-card"><div class="k">Distance from break-even</div><div class="v" id="breakEvenGap">—</div></div></div></div>
+<div class="comment-box" id="commentBox">This calculator provides mathematical results only; it does not recommend buying, selling or holding.</div>
+</aside>
+</section>
+<section class="details"><details open=""><summary>Price scenarios</summary><div class="details-inner table-wrap"><table><caption>Objective scenarios around the current sale price</caption><thead><tr><th>Scenario</th><th>Unit price</th><th>Net profit / loss</th><th>Return</th></tr></thead><tbody id="scenarioBody"><tr><td colspan="4">Waiting for calculation.</td></tr></tbody></table></div></details><details><summary>Calculation breakdown</summary><div class="details-inner table-wrap"><table><caption>Transaction amounts and costs</caption><tbody id="breakdownBody"><tr><td>Waiting for calculation.</td></tr></tbody></table></div></details></section>
+<section class="content-grid"><article class="card accordion-card"><h2>How is asset return calculated?</h2><p>Asset return compares the total acquisition cost with the net proceeds you would actually receive at sale. Price movement alone is not enough: fixed costs and exit commissions can materially change the result.</p><details open=""><summary>Net profit / loss formula</summary><p>Total acquisition cost = purchase price × quantity + fixed purchase cost. Net sale proceeds = sale price × quantity − percentage sale fee − fixed sale cost. Net profit/loss = net sale proceeds − total acquisition cost.</p></details><details><summary>How is net return calculated?</summary><p>Net return is net profit or loss divided by total acquisition cost, multiplied by 100. This makes positions of different sizes easier to compare on a percentage basis.</p></details><details><summary>How is break-even price calculated?</summary><p>Break-even price is the unit sale price that makes net sale proceeds equal total acquisition cost. Percentage and fixed exit fees are included when solving backward.</p></details><details><summary>How is target price calculated?</summary><p>The selected target return is added to total acquisition cost, then the calculator solves backward for the unit sale price required after exit fees.</p></details></article><section class="card accordion-card"><h2>Frequently Asked Questions</h2><details open=""><summary>Should I enter the bid/ask spread separately?</summary><p>No, not if your purchase and sale prices already reflect the broker or platform quote. Enter only additional exit commissions or percentage fees that are charged separately.</p></details><details><summary>Can I use the current market price as the sale price?</summary><p>Yes, but for the most realistic net result use the unit price you could actually receive on sale. A reference or mid-market price may differ from your executable price.</p></details><details><summary>Can the calculator show a negative return?</summary><p>Yes. If net sale proceeds are below total acquisition cost, the result shows a loss and the break-even price needed to bring net profit back to zero.</p></details><details><summary>What does the target return field do?</summary><p>For example, with a 10% target return, the calculator estimates the unit sale price needed to reach that net ROI after the entered transaction costs.</p></details><details><summary>Can I use the same calculation for gold, currencies and other assets?</summary><p>Yes. The core math is the same: purchase price, sale price and quantity determine gross amounts, while entered transaction costs adjust the net result.</p></details><details><summary>Does this calculator provide investment advice?</summary><p>No. It only calculates profit/loss, returns and price thresholds from your inputs; it does not recommend buying, selling or holding.</p></details></section></section>
+<section class="card seo-section"><h2>What is asset return?</h2><p>Asset return measures how much an investment has gained or lost relative to its acquisition cost. It is useful to distinguish two related measures: <strong>unit price change</strong> compares only purchase and sale prices, while <strong>net return</strong> also includes entered transaction costs.</p><p>As a result, an asset can rise in price while fixed costs or sale commissions reduce the investor’s actual net return. The calculator reports price movement and net return separately so the difference is clear.</p><div class="seo-grid"><div class="seo-box"><h3>Gold return</h3><p>For gold, use purchase price per gram, sale/current price per gram and the total grams held. Using executable purchase and sale prices avoids counting the spread twice.</p></div><div class="seo-box"><h3>Currency return</h3><p>For a currency position, use the price paid per unit, the sale/current price and the amount held. Any separately charged fee or commission is deducted from sale proceeds.</p></div><div class="seo-box"><h3>Another currency or asset</h3><p>The same net-profit logic applies to another currency or asset as long as prices, quantity and costs are expressed consistently in the selected base currency.</p></div></div></section><section class="card seo-section"><h2>Net return vs. price change</h2><p>Price change measures how much the unit sale price differs from the purchase price. Net return considers the entire position and also includes entered purchase costs, sale costs and percentage exit fees, so the two percentages do not have to match.</p><div class="formula-box">Price change (%) = (sale price − purchase price) ÷ purchase price × 100<br/>Net return (%) = net profit / loss ÷ total acquisition cost × 100</div><p>For smaller or shorter-term positions, fixed costs can represent a larger share of invested capital, making the difference between price change and net return more noticeable.</p></section><section class="card seo-section"><h2>Asset return examples</h2><p>The examples below are hypothetical and only illustrate the calculation method; they are not live market prices or investment recommendations.</p><div class="table-wrap example-table"><table><thead><tr><th>Example</th><th>Purchase</th><th>Sale</th><th>Quantity</th><th>Simple price difference</th></tr></thead><tbody><tr><td>Gold</td><td>245.00 / g</td><td>268.00 / g</td><td>10 g</td><td>positive before costs</td></tr><tr><td>US Dollar</td><td>30.00 per unit</td><td>34.50 per unit</td><td>1,000 units</td><td>positive before costs</td></tr><tr><td>Euro</td><td>33.00 per unit</td><td>38.50 per unit</td><td>1,000 units</td><td>positive before costs</td></tr></tbody></table></div><p>For a realistic net result, include any fixed purchase cost, fixed sale cost and additional percentage sale commission.</p></section><div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq"><ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="5127687114" data-full-width-responsive="true" style="display:block"></ins></div>
+<section class="card related-section"><h2>Related Calculators</h2><div class="related-grid"><a class="related-card" href="/en/investment-return-calculator"><span class="small">Investing</span><strong>Investment Return Calculator</strong><p>Analyze investment growth, ROI, contributions, fees and inflation.</p></a><a class="related-card" href="/en/currency-converter"><span class="small">Currency</span><strong>Currency Converter</strong><p>Convert currencies with current or manual exchange rates.</p></a><a class="related-card" href="/en/crypto-profit-calculator"><span class="small">Investing</span><strong>Crypto Profit Calculator</strong><p>Estimate crypto profit or loss after fees.</p></a><a class="related-card" href="/en/inflation-calculator"><span class="small">Finance</span><strong>Inflation Calculator</strong><p>Compare price changes and purchasing power after inflation.</p></a></div></section>
+</main>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script>
+(()=>{
+'use strict';
+const PAGE_URL='https://hesapica.com/en/asset-return-calculator';
+const STORAGE_KEY='hesapica_asset_return_en_v1';
+const STORAGE_MAX_AGE=90*24*60*60*1000;
+const $=id=>document.getElementById(id);
+const ASSETS={
+ gold:{label:'Gold',buyLabel:'Purchase price per gram',sellLabel:'Sale / current price per gram',amountLabel:'Gold quantity',amountSuffix:'g',buyPlaceholder:'e.g. 245.00',sellPlaceholder:'e.g. 268.00',amountPlaceholder:'e.g. 10',example:{buyPrice:245,sellPrice:268,amount:10,buyCost:0,sellCost:0,sellFeeRate:.20,targetRate:10},scenarios:{smallProfit:{buyPrice:245,sellPrice:255,amount:10,buyCost:0,sellCost:0,sellFeeRate:0,targetRate:5},mediumProfit:{buyPrice:228,sellPrice:269,amount:25,buyCost:10,sellCost:10,sellFeeRate:.20,targetRate:15},lossCase:{buyPrice:272,sellPrice:258,amount:20,buyCost:0,sellCost:0,sellFeeRate:.20,targetRate:8},costHeavy:{buyPrice:240,sellPrice:250,amount:50,buyCost:30,sellCost:30,sellFeeRate:1.2,targetRate:10}}},
+ usd:{label:'US Dollar',buyLabel:'Purchase price per USD',sellLabel:'Sale / current price per USD',amountLabel:'USD quantity',amountSuffix:'USD',buyPlaceholder:'e.g. 1.00',sellPlaceholder:'e.g. 1.08',amountPlaceholder:'e.g. 1000',example:{buyPrice:1,sellPrice:1.08,amount:1000,buyCost:0,sellCost:0,sellFeeRate:.10,targetRate:8},scenarios:{smallProfit:{buyPrice:1,sellPrice:1.04,amount:1000,buyCost:0,sellCost:0,sellFeeRate:0,targetRate:4},mediumProfit:{buyPrice:1,sellPrice:1.12,amount:1250,buyCost:5,sellCost:5,sellFeeRate:.10,targetRate:10},lossCase:{buyPrice:1.05,sellPrice:.99,amount:850,buyCost:0,sellCost:0,sellFeeRate:.10,targetRate:6},costHeavy:{buyPrice:1,sellPrice:1.03,amount:2500,buyCost:15,sellCost:15,sellFeeRate:.60,targetRate:7}}},
+ eur:{label:'Euro',buyLabel:'Purchase price per EUR',sellLabel:'Sale / current price per EUR',amountLabel:'EUR quantity',amountSuffix:'EUR',buyPlaceholder:'e.g. 1.00',sellPlaceholder:'e.g. 1.10',amountPlaceholder:'e.g. 1000',example:{buyPrice:1,sellPrice:1.10,amount:1000,buyCost:0,sellCost:0,sellFeeRate:.10,targetRate:8},scenarios:{smallProfit:{buyPrice:1,sellPrice:1.03,amount:1000,buyCost:0,sellCost:0,sellFeeRate:0,targetRate:3},mediumProfit:{buyPrice:1,sellPrice:1.14,amount:1200,buyCost:5,sellCost:5,sellFeeRate:.10,targetRate:10},lossCase:{buyPrice:1.05,sellPrice:.98,amount:700,buyCost:0,sellCost:0,sellFeeRate:.10,targetRate:5},costHeavy:{buyPrice:1,sellPrice:1.03,amount:2000,buyCost:15,sellCost:15,sellFeeRate:.60,targetRate:7}}}
+};
+const state={result:null,autoTimer:null,saveTimer:null,toastTimer:null};
+const fieldIds=['buyPrice','sellPrice','amount','buyCost','sellCost','sellFeeRate','targetRate'];
+function parseFlexibleNumber(value){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'').replace(/₺|TL|%|gr|USD|EUR/gi,'');if(!s)return null;if(!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||s.includes('-')&&!s.startsWith('-'))return null;const sign=s.startsWith('-')?-1:1;s=s.replace('-','');const dots=(s.match(/\./g)||[]).length,commas=(s.match(/,/g)||[]).length;if(dots&&commas){const dec=s.lastIndexOf('.')>s.lastIndexOf(',')?'.':',';const group=dec==='.'?',':'.';s=s.split(group).join('');const parts=s.split(dec);if(parts.length!==2||!parts[0]||!parts[1])return null;s=parts[0]+'.'+parts[1];}else if(commas){const parts=s.split(',');if(parts.some(p=>p===''))return null;if(parts.length===2){s=parts[0]+'.'+parts[1];}else{if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}else if(dots){const parts=s.split('.');if(parts.some(p=>p===''))return null;if(parts.length===2){s=parts[0]+'.'+parts[1];}else{if(!parts.slice(1).every(p=>p.length===3))return null;s=parts.join('');}}const n=Number(s)*sign;return Number.isFinite(n)?n:null;}
+function currentCurrency(){return $('baseCurrency')?$('baseCurrency').value:'USD';}
+function currencySymbol(code=currentCurrency()){try{return new Intl.NumberFormat('en-US',{style:'currency',currency:code,currencyDisplay:'narrowSymbol'}).formatToParts(0).find(x=>x.type==='currency')?.value||code;}catch{return code;}}
+function updateMoneyPrefixes(){document.querySelectorAll('.money-prefix').forEach(el=>el.textContent=currencySymbol());}
+function formatMoney(v,currency=currentCurrency()){return Number.isFinite(v)?new Intl.NumberFormat('en-US',{style:'currency',currency,minimumFractionDigits:2,maximumFractionDigits:2}).format(v):'—'}
+function formatTRY(v){return formatMoney(v);}
+function formatPercent(v){return Number.isFinite(v)?new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v)+'%':'—'}
+function formatNumber(v,digits=3){return Number.isFinite(v)?new Intl.NumberFormat('en-US',{maximumFractionDigits:digits}).format(v):''}
+function inputDigits(id){if(id==='amount')return 6;if(id==='buyPrice'||id==='sellPrice'||id==='sellFeeRate'||id==='targetRate')return 4;return 2;}
+function formatUnitPrice(v,assetType){if(!Number.isFinite(v))return '—';const digits=assetType==='gold'?2:4;return new Intl.NumberFormat('en-US',{style:'currency',currency:currentCurrency(),minimumFractionDigits:digits,maximumFractionDigits:digits}).format(v);}
+function asset(){return ASSETS[$('assetType').value]||ASSETS.gold;}
+function setFieldError(id,msg=''){const input=$(id),field=$(id+'Field'),err=$(id+'Error');if(input)input.setAttribute('aria-invalid',msg?'true':'false');if(field)field.classList.toggle('invalid',!!msg);if(err)err.textContent=msg;}
+function clearErrors(){fieldIds.forEach(id=>setFieldError(id));setFieldError('baseCurrency');$('validationBox').classList.add('hide');$('validationBox').textContent='';}
+function optionalNumber(id,blankValue=0){const raw=$(id).value.trim();return raw===''?blankValue:parseFlexibleNumber(raw);}
+function getInputs(){return{assetType:$('assetType').value,baseCurrency:currentCurrency(),buyPrice:parseFlexibleNumber($('buyPrice').value),sellPrice:parseFlexibleNumber($('sellPrice').value),amount:parseFlexibleNumber($('amount').value),buyCost:optionalNumber('buyCost'),sellCost:optionalNumber('sellCost'),sellFeeRate:optionalNumber('sellFeeRate'),targetRate:optionalNumber('targetRate')};}
+function validate(i,show=true){clearErrors();const errors={};if((i.assetType==='usd'&&i.baseCurrency==='USD')||(i.assetType==='eur'&&i.baseCurrency==='EUR'))errors.baseCurrency='Choose a base currency different from the currency asset being measured.';if(!(Number.isFinite(i.buyPrice)&&i.buyPrice>0&&i.buyPrice<=1e9))errors.buyPrice='Enter a valid purchase price greater than 0.';if(!(Number.isFinite(i.sellPrice)&&i.sellPrice>0&&i.sellPrice<=1e9))errors.sellPrice='Enter a valid sale/current price greater than 0.';if(!(Number.isFinite(i.amount)&&i.amount>0&&i.amount<=1e12))errors.amount='Enter a valid quantity greater than 0.';if(!(Number.isFinite(i.buyCost)&&i.buyCost>=0&&i.buyCost<=1e12))errors.buyCost='Fixed purchase cost must be a valid number of 0 or more.';if(!(Number.isFinite(i.sellCost)&&i.sellCost>=0&&i.sellCost<=1e12))errors.sellCost='Fixed sale cost must be a valid number of 0 or more.';if(!(Number.isFinite(i.sellFeeRate)&&i.sellFeeRate>=0&&i.sellFeeRate<100))errors.sellFeeRate='Sale fee must be between 0% and 100%.';if(!(Number.isFinite(i.targetRate)&&i.targetRate>=0&&i.targetRate<=10000))errors.targetRate='Target return must be between 0% and 10,000%.';if(show){Object.entries(errors).forEach(([id,msg])=>setFieldError(id,msg));if(Object.keys(errors).length){$('validationBox').textContent='Correct the highlighted fields.';$('validationBox').classList.remove('hide');}}return Object.keys(errors).length===0;}
+function compute(i){const grossBuy=i.buyPrice*i.amount;const totalInvestment=grossBuy+i.buyCost;const grossSell=i.sellPrice*i.amount;const sellFee=grossSell*i.sellFeeRate/100;const netSell=grossSell-sellFee-i.sellCost;const netProfit=netSell-totalInvestment;const returnRate=netProfit/totalInvestment*100;const feeFactor=1-i.sellFeeRate/100;const breakEvenPrice=(totalInvestment+i.sellCost)/(i.amount*feeFactor);const targetPrice=i.targetRate>0?(totalInvestment*(1+i.targetRate/100)+i.sellCost)/(i.amount*feeFactor):null;const totalFees=i.buyCost+i.sellCost+sellFee;const priceChange=(i.sellPrice-i.buyPrice)/i.buyPrice*100;const breakEvenGap=(i.sellPrice-breakEvenPrice)/breakEvenPrice*100;const feeShare=totalFees/totalInvestment*100;const r={...i,grossBuy,totalInvestment,grossSell,sellFee,netSell,netProfit,returnRate,breakEvenPrice,targetPrice,totalFees,priceChange,breakEvenGap,feeShare};for(const [k,v] of Object.entries(r)){if(typeof v==='number'&&!Number.isFinite(v))throw new Error('Invalid result: '+k);}return r;}
+function scenarioCalc(r,price){const gross=price*r.amount;const fee=gross*r.sellFeeRate/100;const netSell=gross-fee-r.sellCost;const net=netSell-r.totalInvestment;return{net,rate:net/r.totalInvestment*100};}
+function render(r){const cfg=ASSETS[r.assetType];$('mainResult').textContent=formatTRY(r.netProfit);$('mainResult').style.color=r.netProfit>0?'var(--good)':r.netProfit<0?'var(--bad)':'var(--text)';$('mainResultText').textContent=`${cfg.label}: net result after entered transaction costs.`;$('totalInvestment').textContent=formatTRY(r.totalInvestment);$('netSell').textContent=formatTRY(r.netSell);$('returnRate').textContent=formatPercent(r.returnRate);$('breakEvenPrice').textContent=formatUnitPrice(r.breakEvenPrice,r.assetType);$('targetPrice').textContent=r.targetPrice===null?'No target entered':formatUnitPrice(r.targetPrice,r.assetType);$('totalFees').textContent=formatTRY(r.totalFees);$('netStatus').textContent=r.netProfit>0?'Profit':r.netProfit<0?'Loss':'Break-even';$('netStatus').style.color=r.netProfit>0?'var(--good)':r.netProfit<0?'var(--bad)':'var(--text)';$('priceChange').textContent=formatPercent(r.priceChange);$('breakEvenGap').textContent=formatPercent(r.breakEvenGap);$('statusBadge').textContent='Calculated';$('statusBadge').className='badge '+(r.netProfit>0?'good':r.netProfit<0?'bad':'warn');$('statusText').textContent='Net result, transaction costs and price thresholds were calculated from the valid inputs.';$('commentBox').textContent=`Unit price changed ${formatPercent(r.priceChange)} from purchase. Entered transaction costs equal ${formatPercent(r.feeShare)} of total acquisition cost. The current sale price is ${formatPercent(r.breakEvenGap)} from break-even. These metrics are mathematical comparisons, not investment advice.`;const rows=[{name:'5% price decrease',price:r.sellPrice*.95},{name:'Current price',price:r.sellPrice},{name:'5% price increase',price:r.sellPrice*1.05},{name:'Break-even',price:r.breakEvenPrice}];if(r.targetPrice!==null)rows.push({name:'Target return',price:r.targetPrice});$('scenarioBody').innerHTML=rows.map(x=>{const s=scenarioCalc(r,x.price);return `<tr><td>${x.name}</td><td>${formatUnitPrice(x.price,r.assetType)}</td><td>${formatTRY(s.net)}</td><td>${formatPercent(s.rate)}</td></tr>`}).join('');$('breakdownBody').innerHTML=`<tr><th>Purchase amount</th><td>${formatTRY(r.grossBuy)}</td></tr><tr><th>Fixed purchase cost</th><td>${formatTRY(r.buyCost)}</td></tr><tr><th>Total acquisition cost</th><td>${formatTRY(r.totalInvestment)}</td></tr><tr><th>Gross sale amount</th><td>${formatTRY(r.grossSell)}</td></tr><tr><th>Percentage sale fee</th><td>${formatTRY(r.sellFee)}</td></tr><tr><th>Fixed sale cost</th><td>${formatTRY(r.sellCost)}</td></tr><tr><th>Net sale proceeds</th><td>${formatTRY(r.netSell)}</td></tr><tr><th><strong>Net profit / loss</strong></th><td><strong>${formatTRY(r.netProfit)}</strong></td></tr>`;['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=false);}
+function emptyState(){state.result=null;$('mainResult').textContent='—';$('mainResult').style.color='';$('mainResultText').textContent='Your net result after transaction costs appears here.';['totalInvestment','netSell','returnRate','breakEvenPrice','targetPrice','totalFees','netStatus','priceChange','breakEvenGap'].forEach(id=>$(id).textContent='—');$('statusText').textContent='Enter purchase price, sale price and quantity to begin.';$('statusBadge').textContent='Waiting for data';$('statusBadge').className='badge';$('commentBox').textContent='This calculator provides mathematical results only; it does not recommend buying, selling or holding.';$('scenarioBody').innerHTML='<tr><td colspan="4">Waiting for calculation.</td></tr>';$('breakdownBody').innerHTML='<tr><td>Waiting for calculation.</td></tr>';['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=true);}
+function calculate(show=true){const i=getInputs();if(!validate(i,show)){emptyState();return null;}try{const r=compute(i);state.result=r;render(r);scheduleSave();return r;}catch{$('validationBox').textContent='An invalid result occurred during calculation.';$('validationBox').classList.remove('hide');emptyState();return null;}}
+function scrollToResult(){const panel=$('resultsPanel');if(!panel)return;window.setTimeout(()=>{const top=panel.getBoundingClientRect().top+window.scrollY-12;window.scrollTo({top:Math.max(0,top),behavior:'smooth'});panel.setAttribute('tabindex','-1');panel.focus({preventScroll:true});},120);}
+function ensureDistinctBaseCurrency(){const a=$('assetType').value,b=$('baseCurrency').value;if(a==='usd'&&b==='USD')$('baseCurrency').value='EUR';else if(a==='eur'&&b==='EUR')$('baseCurrency').value='USD';}
+function updateAssetUI(){const cfg=asset();updateMoneyPrefixes();$('buyPriceLabel').textContent=cfg.buyLabel;$('sellPriceLabel').textContent=cfg.sellLabel;$('amountLabel').textContent=cfg.amountLabel;$('amountSuffix').textContent=cfg.amountSuffix;$('buyPrice').placeholder=cfg.buyPlaceholder;$('sellPrice').placeholder=cfg.sellPlaceholder;$('amount').placeholder=cfg.amountPlaceholder;}
+function applyData(d){if(d.assetType&&ASSETS[d.assetType])$('assetType').value=d.assetType;if($('baseCurrency')&&d.baseCurrency)$('baseCurrency').value=d.baseCurrency;updateAssetUI();['buyPrice','sellPrice','amount','buyCost','sellCost','sellFeeRate','targetRate'].forEach(id=>{if(d[id]!==undefined&&d[id]!==null)$(id).value=formatNumber(Number(d[id]),inputDigits(id));});}
+function clearScenarioActive(){document.querySelectorAll('.scenario-chip').forEach(b=>b.classList.remove('active'));}
+function loadScenario(name,button){const cfg=asset();const d=cfg.scenarios[name];if(!d)return;clearScenarioActive();if(button)button.classList.add('active');ensureDistinctBaseCurrency();applyData({...d,assetType:$('assetType').value,baseCurrency:currentCurrency()});const r=calculate(true);if(r)scrollToResult();}
+function fillExample(){clearScenarioActive();ensureDistinctBaseCurrency();applyData({...asset().example,assetType:$('assetType').value,baseCurrency:currentCurrency()});const r=calculate(true);if(r)scrollToResult();}
+function scheduleSave(){clearTimeout(state.saveTimer);state.saveTimer=setTimeout(()=>{if(!state.result)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify({version:4,savedAt:Date.now(),data:getInputs()}));}catch{}},250);}
+function loadSaved(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;const p=JSON.parse(raw);if(!p||p.version!==4||!p.data||!Number.isFinite(p.savedAt)||Date.now()-p.savedAt>STORAGE_MAX_AGE)throw new Error('invalid');applyData(p.data);const i=getInputs();if(validate(i,false)){state.result=compute(i);render(state.result);return true;}throw new Error('invalid');}catch{try{localStorage.removeItem(STORAGE_KEY)}catch{}return false;}}
+function loadQuery(){const q=new URLSearchParams(location.search);if(!q.has('bp'))return false;const d={assetType:q.get('a')||'gold',baseCurrency:q.get('c')||'USD',buyPrice:parseFlexibleNumber(q.get('bp')),sellPrice:parseFlexibleNumber(q.get('sp')),amount:parseFlexibleNumber(q.get('am')),buyCost:parseFlexibleNumber(q.get('bc'))??0,sellCost:parseFlexibleNumber(q.get('sc'))??0,sellFeeRate:parseFlexibleNumber(q.get('fr'))??0,targetRate:parseFlexibleNumber(q.get('tr'))??0};applyData(d);const i=getInputs();if(validate(i,false)){state.result=compute(i);render(state.result);return true;}return false;}
+function buildShareUrl(){const i=getInputs(),u=new URL(PAGE_URL);const map={a:i.assetType,c:i.baseCurrency,bp:i.buyPrice,sp:i.sellPrice,am:i.amount,bc:i.buyCost,sc:i.sellCost,fr:i.sellFeeRate,tr:i.targetRate};Object.entries(map).forEach(([k,v])=>u.searchParams.set(k,String(v)));return u.toString();}
+function resultText(){if(!state.result)return'';const r=state.result,cfg=ASSETS[r.assetType];return `${cfg.label} Return\nNet profit / loss: ${formatTRY(r.netProfit)}\nNet return: ${formatPercent(r.returnRate)}\nTotal acquisition cost: ${formatTRY(r.totalInvestment)}\nNet sale proceeds: ${formatTRY(r.netSell)}\nBreak-even unit price: ${formatUnitPrice(r.breakEvenPrice,r.assetType)}${r.targetPrice!==null?`\nTarget sale price: ${formatUnitPrice(r.targetPrice,r.assetType)}`:''}\nHesapica`;}
+async function writeClipboard(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return;}catch(_clipboardError){}}const ta=document.createElement('textarea');ta.value=text;ta.readOnly=true;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();if(!ok)throw new Error('copy failed');}
+function toast(msg){clearTimeout(state.toastTimer);$('toast').textContent=msg;$('toast').classList.add('show');state.toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2200);}
+async function copyResult(){if(!state.result){toast('Calculate a valid result first.');return;}try{await writeClipboard(resultText());toast('Result copied to the clipboard.');}catch{toast('Copy failed.');}}
+async function shareResult(){if(!state.result){toast('Calculate a valid result first.');return;}const data={title:'Asset Return Calculator',text:resultText(),url:buildShareUrl()};if(navigator.share){try{await navigator.share(data);return;}catch(e){if(e&&e.name==='AbortError')return;}}try{await writeClipboard(`${data.text}\n${data.url}`);toast('Share text and link copied to the clipboard.');}catch{toast('Sharing failed.');}}
+function resetTool(){$('assetForm').reset();$('assetType').value='gold';updateAssetUI();clearErrors();clearScenarioActive();emptyState();try{localStorage.removeItem(STORAGE_KEY)}catch{}$('buyPrice').focus();}
+$('assetForm').addEventListener('submit',e=>{e.preventDefault();const r=calculate(true);if(r)scrollToResult();});
+$('exampleBtn').addEventListener('click',fillExample);$('resetBtn').addEventListener('click',resetTool);$('copyBtn').addEventListener('click',copyResult);$('shareBtn').addEventListener('click',shareResult);$('printBtn').addEventListener('click',()=>{if(state.result)window.print();else toast('Calculate a valid result first.');});
+$('scenarioRow').addEventListener('click',e=>{const b=e.target.closest('[data-scenario]');if(b)loadScenario(b.dataset.scenario,b);});
+$('baseCurrency').addEventListener('change',()=>{updateMoneyPrefixes();if(state.result){const i=getInputs();if(validate(i,true)){state.result=compute(i);render(state.result);}else emptyState();}scheduleSave();});
+$('assetType').addEventListener('change',()=>{ensureDistinctBaseCurrency();updateAssetUI();clearScenarioActive();if($('buyPrice').value&&$('sellPrice').value&&$('amount').value)calculate(false);});
+fieldIds.forEach(id=>{$(id).addEventListener('input',()=>{clearScenarioActive();clearTimeout(state.autoTimer);state.autoTimer=setTimeout(()=>{const i=getInputs();if(validate(i,false))calculate(false);else if(!i.buyPrice&&!i.sellPrice&&!i.amount)emptyState();},250);});$(id).addEventListener('blur',()=>{const n=parseFlexibleNumber($(id).value);if(n!==null&&n>=0)$(id).value=formatNumber(n,inputDigits(id));});});
+updateAssetUI();emptyState();if(!loadQuery())loadSaved();
+})();
+</script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','reset data','clear']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_resetBtn = document.getElementById('resetBtn');
+  if(button_resetBtn) button_resetBtn.addEventListener('click', () => clearToolQuery(['a','c','bp','sp','am','bc','sc','fr','tr']));
+})();
+</script>
+</body></html>

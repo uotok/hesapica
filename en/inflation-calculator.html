@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inflation Calculator: Purchasing Power &amp; Value | Hesapica</title>
+<meta content="Estimate how inflation changes purchasing power over time. Calculate forward or backward equivalent value using cumulative inflation or an annual rate." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="inflation calculator, purchasing power calculator, equivalent value, compounded inflation" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/inflation-calculator" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Inflation Calculator: Purchasing Power &amp; Value | Hesapica" property="og:title"/>
+<meta content="Estimate how inflation changes purchasing power over time. Calculate forward or backward equivalent value using cumulative inflation or an annual rate." property="og:description"/>
+<meta content="https://hesapica.com/en/inflation-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica Inflation Calculator" property="og:image:alt"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica Inflation Calculator" name="twitter:image:alt"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Inflation Calculator: Purchasing Power &amp; Value | Hesapica" name="twitter:title"/>
+<meta content="Estimate how inflation changes purchasing power over time. Calculate forward or backward equivalent value using cumulative inflation or an annual rate." name="twitter:description"/>
+<!-- Google Analytics 4 -->
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .tool-main-column{display:grid;gap:24px;min-width:0;align-content:start}
+    .tool-main-column > .details-card{margin-top:0}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select,textarea{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:18px;font-weight:600;
+      transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus,textarea:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder,select::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
+    select{font-size:17px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+    .field-error{margin-top:7px;font-size:14px;color:var(--bad);font-weight:700;min-height:20px}
+    .has-error input,.has-error select{border-color:rgba(185,28,28,.55)!important;box-shadow:0 0 0 4px rgba(185,28,28,.08)!important;background:#fff7f7}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .results-kicker{display:none;padding:14px 16px;border-radius:18px;background:#ffffff;border:1px solid rgba(79,70,229,.12);color:#4f46e5;font-size:14px;font-weight:800;box-shadow:var(--shadow)}
+    .results-kicker span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:4px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good,.pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn,.pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad,.pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .results-panel-flash{animation:resultPulse 1.2s ease}
+    @keyframes resultPulse{0%{box-shadow:0 0 0 0 rgba(79,70,229,.00)}25%{box-shadow:0 0 0 6px rgba(79,70,229,.10)}100%{box-shadow:0 0 0 0 rgba(79,70,229,.00)}}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+    .score-breakdown-row .val.pos{color:var(--good)}
+    .score-breakdown-row .val.neg{color:var(--bad)}
+    .score-breakdown-row .val.neu{color:var(--muted)}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .hide{display:none !important}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .tool-main-column{display:contents}
+      .tool-main-column > .card{grid-column:1;grid-row:1}
+      .results{position:static;grid-column:1;grid-row:2}
+      .tool-main-column > .details-card{grid-column:1;grid-row:3;margin-top:0}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid,.content-grid,.table-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+      .hero-chips{gap:8px}
+      .hero-chip:nth-child(n+3){display:none}
+      .flow-hint{margin-top:16px}
+      .results-kicker{display:block}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.hc-ad-slot{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;
+        border:1px solid #d1d5db !important;
+        break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  
+#resultsPanel{scroll-margin-top:16px}
+
+/* Related calculator cards: preserve the page-specific purple card treatment. */
+.related-card{color:#fff}
+.related-card strong{color:#fff}
+.related-card .small{color:rgba(255,255,255,.86)}
+.related-card p{color:rgba(255,255,255,.88)}
+
+</style>
+<meta content="https://hesapica.com/en/inflation-calculator" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement/advertising services load only after user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<link href="https://hesapica.com/en/inflation-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/enflasyon-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Inflation Calculator","url":"https://hesapica.com/en/inflation-calculator","description":"Estimate how inflation changes purchasing power over time. Calculate forward or backward equivalent value using cumulative inflation or an annual rate.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://hesapica.com/en/#finance"},{"@type":"ListItem","position":3,"name":"Inflation Calculator","item":"https://hesapica.com/en/inflation-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this inflation calculator calculate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the equivalent value of money across time using the inflation rate you enter. It can move a past amount forward or estimate the earlier purchasing-power equivalent of a current amount."}},{"@type":"Question","name":"Why should the result be treated as an estimate?","acceptedAnswer":{"@type":"Answer","text":"Actual household purchasing power depends on the price index, spending mix, period and data source. This calculator compounds the rate you enter and does not replace an official inflation index."}},{"@type":"Question","name":"When should I use total inflation instead of an annual rate?","acceptedAnswer":{"@type":"Answer","text":"Use total inflation when you already know the cumulative price change for the full period. Use the annual-rate method when you have an average annual rate and want to compound it over the selected number of years."}},{"@type":"Question","name":"How is purchasing-power loss calculated?","acceptedAnswer":{"@type":"Answer","text":"For a forward inflation factor, purchasing-power loss is derived from the inverse of the price-level increase. A 100% price increase, for example, means the same nominal amount buys about half as much."}},{"@type":"Question","name":"Does this calculator fetch an official inflation rate automatically?","acceptedAnswer":{"@type":"Answer","text":"No. The rate is user-entered so the tool can be used with any country, index or planning assumption. Always verify the rate and period against the source you intend to use."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *, .grid > *{min-width:0}
+  .hc-language-switch{box-sizing:border-box;max-width:100%;flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">This calculator requires JavaScript. Enable JavaScript in your browser to use it.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a>
+<span>/</span>
+<a href="/en/#finance">Finance</a>
+<span>/</span>
+<strong>Inflation Calculator</strong>
+</nav>
+<div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/enflasyon-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Advanced Finance Tool</span>
+<h1>Inflation Calculator</h1>
+<p>This calculator goes beyond a simple past-versus-present amount and analyzes <strong>purchasing-power loss</strong>, <strong>the increase needed to preserve value</strong>, <strong>the compounded annual effect</strong> and <strong>the severity of inflation</strong> in one clear view.</p>
+<div class="hero-chips">
+<span class="hero-chip">Purchasing-power analysis</span>
+<span class="hero-chip">Quick status summary</span>
+<span class="hero-chip">Clean-start form</span>
+<span class="hero-chip">Mobile-friendly flow</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Advanced analysis approach</div>
+<strong>Main result first, with supporting metrics and interpretation below</strong>
+<p>Enter an amount, time period and calculation method. The calculator estimates equivalent value, purchasing-power change and the severity of the inflation effect.</p>
+<ul>
+<li>Forward or backward value comparison</li>
+<li>Total inflation or annual-rate method</li>
+<li>Quick interpretation and scenario summary</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="tool-main-column">
+<div class="card">
+<h2>Calculation Panel</h2>
+<p class="section-note">Start with a blank form. Enter the amount, period and inflation information needed for your chosen method. Results are estimates for comparison and planning.</p>
+<div class="helper-box">
+<h3>Important note</h3>
+<p>This calculator does not supply an official inflation series. It compounds the rate you enter so you can compare equivalent value and purchasing power across time.</p>
+</div>
+<div class="form-section">
+<div class="form-title">Core inputs</div>
+<div class="field-grid">
+<div class="field">
+<label for="calcDirection">Calculation direction</label>
+<select id="calcDirection">
+<option value="pastToToday">Past amount → current equivalent</option>
+<option value="todayToPast">Current amount → past equivalent</option>
+</select>
+<div class="hint">Choose whether to move a past amount forward or estimate the earlier equivalent of a current amount.</div>
+<div class="field-error" id="calcDirectionError"></div>
+</div>
+<div class="field">
+<label for="calcMethod">Calculation method</label>
+<select id="calcMethod">
+<option value="totalInflation">Use total inflation rate</option>
+<option value="annualAverage">Use average annual inflation rate</option>
+</select>
+<div class="hint">Use the cumulative rate for the full period or an annual rate that will be compounded over time.</div>
+<div class="field-error" id="calcMethodError"></div>
+</div>
+<div class="field">
+<label for="amount">Amount</label>
+<div class="input-wrap">
+<span class="prefix" id="amountPrefix">$</span>
+<input autocomplete="off" class="with-prefix" id="amount" inputmode="decimal" placeholder="e.g. 10,000" type="text"/>
+</div>
+<div class="hint">English-style numbers such as 10,000.50 are supported; common pasted comma-decimal formats are also normalized.</div>
+<div class="field-error" id="amountError"></div>
+</div><div class="field"><label for="currency">Currency</label><select id="currency"><option value="USD">US Dollar ($)</option><option value="EUR">Euro (€)</option><option value="GBP">British Pound (£)</option><option value="CAD">Canadian Dollar (CA$)</option><option value="AUD">Australian Dollar (A$)</option><option value="NZD">New Zealand Dollar (NZ$)</option><option value="CHF">Swiss Franc (CHF)</option><option value="JPY">Japanese Yen (¥)</option><option value="INR">Indian Rupee (₹)</option><option value="SGD">Singapore Dollar (S$)</option><option value="SEK">Swedish Krona (SEK)</option><option value="NOK">Norwegian Krone (NOK)</option><option value="DKK">Danish Krone (DKK)</option><option value="PLN">Polish Zloty (PLN)</option><option value="ZAR">South African Rand (ZAR)</option></select><div class="hint">Changes the display unit only; no foreign-exchange conversion is performed.</div><div class="field-error" id="currencyError"></div></div>
+<div class="field">
+<label for="yearDifference">Time period</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="yearDifference" inputmode="decimal" placeholder="e.g. 5" type="text"/>
+<span class="suffix">years</span>
+</div>
+<div class="hint">Enter a period such as 1, 3.5 or 5 years.</div>
+<div class="field-error" id="yearDifferenceError"></div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Inflation rate</div>
+<div class="field-grid">
+<div class="field full" id="totalInflationField">
+<label for="totalInflation">Total inflation rate (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="totalInflation" inputmode="decimal" placeholder="e.g. 25" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Use this when you know the cumulative price change for the entire period.</div>
+<div class="field-error" id="totalInflationError"></div>
+</div>
+<div class="field full hide" id="annualInflationField">
+<label for="annualInflation">Average annual inflation (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="annualInflation" inputmode="decimal" placeholder="e.g. 4" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">The annual rate is compounded across the selected number of years.</div>
+<div class="field-error" id="annualInflationError"></div>
+</div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateAll({ silent:false, forceValidation:true })" type="button">Calculate</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Example Data</button>
+<button class="btn btn-ghost" onclick="clearAllFields()" type="button">Reset</button>
+<button class="btn btn-ghost" onclick="copyResults()" type="button">Copy Result</button>
+<button class="btn btn-ghost" onclick="shareResults()" type="button">Share</button>
+<button class="btn btn-ghost" onclick="hasValidResult()?window.print():pulseStatus('Create a valid result before printing.','warn','No result')" type="button">Print / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Detailed analysis continues below</strong>
+<span>On smaller screens, scroll down for the summary, additional metrics and scenario table.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Core results and supporting metrics</span>
+<span class="summary-note">Key figures at a glance</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Equivalent value</th><td id="stat1">—</td></tr>
+<tr><th>Nominal value difference</th><td id="stat2">—</td></tr>
+<tr><th id="stat3Label">Increase needed to preserve purchasing power</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Average monthly effect</th><td id="stat4">—</td></tr>
+<tr><th>Average annual effect</th><td id="stat5">—</td></tr>
+<tr><th>Purchasing-power loss</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Scenario comparison table</span>
+<span class="summary-note">Compare the effect across different periods</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Scenario</th><th>Equivalent value</th><th>Interpretation</th></tr></thead>
+<tbody id="scenarioBody"><tr><td colspan="3">Waiting for a calculation.</td></tr></tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Selected direction</td><td id="directionStat">—</td></tr>
+<tr><td>Method</td><td id="methodStat">—</td></tr>
+<tr><td>Period</td><td id="periodStat">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="results-kicker">Results start here<span>The main result, supporting metrics and interpretation are shown in this section.</span></div>
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Result status</div>
+<div class="status-text" id="statusText">Enter the required values or load example data.</div>
+</div>
+<span class="badge" id="statusBadge">Waiting for input</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label">Main Result</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">The calculated equivalent value will appear here.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" style="margin-top:0">Hesapica Inflation Impact Score</div>
+<div class="score-value" id="impactScore">0/100</div>
+</div>
+<span class="pill" id="difficultyBadge">Waiting for input</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="hint" id="scoreText" style="margin-top:10px">This in-site score summarizes the modeled pressure on purchasing power; it is not an official economic indicator.</div>
+<div class="score-explain">
+<strong>What does this score mean?</strong>
+<div id="scoreExplainText">0 indicates a limited modeled effect and 100 a very strong effect. The score is a Hesapica planning metric based on cumulative price change, annualized effect and purchasing-power change.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Total inflation</span><span class="val neu" id="breakTotal">—</span></div>
+<div class="score-breakdown-row"><span class="name">Annualized pressure</span><span class="val neu" id="breakAnnual">—</span></div>
+<div class="score-breakdown-row"><span class="name">Purchasing-power loss</span><span class="val neu" id="breakLoss">—</span></div>
+<div class="score-breakdown-row"><span class="name" id="breakProtectLabel">Preservation need</span><span class="val neu" id="breakProtect">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1">
+<div>
+<div class="label">Value difference</div>
+<div class="subline">Nominal difference</div>
+</div>
+<div class="value" id="differenceResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini2">
+<div>
+<div class="label" id="protectionLabel">Preservation need</div>
+<div class="subline" id="protectionSubline">Increase needed for the same purchasing power</div>
+</div>
+<div class="value" id="protectionResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini3">
+<div>
+<div class="label">Average monthly effect</div>
+<div class="subline">Approximate monthly equivalent</div>
+</div>
+<div class="value" id="monthlyInflationResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini4">
+<div>
+<div class="label">Average annual effect</div>
+<div class="subline">Approximate annualized pressure</div>
+</div>
+<div class="value" id="annualInflationResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini5">
+<div>
+<div class="label">Total inflation</div>
+<div class="subline">Cumulative effect for the selected period</div>
+</div>
+<div class="value" id="totalInflationResult">—</div>
+</div>
+<div class="mini-result is-empty" id="mini6">
+<div>
+<div class="label">Purchasing-power loss</div>
+<div class="subline">Approximate loss rate</div>
+</div>
+<div class="value" id="purchasingPowerResult">—</div>
+</div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Quick status summary</h2>
+<div class="health-grid">
+<div class="health-card">
+<h3>Inflation level</h3>
+<div class="big" id="health1">—</div>
+<div class="hint" id="health1Sub" style="margin-top:6px">—</div>
+</div>
+<div class="health-card">
+<h3>Purchasing-power pressure</h3>
+<div class="big" id="health2">—</div>
+<div class="hint" id="health2Sub" style="margin-top:6px">—</div>
+</div>
+<div class="health-card">
+<h3>Planning view</h3>
+<div class="big" id="health3">—</div>
+<div class="hint" id="health3Sub" style="margin-top:6px">—</div>
+</div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Enter valid inputs to see an interpretation of the inflation effect and purchasing-power pressure.</div>
+</aside>
+</section>
+<section class="content-grid">
+<section class="card accordion-card">
+<h2>Frequently Asked Questions</h2>
+<details open="">
+<summary>What does this inflation calculator calculate?</summary>
+<p>It estimates the equivalent value of money across time using the inflation rate you enter. It can move a past amount forward or estimate the earlier purchasing-power equivalent of a current amount.</p>
+</details>
+<details>
+<summary>Why should the result be treated as an estimate?</summary>
+<p>Actual household purchasing power depends on the price index, spending mix, period and data source. This calculator compounds the rate you enter and does not replace an official inflation index.</p>
+</details>
+<details>
+<summary>When should I use total inflation instead of an annual rate?</summary>
+<p>Use total inflation when you already know the cumulative price change for the full period. Use the annual-rate method when you have an average annual rate and want to compound it over the selected number of years.</p>
+</details>
+<details><summary>How is purchasing-power loss calculated?</summary><p>For a forward inflation factor, purchasing-power loss is derived from the inverse of the price-level increase. A 100% price increase, for example, means the same nominal amount buys about half as much.</p></details><details><summary>Does this calculator fetch an official inflation rate automatically?</summary><p>No. The rate is user-entered so the tool can be used with any country, index or planning assumption. Always verify the rate and period against the source you intend to use.</p></details></section>
+<section class="card">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/interest-calculator">
+<span class="small">Finance</span>
+<strong>Interest Calculator</strong>
+<p>Compare compound interest with the inflation assumption you are using.</p>
+</a>
+<a class="related-card" href="/en/budget-calculator">
+<span class="small">Finance</span>
+<strong>Budget Calculator</strong>
+<p>See how regular savings fit into a monthly budget.</p>
+</a>
+<a class="related-card" href="/en/investment-return-calculator">
+<span class="small">Investing</span>
+<strong>Investment Return Calculator</strong>
+<p>Compare investment growth with inflation-adjusted purchasing power.</p>
+</a>
+</div>
+</section>
+</section>
+<!-- HC_AD_SLOT:faq -->
+<div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="7349181314" data-full-width-responsive="true" style="display:block"></ins>
+</div>
+</main>
+<script>
+    const el = id => document.getElementById(id);
+
+    const STORAGE_KEY = 'hesapica:en:inflation-calculator:v4';
+    const state = {
+      inputs: {},
+      lastInputMode: 'manual',
+      hasAttemptedSubmit: false
+    };
+    const touchedFields = new Set();
+
+const CURRENCY_CODES = new Set(['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR']);
+function currentCurrency(){ const el=document.getElementById('currency'); return el && CURRENCY_CODES.has(el.value) ? el.value : 'USD'; }
+function formatGlobalMoney(value, digits=2){
+  const n=Number(value); if(!Number.isFinite(n)) return '—';
+  return new Intl.NumberFormat('en-US',{style:'currency',currency:currentCurrency(),minimumFractionDigits:digits,maximumFractionDigits:digits}).format(n);
+}
+function parseGlobalNumber(value){
+  if(value===null||value===undefined) return NaN;
+  if(typeof value==='number') return Number.isFinite(value)?value:NaN;
+  let raw=String(value).trim().replace(/\s+/g,'').replace(/[\$€£¥₹]/g,'');
+  if(!raw) return 0;
+  if(!/^[+-]?[0-9][0-9.,]*$/.test(raw)) return NaN;
+  let sign=''; if(raw[0]==='+'||raw[0]==='-'){sign=raw[0];raw=raw.slice(1);}
+  const dots=(raw.match(/\./g)||[]).length, commas=(raw.match(/,/g)||[]).length;
+  let normalized=raw;
+  if(dots&&commas){
+    const dec=raw.lastIndexOf('.')>raw.lastIndexOf(',')?'.':','; const group=dec==='.'?',':'.';
+    normalized=raw.split(group).join('').replace(dec,'.');
+  } else if(commas){
+    const parts=raw.split(',');
+    if(parts.length>2) normalized=raw.replace(/,/g,'');
+    else if(parts[1].length===3 && parts[0] !== '0') normalized=parts[0]+parts[1];
+    else normalized=parts[0]+'.'+parts[1];
+  } else if(dots){
+    const parts=raw.split('.');
+    if(parts.length>2) normalized=raw.replace(/\./g,'');
+    else normalized=raw;
+  }
+  const n=Number(sign+normalized); return Number.isFinite(n)?n:NaN;
+}
+
+    let debounceTimer = null;
+    let statusTimer = null;
+
+    const amountEl = el('amount');
+    const yearDifferenceEl = el('yearDifference');
+    const calcDirectionEl = el('calcDirection');
+    const calcMethodEl = el('calcMethod');
+    const totalInflationEl = el('totalInflation');
+    const annualInflationEl = el('annualInflation');
+    const totalInflationField = el('totalInflationField');
+    const annualInflationField = el('annualInflationField');
+    const resultsPanelEl = el('resultsPanel');
+    const requiredFieldIds = ['amount','yearDifference','totalInflation','annualInflation'];
+
+    function formatTRY(value){ return formatGlobalMoney(value,2); }
+
+    function formatPercent(value,digits=2){ const n=Number(value)||0; return new Intl.NumberFormat('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(n)+'%'; }
+
+    function formatTrMoneyInput(value){ const num=Number(value); if(!Number.isFinite(num)) return ''; return new Intl.NumberFormat('en-US',{minimumFractionDigits:0,maximumFractionDigits:6}).format(num); }
+
+    function parseTrNumber(value){ return parseGlobalNumber(value); }
+
+    function sanitizeMoneyText(value){
+      return String(value || '').replace(/\s+/g,'').replace(/[^0-9.,]/g,'').slice(0, 24);
+    }
+
+    function parseDecimal(value){ return parseGlobalNumber(value); }
+
+    function formatDecimalInput(value, digits = 2){
+      if(!Number.isFinite(value)) return '';
+      return Number(value).toLocaleString('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      });
+    }
+
+    function clamp(n, min, max){
+      return Math.min(Math.max(n, min), max);
+    }
+
+    function sanitizeDecimalText(value){
+      let cleaned = String(value || '').replace(/\s+/g,'').replace(/[^0-9,.-]/g, '');
+      const negative = cleaned.startsWith('-');
+      cleaned = cleaned.replace(/-/g, '').slice(0, 24);
+      return (negative ? '-' : '') + cleaned;
+    }
+
+    function updateStateInputs(){
+      state.inputs = {
+        amount: amountEl.value,
+        yearDifference: yearDifferenceEl.value,
+        calcDirection: calcDirectionEl.value,
+        calcMethod: calcMethodEl.value,
+        totalInflation: totalInflationEl.value,
+        annualInflation: annualInflationEl.value,
+        currency: currentCurrency()
+      };
+    }
+
+    function hasAnyInputValue(){
+      return Boolean(amountEl.value || yearDifferenceEl.value || totalInflationEl.value || annualInflationEl.value);
+    }
+
+    function shouldShowError(id, forceValidation = false){
+      return forceValidation || state.hasAttemptedSubmit || touchedFields.has(id);
+    }
+
+    function flashResults(){
+      resultsPanelEl.classList.remove('results-panel-flash');
+      void resultsPanelEl.offsetWidth;
+      resultsPanelEl.classList.add('results-panel-flash');
+      window.setTimeout(() => resultsPanelEl.classList.remove('results-panel-flash'), 1300);
+    }
+
+    function scrollToResults(){
+      resultsPanelEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      flashResults();
+    }
+
+    function pulseStatus(text, type = 'warn', badge = 'Info'){
+      const previousText = el('statusText').textContent;
+      const previousClass = el('statusBadge').className;
+      const previousBadge = el('statusBadge').textContent;
+      setStatus(type, text, badge);
+      clearTimeout(statusTimer);
+      statusTimer = window.setTimeout(() => {
+        el('statusText').textContent = previousText;
+        el('statusBadge').className = previousClass;
+        el('statusBadge').textContent = previousBadge;
+      }, 1800);
+    }
+
+    function invalidateResult(){
+      resetOutputs();
+    }
+
+    function setMoneyInput(input){
+      input.addEventListener('input', () => {
+        state.lastInputMode = 'manual';
+        touchedFields.add(input.id);
+        input.value = sanitizeMoneyText(input.value);
+        updateStateInputs();
+        invalidateResult();
+        scheduleAutoCalculate();
+      });
+      input.addEventListener('blur', () => {
+        touchedFields.add(input.id);
+        const val = parseTrNumber(input.value);
+        input.value = Number.isFinite(val) ? formatTrMoneyInput(val) : '';
+        updateStateInputs();
+        calculateAll({ silent:true, forceValidation:false });
+      });
+    }
+
+    function setDecimalInput(input, digits = 2){
+      input.addEventListener('input', () => {
+        state.lastInputMode = 'manual';
+        touchedFields.add(input.id);
+        input.value = sanitizeDecimalText(input.value);
+        updateStateInputs();
+        invalidateResult();
+        scheduleAutoCalculate();
+      });
+      input.addEventListener('blur', () => {
+        touchedFields.add(input.id);
+        const value = parseDecimal(input.value);
+        input.value = Number.isFinite(value) ? formatDecimalInput(value, digits) : '';
+        updateStateInputs();
+        calculateAll({ silent:true, forceValidation:false });
+      });
+    }
+
+    function scheduleAutoCalculate(){
+      clearTimeout(debounceTimer);
+      debounceTimer = window.setTimeout(() => calculateAll({ silent:true, forceValidation:false }), 220);
+    }
+
+    function setAutoCalcListeners(){
+      [calcDirectionEl, calcMethodEl].forEach(item => {
+        item.addEventListener('change', () => {
+          state.lastInputMode = 'manual';
+          updateStateInputs();
+          invalidateResult();
+          scheduleAutoCalculate();
+        });
+      });
+    }
+
+    function setFieldError(id, message = ''){
+      const input = el(id);
+      const field = input ? input.closest('.field') : null;
+      const errorBox = el(id + 'Error');
+      if(!field || !errorBox || !input) return;
+      const invalid = Boolean(message);
+      errorBox.textContent = message;
+      field.classList.toggle('has-error', invalid);
+      input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+      if(errorBox.id) input.setAttribute('aria-describedby', errorBox.id);
+    }
+
+    function clearFieldErrors(){
+      requiredFieldIds.forEach(id => setFieldError(id, ''));
+    }
+
+    function markMiniCardsEmpty(isEmpty){
+      ['mini1','mini2','mini3','mini4','mini5','mini6'].forEach(id => el(id).classList.toggle('is-empty', isEmpty));
+      el('highlightCard').classList.toggle('is-empty', isEmpty);
+    }
+
+    function setMethodVisibility(){
+      const annual = calcMethodEl.value === 'annualAverage';
+      totalInflationField.classList.toggle('hide', annual);
+      annualInflationField.classList.toggle('hide', !annual);
+      totalInflationEl.required = !annual;
+      annualInflationEl.required = annual;
+      if(annual){
+        setFieldError('totalInflation', '');
+      } else {
+        setFieldError('annualInflation', '');
+      }
+    }
+
+    function setStatus(type = 'waiting', text = 'Enter the required values or load example data.', badge = 'Waiting for input'){
+      const badgeEl = el('statusBadge');
+      badgeEl.className = 'badge';
+      if(type === 'good') badgeEl.classList.add('good');
+      if(type === 'warn') badgeEl.classList.add('warn');
+      if(type === 'bad') badgeEl.classList.add('bad');
+      badgeEl.textContent = badge;
+      el('statusText').textContent = text;
+    }
+
+    function setScoreBadge(type = 'waiting', text = 'Waiting for input'){
+      const badgeEl = el('difficultyBadge');
+      badgeEl.className = 'pill';
+      if(type === 'good') badgeEl.classList.add('good');
+      if(type === 'warn') badgeEl.classList.add('warn');
+      if(type === 'bad') badgeEl.classList.add('bad');
+      badgeEl.textContent = text;
+    }
+
+    function setBreakdown(id, value, type = 'neu'){
+      const box = el(id);
+      box.className = 'val ' + type;
+      box.textContent = value;
+    }
+
+    function resetOutputs(){
+      markMiniCardsEmpty(true);
+      setStatus();
+      setScoreBadge();
+      el('mainResult').textContent = '—';
+      el('mainResultText').textContent = 'The calculated equivalent value will appear here.';
+      el('impactScore').textContent = '0/100';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'This in-site score summarizes modeled purchasing-power pressure; it is not an official economic indicator.';
+      el('scoreExplainText').textContent = '0 indicates a limited modeled effect and 100 a very strong effect. The score is based on cumulative price change, annualized effect and purchasing-power change.';
+      setBreakdown('breakTotal', '—');
+      setBreakdown('breakAnnual', '—');
+      setBreakdown('breakLoss', '—');
+      setBreakdown('breakProtect', '—');
+
+      ['differenceResult','protectionResult','monthlyInflationResult','annualInflationResult','totalInflationResult','purchasingPowerResult','stat1','stat2','stat3','stat4','stat5','stat6','health1','health2','health3','health1Sub','health2Sub','health3Sub','directionStat','methodStat','periodStat'].forEach(id => {
+        el(id).textContent = '—';
+      });
+
+      el('scenarioBody').innerHTML = '<tr><td colspan="3">Waiting for a calculation.</td></tr>';
+      el('smartComment').textContent = 'Enter valid inputs to see an interpretation of the inflation effect and purchasing-power pressure.';
+    }
+
+    function getSeverity(totalInflationPercent, powerLoss){
+      if(totalInflationPercent < 0){
+        if(totalInflationPercent <= -20) return { type:'warn', label:'Significant deflation' };
+        return { type:'good', label:'Limited deflation' };
+      }
+      if(totalInflationPercent >= 150 || powerLoss >= 60){
+        return { type:'bad', label:'High pressure' };
+      }
+      if(totalInflationPercent >= 50 || powerLoss >= 25){
+        return { type:'warn', label:'Moderate pressure' };
+      }
+      return { type:'good', label:'Relatively limited' };
+    }
+
+    function validateInputs(forceValidation = false){
+      clearFieldErrors();
+      setMethodVisibility();
+
+      const amount = parseTrNumber(amountEl.value);
+      const years = parseDecimal(yearDifferenceEl.value);
+      const method = calcMethodEl.value;
+      let ok = true;
+
+      function applyValidation(id, invalid, message){
+        if(invalid){
+          ok = false;
+          if(shouldShowError(id, forceValidation)) setFieldError(id, message);
+        } else {
+          setFieldError(id, '');
+        }
+      }
+
+      applyValidation('amount', !amount || amount <= 0, 'Enter an amount greater than zero.');
+      if(amount > 1000000000000){
+        ok = false;
+        if(shouldShowError('amount', forceValidation)) setFieldError('amount', 'This amount is unusually high. Check the value.');
+      }
+
+      applyValidation('yearDifference', !Number.isFinite(years) || years <= 0, 'Enter a time period greater than zero.');
+      if(Number.isFinite(years) && years > 200){
+        ok = false;
+        if(shouldShowError('yearDifference', forceValidation)) setFieldError('yearDifference', 'Periods longer than 200 years are outside the intended range of this calculator.');
+      }
+
+      if(method === 'totalInflation'){
+        const total = parseDecimal(totalInflationEl.value);
+        applyValidation('totalInflation', !Number.isFinite(total) || total <= -100, 'Total price change must be greater than -100%. Use a negative rate for deflation.');
+        if(Number.isFinite(total) && total > 100000){
+          ok = false;
+          if(shouldShowError('totalInflation', forceValidation)) setFieldError('totalInflation', 'This rate is unusually high. Check the value.');
+        }
+        setFieldError('annualInflation', '');
+      } else {
+        const annual = parseDecimal(annualInflationEl.value);
+        applyValidation('annualInflation', !Number.isFinite(annual) || annual <= -100, 'Annual rate must be greater than -100%. Use a negative rate for deflation.');
+        if(Number.isFinite(annual) && annual > 1000){
+          ok = false;
+          if(shouldShowError('annualInflation', forceValidation)) setFieldError('annualInflation', 'This rate is unusually high. Check the value.');
+        }
+        setFieldError('totalInflation', '');
+      }
+
+      return ok;
+    }
+
+    function buildScenarioRows(direction, amount, baseYears, annualRate){
+      const candidates = [1, 5, baseYears];
+
+      if(baseYears === 1) candidates.push(3);
+      if(baseYears === 5) candidates.push(10);
+      if(baseYears > 5) candidates.push(Math.max(2, Math.round(baseYears / 2)));
+      if(baseYears > 1 && baseYears < 5) candidates.push(Math.max(2, Math.ceil(baseYears + 2)));
+
+      const uniqueYears = [...new Set(
+        candidates
+          .filter(year => Number.isFinite(year) && year > 0)
+          .map(year => Math.round(year * 10) / 10)
+      )].sort((a, b) => a - b).slice(0, 4);
+
+      const rows = uniqueYears.map(years => {
+        const factor = Math.pow(1 + annualRate / 100, years);
+        const eq = direction === 'pastToToday' ? amount * factor : amount / factor;
+        if(!Number.isFinite(factor) || factor <= 0 || !Number.isFinite(eq)){
+          return `<tr><td>${formatDecimalInput(years, 1)} years</td><td>—</td><td>Numeric limit</td></tr>`;
+        }
+        const absoluteAnnual = Math.abs(annualRate);
+        let note = annualRate < 0 ? 'Deflation effect' : 'Relatively limited effect';
+        if(annualRate >= 25) note = 'Significant pressure';
+        if(annualRate >= 50) note = 'Very strong pressure';
+        if(annualRate < 0 && absoluteAnnual >= 10) note = 'Significant deflation';
+        return `<tr><td>${formatDecimalInput(years, 1)} years</td><td>${formatTRY(eq)}</td><td>${note}</td></tr>`;
+      });
+      el('scenarioBody').innerHTML = rows.join('');
+    }
+
+    function saveManualState(){
+      updateStateInputs();
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.inputs));
+      }catch(err){}
+    }
+
+    function loadManualState(){
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        const saved = JSON.parse(raw);
+        amountEl.value = typeof saved.amount === 'string' ? saved.amount : '';
+        yearDifferenceEl.value = typeof saved.yearDifference === 'string' ? saved.yearDifference : '';
+        calcDirectionEl.value = saved.calcDirection === 'todayToPast' ? 'todayToPast' : 'pastToToday';
+        calcMethodEl.value = saved.calcMethod === 'annualAverage' ? 'annualAverage' : 'totalInflation';
+        totalInflationEl.value = typeof saved.totalInflation === 'string' ? saved.totalInflation : '';
+        annualInflationEl.value = typeof saved.annualInflation === 'string' ? saved.annualInflation : ''; if(CURRENCY_CODES.has(saved.currency)) el('currency').value=saved.currency;
+        updateStateInputs();
+      } catch(err){
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(removeErr){}
+      }
+    }
+
+    function clearSavedState(){
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(err){}
+    }
+
+    function hasValidResult(){
+      return el('mainResult').textContent && el('mainResult').textContent !== '—';
+    }
+
+    function buildCopyText(){
+      return `Inflation Calculator Result
+Calculation Direction: ${calcDirectionEl.options[calcDirectionEl.selectedIndex].text}
+Calculation Method: ${calcMethodEl.options[calcMethodEl.selectedIndex].text}
+Amount: ${amountEl.value ? formatTRY(parseDecimal(amountEl.value)) : '-'}
+Time Period: ${yearDifferenceEl.value || '-'} years
+
+Main Result: ${el('mainResult').textContent}
+Value Difference: ${el('differenceResult').textContent}
+${el('protectionLabel').textContent}: ${el('protectionResult').textContent}
+Average Monthly Effect: ${el('monthlyInflationResult').textContent}
+Average Annual Effect: ${el('annualInflationResult').textContent}
+Total Inflation: ${el('totalInflationResult').textContent}
+Purchasing-Power Loss: ${el('purchasingPowerResult').textContent}
+Hesapica Inflation Impact Score: ${el('impactScore').textContent}
+
+Interpretation:
+${el('smartComment').textContent}`;
+    }
+
+    function calculateAll(options = {}){
+      const opts = typeof options === 'boolean'
+        ? { silent: options, forceValidation: false }
+        : { silent: Boolean(options.silent), forceValidation: Boolean(options.forceValidation) };
+
+      setMethodVisibility();
+      updateStateInputs();
+
+      if(!hasAnyInputValue()){
+        clearFieldErrors();
+        if(state.lastInputMode === 'manual') clearSavedState();
+        resetOutputs();
+        return false;
+      }
+
+      if(opts.forceValidation){
+        state.hasAttemptedSubmit = true;
+      }
+
+      if(!validateInputs(opts.forceValidation)){
+        resetOutputs();
+        setStatus('bad', 'Some fields need attention. Check the highlighted inputs.', 'Check fields');
+        if(state.lastInputMode === 'manual') saveManualState();
+        return false;
+      }
+
+      const direction = calcDirectionEl.value;
+      const amount = parseTrNumber(amountEl.value);
+      const years = parseDecimal(yearDifferenceEl.value);
+      const method = calcMethodEl.value;
+
+      let totalInflationPercent = 0;
+      let annualInflationPercentValue = 0;
+
+      if(method === 'totalInflation'){
+        totalInflationPercent = parseDecimal(totalInflationEl.value);
+        annualInflationPercentValue = (Math.pow(1 + totalInflationPercent / 100, 1 / years) - 1) * 100;
+      } else {
+        annualInflationPercentValue = parseDecimal(annualInflationEl.value);
+        totalInflationPercent = (Math.pow(1 + annualInflationPercentValue / 100, years) - 1) * 100;
+      }
+
+      const monthlyInflationPercentValue = (Math.pow(1 + annualInflationPercentValue / 100, 1 / 12) - 1) * 100;
+      const inflationFactor = 1 + totalInflationPercent / 100;
+      const equivalent = direction === 'pastToToday' ? amount * inflationFactor : amount / inflationFactor;
+      const difference = direction === 'pastToToday' ? equivalent - amount : amount - equivalent;
+      const powerLoss = inflationFactor > 0 ? (1 - (1 / inflationFactor)) * 100 : 0;
+      const powerMetricLabel = powerLoss >= 0 ? 'Purchasing-power loss' : 'Purchasing-power gain';
+      const protectionNeed = totalInflationPercent;
+
+      const criticalValues = [
+        totalInflationPercent,
+        annualInflationPercentValue,
+        monthlyInflationPercentValue,
+        inflationFactor,
+        equivalent,
+        difference,
+        powerLoss,
+        protectionNeed
+      ];
+      if(inflationFactor <= 0 || !criticalValues.every(Number.isFinite)){
+        resetOutputs();
+        setStatus(
+          'bad',
+          'This rate and time-period combination does not produce a stable numeric result. Use a more moderate rate or period.',
+          'Numeric limit'
+        );
+        if(state.lastInputMode === 'manual') saveManualState();
+        return false;
+      }
+
+      const absoluteTotal = Math.abs(totalInflationPercent);
+      const absoluteAnnual = Math.abs(annualInflationPercentValue);
+      const absolutePowerLoss = Math.abs(powerLoss);
+
+      const totalComponent = clamp(Math.log10(1 + absoluteTotal) * 24, 0, 45);
+      const annualComponent = clamp(Math.log10(1 + absoluteAnnual) * 18, 0, 25);
+      const lossComponent = clamp(absolutePowerLoss * 0.30, 0, 30);
+      const impactScore = Math.round(clamp(
+        totalComponent + annualComponent + lossComponent,
+        0, 100
+      ));
+      const severity = getSeverity(totalInflationPercent, powerLoss);
+
+      markMiniCardsEmpty(false);
+      setStatus(
+        severity.type,
+        direction === 'pastToToday'
+          ? 'Current equivalent value and purchasing-power pressure calculated.'
+          : 'Past equivalent value and purchasing-power difference calculated.',
+        severity.label
+      );
+      setScoreBadge(severity.type, severity.label);
+
+      el('mainResult').textContent = formatTRY(equivalent);
+      el('mainResultText').textContent =
+        direction === 'pastToToday'
+          ? `Estimated current equivalent of ${formatTRY(amount)}.`
+          : `Estimated past equivalent of ${formatTRY(amount)}.`;
+
+      const protectionTitle = direction === 'pastToToday'
+        ? 'Preservation need'
+        : 'Increase to reach the current value';
+      const protectionDescription = direction === 'pastToToday'
+        ? 'Increase needed for the same purchasing power'
+        : 'Increase from the past equivalent to the current amount';
+
+      el('protectionLabel').textContent = protectionTitle;
+      el('protectionSubline').textContent = protectionDescription;
+      el('stat3Label').textContent = protectionTitle;
+      el('breakProtectLabel').textContent = protectionTitle;
+
+      el('differenceResult').textContent = formatTRY(difference);
+      el('protectionResult').textContent = formatPercent(protectionNeed);
+      el('monthlyInflationResult').textContent = formatPercent(monthlyInflationPercentValue);
+      el('annualInflationResult').textContent = formatPercent(annualInflationPercentValue);
+      el('totalInflationResult').textContent = formatPercent(totalInflationPercent);
+      el('purchasingPowerResult').textContent = formatPercent(Math.abs(powerLoss));
+      el('mini6').querySelector('.label').textContent = powerMetricLabel;
+
+      el('impactScore').textContent = `${impactScore}/100`;
+      el('scoreBar').style.width = `${impactScore}%`;
+      el('scoreText').textContent =
+        impactScore >= 75 ? 'The modeled inflation effect is very strong. Preserving purchasing power requires greater attention.'
+        : impactScore >= 40 ? 'The modeled inflation effect is significant. Preserving purchasing power may require careful planning.'
+        : 'The modeled inflation effect is relatively limited, although compounding can become more important over longer periods.';
+      el('scoreExplainText').textContent =
+        `This Hesapica score uses total price change ${formatPercent(totalInflationPercent)}, annualized effect ${formatPercent(annualInflationPercentValue)} and purchasing-power change ${formatPercent(powerLoss)}. It is not an official economic indicator.`;
+      setBreakdown('breakTotal', formatPercent(totalInflationPercent), Math.abs(totalInflationPercent) >= 50 ? 'neg' : 'pos');
+      setBreakdown('breakAnnual', formatPercent(annualInflationPercentValue), Math.abs(annualInflationPercentValue) >= 20 ? 'neg' : 'pos');
+      setBreakdown('breakLoss', formatPercent(powerLoss), Math.abs(powerLoss) >= 25 ? 'neg' : 'pos');
+      setBreakdown('breakProtect', formatPercent(protectionNeed), Math.abs(protectionNeed) >= 50 ? 'neg' : 'pos');
+
+      el('health1').textContent =
+        totalInflationPercent >= 150 ? 'Very high'
+        : totalInflationPercent >= 50 ? 'Significant'
+        : 'Limited';
+      el('health1Sub').textContent = `Cumulative effect: ${formatPercent(totalInflationPercent)}.`;
+
+      el('health2').textContent =
+        powerLoss >= 60 ? 'Severe loss'
+        : powerLoss >= 25 ? 'Meaningful'
+        : 'Low';
+      el('health2Sub').textContent = `Approximate purchasing-power loss: ${formatPercent(powerLoss)}.`;
+
+      el('health3').textContent =
+        protectionNeed >= 150 ? 'Strong protection need'
+        : protectionNeed >= 50 ? 'Plan ahead'
+        : 'Monitor';
+      el('health3Sub').textContent =
+        direction === 'pastToToday'
+          ? 'Account for the increase needed to preserve the same purchasing power.'
+          : 'Use the historical comparison alongside current information.';
+
+      el('stat1').textContent = formatTRY(equivalent);
+      el('stat2').textContent = formatTRY(difference);
+      el('stat3').textContent = formatPercent(protectionNeed);
+      el('stat4').textContent = formatPercent(monthlyInflationPercentValue);
+      el('stat5').textContent = formatPercent(annualInflationPercentValue);
+      el('stat6').textContent = formatPercent(Math.abs(powerLoss));
+      el('stat6').previousElementSibling.textContent = powerMetricLabel;
+
+      el('directionStat').textContent = calcDirectionEl.options[calcDirectionEl.selectedIndex].text;
+      el('methodStat').textContent = calcMethodEl.options[calcMethodEl.selectedIndex].text;
+      el('periodStat').textContent = `${formatDecimalInput(years, 1)} years`;
+
+      buildScenarioRows(direction, amount, years, annualInflationPercentValue);
+
+      let summaryLead = '';
+      if(totalInflationPercent < 0){
+        summaryLead = Math.abs(totalInflationPercent) >= 20
+          ? 'This period shows a significant deflation effect.'
+          : 'This period shows a limited deflation effect.';
+      } else if(totalInflationPercent >= 150){
+        summaryLead = 'This period shows very strong inflation pressure.';
+      } else if(totalInflationPercent >= 50){
+        summaryLead = 'This period shows a significant inflation effect.';
+      } else {
+        summaryLead = 'This period shows a relatively limited inflation effect.';
+      }
+
+      const directionText = direction === 'pastToToday'
+        ? `${formatTRY(amount)} is equivalent to about ${formatTRY(equivalent)} after the modeled price change.`
+        : `The estimated past equivalent of ${formatTRY(amount)} is about ${formatTRY(equivalent)}.`;
+
+      const powerSentence = powerLoss >= 0
+        ? `Approximate purchasing-power loss is ${formatPercent(powerLoss)}.`
+        : `Approximate purchasing-power gain is ${formatPercent(Math.abs(powerLoss))}.`;
+      const protectionSentence = direction === 'pastToToday'
+        ? `A change of about ${formatPercent(protectionNeed)} is needed to preserve the same purchasing power.`
+        : `A change of about ${formatPercent(protectionNeed)} separates the past equivalent from the current amount.`;
+
+      el('smartComment').textContent =
+        `${summaryLead} ${directionText} ${powerSentence} ${protectionSentence} The annualized effect is about ${formatPercent(annualInflationPercentValue)}.`;
+
+      if(state.lastInputMode === 'manual') saveManualState();
+      if(!opts.silent) scrollToResults();
+      return true;
+    }
+
+    function fillExample(){
+      state.lastInputMode = 'example';
+      state.hasAttemptedSubmit = false;
+      touchedFields.clear();
+      amountEl.value = '10,000';
+      yearDifferenceEl.value = '5';
+      calcDirectionEl.value = 'pastToToday';
+      calcMethodEl.value = 'annualAverage';
+      totalInflationEl.value = '';
+      annualInflationEl.value = '4';
+      setMethodVisibility();
+      updateStateInputs();
+      calculateAll({ silent:false, forceValidation:false });
+    }
+
+    function clearAllFields(){
+      state.lastInputMode = 'manual';
+      state.hasAttemptedSubmit = false;
+      touchedFields.clear();
+      amountEl.value = '';
+      yearDifferenceEl.value = '';
+      calcDirectionEl.value = 'pastToToday';
+      calcMethodEl.value = 'totalInflation';
+      totalInflationEl.value = '';
+      annualInflationEl.value = '';
+      el('currency').value='USD'; syncCurrencyUI();
+      document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
+      clearFieldErrors();
+      setMethodVisibility();
+      clearSavedState();
+      updateStateInputs();
+      resetOutputs();
+    }
+
+    function copyResults(){
+      if(!hasValidResult()){
+        pulseStatus('Create a valid result before copying.', 'warn', 'No result');
+        return;
+      }
+      const text = buildCopyText();
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text)
+          .then(() => pulseStatus('Result copied to the clipboard.', 'good', 'Copied'))
+          .catch(() => fallbackCopyText(text));
+      } else {
+        fallbackCopyText(text);
+      }
+    }
+
+    async function shareResults(){
+      if(!hasValidResult()){
+        pulseStatus('Create a valid result before sharing.', 'warn', 'No result');
+        return;
+      }
+      const text = buildCopyText();
+      if(navigator.share){
+        try {
+          await navigator.share({
+            title: 'Inflation Calculator Result',
+            text,
+            url: 'https://hesapica.com/en/inflation-calculator'
+          });
+        } catch(err){
+          if(err && err.name !== 'AbortError'){
+            copyResults();
+          }
+        }
+      } else {
+        copyResults();
+      }
+    }
+
+    function fallbackCopyText(text){
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      try {
+        document.execCommand('copy');
+        pulseStatus('Result copied to the clipboard.', 'good', 'Copied');
+      } catch (err) {
+        pulseStatus('Copy failed.', 'bad', 'Error');
+      } finally {
+        textarea.remove();
+      }
+    }
+
+    function bindEnterToCalculate(){
+      document.querySelectorAll('input, select').forEach(node => {
+        node.addEventListener('keydown', event => {
+          if(event.key === 'Enter'){
+            event.preventDefault();
+            state.lastInputMode = 'manual';
+            if(node.id) touchedFields.add(node.id);
+            calculateAll({ silent:false, forceValidation:true });
+          }
+        });
+      });
+    }
+
+    loadManualState();
+    setMoneyInput(amountEl);
+    setDecimalInput(yearDifferenceEl, 1);
+    setDecimalInput(totalInflationEl, 2);
+    setDecimalInput(annualInflationEl, 2);
+    setAutoCalcListeners();
+    const currencyEl=el('currency');
+    function syncCurrencyUI(){
+      const part=new Intl.NumberFormat('en-US',{style:'currency',currency:currentCurrency(),currencyDisplay:'symbol'}).formatToParts(0).find(p=>p.type==='currency');
+      const prefix=el('amountPrefix'); if(prefix) prefix.textContent=part?part.value:currentCurrency();
+    }
+    currencyEl.addEventListener('change',()=>{state.lastInputMode='manual';syncCurrencyUI();updateStateInputs();if(hasAnyInputValue())calculateAll({silent:true,forceValidation:false});saveManualState();});
+    syncCurrencyUI();
+    calcMethodEl.addEventListener('change', () => {
+      setMethodVisibility();
+      updateStateInputs();
+    });
+    bindEnterToCalculate();
+
+    requiredFieldIds.forEach(id => {
+      const input = el(id);
+      if(input){
+        input.setAttribute('aria-describedby', id + 'Error');
+      }
+    });
+
+    setMethodVisibility();
+    updateStateInputs();
+    if(hasAnyInputValue()){
+      calculateAll({ silent:true, forceValidation:false });
+    } else {
+      resetOutputs();
+    }
+  </script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','reset data','clear','clear data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

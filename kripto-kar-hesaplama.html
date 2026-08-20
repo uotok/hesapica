@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kripto Kâr Hesaplama | ROI, Market Cap ve Tokenomics - Hesapica</title>
-<meta name="description" content="Kripto işleminizin net kâr/zararını, alış-satış komisyonlarını, ROI'yi, market cap ve arz değişimini; ATH, hedef fiyat ve planlı arz senaryolarıyla hesaplayın."/>
+<title>Kripto Kâr Hesaplama | ROI, Piyasa Değeri ve Token Ekonomisi - Hesapica</title>
+<meta name="description" content="Kripto işleminizin net kâr/zararını, alış-satış komisyonlarını, ROI'yi, piyasa değerini ve arz değişimini; ATH, hedef fiyat ve planlı arz senaryolarıyla hesaplayın."/>
 <meta name="robots" content="index,follow,max-image-preview:large"/>
 <meta name="theme-color" content="#4f46e5"/>
 <link rel="canonical" href="https://hesapica.com/kripto-kar-hesaplama"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/kripto-kar-hesaplama"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/crypto-profit-calculator"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="tr_TR"/>
 <meta property="og:site_name" content="Hesapica"/>
-<meta property="og:title" content="Kripto Kâr Hesaplama | ROI, Market Cap ve Tokenomics - Hesapica"/>
-<meta property="og:description" content="Net kripto kâr/zararı, ROI, market cap, dilution ayarlı ATH ve arz senaryolarını şeffaf formüllerle hesaplayın."/>
+<meta property="og:title" content="Kripto Kâr Hesaplama | ROI, Piyasa Değeri ve Token Ekonomisi - Hesapica"/>
+<meta property="og:description" content="Net kripto kâr/zararı, ROI, piyasa değeri, arz seyrelmesine göre düzeltilmiş ATH ve arz senaryolarını şeffaf formüllerle hesaplayın."/>
 <meta property="og:url" content="https://hesapica.com/kripto-kar-hesaplama"/>
 <meta property="og:image" content="https://hesapica.com/og-image.png"/>
 <meta property="og:image:type" content="image/png"/>
@@ -22,8 +24,8 @@
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Kripto Kâr Hesaplama | ROI, Market Cap ve Tokenomics - Hesapica"/>
-<meta name="twitter:description" content="Kripto işleminizin net kâr/zararını, ROI ve tokenomics metriklerini hesaplayın."/>
+<meta name="twitter:title" content="Kripto Kâr Hesaplama | ROI, Piyasa Değeri ve Token Ekonomisi - Hesapica"/>
+<meta name="twitter:description" content="Kripto işleminizin net kâr/zararını, ROI ve token ekonomisi metriklerini hesaplayın."/>
 <meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
 <meta name="twitter:image:alt" content="Hesapica — Finans, günlük yaşam ve özgün hesaplama araçları"/>
 <meta name="twitter:url" content="https://hesapica.com/kripto-kar-hesaplama"/>
@@ -43,7 +45,7 @@
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kripto kârı komisyonla birlikte nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Alış maliyetine alış komisyonu eklenir; satış gelirinden satış komisyonu düşülür. Net kâr veya zarar, net satış geliri ile toplam alış maliyeti arasındaki farktır."}},{"@type":"Question","name":"Dilution ayarlı ATH nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Eski ATH fiyatı, ATH dönemindeki dolaşımdaki arz ile çarpılarak ATH döneminin yaklaşık market cap değeri bulunur. Bu market cap güncel dolaşımdaki arza bölünerek, aynı piyasa değerinin bugünkü arzla ima edeceği teorik fiyat hesaplanır."}},{"@type":"Question","name":"Market cap sabit kalırsa unlock sonrası fiyat hesabı ne anlama gelir?","acceptedAnswer":{"@type":"Answer","text":"Bu yalnız matematiksel bir senaryodur. Mevcut market cap yeni dolaşımdaki arza bölünür; gerçek piyasada market cap ve fiyat sabit kalmak zorunda değildir."}},{"@type":"Question","name":"Hedef fiyat için gereken market cap nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Hedef fiyat güncel dolaşımdaki arz ile çarpılır. Planlı arz değişimi ayrıca seçilmişse araç olay sonrası arzla gereken market cap değerini de gösterir."}},{"@type":"Question","name":"Bu araç yatırım tavsiyesi verir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç yalnızca girilen fiyat, arz ve komisyon verilerinden matematiksel senaryolar üretir; gelecekteki fiyat hareketini tahmin etmez."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kripto kârı komisyonla birlikte nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Alış maliyetine alış komisyonu eklenir; satış gelirinden satış komisyonu düşülür. Net kâr veya zarar, net satış geliri ile toplam alış maliyeti arasındaki farktır."}},{"@type":"Question","name":"Arz seyrelmesine göre düzeltilmiş ATH nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Eski ATH fiyatı, ATH dönemindeki dolaşımdaki arz ile çarpılarak ATH döneminin yaklaşık piyasa değeri bulunur. Bu piyasa değeri güncel dolaşımdaki arza bölünerek, aynı piyasa değerinin bugünkü arzla ima edeceği teorik fiyat hesaplanır."}},{"@type":"Question","name":"Piyasa değeri sabit kalırsa token kilidi açıldıktan sonraki fiyat hesabı ne anlama gelir?","acceptedAnswer":{"@type":"Answer","text":"Bu yalnız matematiksel bir senaryodur. Mevcut piyasa değeri yeni dolaşımdaki arza bölünür; gerçek piyasada piyasa değeri ve fiyat sabit kalmak zorunda değildir."}},{"@type":"Question","name":"Hedef fiyat için gereken piyasa değeri nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Hedef fiyat güncel dolaşımdaki arz ile çarpılır. Planlı arz değişimi ayrıca seçilmişse araç olay sonrası arzla gereken piyasa değerini de gösterir."}},{"@type":"Question","name":"Bu araç yatırım tavsiyesi verir mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Araç yalnızca girilen fiyat, arz ve komisyon verilerinden matematiksel senaryolar üretir; gelecekteki fiyat hareketini tahmin etmez."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Yatırım","item":"https://hesapica.com/#yatirim"},{"@type":"ListItem","position":3,"name":"Kripto Kâr Hesaplama","item":"https://hesapica.com/kripto-kar-hesaplama"}]}
@@ -214,14 +216,15 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container
       }
     }
 </style>
+<link rel="stylesheet" href="/language-switch.css"/>
 </head>
 <body>
 <noscript><div style="max-width:1180px;margin:12px auto;padding:12px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.5 Inter,system-ui,sans-serif">Bu araç JavaScript ile çalışır. Lütfen JavaScript'i etkinleştirin.</div></noscript>
 
-<div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#yatirim">Yatırım</a><span>/</span><strong>Kripto Kâr Hesaplama</strong></nav></div>
+<div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#yatirim">Yatırım</a><span>/</span><strong>Kripto Kâr Hesaplama</strong> <span aria-hidden="true">/</span> <a class="hc-language-link" href="/en/crypto-profit-calculator" hreflang="en" lang="en" title="İngilizce sürümü aç" aria-label="İngilizce sürümü aç"><span aria-hidden="true">🌐</span><span>EN · English</span></a></nav></div>
 
 <header class="container"><section class="hero"><div class="hero-grid">
-<div><h1>Kripto Kâr &amp; Tokenomics Hesaplama</h1><p>Kripto işleminizin <strong>net kâr/zararını ve ROI'sini</strong>; arz değişimi, market cap, ATH ve planlı token arzı senaryolarıyla birlikte inceleyin.</p><div class="chips"><span class="chip">Alış + satış komisyonu</span><span class="chip">ROI</span><span class="chip">Market cap</span><span class="chip">ATH / dilution</span></div></div>
+<div><h1>Kripto Kâr ve Token Ekonomisi Hesaplama</h1><p>Kripto işleminizin <strong>net kâr/zararını ve ROI'sini</strong>; arz değişimi, piyasa değeri, ATH ve planlı token arzı senaryolarıyla birlikte inceleyin.</p><div class="chips"><span class="chip">Alış + satış komisyonu</span><span class="chip">ROI</span><span class="chip">Piyasa değeri</span><span class="chip">ATH / arz seyrelmesi</span></div></div>
 <aside class="hero-box"><strong>Tahmin değil, matematiksel senaryo</strong><p>Araç geçmiş veya hedef fiyatların gerçekleşme olasılığına puan vermez. Yalnızca girdiğiniz fiyat, arz ve komisyon değerlerinden doğrulanabilir hesaplamalar üretir.</p></aside>
 </div></section></header>
 
@@ -234,7 +237,7 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container
 <section class="tool-layout">
 <div class="card">
 <h2>Hesaplama Paneli</h2>
-<p class="section-note">Temel işlem hesabı için fiyat, miktar ve komisyonları girin. Tokenomics alanları ATH ve market cap analizleri için kullanılır.</p>
+<p class="section-note">Temel işlem hesabı için fiyat, miktar ve komisyonları girin. Token ekonomisi alanları ATH ve piyasa değeri analizleri için kullanılır.</p>
 <form id="cryptoForm" novalidate>
 
 <div class="form-section"><div class="form-title">İşlem verileri</div><div class="field-grid">
@@ -245,17 +248,17 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container
 <div class="field" id="fieldSellFee"><label for="sellFee">Satış komisyonu (%)</label><input id="sellFee" type="text" inputmode="decimal" autocomplete="off" placeholder="0"/><div class="hint">Satış işlemine uygulanan ücret oranı.</div><div class="field-error" id="sellFeeError">%0–100 arasında oran girin.</div></div>
 </div></div>
 
-<div class="form-section"><div class="form-title">Tokenomics verileri</div><div class="field-grid">
-<div class="field" id="fieldPurchaseSupply"><label for="purchaseSupply">Alış dönemindeki dolaşımdaki arz</label><input id="purchaseSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Alış döneminin yaklaşık circulating supply değeri.</div><div class="field-error" id="purchaseSupplyError">Sıfırdan büyük geçerli arz girin.</div></div>
-<div class="field" id="fieldCurrentSupply"><label for="currentSupply">Güncel dolaşımdaki arz</label><input id="currentSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Bugünkü circulating supply.</div><div class="field-error" id="currentSupplyError">Sıfırdan büyük geçerli arz girin.</div></div>
+<div class="form-section"><div class="form-title">Token Ekonomisi verileri</div><div class="field-grid">
+<div class="field" id="fieldPurchaseSupply"><label for="purchaseSupply">Alış dönemindeki dolaşımdaki arz</label><input id="purchaseSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Alış döneminin yaklaşık dolaşımdaki arz değeri.</div><div class="field-error" id="purchaseSupplyError">Sıfırdan büyük geçerli arz girin.</div></div>
+<div class="field" id="fieldCurrentSupply"><label for="currentSupply">Güncel dolaşımdaki arz</label><input id="currentSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Bugünkü dolaşımdaki arz.</div><div class="field-error" id="currentSupplyError">Sıfırdan büyük geçerli arz girin.</div></div>
 <div class="field" id="fieldAthPrice"><label for="athPrice">Eski ATH fiyatı ($)</label><input id="athPrice" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Geçmişteki en yüksek fiyat.</div><div class="field-error" id="athPriceError">Sıfırdan büyük geçerli ATH fiyatı girin.</div></div>
-<div class="field" id="fieldAthSupply"><label for="athSupply">ATH dönemindeki dolaşımdaki arz</label><input id="athSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">ATH tarihinde dolaşımda olan yaklaşık token miktarı; dilution ayarlı ATH için gereklidir.</div><div class="field-error" id="athSupplyError">Sıfırdan büyük geçerli ATH dönemi arzı girin.</div></div>
-<div class="field" id="fieldTotalSupply"><label for="totalSupply">Toplam arz <span class="hint">(opsiyonel)</span></label><input id="totalSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Total supply biliniyorsa girin; güncel dolaşımdaki arzdan küçük olamaz.</div><div class="field-error" id="totalSupplyError">Toplam arz güncel dolaşımdaki arzdan küçük olamaz.</div></div>
-<div class="field" id="fieldTargetPrice"><label for="targetPrice">Hedef fiyat ($) <span class="hint">(opsiyonel)</span></label><input id="targetPrice" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Gerekli market cap senaryosu için.</div><div class="field-error" id="targetPriceError">Sıfırdan büyük bir hedef fiyat girin.</div></div>
+<div class="field" id="fieldAthSupply"><label for="athSupply">ATH dönemindeki dolaşımdaki arz</label><input id="athSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">ATH tarihinde dolaşımda olan yaklaşık token miktarı; arz seyrelmesine göre düzeltilmiş ATH için gereklidir.</div><div class="field-error" id="athSupplyError">Sıfırdan büyük geçerli ATH dönemi arzı girin.</div></div>
+<div class="field" id="fieldTotalSupply"><label for="totalSupply">Toplam arz <span class="hint">(opsiyonel)</span></label><input id="totalSupply" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Toplam arz biliniyorsa girin; güncel dolaşımdaki arzdan küçük olamaz.</div><div class="field-error" id="totalSupplyError">Toplam arz güncel dolaşımdaki arzdan küçük olamaz.</div></div>
+<div class="field" id="fieldTargetPrice"><label for="targetPrice">Hedef fiyat ($) <span class="hint">(opsiyonel)</span></label><input id="targetPrice" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Gerekli piyasa değeri senaryosu için.</div><div class="field-error" id="targetPriceError">Sıfırdan büyük bir hedef fiyat girin.</div></div>
 </div></div>
 
 <div class="form-section"><div class="form-title">Planlı arz senaryosu <span class="hint">(opsiyonel)</span></div><div class="field-grid">
-<div class="field"><label for="eventType">Olay tipi</label><select id="eventType"><option value="none">Yok</option><option value="unlock">Unlock / dolaşıma giriş</option><option value="increase">Diğer arz artışı</option><option value="burn">Yakım / dolaşımdan azalış</option></select></div>
+<div class="field"><label for="eventType">Olay tipi</label><select id="eventType"><option value="none">Yok</option><option value="unlock">Kilit açılımı / dolaşıma giriş</option><option value="increase">Diğer arz artışı</option><option value="burn">Yakım / dolaşımdan azalış</option></select></div>
 <div class="field" id="fieldEventAmount"><label for="eventAmount">Token miktarı</label><input id="eventAmount" type="text" inputmode="decimal" autocomplete="off"/><div class="hint">Seçilen olayda dolaşıma eklenecek veya çıkarılacak token.</div><div class="field-error" id="eventAmountError">Seçilen olay için sıfırdan büyük ve geçerli miktar girin.</div></div>
 </div></div>
 
@@ -282,7 +285,7 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container
 <div class="kpi-row"><strong>Toplam komisyon</strong><span class="v" id="feesResult">—</span></div>
 </div>
 <div class="info-card"><strong>Arz değişimi</strong><div id="supplyChangeResult">—</div></div>
-<div class="info-card"><strong>Dilution ayarlı ATH</strong><div id="adjustedAthResult">—</div><div class="hint">ATH döneminin yaklaşık market cap'i bugünkü dolaşımdaki arza bölünür.</div></div>
+<div class="info-card"><strong>Arz seyrelmesine göre düzeltilmiş ATH</strong><div id="adjustedAthResult">—</div><div class="hint">ATH döneminin yaklaşık piyasa değeri bugünkü dolaşımdaki arza bölünür.</div></div>
 <div class="warning" id="resultNote">Bu araç yatırım tavsiyesi veya fiyat tahmini üretmez.</div>
 </aside>
 </section>
@@ -292,30 +295,30 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container
 
 
 <section class="details-grid">
-<article class="metric-card"><h2>Market Cap ve ATH Analizi</h2><div class="metric-list">
-<div class="metric"><div class="k">Alış dönemindeki yaklaşık market cap</div><div class="v" id="purchaseMcResult">—</div></div>
-<div class="metric"><div class="k">Güncel yaklaşık market cap</div><div class="v" id="currentMcResult">—</div></div>
-<div class="metric"><div class="k">ATH dönemindeki yaklaşık market cap</div><div class="v" id="athMcResult">—</div></div>
-<div class="metric"><div class="k">Eski ATH fiyatı için bugün gereken market cap</div><div class="v" id="athNeededMcResult">—</div></div>
-<div class="metric"><div class="k">ATH için gereken güncel MC çarpanı</div><div class="v" id="athMultipleResult">—</div></div>
-<div class="metric"><div class="k">Alış dönemi MC'ye bugünkü arzla dönülürse teorik fiyat</div><div class="v" id="purchaseMcPriceResult">—</div></div>
-</div><div class="formula">Market cap ≈ fiyat × dolaşımdaki arz. Tarihsel ATH market cap hesabında ATH dönemindeki arz kullanılmalıdır.</div></article>
+<article class="metric-card"><h2>Piyasa Değeri ve ATH Analizi</h2><div class="metric-list">
+<div class="metric"><div class="k">Alış dönemindeki yaklaşık piyasa değeri</div><div class="v" id="purchaseMcResult">—</div></div>
+<div class="metric"><div class="k">Güncel yaklaşık piyasa değeri</div><div class="v" id="currentMcResult">—</div></div>
+<div class="metric"><div class="k">ATH dönemindeki yaklaşık piyasa değeri</div><div class="v" id="athMcResult">—</div></div>
+<div class="metric"><div class="k">Eski ATH fiyatı için bugün gereken piyasa değeri</div><div class="v" id="athNeededMcResult">—</div></div>
+<div class="metric"><div class="k">ATH için gereken güncel piyasa değeri çarpanı</div><div class="v" id="athMultipleResult">—</div></div>
+<div class="metric"><div class="k">Alış dönemi piyasa değerine bugünkü arzla dönülürse teorik fiyat</div><div class="v" id="purchaseMcPriceResult">—</div></div>
+</div><div class="formula">Piyasa değeri ≈ fiyat × dolaşımdaki arz. Tarihsel ATH piyasa değeri hesabında ATH dönemindeki arz kullanılmalıdır.</div></article>
 
 <article class="metric-card"><h2>Hedef ve Arz Senaryosu</h2><div class="metric-list">
-<div class="metric"><div class="k">Hedef fiyat için gereken MC (güncel arz)</div><div class="v" id="targetMcResult">—</div></div>
+<div class="metric"><div class="k">Hedef fiyat için gereken piyasa değeri (güncel arz)</div><div class="v" id="targetMcResult">—</div></div>
 <div class="metric"><div class="k">Olay sonrası dolaşımdaki arz</div><div class="v" id="futureSupplyResult">—</div></div>
-<div class="metric"><div class="k">MC sabit varsayılırsa olay sonrası teorik fiyat</div><div class="v" id="postEventPriceResult">—</div></div>
-<div class="metric"><div class="k">Hedef fiyat için gereken MC (olay sonrası arz)</div><div class="v" id="targetFutureMcResult">—</div></div>
+<div class="metric"><div class="k">Piyasa değeri sabit varsayılırsa olay sonrası teorik fiyat</div><div class="v" id="postEventPriceResult">—</div></div>
+<div class="metric"><div class="k">Hedef fiyat için gereken piyasa değeri (olay sonrası arz)</div><div class="v" id="targetFutureMcResult">—</div></div>
 <div class="metric"><div class="k">Dolaşım dışı arz farkı</div><div class="v" id="undistributedResult">—</div></div>
-</div><div class="formula">“MC sabit” sonucu yalnız matematiksel karşılaştırmadır; gerçek piyasada fiyat ve market cap eşzamanlı değişebilir.</div></article>
+</div><div class="formula">“Piyasa değeri sabit” sonucu yalnız matematiksel karşılaştırmadır; gerçek piyasada fiyat ve piyasa değeri eşzamanlı değişebilir.</div></article>
 </section>
 
 <section class="details-grid">
 <article class="metric-card faq"><h2>Sık Sorulan Sorular</h2>
 <details><summary>Kripto kârı komisyonla birlikte nasıl hesaplanır?</summary><p>Alış maliyetine alış komisyonu eklenir; satış gelirinden satış komisyonu düşülür. Net kâr veya zarar, net satış geliri ile toplam alış maliyeti arasındaki farktır.</p></details>
-<details><summary>Dilution ayarlı ATH nasıl hesaplanır?</summary><p>Eski ATH fiyatı, ATH dönemindeki dolaşımdaki arz ile çarpılarak ATH döneminin yaklaşık market cap değeri bulunur. Bu market cap güncel dolaşımdaki arza bölünerek, aynı piyasa değerinin bugünkü arzla ima edeceği teorik fiyat hesaplanır.</p></details>
-<details><summary>Market cap sabit kalırsa unlock sonrası fiyat hesabı ne anlama gelir?</summary><p>Bu yalnız matematiksel bir senaryodur. Mevcut market cap yeni dolaşımdaki arza bölünür; gerçek piyasada market cap ve fiyat sabit kalmak zorunda değildir.</p></details>
-<details><summary>Hedef fiyat için gereken market cap nasıl hesaplanır?</summary><p>Hedef fiyat güncel dolaşımdaki arz ile çarpılır. Planlı arz değişimi ayrıca seçilmişse araç olay sonrası arzla gereken market cap değerini de gösterir.</p></details>
+<details><summary>Arz seyrelmesine göre düzeltilmiş ATH nasıl hesaplanır?</summary><p>Eski ATH fiyatı, ATH dönemindeki dolaşımdaki arz ile çarpılarak ATH döneminin yaklaşık piyasa değeri bulunur. Bu piyasa değeri güncel dolaşımdaki arza bölünerek, aynı piyasa değerinin bugünkü arzla ima edeceği teorik fiyat hesaplanır.</p></details>
+<details><summary>Piyasa değeri sabit kalırsa token kilidi açıldıktan sonraki fiyat hesabı ne anlama gelir?</summary><p>Bu yalnız matematiksel bir senaryodur. Mevcut piyasa değeri yeni dolaşımdaki arza bölünür; gerçek piyasada piyasa değeri ve fiyat sabit kalmak zorunda değildir.</p></details>
+<details><summary>Hedef fiyat için gereken piyasa değeri nasıl hesaplanır?</summary><p>Hedef fiyat güncel dolaşımdaki arz ile çarpılır. Planlı arz değişimi ayrıca seçilmişse araç olay sonrası arzla gereken piyasa değerini de gösterir.</p></details>
 <details><summary>Bu araç yatırım tavsiyesi verir mi?</summary><p>Hayır. Araç yalnızca girilen fiyat, arz ve komisyon verilerinden matematiksel senaryolar üretir; gelecekteki fiyat hareketini tahmin etmez.</p></details>
 </article>
 
@@ -324,9 +327,9 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container
 <div class="formula">Net satış geliri = (satış fiyatı × miktar) − satış komisyonu</div>
 <div class="formula">Net kâr/zarar = net satış geliri − toplam alış maliyeti</div>
 <div class="formula">ROI = net kâr/zarar ÷ toplam alış maliyeti × 100</div>
-<div class="formula">Dilution ayarlı ATH = (eski ATH × ATH dönemi arzı) ÷ güncel arz</div>
-<div class="formula">Olay sonrası teorik fiyat = güncel market cap ÷ olay sonrası dolaşımdaki arz</div>
-<div class="warning"><strong>Önemli:</strong> “Dilution ayarlı ATH”, “hedef market cap” ve “MC sabit kalırsa fiyat” sonuçları olasılık tahmini değildir. Likidite, talep, emir defteri, token kullanımı ve piyasa koşulları bu basit market-cap eşitliklerinin dışında kalır.</div>
+<div class="formula">Arz seyrelmesine göre düzeltilmiş ATH = (eski ATH × ATH dönemi arzı) ÷ güncel arz</div>
+<div class="formula">Olay sonrası teorik fiyat = güncel piyasa değeri ÷ olay sonrası dolaşımdaki arz</div>
+<div class="warning"><strong>Önemli:</strong> “Arz seyrelmesine göre düzeltilmiş ATH”, “hedef piyasa değeri” ve “piyasa değeri sabit kalırsa fiyat” sonuçları olasılık tahmini değildir. Likidite, talep, emir defteri, token kullanımı ve piyasa koşulları bu basit piyasa değeri eşitliklerinin dışında kalır.</div>
 </article>
 </section>
 
@@ -529,7 +532,7 @@ function fallbackCopy(text){const ta=document.createElement('textarea');ta.value
 async function copyText(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return true}catch(e){}}return fallbackCopy(text)}
 function resultText(){
  if(!last)return '';
- return ['Hesapica - Kripto Kâr & Tokenomics','Net kâr/zarar: '+money(last.r.profit),'ROI: '+pct(last.r.roi),'Toplam alış maliyeti: '+money(last.r.totalCost),'Net satış geliri: '+money(last.r.netProceeds),'Arz değişimi: '+pct(last.r.supplyChange),'Dilution ayarlı ATH: '+price(last.r.adjustedAth),'ATH için gereken market cap: '+money(last.r.athNeededMc),'Not: Matematiksel senaryodur; yatırım tavsiyesi değildir.','https://hesapica.com/kripto-kar-hesaplama'].join('\n');
+ return ['Hesapica - Kripto Kâr ve Token Ekonomisi','Net kâr/zarar: '+money(last.r.profit),'ROI: '+pct(last.r.roi),'Toplam alış maliyeti: '+money(last.r.totalCost),'Net satış geliri: '+money(last.r.netProceeds),'Arz değişimi: '+pct(last.r.supplyChange),'Arz seyrelmesine göre düzeltilmiş ATH: '+price(last.r.adjustedAth),'ATH için gereken piyasa değeri: '+money(last.r.athNeededMc),'Not: Matematiksel senaryodur; yatırım tavsiyesi değildir.','https://hesapica.com/kripto-kar-hesaplama'].join('\n');
 }
 form.addEventListener('submit',e=>{e.preventDefault();calculate({focus:true,showErrors:true})});
 [...required,...optionalNumeric].forEach(id=>$(id).addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>calculate({showErrors:false}),250)}));

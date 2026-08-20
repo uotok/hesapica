@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-commerce Profit Calculator: Margin &amp; Break-Even | Hesapica</title>
+<meta content="Estimate e-commerce operating profit, margin and break-even price using product cost, marketplace fees, shipping and optional VAT/GST-style tax handling." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/ecommerce-profit-calculator" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="E-commerce Profit Calculator: Margin &amp; Break-Even | Hesapica" property="og:title"/>
+<meta content="Estimate e-commerce operating profit, margin and break-even price using product cost, marketplace fees, shipping and optional VAT/GST-style tax handling." property="og:description"/>
+<meta content="https://hesapica.com/en/ecommerce-profit-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica E-commerce Profit Calculator" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="E-commerce Profit Calculator: Margin &amp; Break-Even | Hesapica" name="twitter:title"/>
+<meta content="Estimate e-commerce operating profit, margin and break-even price using product cost, marketplace fees, shipping and optional VAT/GST-style tax handling." name="twitter:description"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica E-commerce Profit Calculator" name="twitter:image:alt"/>
+<meta content="https://hesapica.com/en/ecommerce-profit-calculator" name="twitter:url"/>
+<meta content="@hesapica" name="twitter:site"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement/advertising services load only after user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--line:#e5e7eb;--muted:#6b7280;--text:#1f2937;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 38px rgba(79,70,229,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,#f6f8fc);color:var(--text);line-height:1.65}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1160px,calc(100% - 28px));margin:0 auto}.topbar{padding:16px 0 8px}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.hero{padding:32px;border-radius:28px;background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.16);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center}.hero h1{margin:0 0 10px;font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-.03em}.hero p{margin:0;color:#374151;font-size:17px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.chip{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-weight:800;color:#4338ca;font-size:13px}.hero-note{padding:20px;border-radius:20px;background:#fff;border:1px solid #dbe4ff}.hero-note strong{display:block;color:#312e81;font-size:20px;margin-bottom:7px}.hero-note p{font-size:14px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:22px;margin-top:22px;align-items:start}.card,.content-card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}.card h2,.content-card h2{margin:0 0 12px;font-size:25px;color:#312e81}.note{margin:0 0 16px;color:#4b5563}
+.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin-bottom:13px;font-size:18px;font-weight:900;color:#4338ca}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;font-weight:800;color:#374151;font-size:14px}input,select{width:100%;min-height:52px;border:1px solid #d9def0;border-radius:14px;padding:10px 14px;font-size:16px;outline:none;background:#fff}input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}.hint{margin-top:6px;font-size:13px;color:#6b7280}.error{display:none;margin-top:6px;color:var(--bad);font-size:13px;font-weight:700}.field.invalid .error{display:block}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff7f7}
+.quick-rates{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.rate-btn{border:1px solid #dbe4ff;background:#f8faff;color:#4338ca;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800;cursor:pointer}.assumption{margin-top:16px;padding:14px 16px;border-radius:16px;background:#f8faff;border:1px dashed #c7d2fe;color:#475569;font-size:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:none;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}.btn-soft{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}.btn:disabled{opacity:.5;cursor:not-allowed}.validation{display:none;margin-top:14px;padding:12px 14px;border-radius:14px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-weight:700;font-size:14px}.validation.show{display:block}
+.results{position:sticky;top:20px;display:grid;gap:12px}.result-main{font-size:40px;font-weight:900;letter-spacing:-.03em}.positive{color:var(--good)}.negative{color:var(--bad)}.muted{color:#6b7280}.kpi{display:grid;gap:10px}.kpi-row{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #e5e7eb;border-radius:13px;background:#fcfcff}.kpi-row span{text-align:right;font-weight:900}.tax-box{padding:15px 16px;border-radius:16px;background:#eef2ff;border:1px solid #c7d2fe}.tax-box strong{display:block;color:#312e81;margin-bottom:5px}.warning{padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:14px}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.formula{padding:13px 15px;border-radius:14px;background:#f8faff;border:1px solid #dbe4ff;font-size:14px;font-weight:700;color:#334155;margin-top:10px}.faq details{border:1px solid #e5e7eb;border-radius:14px;padding:12px 14px;background:#fff}.faq details+details{margin-top:10px}.faq summary{font-weight:800;cursor:pointer}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rel{display:block;padding:18px;border-radius:18px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 14px 28px rgba(91,79,246,.18)}.rel strong{display:block;margin-bottom:6px}.rel span{font-size:13px;color:rgba(255,255,255,.88)}
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}.footer-note{padding:28px 0 36px;text-align:center;color:#6b7280;font-size:14px}
+@media(max-width:980px){.hero-grid,.layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid,.related{grid-template-columns:1fr}.result-main{font-size:32px}.hero,.card,.content-card{padding:20px}.actions{flex-direction:column}.btn{width:100%}.kpi-row{flex-direction:column}.kpi-row span{text-align:left}.hc-ad-slot .adsbygoogle{min-height:0}}
+@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related-section,.footer-note,.quick-rates{display:none!important}.hero,.card,.content-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.layout,.content-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+</style>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<link href="https://hesapica.com/en/ecommerce-profit-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/eticaret-kar-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"E-commerce Profit Calculator","url":"https://hesapica.com/en/ecommerce-profit-calculator","description":"Estimate e-commerce operating profit, margin and break-even price using product cost, marketplace fees, shipping and optional VAT/GST-style tax handling.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Business","item":"https://hesapica.com/en/#business"},{"@type":"ListItem","position":3,"name":"E-commerce Profit Calculator","item":"https://hesapica.com/en/ecommerce-profit-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tax removed from a tax-inclusive selling price?","acceptedAnswer":{"@type":"Answer","text":"For a VAT/GST-style inclusive rate, tax-exclusive revenue is the inclusive amount divided by 1 plus the tax rate. The tax amount is the difference between the inclusive and exclusive values."}},{"@type":"Question","name":"Is tax on marketplace commission treated as an operating expense?","acceptedAnswer":{"@type":"Answer","text":"The calculator assumes recoverable input tax when a VAT/GST-style system applies. Under that assumption, the tax portion is tracked as input tax and the tax-exclusive commission is treated as operating expense."}},{"@type":"Question","name":"How is the break-even selling price calculated?","acceptedAnswer":{"@type":"Answer","text":"Tax-exclusive fixed costs and the selected commission rate are combined algebraically. The calculator solves for the tax-inclusive unit selling price at which modeled operating profit equals zero."}},{"@type":"Question","name":"Are marketplace commission rates filled in automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Commission rates vary by platform, category, campaign and contract. You enter the current rate that applies to your account or product."}},{"@type":"Question","name":"Does this result include income or corporate tax?","acceptedAnswer":{"@type":"Answer","text":"No. It is an operating-profit estimate based on the entered sale and direct costs. Income/corporate tax, returns, advertising, storage, payment processing and other unentered costs must be assessed separately."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *, .grid > *{min-width:0}
+  .hc-language-switch{box-sizing:border-box;max-width:100%;flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<noscript><div style="max-width:1160px;margin:12px auto;padding:12px 16px;border:1px solid #fecaca;border-radius:14px;background:#fff7f7;color:#991b1b;font:600 14px/1.5 Inter,system-ui,sans-serif">This calculator requires JavaScript. Enable JavaScript in your browser to use it.</div></noscript>
+<div class="container topbar"><nav aria-label="breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#business">Business</a><span>/</span><strong>E-commerce Profit Calculator</strong></nav><div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/eticaret-kar-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container"><section class="hero"><div class="hero-grid">
+<div><h1>E-commerce Profit Calculator</h1><p>Break a tax-inclusive selling price into its modeled components, then combine product cost, marketplace commission, shipping and other direct costs to estimate <strong>operating profit, margin and break-even selling price</strong>.</p><div class="chips"><span class="chip">Tax-inclusive breakdown</span><span class="chip">Commission base</span><span class="chip">Recoverable input tax</span><span class="chip">Break-even price</span></div></div>
+<aside class="hero-note"><strong>You enter the marketplace rate</strong><p>Marketplace commission rates vary by platform, category, promotion and contract. The calculator does not assume an official or universal commission rate.</p></aside>
+</div></section></header>
+<div class="container">
+<main>
+<section class="layout">
+<section class="card">
+<h2>Calculation Panel</h2>
+<p class="note">The calculator can model a VAT/GST-style system in which eligible input tax is recoverable. It does not include income/corporate tax or costs you do not enter. If your jurisdiction handles sales tax differently, use rates and tax treatment that match your records.</p>
+<form id="ecomForm" novalidate="">
+<div class="form-section"><div class="form-title">Sales</div><div class="grid">
+<div class="field" id="fieldSalePrice"><label for="salePrice">Unit selling price (tax included)</label><input autocomplete="off" id="salePrice" inputmode="decimal" placeholder="e.g. 120" type="text"/><div class="hint">Tax-inclusive unit price paid by the customer.</div><div class="error" id="salePriceError">Enter a valid price greater than zero.</div></div>
+<div class="field" id="fieldQuantity"><label for="quantity">Quantity</label><input autocomplete="off" id="quantity" inputmode="numeric" type="text" value="1"/><div class="hint">Number of units in the order.</div><div class="error" id="quantityError">Enter a whole number from 1 to 100,000.</div></div>
+<div class="field" id="fieldSaleVat"><label for="saleVat">Sales tax / VAT rate (%)</label><input autocomplete="off" id="saleVat" inputmode="decimal" type="text" value="0"/><div class="quick-rates"><button class="rate-btn" data-rate="1" data-target="saleVat" type="button">1%</button><button class="rate-btn" data-rate="10" data-target="saleVat" type="button">10%</button><button class="rate-btn" data-rate="20" data-target="saleVat" type="button">20%</button></div><div class="error" id="saleVatError">Enter a rate from 0% to 100%.</div></div>
+<div class="field"><label for="market">Marketplace <span class="hint">(label only)</span></label><select id="market"><option value="Amazon">Amazon</option><option value="eBay">eBay</option><option value="Etsy">Etsy</option><option value="Shopify">Shopify</option><option value="Other">Other</option></select><div class="hint">This label does not change the commission rate.</div></div><div class="field"><label for="currency">Currency</label><select id="currency"><option value="USD">US Dollar ($)</option><option value="EUR">Euro (€)</option><option value="GBP">British Pound (£)</option><option value="CAD">Canadian Dollar (CA$)</option><option value="AUD">Australian Dollar (A$)</option><option value="NZD">New Zealand Dollar (NZ$)</option><option value="CHF">Swiss Franc (CHF)</option><option value="JPY">Japanese Yen (¥)</option><option value="INR">Indian Rupee (₹)</option><option value="SGD">Singapore Dollar (S$)</option><option value="SEK">Swedish Krona (SEK)</option><option value="NOK">Norwegian Krone (NOK)</option><option value="DKK">Danish Krone (DKK)</option><option value="PLN">Polish Zloty (PLN)</option><option value="ZAR">South African Rand (ZAR)</option></select><div class="hint">Changes display formatting only; no FX conversion is performed.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Product cost</div><div class="grid">
+<div class="field" id="fieldCostPrice"><label for="costPrice">Unit product cost (tax included)</label><input autocomplete="off" id="costPrice" inputmode="decimal" type="text"/><div class="hint">Tax-inclusive unit cost from your purchase record.</div><div class="error" id="costPriceError">Enter a valid non-negative cost.</div></div>
+<div class="field" id="fieldCostVat"><label for="costVat">Purchase tax / VAT rate (%)</label><input autocomplete="off" id="costVat" inputmode="decimal" type="text" value="0"/><div class="quick-rates"><button class="rate-btn" data-rate="1" data-target="costVat" type="button">1%</button><button class="rate-btn" data-rate="10" data-target="costVat" type="button">10%</button><button class="rate-btn" data-rate="20" data-target="costVat" type="button">20%</button></div><div class="error" id="costVatError">Enter a rate from 0% to 100%.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Marketplace commission</div><div class="grid">
+<div class="field" id="fieldCommission"><label for="commission">Commission rate (%)</label><input autocomplete="off" id="commission" inputmode="decimal" type="text"/><div class="hint">Enter the commission rate that applies to your product or account.</div><div class="error" id="commissionError">Enter a rate from 0% to 100%.</div></div>
+<div class="field"><label for="commissionBase">Commission base</label><select id="commissionBase"><option value="gross">Tax-inclusive selling amount</option><option value="net">Tax-exclusive sales revenue</option></select><div class="hint">Choose the amount on which your marketplace calculates commission.</div></div>
+<div class="field" id="fieldCommissionVat"><label for="commissionVat">Tax / VAT on commission (%)</label><input autocomplete="off" id="commissionVat" inputmode="decimal" type="text" value="0"/><div class="hint">Enter the tax rate charged on the marketplace commission, if applicable. Use 0% when no recoverable tax should be modeled.</div><div class="error" id="commissionVatError">Enter a rate from 0% to 100%.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Order costs</div><div class="grid">
+<div class="field" id="fieldCargo"><label for="cargo">Shipping (tax included)</label><input autocomplete="off" id="cargo" inputmode="decimal" placeholder="0" type="text"/><div class="hint">Total tax-inclusive shipping cost for the order.</div><div class="error" id="cargoError">Enter a valid non-negative amount.</div></div>
+<div class="field" id="fieldCargoVat"><label for="cargoVat">Shipping tax / VAT rate (%)</label><input autocomplete="off" id="cargoVat" inputmode="decimal" type="text" value="0"/><div class="error" id="cargoVatError">Enter a rate from 0% to 100%.</div></div>
+<div class="field" id="fieldOtherCost"><label for="otherCost">Other costs (tax excluded)</label><input autocomplete="off" id="otherCost" inputmode="decimal" placeholder="0" type="text"/><div class="hint">Tax-exclusive direct costs you want to allocate to the order, such as packaging or an advertising allocation.</div><div class="error" id="otherCostError">Enter a valid non-negative amount.</div></div>
+</div></div>
+<div class="assumption"><strong>Tax approach:</strong> This model treats VAT/GST-style tax collected on sales as non-revenue and recoverable input tax on purchases, commission and shipping as non-expense. If input tax is not recoverable, or your jurisdiction uses a different sales-tax system, use 0% where appropriate and follow your local accounting treatment.</div>
+<div class="actions">
+<button class="btn btn-primary" type="submit">Calculate</button>
+<button class="btn btn-soft" id="sampleBtn" type="button">Example Data</button>
+<button class="btn btn-soft" id="resetBtn" type="button">Reset</button>
+<button class="btn btn-ghost" disabled="" id="copyBtn" type="button">Copy Result</button>
+<button class="btn btn-ghost" disabled="" id="shareBtn" type="button">Share</button>
+<button class="btn btn-ghost" disabled="" id="printBtn" type="button">Print / PDF</button>
+</div>
+<div aria-live="assertive" class="validation" id="validationBox" role="alert"></div>
+</form>
+</section>
+<aside aria-live="polite" class="card results" id="resultsPanel">
+<div><h2>Results</h2><div class="result-main" id="profitResult">—</div><p class="muted" id="resultNote">Operating profit will appear here after you enter valid values.</p></div>
+<div class="kpi">
+<div class="kpi-row"><strong>Tax-exclusive sales revenue</strong><span id="netRevenueResult">—</span></div>
+<div class="kpi-row"><strong>Net product cost</strong><span id="netProductCostResult">—</span></div>
+<div class="kpi-row"><strong>Commission (tax excluded)</strong><span id="commissionResult">—</span></div>
+<div class="kpi-row"><strong>Shipping (tax excluded)</strong><span id="cargoResult">—</span></div>
+<div class="kpi-row"><strong>Profit margin</strong><span id="marginResult">—</span></div>
+<div class="kpi-row"><strong>Break-even unit selling price</strong><span id="breakevenResult">—</span></div>
+</div>
+<div class="tax-box"><strong>Estimated net indirect-tax position</strong><div id="vatPositionResult">—</div><div class="muted" id="vatPositionSub">Output tax minus modeled recoverable input tax for this order.</div></div>
+<div class="warning">Operating profit does not automatically include income/corporate tax, returns, coupon funding, advertising, storage, payment processing or other platform-specific costs unless you enter them.</div>
+</aside>
+</section>
+<section class="content-grid">
+<article class="content-card"><h2>How the calculation works</h2>
+<p>For a VAT/GST-style tax-inclusive price, subtracting the tax percentage directly is incorrect. Tax-exclusive revenue is found by dividing the inclusive amount by 1 plus the tax rate.</p>
+<div class="formula">Tax-exclusive revenue = tax-inclusive sales ÷ (1 + tax rate)</div>
+<div class="formula">Output tax = tax-inclusive sales − tax-exclusive revenue</div>
+<div class="formula">Operating profit = tax-exclusive revenue − net product cost − net commission − net shipping − other costs</div>
+<div class="formula">Profit margin = operating profit ÷ tax-exclusive sales revenue × 100</div>
+<p>Because marketplaces may apply commission to either the tax-inclusive sale amount or tax-exclusive revenue, the calculator provides both commission-base options.</p>
+</article>
+<article class="content-card faq"><h2>Frequently Asked Questions</h2>
+<details><summary>How is tax removed from a tax-inclusive selling price?</summary><p>For a VAT/GST-style inclusive rate, tax-exclusive revenue is the inclusive amount divided by 1 plus the tax rate. The tax amount is the difference between the inclusive and exclusive values.</p></details>
+<details><summary>Is tax on marketplace commission treated as an operating expense?</summary><p>The calculator assumes recoverable input tax when a VAT/GST-style system applies. Under that assumption, the tax portion is tracked as input tax and the tax-exclusive commission is treated as operating expense.</p></details>
+<details><summary>How is the break-even selling price calculated?</summary><p>Tax-exclusive fixed costs and the selected commission rate are combined algebraically. The calculator solves for the tax-inclusive unit selling price at which modeled operating profit equals zero.</p></details>
+<details><summary>Are marketplace commission rates filled in automatically?</summary><p>No. Commission rates vary by platform, category, campaign and contract. You enter the current rate that applies to your account or product.</p></details>
+<details><summary>Does this result include income or corporate tax?</summary><p>No. It is an operating-profit estimate based on the entered sale and direct costs. Income/corporate tax, returns, advertising, storage, payment processing and other unentered costs must be assessed separately.</p></details>
+</article>
+</section>
+<div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq"><ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="6788455111" data-full-width-responsive="true" style="display:block"></ins></div>
+<section class="card related-section" style="margin-top:20px"><h2>Related Calculators</h2><div class="related">
+<a class="rel" href="/en/discount-calculator"><strong>Discount Calculator</strong><span>Calculate final sale price and combined savings.</span></a>
+<a class="rel" href="/en/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate margins, rates and percentage changes.</span></a>
+<a class="rel" href="/en/budget-calculator"><strong>Budget Calculator</strong><span>See how business cash flow and spending fit a monthly budget.</span></a>
+</div></section>
+<div class="footer-note">Hesapica · This is a general calculation aid, not tax or accounting advice. Use records and rules that apply to your business and jurisdiction.</div>
+</main>
+</div>
+<script>
+(function(){
+'use strict';
+const STORAGE_KEY='hesapica_en_ecommerce_profit_v4';
+const $=id=>document.getElementById(id);
+const ids=['salePrice','quantity','saleVat','costPrice','costVat','commission','commissionVat','cargo','cargoVat','otherCost'];
+const form=$('ecomForm');
+let last=null,timer=null;
+
+const CURRENCY_CODES = new Set(['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR']);
+function currentCurrency(){ const el=document.getElementById('currency'); return el && CURRENCY_CODES.has(el.value) ? el.value : 'USD'; }
+function formatGlobalMoney(value, digits=2){
+  const n=Number(value); if(!Number.isFinite(n)) return '—';
+  return new Intl.NumberFormat('en-US',{style:'currency',currency:currentCurrency(),minimumFractionDigits:digits,maximumFractionDigits:digits}).format(n);
+}
+function parseGlobalNumber(value){
+  if(value===null||value===undefined) return NaN;
+  if(typeof value==='number') return Number.isFinite(value)?value:NaN;
+  let raw=String(value).trim().replace(/\s+/g,'').replace(/[\$€£¥₹]/g,'');
+  if(!raw) return 0;
+  if(!/^[+-]?[0-9][0-9.,]*$/.test(raw)) return NaN;
+  let sign=''; if(raw[0]==='+'||raw[0]==='-'){sign=raw[0];raw=raw.slice(1);}
+  const dots=(raw.match(/\./g)||[]).length, commas=(raw.match(/,/g)||[]).length;
+  let normalized=raw;
+  if(dots&&commas){
+    const dec=raw.lastIndexOf('.')>raw.lastIndexOf(',')?'.':','; const group=dec==='.'?',':'.';
+    normalized=raw.split(group).join('').replace(dec,'.');
+  } else if(commas){
+    const parts=raw.split(',');
+    if(parts.length>2) normalized=raw.replace(/,/g,'');
+    else if(parts[1].length===3 && parts[0] !== '0') normalized=parts[0]+parts[1];
+    else normalized=parts[0]+'.'+parts[1];
+  } else if(dots){
+    const parts=raw.split('.');
+    if(parts.length>2) normalized=raw.replace(/\./g,'');
+    else normalized=raw;
+  }
+  const n=Number(sign+normalized); return Number.isFinite(n)?n:NaN;
+}
+
+
+function parseDecimal(v){ const n=parseGlobalNumber(v); return Number.isFinite(n)?n:null; }
+function read(){
+ const d={};
+ ids.forEach(id=>d[id]=parseDecimal($(id).value));
+ d.market=$('market').value;
+ d.commissionBase=$('commissionBase').value; d.currency=currentCurrency();
+ return d;
+}
+function fieldName(id){return 'field'+id[0].toUpperCase()+id.slice(1)}
+function invalid(id,on){
+ const f=$(fieldName(id)),input=$(id);
+ if(f)f.classList.toggle('invalid',on);
+ if(input)input.setAttribute('aria-invalid',on?'true':'false');
+}
+function validate(d){
+ const e={};
+ if(d.salePrice===null||d.salePrice<=0)e.salePrice=true;
+ if(d.quantity===null||!Number.isInteger(d.quantity)||d.quantity<1||d.quantity>100000)e.quantity=true;
+ if(d.costPrice===null||d.costPrice<0)e.costPrice=true;
+ ['saleVat','costVat','commission','commissionVat','cargoVat'].forEach(id=>{if(d[id]===null||d[id]<0||d[id]>100)e[id]=true});
+ ['cargo','otherCost'].forEach(id=>{if(d[id]===null||d[id]<0)e[id]=true});
+ ids.forEach(id=>invalid(id,!!e[id]));
+ return e;
+}
+function compute(d){
+ const qty=d.quantity;
+ const grossSales=d.salePrice*qty;
+ const netRevenue=grossSales/(1+d.saleVat/100);
+ const outputVat=grossSales-netRevenue;
+
+ const grossProduct=d.costPrice*qty;
+ const netProduct=grossProduct/(1+d.costVat/100);
+ const productInputVat=grossProduct-netProduct;
+
+ const commissionBaseAmount=d.commissionBase==='net'?netRevenue:grossSales;
+ const commissionNet=commissionBaseAmount*d.commission/100;
+ const commissionVat=commissionNet*d.commissionVat/100;
+ const commissionGross=commissionNet+commissionVat;
+
+ const cargoNet=d.cargo/(1+d.cargoVat/100);
+ const cargoInputVat=d.cargo-cargoNet;
+
+ const profit=netRevenue-netProduct-commissionNet-cargoNet-d.otherCost;
+ const margin=netRevenue>0?profit/netRevenue*100:null;
+ const unitProfit=profit/qty;
+
+ const deductibleVat=productInputVat+commissionVat+cargoInputVat;
+ const vatPosition=outputVat-deductibleVat;
+
+ const fixedNetCosts=netProduct+cargoNet+d.otherCost;
+ const saleVatFactor=1+d.saleVat/100;
+ let denom;
+ if(d.commissionBase==='gross') denom=(1/saleVatFactor)-(d.commission/100);
+ else denom=(1-d.commission/100)/saleVatFactor;
+ const breakEvenOrder=denom>0?fixedNetCosts/denom:null;
+ const breakEvenUnit=breakEvenOrder!==null?breakEvenOrder/qty:null;
+
+ return {grossSales,netRevenue,outputVat,grossProduct,netProduct,productInputVat,commissionBaseAmount,commissionNet,commissionVat,commissionGross,cargoNet,cargoInputVat,profit,margin,unitProfit,deductibleVat,vatPosition,breakEvenOrder,breakEvenUnit};
+}
+function money(v){return Number.isFinite(v)?formatGlobalMoney(v,2):'—'}
+function pct(v){return Number.isFinite(v)?new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}).format(v)+'%':'—'}
+function enable(on){$('copyBtn').disabled=!on;$('shareBtn').disabled=!on;$('printBtn').disabled=!on}
+function empty(){
+ last=null;enable(false);
+ ['profitResult','netRevenueResult','netProductCostResult','commissionResult','cargoResult','marginResult','breakevenResult','vatPositionResult'].forEach(id=>$(id).textContent='—');
+ $('profitResult').className='result-main';$('resultNote').textContent='Operating profit will appear here after you enter valid values.';$('vatPositionSub').textContent='Output tax minus modeled recoverable input tax for this order.';
+}
+function render(r,d){
+ last={r,d};enable(true);
+ $('profitResult').textContent=money(r.profit);$('profitResult').className='result-main '+(r.profit>0?'positive':r.profit<0?'negative':'');
+ $('resultNote').textContent=(d.market||'Marketplace')+' order. Unit operating profit: '+money(r.unitProfit);
+ $('netRevenueResult').textContent=money(r.netRevenue);$('netProductCostResult').textContent=money(r.netProduct);$('commissionResult').textContent=money(r.commissionNet);$('cargoResult').textContent=money(r.cargoNet);
+ $('marginResult').textContent=pct(r.margin);$('breakevenResult').textContent=r.breakEvenUnit===null?'Not possible':money(r.breakEvenUnit);
+ $('vatPositionResult').textContent=(r.vatPosition>=0?'Net tax payable ':'Net input-tax credit ')+money(Math.abs(r.vatPosition));
+ $('vatPositionSub').textContent='Output tax '+money(r.outputVat)+' − modeled recoverable input tax '+money(r.deductibleVat)+'. Other tax periods and adjustments are not included.';
+}
+function safeSet(x){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(x))}catch(e){}}
+function safeGet(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return null;const p=JSON.parse(raw);if(!p||p.version!==4||typeof p.inputs!=='object')throw new Error('bad');return p}catch(e){try{localStorage.removeItem(STORAGE_KEY)}catch(_){}return null}}
+function safeRemove(){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}}
+function save(){
+ const x={};ids.forEach(id=>x[id]=String($(id).value).slice(0,20));
+ x.market=$('market').value;x.commissionBase=$('commissionBase').value;x.currency=currentCurrency();
+ safeSet({version:4,inputs:x});
+}
+function calculate({focus=false,showErrors=true}={}){
+ const d=read(),e=validate(d),bad=Object.keys(e),box=$('validationBox');
+ if(bad.length){
+  empty();
+  if(showErrors){box.textContent='Check the highlighted fields.';box.classList.add('show');if(focus){const first=$(bad[0]);first&&first.focus()}}
+  else box.classList.remove('show');
+  return false;
+ }
+ const r=compute(d);
+ const coreValues=[r.grossSales,r.netRevenue,r.outputVat,r.grossProduct,r.netProduct,r.productInputVat,r.commissionBaseAmount,r.commissionNet,r.commissionVat,r.commissionGross,r.cargoNet,r.cargoInputVat,r.profit,r.margin,r.unitProfit,r.deductibleVat,r.vatPosition];
+ if(!coreValues.every(Number.isFinite)|| (r.breakEvenUnit!==null && !Number.isFinite(r.breakEvenUnit))){
+  empty();box.textContent='The entered values exceed the calculation range. Try smaller amounts or rates.';box.classList.add('show');return false;
+ }
+ box.classList.remove('show');render(r,d);save();
+ if(focus)$('resultsPanel').scrollIntoView({behavior:'smooth',block:'start'});
+ return true;
+}
+function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);return ok}
+async function copyText(text){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return true}catch(e){}}return fallbackCopy(text)}
+function resultText(){
+ if(!last)return '';
+ return ['Hesapica - E-commerce Profit Calculator','Marketplace: '+last.d.market,'Operating profit: '+money(last.r.profit),'Profit margin: '+pct(last.r.margin),'Tax-exclusive sales revenue: '+money(last.r.netRevenue),'Commission (tax excluded): '+money(last.r.commissionNet),'Break-even unit selling price: '+(last.r.breakEvenUnit===null?'Not possible':money(last.r.breakEvenUnit)),'Note: Income/corporate tax and other unentered platform-specific costs are not included.','https://hesapica.com/en/ecommerce-profit-calculator'].join('\n');
+}
+form.addEventListener('submit',e=>{e.preventDefault();calculate({focus:true,showErrors:true})});
+ids.forEach(id=>$(id).addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>calculate({showErrors:false}),250)}));
+['market','commissionBase','currency'].forEach(id=>$(id).addEventListener('change',()=>calculate({showErrors:false})));
+document.querySelectorAll('[data-target][data-rate]').forEach(btn=>btn.addEventListener('click',()=>{$(btn.dataset.target).value=btn.dataset.rate;calculate({showErrors:false})}));
+$('sampleBtn').addEventListener('click',()=>{
+ const x={salePrice:'120',quantity:'10',saleVat:'20',costPrice:'60',costVat:'20',commission:'12',commissionVat:'20',cargo:'20',cargoVat:'20',otherCost:'10'};
+ Object.entries(x).forEach(([k,v])=>$(k).value=v);$('market').value='Amazon';$('commissionBase').value='gross';$('currency').value='USD';calculate({focus:true,showErrors:true});
+});
+$('resetBtn').addEventListener('click',()=>{form.reset();$('quantity').value='1';$('saleVat').value='0';$('costVat').value='0';$('commissionVat').value='0';$('cargoVat').value='0';$('currency').value='USD';ids.forEach(id=>invalid(id,false));$('validationBox').classList.remove('show');safeRemove();empty()});
+$('copyBtn').addEventListener('click',async()=>{if(last)await copyText(resultText())});
+$('shareBtn').addEventListener('click',async()=>{if(!last)return;if(navigator.share){try{await navigator.share({title:'E-commerce Profit Calculator - Hesapica',text:'Operating profit: '+money(last.r.profit)+' · Margin '+pct(last.r.margin),url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}await copyText(resultText())});
+$('printBtn').addEventListener('click',()=>{if(!last){const box=$('validationBox');box.textContent='Create a valid result before printing.';box.classList.add('show');return;}window.print();});
+(function init(){
+ empty();
+ const p=safeGet();
+ if(p){
+  const x=p.inputs||{};
+  ids.forEach(id=>{if(typeof x[id]==='string')$(id).value=x[id]});
+  if(['Amazon','eBay','Etsy','Shopify','Other'].includes(x.market))$('market').value=x.market;
+  if(['gross','net'].includes(x.commissionBase))$('commissionBase').value=x.commissionBase;
+  if(CURRENCY_CODES.has(String(x.currency||'')))$('currency').value=String(x.currency);
+  const ok=calculate({showErrors:false});if(!ok)safeRemove();
+ }
+})();
+})();
+</script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','reset data','clear','clear data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

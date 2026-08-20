@@ -8,6 +8,8 @@
 <meta name="robots" content="index,follow,max-image-preview:large"/>
 <meta name="theme-color" content="#4f46e5"/>
 <link rel="canonical" href="https://hesapica.com/faiz-hesaplama"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/faiz-hesaplama"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/interest-calculator"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
 <meta property="og:type" content="website"/>
@@ -201,10 +203,11 @@
       }
     }
 </style>
+<link rel="stylesheet" href="/language-switch.css"/>
 </head>
 <body>
 <noscript><div class="container" style="margin-top:16px;padding:14px;border:1px solid #fecaca;border-radius:16px;background:#fff1f2;color:#991b1b;font-weight:700">Bu aracın çalışması için JavaScript açık olmalıdır.</div></noscript>
-<div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#finans">Finans</a><span>/</span><strong>Faiz Hesaplama</strong></nav></div>
+<div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#finans">Finans</a><span>/</span><strong>Faiz Hesaplama</strong> <span aria-hidden="true">/</span> <a class="hc-language-link" href="/en/interest-calculator" hreflang="en" lang="en" title="İngilizce sürümü aç" aria-label="İngilizce sürümü aç"><span aria-hidden="true">🌐</span><span>EN · English</span></a></nav></div>
 <header class="container"><section class="hero"><div class="hero-grid"><div><span class="eyebrow">Hesapica • Getiri Aracı</span><h1>Faiz, Mevduat ve Bileşik Getiri Hesaplama</h1><p>Basit faiz, vadeli mevduat ve düzenli katkılı bileşik birikimi ayrı motorlarla hesapla; brüt, net, efektif ve reel sonuçları aynı ekranda karşılaştır.</p><div class="hero-chips"><span class="hero-chip">Basit faiz</span><span class="hero-chip">Mevduat stopajı</span><span class="hero-chip">Düzenli katkı</span><span class="hero-chip">Reel getiri</span></div><div class="mode-tabs" role="tablist" aria-label="Hesaplama modu"><button class="mode-tab active" type="button" role="tab" aria-selected="true" tabindex="0" data-mode="simple">Basit Faiz</button><button class="mode-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-mode="deposit">Mevduat</button><button class="mode-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-mode="compound">Bileşik Getiri</button></div></div><aside class="hero-box"><strong id="heroBoxTitle">Faizin anaparaya eklenmediği klasik hesap</strong><p id="heroBoxText">Anapara, yıllık oran ve süreyle brüt ve net faiz sonucunu hesaplar.</p><ul><li>Türk lirası bazlı sonuç</li><li>Stopaj ve reel getiri görünümü</li><li>Doğrulanabilir formüller</li></ul></aside></div></section></header>
 
 
@@ -240,6 +243,9 @@
 
 
 <section class="content-grid"><div class="card"><h2>Hesaplama ayrıntıları</h2><div class="table-wrap"><table><tbody id="detailTable"><tr><th>Durum</th><td>Hesaplama bekleniyor.</td></tr></tbody></table></div></div><div class="card"><h2>Formül ve varsayımlar</h2><div id="formulaText"><p class="section-note">Seçilen moda göre kullanılan formül ve varsayımlar hesap sonrasında burada gösterilir.</p></div></div></section>
+
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Reklam alanı"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
 <section class="card faq-section" style="margin-top:24px"><h2>Sık Sorulan Sorular</h2><details open><summary>Basit faiz nasıl hesaplanır?</summary><p>Basit faizde faiz anaparaya eklenmez. Brüt faiz; anapara, yıllık oran ve sürenin çarpımıyla hesaplanır. Stopaj girilmişse yalnız faiz kazancından düşülür.</p></details><details><summary>Mevduat hesabı neden bankayla birebir aynı olmayabilir?</summary><p>Bankaların valör, gün sayımı, kampanya koşulu, küsurat yuvarlaması ve fiilen uyguladığı oran farklı olabilir. Bu araç yıllık oran ve 365 gün esasıyla tahmini sonuç üretir.</p></details><details><summary>Bileşik hesapta aylık katkı ne zaman eklenir?</summary><p>Katkının ay başında veya ay sonunda yapılacağı seçilebilir. Ay başı katkısı bir dönem daha fazla getiri kazanır.</p></details><details><summary>Reel getiri neyi gösterir?</summary><p>Reel getiri, yıllık efektif net getiri ile girilen enflasyon oranını birlikte değerlendirerek alım gücü değişiminin yaklaşık görünümünü verir.</p></details></section>
 <section class="card related-section" style="margin-top:24px"><h2>İlgili Araçlar</h2><div class="related-grid"><a class="related-card" href="/yatirim-getirisi-hesaplama"><span>Yatırım</span><strong>Yatırım Getirisi Hesaplama</strong><p>ROI, IRR ve reel getiriyi daha geniş kapsamda incele.</p></a><a class="related-card" href="/enflasyon-hesaplama"><span>Ekonomi</span><strong>Enflasyon Hesaplama</strong><p>Nominal kazancın alım gücü etkisini analiz et.</p></a><a class="related-card" href="/butce-hesaplama"><span>Finans</span><strong>Bütçe Hesaplama</strong><p>Düzenli katkının aylık bütçeye etkisini gör.</p></a><a class="related-card" href="/kredi-karti-faiz-hesaplama"><span>Borç</span><strong>Kredi Kartı Faiz Hesaplama</strong><p>Borç faizini getiri tarafından ayrı değerlendir.</p></a></div></section>
 </main><footer class="container">Hesapica · Sonuçlar tahminidir; banka ürün şartları, vergi düzenlemeleri ve uygulanan gerçek oranlar ayrıca doğrulanmalıdır.</footer>
@@ -275,7 +281,6 @@ $('calcForm').addEventListener('submit',e=>{e.preventDefault();calculate(true)})
 const q=new URL(location.href).searchParams.get('mod'),restored=safeLoad(),restoredMode=mode;if(['simple','deposit','compound'].includes(q)){if(restored&&q!==restoredMode)restoreResultRequested=false;mode=q}setMode(mode,false);$('depositTax').readOnly=$('depositTaxMode').value==='auto';syncCompoundTaxState();updateTaxSuggestion();if(restored&&restoreResultRequested){if(!calculate(false)){clearErrors();resetResults()}}else resetResults();
 })();
 </script>
-<script src="ads-slot-manager.js"></script>
 
 
 
@@ -313,6 +318,8 @@ const q=new URL(location.href).searchParams.get('mod'),restored=safeLoad(),resto
   });
 })();
 </script>
+
+<script src="ads-slot-manager.js"></script>
 
 <script id="hc-reset-scroll-standard">
 (() => {

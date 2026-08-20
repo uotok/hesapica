@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rental Property Calculator: Yield, Payback & Cash Flow | Hesapica</title>
+<meta name="description" content="Estimate rental yield, net annual rent, gross and net payback, target rent and a 10-year nominal/real projection from property price, vacancy and expenses."/>
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://hesapica.com/en/rental-property-calculator"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/rental-property-calculator"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/ev-amortisman-hesaplama"/>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hesapica">
+<meta property="og:title" content="Rental Property Calculator: Yield, Payback & Cash Flow | Hesapica"/>
+<meta property="og:description" content="Estimate rental yield, net annual rent, gross and net payback, target rent and a 10-year nominal/real projection from property price, vacancy and expenses."/>
+<meta property="og:url" content="https://hesapica.com/en/rental-property-calculator"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png">
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hesapica">
+<meta name="twitter:title" content="Rental Property Calculator: Yield, Payback & Cash Flow | Hesapica"/>
+<meta name="twitter:description" content="Estimate rental yield, net annual rent, gross and net payback, target rent and a 10-year nominal/real projection from property price, vacancy and expenses."/>
+<meta name="twitter:url" content="https://hesapica.com/en/rental-property-calculator"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png">
+<meta name="twitter:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<link rel="stylesheet" href="../cookie-consent.css">
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Rental Property Calculator","url":"https://hesapica.com/en/rental-property-calculator","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Property","item":"https://hesapica.com/en/#property"},{"@type":"ListItem","position":3,"name":"Rental Property Calculator","item":"https://hesapica.com/en/rental-property-calculator"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between gross and net payback?","acceptedAnswer":{"@type":"Answer","text":"Gross payback uses only purchase price and gross rent. Net payback also includes acquisition costs, vacancy and annual expenses."}},{"@type":"Question","name":"Is rental-income tax included?","acceptedAnswer":{"@type":"Answer","text":"Only if you enter an estimated annual rental-income tax amount. The calculator does not derive tax automatically from local law."}},{"@type":"Question","name":"Are mortgage interest and property appreciation included?","acceptedAnswer":{"@type":"Answer","text":"Mortgage interest is not included. Property appreciation is shown only as a user-entered projection assumption and does not change rent-based payback."}}]}
+</script>
+<style>
+:root{--p:#4f46e5;--p2:#7c3aed;--bg:#f6f8fc;--card:#fff;--text:#1f2937;--muted:#667085;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 14px 34px rgba(79,70,229,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8faff,var(--bg));color:var(--text);line-height:1.65}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:28px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.12);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;color:var(--p);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.035em}.hero p{margin:0;color:#4b5563;font-size:17px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip-label{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;color:#4338ca;font-size:13.5px;font-weight:700}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.94);border:1px solid #dbe4ff}.hero-box strong{display:block;font-size:24px;line-height:1.25;margin-bottom:8px}.hero-box ul{margin:10px 0 0;padding-left:18px;color:#4b5563}.tool-layout{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;color:var(--p);font-size:25px}.section-note{margin:0 0 18px;color:#4b5563}.helper{margin-bottom:18px;padding:15px 17px;border-radius:18px;background:#faf8ff;border:1px dashed rgba(79,70,229,.24);color:#374151}.form-section+.form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.form-title{margin-bottom:14px;font-size:19px;font-weight:900;color:var(--p)}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select{width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;font-size:17px;font-weight:600}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:48px}input:focus,select:focus{border-color:rgba(79,70,229,.48);box-shadow:0 0 0 4px rgba(79,70,229,.08)}.hint{margin-top:7px;color:var(--muted);font-size:13.5px;line-height:1.55}.field-error{display:none;margin-top:7px;color:var(--bad);font-size:13.5px;font-weight:700}.field.invalid .field-error{display:block}.field.invalid input,.field.invalid select{border-color:#ef4444;background:#fff7f7}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:0;border-radius:16px;padding:14px 18px;cursor:pointer;font-weight:800}.btn-primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.notice{display:none;margin-top:14px;padding:12px 14px;border-radius:14px;background:#eef2ff;color:#4338ca;font-weight:700;font-size:14px}.notice.show{display:block}.results{position:sticky;top:20px;display:grid;gap:16px}.status,.highlight,.summary-card,.metric,.comment{border-radius:20px;border:1px solid rgba(79,70,229,.12)}.status{padding:18px;background:#f8faff}.status-row{display:flex;justify-content:space-between;gap:12px}.badge{padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-size:13px;font-weight:800;white-space:nowrap}.highlight{padding:22px;background:linear-gradient(180deg,#f8faff,#eef2ff);scroll-margin-top:18px}.highlight-label{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--p);font-weight:900}.highlight-value{font-size:40px;font-weight:900;line-height:1.05;margin:8px 0}.highlight-sub{color:#4b5563}.metric-grid{display:grid;gap:12px}.metric{display:flex;justify-content:space-between;gap:14px;padding:15px 17px;background:#fff}.metric .name{font-weight:800}.metric .desc{color:var(--muted);font-size:13.5px}.metric .value{font-size:20px;font-weight:900;text-align:right}.summary-card{padding:18px;background:#fff}.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.summary-item{padding:14px;border-radius:16px;background:#f8fafc;border:1px solid var(--line)}.summary-item strong{display:block;font-size:20px}.comment{padding:17px 18px;background:#f9fafb;color:#374151}.details{margin-top:24px;display:grid;gap:16px}details.block{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}details.block summary{cursor:pointer;font-weight:900;color:var(--p);display:flex;justify-content:space-between;gap:12px}.table-wrap{overflow:auto;margin-top:15px;border:1px solid var(--line);border-radius:16px}table{width:100%;border-collapse:collapse;font-size:14px}caption{text-align:left;padding:12px;font-weight:800;color:#374151}th,td{padding:11px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}th{color:#4b5563;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:16px;padding:14px 16px}.accordion-card details+details{margin-top:10px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--p)}.related{margin-top:24px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.related-card{padding:18px;border-radius:20px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff}.related-card small{opacity:.82;font-weight:800}.related-card strong{display:block;font-size:18px;margin:7px 0}.related-card p{margin:0;color:rgba(255,255,255,.88);font-size:14px}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fff}@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.highlight{padding:20px}.field-grid,.summary-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.metric,.status-row{flex-direction:column}.metric .value{text-align:left}.highlight-value{font-size:32px}.hc-ad-slot .adsbygoogle{min-height:0}}@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related,.hero .chips,.notice{display:none!important}.hero,.card,.highlight,.status,.summary-card,.metric,.comment,details.block{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout,.content-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+</style>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-responsive-fix-madde2">
+@media (max-width:720px){
+  .details,.details>*,details.block{min-width:0;max-width:100%;}
+  details.block summary{min-width:0;flex-wrap:wrap;}
+  details.block summary>span{min-width:0;overflow-wrap:anywhere;}
+  .table-wrap{min-width:0;max-width:100%;}
+}
+</style>
+
+<style id="hc-language-switch-style">
+.hc-lang-switch-wrap{display:flex;justify-content:flex-end;margin:10px 0 0}
+.hc-lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #c7d2fe;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 22px rgba(79,70,229,.10);font-size:13px;font-weight:800}
+.hc-lang-switch .globe{padding:0 5px 0 7px;font-size:15px;line-height:1}
+.hc-lang-switch a,.hc-lang-switch span.lang-active{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:999px;white-space:nowrap}
+.hc-lang-switch a{color:#4338ca;background:#fff}
+.hc-lang-switch a:hover{background:#eef2ff}
+.hc-lang-switch .lang-active{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 5px 14px rgba(79,70,229,.22)}
+@media(max-width:640px){.hc-lang-switch-wrap{margin-top:12px}.hc-lang-switch{width:100%;display:grid;grid-template-columns:auto 1fr 1fr;border-radius:18px}.hc-lang-switch a,.hc-lang-switch span.lang-active{min-width:0;padding:0 8px}.hc-lang-switch .globe{text-align:center}}
+</style>
+</head>
+<body>
+<noscript><div class="container" style="margin-top:16px;padding:14px;border:1px solid #fecaca;background:#fef2f2;border-radius:14px;color:#991b1b">This calculator requires JavaScript. Please enable JavaScript to use it.</div></noscript>
+<div class="container topbar"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#property">Property</a><span>/</span><strong>Rental Property Calculator</strong></nav><div class="hc-lang-switch-wrap"><div class="hc-lang-switch" aria-label="Language"><span class="globe" aria-hidden="true">🌐</span><a href="/ev-amortisman-hesaplama" hreflang="tr" lang="tr">TR · Türkçe</a><span class="lang-active" aria-current="page">EN · English</span></div></div></div>
+<header class="container"><section class="hero"><div class="hero-grid"><div><span class="eyebrow">Hesapica • Rental Property Analysis</span><h1>Rental Property Yield & Payback Calculator</h1><p>Estimate gross and net rental payback, net rental yield, target rent and dynamic payback from purchase price, acquisition costs, rent, vacancy and annual expenses.</p><div class="chips"><span class="chip-label">Total investment cost</span><span class="chip-label">Gross and net yield</span><span class="chip-label">Dynamic payback</span><span class="chip-label">Nominal and real view</span></div></div><aside class="hero-box"><strong>Verifiable metrics, not a score</strong><ul><li>Payback based on purchase price and total invested capital</li><li>Rent after vacancy, expenses and entered tax</li><li>10-year projection with rent and expense growth</li><li>Monthly rent required for a target yield</li></ul></aside></div></section></header>
+
+
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<form class="card" id="calcForm" novalidate>
+<h2>Calculator Panel</h2><p class="section-note">Purchase price and monthly rent are required. The other fields make the estimate more realistic.</p>
+<div class="helper"><strong>Scope:</strong> This is an unlevered, rent-based property analysis. Loan interest is not included. Rental-income tax is included only if you enter an estimated annual amount.</div>
+<div class="form-section"><div class="form-title">Display currency</div><div class="field full"><label for="currency">Currency used for amounts</label><select id="currency" aria-describedby="currencyHint"><option value="USD">USD · US Dollar</option><option value="EUR">EUR · Euro</option><option value="GBP">GBP · British Pound</option><option value="CAD">CAD · Canadian Dollar</option><option value="AUD">AUD · Australian Dollar</option><option value="NZD">NZD · New Zealand Dollar</option><option value="CHF">CHF · Swiss Franc</option><option value="JPY">JPY · Japanese Yen</option><option value="INR">INR · Indian Rupee</option><option value="SGD">SGD · Singapore Dollar</option><option value="SEK">SEK · Swedish Krona</option><option value="NOK">NOK · Norwegian Krone</option><option value="DKK">DKK · Danish Krone</option><option value="PLN">PLN · Polish Zloty</option><option value="ZAR">ZAR · South African Rand</option></select><div class="hint" id="currencyHint">The currency changes display formatting only; it does not convert the amounts.</div></div></div>
+<div class="form-section"><div class="form-title">Initial investment</div><div class="field-grid">
+<div class="field" id="f-housePrice"><label for="housePrice">Property purchase price</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="housePrice" inputmode="decimal" autocomplete="off" placeholder="350,000" aria-describedby="e-housePrice" required></div><div class="field-error" id="e-housePrice" role="alert">Enter a valid property price greater than zero.</div></div>
+<div class="field" id="f-purchaseCosts"><label for="purchaseCosts">Acquisition and setup costs</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="purchaseCosts" inputmode="decimal" autocomplete="off" placeholder="17,500" aria-describedby="h-purchaseCosts e-purchaseCosts"></div><div class="hint" id="h-purchaseCosts">Closing costs, agent fees, initial repairs, furnishings and similar upfront costs.</div><div class="field-error" id="e-purchaseCosts" role="alert">Enter an amount of zero or more.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Rent and annual expenses</div><div class="field-grid">
+<div class="field" id="f-monthlyRent"><label for="monthlyRent">Gross monthly rent</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="monthlyRent" inputmode="decimal" autocomplete="off" placeholder="2,200" aria-describedby="e-monthlyRent" required></div><div class="field-error" id="e-monthlyRent" role="alert">Enter a valid monthly rent greater than zero.</div></div>
+<div class="field" id="f-vacancyRate"><label for="vacancyRate">Annual vacancy rate</label><div class="input-wrap"><input class="with-suffix" id="vacancyRate" inputmode="decimal" autocomplete="off" placeholder="5" aria-describedby="e-vacancyRate"><span class="suffix">%</span></div><div class="field-error" id="e-vacancyRate" role="alert">Enter a rate from 0 to 99.99.</div></div>
+<div class="field" id="f-annualOperatingCosts"><label for="annualOperatingCosts">Annual operating expenses</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="annualOperatingCosts" inputmode="decimal" autocomplete="off" placeholder="3,500" aria-describedby="h-annualOperatingCosts e-annualOperatingCosts"></div><div class="hint" id="h-annualOperatingCosts">Maintenance, owner-paid fees, insurance, property tax and similar expenses.</div><div class="field-error" id="e-annualOperatingCosts" role="alert">Enter an amount of zero or more.</div></div>
+<div class="field" id="f-annualTax"><label for="annualTax">Estimated annual rental-income tax</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="annualTax" inputmode="decimal" autocomplete="off" placeholder="0" aria-describedby="h-annualTax e-annualTax"></div><div class="hint" id="h-annualTax">Optional. The calculator does not calculate tax from any country's tax rules. Enter your own annual estimate if relevant.</div><div class="field-error" id="e-annualTax" role="alert">Enter an amount of zero or more.</div></div>
+</div></div>
+<div class="form-section"><div class="form-title">Projection assumptions</div><div class="field-grid">
+<div class="field" id="f-rentGrowth"><label for="rentGrowth">Annual rent growth</label><div class="input-wrap"><input class="with-suffix" id="rentGrowth" inputmode="decimal" autocomplete="off" placeholder="20" aria-describedby="e-rentGrowth"><span class="suffix">%</span></div><div class="field-error" id="e-rentGrowth" role="alert">Enter a rate greater than -100 and up to 500.</div></div>
+<div class="field" id="f-costGrowth"><label for="costGrowth">Annual expense growth</label><div class="input-wrap"><input class="with-suffix" id="costGrowth" inputmode="decimal" autocomplete="off" placeholder="20" aria-describedby="e-costGrowth"><span class="suffix">%</span></div><div class="field-error" id="e-costGrowth" role="alert">Enter a rate greater than -100 and up to 500.</div></div>
+<div class="field" id="f-propertyGrowth"><label for="propertyGrowth">Annual property-value growth</label><div class="input-wrap"><input class="with-suffix" id="propertyGrowth" inputmode="decimal" autocomplete="off" placeholder="15" aria-describedby="h-propertyGrowth e-propertyGrowth"><span class="suffix">%</span></div><div class="hint" id="h-propertyGrowth">Used only in the projection; it does not change the rent-based payback calculation.</div><div class="field-error" id="e-propertyGrowth" role="alert">Enter a rate greater than -100 and up to 500.</div></div>
+<div class="field" id="f-inflation"><label for="inflation">Annual inflation assumption</label><div class="input-wrap"><input class="with-suffix" id="inflation" inputmode="decimal" autocomplete="off" placeholder="20" aria-describedby="h-inflation e-inflation"><span class="suffix">%</span></div><div class="hint" id="h-inflation">Used to express projected rental cash flow in today's money.</div><div class="field-error" id="e-inflation" role="alert">Enter a rate greater than -100 and up to 500.</div></div>
+<div class="field full" id="f-targetYield"><label for="targetYield">Target net rental yield</label><div class="input-wrap"><input class="with-suffix" id="targetYield" inputmode="decimal" autocomplete="off" placeholder="6" aria-describedby="e-targetYield"><span class="suffix">%</span></div><div class="field-error" id="e-targetYield" role="alert">Enter a rate from 0 to 100.</div></div>
+</div></div>
+<div class="actions"><button class="btn btn-primary" type="submit">Calculate Property Return</button><button class="btn btn-secondary" id="exampleBtn" type="button">Example Data</button><button class="btn btn-ghost" id="resetBtn" type="button">Reset</button><button class="btn btn-ghost" id="copyBtn" type="button">Copy Result</button><button class="btn btn-ghost" id="shareBtn" type="button">Share</button><button class="btn btn-ghost" id="printBtn" type="button">Print / PDF</button></div>
+<div class="notice" id="notice" role="status" aria-live="polite"></div>
+</form>
+
+
+<aside class="results" aria-live="polite" aria-atomic="false">
+<div class="status"><div class="status-row"><div><strong>Calculation status</strong><div id="statusText">Results will appear here when valid data is entered.</div></div><span class="badge" id="statusBadge">Waiting for data</span></div></div>
+<div class="highlight" id="highlight"><div class="highlight-label">Net payback based on total investment cost</div><div class="highlight-value" id="mainResult">—</div><div class="highlight-sub" id="mainSub">Acquisition costs, vacancy, operating expenses and entered tax are included.</div></div>
+<div class="metric-grid">
+<div class="metric"><div><div class="name">Gross rent payback</div><div class="desc">Purchase price / annual gross rent</div></div><div class="value" id="grossPayback">—</div></div>
+<div class="metric"><div><div class="name">Annual rent after expenses</div><div class="desc">After vacancy, operating expenses and entered tax</div></div><div class="value" id="netAnnualRent">—</div></div>
+<div class="metric"><div><div class="name">Net rental yield</div><div class="desc">Net rent / total investment cost</div></div><div class="value" id="netYield">—</div></div>
+<div class="metric"><div><div class="name">Target monthly rent</div><div class="desc">Approximate rent required for the entered target yield</div></div><div class="value" id="targetRent">—</div></div>
+</div>
+<div class="summary-card"><div class="summary-grid"><div class="summary-item"><span>Total investment</span><strong id="totalInvestment">—</strong></div><div class="summary-item"><span>Vacancy loss</span><strong id="vacancyLoss">—</strong></div><div class="summary-item"><span>First-year expense ratio</span><strong id="expenseRatio">—</strong></div><div class="summary-item"><span>Dynamic payback</span><strong id="dynamicPayback">—</strong></div></div></div>
+<div class="comment" id="comment">This result is not investment advice. Consider rent-based metrics together with financing costs, local market risk, liquidity and alternative returns.</div>
+</aside>
+</section>
+<section class="details">
+<details class="block" open><summary><span>10-year nominal and real projection</span><span>Annual view</span></summary><div class="table-wrap"><table><caption>Estimated projection based on the entered rent, expense growth, property growth and inflation assumptions</caption><thead><tr><th>Year</th><th>Gross rent</th><th>Net rent</th><th>Real net rent</th><th>Cumulative net</th><th>Estimated property value</th></tr></thead><tbody id="projectionBody"><tr><td colspan="6">Waiting for calculation.</td></tr></tbody></table></div></details>
+<details class="block"><summary><span>Sensitivity scenarios</span><span>Rent and expense changes</span></summary><div class="table-wrap"><table><caption>Alternative rent and expense scenarios at the same investment cost</caption><thead><tr><th>Scenario</th><th>Monthly rent</th><th>Annual net rent</th><th>Net yield</th><th>Net payback</th></tr></thead><tbody id="scenarioBody"><tr><td colspan="5">Waiting for calculation.</td></tr></tbody></table></div></details>
+</section>
+<section class="content-grid"><article class="card accordion-card"><h2>How should rental-property payback be interpreted?</h2><p>Gross rent payback is a quick first-pass metric. A more realistic view uses the rental income left after acquisition costs, vacancy and annual operating expenses are considered.</p><details open><summary>Static vs. dynamic payback</summary><p>Static payback assumes first-year net rent stays constant. Dynamic payback lets rent and expenses change each year and estimates when cumulative net rental income catches up with total invested capital.</p></details><details><summary>Why is net yield calculated on total investment?</summary><p>Closing costs, commissions, initial repairs and similar setup costs are real capital outflows. Ignoring them can overstate the apparent return.</p></details><details><summary>What does the real result mean?</summary><p>Nominal rent is the future cash amount. Real rent discounts that projected cash flow by the inflation assumption to express it in today's money.</p></details></article><article class="card accordion-card"><h2>Frequently Asked Questions</h2><details open><summary>What is the difference between gross and net payback?</summary><p>Gross payback uses only purchase price and gross rent. Net payback also includes acquisition costs, vacancy and annual expenses.</p></details><details><summary>Is rental-income tax included?</summary><p>Only if you enter an estimated annual rental-income tax amount. The calculator does not derive tax automatically from local law.</p></details><details><summary>Are mortgage interest and property appreciation included?</summary><p>Mortgage interest is not included. Property appreciation is shown only as a user-entered projection assumption and does not change rent-based payback.</p></details></article></section>
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="5127687114" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+<section class="card related"><h2>Related Tools</h2><div class="related-grid"><a class="related-card" href="/en/budget-calculator"><small>Property</small><strong>Budget Calculator</strong><p>Plan monthly income, spending and savings.</p></a><a class="related-card" href="/en/debt-payoff-calculator"><small>Property</small><strong>Debt Payoff Calculator</strong><p>Compare payoff strategies and accelerate debt repayment.</p></a><a class="related-card" href="/en/interest-calculator"><small>Finance</small><strong>Interest Calculator</strong><p>Compare simple, deposit-style and compound interest scenarios.</p></a><a class="related-card" href="/en/loan-calculator"><small>Finance</small><strong>Loan Calculator</strong><p>Estimate loan payments, amortization and early payoff.</p></a></div></section>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const IDS=['housePrice','purchaseCosts','monthlyRent','vacancyRate','annualOperatingCosts','annualTax','rentGrowth','costGrowth','propertyGrowth','inflation','targetYield'];
+const MONEY=['housePrice','purchaseCosts','monthlyRent','annualOperatingCosts','annualTax'];
+const PERCENT=['vacancyRate','rentGrowth','costGrowth','propertyGrowth','inflation','targetYield'];
+const STORAGE_KEY='hesapica_en_rental_property_v4';
+const PAGE_URL='https://hesapica.com/en/rental-property-calculator';
+const SUPPORTED_CURRENCIES=['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR'];
+let selectedCurrency='USD';
+const state={results:null,inputs:null,noticeTimer:null,suppressSave:false};
+function finite(n){return Number.isFinite(n)}
+function parseNumber(raw){if(raw==null)return null;let s=String(raw).trim().replace(/\s+/g,'').replace(/[$€£¥₹₣%]/g,'');if(!s)return null;if(!/^-?[0-9.,]+$/.test(s))return null;const sign=s.startsWith('-')?-1:1;if(sign<0)s=s.slice(1);let normalized;if(/^\d+$/.test(s))normalized=s;else if(/^\d{1,3}(?:,\d{3})+(?:\.\d+)?$/.test(s))normalized=s.replace(/,/g,'');else if(/^\d{1,3}(?:\.\d{3})+,\d+$/.test(s))normalized=s.replace(/\./g,'').replace(',','.');else if(/^\d+\.\d+$/.test(s))normalized=s;else if(/^\d+,\d+$/.test(s)){const [a,b]=s.split(',');normalized=(b.length===3&&a!=='0')?a+b:a+'.'+b}else return null;const n=sign*Number(normalized);return finite(n)?n:null}
+function currencyDigits(){return selectedCurrency==='JPY'?0:2}
+function formatCurrency(v){return finite(v)?new Intl.NumberFormat('en-US',{style:'currency',currency:selectedCurrency,minimumFractionDigits:0,maximumFractionDigits:currencyDigits()}).format(v):'—'}
+function currencySymbol(){try{return new Intl.NumberFormat('en-US',{style:'currency',currency:selectedCurrency,currencyDisplay:'narrowSymbol',maximumFractionDigits:0}).formatToParts(0).find(p=>p.type==='currency')?.value||selectedCurrency}catch(_){return selectedCurrency}}
+function syncCurrencyUI(){const sym=currencySymbol();document.querySelectorAll('.currency-prefix').forEach(el=>el.textContent=sym);if($('currency'))$('currency').value=selectedCurrency;if(state.results)render(state.results)}
+function formatPercent(v,d=2){return finite(v)?new Intl.NumberFormat('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v)+'%':'—'}
+function formatYears(v){return finite(v)?new Intl.NumberFormat('en-US',{minimumFractionDigits:1,maximumFractionDigits:1}).format(v)+' years':'No payback'}
+function formatInput(el){const n=parseNumber(el.value);if(n==null)return;const digits=PERCENT.includes(el.id)?2:0;el.value=new Intl.NumberFormat('en-US',{maximumFractionDigits:digits}).format(n)}
+function getInputs(){const o={};IDS.forEach(id=>o[id]=parseNumber($(id).value));return o}
+function validate(i,show=true){const e={housePrice:!(i.housePrice>0&&i.housePrice<=1e12),purchaseCosts:!(i.purchaseCosts==null||i.purchaseCosts>=0&&i.purchaseCosts<=1e11),monthlyRent:!(i.monthlyRent>0&&i.monthlyRent<=1e9),vacancyRate:!(i.vacancyRate==null||i.vacancyRate>=0&&i.vacancyRate<100),annualOperatingCosts:!(i.annualOperatingCosts==null||i.annualOperatingCosts>=0&&i.annualOperatingCosts<=1e10),annualTax:!(i.annualTax==null||i.annualTax>=0&&i.annualTax<=1e10),rentGrowth:!(i.rentGrowth==null||i.rentGrowth>-100&&i.rentGrowth<=500),costGrowth:!(i.costGrowth==null||i.costGrowth>-100&&i.costGrowth<=500),propertyGrowth:!(i.propertyGrowth==null||i.propertyGrowth>-100&&i.propertyGrowth<=500),inflation:!(i.inflation==null||i.inflation>-100&&i.inflation<=500),targetYield:!(i.targetYield==null||i.targetYield>=0&&i.targetYield<=100)};Object.entries(e).forEach(([id,bad])=>{const f=$('f-'+id),inp=$(id);if(f)f.classList.toggle('invalid',show&&bad);if(inp)inp.setAttribute('aria-invalid',show&&bad?'true':'false')});return !Object.values(e).some(Boolean)}
+function normalized(i){return{housePrice:i.housePrice,purchaseCosts:i.purchaseCosts??0,monthlyRent:i.monthlyRent,vacancyRate:i.vacancyRate??0,annualOperatingCosts:i.annualOperatingCosts??0,annualTax:i.annualTax??0,rentGrowth:i.rentGrowth??0,costGrowth:i.costGrowth??0,propertyGrowth:i.propertyGrowth??0,inflation:i.inflation??0,targetYield:i.targetYield}}
+function calcYear(monthlyRent,vacancyRate,costs,tax){const gross=monthlyRent*12;const vacancy=gross*vacancyRate/100;const net=gross-vacancy-costs-tax;return{gross,vacancy,net}}
+function compute(i){const x=normalized(i);const totalInvestment=x.housePrice+x.purchaseCosts;const y1=calcYear(x.monthlyRent,x.vacancyRate,x.annualOperatingCosts,x.annualTax);const grossPayback=x.housePrice/y1.gross;const netPayback=y1.net>0?totalInvestment/y1.net:Infinity;const grossYield=y1.gross/x.housePrice*100;const netYield=y1.net/totalInvestment*100;const expenseRatio=y1.gross>0?(y1.vacancy+x.annualOperatingCosts+x.annualTax)/y1.gross*100:0;const targetMonthly=x.targetYield!==null?((totalInvestment*x.targetYield/100+x.annualOperatingCosts+x.annualTax)/(12*(1-x.vacancyRate/100))):null;let annualRent=x.monthlyRent*12,costs=x.annualOperatingCosts,tax=x.annualTax,propertyValue=x.housePrice,cumulative=0;const projection=[];for(let year=1;year<=10;year++){const vacancy=annualRent*x.vacancyRate/100;const net=annualRent-vacancy-costs-tax;cumulative+=net;const discount=Math.pow(1+x.inflation/100,year);const realNet=discount>0?net/discount:NaN;propertyValue*=1+x.propertyGrowth/100;projection.push({year,gross:annualRent,net,realNet,cumulative,propertyValue});annualRent*=1+x.rentGrowth/100;costs*=1+x.costGrowth/100;tax*=1+x.costGrowth/100}let dynamicYear=null,dynRent=x.monthlyRent*12,dynCosts=x.annualOperatingCosts,dynTax=x.annualTax,dynCumulative=0;for(let year=1;year<=100;year++){const dynVacancy=dynRent*x.vacancyRate/100;const dynNet=dynRent-dynVacancy-dynCosts-dynTax;if(!finite(dynNet)||dynNet<=0)break;const previous=dynCumulative;dynCumulative+=dynNet;if(dynCumulative>=totalInvestment){dynamicYear=year-1+(totalInvestment-previous)/dynNet;break}dynRent*=1+x.rentGrowth/100;dynCosts*=1+x.costGrowth/100;dynTax*=1+x.costGrowth/100;if(!finite(dynRent)||!finite(dynCosts)||!finite(dynTax))break}const scenarios=[{name:'Rent 10% lower',rent:.9,cost:1},{name:'Current case',rent:1,cost:1},{name:'Rent 10% higher',rent:1.1,cost:1},{name:'Expenses 20% higher',rent:1,cost:1.2},{name:'Vacancy +5 points',rent:1,cost:1,vacancy:Math.min(99.9,x.vacancyRate+5)}].map(s=>{const yy=calcYear(x.monthlyRent*s.rent,s.vacancy??x.vacancyRate,x.annualOperatingCosts*s.cost,x.annualTax*s.cost);return{name:s.name,monthly:x.monthlyRent*s.rent,net:yy.net,yield:yy.net/totalInvestment*100,payback:yy.net>0?totalInvestment/yy.net:Infinity}});return{x,totalInvestment,y1,grossPayback,netPayback,grossYield,netYield,expenseRatio,targetMonthly,dynamicYear,projection,scenarios}}
+function render(r){state.results=r;$('mainResult').textContent=formatYears(r.netPayback);$('mainSub').textContent=r.y1.net>0?`First-year rent after expenses is ${formatCurrency(r.y1.net)}; total investment cost is ${formatCurrency(r.totalInvestment)}.`:'First-year rent after expenses is zero or negative, so rental income does not repay the investment.';$('grossPayback').textContent=formatYears(r.grossPayback);$('netAnnualRent').textContent=formatCurrency(r.y1.net);$('netYield').textContent=formatPercent(r.netYield);$('targetRent').textContent=r.targetMonthly==null?'No target entered':formatCurrency(r.targetMonthly);$('totalInvestment').textContent=formatCurrency(r.totalInvestment);$('vacancyLoss').textContent=formatCurrency(r.y1.vacancy);$('expenseRatio').textContent=formatPercent(r.expenseRatio);$('dynamicPayback').textContent=r.dynamicYear==null?'Not reached within 100 years':formatYears(r.dynamicYear);$('statusBadge').textContent='Calculated';$('statusText').textContent='Results updated from the current assumptions.';$('comment').textContent=`Gross rental yield is ${formatPercent(r.grossYield)} and net rental yield is ${formatPercent(r.netYield)}. Consider these figures together with financing costs, local property risk, liquidity and alternative returns.`;$('projectionBody').innerHTML=r.projection.map(p=>`<tr><td>${p.year}</td><td>${formatCurrency(p.gross)}</td><td>${formatCurrency(p.net)}</td><td>${formatCurrency(p.realNet)}</td><td>${formatCurrency(p.cumulative)}</td><td>${formatCurrency(p.propertyValue)}</td></tr>`).join('');$('scenarioBody').innerHTML=r.scenarios.map(s=>`<tr><td>${s.name}</td><td>${formatCurrency(s.monthly)}</td><td>${formatCurrency(s.net)}</td><td>${formatPercent(s.yield)}</td><td>${formatYears(s.payback)}</td></tr>`).join('')}
+function clearResults(){state.results=null;$('mainResult').textContent='—';$('mainSub').textContent='Acquisition costs, vacancy, operating expenses and entered tax are included.';['grossPayback','netAnnualRent','netYield','targetRent','totalInvestment','vacancyLoss','expenseRatio','dynamicPayback'].forEach(id=>$(id).textContent='—');$('projectionBody').innerHTML='<tr><td colspan="6">Waiting for calculation.</td></tr>';$('scenarioBody').innerHTML='<tr><td colspan="5">Waiting for calculation.</td></tr>';$('statusBadge').textContent='Waiting for data';$('statusText').textContent='Results will appear here when valid data is entered.'}
+function calculate(show=true){const raw=getInputs();state.inputs=raw;if(!validate(raw,show)){clearResults();return false}const r=compute(raw);render(r);saveState();return true}
+function showNotice(msg){clearTimeout(state.noticeTimer);$('notice').textContent=msg;$('notice').classList.add('show');state.noticeTimer=setTimeout(()=>$('notice').classList.remove('show'),2400)}
+function snapshot(){const data={};IDS.forEach(id=>data[id]=$(id).value);return data}
+function saveState(){if(state.suppressSave)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify({v:4,currency:selectedCurrency,data:snapshot()}))}catch(e){}}
+function validStored(o){return o&&o.v===4&&o.data&&typeof o.data==='object'&&IDS.every(id=>typeof o.data[id]==='string'&&o.data[id].length<80)&&(o.currency==null||SUPPORTED_CURRENCIES.includes(o.currency))}
+function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;const p=JSON.parse(raw);if(!validStored(p))throw new Error('bad');if(SUPPORTED_CURRENCIES.includes(p.currency))selectedCurrency=p.currency;IDS.forEach(id=>$(id).value=p.data[id]);syncCurrencyUI();return true}catch(e){try{localStorage.removeItem(STORAGE_KEY)}catch(_){}return false}}
+function buildShareUrl(){const u=new URL(PAGE_URL);const map={housePrice:'hp',purchaseCosts:'pc',monthlyRent:'mr',vacancyRate:'vr',annualOperatingCosts:'oc',annualTax:'at',rentGrowth:'rg',costGrowth:'cg',propertyGrowth:'pg',inflation:'inf',targetYield:'ty'};Object.entries(map).forEach(([id,k])=>{const n=parseNumber($(id).value);if(n!=null)u.searchParams.set(k,String(n))});u.searchParams.set('c',selectedCurrency);return u.toString()}
+function hydrateQuery(){const p=new URLSearchParams(location.search);const c=p.get('c');if(SUPPORTED_CURRENCIES.includes(c))selectedCurrency=c;const map={hp:'housePrice',pc:'purchaseCosts',mr:'monthlyRent',vr:'vacancyRate',oc:'annualOperatingCosts',at:'annualTax',rg:'rentGrowth',cg:'costGrowth',pg:'propertyGrowth',inf:'inflation',ty:'targetYield'};let any=false;Object.entries(map).forEach(([k,id])=>{const v=p.get(k);if(v!==null&&v.length<50&&parseNumber(v)!=null){$(id).value=v;formatInput($(id));any=true}});syncCurrencyUI();return any}
+async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return true}}catch(e){}try{const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();return ok}catch(e){return false}}
+function resultText(){const r=state.results;return['Rental Property Calculator',`Display currency: ${selectedCurrency}`,`Total investment: ${formatCurrency(r.totalInvestment)}`,`Net payback: ${formatYears(r.netPayback)}`,`Gross rent payback: ${formatYears(r.grossPayback)}`,`Annual rent after expenses: ${formatCurrency(r.y1.net)}`,`Net rental yield: ${formatPercent(r.netYield)}`,`Dynamic payback: ${r.dynamicYear==null?'Not reached within 100 years':formatYears(r.dynamicYear)}`,buildShareUrl()].join('\n')}
+function scrollToResult(){const resultPanel=document.querySelector('.results');if(!resultPanel)return;window.setTimeout(()=>{const top=resultPanel.getBoundingClientRect().top+window.scrollY-12;window.scrollTo({top:Math.max(0,top),behavior:'smooth'});$('highlight').setAttribute('tabindex','-1');$('highlight').focus({preventScroll:true})},120)}
+$('calcForm').addEventListener('submit',e=>{e.preventDefault();if(calculate(true))scrollToResult()});
+IDS.forEach(id=>{$(id).addEventListener('input',()=>{clearResults();validate(getInputs(),false);saveState()});$(id).addEventListener('blur',()=>formatInput($(id)))});
+$('currency').addEventListener('change',()=>{selectedCurrency=SUPPORTED_CURRENCIES.includes($('currency').value)?$('currency').value:'USD';syncCurrencyUI();saveState()});
+$('exampleBtn').addEventListener('click',()=>{const ex={housePrice:350000,purchaseCosts:17500,monthlyRent:2200,vacancyRate:5,annualOperatingCosts:3500,annualTax:0,rentGrowth:3,costGrowth:3,propertyGrowth:3,inflation:2.5,targetYield:6};Object.entries(ex).forEach(([id,v])=>{$(id).value=String(v);formatInput($(id))});if(calculate(true))scrollToResult()});
+$('resetBtn').addEventListener('click',()=>{IDS.forEach(id=>$(id).value='');selectedCurrency='USD';syncCurrencyUI();validate(getInputs(),false);clearResults();try{localStorage.removeItem(STORAGE_KEY)}catch(e){}showNotice('All data cleared.')});
+$('copyBtn').addEventListener('click',async()=>{if(!state.results&&!calculate(true)){showNotice('Calculate a valid result first.');return}showNotice(await copyText(resultText())?'Result copied to clipboard.':'Copy failed.')});
+$('shareBtn').addEventListener('click',async()=>{if(!state.results&&!calculate(true)){showNotice('Calculate a valid result first.');return}const url=buildShareUrl();const fullText=resultText();const data={title:'Rental Property Calculator',text:fullText.split('\n').filter(line=>line.trim()!==url).join('\n'),url};if(navigator.share){try{await navigator.share(data);return}catch(e){if(e&&e.name==='AbortError')return}}showNotice(await copyText(data.url)?'Share link copied to clipboard.':'Could not copy the share link.')});
+$('printBtn').addEventListener('click',()=>{if(!state.results&&!calculate(true)){showNotice('Calculate a valid result first.');return}window.print()});
+clearResults();state.suppressSave=true;const fromQuery=hydrateQuery();if(!fromQuery)loadState();syncCurrencyUI();if(IDS.some(id=>$(id).value.trim()!==''))calculate(false);state.suppressSave=false;
+</script>
+<script src="../ads-slot-manager.js"></script>
+
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','clear data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script id="hc-state-url-reset-standard">
+(() => {
+  function clearToolQuery(keys){
+    try{
+      const url = new URL(window.location.href);
+      let changed = false;
+      keys.forEach(key => {
+        if(url.searchParams.has(key)){
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if(changed){
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+    }catch(_urlStateError){}
+  }
+  const button_resetBtn = document.getElementById('resetBtn');
+  if(button_resetBtn) button_resetBtn.addEventListener('click', () => clearToolQuery(['hp','pc','mr','vr','oc','at','rg','cg','pg','inf','ty','c']));
+})();
+</script>
+</body>
+</html>
