@@ -204,7 +204,7 @@
     }
     @media (max-width:720px){.time-modal-sheet{left:50%;bottom:0;top:auto;transform:translateX(-50%);width:min(calc(100vw - 12px),520px);max-height:min(calc(100vh - 8px),560px);border-radius:28px 28px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom))}}
     @media (max-width:560px){.time-input-row,.time-picker-grid,.time-modal-actions{grid-template-columns:1fr}.time-picker-separator{display:none}}
-    @media print{body{background:#fff}.topbar,.actions,.flow-hint,.hero-chips,.btn,.share-row,.advanced-toggle,.time-modal{display:none !important}.hero,.card,.status-card,.highlight-card,.scorebox,details.block{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}.tool-layout,.content-grid{grid-template-columns:1fr !important}.results{position:static !important}a{text-decoration:none;color:inherit}}
+    @media print{body{background:#fff}.topbar,.actions,.flow-hint,.hero-chips,.btn,.share-row,.advanced-toggle,.time-modal,.hc-ad-slot{display:none !important}.hero,.card,.status-card,.highlight-card,.scorebox,details.block{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}.tool-layout,.content-grid{grid-template-columns:1fr !important}.results{position:static !important}a{text-decoration:none;color:inherit}}
   
 .share-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px}
 .btn-success{background:#ecfdf5;color:#15803d;border:1px solid #bbf7d0}
@@ -1622,7 +1622,10 @@
       }
     }
     function shareWhatsapp(){
-      if(!lastSummaryText) return;
+      if(!lastSummaryText){
+        setStatus('Paylaşmadan önce geçerli bir sonuç hesaplayın.', 'Sonuç yok');
+        return;
+      }
       const text = encodeURIComponent(`${lastSummaryText}\nhttps://hesapica.com/yukselen-burc-ve-gunes-burcu-hesaplama`);
       try{ const opened = window.open(`https://wa.me/?text=${text}`, "_blank", "noopener,noreferrer"); if(opened) opened.opener = null; }catch(error){}
     }

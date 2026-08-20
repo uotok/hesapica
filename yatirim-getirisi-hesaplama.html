@@ -10,10 +10,10 @@
 <meta content="yatırım getirisi hesaplama, yatırım kazancı hesaplama, net getiri hesaplama, reel getiri hesaplama, aylık yatırım projeksiyonu" name="keywords"/>
 <meta content="#4f46e5" name="theme-color"/>
 <link href="https://hesapica.com/yatirim-getirisi-hesaplama" rel="canonical"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/yatirim-getirisi-hesaplama"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/investment-return-calculator"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
-<link rel="alternate" hreflang="tr" href="https://hesapica.com/yatirim-getirisi-hesaplama" />
-<link rel="alternate" hreflang="x-default" href="https://hesapica.com/yatirim-getirisi-hesaplama" />
 <meta content="website" property="og:type"/>
 <meta content="Yatırım Getirisi ve ROI Hesaplama | Hesapica" property="og:title"/>
 <meta content="Yatırım getirisi ve ROI hesaplamasını tek sayfada yapın. Toplam getiri, reel getiri, net kâr, yıllıklandırılmış getiri, hedef farkı ve senaryo analizini birlikte görün." property="og:description"/>
@@ -256,7 +256,7 @@
     }
     @media print{
       body{background:#fff}
-      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.share-actions,.btn{display:none !important}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.share-actions,.btn,.hc-ad-slot{display:none !important}
       .hero,.card,.status-card,.highlight-card,.scorebox,.decision-card,.bar-card,details.block{box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid}
       .tool-layout,.content-grid{grid-template-columns:1fr !important}
       .results{position:static !important}
@@ -777,6 +777,7 @@
 <style id="hc-madde4-print-controls">
 @media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
 </style>
+<link rel="stylesheet" href="/language-switch.css"/>
 </head>
 <body>
 <noscript><div style="margin:16px auto;max-width:1180px;padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">Bu araç doğru çalışmak için JavaScript gerektirir. Lütfen tarayıcınızda JavaScript'i etkinleştirin.</div></noscript>
@@ -786,8 +787,7 @@
 <span>/</span>
 <a href="/#yatirim">Yatırım</a>
 <span>/</span>
-<strong>Yatırım Getirisi ve ROI Hesaplama</strong>
-</nav>
+<strong>Yatırım Getirisi ve ROI Hesaplama</strong> <span aria-hidden="true">/</span> <a class="hc-language-link" href="/en/investment-return-calculator" hreflang="en" lang="en" title="İngilizce sürümü aç" aria-label="İngilizce sürümü aç"><span aria-hidden="true">🌐</span><span>EN · English</span></a></nav>
 </div>
 <header class="container">
 <section class="hero">
@@ -933,7 +933,7 @@
 <span class="suffix">%</span>
 </div>
 <div class="hint">Girildiğinde reel getiri ayrıca hesaplanır. Deflasyon için -100’den büyük negatif oran girebilirsin.</div>
-<div class="error-text">Enflasyon oranı 0 veya üzeri olmalı.</div>
+<div class="error-text">Enflasyon / deflasyon oranı -100%’den büyük ve en fazla %1.000 olmalı.</div>
 </div>
 </div>
 <div class="chip-row" id="returnChips" style="margin-top:14px">
@@ -2908,7 +2908,8 @@
         });
       });
       resetOutput();
-      if (formIds.some(id => document.getElementById(id).value)) {
+      const hasRestorableInput = formIds.some(id => id !== 'roi-roiType' && String(document.getElementById(id).value || '').trim() !== '');
+      if (hasRestorableInput) {
         calculateAndRender(false);
       }
     });

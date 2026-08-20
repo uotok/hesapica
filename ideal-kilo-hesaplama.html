@@ -8,10 +8,10 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#4f46e5">
 <link rel="canonical" href="https://hesapica.com/ideal-kilo-hesaplama">
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/ideal-kilo-hesaplama"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/ideal-weight-calculator"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
-<link rel="alternate" hreflang="tr" href="https://hesapica.com/ideal-kilo-hesaplama">
-<link rel="alternate" hreflang="x-default" href="https://hesapica.com/ideal-kilo-hesaplama">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Hesapica">
@@ -338,6 +338,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
       }
     }
 </style>
+<link rel="stylesheet" href="/language-switch.css"/>
 </head>
 
 <body>
@@ -347,8 +348,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
   <nav class="breadcrumb" aria-label="İçerik yolu">
     <a href="/">Ana Sayfa</a><span aria-hidden="true">/</span>
     <a href="/#saglik">Sağlık Araçları</a><span aria-hidden="true">/</span>
-    <strong>İdeal Kilo Hesaplama</strong>
-  </nav>
+    <strong>İdeal Kilo Hesaplama</strong> <span aria-hidden="true">/</span> <a class="hc-language-link" href="/en/ideal-weight-calculator" hreflang="en" lang="en" title="İngilizce sürümü aç" aria-label="İngilizce sürümü aç"><span aria-hidden="true">🌐</span><span>EN · English</span></a></nav>
 </div>
 
 <header class="container">
@@ -754,7 +754,7 @@ $('printBtn').addEventListener('click',()=>{if(!lastResult){showToast('Yazdırma
     clearTimeout(autoTimer);
     if(lastResult)resetResult('Girdi değişti; sonuç yeniden hesaplanıyor.');
     autoTimer=setTimeout(()=>{
-      if(els.height.value&&els.sex.value)calculate(false);
+      if(els.height.value&&els.sex.value)calculate(true);
       else resetResult();
     },300);
   });
@@ -763,7 +763,7 @@ $('printBtn').addEventListener('click',()=>{if(!lastResult){showToast('Yazdırma
 els.sex.addEventListener('change',()=>{
   scheduleSave();
   if(lastResult)resetResult('Girdi değişti; sonuç yeniden hesaplanıyor.');
-  if(els.height.value&&els.sex.value)calculate(false);
+  if(els.height.value&&els.sex.value)calculate(true);
   else resetResult();
 });
 
