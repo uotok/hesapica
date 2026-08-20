@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Interest Calculator: Simple, Deposit & Compound | Hesapica</title>
+<meta name="description" content="Calculate simple interest, fixed-term deposit interest and compound growth with regular contributions, optional tax/withholding, inflation and target values."/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta name="theme-color" content="#4f46e5"/>
+<link rel="canonical" href="https://hesapica.com/en/interest-calculator"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/interest-calculator"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/faiz-hesaplama"/>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Hesapica"/>
+<meta property="og:title" content="Interest Calculator: Simple, Deposit & Compound | Hesapica"/>
+<meta property="og:description" content="Calculate simple interest, fixed-term deposit interest and compound growth with regular contributions, optional tax/withholding, inflation and target values."/>
+<meta property="og:url" content="https://hesapica.com/en/interest-calculator"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@hesapica"/>
+<meta name="twitter:title" content="Interest Calculator: Simple, Deposit & Compound | Hesapica"/>
+<meta name="twitter:description" content="Calculate simple interest, fixed-term deposit interest and compound growth with regular contributions, optional tax/withholding, inflation and target values."/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta name="twitter:url" content="https://hesapica.com/en/interest-calculator"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+
+
+<link rel="stylesheet" href="../cookie-consent.css"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;--shadow:0 16px 42px rgba(79,70,229,.10);--radius-xl:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff 0%,var(--bg) 100%);line-height:1.65}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{margin:0 0 12px;font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}.hero-chips,.mode-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip,.mode-tab{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.12);color:#4338ca;font-size:14px;font-weight:800}.mode-tab{cursor:pointer}.mode-tab.active{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-color:transparent;box-shadow:0 12px 24px rgba(79,70,229,.20)}.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.94);border:1px solid rgba(79,70,229,.10)}.hero-box strong{display:block;font-size:25px;line-height:1.2;margin-bottom:8px}.hero-box p,.hero-box li{font-size:15px;color:#4b5563}.hero-box ul{margin:10px 0 0;padding-left:18px}.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;color:var(--primary);font-size:clamp(24px,2.5vw,28px);line-height:1.2}.section-note{margin:0 0 18px;color:#4b5563}.info-box{padding:15px 17px;border-radius:18px;background:#f8faff;border:1px solid #c7d2fe;color:#3730a3;font-size:14px;margin-bottom:18px}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1/-1}.field[hidden]{display:none!important}label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}.input-wrap{position:relative}.prefix,.suffix{position:absolute;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:800;pointer-events:none}.prefix{left:16px}.suffix{right:16px}input,select,textarea{width:100%;min-height:56px;border:1px solid #d9def0;border-radius:16px;padding:14px 16px;background:#fff;color:var(--text);outline:none;font-size:17px;font-weight:600;transition:.2s}input.with-prefix{padding-left:38px}input.with-suffix{padding-right:48px}textarea{min-height:96px;resize:vertical;font-size:15px}input:focus,select:focus,textarea:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}.hint{margin-top:7px;font-size:14px;color:#4b5563;line-height:1.55}.error{display:none;margin-top:7px;font-size:13px;color:var(--bad);font-weight:700}.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#fca5a5;background:#fff8f8;box-shadow:0 0 0 4px rgba(239,68,68,.08)}.field.invalid .error{display:block}.radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.radio-card{display:flex;gap:10px;align-items:flex-start;padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:#fcfcfd}.radio-card input{width:18px;min-height:18px;margin-top:3px;accent-color:var(--primary)}.radio-card span{font-size:14px;color:#374151}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed}.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.highlight-card,.mini-result,.comment-box,.scenario-card{border:1px solid rgba(79,70,229,.11)}.status-card{padding:18px 20px;border-radius:22px;background:linear-gradient(180deg,#fbfcff,#f4f7ff)}.status-row{display:flex;justify-content:space-between;gap:12px}.status-title{font-weight:900;color:var(--primary)}.status-text{margin-top:6px;font-size:14px;color:#374151}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.12);font-size:13px;font-weight:800;color:#4f46e5;white-space:nowrap}.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}.badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}.highlight-card{padding:22px;border-radius:24px;background:linear-gradient(180deg,#f8faff,#eef2ff);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-label{font-size:13px;font-weight:900;color:var(--primary);letter-spacing:.06em;text-transform:uppercase}.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin:8px 0 10px;overflow-wrap:anywhere}.highlight-sub{font-size:15px;color:#4b5563}.empty{color:#9ca3af}.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.mini-result{padding:16px;border-radius:18px;background:#fff}.mini-result .label{font-size:13px;color:#6b7280;font-weight:800}.mini-result .value{font-size:21px;font-weight:900;margin-top:5px;overflow-wrap:anywhere}.mini-result .sub{font-size:13px;color:#6b7280;margin-top:5px}.comment-box,.scenario-card{padding:17px 18px;border-radius:18px;background:#fff}.comment-box strong,.scenario-card h3{display:block;margin:0 0 8px;color:var(--primary)}.comment-box{font-size:14.5px;color:#374151}.scenario-grid{display:grid;gap:10px}.scenario-item{padding:13px 14px;border-radius:15px;background:#f8faff;border:1px solid #dbe4ff}.scenario-item strong{display:block;font-size:14px}.scenario-item span{display:block;margin-top:4px;font-size:13px;color:#6b7280}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left}th{color:var(--primary)}details{border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:#fff}details+details{margin-top:12px}summary{cursor:pointer;font-weight:800;color:var(--primary)}details p{margin:10px 0 0;color:#374151;font-size:14.5px}.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.related-card{padding:18px;border-radius:20px;background:linear-gradient(135deg,#5b4ff6,#8b5cf6);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card span{font-size:12px;font-weight:800;opacity:.85}.related-card strong{display:block;margin:7px 0;font-size:18px}.related-card p{margin:0;color:rgba(255,255,255,.88);font-size:14px}.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s}.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}.flash{animation:flash 1.2s ease}@keyframes flash{35%{box-shadow:0 0 0 8px rgba(79,70,229,.12)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10)}}footer{padding:34px 0 48px;color:#6b7280;font-size:14px}
+@media(max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.container{width:min(100% - 20px,1180px)}.hero,.card{padding:20px}.field-grid,.mini-grid,.radio-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.highlight-value{font-size:31px}.status-row{flex-direction:column}}@media print{body{background:#fff}.topbar,.actions,.hero-chips,.mode-tabs,.hc-ad-slot,.related-section,.faq-section,footer{display:none!important}.hero,.card,.status-card,.highlight-card,.mini-result,.comment-box,.scenario-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout,.content-grid{grid-template-columns:1fr!important}.results{position:static!important}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Interest Calculator | Simple Interest, Fixed-Term Deposit & Compound Growth","url":"https://hesapica.com/en/interest-calculator","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://hesapica.com/en/#finance"},{"@type":"ListItem","position":3,"name":"Interest Calculator","item":"https://hesapica.com/en/interest-calculator"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is simple interest calculated?","acceptedAnswer":{"@type":"Answer","text":"With simple interest, interest is not added back to principal. Gross interest is principal × annual rate × time. If a withholding/tax rate is entered, it is deducted only from positive interest income."}},{"@type":"Question","name":"Why might a fixed-term deposit result differ from a bank quote?","acceptedAnswer":{"@type":"Answer","text":"Financial institutions can use different day-count conventions, value dates, promotional rules, rounding and actual quoted rates. This tool uses the entered annual rate and a 365-day basis for the estimate."}},{"@type":"Question","name":"When are monthly contributions added in compound mode?","acceptedAnswer":{"@type":"Answer","text":"You can choose beginning-of-month or end-of-month contributions. A beginning-of-month contribution earns one additional period of growth."}},{"@type":"Question","name":"What does real return show?","acceptedAnswer":{"@type":"Answer","text":"Real return combines the effective net annual return with the inflation assumption to estimate the change in purchasing power."}}]}
+</script>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-language-switch-style">
+.hc-lang-switch-wrap{display:flex;justify-content:flex-end;margin:10px 0 0}
+.hc-lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #c7d2fe;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 22px rgba(79,70,229,.10);font-size:13px;font-weight:800}
+.hc-lang-switch .globe{padding:0 5px 0 7px;font-size:15px;line-height:1}
+.hc-lang-switch a,.hc-lang-switch span.lang-active{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:999px;white-space:nowrap}
+.hc-lang-switch a{color:#4338ca;background:#fff}
+.hc-lang-switch a:hover{background:#eef2ff}
+.hc-lang-switch .lang-active{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 5px 14px rgba(79,70,229,.22)}
+@media(max-width:640px){.hc-lang-switch-wrap{margin-top:12px}.hc-lang-switch{width:100%;display:grid;grid-template-columns:auto 1fr 1fr;border-radius:18px}.hc-lang-switch a,.hc-lang-switch span.lang-active{min-width:0;padding:0 8px}.hc-lang-switch .globe{text-align:center}}
+</style>
+</head>
+<body>
+<noscript><div class="container" style="margin-top:16px;padding:14px;border:1px solid #fecaca;border-radius:16px;background:#fff1f2;color:#991b1b;font-weight:700">This calculator requires JavaScript. Please enable JavaScript to use it.</div></noscript>
+<div class="container topbar"><nav class="breadcrumb" aria-label="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#finance">Finance</a><span>/</span><strong>Interest Calculator</strong></nav><div class="hc-lang-switch-wrap"><div class="hc-lang-switch" aria-label="Language"><span class="globe" aria-hidden="true">🌐</span><a href="/faiz-hesaplama" hreflang="tr" lang="tr">TR · Türkçe</a><span class="lang-active" aria-current="page">EN · English</span></div></div></div>
+<header class="container"><section class="hero"><div class="hero-grid"><div><span class="eyebrow">Hesapica • Interest & Growth Tool</span><h1>Interest, Deposit & Compound Growth Calculator</h1><p>Calculate simple interest, fixed-term deposit interest and compound growth with regular contributions using separate calculation engines. Compare gross, net, effective and real results in one place.</p><div class="hero-chips"><span class="hero-chip">Simple interest</span><span class="hero-chip">Optional withholding / tax</span><span class="hero-chip">Regular contributions</span><span class="hero-chip">Real return</span></div><div class="mode-tabs" role="tablist" aria-label="Calculation mode"><button class="mode-tab active" type="button" role="tab" aria-selected="true" tabindex="0" data-mode="simple">Simple Interest</button><button class="mode-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-mode="deposit">Fixed-Term Deposit</button><button class="mode-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-mode="compound">Compound Growth</button></div></div><aside class="hero-box"><strong id="heroBoxTitle">Classic interest without compounding</strong><p id="heroBoxText">Calculate gross and net interest from principal, annual rate and term.</p><ul><li>Multiple display currencies</li><li>Optional tax and real-return view</li><li>Transparent formulas</li></ul></aside></div></section></header>
+
+
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card"><h2>Calculator Panel</h2><p class="section-note">Money fields use the display currency you select. <strong>15,000</strong>, <strong>15,000.50</strong>, <strong>15000.50</strong> formats are supported.</p><div class="info-box" id="modeInfo">Simple-interest mode assumes interest is not added back to principal during the term.</div>
+<form id="calcForm" novalidate>
+<div class="field-grid"><div class="field full"><label for="currency">Display currency</label><select id="currency"><option value="USD">USD · US Dollar</option><option value="EUR">EUR · Euro</option><option value="GBP">GBP · British Pound</option><option value="CAD">CAD · Canadian Dollar</option><option value="AUD">AUD · Australian Dollar</option><option value="NZD">NZD · New Zealand Dollar</option><option value="CHF">CHF · Swiss Franc</option><option value="JPY">JPY · Japanese Yen</option><option value="INR">INR · Indian Rupee</option><option value="SGD">SGD · Singapore Dollar</option><option value="SEK">SEK · Swedish Krona</option><option value="NOK">NOK · Norwegian Krone</option><option value="DKK">DKK · Danish Krone</option><option value="PLN">PLN · Polish Zloty</option><option value="ZAR">ZAR · South African Rand</option></select><div class="hint">Formatting only; changing currency does not perform FX conversion.</div></div>
+<div class="field"><label for="principal">Principal / starting amount</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="principal" inputmode="decimal" autocomplete="off" placeholder="e.g. 10,000" aria-describedby="principalHint principalError"/></div><div class="hint" id="principalHint">Starting principal amount.</div><div class="error" id="principalError" role="alert"></div></div>
+<div class="field"><label for="annualRate">Annual nominal rate (%)</label><div class="input-wrap"><input class="with-suffix" id="annualRate" inputmode="decimal" autocomplete="off" placeholder="e.g. 5" aria-describedby="annualRateHint annualRateError"/><span class="suffix">%</span></div><div class="hint" id="annualRateHint">Annual gross rate.</div><div class="error" id="annualRateError" role="alert"></div></div>
+<div class="field" data-mode="simple"><label for="simpleTerm">Term</label><input id="simpleTerm" inputmode="decimal" autocomplete="off" placeholder="e.g. 12" aria-describedby="simpleTermError"/><div class="error" id="simpleTermError" role="alert"></div></div>
+<div class="field" data-mode="simple"><label for="simpleTermType">Term unit</label><select id="simpleTermType"><option value="days">Days</option><option value="months" selected>Months</option><option value="years">Years</option></select></div>
+<div class="field" data-mode="simple"><label for="simpleTax">Withholding / tax (%) <span style="font-weight:600;color:#6b7280">(optional)</span></label><div class="input-wrap"><input class="with-suffix" id="simpleTax" inputmode="decimal" autocomplete="off" placeholder="0" aria-describedby="simpleTaxError"/><span class="suffix">%</span></div><div class="hint">Leave blank to assume 0%.</div><div class="error" id="simpleTaxError" role="alert"></div></div>
+<div class="field" data-mode="simple"><label for="simpleTarget">Target total <span style="font-weight:600;color:#6b7280">(optional)</span></label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="simpleTarget" inputmode="decimal" autocomplete="off" placeholder="e.g. 10,500" aria-describedby="simpleTargetError"/></div><div class="error" id="simpleTargetError" role="alert"></div></div>
+<div class="field" data-mode="deposit" hidden><label for="depositDays">Term in days</label><input id="depositDays" inputmode="numeric" autocomplete="off" placeholder="e.g. 180" aria-describedby="depositDaysError"/><div class="error" id="depositDaysError" role="alert"></div></div>
+<div class="field" data-mode="deposit" hidden><label for="depositTaxMode">Withholding / tax treatment</label><select id="depositTaxMode"><option value="auto">No withholding / tax</option><option value="manual">Enter a rate</option></select><div class="hint">No country-specific rate is assumed. You can type a rate directly below; typing automatically switches to manual entry.</div></div>
+<div class="field" data-mode="deposit" hidden><label for="depositTax">Withholding / tax (%)</label><div class="input-wrap"><input class="with-suffix" id="depositTax" inputmode="decimal" autocomplete="off" placeholder="e.g. 15" aria-describedby="depositTaxHint depositTaxError"/><span class="suffix">%</span></div><div class="hint" id="depositTaxHint">Optional. Leave blank for 0%, or type a rate to apply it.</div><div class="error" id="depositTaxError" role="alert"></div></div>
+<div class="field" data-mode="deposit" hidden><label for="depositTarget">Target net interest <span style="font-weight:600;color:#6b7280">(optional)</span></label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="depositTarget" inputmode="decimal" autocomplete="off" placeholder="e.g. 500" aria-describedby="depositTargetError"/></div><div class="error" id="depositTargetError" role="alert"></div></div>
+<div class="field" data-mode="compound" hidden><label for="compoundYears">Duration (years)</label><input id="compoundYears" inputmode="decimal" autocomplete="off" placeholder="e.g. 5" aria-describedby="compoundYearsHint compoundYearsError"/><div class="hint" id="compoundYearsHint">Decimal years are allowed; the monthly simulation rounds to the nearest whole month. Minimum duration is 1 month.</div><div class="error" id="compoundYearsError" role="alert"></div></div>
+<div class="field" data-mode="compound" hidden><label for="compoundFrequency">Compounding frequency</label><select id="compoundFrequency"><option value="1">Annually</option><option value="2">Semiannually</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option><option value="365">Daily</option></select><div class="hint">Because contributions are monthly, the selected nominal compounding structure is converted to an equivalent monthly rate for simulation.</div></div>
+<div class="field" data-mode="compound" hidden><label for="monthlyContribution">Monthly contribution</label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="monthlyContribution" inputmode="decimal" autocomplete="off" placeholder="e.g. 500" aria-describedby="monthlyContributionError"/></div><div class="error" id="monthlyContributionError" role="alert"></div></div>
+<div class="field" data-mode="compound" hidden><label for="contributionTiming">Contribution timing</label><select id="contributionTiming"><option value="end">End of month</option><option value="begin">Beginning of month</option></select></div>
+<div class="field full" data-mode="compound" hidden><label>Tax / withholding model</label><div class="radio-grid"><label class="radio-card"><input type="radio" name="taxModel" value="none" checked/><span><strong>No tax / withholding</strong><br/>Pure mathematical growth.</span></label><label class="radio-card"><input type="radio" name="taxModel" value="end"/><span><strong>At the end</strong><br/>Applied once to positive total gains at the end.</span></label><label class="radio-card"><input type="radio" name="taxModel" value="each"/><span><strong>From each month's return</strong><br/>Each month's return is reduced before compounding.</span></label></div></div>
+<div class="field" data-mode="compound" hidden><label for="compoundTax">Tax / withholding rate (%)</label><div class="input-wrap"><input class="with-suffix" id="compoundTax" inputmode="decimal" autocomplete="off" placeholder="e.g. 10" aria-describedby="compoundTaxHint compoundTaxError"/><span class="suffix">%</span></div><div class="hint" id="compoundTaxHint">Optional. With “No tax / withholding” selected the value is ignored; typing a rate automatically selects “At the end”.</div><div class="error" id="compoundTaxError" role="alert"></div></div>
+<div class="field" data-mode="compound" hidden><label for="compoundTarget">Target final value <span style="font-weight:600;color:#6b7280">(optional)</span></label><div class="input-wrap"><span class="prefix currency-prefix">$</span><input class="with-prefix" id="compoundTarget" inputmode="decimal" autocomplete="off" placeholder="e.g. 100,000" aria-describedby="compoundTargetError"/></div><div class="error" id="compoundTargetError" role="alert"></div></div>
+<div class="field"><label for="inflationRate">Annual inflation (%) <span style="font-weight:600;color:#6b7280">(optional)</span></label><div class="input-wrap"><input class="with-suffix" id="inflationRate" inputmode="decimal" autocomplete="off" placeholder="e.g. 2.5" aria-describedby="inflationRateHint inflationRateError"/><span class="suffix">%</span></div><div class="hint" id="inflationRateHint">Used to estimate real annual return; negative values can represent deflation.</div><div class="error" id="inflationRateError" role="alert"></div></div>
+<div class="field full"><label for="note">Short note <span style="font-weight:600;color:#6b7280">(optional)</span></label><textarea id="note" maxlength="300" placeholder="e.g. six-month cash plan"></textarea></div>
+</div>
+<div class="actions"><button class="btn btn-primary" type="submit">Calculate</button><button class="btn btn-secondary" type="button" id="exampleBtn">Example Data</button><button class="btn btn-ghost" type="button" id="resetBtn">Reset</button><button class="btn btn-ghost" type="button" id="copyBtn" disabled>Copy Result</button><button class="btn btn-ghost" type="button" id="shareBtn" disabled>Share</button><button class="btn btn-ghost" type="button" id="printBtn" disabled>Print / PDF</button></div>
+</form></div>
+<aside class="results" id="resultArea" aria-live="polite"><div class="status-card"><div class="status-row"><div><div class="status-title">Result status</div><div class="status-text" id="statusText">Enter valid data to calculate.</div></div><span class="badge" id="statusBadge">Waiting</span></div></div><div class="highlight-card" id="highlightCard"><div class="highlight-label" id="mainLabel">Main result</div><div class="highlight-value empty" id="mainValue">—</div><div class="highlight-sub" id="mainSub">Term-end value or net accumulated value will appear here.</div></div><div class="mini-grid" id="miniGrid"></div><div class="comment-box"><strong>Calculation summary</strong><span id="commentText">The assumptions used will be explained here after calculation.</span></div><div class="scenario-card"><h3>Scenario analysis</h3><div class="scenario-grid" id="scenarioGrid"><div class="scenario-item"><strong>Waiting for calculation</strong><span>The effect of changing the rate, term or contribution will appear here.</span></div></div></div></aside>
+</section>
+
+
+<section class="content-grid"><div class="card"><h2>Calculation details</h2><div class="table-wrap"><table><tbody id="detailTable"><tr><th>Status</th><td>Waiting for calculation.</td></tr></tbody></table></div></div><div class="card"><h2>Formula and assumptions</h2><div id="formulaText"><p class="section-note">The formula and assumptions for the selected mode will appear here after calculation.</p></div></div></section>
+
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<section class="card faq-section" style="margin-top:24px"><h2>Frequently Asked Questions</h2><details open><summary>How is simple interest calculated?</summary><p>With simple interest, interest is not added back to principal. Gross interest is principal × annual rate × time. If a withholding/tax rate is entered, it is deducted only from positive interest income.</p></details><details><summary>Why might a fixed-term deposit result differ from a bank quote?</summary><p>Financial institutions can use different day-count conventions, value dates, promotional rules, rounding and actual quoted rates. This tool uses the entered annual rate and a 365-day basis for the estimate.</p></details><details><summary>When are monthly contributions added in compound mode?</summary><p>You can choose beginning-of-month or end-of-month contributions. A beginning-of-month contribution earns one additional period of growth.</p></details><details><summary>What does real return show?</summary><p>Real return combines the effective net annual return with the inflation assumption to estimate the change in purchasing power.</p></details></section>
+<section class="card related-section" style="margin-top:24px"><h2>Related Tools</h2><div class="related-grid"><a class="related-card" href="/en/investment-return-calculator"><span>Investing</span><strong>Investment Return Calculator</strong><p>Analyze projected investment growth, ROI, IRR and real returns in more detail.</p></a><a class="related-card" href="/en/inflation-calculator"><span>Economy</span><strong>Inflation Calculator</strong><p>Estimate how inflation changes purchasing power.</p></a><a class="related-card" href="/en/budget-calculator"><span>Finance</span><strong>Budget Calculator</strong><p>See how regular contributions fit into a monthly budget.</p></a><a class="related-card" href="/en/debt-payoff-calculator"><span>Debt</span><strong>Debt Payoff Calculator</strong><p>Compare debt payoff strategies separately from investment returns.</p></a></div></section>
+</main><footer class="container">Hesapica · Results are estimates. Confirm product terms, taxes, day-count rules and the actual rate with the relevant financial provider.</footer>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);const STORAGE_KEY='hesapica_en_interest_v5';const LOCALE_DECIMAL='.';const LOCALE_GROUP=',';let mode='simple';let lastResult=null;let saveTimer=null;let restoreResultRequested=false;const SUPPORTED_CURRENCIES=['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR'];let selectedCurrency='USD';
+const ids=['principal','annualRate','simpleTerm','simpleTermType','simpleTax','simpleTarget','depositDays','depositTaxMode','depositTax','depositTarget','compoundYears','compoundFrequency','monthlyContribution','contributionTiming','compoundTax','compoundTarget','inflationRate','note'];const SELECT_VALUES={simpleTermType:['days','months','years'],depositTaxMode:['auto','manual'],compoundFrequency:['1','2','4','12','365'],contributionTiming:['end','begin']};
+function parseNumber(value,kind='auto'){if(value==null)return null;let s=String(value).trim().replace(/\s+/g,'');if(!s||!/^-?[0-9.,]+$/.test(s))return null;if((s.match(/-/g)||[]).length>1||(s.includes('-')&&!s.startsWith('-')))return null;const sign=s.startsWith('-')?'-':'';s=s.replace('-','');const commas=(s.match(/,/g)||[]).length,dots=(s.match(/\./g)||[]).length;if(commas&&dots){const decimalSep=s.lastIndexOf(',')>s.lastIndexOf('.')?',':'.',groupSep=decimalSep===','?'.':',';if(s.split(decimalSep).length!==2)return null;const [integerPart,decimalPart]=s.split(decimalSep);if(!integerPart||!decimalPart||!/^[0-9]+$/.test(decimalPart))return null;const groups=integerPart.split(groupSep);if(groups.length>1&&(!/^[0-9]{1,3}$/.test(groups[0])||groups.slice(1).some(g=>!/^[0-9]{3}$/.test(g))))return null;if(groups.some(g=>!/^[0-9]+$/.test(g)))return null;s=groups.join('')+'.'+decimalPart;}else if(commas||dots){const sep=commas?',':'.',count=commas||dots,parts=s.split(sep);if(parts.some(p=>!/^[0-9]+$/.test(p)))return null;if(count>1){if(!/^[0-9]{1,3}$/.test(parts[0])||parts.slice(1).some(g=>!/^[0-9]{3}$/.test(g)))return null;s=parts.join('');}else{const [a,b]=parts;if(!a||!b)return null;if(kind==='integer'){if(b.length===3&&a.length<=3)s=a+b;else return null;}else if(kind==='decimal'){if(sep===LOCALE_GROUP&&b.length===3&&Number(a)!==0&&a.length<=3)s=a+b;else s=a+'.'+b;}else if(kind==='money')s=(b.length===3&&Number(a)!==0&&a.length<=3)?a+b:a+'.'+b;else s=(b.length===3&&a.length<=3&&Number(a)!==0)?a+b:a+'.'+b;}}const n=Number(sign+s);return Number.isFinite(n)?n:null;}
+function money(v){if(!Number.isFinite(v))return'—';const x=Math.abs(v)<.005?0:v;return new Intl.NumberFormat('en-US',{style:'currency',currency:selectedCurrency,minimumFractionDigits:2,maximumFractionDigits:2}).format(x)}function pct(v,d=2){if(!Number.isFinite(v))return'—';const x=Math.abs(v)<.5*Math.pow(10,-d)?0:v;return new Intl.NumberFormat('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}).format(x)+'%'}function num(v,d=2){if(!Number.isFinite(v))return'—';const x=Math.abs(v)<.5*Math.pow(10,-d)?0:v;return new Intl.NumberFormat('en-US',{maximumFractionDigits:d}).format(x)}function clamp(v,a,b){return Math.min(Math.max(v,a),b)}function currencySymbol(){try{return new Intl.NumberFormat('en-US',{style:'currency',currency:selectedCurrency,currencyDisplay:'narrowSymbol',maximumFractionDigits:0}).formatToParts(0).find(p=>p.type==='currency')?.value||selectedCurrency}catch(_){return selectedCurrency}}function syncCurrency(){const s=currencySymbol();document.querySelectorAll('.currency-prefix').forEach(x=>x.textContent=s);$('currency').value=selectedCurrency}
+function fieldError(id,msg){const input=$(id),field=input?.closest('.field');if(!field)return;field.classList.toggle('invalid',!!msg);input.setAttribute('aria-invalid',msg?'true':'false');const e=field.querySelector('.error');if(e)e.textContent=msg||''}
+function clearErrors(){document.querySelectorAll('.field input,.field select').forEach(i=>i.setAttribute('aria-invalid','false'));document.querySelectorAll('.field.invalid').forEach(f=>f.classList.remove('invalid'));document.querySelectorAll('.error').forEach(e=>e.textContent='')}
+function getVal(id,fallback=null){const el=$(id);if(!el)return fallback;const kind=id==='depositDays'?'integer':(['principal','simpleTarget','depositTarget','monthlyContribution','compoundTarget'].includes(id)?'money':'decimal');const n=parseNumber(el.value,kind);return n===null?fallback:n}
+function taxSuggestion(){return 0}
+function updateTaxSuggestion(){if(mode!=='deposit'||$('depositTaxMode').value!=='auto')return;fieldError('depositTax','');$('depositTax').value='';$('depositTaxHint').textContent='Optional. Leave blank for 0%, or type a rate to apply it.'}
+function setMode(next,persist=true){mode=next;document.querySelectorAll('.mode-tab').forEach(b=>{const active=b.dataset.mode===mode;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1});document.querySelectorAll('.field[data-mode]').forEach(f=>f.hidden=f.dataset.mode!==mode);const meta={simple:['Classic non-compounding interest','Simple interest mode calculates gross interest, entered tax/withholding, net interest and term-end total.'],deposit:['Fixed-term deposit estimate','Uses a 365-day basis with optional manually entered tax/withholding. No country-specific rate is assumed.'],compound:['Compound growth with regular contributions','Runs a monthly simulation using contribution timing, compounding frequency and an optional tax model.']}[mode];$('heroBoxTitle').textContent=meta[0];$('heroBoxText').textContent=meta[1];$('modeInfo').textContent=meta[1];clearErrors();resetResults();syncCompoundTaxState();const u=new URL(location.href);mode==='simple'?u.searchParams.delete('mod'):u.searchParams.set('mod',mode);history.replaceState({},'',u.pathname+u.search);if(persist)scheduleSave()}
+function validate(){clearErrors();let ok=true;const present=id=>String($(id).value||'').trim()!=='';const p=getVal('principal'),r=getVal('annualRate');if(!(p>0&&p<=1e15)){fieldError('principal','Enter a valid principal greater than zero.');ok=false}if(r===null||r<0||r>1000){fieldError('annualRate','Annual rate is required and must be a valid number from 0 to 1,000%.');ok=false}if(mode==='simple'){const term=getVal('simpleTerm'),type=$('simpleTermType').value,max=type==='days'?36500:type==='months'?1200:100;if(!(term>0&&term<=max)){fieldError('simpleTerm',type==='days'?'Enter a term greater than zero and no more than 36,500 days.':type==='months'?'Enter a term greater than zero and no more than 1,200 months.':'Enter a term greater than zero and no more than 100 years.');ok=false}const tax=getVal('simpleTax');if(present('simpleTax')&&(tax===null||tax<0||tax>100)){fieldError('simpleTax','Enter a valid tax / withholding rate from 0 to 100%.');ok=false}const target=getVal('simpleTarget');if(present('simpleTarget')&&(target===null||target<=0||target>1e15)){fieldError('simpleTarget','Enter a valid target total greater than zero.');ok=false}}if(mode==='deposit'){const d=getVal('depositDays');if(!(Number.isInteger(d)&&d>=1&&d<=3650)){fieldError('depositDays','Enter a whole-number term from 1 to 3,650 days.');ok=false}if($('depositTaxMode').value==='manual'){const tax=getVal('depositTax');if(!present('depositTax')||tax===null||tax<0||tax>100){fieldError('depositTax','Enter the manual tax / withholding rate from 0 to 100%.');ok=false}}const target=getVal('depositTarget');if(present('depositTarget')&&(target===null||target<=0||target>1e15)){fieldError('depositTarget','Enter a valid target net interest greater than zero.');ok=false}}if(mode==='compound'){const y=getVal('compoundYears'),c=getVal('monthlyContribution'),target=getVal('compoundTarget'),months=y===null?0:Math.round(y*12),taxModel=document.querySelector('input[name="taxModel"]:checked')?.value||'none';if(y===null||y<1/12||y>100||months<1){fieldError('compoundYears','Duration must be at least 1 month (about 0.0833 years) and no more than 100 years.');ok=false}if(present('monthlyContribution')&&(c===null||c<0||c>1e12)){fieldError('monthlyContribution','Enter a valid non-negative monthly contribution.');ok=false}if(present('compoundTarget')&&(target===null||target<=0||target>1e15)){fieldError('compoundTarget','Enter a valid target final value greater than zero.');ok=false}if(taxModel!=='none'){const tax=getVal('compoundTax');if(!present('compoundTax')||tax===null||tax<0||tax>100){fieldError('compoundTax','Enter a valid tax / withholding rate from 0 to 100% for the selected tax model.');ok=false}}}const infl=getVal('inflationRate');if(present('inflationRate')&&(infl===null||infl<=-100||infl>1000)){fieldError('inflationRate','Enter an inflation/deflation rate greater than -100% and no more than 1,000%.');ok=false}return ok}
+function realRate(nominal,infl){return infl===null?null:((1+nominal)/(1+infl/100)-1)}
+function simpleCalc(){const P=getVal('principal',0),rate=getVal('annualRate',0)/100,t=getVal('simpleTerm',0),type=$('simpleTermType').value,years=type==='days'?t/365:type==='months'?t/12:t,taxRate=getVal('simpleTax',0)/100,gross=P*rate*years,tax=gross*taxRate,net=gross-tax,total=P+net,periodReturn=P?net/P:0,effAnnual=years>0?Math.pow(1+periodReturn,1/years)-1:0,infl=getVal('inflationRate'),real=realRate(effAnnual,infl),target=getVal('simpleTarget'),gap=target===null?null:total-target;return{label:'Term-end total',total,net,gross,tax,effAnnual,real,details:[['Principal',money(P)],['Gross interest',money(gross)],['Tax / withholding',money(tax)],['Net interest',money(net)],['Net return for the term',pct(periodReturn*100)],['Effective annual net return',pct(effAnnual*100)],['Real annual return',real===null?'—':pct(real*100)],['Difference from target',gap===null?'—':money(gap)]],comment:`Simple interest was calculated for ${num(t,2)} ${type==='days'?(t===1?'day':'days'):type==='months'?(t===1?'month':'months'):(t===1?'year':'years')} without adding interest back to principal. Day-based terms use 365 days; month-based terms use 12 months per year.`,formula:'Gross interest = Principal × Annual rate × Time. Net interest = Gross interest − entered tax/withholding.',scenarios:[["Rate +5 points",money(P+P*(rate+.05)*years*(1-taxRate))],["Rate −5 points",money(P+P*Math.max(0,rate-.05)*years*(1-taxRate))],["Term 25% longer",money(P+P*rate*(years*1.25)*(1-taxRate))]]}}
+function depositCalc(){const P=getVal('principal',0),rate=getVal('annualRate',0)/100,days=getVal('depositDays',0),taxRate=getVal('depositTax',0)/100,gross=P*rate*days/365,tax=gross*taxRate,net=gross-tax,total=P+net,periodReturn=P?net/P:0,simpleAnnual=periodReturn*365/days,renewedAnnual=Math.pow(1+periodReturn,365/days)-1,infl=getVal('inflationRate'),real=realRate(renewedAnnual,infl),target=getVal('depositTarget'),gap=target===null?null:net-target;return{label:'Net term-end total',total,net,gross,tax,effAnnual:renewedAnnual,real,details:[['Principal',money(P)],['Gross interest',money(gross)],['Tax / withholding',money(tax)],['Net interest',money(net)],['Net return for the term',pct(periodReturn*100)],['Simple annualized net rate',pct(simpleAnnual*100)],['Effective annual return if renewed at the same rate',pct(renewedAnnual*100)],['Real annual view',real===null?'—':pct(real*100)],['Difference from target net interest',gap===null?'—':money(gap)]],comment:`The ${days}-day fixed-term estimate uses a 365-day basis. The entered tax/withholding rate is ${pct(taxRate*100)}. Actual provider day-count conventions, value dates, promotions and rounding can change the result.`,formula:'Gross interest = Principal × Annual rate × Days / 365. Entered withholding/tax is deducted only from positive interest income.',scenarios:[["32 days",money(P+P*rate*32/365*(1-taxRate))],["92 days",money(P+P*rate*92/365*(1-taxRate))],["Rate +5 points",money(P+P*(rate+.05)*days/365*(1-taxRate))]]}}
+function monthlyGrossRate(annual,n){return Math.pow(1+annual/n,n/12)-1}
+function simulateCompound(months,P,PMT,annual,n,timing,taxModel,taxRate){let balance=P,totalContrib=P,totalTax=0;const grossM=monthlyGrossRate(annual,n);for(let m=1;m<=months;m++){if(timing==='begin'&&PMT>0){balance+=PMT;totalContrib+=PMT}const grossInterest=balance*grossM;if(taxModel==='each'){const tax=Math.max(0,grossInterest)*taxRate;totalTax+=tax;balance+=grossInterest-tax}else balance+=grossInterest;if(timing==='end'&&PMT>0){balance+=PMT;totalContrib+=PMT}}if(taxModel==='end'){const gain=Math.max(0,balance-totalContrib),tax=gain*taxRate;totalTax=tax;balance-=tax}return{balance,totalContrib,totalTax,netGain:balance-totalContrib,grossRate:grossM}}
+function monthlyIRR(months,P,PMT,timing,finalValue){const flows=new Array(months+1).fill(0);flows[0]=-P;if(PMT>0){if(timing==='begin'){flows[0]-=PMT;for(let m=1;m<months;m++)flows[m]-=PMT}else{for(let m=1;m<=months;m++)flows[m]-=PMT}}flows[months]+=finalValue;const npv=r=>flows.reduce((s,cf,i)=>s+cf/Math.pow(1+r,i),0);let lo=-.9999,hi=10,flo=npv(lo),fhi=npv(hi);if(!Number.isFinite(flo)||!Number.isFinite(fhi)||flo*fhi>0)return null;for(let i=0;i<160;i++){const mid=(lo+hi)/2,fm=npv(mid);if(Math.abs(fm)<1e-8)return mid;if(flo*fm<=0){hi=mid;fhi=fm}else{lo=mid;flo=fm}}return(lo+hi)/2}
+function targetMonths(P,PMT,annual,n,timing,taxModel,taxRate,target){let balance=P,totalContrib=P;const grossM=monthlyGrossRate(annual,n),netAtExit=()=>taxModel==='end'?balance-Math.max(0,balance-totalContrib)*taxRate:balance;if(timing==='begin'&&PMT>0){balance+=PMT;totalContrib+=PMT}if(netAtExit()>=target)return 0;for(let m=1;m<=1200;m++){const grossInterest=balance*grossM;if(taxModel==='each')balance+=grossInterest-Math.max(0,grossInterest)*taxRate;else balance+=grossInterest;if(timing==='end'&&PMT>0){balance+=PMT;totalContrib+=PMT}if(netAtExit()>=target)return m;if(timing==='begin'&&PMT>0&&m<1200){balance+=PMT;totalContrib+=PMT;if(netAtExit()>=target)return m}}return null}
+function compoundCalc(){const P=getVal('principal',0),annual=getVal('annualRate',0)/100,years=getVal('compoundYears',0),months=Math.round(years*12),n=Number($('compoundFrequency').value),PMT=getVal('monthlyContribution',0),timing=$('contributionTiming').value,taxModel=document.querySelector('input[name="taxModel"]:checked').value,taxRate=getVal('compoundTax',0)/100,res=simulateCompound(months,P,PMT,annual,n,timing,taxModel,taxRate);if(!res||![res.balance,res.totalContrib,res.totalTax,res.netGain].every(Number.isFinite))return null;const irrM=monthlyIRR(months,P,PMT,timing,res.balance),effAnnual=irrM===null?null:Math.pow(1+irrM,12)-1,infl=getVal('inflationRate'),real=effAnnual===null?null:realRate(effAnnual,infl),target=getVal('compoundTarget'),tm=target===null?null:targetMonths(P,PMT,annual,n,timing,taxModel,taxRate,target),targetText=tm===null?'Not reached within 1,200 months':tm===0?'Target already reached':tm<12?`${tm} ${tm===1?'month':'months'}`:tm===12?'1 year':`${num(tm/12,1)} years`;const noContrib=simulateCompound(months,P,0,annual,n,timing,taxModel,taxRate);return{label:'Estimated net accumulated value',total:res.balance,net:res.netGain,gross:res.netGain+res.totalTax,tax:res.totalTax,effAnnual,real,details:[['Starting amount',money(P)],['Total contributed',money(res.totalContrib)],['Gain before tax / withholding',money(res.netGain+res.totalTax)],['Tax / withholding',money(res.totalTax)],['Net gain',money(res.netGain)],['Net accumulated value',money(res.balance)],['Cash-flow-based effective annual return',effAnnual===null?'—':pct(effAnnual*100)],['Real annual return',real===null?'—':pct(real*100)],['Value effect of monthly contributions',money(res.balance-noContrib.balance)],['Estimated time to target',target===null?'—':targetText]],comment:`The ${num(years,1)}-year plan was simulated monthly. Contributions were added at the ${timing==='begin'?'beginning':'end'} of each month; the tax model was “${taxModel==='none'?'no tax / withholding':taxModel==='end'?'at the end':'from each monthly return'}”.`,formula:'The selected nominal compounding frequency is converted to an equivalent monthly rate; monthly contributions are added at the selected timing. Effective annual return is derived from the monthly internal rate of return of the modeled cash flows.',scenarios:[["Rate +3 points",money(simulateCompound(months,P,PMT,annual+.03,n,timing,taxModel,taxRate).balance)],["Monthly contribution +1,000",money(simulateCompound(months,P,PMT+1000,annual,n,timing,taxModel,taxRate).balance)],["Duration +2 years",money(simulateCompound(months+24,P,PMT,annual,n,timing,taxModel,taxRate).balance)]]}}
+function render(r,flash=true){lastResult={mode,result:r};$('statusText').textContent=r.comment;$('statusBadge').textContent='Calculated';$('statusBadge').className='badge good';$('mainLabel').textContent=r.label;$('mainValue').textContent=money(r.total);$('mainValue').classList.remove('empty');$('mainSub').textContent=`Net gain ${money(r.net)} · Tax/withholding ${money(r.tax)}`;$('miniGrid').innerHTML=r.details.slice(1,7).map(d=>`<div class="mini-result"><div class="label">${d[0]}</div><div class="value">${d[1]}</div></div>`).join('');$('commentText').textContent=r.comment;$('scenarioGrid').innerHTML=r.scenarios.map(s=>`<div class="scenario-item"><strong>${s[0]} → ${s[1]}</strong><span>All other assumptions are held constant.</span></div>`).join('');$('detailTable').innerHTML=r.details.map(d=>`<tr><th>${d[0]}</th><td>${d[1]}</td></tr>`).join('');$('formulaText').innerHTML=`<p>${r.formula}</p><p class="section-note">This is an estimate. Confirm product terms, taxes, compounding and day-count conventions with the relevant provider.</p>`;['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=false);if(flash){$('highlightCard').classList.remove('flash');void $('highlightCard').offsetWidth;$('highlightCard').classList.add('flash');$('resultArea').scrollIntoView({behavior:'smooth',block:'start'})}}
+function resetResults(clearLast=true){if(clearLast)lastResult=null;$('statusText').textContent='Enter valid data to calculate.';$('statusBadge').textContent='Waiting';$('statusBadge').className='badge';$('mainLabel').textContent='Main result';$('mainValue').textContent='—';$('mainValue').classList.add('empty');$('mainSub').textContent='Term-end value or net accumulated value will appear here.';$('miniGrid').innerHTML='';$('commentText').textContent='The assumptions used will be explained here after calculation.';$('scenarioGrid').innerHTML='<div class="scenario-item"><strong>Waiting for calculation</strong><span>The effect of changing the rate, term or contribution will appear here.</span></div>';$('detailTable').innerHTML='<tr><th>Status</th><td>Waiting for calculation.</td></tr>';$('formulaText').innerHTML='<p class="section-note">The formula and assumptions for the selected mode will appear here after calculation.</p>';['copyBtn','shareBtn','printBtn'].forEach(id=>$(id).disabled=true)}
+function calculate(flash=true){if(mode==='deposit'&&$('depositTaxMode').value==='auto')updateTaxSuggestion();if(!validate()){resetResults();return false}const r=mode==='simple'?simpleCalc():mode==='deposit'?depositCalc():compoundCalc();if(!r){fieldError('annualRate','This rate and duration exceed the calculator’s safe numeric range. Use a lower rate or shorter duration.');resetResults();return false}render(r,flash);scheduleSave();return true}
+function payload(){const p={mode,currency:selectedCurrency,hasResult:!!lastResult};ids.forEach(id=>{if($(id))p[id]=$(id).value});p.taxModel=document.querySelector('input[name="taxModel"]:checked')?.value||'none';return p}function safeSave(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(payload()))}catch(e){console.warn('State could not be saved',e)}}function scheduleSave(){clearTimeout(saveTimer);saveTimer=setTimeout(safeSave,150)}function safeLoad(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;const p=JSON.parse(raw);if(!p||typeof p!=='object'||Array.isArray(p))throw new Error('invalid');ids.forEach(id=>{const el=$(id),v=p[id];if(!el||typeof v!=='string'||v.length>500)return;const allowed=SELECT_VALUES[id];if(!allowed||allowed.includes(v))el.value=v});if(['simple','deposit','compound'].includes(p.mode))mode=p.mode;if(SUPPORTED_CURRENCIES.includes(p.currency))selectedCurrency=p.currency;const radio=document.querySelector(`input[name="taxModel"][value="${p.taxModel}"]`);if(radio)radio.checked=true;restoreResultRequested=p.hasResult===true;return true}catch(e){restoreResultRequested=false;try{localStorage.removeItem(STORAGE_KEY)}catch(_){}return false}}function safeRemove(){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}}
+function copyText(){if(!lastResult)return'';return['Interest Calculator Result',`Mode: ${mode==='simple'?'Simple interest':mode==='deposit'?'Fixed-term deposit':'Compound growth'}`,`Display currency: ${selectedCurrency}`,`${lastResult.result.label}: ${money(lastResult.result.total)}`,...lastResult.result.details.map(d=>`${d[0]}: ${d[1]}`),'',lastResult.result.comment,'Source: https://hesapica.com/en/interest-calculator'].join('\n')}async function copyResult(){const text=copyText();if(!text)return;try{await navigator.clipboard.writeText(text);alert('Result copied.')}catch(e){const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');alert('Result copied.')}catch(_){alert('Copy failed.')}finally{ta.remove()}}}async function shareResult(){const fullText=copyText();if(!fullText)return;const url=location.href;const text=fullText.split('\n').filter(line=>!line.includes('https://hesapica.com/en/interest-calculator')).join('\n');if(navigator.share){try{await navigator.share({title:'Interest Calculator Result',text,url});return}catch(e){if(e?.name==='AbortError')return}}await copyResult()}
+function syncCompoundTaxState(){const taxModel=document.querySelector('input[name="taxModel"]:checked')?.value||'none',inactive=taxModel==='none';if(inactive)fieldError('compoundTax','');if($('compoundTaxHint'))$('compoundTaxHint').textContent=inactive?'Optional. The value is ignored while “No tax / withholding” is selected; typing a rate switches to “At the end”.':'Enter the rate applied by the selected tax / withholding model.';}
+function fillExample(){clearErrors();if(mode==='simple'){$('principal').value='10000';$('annualRate').value='5';$('simpleTerm').value='12';$('simpleTermType').value='months';$('simpleTax').value='0';$('simpleTarget').value='';$('inflationRate').value='2.5'}else if(mode==='deposit'){$('principal').value='25000';$('annualRate').value='4.5';$('depositDays').value='180';$('depositTaxMode').value='auto';$('depositTarget').value='';updateTaxSuggestion();$('inflationRate').value='2.5'}else{$('principal').value='15000';$('annualRate').value='7';$('compoundYears').value='5';$('compoundFrequency').value='12';$('monthlyContribution').value='500';$('contributionTiming').value='end';document.querySelector('input[name="taxModel"][value="none"]').checked=true;syncCompoundTaxState();$('compoundTax').value='';$('compoundTarget').value='60000';$('inflationRate').value='2.5'}calculate(true)}function resetAll(){clearTimeout(saveTimer);saveTimer=null;restoreResultRequested=false;document.querySelectorAll('#calcForm input[type="text"],#calcForm input:not([type]),#calcForm textarea').forEach(e=>e.value='');$('simpleTermType').value='months';$('depositTaxMode').value='auto';$('compoundFrequency').value='12';$('contributionTiming').value='end';document.querySelector('input[name="taxModel"][value="none"]').checked=true;selectedCurrency='USD';syncCurrency();syncCompoundTaxState();clearErrors();if(mode==='deposit')updateTaxSuggestion();resetResults();safeRemove()}
+$('calcForm').addEventListener('submit',e=>{e.preventDefault();calculate(true)});$('exampleBtn').addEventListener('click',fillExample);$('resetBtn').addEventListener('click',resetAll);$('copyBtn').addEventListener('click',copyResult);$('shareBtn').addEventListener('click',shareResult);$('printBtn').addEventListener('click',()=>{if(!lastResult)return;window.print()});document.querySelectorAll('.mode-tab').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));$('depositDays').addEventListener('input',updateTaxSuggestion);$('depositTaxMode').addEventListener('change',()=>{if($('depositTaxMode').value==='auto')updateTaxSuggestion();else{$('depositTaxHint').textContent='Enter the withholding / tax rate that applies to this deposit.';fieldError('depositTax','')}});$('depositTax').addEventListener('input',()=>{const hasValue=String($('depositTax').value||'').trim()!=='';if(hasValue&&$('depositTaxMode').value!=='manual')$('depositTaxMode').value='manual';$('depositTaxHint').textContent=hasValue?'The entered rate will be applied to positive interest income.':'Optional. Leave blank for 0%, or type a rate to apply it.'});document.querySelectorAll('input[name="taxModel"]').forEach(r=>r.addEventListener('change',syncCompoundTaxState));$('compoundTax').addEventListener('input',()=>{const hasValue=String($('compoundTax').value||'').trim()!=='';const current=document.querySelector('input[name="taxModel"]:checked')?.value||'none';if(hasValue&&current==='none'){document.querySelector('input[name="taxModel"][value="end"]').checked=true;syncCompoundTaxState()}});$('currency').addEventListener('change',()=>{const hadResult=!!lastResult;selectedCurrency=SUPPORTED_CURRENCIES.includes($('currency').value)?$('currency').value:'USD';syncCurrency();if(hadResult)calculate(false);else scheduleSave()});const onDraftChange=e=>{if(e.target.id)fieldError(e.target.id,'');if(e.target.id!=='note'&&e.target.id!=='currency'&&lastResult)resetResults();scheduleSave()};document.querySelectorAll('#calcForm input,#calcForm select,#calcForm textarea').forEach(e=>{e.addEventListener('input',onDraftChange);e.addEventListener('change',onDraftChange)});
+const q=new URL(location.href).searchParams.get('mod'),restored=safeLoad(),restoredMode=mode;if(['simple','deposit','compound'].includes(q)){if(restored&&q!==restoredMode)restoreResultRequested=false;mode=q}syncCurrency();setMode(mode,false);syncCompoundTaxState();updateTaxSuggestion();if(restored&&restoreResultRequested){if(!calculate(false)){clearErrors();resetResults()}}else resetResults();
+})();
+</script>
+
+
+
+<script id="hc-tab-interaction-standard">
+(() => {
+  document.querySelectorAll('[role="tablist"]').forEach(tablist => {
+    const tabs = Array.from(tablist.querySelectorAll('button')).filter(button => button.closest('[role="tablist"]') === tablist);
+    if(tabs.length < 2) return;
+
+    const sync = () => {
+      tabs.forEach(tab => {
+        tab.setAttribute('role','tab');
+        const selected = tab.getAttribute('aria-selected') === 'true';
+        tab.tabIndex = selected ? 0 : -1;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.setAttribute('role','tab');
+      tab.addEventListener('click', () => requestAnimationFrame(sync));
+      tab.addEventListener('keydown', event => {
+        let targetIndex = null;
+        if(event.key === 'ArrowRight' || event.key === 'ArrowDown') targetIndex = (index + 1) % tabs.length;
+        else if(event.key === 'ArrowLeft' || event.key === 'ArrowUp') targetIndex = (index - 1 + tabs.length) % tabs.length;
+        else if(event.key === 'Home') targetIndex = 0;
+        else if(event.key === 'End') targetIndex = tabs.length - 1;
+        if(targetIndex === null) return;
+        event.preventDefault();
+        tabs[targetIndex].focus();
+        tabs[targetIndex].click();
+      });
+    });
+
+    sync();
+  });
+})();
+</script>
+
+<script src="../ads-slot-manager.js"></script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','clear data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body></html>

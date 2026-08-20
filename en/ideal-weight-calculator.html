@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Ideal Weight Calculator: Broca, Devine &amp; Robinson | Hesapica</title>
+<meta content="Compare Modified Broca, Devine and Robinson ideal body-weight estimates by height and formula category. See the available estimates, range and midpoint." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/ideal-weight-calculator" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml">
+<meta content="ca-pub-4334681065822132" name="google-adsense-account">
+
+
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Ideal Weight Calculator: Broca, Devine &amp; Robinson | Hesapica" property="og:title"/>
+<meta content="Compare Modified Broca, Devine and Robinson ideal body-weight estimates by height and formula category. See the available estimates, range and midpoint." property="og:description"/>
+<meta content="https://hesapica.com/en/ideal-weight-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type">
+<meta content="1200" property="og:image:width">
+<meta content="630" property="og:image:height">
+<meta content="Hesapica Ideal Weight Calculator" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@hesapica" name="twitter:site"/>
+<meta content="Ideal Weight Calculator: Broca, Devine &amp; Robinson | Hesapica" name="twitter:title"/>
+<meta content="Compare Modified Broca, Devine and Robinson ideal body-weight estimates by height and formula category. See the available estimates, range and midpoint." name="twitter:description"/>
+<meta content="https://hesapica.com/en/ideal-weight-calculator" name="twitter:url">
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica Ideal Weight Calculator" name="twitter:image:alt">
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement/advertising services load only after user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{
+  --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;
+  --soft:#eef2ff;--line:#e5e7eb;--muted:#556274;--text:#1f2937;
+  --good:#047857;--warn:#b45309;--bad:#b91c1c;
+  --shadow:0 16px 38px rgba(79,70,229,.10)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,#f8faff,var(--bg));
+  color:var(--text);
+  line-height:1.65
+}
+a{color:#4338ca;text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+.container{width:min(1140px,calc(100% - 28px));margin-inline:auto}
+.topbar{padding:16px 0 8px}
+.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px}
+.hero{
+  padding:clamp(24px,4vw,34px);
+  border-radius:26px;
+  background:linear-gradient(135deg,rgba(79,70,229,.12),rgba(124,58,237,.10));
+  border:1px solid rgba(79,70,229,.16);
+  box-shadow:var(--shadow)
+}
+.hero h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.025em}
+.hero p{max-width:850px;margin:0;color:#374151;font-size:17px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #dbe4ff;font-weight:800;color:#4338ca;font-size:13px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:20px;margin-top:20px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:#312e81;line-height:1.3}
+.card h3{margin:24px 0 8px;color:#312e81}
+.note{margin:0 0 17px;color:#374151;font-size:16px;line-height:1.65}
+.info{
+  margin-bottom:18px;padding:14px 16px;border:1px solid #c7d2fe;border-radius:14px;
+  background:#eef2ff;color:#3730a3;font-size:14px
+}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field.full{grid-column:1/-1}
+label{display:block;margin-bottom:8px;font-weight:800;color:#273244;font-size:15px;line-height:1.45}
+.help{display:block;margin-top:7px;color:#526070;font-size:14px;line-height:1.6}
+input,select{
+  width:100%;min-height:54px;border:1px solid #d9def0;border-radius:14px;
+  padding:11px 14px;font-size:17px;font-weight:600;outline:none;background:#fff;color:var(--text)
+}
+input::placeholder{color:#7b8797;opacity:1}
+input:focus,select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.10)}
+.field-error{min-height:20px;margin-top:6px;color:var(--bad);font-size:13px;font-weight:700}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:none;border-radius:14px;padding:12px 15px;font-weight:800;cursor:pointer;min-height:46px}
+.btn:focus-visible{outline:3px solid rgba(79,70,229,.35);outline-offset:2px}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff}
+.btn-soft{background:#eef2ff;color:#4338ca}
+.btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}
+.results{position:sticky;top:14px}
+.result-main{font-size:clamp(30px,5vw,40px);font-weight:900;letter-spacing:-.03em;color:#111827;overflow-wrap:anywhere}
+.result-status{margin:12px 0;padding:11px 12px;border-radius:12px;font-weight:800}
+.result-status.neutral{background:#f8fafc;color:#475569}
+.result-status.good{background:#ecfdf5;color:var(--good)}
+.result-status.warn{background:#fff7ed;color:var(--warn)}
+.kpi{display:grid;gap:10px;margin-top:12px}
+.kpi-row{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fcfcff
+}
+.kpi-row span{text-align:right;font-variant-numeric:tabular-nums}
+.range-card{
+  margin-top:12px;padding:14px;border:1px solid #dbe4ff;border-radius:14px;
+  background:#f8faff;color:#374151
+}
+.range-card strong{display:block;color:#312e81;margin-bottom:4px}
+.content-card{margin-top:18px}
+.content-card p,.content-card li{color:#374151}
+.content-card ul{padding-left:22px}
+.formula{padding:14px;border-radius:14px;background:#f8fafc;border:1px solid var(--line);font-weight:800;overflow-wrap:anywhere}
+.table-wrap{overflow-x:auto}
+.data-table{width:100%;border-collapse:collapse;min-width:620px}
+.data-table th,.data-table td{padding:12px;border:1px solid var(--line);text-align:left}
+.data-table th{background:#f8fafc;color:#312e81}
+.faq details{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:#fff}
+.faq details+details{margin-top:10px}
+.faq summary{font-weight:800;cursor:pointer;color:#312e81}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.related-card{
+  display:block;padding:17px;border-radius:16px;color:#fff;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  box-shadow:0 10px 24px rgba(79,70,229,.18)
+}
+.related-card:hover{text-decoration:none;transform:translateY(-1px)}
+.related-card span{display:block;margin-top:4px;color:#ede9fe;font-size:14px}
+.hc-ad-slot{display:none;width:100%;margin:20px 0}
+.hc-ad-slot.hc-ad-loaded{
+  display:flex;align-items:center;justify-content:center;padding:12px;
+  border:1px solid var(--line);border-radius:16px;background:#fff
+}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
+.toast{
+  position:fixed;right:18px;bottom:18px;z-index:9999;
+  max-width:min(360px,calc(100% - 36px));padding:12px 16px;border-radius:13px;
+  background:#111827;color:#fff;box-shadow:0 14px 34px rgba(15,23,42,.28);
+  opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s
+}
+.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .results{position:static}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .grid,.related-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .card{padding:18px}
+  .actions .btn{flex:1 1 calc(50% - 10px)}
+  .kpi-row{display:grid}
+  .kpi-row span{text-align:left}
+  .hero{border-radius:20px}
+  .note{font-size:15.5px}
+  .help{font-size:14px;line-height:1.65}
+  label{font-size:15px}
+  input,select{font-size:17px}
+}
+@media(max-width:380px){
+  .container{width:min(100% - 20px,1140px)}
+  .actions .btn{flex-basis:100%}
+  .hero h1{font-size:28px}
+}
+@media print{
+  body{background:#fff}
+  .topbar,.actions,.hc-ad-slot,.related-section,.toast{display:none!important}
+  .container{width:100%}
+  .hero,.card{box-shadow:none;border:1px solid #bbb}
+  .layout{grid-template-columns:1fr}
+  .results{position:static}
+  main{padding:0}
+  a{color:#000;text-decoration:none}
+}
+</style>
+
+
+
+<link href="../ads-slot-manager.css" rel="stylesheet">
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<link href="https://hesapica.com/en/ideal-weight-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/ideal-kilo-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Ideal Weight Calculator","url":"https://hesapica.com/en/ideal-weight-calculator","description":"Compare Modified Broca, Devine and Robinson ideal body-weight estimates by height and formula category. See the available estimates, range and midpoint.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Health","item":"https://hesapica.com/en/#health"},{"@type":"ListItem","position":3,"name":"Ideal Weight Calculator","item":"https://hesapica.com/en/ideal-weight-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is ideal weight a single exact number?","acceptedAnswer":{"@type":"Answer","text":"No. Historical ideal-body-weight formulas can produce different estimates. This calculator shows the available estimates and, when more than one formula applies, their range. It does not present them as a medical target."}},{"@type":"Question","name":"Why does the calculator not ask for age?","acceptedAnswer":{"@type":"Answer","text":"Age is not a variable in the core Modified Broca, Devine or Robinson equations used here, so the tool does not ask for data that does not change these formula results."}},{"@type":"Question","name":"What happens below 152.4 cm (5 ft)?","acceptedAnswer":{"@type":"Answer","text":"The Modified Broca estimate is still shown. Devine and Robinson start from a 5 ft reference point, so this calculator does not mechanically extrapolate those two formulas below 152.4 cm."}},{"@type":"Question","name":"What does the formula midpoint mean?","acceptedAnswer":{"@type":"Answer","text":"It is the arithmetic mean of the available formula estimates. It is not a separate medical formula; it is only a central comparison value across the estimates."}},{"@type":"Question","name":"Is this calculator medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. The results are estimates from historical adult ideal-body-weight formulas and do not replace an assessment by a qualified health professional."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *, .grid > *{min-width:0}
+  .hc-language-switch{box-sizing:border-box;max-width:100%;flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<noscript><div class="container" style="margin-top:16px;padding:14px;border:1px solid #fecaca;background:#fef2f2;border-radius:14px;color:#991b1b">This calculator requires JavaScript. Enable JavaScript in your browser to use it.</div></noscript>
+<div class="container topbar">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a><span aria-hidden="true">/</span>
+<a href="/en/#health">Health</a><span aria-hidden="true">/</span>
+<strong>Ideal Weight Calculator</strong>
+</nav>
+<div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/ideal-kilo-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container">
+<section class="hero">
+<h1>Ideal Weight Calculator</h1>
+<p>Compare adult ideal-body-weight estimates from the Modified Broca, Devine and Robinson formulas. See the range produced by the available formulas instead of treating one number as a medical target.</p>
+<div class="chips">
+<span class="chip">3-formula comparison</span>
+<span class="chip">Formula range</span>
+<span class="chip">Height + formula category only</span>
+</div>
+</section>
+</header>
+<div class="container">
+</div>
+<main class="container" style="padding:20px 0 56px">
+<section class="layout">
+<form class="card" id="idealForm" novalidate="">
+<h2>Calculation details</h2>
+<p class="note">This tool provides comparative adult estimates. “Ideal weight” is not one exact medical number; different historical formulas can produce different results.</p>
+<div class="info">
+        Devine and Robinson start from a 5 ft (152.4 cm) reference. Below 152.4 cm, this calculator does not extrapolate those two formulas downward; only the Modified Broca estimate is shown.
+      </div>
+<div class="grid">
+<div class="field">
+<label for="height">Height (cm)</label>
+<input aria-describedby="heightHelp heightError" autocomplete="off" id="height" inputmode="decimal" max="230" min="140" placeholder="e.g. 175" step="0.1" type="number"/>
+<span class="help" id="heightHelp">Enter a height from 140 to 230 cm.</span>
+<div class="field-error" id="heightError" role="alert"></div>
+</div>
+<div class="field">
+<label for="formulaSex">Formula category</label>
+<select aria-describedby="sexHelp sexError" id="formulaSex">
+<option value="">Select</option>
+<option value="male">Male coefficients</option>
+<option value="female">Female coefficients</option>
+</select>
+<span class="help" id="sexHelp">The historical formulas use different male and female coefficients.</span>
+<div class="field-error" id="sexError" role="alert"></div>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="calcBtn" type="submit">Calculate</button>
+<button class="btn btn-soft" id="sampleBtn" type="button">Example Data</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Reset</button>
+<button class="btn btn-ghost" id="copyBtn" type="button">Copy</button>
+<button class="btn btn-ghost" id="shareBtn" type="button">Share</button>
+<button class="btn btn-ghost" id="printBtn" type="button">Print / PDF</button>
+</div>
+</form>
+<aside aria-labelledby="resultTitle" aria-live="polite" class="card results" id="resultsPanel">
+<h2 id="resultTitle">Results</h2>
+<div class="result-main" id="mainResult">—</div>
+<div class="result-status neutral" id="resultStatus">Enter the information and calculate.</div>
+<p class="help" id="resultNote">The main result shows the range of the available formula estimates.</p>
+<div class="kpi" id="kpiList"></div>
+</aside>
+</section>
+<section class="card content-card">
+<h2>What do the formulas estimate?</h2>
+<p>This calculator compares three historical adult ideal-body-weight formulas. Results can differ for the same person; that is expected and does not mean one formula is definitively correct.</p>
+<h3>Modified Broca</h3>
+<div class="formula">Male coefficients: (height in cm − 100) × 0.90<br/>Female coefficients: (height in cm − 100) × 0.85</div>
+<h3>Devine</h3>
+<div class="formula">Male coefficients: 50 kg + 2.3 kg × each inch over 5 ft<br/>Female coefficients: 45.5 kg + 2.3 kg × each inch over 5 ft</div>
+<h3>Robinson</h3>
+<div class="formula">Male coefficients: 52 kg + 1.9 kg × each inch over 5 ft<br/>Female coefficients: 49 kg + 1.7 kg × each inch over 5 ft</div>
+<p>Devine and Robinson are not calculated below 152.4 cm. This avoids mechanically extending the formulas below their original reference point.</p>
+</section>
+<div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="6788455111" data-full-width-responsive="true" style="display:block"></ins>
+</div>
+<section class="card faq content-card">
+<h2>Frequently Asked Questions</h2>
+<details><summary>Is ideal weight a single exact number?</summary><p>No. Historical ideal-body-weight formulas can produce different estimates. This calculator shows the available estimates and, when more than one formula applies, their range. It does not present them as a medical target.</p></details>
+<details><summary>Why does the calculator not ask for age?</summary><p>Age is not a variable in the core Modified Broca, Devine or Robinson equations used here, so the tool does not ask for data that does not change these formula results.</p></details>
+<details><summary>What happens below 152.4 cm (5 ft)?</summary><p>The Modified Broca estimate is still shown. Devine and Robinson start from a 5 ft reference point, so this calculator does not mechanically extrapolate those two formulas below 152.4 cm.</p></details>
+<details><summary>What does the formula midpoint mean?</summary><p>It is the arithmetic mean of the available formula estimates. It is not a separate medical formula; it is only a central comparison value across the estimates.</p></details>
+<details><summary>Is this calculator medical advice?</summary><p>No. The results are estimates from historical adult ideal-body-weight formulas and do not replace an assessment by a qualified health professional.</p></details>
+</section>
+<section class="card content-card related-section">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/bmi-calculator"><strong>BMI Calculator</strong><span>Check your body mass index and reference category.</span></a>
+<a class="related-card" href="/en/calorie-calculator"><strong>Calorie Calculator</strong><span>Estimate daily energy needs and maintenance calories.</span></a>
+<a class="related-card" href="/en/water-intake-calculator"><strong>Water Intake Calculator</strong><span>Estimate your daily water intake.</span></a>
+</div>
+</section>
+</main>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+'use strict';
+
+const STORAGE_KEY='hesapica_en_ideal_weight_v2';
+const STORAGE_MAX_AGE=90*24*60*60*1000;
+const $=id=>document.getElementById(id);
+
+const els={
+  form:$('idealForm'),
+  height:$('height'),
+  sex:$('formulaSex'),
+  main:$('mainResult'),
+  status:$('resultStatus'),
+  note:$('resultNote'),
+  kpi:$('kpiList'),
+  toast:$('toast')
+};
+
+let lastResult=null;
+let saveTimer=null;
+let autoTimer=null;
+let toastTimer=null;
+
+const kgFmt=new Intl.NumberFormat('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+
+function kg(n){
+  return Number.isFinite(n)?`${kgFmt.format(n)} kg`:'—';
+}
+
+function escapeHtml(v){
+  return String(v).replace(/[&<>"']/g,c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  })[c]);
+}
+
+function showToast(msg){
+  clearTimeout(toastTimer);
+  els.toast.textContent=msg;
+  els.toast.classList.add('show');
+  toastTimer=setTimeout(()=>els.toast.classList.remove('show'),2400);
+}
+
+function setFieldError(id,msg=''){
+  const input=$(id);
+  const error=$(id+'Error');
+  if(input)input.setAttribute('aria-invalid',msg?'true':'false');
+  if(error)error.textContent=msg;
+}
+
+function clearErrors(){
+  ['height','formulaSex'].forEach(id=>setFieldError(id));
+}
+
+function setRows(rows){
+  els.kpi.innerHTML=rows.map(([label,value])=>
+    `<div class="kpi-row"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(value)}</span></div>`
+  ).join('');
+}
+
+function resetResult(message='Enter the information and calculate.'){
+  lastResult=null;
+  els.main.textContent='—';
+  els.status.textContent=message;
+  els.status.className='result-status neutral';
+  els.note.textContent='The main result shows the range of the available formula estimates.';
+  setRows([]);
+}
+
+function validate(show=true){
+  if(show) clearErrors();
+
+  const height=Number(els.height.value);
+  const sex=els.sex.value;
+
+  let valid=true;
+
+  if(!Number.isFinite(height)||height<140||height>230){
+    valid=false;
+    if(show)setFieldError('height','Enter a height from 140 to 230 cm.');
+  }
+  if(!['male','female'].includes(sex)){
+    valid=false;
+    if(show)setFieldError('formulaSex','Select a formula category.');
+  }
+
+  return valid?{height,sex}:null;
+}
+
+
+function compute(input){
+  const {height,sex}=input;
+  const inches=height/2.54;
+  const extraInches=Math.max(0,inches-60);
+
+  const modifiedBroca=sex==='male'
+    ?(height-100)*0.90
+    :(height-100)*0.85;
+
+  const devine=height>=152.4
+    ?(sex==='male'?50:45.5)+2.3*extraInches
+    :null;
+
+  const robinson=height>=152.4
+    ?(sex==='male'?52:49)+(sex==='male'?1.9:1.7)*extraInches
+    :null;
+
+  const estimates=[modifiedBroca,devine,robinson].filter(Number.isFinite);
+  const minEstimate=Math.min(...estimates);
+  const maxEstimate=Math.max(...estimates);
+  const midpoint=estimates.reduce((a,b)=>a+b,0)/estimates.length;
+
+  return {...input,modifiedBroca,devine,robinson,minEstimate,maxEstimate,midpoint};
+}
+
+function render(r){
+  lastResult=r;
+
+  const singleEstimate = [r.modifiedBroca,r.devine,r.robinson].filter(Number.isFinite).length === 1;
+  els.main.textContent=singleEstimate ? kg(r.modifiedBroca) : `${kgFmt.format(r.minEstimate)}–${kgFmt.format(r.maxEstimate)} kg`;
+  els.status.textContent='Formula estimates calculated.';
+  els.status.className='result-status good';
+  els.note.textContent=singleEstimate
+    ? 'Only the Modified Broca estimate is shown below 152.4 cm; Devine and Robinson are not extrapolated below their 5 ft reference height. This is not a medical target.'
+    : 'This range is the lowest and highest available historical formula estimate; it is not a medical target.';
+
+  const rows=[
+    ['Modified Broca',kg(r.modifiedBroca)],
+    ['Devine',r.devine===null?'Not applied below 152.4 cm':kg(r.devine)],
+    ['Robinson',r.robinson===null?'Not applied below 152.4 cm':kg(r.robinson)],
+    ['Formula midpoint',kg(r.midpoint)]
+  ];
+  setRows(rows);
+  scheduleSave();
+}
+
+function calculate(show=true){
+  const input=validate(show);
+  if(!input){
+    if(show)resetResult('Some information is missing or invalid.');
+    return null;
+  }
+  const result=compute(input);
+  render(result);
+  return result;
+}
+
+function scrollToResult(){
+  const panel=$('resultsPanel');
+  if(!panel)return;
+
+  window.setTimeout(()=>{
+    const top=panel.getBoundingClientRect().top+window.scrollY-12;
+    window.scrollTo({
+      top:Math.max(0,top),
+      behavior:'smooth'
+    });
+    panel.setAttribute('tabindex','-1');
+    panel.focus({preventScroll:true});
+  },120);
+}
+
+function getState(){
+  return {
+    savedAt:Date.now(),
+    height:els.height.value,
+    sex:els.sex.value
+  };
+}
+
+function scheduleSave(){
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(()=>{
+    try{
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(getState()));
+    }catch{}
+  },250);
+}
+
+function restore(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(!raw)return;
+    const d=JSON.parse(raw);
+    if(!d||!Number.isFinite(d.savedAt)||Date.now()-d.savedAt>STORAGE_MAX_AGE){
+      localStorage.removeItem(STORAGE_KEY);
+      return;
+    }
+    els.height.value=typeof d.height==='string'?d.height:'';
+    els.sex.value=['male','female'].includes(d.sex)?d.sex:'';
+    if(els.height.value&&els.sex.value)calculate(false);
+  }catch{
+    try{localStorage.removeItem(STORAGE_KEY);}catch{}
+  }
+}
+
+function clearAll(){
+  els.form.reset();
+  clearErrors();
+  resetResult();
+  try{localStorage.removeItem(STORAGE_KEY);}catch{}
+  els.height.focus();
+  showToast('Data reset.');
+}
+
+function resultText(){
+  if(!lastResult){
+    return `Ideal Weight Calculator\nNo calculation has been completed yet.\n${location.href}`;
+  }
+  return [
+    'Ideal Weight Calculator',
+    [lastResult.modifiedBroca,lastResult.devine,lastResult.robinson].filter(Number.isFinite).length===1
+      ? `Formula estimate: ${kg(lastResult.modifiedBroca)}`
+      : `Formula estimate range: ${kg(lastResult.minEstimate)} – ${kg(lastResult.maxEstimate)}`, 
+    `Modified Broca: ${kg(lastResult.modifiedBroca)}`,
+    `Devine: ${lastResult.devine===null?'Not applied below 152.4 cm':kg(lastResult.devine)}`,
+    `Robinson: ${lastResult.robinson===null?'Not applied below 152.4 cm':kg(lastResult.robinson)}`,
+    `Formula midpoint: ${kg(lastResult.midpoint)}`,
+    'Results are estimates from historical formulas for informational use and are not medical advice.',
+    location.href
+  ].filter(Boolean).join('\n');
+}
+
+async function copyText(text){
+  if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(text);return;}catch(_clipboardError){}}
+  const ta=document.createElement('textarea');
+  ta.value=text;
+  ta.readOnly=true;
+  ta.style.position='fixed';
+  ta.style.left='-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  const ok=document.execCommand('copy');
+  ta.remove();
+  if(!ok)throw new Error('copy failed');
+}
+
+async function shareResult(){
+  if(!lastResult&&!calculate(true)){
+    showToast('Create a valid calculation first.');
+    return;
+  }
+  const url=location.href;
+  const fullText=resultText();
+  const text=fullText.split('\n').filter(line=>line.trim()!==url).join('\n');
+  if(navigator.share){
+    try{
+      await navigator.share({title:document.title,text,url});
+      return;
+    }catch(error){
+      if(error&&error.name==='AbortError')return;
+    }
+  }
+  try{
+    await copyText(fullText);
+    showToast('Share text copied to the clipboard.');
+  }catch{
+    showToast('Unable to share the result.');
+  }
+}
+
+els.form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const result=calculate(true);
+  if(result)scrollToResult();
+});
+
+$('sampleBtn').addEventListener('click',()=>{
+  els.height.value='175';
+  els.sex.value='male';
+  const result=calculate(true);
+  if(result)scrollToResult();
+});
+
+$('clearBtn').addEventListener('click',clearAll);
+
+$('copyBtn').addEventListener('click',async()=>{
+  if(!lastResult&&!calculate(true)){
+    showToast('Create a valid calculation first.');
+    return;
+  }
+  try{
+    await copyText(resultText());
+    showToast('Result copied to the clipboard.');
+  }catch{
+    showToast('Copy failed.');
+  }
+});
+
+$('shareBtn').addEventListener('click',shareResult);
+$('printBtn').addEventListener('click',()=>{if(!lastResult){showToast('Create a valid result before printing.');return;}window.print();});
+
+[els.height].forEach(el=>{
+  el.addEventListener('input',()=>{
+    setFieldError('height');
+    scheduleSave();
+    clearTimeout(autoTimer);
+    if(lastResult)resetResult('Input changed; recalculating the result.');
+    autoTimer=setTimeout(()=>{
+      if(els.height.value&&els.sex.value)calculate(true);
+      else resetResult();
+    },300);
+  });
+});
+
+els.sex.addEventListener('change',()=>{
+  setFieldError('formulaSex');
+  scheduleSave();
+  if(lastResult)resetResult('Input changed; recalculating the result.');
+  if(els.height.value&&els.sex.value)calculate(true);
+  else resetResult();
+});
+
+restore();
+})();
+</script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','clear','clear data','reset data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

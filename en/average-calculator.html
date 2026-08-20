@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Average Calculator: Arithmetic, Weighted, Median &amp; IQR | Hesapica</title>
+<meta content="Calculate arithmetic and weighted averages with median, population standard deviation, variance, quartiles, IQR and possible outlier flags." name="description"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/average-calculator" rel="canonical"/><link href="https://hesapica.com/en/average-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/ortalama-hesaplama" hreflang="tr" rel="alternate"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="Average Calculator: Arithmetic, Weighted, Median &amp; IQR | Hesapica" property="og:title"/>
+<meta content="Calculate arithmetic or weighted averages and review median, spread, quartiles, IQR and possible outliers." property="og:description"/>
+<meta content="https://hesapica.com/en/average-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@hesapica" name="twitter:site"/>
+<meta content="Average Calculator: Arithmetic, Weighted, Median &amp; IQR | Hesapica" name="twitter:title"/>
+<meta content="Calculate arithmetic or weighted averages and review median, spread, quartiles, IQR and possible outliers." name="twitter:description"/>
+<meta content="https://hesapica.com/en/average-calculator" name="twitter:url"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" name="twitter:image:alt"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<style>
+:root{
+  --primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--surface-soft:#eef2ff;
+  --text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--good:#047857;--warn:#b45309;--bad:#b91c1c;
+  --info:#2563eb;--shadow:0 16px 42px rgba(79,70,229,.10);--radius-xl:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);
+  background:radial-gradient(circle at top left,rgba(79,70,229,.08),transparent 26%),linear-gradient(180deg,#f8faff 0%,var(--bg) 100%);
+  line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{
+  outline:3px solid rgba(79,70,229,.28);outline-offset:2px
+}
+.container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+.topbar{padding:18px 0 8px}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+.hero{
+  margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(79,70,229,.10),rgba(124,58,237,.10));
+  border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+.eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+.hero h1{margin:0 0 12px;font-size:clamp(2.125rem,4vw,3rem);line-height:1.1;letter-spacing:-.03em;font-weight:800}
+.hero p{margin:0;color:#4b5563;font-size:16px;max-width:760px;line-height:1.7}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+.hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+.hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+.hero-box ul{margin:10px 0 0;padding-left:18px}
+
+.tool-layout{display:grid;grid-template-columns:minmax(0,1.06fr) 420px;gap:24px;align-items:start;margin-top:24px}
+.card,.content-card,.faq-section,.related-section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+.card h2,.content-card h2,.faq-section h2,.related-section h2{margin:0 0 10px;font-size:clamp(1.5rem,2.3vw,1.75rem);line-height:1.2;letter-spacing:-.02em;color:var(--primary)}
+.section-note{margin:0 0 18px;color:#4b5563;font-size:15.5px;line-height:1.7}
+.helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+.helper-box h3{margin:0 0 10px;font-size:20px;line-height:1.3;color:var(--primary)}
+.helper-box p{margin:0;color:#374151;font-size:15px;line-height:1.7}
+.form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.form-title{margin:0 0 14px;font-size:17px;font-weight:800;color:var(--primary)}
+.field.full{grid-column:1/-1}
+label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+textarea,input,select{
+  width:100%;border:1px solid #d9def0;border-radius:16px;background:#fff;color:var(--text);outline:none;
+  font-size:18px;font-weight:600;transition:border-color .2s ease,box-shadow .2s ease
+}
+textarea{padding:16px;min-height:190px;resize:vertical;line-height:1.55}
+textarea:focus,input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+textarea::placeholder,input::placeholder{color:#98a2b3;font-size:15px;line-height:1.5;opacity:1}
+.hint{margin-top:7px;font-size:14px;color:#4b5563;line-height:1.6}
+.error{display:none;margin-top:7px;font-size:14px;color:var(--bad);font-weight:700}
+.field.has-error .error{display:block}
+.field.has-error textarea,.field.has-error input,.field.has-error select{border-color:rgba(185,28,28,.55);box-shadow:0 0 0 4px rgba(185,28,28,.08)}
+.mode-switch{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mode-btn{border:none;cursor:pointer;padding:14px 16px;border-radius:16px;background:#f3f4f6;color:#111827;font-weight:800;transition:.18s ease}
+.mode-btn.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+.chip-row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700;transition:.18s ease}
+.chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease,opacity .18s ease}
+.btn:hover:not(:disabled){transform:translateY(-1px);opacity:.97}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+.btn-secondary{background:#eef2ff;color:#4338ca}
+.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+.btn:disabled{cursor:not-allowed;opacity:.48;transform:none!important;box-shadow:none}
+.validation-box{margin:16px 0 0;padding:14px 16px;border-radius:18px;background:#fff7ed;border:1px solid #fdba74;color:#9a3412}
+.validation-box strong{display:block;margin-bottom:6px;font-size:14px}
+.hidden{display:none!important}
+.flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%,#eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+.flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+.flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px}
+
+.results{position:sticky;top:20px;display:grid;gap:16px;min-width:0}
+.status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%,#f4f7ff 100%)}
+.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.status-title{font-size:17px;font-weight:800;color:var(--primary)}
+.status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+.badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+.badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+.badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+.badge.info{background:#eff6ff;color:var(--info);border-color:#bfdbfe}
+.highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%,#eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10);min-width:0}
+.highlight-label{font-size:13px;color:var(--primary);font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;overflow-wrap:anywhere}
+.highlight-sub{font-size:15px;color:#4b5563}
+.highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+.health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.health-card{padding:18px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10);min-width:0}
+.health-card h3{margin:0 0 8px;font-size:15px;line-height:1.35;color:var(--primary)}
+.health-card .big{font-size:22px;font-weight:900;letter-spacing:-.02em;overflow-wrap:anywhere}
+.health-card .small{margin-top:6px;font-size:12.5px;color:var(--muted);line-height:1.45}
+.mini-result-grid{display:grid;gap:12px;min-width:0}
+.mini-result{display:flex;justify-content:space-between;gap:14px;padding:18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd;min-width:0}
+.mini-result .label{font-size:15px;font-weight:700;color:#374151;line-height:1.45}
+.mini-result .value{font-size:20px;font-weight:900;text-align:right;min-width:0;overflow-wrap:anywhere}
+.comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:15px;line-height:1.7}
+.flash-focus{animation:resultPulse 1.35s ease}
+@keyframes resultPulse{0%{box-shadow:0 16px 40px rgba(79,70,229,.10),0 0 0 0 rgba(79,70,229,.26)}35%{box-shadow:0 16px 40px rgba(79,70,229,.14),0 0 0 10px rgba(79,70,229,0)}100%{box-shadow:0 16px 40px rgba(79,70,229,.10),0 0 0 0 rgba(79,70,229,0)}}
+
+.table-card{margin-top:24px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff;max-width:100%}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+td{color:var(--text);font-weight:700}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.content-card p,.content-card li,.faq-section p{color:#374151;font-size:15.5px;line-height:1.7}
+.content-card ul{padding-left:20px}
+.formula-box{margin-top:16px;padding:16px 18px;border-radius:18px;background:#f8f7ff;border:1px dashed rgba(79,70,229,.22);color:#4338ca;font-weight:700;line-height:1.75}
+.faq-section{margin-top:24px}
+.faq-item{border-top:1px solid #edf0f7;padding:18px 0}
+.faq-item:first-of-type{border-top:0;padding-top:0}
+.faq-item h3{margin:0 0 8px;font-size:18px;line-height:1.3}
+.faq-item p{margin:0}
+.related-section{margin-top:24px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%,#8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+.related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88);line-height:1.55}
+.footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+
+.hc-ad-slot{width:100%;margin:20px 0;padding:0;border:0;background:transparent;display:none;opacity:0;transition:opacity .3s ease}
+.hc-ad-slot .adsbygoogle{display:block;width:100%;min-height:0}
+.hc-ad-slot.hc-ad-loaded{display:flex;opacity:1;align-items:center;justify-content:center;padding:12px;border:1px solid #e5e7eb;border-radius:16px;background:#fff}
+
+@media(max-width:1040px){
+  .hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}
+  .results{position:static}
+  .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .container{width:min(100% - 20px,100%)}
+  .hero,.card,.content-card,.faq-section,.related-section,.highlight-card,.status-card{padding:20px}
+  .health-grid,.related-grid,.mode-switch{grid-template-columns:1fr}
+  .actions{flex-direction:column}.btn{width:100%}
+  .mini-result,.status-row{flex-direction:column;align-items:flex-start}
+  .mini-result .value{text-align:left}
+  .hero h1{font-size:32px}.highlight-value{font-size:31px}
+  .hc-ad-slot .adsbygoogle{min-height:0}
+}
+@media print{
+  body{background:#fff}
+  .topbar,.hero,.form-card,.hc-ad-slot,.actions,.flow-hint,.content-grid,.faq-section,.related-section,.footer-note{display:none!important}
+  main.container{width:100%;padding:0!important}
+  .tool-layout{display:block;margin:0}
+  .results{position:static}
+  .status-card,.highlight-card,.health-card,.mini-result,.comment-box,.table-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}
+  .table-card{margin-top:18px}
+  .table-wrap{overflow:visible}
+  table{min-width:0;font-size:11px}
+  th,td{padding:7px 5px}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Average Calculator: Arithmetic, Weighted, Median & IQR","url":"https://hesapica.com/en/average-calculator","inLanguage":"en","description":"Calculate arithmetic and weighted averages with median, population standard deviation, variance, quartiles, IQR and possible outlier flags.","isPartOf":{"@id":"https://hesapica.com/#website"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between an arithmetic and weighted average?","acceptedAnswer":{"@type":"Answer","text":"In an arithmetic average, every value has equal influence. In a weighted average, each value is multiplied by its positive weight and total contribution is divided by total weight."}},{"@type":"Question","name":"Which standard deviation and variance formulas are used?","acceptedAnswer":{"@type":"Answer","text":"The calculator treats the entered list as the full population and reports population variance and population standard deviation. In weighted mode, the same measures incorporate positive weights."}},{"@type":"Question","name":"How are possible outliers flagged?","acceptedAnswer":{"@type":"Answer","text":"With at least four values or weighted rows, the calculator applies the 1.5 × IQR rule. Arithmetic-mode quartiles use linear interpolation; weighted quartiles use cumulative-weight thresholds. The result is a screening flag, not a definitive outlier judgment."}},{"@type":"Question","name":"How do I enter weighted-average data?","acceptedAnswer":{"@type":"Answer","text":"Enter one value and one positive weight per line, separated by a semicolon. For example, 70;3 and 85.5;4 are valid rows."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Math Calculators","item":"https://hesapica.com/en/#calculators"},{"@type":"ListItem","position":3,"name":"Average Calculator","item":"https://hesapica.com/en/average-calculator"}]}</script>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-language-switch-standard">
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+  .breadcrumb{min-width:0}
+  .tool-layout > *{min-width:0}
+  .hc-language-switch{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    padding:5px;
+    border:1px solid #c7d2fe;
+    border-radius:999px;
+    background:#fff;
+    box-shadow:0 8px 20px rgba(79,70,229,.10);
+  }
+  .hc-language-switch::before{
+    content:"🌐";
+    margin:0 4px 0 6px;
+    font-size:15px;
+    line-height:1;
+  }
+  .hc-language-switch a,
+  .hc-language-switch strong{
+    min-height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 13px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:800;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .hc-language-switch a{
+    color:#3730a3;
+    background:#eef2ff;
+    border:1px solid #dbe4ff;
+    transition:transform .18s ease,background .18s ease,border-color .18s ease;
+  }
+  .hc-language-switch a:hover,
+  .hc-language-switch a:focus-visible{
+    background:#e0e7ff;
+    border-color:#a5b4fc;
+    transform:translateY(-1px);
+    outline:none;
+  }
+  .hc-language-switch strong{
+    color:#fff;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    box-shadow:0 6px 14px rgba(79,70,229,.20);
+  }
+  @media (max-width:760px){
+    .topbar{
+      align-items:stretch;
+      flex-direction:column;
+      gap:10px;
+    }
+    .hc-language-switch{
+      width:100%;
+      justify-content:center;
+      padding:6px;
+    }
+    .hc-language-switch a,
+    .hc-language-switch strong{
+      flex:1 1 0;
+      min-height:42px;
+    }
+  }
+</style>
+
+</head>
+<body>
+<noscript><div style="margin:16px auto;width:min(1180px,calc(100% - 32px));padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fdba74;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif">This calculator requires JavaScript to work.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a><span>/</span>
+<a href="/en/#calculators">Math Calculators</a><span>/</span>
+<strong>Average Calculator</strong>
+</nav>
+<div class="hc-language-switch" role="group" aria-label="Language switch"><a href="/ortalama-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div>
+</div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Statistics Tool</span>
+<h1>Average Calculator</h1>
+<p>Calculate an arithmetic or weighted average and see the median, population standard deviation, variance, quartiles, IQR and possible outlier flags in the same result.</p>
+<div class="hero-chips">
+<span class="hero-chip">Arithmetic + weighted average</span>
+<span class="hero-chip">Median + quartiles</span>
+<span class="hero-chip">Population standard deviation</span>
+<span class="hero-chip">1.5 × IQR outlier screening</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Transparent statistical method</div>
+<strong>Go beyond a single average value</strong>
+<p>The mean shows the center of a dataset; the median and spread measures help explain how that center is formed.</p>
+<ul>
+<li>Every value has equal influence in arithmetic mode</li>
+<li>Positive weights determine influence in weighted mode</li>
+<li>Outlier flags are IQR screening signals, not definitive judgments</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<!-- HC_AD_SLOT:top -->
+<div class="container">
+</div>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<form class="card form-card" id="statsForm" novalidate="">
+<h2>Calculation Panel</h2>
+<p class="section-note">For an arithmetic average, enter a list of values. For a weighted average, enter each pair as <strong>value;weight</strong>. Results update automatically when the entered data is valid.</p>
+<div class="helper-box">
+<h3>Input format</h3>
+<p>Use a decimal point for decimals. Separate arithmetic values with commas, spaces, semicolons or new lines. The standard English list <strong>10,20,30</strong> is read as three values. Do not use thousands separators inside an individual value: enter one thousand as <strong>1000</strong>, not 1,000. For decimals, use a point, such as <strong>10.5</strong>.</p>
+</div>
+<div aria-live="polite" class="validation-box hidden" id="validationBox" role="alert">
+<strong>Check your input</strong>
+<div id="validationText">Enter valid data to calculate.</div>
+</div>
+<div class="form-section">
+<div class="form-title">Calculation mode</div>
+<div aria-label="Calculation mode" class="mode-switch" role="group">
+<button aria-pressed="true" class="mode-btn active" id="simpleModeBtn" type="button">Arithmetic Average</button>
+<button aria-pressed="false" class="mode-btn" id="weightedModeBtn" type="button">Weighted Average</button>
+</div>
+</div>
+<div class="form-section" id="simpleWrap">
+<div class="form-title">Value list</div>
+<div class="field full" id="numberField">
+<label for="numberInput">Values</label>
+<textarea aria-describedby="numberHint numberError" aria-invalid="false" id="numberInput" maxlength="100000" placeholder="Example:
+10, 20, 30, 40
+or
+10.5, 20.5, 30.5"></textarea>
+<div class="hint" id="numberHint">Use a decimal point. Separate values with commas, spaces, semicolons or new lines. Do not use thousands separators inside an individual value.</div>
+<div class="error" id="numberError"></div>
+</div>
+</div>
+<div class="form-section hidden" id="weightedWrap">
+<div class="form-title">Value and weight list</div>
+<div class="field full" id="weightedField">
+<label for="weightedInput">Enter one value;weight pair per line</label>
+<textarea aria-describedby="weightedHint weightedError" aria-invalid="false" id="weightedInput" maxlength="100000" placeholder="Example:
+70;3
+85.5;4
+90;2
+60;1"></textarea>
+<div class="hint" id="weightedHint">Each line must contain one complete pair. Weights must be positive. Use a decimal point and a semicolon between the value and weight.</div>
+<div class="error" id="weightedError"></div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Quick examples</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" data-scenario="simple1" type="button">Balanced list</button>
+<button class="chip" data-scenario="simple2" type="button">Outlier example</button>
+<button class="chip" data-scenario="weighted1" type="button">Weighted example</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" type="submit">Calculate</button>
+<button class="btn btn-secondary" id="exampleBtn" type="button">Example Data</button>
+<button class="btn btn-ghost" id="clearBtn" type="button">Reset</button>
+<button aria-disabled="true" class="btn btn-ghost" disabled="" id="copyBtn" type="button">Copy Result</button>
+<button aria-disabled="true" class="btn btn-ghost" disabled="" id="shareBtn" type="button">Share</button>
+<button aria-disabled="true" class="btn btn-ghost" disabled="" id="printBtn" type="button">Print / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>The result summary appears in the panel on the right</strong>
+<span>On mobile, the page moves to the result panel after calculation so you can review center, spread and IQR metrics.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</form>
+<aside aria-label="Calculation results" class="results" id="resultPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Result status</div>
+<div aria-live="polite" class="status-text" id="statusText">Enter valid data or use an example to see the result.</div>
+</div>
+<span class="badge info" id="resultBadge">Waiting</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label" id="mainLabel">Arithmetic Average</div>
+<div aria-live="polite" class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainSubtext">The average result will appear here.</div>
+</div>
+<div class="health-grid">
+<div class="health-card">
+<h3 id="medianLabel">Median</h3>
+<div class="big" id="medianResult">—</div>
+<div class="small" id="medianSub">Middle value of the ordered data</div>
+</div>
+<div class="health-card">
+<h3 id="stdLabel">Population standard deviation</h3>
+<div class="big" id="stdResult">—</div>
+<div class="small">Based on the full dataset entered</div>
+</div>
+<div class="health-card">
+<h3 id="iqrLabel">IQR</h3>
+<div class="big" id="iqrResult">—</div>
+<div class="small" id="iqrSub">Q3 − Q1</div>
+</div>
+</div>
+<div class="mini-result-grid">
+<div class="mini-result is-empty" id="mini1"><div class="label" id="mini1Label">Sum</div><div class="value" id="sumResult">—</div></div>
+<div class="mini-result is-empty" id="mini2"><div class="label" id="countLabel">Count</div><div class="value" id="countResult">—</div></div>
+<div class="mini-result is-empty" id="mini3"><div class="label" id="mini3Label">Mode</div><div class="value" id="modeResult">—</div></div>
+<div class="mini-result is-empty" id="mini4"><div class="label">Possible outliers</div><div class="value" id="outlierResult">—</div></div>
+</div>
+<div class="comment-box" id="smartComment">After valid data is entered, minimum, maximum, range, quartiles and population variance are summarized here.</div>
+</aside>
+</section>
+<section class="table-card card">
+<h2>Detailed Result Table</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>#</th><th>Value</th><th id="weightHeader">Weight</th><th id="contribHeader">Contribution (x×w)</th><th>Note</th></tr>
+</thead>
+<tbody id="resultTableBody">
+<tr><td colspan="5">No data has been calculated yet.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-grid">
+<article class="content-card">
+<h2>How is an average calculated?</h2>
+<p><strong>Arithmetic mean</strong> is the sum of all values divided by the number of values. <strong>Weighted mean</strong> is the sum of each value multiplied by its weight, divided by the total weight.</p>
+<div class="formula-box">
+      Arithmetic mean = Σx / n<br/>
+      Weighted mean = Σ(x × w) / Σw
+    </div>
+<p>Standard deviation and variance treat the entered list as the entire <strong>population</strong> and therefore use population formulas. This calculator does not report sample standard deviation (n−1).</p>
+</article>
+<article class="content-card">
+<h2>Quartiles and outlier screening</h2>
+<p>In arithmetic mode, Q1 and Q3 use <strong>(n−1) × q linear interpolation</strong> on sorted values. In weighted mode, the median and quartiles are the first sorted values at which the <strong>25%, 50% and 75% cumulative-weight thresholds</strong> are reached.</p>
+<p>When there are at least four values in arithmetic mode or four rows in weighted mode, the 1.5 × IQR rule is applied. Values outside the fences are flagged as possible outliers. A flag is a screening signal, not a context-free conclusion that the value is wrong.</p>
+</article>
+</section>
+<section class="faq-section">
+<!-- HC_AD_SLOT:faq -->
+<div aria-label="Advertisement" class="hc-ad-slot hc-ad-slot--faq">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="4903929326" data-full-width-responsive="true" style="display:block"></ins>
+</div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What is the difference between an arithmetic and weighted average?</h3>
+<p>In an arithmetic average, every value has equal influence. In a weighted average, each value is multiplied by its positive weight and total contribution is divided by total weight.</p>
+</div>
+<div class="faq-item">
+<h3>Which standard deviation and variance formulas are used?</h3>
+<p>The calculator treats the entered list as the full population and reports population variance and population standard deviation. In weighted mode, the same measures incorporate positive weights.</p>
+</div>
+<div class="faq-item">
+<h3>How are possible outliers flagged?</h3>
+<p>With at least four values or weighted rows, the calculator applies the 1.5 × IQR rule. Arithmetic-mode quartiles use linear interpolation; weighted quartiles use cumulative-weight thresholds. The result is a screening flag, not a definitive outlier judgment.</p>
+</div>
+<div class="faq-item">
+<h3>How do I enter weighted-average data?</h3>
+<p>Enter one value and one positive weight per line, separated by a semicolon. For example, <strong>70;3</strong> and <strong>85.5;4</strong> are valid rows.</p>
+</div>
+</section>
+<section class="related-section">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/investment-return-calculator"><span class="small">Investing</span><strong>Investment Return Calculator</strong><p>Estimate investment growth, return and the effect of contributions, fees and inflation.</p></a>
+<a class="related-card" href="/en/percentage-calculator"><span class="small">Math</span><strong>Percentage Calculator</strong><p>Calculate percentages, percentage change, increases and decreases.</p></a>
+</div>
+</section>
+<div class="footer-note">Hesapica · This Average Calculator provides transparent arithmetic and weighted summary statistics for informational and planning use.</div>
+</main>
+<script>
+(() => {
+  'use strict';
+
+  const STORAGE_KEY = 'hesapica-average-en-v1';
+  const LEGACY_STORAGE_KEYS = [];
+  const STORAGE_VERSION = 3;
+  const LIMITS = {
+    maxSimpleValues: 1000,
+    maxWeightedRows: 500,
+    maxAbsValue: 1e9,
+    maxWeight: 1e6,
+    maxInputLength: 100000
+  };
+
+  const $ = id => document.getElementById(id);
+  const els = {
+    form: $('statsForm'),
+    numberInput: $('numberInput'),
+    weightedInput: $('weightedInput'),
+    simpleWrap: $('simpleWrap'),
+    weightedWrap: $('weightedWrap'),
+    simpleModeBtn: $('simpleModeBtn'),
+    weightedModeBtn: $('weightedModeBtn'),
+    validationBox: $('validationBox'),
+    validationText: $('validationText'),
+    numberField: $('numberField'),
+    weightedField: $('weightedField'),
+    numberError: $('numberError'),
+    weightedError: $('weightedError'),
+    copyBtn: $('copyBtn'),
+    shareBtn: $('shareBtn'),
+    printBtn: $('printBtn'),
+    resultPanel: $('resultPanel')
+  };
+
+  const state = {
+    mode: 'simple',
+    isValid: false,
+    isCalculated: false,
+    result: null,
+    dataMode: 'manual'
+  };
+
+  let autoCalcTimer = null;
+
+  function formatNum(value, digits = 2){
+    if (!Number.isFinite(value)) return '—';
+    const threshold = digits >= 0 ? 0.5 * (10 ** -digits) : 0;
+    const normalized = Object.is(value,-0) || Math.abs(value) < threshold ? 0 : value;
+    return new Intl.NumberFormat('en-US', {maximumFractionDigits:digits, minimumFractionDigits:0}).format(normalized);
+  }
+
+  function setButtons(enabled){
+    [els.copyBtn, els.shareBtn, els.printBtn].forEach(btn => {
+      btn.disabled = !enabled;
+      btn.setAttribute('aria-disabled', String(!enabled));
+    });
+  }
+
+  function showValidation(message){
+    els.validationText.textContent = message;
+    els.validationBox.classList.remove('hidden');
+  }
+
+  function hideValidation(){
+    els.validationBox.classList.add('hidden');
+    els.validationText.textContent = '';
+  }
+
+  function clearFieldErrors(){
+    [els.numberField, els.weightedField].forEach(field => field.classList.remove('has-error'));
+    [els.numberInput, els.weightedInput].forEach(input => input.setAttribute('aria-invalid','false'));
+    els.numberError.textContent = '';
+    els.weightedError.textContent = '';
+  }
+
+  function fieldError(which, message){
+    const field = which === 'simple' ? els.numberField : els.weightedField;
+    const input = which === 'simple' ? els.numberInput : els.weightedInput;
+    const error = which === 'simple' ? els.numberError : els.weightedError;
+    field.classList.add('has-error');
+    input.setAttribute('aria-invalid','true');
+    error.textContent = message;
+    showValidation(message);
+  }
+
+  function parseStrictNumber(raw){
+    if (raw === null || raw === undefined) return NaN;
+    let s = String(raw).trim().replace(/[−–—]/g,'-').replace(/\u00a0/g,'');
+    if (!s || /\s/.test(s)) return NaN;
+    if (!/^[+\-]?(?:\d+(?:\.\d+)?|\.\d+)$/.test(s)) return NaN;
+    const n = Number(s);
+    if (!Number.isFinite(n)) return NaN;
+    return Object.is(n,-0) ? 0 : n;
+  }
+
+  function tokenizeSimple(text){
+    const raw = String(text || '').replace(/\r/g,'').trim();
+    if (!raw) return [];
+    return raw.split(/[,;\n\t ]+/).map(x => x.trim()).filter(Boolean);
+  }
+
+  function parseSimpleInput(text){
+    const tokens = tokenizeSimple(text);
+    const values = [];
+    const invalid = [];
+    tokens.forEach(token => {
+      const n = parseStrictNumber(token);
+      if (Number.isNaN(n)) invalid.push(token);
+      else values.push(n);
+    });
+    return {tokens, values, invalid};
+  }
+
+  function parseWeightedInput(text){
+    const rawLines = String(text || '').replace(/\r/g,'').split('\n').map(x => x.trim()).filter(Boolean);
+    const rows = [];
+    const issues = [];
+
+    rawLines.forEach((line, index) => {
+      const parts = line.includes(';') ? line.split(';') : null;
+
+      if (!parts || parts.length !== 2){
+        issues.push({line:index + 1, reason:'Use value;weight format on each line.'});
+        return;
+      }
+
+      const value = parseStrictNumber(parts[0]);
+      const weight = parseStrictNumber(parts[1]);
+
+      if (Number.isNaN(value) || Number.isNaN(weight)){
+        issues.push({line:index + 1, reason:'The value or weight is not a valid number.'});
+        return;
+      }
+      if (weight <= 0){
+        issues.push({line:index + 1, reason:'Weight must be greater than zero.'});
+        return;
+      }
+      rows.push({value, weight, line:index + 1});
+    });
+
+    return {rawLines, rows, issues};
+  }
+
+  function validateCurrent(){
+    clearFieldErrors();
+    hideValidation();
+
+    if (state.mode === 'simple'){
+      if (els.numberInput.value.length > LIMITS.maxInputLength){
+        fieldError('simple','Input text must not exceed 100,000 characters.');
+        return null;
+      }
+      const parsed = parseSimpleInput(els.numberInput.value);
+      if (!parsed.tokens.length){
+        fieldError('simple','Enter at least one number.');
+        return null;
+      }
+      if (parsed.invalid.length){
+        const shown = parsed.invalid.slice(0,3).join(', ');
+        fieldError('simple',`Invalid or ambiguous number format: ${shown}${parsed.invalid.length > 3 ? '…' : ''}`);
+        return null;
+      }
+      if (parsed.values.length > LIMITS.maxSimpleValues){
+        fieldError('simple',`At most ${LIMITS.maxSimpleValues} values can be analyzed at once.`);
+        return null;
+      }
+      if (parsed.values.some(v => Math.abs(v) > LIMITS.maxAbsValue)){
+        fieldError('simple','Absolute values must not exceed 1,000,000,000.');
+        return null;
+      }
+      return {type:'simple', values:parsed.values};
+    }
+
+    if (els.weightedInput.value.length > LIMITS.maxInputLength){
+      fieldError('weighted','Input text must not exceed 100,000 characters.');
+      return null;
+    }
+    const parsed = parseWeightedInput(els.weightedInput.value);
+    if (!parsed.rawLines.length){
+      fieldError('weighted','Enter at least one value;weight row.');
+      return null;
+    }
+    if (parsed.rawLines.length > LIMITS.maxWeightedRows){
+      fieldError('weighted',`At most ${LIMITS.maxWeightedRows} weighted rows can be analyzed at once.`);
+      return null;
+    }
+    if (parsed.issues.length){
+      const first = parsed.issues[0];
+      fieldError('weighted',`Row ${first.line}: ${first.reason}`);
+      return null;
+    }
+    if (parsed.rows.some(r => Math.abs(r.value) > LIMITS.maxAbsValue)){
+      fieldError('weighted','Absolute values must not exceed 1,000,000,000.');
+      return null;
+    }
+    if (parsed.rows.some(r => r.weight > LIMITS.maxWeight)){
+      fieldError('weighted','A single weight must not exceed 1,000,000.');
+      return null;
+    }
+    const totalWeight = parsed.rows.reduce((a,r) => a + r.weight,0);
+    if (!Number.isFinite(totalWeight) || totalWeight <= 0){
+      fieldError('weighted','Total weight must be valid and greater than zero.');
+      return null;
+    }
+    return {type:'weighted', rows:parsed.rows};
+  }
+
+  function kahanSum(values){
+    let sum = 0;
+    let c = 0;
+    for (const value of values){
+      const y = value - c;
+      const t = sum + y;
+      c = (t - sum) - y;
+      sum = t;
+    }
+    return sum;
+  }
+
+  function populationStats(values){
+    let n = 0;
+    let mean = 0;
+    let m2 = 0;
+    for (const x of values){
+      n += 1;
+      const delta = x - mean;
+      mean += delta / n;
+      const delta2 = x - mean;
+      m2 += delta * delta2;
+    }
+    const variance = n ? Math.max(0,m2 / n) : NaN;
+    return {mean, variance, std:Math.sqrt(variance)};
+  }
+
+  function weightedPopulationStats(items){
+    let totalWeight = 0;
+    let mean = 0;
+    let m2 = 0;
+    for (const item of items){
+      const newWeight = totalWeight + item.weight;
+      const delta = item.value - mean;
+      const r = item.weight / newWeight;
+      mean += r * delta;
+      m2 += totalWeight * item.weight / newWeight * delta * delta;
+      totalWeight = newWeight;
+    }
+    const variance = totalWeight > 0 ? Math.max(0,m2 / totalWeight) : NaN;
+    return {mean, variance, std:Math.sqrt(variance), totalWeight};
+  }
+
+  function sortedValues(values){
+    return [...values].sort((a,b) => a-b);
+  }
+
+  function quantileType7(values,q){
+    const s = sortedValues(values);
+    if (!s.length) return NaN;
+    if (s.length === 1) return s[0];
+    const pos = (s.length - 1) * q;
+    const base = Math.floor(pos);
+    const rest = pos - base;
+    return s[base + 1] === undefined ? s[base] : s[base] + rest * (s[base + 1] - s[base]);
+  }
+
+  function weightedQuantile(items,q){
+    if (!items.length) return NaN;
+    const s = [...items].sort((a,b) => a.value - b.value);
+    const total = s.reduce((a,x) => a + x.weight,0);
+    const target = q * total;
+    let cumulative = 0;
+    for (const item of s){
+      cumulative += item.weight;
+      if (cumulative >= target) return item.value;
+    }
+    return s[s.length - 1].value;
+  }
+
+  function modeText(values){
+    const freq = new Map();
+    values.forEach(v => freq.set(v,(freq.get(v) || 0) + 1));
+    let max = 0;
+    for (const count of freq.values()) max = Math.max(max,count);
+    if (max <= 1) return 'None';
+    const modes = [...freq.entries()].filter(([,count]) => count === max).map(([value]) => value).sort((a,b)=>a-b);
+    const shown = modes.slice(0,8).map(value => formatNum(value,4)).join(', ');
+    if (modes.length <= 8) return shown;
+    return `Multiple modes (${modes.length} values): ${shown} (+${modes.length - 8})`;
+  }
+
+  function outlierInfo(values,q1,q3){
+    const iqr = q3 - q1;
+    if (values.length < 4 || !Number.isFinite(iqr)){
+      return {available:false, iqr, lower:NaN, upper:NaN, outliers:[]};
+    }
+    const lower = q1 - 1.5 * iqr;
+    const upper = q3 + 1.5 * iqr;
+    return {available:true, iqr, lower, upper, outliers:values.filter(v => v < lower || v > upper)};
+  }
+
+  function compute(parsed){
+    if (parsed.type === 'simple'){
+      const values = parsed.values;
+      const stats = populationStats(values);
+      const sum = kahanSum(values);
+      const median = quantileType7(values,.5);
+      const q1 = quantileType7(values,.25);
+      const q3 = quantileType7(values,.75);
+      const outlier = outlierInfo(values,q1,q3);
+      return {
+        type:'simple', values, rows:values.map((value,i)=>({idx:i+1,value,weight:null,contribution:null})),
+        mean:stats.mean, sum, count:values.length, median, q1, q3, iqr:q3-q1,
+        variance:stats.variance, std:stats.std, min:Math.min(...values), max:Math.max(...values),
+        mode:modeText(values), outlier
+      };
+    }
+
+    const rows = parsed.rows;
+    const values = rows.map(r => r.value);
+    const stats = weightedPopulationStats(rows);
+    const contributionTotal = kahanSum(rows.map(r => r.value * r.weight));
+    const q1 = weightedQuantile(rows,.25);
+    const median = weightedQuantile(rows,.5);
+    const q3 = weightedQuantile(rows,.75);
+    const outlier = outlierInfo(values,q1,q3);
+    return {
+      type:'weighted', values,
+      rows:rows.map((r,i)=>({idx:i+1,value:r.value,weight:r.weight,contribution:r.value*r.weight})),
+      mean:stats.mean, contributionTotal, totalWeight:stats.totalWeight, count:rows.length,
+      median, q1, q3, iqr:q3-q1, variance:stats.variance, std:stats.std,
+      min:Math.min(...values), max:Math.max(...values), outlier
+    };
+  }
+
+  function renderResult(r){
+    state.result = r;
+    state.isValid = true;
+    state.isCalculated = true;
+    hideValidation();
+    clearFieldErrors();
+
+    $('highlightCard').classList.remove('is-empty');
+    $('mainResult').textContent = formatNum(r.mean,6);
+    $('mainLabel').textContent = r.type === 'simple' ? 'Arithmetic Average' : 'Weighted Average';
+    $('mainSubtext').textContent = r.type === 'simple'
+      ? 'Sum of values divided by the number of values.'
+      : 'Sum of value × weight contributions divided by total weight.';
+
+    $('medianLabel').textContent = r.type === 'simple' ? 'Median' : 'Weighted Median';
+    $('medianResult').textContent = formatNum(r.median,6);
+    $('medianSub').textContent = r.type === 'simple' ? 'Type 7 (50%) quantile method' : '50% cumulative-weight threshold';
+    $('stdLabel').textContent = r.type === 'simple' ? 'Population standard deviation' : 'Weighted population standard deviation';
+    $('stdResult').textContent = formatNum(r.std,6);
+    $('iqrLabel').textContent = r.type === 'simple' ? 'IQR' : 'Weighted IQR';
+    $('iqrResult').textContent = formatNum(r.iqr,6);
+    $('iqrSub').textContent = r.type === 'simple' ? 'Q3 − Q1 (Type 7)' : 'Weighted Q3 − Q1';
+
+    ['mini1','mini2','mini3','mini4'].forEach(id => $(id).classList.remove('is-empty'));
+    if (r.type === 'simple'){
+      $('mini1Label').textContent = 'Sum';
+      $('sumResult').textContent = formatNum(r.sum,6);
+      $('mini3Label').textContent = 'Mod';
+      $('modeResult').textContent = r.mode;
+    } else {
+      $('mini1Label').textContent = 'Weighted contribution total (Σxw)';
+      $('sumResult').textContent = formatNum(r.contributionTotal,6);
+      $('mini3Label').textContent = 'Total weight (Σw)';
+      $('modeResult').textContent = formatNum(r.totalWeight,6);
+    }
+    $('countLabel').textContent = r.type === 'simple' ? 'Count' : 'Row count';
+    $('countResult').textContent = formatNum(r.count,0);
+    $('outlierResult').textContent = !r.outlier.available
+      ? (r.type === 'simple' ? 'At least 4 values required' : 'At least 4 rows required')
+      : (r.outlier.outliers.length ? `${r.outlier.outliers.length} ${r.type === 'simple' ? 'values' : 'rows'}` : 'None');
+
+    $('statusText').textContent = 'Calculation complete. Results use the selected statistical method.';
+    $('resultBadge').textContent = 'Ready';
+    $('resultBadge').className = 'badge good';
+
+    $('resultTableBody').innerHTML = r.rows.map(row => {
+      const notes = [];
+      if (r.outlier.available && r.outlier.outliers.includes(row.value)) notes.push('IQR outlier screening');
+      if (!notes.length) notes.push('—');
+      return `<tr>
+        <td>${row.idx}</td>
+        <td>${formatNum(row.value,6)}</td>
+        <td class="${r.type === 'weighted' ? '' : 'hidden'}">${r.type === 'weighted' ? formatNum(row.weight,6) : '—'}</td>
+        <td class="${r.type === 'weighted' ? '' : 'hidden'}">${r.type === 'weighted' ? formatNum(row.contribution,6) : '—'}</td>
+        <td>${notes.join(' • ')}</td>
+      </tr>`;
+    }).join('');
+
+    $('smartComment').textContent = buildSummaryText(r);
+    setButtons(true);
+  }
+
+  function resetResult(){
+    state.isValid = false;
+    state.isCalculated = false;
+    state.result = null;
+    $('highlightCard').classList.add('is-empty');
+    $('mainResult').textContent = '—';
+    $('mainLabel').textContent = state.mode === 'simple' ? 'Arithmetic Average' : 'Weighted Average';
+    $('mainSubtext').textContent = 'The average result will appear here.';
+    $('medianLabel').textContent = state.mode === 'simple' ? 'Median' : 'Weighted Median';
+    $('medianResult').textContent = '—';
+    $('stdLabel').textContent = state.mode === 'simple' ? 'Population standard deviation' : 'Weighted population standard deviation';
+    $('stdResult').textContent = '—';
+    $('iqrLabel').textContent = state.mode === 'simple' ? 'IQR' : 'Weighted IQR';
+    $('iqrResult').textContent = '—';
+    $('medianSub').textContent = state.mode === 'simple' ? 'Middle value of the ordered data' : 'Cumulative-weight threshold';
+    $('iqrSub').textContent = 'Q3 − Q1';
+    $('mini1Label').textContent = state.mode === 'simple' ? 'Sum' : 'Weighted contribution total (Σxw)';
+    $('countLabel').textContent = state.mode === 'simple' ? 'Count' : 'Row count';
+    $('mini3Label').textContent = state.mode === 'simple' ? 'Mod' : 'Total weight (Σw)';
+    ['sumResult','countResult','modeResult','outlierResult'].forEach(id => $(id).textContent='—');
+    ['mini1','mini2','mini3','mini4'].forEach(id => $(id).classList.add('is-empty'));
+    $('statusText').textContent = 'Enter valid data or use an example to see the result.';
+    $('resultBadge').textContent = 'Waiting';
+    $('resultBadge').className = 'badge info';
+    $('smartComment').textContent = 'After valid data is entered, minimum, maximum, range, quartiles and population variance are summarized here.';
+    $('resultTableBody').innerHTML = `<tr><td colspan="${state.mode === 'weighted' ? 5 : 3}">No data has been calculated yet.</td></tr>`;
+    setButtons(false);
+  }
+
+  function calculate({scroll=false,save=true} = {}){
+    const parsed = validateCurrent();
+    if (!parsed){
+      resetResult();
+      if (state.dataMode === 'manual') clearStoredState();
+      $('statusText').textContent = 'Valid data is required.';
+      $('resultBadge').textContent = 'Missing / invalid data';
+      $('resultBadge').className = 'badge bad';
+      return false;
+    }
+    const result = compute(parsed);
+    if (!Number.isFinite(result.mean) || !Number.isFinite(result.variance) || !Number.isFinite(result.std)){
+      resetResult();
+      showValidation('The calculation exceeded numeric limits. Reduce the values and try again.');
+      if (state.dataMode === 'manual') clearStoredState();
+      return false;
+    }
+    renderResult(result);
+    if (save && state.dataMode === 'manual') saveValidState();
+    if (scroll) revealResult();
+    return true;
+  }
+
+  function setMode(mode,{recalculate=true} = {}){
+    clearTimeout(autoCalcTimer);
+    autoCalcTimer = null;
+    if (!['simple','weighted'].includes(mode)) mode = 'simple';
+    state.mode = mode;
+    els.simpleModeBtn.classList.toggle('active',mode === 'simple');
+    els.weightedModeBtn.classList.toggle('active',mode === 'weighted');
+    els.simpleModeBtn.setAttribute('aria-pressed',String(mode === 'simple'));
+    els.weightedModeBtn.setAttribute('aria-pressed',String(mode === 'weighted'));
+    els.simpleWrap.classList.toggle('hidden',mode !== 'simple');
+    els.weightedWrap.classList.toggle('hidden',mode !== 'weighted');
+    $('weightHeader').classList.toggle('hidden',mode !== 'weighted');
+    $('contribHeader').classList.toggle('hidden',mode !== 'weighted');
+    document.querySelectorAll('#scenarioRow .chip').forEach(b => b.classList.remove('active'));
+    clearFieldErrors();
+    hideValidation();
+    resetResult();
+    if (recalculate){
+      const hasInput = mode === 'simple' ? els.numberInput.value.trim() : els.weightedInput.value.trim();
+      if (hasInput) calculate({save:true});
+      else if (state.dataMode === 'manual') clearStoredState();
+    }
+  }
+
+  function revealResult(){
+    els.resultPanel.scrollIntoView({behavior:'smooth',block:'start'});
+    const box = $('highlightCard');
+    box.classList.remove('flash-focus');
+    void box.offsetWidth;
+    box.classList.add('flash-focus');
+    clearTimeout(revealResult._timer);
+    revealResult._timer = setTimeout(()=>box.classList.remove('flash-focus'),1400);
+  }
+
+  function safeStorage(){
+    try{return window.localStorage;}catch(e){return null;}
+  }
+
+  function clearStoredState(){
+    const storage = safeStorage();
+    if (!storage) return;
+    try{
+      storage.removeItem(STORAGE_KEY);
+      LEGACY_STORAGE_KEYS.forEach(key => storage.removeItem(key));
+    }catch(e){}
+  }
+
+  function saveValidState(){
+    if (state.dataMode !== 'manual' || !state.isValid || !state.isCalculated) return;
+    const storage = safeStorage();
+    if (!storage) return;
+    const payload = {
+      version:STORAGE_VERSION,
+      mode:state.mode,
+      numberInput:state.mode === 'simple' ? els.numberInput.value : '',
+      weightedInput:state.mode === 'weighted' ? els.weightedInput.value : ''
+    };
+    try{storage.setItem(STORAGE_KEY,JSON.stringify(payload));}catch(e){}
+  }
+
+  function savedPayloadIsValid(payload){
+    if (!payload || payload.version !== STORAGE_VERSION) return false;
+    if (!['simple','weighted'].includes(payload.mode)) return false;
+    if (typeof payload.numberInput !== 'string' || typeof payload.weightedInput !== 'string') return false;
+    if (payload.numberInput.length > LIMITS.maxInputLength || payload.weightedInput.length > LIMITS.maxInputLength) return false;
+
+    if (payload.mode === 'simple'){
+      const p = parseSimpleInput(payload.numberInput);
+      return p.tokens.length > 0 && !p.invalid.length && p.values.length <= LIMITS.maxSimpleValues && p.values.every(v => Math.abs(v) <= LIMITS.maxAbsValue);
+    }
+    const p = parseWeightedInput(payload.weightedInput);
+    return p.rawLines.length > 0 && !p.issues.length && p.rows.length <= LIMITS.maxWeightedRows &&
+      p.rows.every(r => Math.abs(r.value) <= LIMITS.maxAbsValue && r.weight > 0 && r.weight <= LIMITS.maxWeight);
+  }
+
+  function loadState(){
+    const storage = safeStorage();
+    if (!storage) return false;
+    try{
+      LEGACY_STORAGE_KEYS.forEach(key => storage.removeItem(key));
+      const raw = storage.getItem(STORAGE_KEY);
+      if (!raw) return false;
+      const payload = JSON.parse(raw);
+      if (!savedPayloadIsValid(payload)){
+        storage.removeItem(STORAGE_KEY);
+        return false;
+      }
+      state.dataMode = 'manual';
+      els.numberInput.value = payload.mode === 'simple' ? payload.numberInput : '';
+      els.weightedInput.value = payload.mode === 'weighted' ? payload.weightedInput : '';
+      setMode(payload.mode,{recalculate:false});
+      const ok = calculate({save:false});
+      if (ok) saveValidState();
+      return ok;
+    }catch(e){
+      try{storage.removeItem(STORAGE_KEY);}catch(ignore){}
+      return false;
+    }
+  }
+
+  function queueAutoCalculate(){
+    clearTimeout(autoCalcTimer);
+    autoCalcTimer = setTimeout(() => {
+      const current = state.mode === 'simple' ? els.numberInput.value.trim() : els.weightedInput.value.trim();
+      if (!current){
+        hideValidation();
+        clearFieldErrors();
+        resetResult();
+        if (state.dataMode === 'manual') clearStoredState();
+        return;
+      }
+      calculate({save:true});
+    },250);
+  }
+
+  function fillScenario(type){
+    state.dataMode = 'sample';
+    document.querySelectorAll('#scenarioRow .chip').forEach(b => b.classList.remove('active'));
+    const btn = document.querySelector(`[data-scenario="${type}"]`);
+    if (btn) btn.classList.add('active');
+
+    if (type === 'simple1'){
+      setMode('simple',{recalculate:false});
+      els.numberInput.value = '12, 18, 20, 22, 25, 25, 27, 30';
+    } else if (type === 'simple2'){
+      setMode('simple',{recalculate:false});
+      els.numberInput.value = '12;13;14;15;16;17;18;99';
+    } else {
+      setMode('weighted',{recalculate:false});
+      els.weightedInput.value = '70;3\n85;4\n90;2\n60;1';
+    }
+    clearStoredState();
+    calculate({scroll:true,save:false});
+  }
+
+  function resetForm(){
+    clearTimeout(autoCalcTimer);
+    els.numberInput.value = '';
+    els.weightedInput.value = '';
+    state.dataMode = 'manual';
+    setMode('simple',{recalculate:false});
+    clearFieldErrors();
+    hideValidation();
+    resetResult();
+    clearStoredState();
+    els.numberInput.focus();
+  }
+
+  function buildShareText(){
+    if (!state.result) return '';
+    const r = state.result;
+    const lines = [
+      'Average Calculator Result',
+      `${r.type === 'simple' ? 'Arithmetic Average' : 'Weighted Average'}: ${formatNum(r.mean,6)}`,
+      `${r.type === 'simple' ? 'Median' : 'Weighted Median'}: ${formatNum(r.median,6)}`,
+      `${r.type === 'simple' ? 'Population Standard Deviation' : 'Weighted Population Standard Deviation'}: ${formatNum(r.std,6)}`,
+      `${r.type === 'simple' ? 'IQR' : 'Weighted IQR'}: ${formatNum(r.iqr,6)}`,
+      `${r.type === 'simple' ? 'Count' : 'Row count'}: ${r.count}`,
+      `Possible outliers: ${!r.outlier.available
+        ? (r.type === 'simple' ? 'At least 4 values required' : 'At least 4 rows required')
+        : (r.outlier.outliers.length ? r.outlier.outliers.length + (r.type === 'simple' ? ' values' : ' rows') : 'None')}`
+    ];
+    if (r.type === 'weighted') lines.push(`Total weight: ${formatNum(r.totalWeight,6)}`);
+    return lines.join('\n');
+  }
+
+  function legacyCopy(text){
+    const active = document.activeElement;
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0,ta.value.length);
+    let ok = false;
+    try{ok = document.execCommand('copy');}catch(e){ok = false;}
+    document.body.removeChild(ta);
+    if (active && typeof active.focus === 'function') active.focus();
+    return ok;
+  }
+
+  async function copyText(text){
+    if (navigator.clipboard && window.isSecureContext){
+      try{
+        await navigator.clipboard.writeText(text);
+        return true;
+      }catch(e){}
+    }
+    return legacyCopy(text);
+  }
+
+  async function copyResult(){
+    if (!state.isValid || !state.result){
+      showValidation('Create a valid result first.');
+      return;
+    }
+    const ok = await copyText(buildShareText());
+    if (ok) flashComment('Result copied to the clipboard.');
+    else showValidation('Copy failed. Check your browser permissions.');
+  }
+
+  async function shareResult(){
+    if (!state.isValid || !state.result){
+      showValidation('Create a valid result first.');
+      return;
+    }
+    const text = buildShareText();
+    const url = window.location.href;
+    if (navigator.share){
+      try{
+        await navigator.share({title:'Average Calculator',text,url});
+        flashComment('Share menu opened.');
+        return;
+      }catch(e){
+        if (e && e.name === 'AbortError') return;
+      }
+    }
+    const ok = await copyText(`${text}\n${url}`);
+    if (ok) flashComment('Sharing was unavailable; the result and link were copied to the clipboard.');
+    else showValidation('Sharing and copying both failed.');
+  }
+
+  function printResult(){
+    if (!state.isValid || !state.result){
+      showValidation('Create a valid result first.');
+      return;
+    }
+    window.print();
+  }
+
+  function buildSummaryText(r){
+    if (!r) return 'After valid data is entered, minimum, maximum, range, quartiles and population variance are summarized here.';
+    const range = r.max - r.min;
+    let summary = `Minimum: ${formatNum(r.min,6)} • Maximum: ${formatNum(r.max,6)} • Range: ${formatNum(range,6)} • Q1: ${formatNum(r.q1,6)} • Q3: ${formatNum(r.q3,6)} • Population variance: ${formatNum(r.variance,6)}.`;
+    if (r.outlier.available){
+      summary += ` IQR fences: ${formatNum(r.outlier.lower,6)} to ${formatNum(r.outlier.upper,6)}.`;
+    } else {
+      summary += r.type === 'simple'
+        ? ' At least four values are required for IQR outlier screening.'
+        : ' At least four data rows are required for IQR outlier screening.';
+    }
+    if (r.type === 'weighted') summary += ' Weighted median and quartiles use cumulative-weight thresholds.';
+    return summary;
+  }
+
+  function flashComment(message){
+    const box = $('smartComment');
+    box.textContent = message;
+    clearTimeout(flashComment._timer);
+    flashComment._timer = setTimeout(()=>{ box.textContent = buildSummaryText(state.result); },1800);
+  }
+
+  els.form.addEventListener('submit',e => {
+    e.preventDefault();
+    state.dataMode = 'manual';
+    const ok = calculate({scroll:true,save:true});
+    if (!ok) (state.mode === 'simple' ? els.numberInput : els.weightedInput).focus();
+  });
+
+  els.simpleModeBtn.addEventListener('click',()=>{state.dataMode='manual';setMode('simple');});
+  els.weightedModeBtn.addEventListener('click',()=>{state.dataMode='manual';setMode('weighted');});
+
+  [els.numberInput,els.weightedInput].forEach(input => {
+    input.addEventListener('input',()=>{
+      state.dataMode = 'manual';
+      clearStoredState();
+      queueAutoCalculate();
+    });
+  });
+
+  document.querySelectorAll('#scenarioRow .chip').forEach(btn => {
+    btn.addEventListener('click',()=>fillScenario(btn.dataset.scenario));
+  });
+
+  $('exampleBtn').addEventListener('click',()=>fillScenario(state.mode === 'simple' ? 'simple1' : 'weighted1'));
+  $('clearBtn').addEventListener('click',resetForm);
+  els.copyBtn.addEventListener('click',copyResult);
+  els.shareBtn.addEventListener('click',shareResult);
+  els.printBtn.addEventListener('click',printResult);
+
+  resetResult();
+  if (!loadState()) setMode('simple',{recalculate:false});
+})();
+</script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','reset data','clear']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

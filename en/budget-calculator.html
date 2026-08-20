@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Budget Calculator: Monthly Cash Flow &amp; Savings | Hesapica</title>
+<meta content="Plan your monthly budget from income, housing, bills, food, transport and debt. See cash left, savings rate, spending pressure and long-term projections." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="Budget Calculator: Monthly Cash Flow &amp; Savings | Hesapica" property="og:title"/>
+<meta content="Plan your monthly budget from income, housing, bills, food, transport and debt. See cash left, savings rate, spending pressure and long-term projections." property="og:description"/>
+<meta content="https://hesapica.com/en/budget-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" property="og:image:alt"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — Free calculators for finance, math, health and everyday decisions" name="twitter:image:alt"/>
+<meta content="Hesapica" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Budget Calculator: Monthly Cash Flow &amp; Savings | Hesapica" name="twitter:title"/>
+<meta content="Plan your monthly budget from income, housing, bills, food, transport and debt. See cash left, savings rate, spending pressure and long-term projections." name="twitter:description"/>
+<!-- Google Analytics 4 -->
+<style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#7c3aed;
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-soft:#eef2ff;
+      --surface-soft-2:#f8faff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --good:#047857;
+      --warn:#b45309;
+      --bad:#b91c1c;
+      --shadow:0 16px 42px rgba(79,70,229,.10);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 26%),
+        linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .topbar{padding:18px 0 8px}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+    .hero{
+      margin-top:8px;
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));
+      border:1px solid rgba(79,70,229,.10);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
+    .hero p{margin:0;color:#4b5563;font-size:17px;max-width:760px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}
+    .hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+    .hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px}
+    .hero-box p,.hero-box li{font-size:15px;color:#4b5563;line-height:1.65}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.04fr) 420px;gap:24px;align-items:start;margin-top:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:0 0 18px;color:#4b5563;font-size:15px;line-height:1.65}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+
+    .form-section + .form-section{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .form-title{margin:0 0 14px;font-size:19px;font-weight:900;color:var(--primary)}
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    .input-wrap{position:relative}
+    .prefix,.suffix{
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#6b7280;font-size:16px;font-weight:800;pointer-events:none
+    }
+    .prefix{left:16px}
+    .suffix{right:16px}
+    input,select{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input.with-prefix{padding-left:38px}
+    input.with-suffix{padding-right:46px}
+    input:focus,select:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input::placeholder{color:#9ca3af;font-size:15px}
+    .hint{margin-top:7px;font-size:15px;color:#4b5563;line-height:1.6}
+
+    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:700}
+    .chip.active{background:var(--surface-soft);color:var(--primary);box-shadow:inset 0 0 0 1px #c7d2fe}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}
+    .btn:hover{transform:translateY(-1px);opacity:.97}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .flow-hint{margin-top:18px;padding:14px 16px;border-radius:18px;background:linear-gradient(180deg,#f4f7ff 0%, #eef2ff 100%);border:1px dashed rgba(79,70,229,.28);color:#4338ca;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .flow-hint-text strong{display:block;font-size:14px;line-height:1.35;margin-bottom:2px}
+    .flow-hint-text span{display:block;font-size:13px;color:#6366f1}
+    .flow-cue{flex:0 0 auto;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);box-shadow:0 10px 24px rgba(79,70,229,.10);font-size:20px;animation:bounceCue 1.8s ease-in-out infinite}
+    @keyframes bounceCue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+    .results{position:sticky;top:20px;display:grid;gap:16px}
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:22px;border-radius:24px;border:1px solid rgba(79,70,229,.12);background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}
+    .highlight-label{font-size:13px;color:var(--primary);font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .highlight-value{font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+    .highlight-sub{font-size:15px;color:#4b5563}
+    .highlight-card.is-empty .highlight-value,.mini-result.is-empty .value{color:#9ca3af}
+    .results-panel-flash{animation:resultPulse 1.2s ease}
+    @keyframes resultPulse{0%{box-shadow:0 0 0 0 rgba(79,70,229,.22)}40%{box-shadow:0 0 0 12px rgba(79,70,229,.08)}100%{box-shadow:0 0 0 0 rgba(79,70,229,0)}}
+
+    .scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--surface-soft),#f5f3ff);border:1px solid rgba(79,70,229,.14)}
+    .score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .score-value{font-size:44px;font-weight:900;line-height:1}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}
+    .pill.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .pill.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .pill.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+    .progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+    .score-explain{margin-top:14px;padding:14px;border-radius:16px;background:rgba(255,255,255,.72);border:1px solid rgba(79,70,229,.10);font-size:14.5px;line-height:1.65;color:#374151}
+    .score-explain strong{display:block;margin-bottom:6px;font-size:15px;color:var(--primary)}
+    .score-breakdown{display:grid;gap:8px;margin-top:12px}
+    .score-breakdown-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid rgba(79,70,229,.08);font-size:14px;line-height:1.5}
+    .score-breakdown-row .name{color:#4b5563}
+    .score-breakdown-row .val{font-weight:800}
+
+    .mini-result-grid{display:grid;gap:12px}
+    .mini-result{display:flex;justify-content:space-between;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:#fcfcfd}
+    .mini-result .label{font-size:15px;font-weight:700;color:#374151}
+    .mini-result .value{font-size:20px;font-weight:900;text-align:right}
+    .mini-result .subline{font-size:14px;color:#4b5563;line-height:1.5;margin-top:6px}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .health-card{padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(79,70,229,.10)}
+    .health-card h3{margin:0 0 8px;font-size:16px;color:var(--primary)}
+    .health-card .big{font-size:24px;font-weight:900;letter-spacing:-.02em}
+    .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}
+
+    .details-card{margin-top:24px}
+    .accordion-stack{display:grid;gap:14px}
+    details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px}
+    details.block[open]{padding-bottom:20px}
+    details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)}
+    details.block summary::-webkit-details-marker{display:none}
+    .summary-note{font-size:13.5px;color:#6366f1;font-weight:700}
+    .details-inner{margin-top:16px}
+    .table-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top}
+    th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em}
+    td{color:var(--text);font-weight:700}
+
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}
+    .accordion-card details + details{margin-top:12px}
+    .accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+
+    .validation-box{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:#fef2f2;
+      border:1px solid #fecaca;
+      color:#991b1b;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.55;
+    }
+    .validation-box.show{display:block}
+    .field input.input-error,
+    .field select.input-error{
+      border-color:#ef4444 !important;
+      background:#fff7f7 !important;
+      box-shadow:0 0 0 4px rgba(239,68,68,.12) !important;
+    }
+    .field-error{
+      display:none;
+      margin-top:8px;
+      font-size:13.5px;
+      font-weight:700;
+      color:#b91c1c;
+      line-height:1.45;
+    }
+    .field-error.show{display:block}
+
+    @media (max-width:1040px){
+      .hero-grid,.tool-layout,.content-grid,.table-grid{grid-template-columns:1fr}
+      .results{position:static}
+      .health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 20px,100%)}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{padding:20px}
+      .field-grid,.health-grid,.related-grid{grid-template-columns:1fr}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .mini-result,.status-row{flex-direction:column}
+      .mini-result .value{text-align:left}
+      .hero h1{font-size:32px}
+      .highlight-value{font-size:31px}
+    }
+    @media print{
+      body{background:#fff}
+      .topbar,.actions,.flow-hint,.hero-chips,.chip-row,.btn{display:none !important}
+      .hero,.card,.status-card,.highlight-card,.scorebox,details.block{
+        box-shadow:none !important;border:1px solid #d1d5db !important;break-inside:avoid;
+      }
+      .tool-layout,.content-grid,.table-grid{grid-template-columns:1fr !important}
+      .results{position:static !important}
+      a{text-decoration:none;color:inherit}
+    }
+  
+#resultsPanel{scroll-margin-top:16px}
+.related-card{color:#fff}
+.related-card strong{color:#fff}
+.related-card .small{color:rgba(255,255,255,.86)}
+.related-card p{color:rgba(255,255,255,.88)}
+
+</style>
+<meta content="https://hesapica.com/en/budget-calculator" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .tool-layout > *, .layout > *{min-width:0}
+  .hc-language-switch{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style>
+<link href="https://hesapica.com/en/budget-calculator" rel="canonical"/><link href="https://hesapica.com/en/budget-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/butce-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Budget Calculator: Monthly Cash Flow & Savings","url":"https://hesapica.com/en/budget-calculator","description":"Plan your monthly budget from income, housing, bills, food, transport and debt. See cash left, savings rate, spending pressure and long-term projections.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://hesapica.com/en/#finance"},{"@type":"ListItem","position":3,"name":"Budget Calculator: Monthly Cash Flow & Savings","item":"https://hesapica.com/en/budget-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What if my budget result is negative?","acceptedAnswer":{"@type":"Answer","text":"A negative result means the spending and safety buffer entered exceed monthly income. Before increasing savings, focus on closing the deficit and reviewing the largest fixed or debt costs."}},{"@type":"Question","name":"What is the illustrative return field used for?","acceptedAnswer":{"@type":"Answer","text":"It illustrates how the same monthly surplus could grow over 1, 5 and 10 years if a constant annual return were achieved. It is a projection, not a guaranteed investment result."}},{"@type":"Question","name":"What does the target gap show?","acceptedAnswer":{"@type":"Answer","text":"It compares your current monthly surplus with the amount implied by your target savings rate, showing whether you are above the target or how much additional room is needed."}},{"@type":"Question","name":"Can I use a currency other than US dollars?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose a currency from the calculator and enter every amount in that same currency. The calculator changes result formatting but does not perform foreign-exchange conversion."}},{"@type":"Question","name":"How is the Budget & Savings Score calculated?","acceptedAnswer":{"@type":"Answer","text":"It is a Hesapica planning score based on savings rate, spending pressure, debt load and safety buffer relative to income. It is not an official credit or financial-health score."}}]}</script></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font:600 14px/1.6 Inter,system-ui,sans-serif;">This interactive calculator requires JavaScript. Please enable JavaScript in your browser to view results.</div></noscript>
+<div class="container topbar">
+<nav aria-label="breadcrumb" class="breadcrumb">
+<a href="/en/">Home</a>
+<span>/</span>
+<a href="/en/#finance">Finance</a>
+<span>/</span>
+<strong>Budget &amp; Savings Calculator</strong>
+</nav><div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/butce-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div>
+<header class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<span class="eyebrow-pill">Hesapica • Income, spending &amp; savings analysis</span>
+<h1>Budget &amp; Savings Calculator</h1>
+<p>This calculator lets you see <strong>how much cash is left at the end of the month</strong>, <strong>your overall spending pressure</strong>, <strong>your savings rate</strong>, <strong>how debt payments and a safety buffer affect your budget</strong> and <strong>your 1 / 5 / 10-year savings potential</strong> together in one dashboard.</p>
+<div class="hero-chips">
+<span class="hero-chip">Hesapica Budget &amp; Savings Score</span>
+<span class="hero-chip">Financial pressure analysis</span>
+<span class="hero-chip">1 / 5 / 10-year projections</span>
+<span class="hero-chip">Mobile-friendly workflow</span>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">At a glance</div>
+<strong>Main result first, budget pressure and projections below</strong>
+<p>Enter your income, recurring expenses and, if you want, a monthly safety buffer. The calculator estimates your remaining cash flow, savings capacity and whether your budget has a healthy margin or looks fragile.</p>
+<ul>
+<li>Monthly cash left and savings rate</li>
+<li>Debt and spending pressure</li>
+<li>Long-term savings potential</li>
+</ul>
+</aside>
+</div>
+</section>
+</header>
+<main class="container" style="padding:24px 0 56px">
+<section class="tool-layout">
+<div class="card">
+<h2>Budget &amp; Savings Panel</h2>
+<p class="section-note">Choose a currency, then enter income, expenses and optional targets to calculate monthly cash left, savings rate and long-term savings projections together.</p>
+<div class="helper-box">
+<h3>Quick note</h3>
+<p>Building savings is not only about earning more. Debt, fixed costs and scattered everyday spending can quickly reduce your monthly margin. This calculator makes those pressures easier to see.</p>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox" role="alert">
+          Enter monthly income above 0 to calculate your savings potential.
+        </div>
+<div class="form-section">
+<div class="form-title">Core budget and savings inputs</div>
+<div class="field-grid">
+<div class="field">
+<label for="currencyCode">Currency</label>
+<div class="input-wrap">
+<select id="currencyCode" aria-describedby="currencyHint">
+<option value="USD" selected>USD — US Dollar</option>
+<option value="EUR">EUR — Euro</option>
+<option value="GBP">GBP — British Pound</option>
+<option value="CAD">CAD — Canadian Dollar</option>
+<option value="AUD">AUD — Australian Dollar</option>
+<option value="NZD">NZD — New Zealand Dollar</option>
+<option value="CHF">CHF — Swiss Franc</option>
+<option value="JPY">JPY — Japanese Yen</option>
+<option value="INR">INR — Indian Rupee</option>
+<option value="SGD">SGD — Singapore Dollar</option>
+<option value="SEK">SEK — Swedish Krona</option>
+<option value="NOK">NOK — Norwegian Krone</option>
+<option value="DKK">DKK — Danish Krone</option>
+<option value="PLN">PLN — Polish Zloty</option>
+<option value="ZAR">ZAR — South African Rand</option>
+</select>
+</div>
+<div class="hint" id="currencyHint">Choose one currency and enter every amount in that same currency. Changing the currency changes labels and result formatting; it does not convert existing amounts.</div>
+</div>
+<div class="field">
+<label for="monthlyIncome">Total monthly income</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="monthlyIncome" inputmode="numeric" placeholder="e.g. 5,000" type="text"/>
+</div>
+<div class="hint">Include salary, side income and other recurring monthly income.</div>
+<div class="field-error" id="monthlyIncomeError">Enter total monthly income greater than 0.</div>
+</div>
+<div class="field">
+<label for="targetRate">Target savings rate (%) <span style="color:#6b7280;font-weight:600">(optional)</span></label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="targetRate" inputmode="decimal" placeholder="20" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Your desired monthly savings rate.</div>
+<div class="field-error" id="targetRateError">Target savings rate must be between 0 and 100.</div>
+</div>
+<div class="field">
+<label for="rentExpense">Housing / rent</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="rentExpense" inputmode="numeric" placeholder="e.g. 1,500" type="text"/>
+</div>
+<div class="hint">Rent, mortgage housing cost or another recurring housing expense.</div>
+</div>
+<div class="field">
+<label for="billExpense">Utilities &amp; bills</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="billExpense" inputmode="numeric" placeholder="e.g. 250" type="text"/>
+</div>
+<div class="hint">Electricity, water, internet, phone, heating and similar bills.</div>
+</div>
+<div class="field">
+<label for="foodExpense">Groceries / food</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="foodExpense" inputmode="numeric" placeholder="e.g. 600" type="text"/>
+</div>
+<div class="hint">Groceries and essential household food spending.</div>
+</div>
+<div class="field">
+<label for="transportExpense">Transport</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="transportExpense" inputmode="numeric" placeholder="e.g. 350" type="text"/>
+</div>
+<div class="hint">Fuel, public transport, commuting and other transport costs.</div>
+</div>
+<div class="field">
+<label for="debtExpense">Debt / loan payments</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="debtExpense" inputmode="numeric" placeholder="e.g. 500" type="text"/>
+</div>
+<div class="hint">Loans, credit cards and other recurring debt payments.</div>
+</div>
+<div class="field">
+<label for="otherExpense">Other spending</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="otherExpense" inputmode="numeric" placeholder="e.g. 300" type="text"/>
+</div>
+<div class="hint">Clothing, health, childcare, entertainment and other spending.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Optional safety &amp; growth assumptions</div>
+<div class="field-grid">
+<div class="field">
+<label for="safetyBuffer">Monthly safety buffer</label>
+<div class="input-wrap">
+<span class="prefix currency-prefix">$</span>
+<input autocomplete="off" class="with-prefix" id="safetyBuffer" inputmode="numeric" placeholder="e.g. 250" type="text"/>
+</div>
+<div class="hint">Cash you want to leave uncommitted for emergencies or unexpected expenses.</div>
+</div>
+<div class="field">
+<label for="annualReturn">Illustrative annual return on savings (%)</label>
+<div class="input-wrap">
+<input autocomplete="off" class="with-suffix" id="annualReturn" inputmode="decimal" placeholder="0" type="text"/>
+<span class="suffix">%</span>
+</div>
+<div class="hint">Assumes monthly contributions are made at month-end and the annual rate is converted to a compounded monthly return. Blank is treated as 0%.</div>
+<div class="field-error" id="annualReturnError">Illustrative annual return must be between 0 and 100.</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-title">Quick scenarios</div>
+<div class="chip-row" id="scenarioRow">
+<button class="chip" onclick="loadScenario('balanced', this)" type="button">Balanced</button>
+<button class="chip" onclick="loadScenario('strong', this)" type="button">Strong savings</button>
+<button class="chip" onclick="loadScenario('fragile', this)" type="button">Tight budget</button>
+<button class="chip" onclick="loadScenario('debtHeavy', this)" type="button">Debt-heavy</button>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="calculateSavings({ forceValidation: true, scrollOnSuccess: true })" type="button">Calculate</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Example Data</button>
+<button class="btn btn-ghost" onclick="resetForm()" type="button">Reset Data</button>
+<button class="btn btn-ghost" onclick="copyResult()" type="button">Copy Result</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Share</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Print / PDF</button>
+</div>
+<div aria-hidden="true" class="flow-hint">
+<div class="flow-hint-text">
+<strong>Score breakdown, projections and financial interpretation continue below</strong>
+<span>On mobile, scroll after the main result to review budget pressure and longer-term savings details.</span>
+</div>
+<div class="flow-cue">↓</div>
+</div>
+</div>
+<aside class="results" id="resultsPanel">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Result status</div>
+<div class="status-text" id="statusText">Enter income and expenses to see monthly cash left and savings quality.</div>
+</div>
+<span class="badge" id="statusBadge">Waiting for data</span>
+</div>
+</div>
+<div class="highlight-card is-empty" id="highlightCard">
+<div class="highlight-label" id="mainResultLabel">Main result</div>
+<div class="highlight-value" id="mainResult">—</div>
+<div class="highlight-sub" id="mainResultText">Your monthly surplus or budget deficit will appear here.</div>
+</div>
+<section class="scorebox">
+<div class="score-row">
+<div>
+<div class="hint" style="margin:0;color:#4f46e5;font-weight:800">Hesapica Budget &amp; Savings Score</div>
+<div class="score-value" id="savingsScore">0/100</div>
+</div>
+<span class="pill" id="scoreBadge">Waiting for data</span>
+</div>
+<div class="progress"><span id="scoreBar"></span></div>
+<div class="score-explain">
+<strong>What does this score mean?</strong>
+<div id="scoreText">This Hesapica score summarizes savings rate, spending pressure, debt load and safety-buffer balance relative to income. It is not an official financial-health score.</div>
+<div class="score-breakdown" id="scoreBreakdown">
+<div class="score-breakdown-row"><span class="name">Savings rate</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Spending pressure</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Debt load</span><span class="val">—</span></div>
+<div class="score-breakdown-row"><span class="name">Safety buffer</span><span class="val">—</span></div>
+</div>
+</div>
+</section>
+<div class="mini-result-grid">
+<div class="mini-result is-empty"><div><div class="label">Total monthly spending</div><div class="subline">Main load relative to income</div></div><div class="value" id="result1">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Monthly cash left</div><div class="subline">Income − total spending</div></div><div class="value" id="result2">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Savings rate</div><div class="subline">Share of income</div></div><div class="value" id="result3">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">1-year savings</div><div class="subline">At the current monthly pace</div></div><div class="value" id="result4">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">5-year savings</div><div class="subline">Including return assumption</div></div><div class="value" id="result5">—</div></div>
+<div class="mini-result is-empty"><div><div class="label">Gap to savings target</div><div class="subline">Actual gap including any deficit</div></div><div class="value" id="result6">—</div></div>
+</div>
+<div class="card" style="padding:18px">
+<h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Quick status summary</h2>
+<div class="health-grid">
+<div class="health-card"><h3>Budget level</h3><div class="big" id="health1">—</div><div class="hint" id="health1Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Pressure view</h3><div class="big" id="health2">—</div><div class="hint" id="health2Sub" style="margin-top:6px">—</div></div>
+<div class="health-card"><h3>Decision summary</h3><div class="big" id="health3">—</div><div class="hint" id="health3Sub" style="margin-top:6px">—</div></div>
+</div>
+</div>
+<div class="comment-box" id="smartComment">Enter your data to see how much savings capacity and resilience this budget has.</div>
+</aside>
+</section>
+<section class="details-card accordion-stack">
+<details class="block" open="">
+<summary>
+<span>Core results and supporting metrics</span>
+<span class="summary-note">The main numbers to review first</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>Total monthly spending</th><td id="stat1">—</td></tr>
+<tr><th>Monthly cash left</th><td id="stat2">—</td></tr>
+<tr><th>Savings rate</th><td id="stat3">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<tbody>
+<tr><th>1-year savings</th><td id="stat4">—</td></tr>
+<tr><th>10-year savings</th><td id="stat5">—</td></tr>
+<tr><th>Target gap</th><td id="stat6">—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details class="block" open="">
+<summary>
+<span>Financial pressure &amp; projections</span>
+<span class="summary-note">Where is the budget under pressure?</span>
+</summary>
+<div class="details-inner table-grid">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Analysis</th><th>Value</th></tr></thead>
+<tbody>
+<tr><th>Housing ratio</th><td id="analysis1">—</td></tr>
+<tr><th>Debt pressure</th><td id="analysis2">—</td></tr>
+<tr><th>Other-spending share</th><td id="analysis3">—</td></tr>
+<tr><th>Safety-buffer impact</th><td id="analysis4">—</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Horizon</th><th>Projected savings</th><th>Note</th></tr></thead>
+<tbody id="projectionBody"><tr><td colspan="3">Waiting for calculation.</td></tr></tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<section class="content-grid">
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">How should monthly savings be interpreted?</h2>
+<p class="section-note">Monthly savings are more than simply having money left at the end of the month. A stronger budget usually leaves a meaningful share of income uncommitted without housing or debt taking an excessive share.</p>
+<details open="">
+<summary>Why does the savings rate matter?</summary>
+<p>A savings amount can look large in isolation while still being small relative to income. The rate makes it easier to judge whether the margin is sustainable.</p>
+</details>
+<details>
+<summary>Why track debt pressure separately?</summary>
+<p>High debt payments can absorb income quickly even when earnings rise. Tracking debt as a share of income helps reveal that pressure.</p>
+</details>
+<details>
+<summary>Why include a safety buffer?</summary>
+<p>Leaving a buffer for emergencies and irregular expenses helps separate theoretical savings from a margin that may be sustainable in real life.</p>
+</details>
+</div>
+
+
+
+<div class="card accordion-card">
+<h2 style="margin:0 0 10px;color:var(--primary);font-size:24px">Frequently Asked Questions</h2>
+
+
+
+<details open=""><summary>What if my budget result is negative?</summary><p>A negative result means the spending and safety buffer entered exceed monthly income. Before increasing savings, focus on closing the deficit and reviewing the largest fixed or debt costs.</p></details><details><summary>What is the illustrative return field used for?</summary><p>It illustrates how the same monthly surplus could grow over 1, 5 and 10 years if a constant annual return were achieved. It is a projection, not a guaranteed investment result.</p></details><details><summary>What does the target gap show?</summary><p>It compares your current monthly surplus with the amount implied by your target savings rate, showing whether you are above the target or how much additional room is needed.</p></details><details><summary>Can I use a currency other than US dollars?</summary><p>Yes. Choose a currency from the calculator and enter every amount in that same currency. The calculator changes result formatting but does not perform foreign-exchange conversion.</p></details><details><summary>How is the Budget &amp; Savings Score calculated?</summary><p>It is a Hesapica planning score based on savings rate, spending pressure, debt load and safety buffer relative to income. It is not an official credit or financial-health score.</p></details></div>
+</section>
+<section class="card" style="margin-top:24px">
+<h2 style="margin-bottom:12px">Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/debt-payoff-calculator">
+<span class="small">Budget</span>
+<strong>Debt Payoff Calculator</strong>
+<p>Build a more focused repayment plan for multiple debts.</p>
+</a>
+<a class="related-card" href="/en/loan-calculator">
+<span class="small">Finance</span>
+<strong>Loan Calculator</strong>
+<p>Estimate how a new loan or extra payment could affect your monthly budget.</p>
+</a>
+<a class="related-card" href="/en/interest-calculator">
+<span class="small">Savings</span>
+<strong>Interest Calculator</strong>
+<p>Estimate simple or compound interest and long-term savings growth.</p>
+</a>
+</div>
+</section>
+</main>
+<script>
+    const el = id => document.getElementById(id);
+    const STORAGE_KEY = 'hesapica_en_budget_savings_v1';
+    const LEGACY_STORAGE_KEY = 'hesapica_en_budget_savings_legacy_v1';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      activeMode: 'manual'
+    };
+    let calcTimer = null;
+    const resultsPanelEl = el('resultsPanel');
+    const PAGE_URL = 'https://hesapica.com/en/budget-calculator';
+    const SUPPORTED_CURRENCIES = new Set(['USD','EUR','GBP','CAD','AUD','NZD','CHF','JPY','INR','SGD','SEK','NOK','DKK','PLN','ZAR']);
+    function getCurrencyCode(){
+      const code = el('currencyCode') ? el('currencyCode').value : 'USD';
+      return SUPPORTED_CURRENCIES.has(code) ? code : 'USD';
+    }
+    function getCurrencySymbol(code = getCurrencyCode()){
+      try{
+        const parts = new Intl.NumberFormat('en-US',{style:'currency',currency:code,currencyDisplay:'narrowSymbol',maximumFractionDigits:0}).formatToParts(0);
+        return (parts.find(part => part.type === 'currency') || {}).value || code;
+      }catch(_){ return code; }
+    }
+    function updateCurrencyUI(){
+      const symbol = getCurrencySymbol();
+      document.querySelectorAll('.currency-prefix').forEach(node => { node.textContent = symbol; });
+    }
+    function formatCurrency(value){
+      const currency = getCurrencyCode();
+      const maximumFractionDigits = currency === 'JPY' ? 0 : 0;
+      return new Intl.NumberFormat('en-US',{style:'currency',currency,maximumFractionDigits}).format(Number(value)||0);
+    }
+    function formatPercent(value,digits=1){
+      return new Intl.NumberFormat('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(Number(value)||0) + '%';
+    }
+    function formatEnInput(value){
+      const num = Math.round(Number(value)||0);
+      return num ? new Intl.NumberFormat('en-US').format(num) : '';
+    }
+    function parseEnNumber(value){
+      if(value === null || value === undefined) return 0;
+      let text = String(value).trim().replace(/\s+/g,'').replace(/[^0-9.,\-]/g,'');
+      if(!text || ['-','.',',','-.','-,'].includes(text)) return 0;
+      const negative = text.startsWith('-');
+      if(negative) text = text.slice(1);
+      if(text.includes('.') && text.includes(',')){
+        if(text.lastIndexOf('.') > text.lastIndexOf(',')) text = text.replace(/,/g,'');
+        else text = text.replace(/\./g,'').replace(',','.');
+      }else if(text.includes(',')){
+        const parts = text.split(',');
+        if(parts.length > 2 || (parts.length===2 && parts[1].length===3)) text = text.replace(/,/g,'');
+        else text = text.replace(',','.');
+      }
+      const number = Number((negative?'-':'') + text);
+      return Number.isFinite(number) ? number : NaN;
+    }
+    function parseDecimal(value){
+      if(value === null || value === undefined) return NaN;
+      let text = String(value).trim().replace(/\s+/g,'').replace(/%/g,'');
+      if(!text) return NaN;
+
+      const negative = text.startsWith('-');
+      text = text.replace(/[^0-9.,]/g,'');
+      if(!text) return NaN;
+
+      const separatorIndex = Math.max(text.lastIndexOf(','), text.lastIndexOf('.'));
+      if(separatorIndex >= 0){
+        const whole = text.slice(0, separatorIndex).replace(/[.,]/g,'');
+        const fraction = text.slice(separatorIndex + 1).replace(/[.,]/g,'');
+        text = (whole || '0') + (fraction ? '.' + fraction : '');
+      }else{
+        text = text.replace(/[.,]/g,'');
+      }
+
+      if(negative) text = '-' + text;
+      const number = Number(text);
+      return Number.isFinite(number) ? number : NaN;
+    }
+    function sanitizeDecimalText(value){
+      let cleaned = String(value || '').replace(/[^0-9,.-]/g, '');
+      cleaned = cleaned.replace(/(?!^)-/g, '');
+      const sep = Math.max(cleaned.lastIndexOf('.'), cleaned.lastIndexOf(','));
+      if(sep >= 0){
+        const whole = cleaned.slice(0,sep).replace(/[.,]/g,'');
+        const fraction = cleaned.slice(sep+1).replace(/[.,]/g,'');
+        cleaned = whole + (fraction ? '.' + fraction : '.');
+      }else cleaned = cleaned.replace(/[.,]/g,'');
+      return cleaned;
+    }
+    function formatDecimalInput(value, digits = 2){
+      if(!Number.isFinite(value)) return '';
+      return Number(value).toLocaleString('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      });
+    }
+    function clamp(n,min,max){ return Math.min(Math.max(n,min),max); }
+
+    function futureValueMonthly(monthlyContribution, annualRate, years){
+      const annual = annualRate / 100;
+      const n = Math.round(years * 12);
+      if(monthlyContribution <= 0 || n <= 0) return 0;
+      if(annual === 0) return monthlyContribution * n;
+
+      const monthlyRate = Math.pow(1 + annual, 1 / 12) - 1;
+      return monthlyContribution * ((Math.pow(1 + monthlyRate, n) - 1) / monthlyRate);
+    }
+
+    function getFieldIds(){
+      return ['monthlyIncome','targetRate','rentExpense','billExpense','foodExpense','transportExpense','debtExpense','otherExpense','safetyBuffer','annualReturn'];
+    }
+
+    function getInputData(){
+      return {
+        income: parseEnNumber(el('monthlyIncome').value),
+        targetRate: parseDecimal(el('targetRate').value) || 0,
+        rent: parseEnNumber(el('rentExpense').value),
+        bills: parseEnNumber(el('billExpense').value),
+        food: parseEnNumber(el('foodExpense').value),
+        transport: parseEnNumber(el('transportExpense').value),
+        debt: parseEnNumber(el('debtExpense').value),
+        other: parseEnNumber(el('otherExpense').value),
+        safety: parseEnNumber(el('safetyBuffer').value),
+        annualReturn: parseDecimal(el('annualReturn').value) || 0
+      };
+    }
+
+    function hasAnyMeaningfulInput(data){
+      return getFieldIds().some(id => String(el(id).value || '').trim() !== '') ||
+        Object.values(data).some(value => Number.isFinite(Number(value)) && Number(value) !== 0);
+    }
+
+    function validateData(data){
+      const errors = [];
+      if(!Number.isFinite(data.income) || data.income <= 0) errors.push('Enter a valid total monthly income greater than 0.');
+      if(!Number.isFinite(data.targetRate) || data.targetRate < 0 || data.targetRate > 100) errors.push('Target savings rate must be between 0 and 100.');
+      if(!Number.isFinite(data.annualReturn) || data.annualReturn < 0 || data.annualReturn > 100) errors.push('Illustrative annual return must be between 0 and 100.');
+      const expenseChecks = [
+        ['rent','Housing expense cannot be negative.'],
+        ['bills','Utilities expense cannot be negative.'],
+        ['food','Food and groceries expense cannot be negative.'],
+        ['transport','Transport expense cannot be negative.'],
+        ['debt','Debt payments cannot be negative.'],
+        ['other','Other spending cannot be negative.'],
+        ['safety','Safety buffer cannot be negative.']
+      ];
+      expenseChecks.forEach(([key,message]) => {
+        if(!Number.isFinite(data[key]) || data[key] < 0) errors.push(message);
+      });
+      return { isValid: errors.length === 0, errors };
+    }
+
+    function computeSavings(data){
+      const totalExpense = data.rent + data.bills + data.food + data.transport + data.debt + data.other + data.safety;
+      const remaining = data.income - totalExpense;
+      const savingAmount = Math.max(remaining, 0);
+      const deficitAmount = Math.max(-remaining, 0);
+      const savingRate = data.income > 0 ? (remaining / data.income) * 100 : 0;
+      const targetAmount = data.targetRate > 0 ? data.income * (data.targetRate / 100) : 0;
+      // Target gap is based on current net cash flow and includes closing any deficit first.
+      const targetGap = remaining - targetAmount;
+
+      const oneYear = futureValueMonthly(savingAmount, data.annualReturn, 1);
+      const fiveYear = futureValueMonthly(savingAmount, data.annualReturn, 5);
+      const tenYear = futureValueMonthly(savingAmount, data.annualReturn, 10);
+
+      const pressureRatio = data.income > 0 ? (totalExpense / data.income) * 100 : 0;
+      const debtRatio = data.income > 0 ? (data.debt / data.income) * 100 : 0;
+      const rentRatio = data.income > 0 ? (data.rent / data.income) * 100 : 0;
+      const otherRatio = data.income > 0 ? (data.other / data.income) * 100 : 0;
+      const safetyRatio = data.income > 0 ? (data.safety / data.income) * 100 : 0;
+
+      let score = 50;
+      score += clamp((savingRate - 10) * 2.8, -30, 30);
+      score -= clamp((pressureRatio - 70) * 1.1, 0, 28);
+      score -= clamp((debtRatio - 10) * 1.5, 0, 20);
+      score += clamp(safetyRatio * 0.8, 0, 5);
+      if(remaining < 0) score -= Math.min(35, 20 + Math.abs(savingRate));
+      score = Math.round(clamp(score, 0, 100));
+
+      let level = 'good';
+      if(remaining < 0 || savingRate < 10) level = 'bad';
+      else if(savingRate < 20 || pressureRatio > 85) level = 'warn';
+
+      const decision = getDecision({savingRate, remaining, debtRatio, pressureRatio});
+
+      return {
+        ...data,
+        totalExpense, remaining, savingAmount, deficitAmount, savingRate, targetAmount, targetGap,
+        oneYear, fiveYear, tenYear, pressureRatio, debtRatio, rentRatio, otherRatio, safetyRatio,
+        score, level, decision
+      };
+    }
+
+    function flashResults(){
+      resultsPanelEl.classList.remove('results-panel-flash');
+      void resultsPanelEl.offsetWidth;
+      resultsPanelEl.classList.add('results-panel-flash');
+      window.setTimeout(() => resultsPanelEl.classList.remove('results-panel-flash'), 1300);
+    }
+
+    function scrollToResults(){
+      resultsPanelEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      flashResults();
+    }
+
+    function setMoneyInput(input){
+      input.addEventListener('input', () => {
+        markManualChange();
+        const text = String(input.value || '').trim();
+        if(/^0[.]\d*$/.test(text)){
+          input.value = text;
+        }else{
+          const raw = text.replace(/\D/g,'');
+          const number = raw ? Number(raw) : 0;
+          input.value = raw && Number.isFinite(number) ? new Intl.NumberFormat('en-US').format(number) : (raw ? text : '');
+        }
+        queueCalculation();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseEnNumber(input.value);
+        input.value = Number.isFinite(val) && val !== 0
+          ? (Math.abs(val) < 1 ? val.toLocaleString('en-US',{maximumFractionDigits:3}) : formatEnInput(val))
+          : '';
+      });
+      input.addEventListener('keydown', handleEnterToCalculate);
+    }
+
+    function setDecimalInput(input, digits = 2){
+      input.addEventListener('input', () => {
+        markManualChange();
+        input.value = sanitizeDecimalText(input.value);
+        queueCalculation();
+      });
+      input.addEventListener('blur', () => {
+        const val = parseDecimal(input.value);
+        input.value = Number.isFinite(val) && val !== 0 ? formatDecimalInput(val, digits) : (val === 0 ? '0' : '');
+      });
+      input.addEventListener('keydown', handleEnterToCalculate);
+    }
+
+    function clearScenarioActive(){
+      document.querySelectorAll('#scenarioRow .chip').forEach(btn => btn.classList.remove('active'));
+    }
+
+    function loadScenario(name, btn){
+      clearScenarioActive();
+      if(btn) btn.classList.add('active');
+      state.activeMode = 'scenario';
+      const scenarios = {
+        balanced:{income:'5,000', target:'20', rent:'1,500', bills:'250', food:'600', transport:'350', debt:'500', other:'300', safety:'250', annualReturn:'0'},
+        strong:{income:'7,500', target:'25', rent:'1,600', bills:'300', food:'700', transport:'400', debt:'250', other:'350', safety:'400', annualReturn:'5'},
+        fragile:{income:'4,200', target:'15', rent:'1,650', bills:'300', food:'700', transport:'350', debt:'550', other:'450', safety:'150', annualReturn:'0'},
+        debtHeavy:{income:'5,800', target:'20', rent:'1,500', bills:'300', food:'650', transport:'350', debt:'1,500', other:'350', safety:'250', annualReturn:'0'}
+      };
+      const s = scenarios[name];
+      el('monthlyIncome').value = s.income;
+      el('targetRate').value = s.target;
+      el('rentExpense').value = s.rent;
+      el('billExpense').value = s.bills;
+      el('foodExpense').value = s.food;
+      el('transportExpense').value = s.transport;
+      el('debtExpense').value = s.debt;
+      el('otherExpense').value = s.other;
+      el('safetyBuffer').value = s.safety;
+      el('annualReturn').value = s.annualReturn;
+      clearValidation();
+      calculateSavings({ forceValidation: true, scrollOnSuccess: true });
+    }
+
+    function fillExample(){
+      state.activeMode = 'example';
+      clearScenarioActive();
+      const example = {income:'5,000', target:'20', rent:'1,500', bills:'250', food:'600', transport:'350', debt:'500', other:'300', safety:'250', annualReturn:'0'};
+      el('monthlyIncome').value = example.income;
+      el('targetRate').value = example.target;
+      el('rentExpense').value = example.rent;
+      el('billExpense').value = example.bills;
+      el('foodExpense').value = example.food;
+      el('transportExpense').value = example.transport;
+      el('debtExpense').value = example.debt;
+      el('otherExpense').value = example.other;
+      el('safetyBuffer').value = example.safety;
+      el('annualReturn').value = example.annualReturn;
+      clearValidation();
+      calculateSavings({ forceValidation: true, scrollOnSuccess: true });
+    }
+
+    function resetForm(){
+      clearScenarioActive();
+      state.activeMode = 'manual';
+      getFieldIds().forEach(id => el(id).value = '');
+      el('currencyCode').value = 'USD';
+      updateCurrencyUI();
+      try{
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(LEGACY_STORAGE_KEY);
+      }catch(err){}
+      clearValidation();
+      setEmptyState();
+    }
+
+    function setEmptyState(){
+      state.inputs = {};
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      el('statusBadge').textContent = 'Waiting for data';
+      el('statusBadge').className = 'badge';
+      el('statusText').textContent = 'Enter income and expenses to see monthly cash left and savings quality.';
+      el('highlightCard').classList.add('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.add('is-empty'));
+
+      el('mainResultLabel').textContent = 'Main result';
+      el('mainResult').textContent = '—';
+      el('mainResult').style.color = 'var(--text)';
+      ['result2','result3','result6','stat2','stat3','stat6'].forEach(id => el(id).style.color = 'var(--text)');
+      el('mainResultText').textContent = 'Your monthly surplus or budget deficit will appear here.';
+      el('savingsScore').textContent = '0/100';
+      el('scoreBadge').textContent = 'Waiting for data';
+      el('scoreBadge').className = 'pill';
+      el('scoreBar').style.width = '0%';
+      el('scoreText').textContent = 'This Hesapica score summarizes savings rate, spending pressure, debt load and safety-buffer balance relative to income. It is not an official financial-health score.';
+      el('scoreBreakdown').querySelectorAll('.val').forEach(v => v.textContent = '—');
+
+      ['result1','result2','result3','result4','result5','result6','stat1','stat2','stat3','stat4','stat5','stat6','analysis1','analysis2','analysis3','analysis4'].forEach(id => el(id).textContent = '—');
+      ['health1','health2','health3','health1Sub','health2Sub','health3Sub'].forEach(id => el(id).textContent = '—');
+      el('smartComment').textContent = 'Enter your data to see how much savings capacity and resilience this budget has.';
+      el('projectionBody').innerHTML = '<tr><td colspan="3">Waiting for calculation.</td></tr>';
+    }
+
+    function setPassivePrompt(message = 'Enter monthly income first and the results panel will update automatically.'){
+      clearValidation();
+      setEmptyState();
+      el('statusBadge').textContent = 'Income required';
+      el('statusBadge').className = 'badge warn';
+      el('statusText').textContent = message;
+    }
+
+    function showValidation(message){
+      el('validationBox').textContent = message;
+      el('validationBox').classList.add('show');
+      highlightInvalidFields();
+      setEmptyState();
+      el('statusBadge').textContent = 'Missing data';
+      el('statusBadge').className = 'badge bad';
+      el('statusText').textContent = message;
+    }
+
+    function clearValidation(){
+      el('validationBox').classList.remove('show');
+      document.querySelectorAll('.input-error').forEach(node => node.classList.remove('input-error'));
+      document.querySelectorAll('.field-error.show').forEach(node => node.classList.remove('show'));
+    }
+
+    function showFieldError(id, message){
+      const input = el(id);
+      const hint = el(id + 'Error');
+      if(input) input.classList.add('input-error');
+      if(hint){
+        if(message) hint.textContent = message;
+        hint.classList.add('show');
+      }
+    }
+
+    function highlightInvalidFields(){
+      ['monthlyIncome','targetRate','annualReturn','rentExpense','billExpense','foodExpense','transportExpense','debtExpense','otherExpense','safetyBuffer'].forEach(id => {
+        el(id).classList.remove('input-error');
+        const hint = el(id + 'Error');
+        if(hint) hint.classList.remove('show');
+      });
+      const data = getInputData();
+      if(data.income <= 0) showFieldError('monthlyIncome', 'Enter total monthly income greater than 0.');
+      if(data.targetRate < 0 || data.targetRate > 100) showFieldError('targetRate', 'Target savings rate must be between 0 and 100.');
+      if(data.annualReturn < 0 || data.annualReturn > 100) showFieldError('annualReturn', 'Illustrative annual return must be between 0 and 100.');
+      if(data.rent < 0) showFieldError('rentExpense', 'Housing expense cannot be negative.');
+      if(data.bills < 0) showFieldError('billExpense', 'Utilities expense cannot be negative.');
+      if(data.food < 0) showFieldError('foodExpense', 'Food and groceries expense cannot be negative.');
+      if(data.transport < 0) showFieldError('transportExpense', 'Transport expense cannot be negative.');
+      if(data.debt < 0) showFieldError('debtExpense', 'Debt payments cannot be negative.');
+      if(data.other < 0) showFieldError('otherExpense', 'Other spending cannot be negative.');
+      if(data.safety < 0) showFieldError('safetyBuffer', 'Safety buffer cannot be negative.');
+    }
+
+    function getDecision({savingRate, remaining, debtRatio, pressureRatio}){
+      if(remaining < 0){
+        return { short:'Deficit', sub:'Priority should be closing the budget deficit before increasing savings.' };
+      }
+      if(savingRate >= 20 && debtRatio < 15 && pressureRatio < 80){
+        return { short:'Strong', sub:'The savings margin looks healthy.' };
+      }
+      if(savingRate >= 10 && pressureRatio < 90){
+        return { short:'Balanced', sub:'Manageable, with room to improve.' };
+      }
+      return { short:'Fragile', sub:'Small unexpected costs could put pressure on this budget.' };
+    }
+
+    function buildComment(d){
+      let comment = `Monthly income is ${formatCurrency(d.income)} and recurring spending is ${formatCurrency(d.totalExpense)}. `;
+      if(d.remaining < 0){
+        comment += `That leaves an estimated monthly deficit of ${formatCurrency(Math.abs(d.remaining))}. `;
+      } else {
+        comment += `That leaves about ${formatCurrency(d.savingAmount)} available for monthly savings. `;
+      }
+      comment += `Savings rate is ${formatPercent(d.savingRate,1)} and spending pressure is ${formatPercent(d.pressureRatio,1)}. `;
+      if(d.targetRate > 0){
+        if(d.targetGap >= 0){
+          comment += `You are above the ${formatPercent(d.targetRate,1)} savings target. `;
+        } else {
+          comment += `You need about ${formatCurrency(Math.abs(d.targetGap))} more monthly room to reach the ${formatPercent(d.targetRate,1)} target. `;
+        }
+      }
+      if(d.savingAmount > 0){
+        comment += d.annualReturn > 0
+          ? `At an illustrative annual return of ${formatPercent(d.annualReturn,1)}, the projection is about ${formatCurrency(d.fiveYear)} after 5 years and ${formatCurrency(d.tenYear)} after 10 years. `
+          : `At the current pace, savings could total about ${formatCurrency(d.oneYear)} after 1 year and ${formatCurrency(d.fiveYear)} after 5 years. `;
+      }
+      comment += `Quick decision summary: ${d.decision.short}. ${d.decision.sub}`;
+      return comment;
+    }
+
+    function buildProjection(savingAmount, annualReturn){
+      const rows = [
+        {label:'1 year', value:futureValueMonthly(savingAmount, annualReturn, 1), note:'Short-term view'},
+        {label:'5 years', value:futureValueMonthly(savingAmount, annualReturn, 5), note:'Medium-term potential'},
+        {label:'10 years', value:futureValueMonthly(savingAmount, annualReturn, 10), note:'Long-term savings'}
+      ];
+      el('projectionBody').innerHTML = rows.map(r => `<tr><td>${r.label}</td><td>${formatCurrency(r.value)}</td><td>${r.note}</td></tr>`).join('');
+    }
+
+    function renderResults(d){
+      el('statusBadge').textContent = d.level === 'good' ? 'Calculated' : d.level === 'warn' ? 'Review needed' : 'High pressure';
+      el('statusBadge').className = 'badge ' + d.level;
+      el('statusText').textContent = `Monthly cash left is ${formatCurrency(d.remaining)} and the savings rate is ${formatPercent(d.savingRate,1)}.`;
+
+      el('highlightCard').classList.remove('is-empty');
+      document.querySelectorAll('.mini-result').forEach(x => x.classList.remove('is-empty'));
+
+      el('mainResultLabel').textContent = d.remaining < 0 ? 'Monthly budget deficit' : 'Available for savings';
+      el('mainResult').textContent = formatCurrency(d.remaining < 0 ? d.deficitAmount : d.savingAmount);
+      el('mainResult').style.color = d.remaining < 0 ? 'var(--bad)' : d.level === 'warn' ? 'var(--warn)' : 'var(--good)';
+      el('mainResultText').textContent = d.remaining < 0
+        ? 'Spending exceeds income. Closing this deficit should come first.'
+        : 'This budget leaves recurring room for monthly savings.';
+
+      el('result1').textContent = formatCurrency(d.totalExpense);
+      el('result2').textContent = formatCurrency(d.remaining);
+      el('result3').textContent = formatPercent(d.savingRate,1);
+      el('result4').textContent = formatCurrency(d.oneYear);
+      el('result5').textContent = formatCurrency(d.fiveYear);
+      el('result6').textContent = d.targetRate > 0
+        ? `${d.targetGap >= 0 ? '+' : '-'}${formatCurrency(Math.abs(d.targetGap))}`
+        : '—';
+
+      el('stat1').textContent = formatCurrency(d.totalExpense);
+      el('stat2').textContent = formatCurrency(d.remaining);
+      el('stat3').textContent = formatPercent(d.savingRate,1);
+      el('stat4').textContent = formatCurrency(d.oneYear);
+      el('stat5').textContent = formatCurrency(d.tenYear);
+      el('stat6').textContent = d.targetRate > 0
+        ? `${d.targetGap >= 0 ? '+' : '-'}${formatCurrency(Math.abs(d.targetGap))}`
+        : '—';
+
+      const savingRateColor = d.savingRate >= 20 ? 'var(--good)' : d.savingRate >= 10 ? 'var(--warn)' : 'var(--bad)';
+      const remainingColor = d.remaining < 0 ? 'var(--bad)' : 'var(--good)';
+      const targetGapColor = d.targetRate > 0 ? (d.targetGap >= 0 ? 'var(--good)' : 'var(--bad)') : 'var(--text)';
+      el('result2').style.color = remainingColor;
+      el('stat2').style.color = remainingColor;
+      el('result3').style.color = savingRateColor;
+      el('stat3').style.color = savingRateColor;
+      el('result6').style.color = targetGapColor;
+      el('stat6').style.color = targetGapColor;
+
+      el('analysis1').textContent = formatPercent(d.rentRatio,1);
+      el('analysis2').textContent = formatPercent(d.debtRatio,1);
+      el('analysis3').textContent = formatPercent(d.otherRatio,1);
+      el('analysis4').textContent = formatPercent(d.safetyRatio,1);
+
+      el('savingsScore').textContent = `${d.score}/100`;
+      el('scoreBar').style.width = `${d.score}%`;
+      if(d.score >= 75){
+        el('scoreBadge').textContent = 'Strong';
+        el('scoreBadge').className = 'pill good';
+      }else if(d.score >= 50){
+        el('scoreBadge').textContent = 'Moderate';
+        el('scoreBadge').className = 'pill warn';
+      }else{
+        el('scoreBadge').textContent = 'Weak';
+        el('scoreBadge').className = 'pill bad';
+      }
+      el('scoreText').textContent = d.remaining < 0
+        ? 'Because this budget is in deficit, the score drops sharply. Close the deficit before focusing on savings growth.'
+        : 'This Hesapica score updates from the balance of savings rate, spending pressure, debt load and safety buffer. It is not an official financial-health score.';
+
+      const vals = el('scoreBreakdown').querySelectorAll('.val');
+      vals[0].textContent = formatPercent(d.savingRate,1);
+      vals[1].textContent = formatPercent(d.pressureRatio,1);
+      vals[2].textContent = formatPercent(d.debtRatio,1);
+      vals[3].textContent = formatPercent(d.safetyRatio,1);
+
+      el('health1').textContent = d.remaining < 0 ? 'Deficit' : d.savingRate < 10 ? 'Fragile' : d.savingRate < 20 ? 'Balanced' : 'Strong';
+      el('health1Sub').textContent = `Savings rate ${formatPercent(d.savingRate,1)}`;
+      el('health2').textContent = d.pressureRatio < 75 ? 'Low' : d.pressureRatio < 90 ? 'Moderate' : 'High';
+      el('health2Sub').textContent = `Spending pressure ${formatPercent(d.pressureRatio,1)}`;
+      el('health3').textContent = d.decision.short;
+      el('health3Sub').textContent = d.decision.sub;
+
+      el('smartComment').textContent = buildComment(d);
+      buildProjection(d.savingAmount, d.annualReturn);
+    }
+
+    function saveManualState(){
+      if(state.activeMode !== 'manual' || !state.inputs || !state.inputs.income || state.inputs.income <= 0) return;
+      const payload = {
+        version: 3,
+        mode: 'manual',
+        fields: {
+          currencyCode: getCurrencyCode(),
+          monthlyIncome: el('monthlyIncome').value,
+          targetRate: el('targetRate').value,
+          rentExpense: el('rentExpense').value,
+          billExpense: el('billExpense').value,
+          foodExpense: el('foodExpense').value,
+          transportExpense: el('transportExpense').value,
+          debtExpense: el('debtExpense').value,
+          otherExpense: el('otherExpense').value,
+          safetyBuffer: el('safetyBuffer').value,
+          annualReturn: el('annualReturn').value
+        }
+      };
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+        localStorage.removeItem(LEGACY_STORAGE_KEY);
+      }catch(err){}
+    }
+
+    function loadSavedManualState(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
+        if(!raw) return false;
+        const parsed = JSON.parse(raw);
+        if(!parsed || parsed.mode !== 'manual' || !parsed.fields || typeof parsed.fields !== 'object' || Array.isArray(parsed.fields)) {
+          try{ localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(LEGACY_STORAGE_KEY); }catch(_removeErr){}
+          return false;
+        }
+        Object.entries(parsed.fields).forEach(([id, value]) => {
+          if(id === 'currencyCode'){
+            if(el(id) && SUPPORTED_CURRENCIES.has(String(value))) el(id).value = String(value);
+          }else if(el(id)) el(id).value = value || '';
+        });
+        state.activeMode = 'manual';
+        return true;
+      }catch(e){
+        try{ localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(LEGACY_STORAGE_KEY); }catch(_removeErr){}
+        return false;
+      }
+    }
+
+    function markManualChange(){
+      state.activeMode = 'manual';
+      clearScenarioActive();
+    }
+
+    function queueCalculation(){
+      clearTimeout(calcTimer);
+      calcTimer = setTimeout(() => calculateSavings({ forceValidation: false, scrollOnSuccess: false }), 180);
+    }
+
+    function handleEnterToCalculate(event){
+      if(event.key === 'Enter'){
+        event.preventDefault();
+        calculateSavings({ forceValidation: true, scrollOnSuccess: true });
+      }
+    }
+
+    function calculateSavings(options = {}){
+      const { forceValidation = true, scrollOnSuccess = false } = options;
+      clearValidation();
+      const data = getInputData();
+      state.inputs = data;
+
+      if(!hasAnyMeaningfulInput(data)){
+        setEmptyState();
+        return;
+      }
+
+      const validation = validateData(data);
+      if(!validation.isValid){
+        state.isValid = false;
+        if(forceValidation){
+          showValidation(validation.errors[0]);
+        }else{
+          setPassivePrompt(validation.errors[0]);
+        }
+        return;
+      }
+
+      state.isValid = true;
+      const result = computeSavings(data);
+      const numericResults = [
+        result.totalExpense, result.remaining, result.savingAmount, result.deficitAmount,
+        result.savingRate, result.targetAmount, result.targetGap, result.oneYear,
+        result.fiveYear, result.tenYear, result.pressureRatio, result.debtRatio,
+        result.rentRatio, result.otherRatio, result.safetyRatio, result.score
+      ];
+      if(!numericResults.every(Number.isFinite)){
+        state.isValid = false;
+        state.isCalculated = false;
+        showValidation("The entered amounts exceed the calculator\'s safe range. Try smaller values.");
+        return;
+      }
+      state.results = result;
+      state.isCalculated = true;
+      renderResults(result);
+      saveManualState();
+      if(scrollOnSuccess){
+        scrollToResults();
+      }
+    }
+
+    async function shareResult(){
+      if(!state.results || !state.isValid){
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Create a valid result before sharing.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+        return;
+      }
+      const mainLabel = state.results.remaining < 0 ? 'Monthly Budget Deficit' : 'Available for Savings';
+      const summary = ['Budget & Savings Calculator', `${mainLabel}: ${el('mainResult').textContent}`, `Monthly Cash Left: ${el('result2').textContent}`, `Savings Rate: ${el('result3').textContent}`, `Hesapica Budget & Savings Score: ${el('savingsScore').textContent}`].join('\n');
+      if(navigator.share){
+        try{
+          await navigator.share({ title:'Budget & Savings Calculator', text: summary, url: PAGE_URL });
+          return;
+        }catch(err){
+          if(err && err.name === 'AbortError') return;
+        }
+      }
+      try{
+        if(!navigator.clipboard || !window.isSecureContext) throw new Error('clipboard unavailable');
+        await navigator.clipboard.writeText(`${summary}\n${location.href}`);
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'The share summary and link were copied to the clipboard.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      }catch(err){
+        const text = `${summary}\n${location.href}`;
+        let copied = false;
+        try{
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly','readonly');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          copied = document.execCommand('copy');
+          textarea.remove();
+        }catch(copyErr){}
+        const old = el('statusText').textContent;
+        el('statusText').textContent = copied
+          ? 'The share summary and link were copied to the clipboard.'
+          : 'The share summary could not be copied. Check browser permissions.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      }
+    }
+
+    function printResult(){
+      if (!state.isCalculated || !state.results){ alert('Create a valid result before printing.'); return; }
+      window.print();
+    }
+
+    function copyResult(){
+      if(!state.results || !state.isValid){
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Create a valid result before copying the summary.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+        return;
+      }
+      const mainLabel = state.results.remaining < 0 ? 'Monthly Budget Deficit' : 'Available for Savings';
+      const text = [
+        'Budget & Savings Calculator',
+        `Monthly Cash Left: ${el('result2').textContent}`,
+        `${mainLabel}: ${el('mainResult').textContent}`,
+        `Savings Rate: ${el('result3').textContent}`,
+        `1-Year Savings: ${el('result4').textContent}`,
+        `5-Year Savings: ${el('result5').textContent}`,
+        `Hesapica Budget & Savings Score: ${el('savingsScore').textContent}`,
+        `Link: ${PAGE_URL}`
+      ].join('\n');
+
+      const onSuccess = () => {
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Result summary copied to the clipboard.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      };
+      const onError = () => {
+        const old = el('statusText').textContent;
+        el('statusText').textContent = 'Result could not be copied. Check browser permissions.';
+        setTimeout(() => el('statusText').textContent = old, 1800);
+      };
+
+      if(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => {
+          try{
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', 'readonly');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            const copied = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            copied ? onSuccess() : onError();
+          }catch(err){ onError(); }
+        });
+        return;
+      }
+
+      try{
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', 'readonly');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        onSuccess();
+      }catch(err){
+        onError();
+      }
+    }
+
+    setMoneyInput(el('monthlyIncome'));
+    setMoneyInput(el('rentExpense'));
+    setMoneyInput(el('billExpense'));
+    setMoneyInput(el('foodExpense'));
+    setMoneyInput(el('transportExpense'));
+    setMoneyInput(el('debtExpense'));
+    setMoneyInput(el('otherExpense'));
+    setMoneyInput(el('safetyBuffer'));
+    setDecimalInput(el('targetRate'));
+    setDecimalInput(el('annualReturn'));
+
+    el('currencyCode').addEventListener('change', () => {
+      markManualChange();
+      updateCurrencyUI();
+      calculateSavings({ forceValidation: false, scrollOnSuccess: false });
+      saveManualState();
+    });
+
+    document.querySelectorAll('input').forEach(node => {
+      if(!['monthlyIncome','rentExpense','billExpense','foodExpense','transportExpense','debtExpense','otherExpense','safetyBuffer','targetRate','annualReturn'].includes(node.id)){
+        node.addEventListener('input', () => { markManualChange(); queueCalculation(); });
+      }
+      node.addEventListener('change', () => { markManualChange(); calculateSavings({ forceValidation: false, scrollOnSuccess: false }); });
+      node.addEventListener('keydown', handleEnterToCalculate);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setEmptyState();
+      const loaded = loadSavedManualState();
+      updateCurrencyUI();
+      if(loaded){
+        calculateSavings({ forceValidation: false, scrollOnSuccess: false });
+      }
+    });
+  </script>
+
+<script src="../ads-slot-manager.js"></script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset','clear','clear data','reset data']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || document.querySelector('main');
+        if(target && typeof target.scrollIntoView === 'function') target.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

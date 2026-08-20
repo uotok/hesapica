@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Loan Calculator: Payment, Installments & Early Payoff | Hesapica</title>
+<meta name="description" content="Calculate loan payments, total interest and financing cost; compare installment plans and approximate early-payoff scenarios with optional fees and income pressure."/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta name="theme-color" content="#4f46e5"/>
+<link rel="canonical" href="https://hesapica.com/en/loan-calculator"/>
+<link rel="alternate" hreflang="en" href="https://hesapica.com/en/loan-calculator"/>
+<link rel="alternate" hreflang="tr" href="https://hesapica.com/kredi-hesaplama"/>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<meta name="google-adsense-account" content="ca-pub-4334681065822132"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:title" content="Loan Calculator: Payment, Installments & Early Payoff | Hesapica"/>
+<meta property="og:description" content="Calculate loan payments, total interest and financing cost; compare installment plans and approximate early-payoff scenarios with optional fees and income pressure."/>
+<meta property="og:url" content="https://hesapica.com/en/loan-calculator"/>
+<meta property="og:image" content="https://hesapica.com/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta name="twitter:image" content="https://hesapica.com/og-image.png"/>
+<meta name="twitter:image:alt" content="Hesapica — practical calculators for finance, investing, health and everyday life"/>
+<meta property="og:site_name" content="Hesapica"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Loan Calculator: Payment, Installments & Early Payoff | Hesapica"/>
+<meta name="twitter:description" content="Calculate loan payments, total interest and financing cost; compare installment plans and approximate early-payoff scenarios with optional fees and income pressure."/>
+<meta name="twitter:url" content="https://hesapica.com/en/loan-calculator"/>
+<meta name="twitter:site" content="@hesapica"/>
+
+<!-- Google Analytics 4 -->
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Loan Calculator | Payments, Installments & Early Payoff Analysis","url":"https://hesapica.com/en/loan-calculator","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are a loan payment and an installment purchase the same thing?","acceptedAnswer":{"@type":"Answer","text":"The payment math can be similar, but loan mode also lets you model optional interest levies, origination fees and insurance. Installment mode focuses more on down payment, financing rate, extra fees and the difference from a cash price."}},{"@type":"Question","name":"Will the early-payoff estimate exactly match my lender’s official payoff quote?","acceptedAnswer":{"@type":"Answer","text":"No. This tool provides an estimate. Your lender’s current payoff quote can include day-specific interest, contract terms, fees or other adjustments, so use the official quote for a final decision."}},{"@type":"Question","name":"Why is monthly income optional?","acceptedAnswer":{"@type":"Answer","text":"Income helps interpret payment pressure, but the core payment and cost calculations still work without it."}}]}
+</script>
+<style>
+:root{--primary:#4f46e5;--secondary:#7c3aed;--bg:#f6f8fc;--surface:#fff;--soft:#eef2ff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--success:#047857;--warning:#b45309;--danger:#b91c1c;--shadow:0 18px 46px rgba(79,70,229,.10);--radius-xl:26px;--radius-lg:18px;--radius-md:14px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 25%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);line-height:1.6}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+.topbar{padding:18px 0 8px}.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+.hero{margin-top:8px;padding:34px;border-radius:30px;background:linear-gradient(135deg, rgba(79,70,229,.10), rgba(124,58,237,.10));border:1px solid rgba(79,70,229,.10);box-shadow:var(--shadow)}
+.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:24px;align-items:center}
+.hero h1{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em;color:#312e81}
+.hero p{margin:0;color:#4b5563;font-size:17px;max-width:780px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hero-chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+.hero-box{padding:22px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10)}.hero-box .eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}.hero-box strong{display:block;font-size:26px;line-height:1.15;margin-bottom:8px;color:#312e81}.hero-box p{font-size:15px;color:var(--muted)}
+.mode-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.mode-tab{border:none;cursor:pointer;padding:12px 16px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.10);font-weight:800;color:#374151;transition:.18s ease}.mode-tab.active{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 12px 24px rgba(79,70,229,.20)}
+.tool-layout{display:grid;grid-template-columns:minmax(0,1.05fr) 420px;gap:24px;align-items:start;margin-top:24px}.tool-layout>*,main,.results,.card,.status-card,.highlight-card,.mini-result,.scorebox,.comment-card,.scenario-card{min-width:0}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:26px}.card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}.section-note{margin:0 0 18px;color:#4b5563;font-size:15px}.mode-info{margin-bottom:18px;padding:15px 16px;border-radius:18px;background:#f8faff;border:1px solid #c7d2fe;color:#3730a3;font-size:14px}
+.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.field.full{grid-column:1 / -1}
+label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+input,select,textarea{width:100%;min-height:56px;border:1px solid #d9def0;border-radius:16px;padding:14px 16px;background:#fff;color:var(--text);outline:none;transition:border-color .2s ease, box-shadow .2s ease;font-size:17px;font-weight:600}
+textarea{min-height:92px;resize:vertical;font-size:15px}
+input:focus,select:focus,textarea:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+input::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
+.hint{margin-top:7px;font-size:14px;color:#4b5563;line-height:1.55}.err{display:none;margin-top:7px;font-size:13px;color:var(--danger);font-weight:700}
+.field.is-invalid input,.field.is-invalid select,.field.is-invalid textarea{border-color:#fecaca;background:#fff7f7}.field.is-invalid .err{display:block}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:none;cursor:pointer;border-radius:16px;padding:14px 18px;font-weight:800;font-size:15px;transition:transform .18s ease, opacity .18s ease}.btn:hover{transform:translateY(-1px);opacity:.97}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}.btn-secondary{background:#eef2ff;color:#4338ca}.btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+.results{position:sticky;top:20px;display:grid;gap:16px}.status-card,.comment-card,.scenario-card,.mini-result,.scorebox,.highlight-card{border:1px solid rgba(79,70,229,.12)}
+.status-card{padding:18px 20px;border-radius:22px;background:linear-gradient(180deg,#fbfcff 0%, #f4f7ff 100%)}
+.status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.status-title{font-size:16px;font-weight:800;color:#312e81}.status-text{margin-top:6px;font-size:14px;color:#4b5563;overflow-wrap:anywhere}.badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}.badge.success{background:#ecfdf5;color:var(--success);border-color:#a7f3d0}.badge.warning{background:#fff7ed;color:var(--warning);border-color:#fed7aa}.badge.danger{background:#fef2f2;color:var(--danger);border-color:#fecaca}
+.highlight-card{padding:22px;border-radius:24px;background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%);box-shadow:0 16px 40px rgba(79,70,229,.10)}.highlight-card.is-empty{opacity:.9}
+.highlight-label{font-size:13px;color:#4b5563;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.highlight-value{font-size:38px;line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#111827;overflow-wrap:anywhere;word-break:break-word}.highlight-value.empty-muted,.mini-result .value.empty-muted{color:#9ca3af}.highlight-sub{font-size:15px;color:#4b5563;overflow-wrap:anywhere}
+.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.mini-result{padding:16px;border-radius:20px;background:#fff}.mini-result .label{display:block;font-size:13px;color:#6b7280;font-weight:800;margin-bottom:6px}.mini-result .value{display:block;font-size:23px;font-weight:900;line-height:1.15;color:#111827;overflow-wrap:anywhere;word-break:break-word}.mini-result .sub{display:block;margin-top:6px;font-size:13px;color:#6b7280}
+.scorebox{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--soft),#f5f3ff)}.score-row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}.score-value{font-size:44px;font-weight:900;line-height:1}.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;background:#fff;border:1px solid rgba(79,70,229,.12)}.pill.good{background:#ecfdf5;color:var(--success);border-color:#a7f3d0}.pill.warn{background:#fff7ed;color:var(--warning);border-color:#fed7aa}.pill.bad{background:#fef2f2;color:var(--danger);border-color:#fecaca}.progress{height:12px;background:#e9eafc;border-radius:999px;overflow:hidden;margin-top:12px}.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%}
+.score-explain,.comment-card,.scenario-card{padding:18px;border-radius:20px;background:#fff}.comment-card h3,.scenario-card h3{margin:0 0 10px;font-size:18px;color:#312e81}.comment-card p,.scenario-card p{margin:0;color:#4b5563;font-size:14px}.scenario-grid{display:grid;gap:12px;margin-top:14px}.scenario-item{padding:14px 16px;border-radius:18px;background:#f8faff;border:1px solid #dbe3ff}.scenario-item strong{display:block;font-size:15px;color:#111827}.scenario-item span{display:block;margin-top:4px;font-size:13px;color:#6b7280}
+.related-section,.faq-section{margin-top:24px}.related-tools-section{padding:30px 32px}.related-tools-section h2{margin:0 0 18px;font-size:30px;letter-spacing:-.03em;color:#4f46e5}.related-tools-section .related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.related-tools-section .related-card{display:block;min-width:0;min-height:158px;padding:22px;border:0;border-radius:22px;background:linear-gradient(135deg,#5b4df5 0%,#7b4df1 100%);box-shadow:none;color:#fff;transition:transform .18s ease,box-shadow .18s ease}.related-tools-section .related-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(79,70,229,.22)}.related-tools-section .related-card:focus-visible{outline:3px solid rgba(79,70,229,.32);outline-offset:3px}.related-tools-section .related-card span{display:block;margin-bottom:10px;font-size:13px;font-weight:900;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.88)}.related-tools-section .related-card strong{display:block;margin-bottom:8px;font-size:19px;line-height:1.3;color:#fff}.related-tools-section .related-card p{margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.92)}
+.faq-grid{display:grid;gap:12px}.faq-item{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}.faq-item strong{display:block;font-size:16px;margin-bottom:8px;color:#111827}.faq-item p{margin:0;font-size:14px;color:#6b7280}
+.footer-note{padding:20px 0 36px;color:#6b7280;font-size:13px}
+.validation-box{display:none;margin-bottom:16px;padding:14px 16px;border-radius:16px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px}.validation-box.show{display:block}
+.result-flash{animation:flashPulse 1.2s ease}.muted-list{margin:10px 0 0;padding-left:18px;color:#4b5563;font-size:14px}
+@keyframes flashPulse{0%{box-shadow:0 0 0 0 rgba(79,70,229,.26)}100%{box-shadow:0 0 0 18px rgba(79,70,229,0)}}
+@media (max-width:1024px){.hero-grid,.tool-layout{grid-template-columns:1fr}.results{position:static}.related-tools-section .related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.container{width:min(1180px,calc(100% - 20px))}.hero,.card{padding:20px}.field-grid,.mini-grid,.related-tools-section .related-grid{grid-template-columns:1fr}.hero h1{font-size:30px}.mode-tabs{gap:8px}.mode-tab{flex:1 1 calc(50% - 8px);text-align:center}.actions .btn{flex:1 1 100%}.highlight-value{font-size:32px}.related-tools-section{padding:22px 20px}.related-tools-section h2{font-size:28px}.related-tools-section .related-card{min-height:0}}
+
+@media print{body{background:#fff}.topbar,.actions,.mode-tabs,.hc-ad-slot,.related-section,.faq-section,.footer-note{display:none!important}.hero,.card,.status-card,.highlight-card,.mini-result,.scorebox,.comment-card,.scenario-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}.container{width:100%!important}}
+</style>
+<link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Google measurement and advertising services load only with user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"/></noscript>
+
+<script id="hc-breadcrumb-schema" type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hesapica","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://hesapica.com/en/#finance"},{"@type":"ListItem","position":3,"name":"Loan Calculator","item":"https://hesapica.com/en/loan-calculator"}]}
+</script>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+
+<style id="hc-language-switch-style">
+.hc-lang-switch-wrap{display:flex;justify-content:flex-end;margin:10px 0 0}
+.hc-lang-switch{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #c7d2fe;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 22px rgba(79,70,229,.10);font-size:13px;font-weight:800}
+.hc-lang-switch .globe{padding:0 5px 0 7px;font-size:15px;line-height:1}
+.hc-lang-switch a,.hc-lang-switch span.lang-active{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:999px;white-space:nowrap}
+.hc-lang-switch a{color:#4338ca;background:#fff}
+.hc-lang-switch a:hover{background:#eef2ff}
+.hc-lang-switch .lang-active{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 5px 14px rgba(79,70,229,.22)}
+@media(max-width:640px){.hc-lang-switch-wrap{margin-top:12px}.hc-lang-switch{width:100%;display:grid;grid-template-columns:auto 1fr 1fr;border-radius:18px}.hc-lang-switch a,.hc-lang-switch span.lang-active{min-width:0;padding:0 8px}.hc-lang-switch .globe{text-align:center}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="topbar">
+    <div class="breadcrumb">
+      <a href="/en/">Hesapica</a><span>›</span><a href="/en/#finance">Finance</a><span>›</span><span>Loan Calculator</span>
+    </div>
+    <div class="hc-lang-switch-wrap"><div class="hc-lang-switch" aria-label="Language"><span class="globe" aria-hidden="true">🌐</span><a href="/kredi-hesaplama" hreflang="tr" lang="tr">TR · Türkçe</a><span class="lang-active" aria-current="page">EN · English</span></div></div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Loan, Installment & Early Payoff Calculator</h1>
+        <p id="heroLead">Compare a standard loan, an installment purchase and an approximate early-payoff scenario in one workflow. See monthly payment, total cost, interest burden and payment-to-income pressure.</p>
+        <div class="hero-chips">
+          <span class="hero-chip">Loan payment</span>
+          <span class="hero-chip">Total cost</span>
+          <span class="hero-chip">Early-payoff difference</span>
+          <span class="hero-chip">Income pressure</span>
+        </div>
+        <div class="mode-tabs" role="tablist" aria-label="Calculator mode">
+          <button class="mode-tab active" data-mode="kredi" type="button" role="tab" aria-selected="true" tabindex="0">Loan</button>
+          <button class="mode-tab" data-mode="taksit" type="button" role="tab" aria-selected="false" tabindex="-1">Installment Plan</button>
+          <button class="mode-tab" data-mode="erken" type="button" role="tab" aria-selected="false" tabindex="-1">Early Payoff</button>
+        </div>
+      </div>
+      <aside class="hero-box">
+        <div class="eyebrow">THREE WORKFLOWS · ONE PAGE</div>
+        <strong id="heroAsideTitle">Understand the monthly loan burden</strong>
+        <p id="heroAsideText">Combine principal, monthly interest, optional interest levies and upfront costs to estimate monthly payment and total cost. You can also switch to installment-plan or early-payoff mode.</p>
+      </aside>
+    </div>
+  </section>
+
+  <div class="tool-layout">
+<main>
+      <section class="card">
+        <h2>Calculator</h2>
+        <p class="section-note">The calculator starts blank. Load example data to see the workflow, or enter your own values for an immediate estimate.</p>
+        <div class="mode-info" id="modeInfo">Loan mode is selected. It combines loan type, monthly interest, term, optional interest levies, origination fee and insurance/other upfront costs.</div>
+
+        <div class="validation-box" id="validationBox" role="alert" aria-live="polite">Please complete the required fields.</div>
+
+        <div class="field-grid">
+          <div class="field full"><label for="currency">Display currency</label><select id="currency"><option value="USD">USD · US Dollar</option><option value="EUR">EUR · Euro</option><option value="GBP">GBP · British Pound</option><option value="CAD">CAD · Canadian Dollar</option><option value="AUD">AUD · Australian Dollar</option><option value="NZD">NZD · New Zealand Dollar</option><option value="CHF">CHF · Swiss Franc</option><option value="JPY">JPY · Japanese Yen</option><option value="INR">INR · Indian Rupee</option><option value="SGD">SGD · Singapore Dollar</option><option value="SEK">SEK · Swedish Krona</option><option value="NOK">NOK · Norwegian Krone</option><option value="DKK">DKK · Danish Krone</option><option value="PLN">PLN · Polish Zloty</option><option value="ZAR">ZAR · South African Rand</option></select><div class="hint">Formatting only. Changing this selection does not convert the numeric values using exchange rates.</div><div class="err"></div></div>
+          <div class="field" data-mode-only="kredi erken">
+            <label for="loanType">Loan type</label>
+            <select id="loanType">
+              <option value="ihtiyac">Personal loan</option>
+              <option value="tasit">Auto loan</option>
+              <option value="konut">Mortgage / home loan</option>
+              <option value="diger">Other installment loan</option>
+            </select>
+            <div class="hint">Loan type changes only the descriptive context in this global version. Optional interest-tax/levy fields default to 0%; enter rates only if they actually apply to your loan. Origination fee also defaults to 0%.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label for="principal">Amount / principal</label>
+            <input id="principal" data-type="money" inputmode="decimal" placeholder="e.g. 25,000"/>
+            <div class="hint" id="principalHint">Enter the loan amount or purchase amount.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label for="rate">Monthly interest / financing rate (%)</label>
+            <input id="rate" data-type="decimal" inputmode="decimal" placeholder="e.g. 1.25"/>
+            <div class="hint" id="rateHint">Enter the monthly rate, for example 1.25. Pasted comma-decimal values such as 1,25 are also recognized.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label for="months">Term (months)</label>
+            <input id="months" data-type="integer" inputmode="numeric" placeholder="e.g. 24"/>
+            <div class="hint" id="monthsHint">Enter the total term as a whole number of months. This global calculator does not enforce country- or lender-specific legal term limits; check the terms that apply to your loan.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="kredi taksit">
+            <label for="income">Monthly net income (optional)</label>
+            <input id="income" data-type="money" inputmode="decimal" placeholder="e.g. 6,000"/>
+            <div class="hint">If entered, the result also shows the monthly payment as a share of income.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="kredi erken">
+            <label for="bsmv">Primary financing levy (%)</label>
+            <input id="bsmv" data-type="decimal" inputmode="decimal" placeholder="e.g. 0"/>
+            <div class="hint">Defaults to 0%. In this model the primary levy is applied to periodic interest and to the origination fee; enter a value only when that treatment matches your loan.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="kredi erken">
+            <label for="kkdf">Additional interest levy (%)</label>
+            <input id="kkdf" data-type="decimal" inputmode="decimal" placeholder="e.g. 0"/>
+            <div class="hint">Defaults to 0%. This additional levy is applied to periodic interest only; enter a value only when that treatment matches your loan.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="kredi">
+            <label for="feeRate">Origination fee (%)</label>
+            <input id="feeRate" data-type="decimal" inputmode="decimal" placeholder="e.g. 1"/>
+            <div class="hint">Enter an upfront origination fee as a percentage of principal if your lender charges one. Defaults to 0%.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="kredi">
+            <label for="insurance">Insurance / other upfront costs</label>
+            <input id="insurance" data-type="money" inputmode="decimal" placeholder="e.g. 350"/>
+            <div class="hint">Add insurance, documentation or other upfront costs if applicable.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="taksit" hidden>
+            <label for="upfrontPayment">Down payment / first payment</label>
+            <input id="upfrontPayment" data-type="money" inputmode="decimal" placeholder="e.g. 500"/>
+            <div class="hint">Enter the amount paid upfront.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="taksit" hidden>
+            <label for="extraFee">Extra fee / financing charge</label>
+            <input id="extraFee" data-type="money" inputmode="decimal" placeholder="e.g. 75"/>
+            <div class="hint">Add a service fee, financing charge or other extra cost.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="taksit" hidden>
+            <label for="compareCash">Cash price (optional)</label>
+            <input id="compareCash" data-type="money" inputmode="decimal" placeholder="e.g. 4,200"/>
+            <div class="hint">Enter a cash price to compare it with the installment-plan total.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="taksit" hidden>
+            <label for="paymentType">Plan type</label>
+            <select id="paymentType">
+              <option value="shopping">Purchase installment</option>
+              <option value="card">Card installment</option>
+              <option value="credit">Loan-like plan</option>
+              <option value="manual">Custom plan</option>
+            </select>
+            <div class="hint">This selection changes the wording of the interpretation; it does not change the formula.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-mode-only="erken" hidden>
+            <label for="paidMonths">Payments already made</label>
+            <input id="paidMonths" data-type="integer" inputmode="numeric" placeholder="e.g. 8"/>
+            <div class="hint">Enter how many scheduled payments have already been made.</div>
+            <div class="err"></div>
+          </div>
+
+           <div class="field" data-mode-only="erken" hidden>
+             <label for="daysSincePayment">Days since last payment</label>
+             <input id="daysSincePayment" data-type="integer" inputmode="numeric" placeholder="e.g. 10"/>
+             <div class="hint">Enter 0–30 days to approximate interest accrued since the last scheduled payment.</div>
+             <div class="err"></div>
+           </div>
+
+          <div class="field" data-mode-only="erken" hidden>
+            <label for="closeFee">Lender-provided payoff fee / other charge</label>
+            <input id="closeFee" data-type="money" inputmode="decimal" placeholder="e.g. 125"/>
+            <div class="hint">If your lender has quoted an additional payoff charge, enter it here. The calculator does not invent or assume a legal prepayment penalty.</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field full">
+            <label for="note">Note (optional)</label>
+            <textarea id="note" placeholder="e.g. considering payoff after payday"></textarea>
+            <div class="hint">Add a personal note; it will be included in the interpretation.</div>
+            <div class="err"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="calcBtn" type="button">Calculate</button>
+          <button class="btn btn-secondary" id="exampleBtn" type="button">Example Data</button>
+          <button class="btn btn-ghost" id="resetBtn" type="button">Reset</button>
+          <button class="btn btn-ghost" id="copyBtn" type="button">Copy Result</button>
+          <button class="btn btn-ghost" id="shareBtn" type="button">Share</button>
+          <button class="btn btn-ghost" id="printBtn" type="button">Print / PDF</button>
+        </div>
+      </section>
+
+      <section class="card related-section">
+        <h2>What does this calculator do?</h2>
+        <p class="section-note">A borrowing decision is more than one monthly-payment number. This page combines three related workflows:</p>
+        <ul class="muted-list">
+          <li><strong>Loan mode:</strong> estimates monthly payment, total interest, optional interest levies and upfront costs.</li>
+          <li><strong>Installment mode:</strong> compares an installment plan with an optional cash price and shows payment pressure.</li>
+          <li><strong>Early-payoff mode:</strong> estimates a payoff amount from the remaining principal, accrued interest and any lender-provided extra charge.</li>
+        </ul>
+      </section>
+
+
+<div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4334681065822132" data-ad-slot="4903929326" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<section class="card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <strong>Are a loan payment and an installment purchase the same thing?</strong>
+            <p>The payment math can be similar, but loan mode also lets you model optional interest levies, origination fees and insurance. Installment mode focuses more on down payment, financing rate, extra fees and the difference from a cash price.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Will the early-payoff estimate exactly match my lender’s official payoff quote?</strong>
+            <p>No. This tool provides an estimate. Your lender’s current payoff quote can include day-specific interest, contract terms, fees or other adjustments, so use the official quote for a final decision.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Why is monthly income optional?</strong>
+            <p>Income helps interpret payment pressure, but the core payment and cost calculations still work without it.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-note">Important: Results are estimates for planning. Rates, fees, taxes, payment schedules and payoff rules vary by lender and jurisdiction. Use your lender’s official disclosures, amortization schedule and payoff quote for a final decision.</div>
+
+    </main>
+<aside class="results" id="resultArea" aria-live="polite" aria-atomic="false">
+      <div class="status-card">
+        <div class="status-row">
+          <div>
+            <div class="status-title" id="statusTitle">Waiting for a result</div>
+            <div class="status-text" id="statusText">Enter loan, installment-plan or early-payoff data to see the result here.</div>
+          </div>
+          <div class="badge" id="statusBadge">Waiting for data</div>
+        </div>
+      </div>
+
+      <div class="highlight-card is-empty" id="highlightCard">
+        <div class="highlight-label" id="mainLabel">Main result</div>
+        <div class="highlight-value empty-muted" id="mainValue">—</div>
+        <div class="highlight-sub" id="mainSub">The main result will appear here.</div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-result"><span class="label" id="mini1Label">Detail 1</span><span class="value empty-muted" id="mini1Value">—</span><span class="sub" id="mini1Sub">Supporting detail</span></div>
+        <div class="mini-result"><span class="label" id="mini2Label">Detail 2</span><span class="value empty-muted" id="mini2Value">—</span><span class="sub" id="mini2Sub">Supporting detail</span></div>
+        <div class="mini-result"><span class="label" id="mini3Label">Detail 3</span><span class="value empty-muted" id="mini3Value">—</span><span class="sub" id="mini3Sub">Supporting detail</span></div>
+        <div class="mini-result"><span class="label" id="mini4Label">Detail 4</span><span class="value empty-muted" id="mini4Value">—</span><span class="sub" id="mini4Sub">Supporting detail</span></div>
+        <div class="mini-result"><span class="label" id="mini5Label">Detail 5</span><span class="value empty-muted" id="mini5Value">—</span><span class="sub" id="mini5Sub">Supporting detail</span></div>
+        <div class="mini-result"><span class="label" id="mini6Label">Detail 6</span><span class="value empty-muted" id="mini6Value">—</span><span class="sub" id="mini6Sub">Supporting detail</span></div>
+      </div>
+
+      <div class="scorebox">
+        <div class="score-row">
+          <div>
+            <div style="font-size:13px;font-weight:800;color:#4b5563;letter-spacing:.06em;text-transform:uppercase">Hesapica scenario score</div>
+            <div class="score-value" id="scoreValue">0</div>
+          </div>
+          <div class="pill" id="scoreLabel">Waiting</div>
+        </div>
+        <div class="progress"><span id="scoreBar"></span></div>
+        <div class="score-explain" id="scoreExplain">The Hesapica scenario score summarizes cost, income pressure, interest burden or estimated payoff advantage. It is not a credit score or official financial rating.</div>
+      </div>
+
+      <div class="comment-card">
+        <h3>Quick interpretation</h3>
+        <p id="commentText">A short interpretation will appear here after calculation.</p>
+      </div>
+
+      <div class="scenario-card">
+        <h3>Scenario comparison</h3>
+        <p id="scenarioLead">Small changes in rate or term can materially change total financing cost.</p>
+        <div class="scenario-grid" id="scenarioGrid">
+          <div class="scenario-item"><strong>Waiting for calculation</strong><span>Comparison scenarios will appear here after calculation.</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="card related-section related-tools-section" aria-labelledby="relatedToolsTitle">
+    <h2 id="relatedToolsTitle">Related Tools</h2>
+    <div class="related-grid">
+      <a class="related-card" href="/en/interest-calculator">
+        <span>Finance</span>
+        <strong>Interest Calculator</strong>
+        <p>Compare simple interest, deposit-style interest and compound growth.</p>
+      </a>
+      <a class="related-card" href="/en/debt-payoff-calculator">
+        <span>Planning</span>
+        <strong>Debt Payoff Calculator</strong>
+        <p>Compare avalanche and snowball debt-payoff strategies.</p>
+      </a>
+      <a class="related-card" href="/en/budget-calculator">
+        <span>Budget</span>
+        <strong>Budget Calculator</strong>
+        <p>Review monthly cash flow, savings rate and spending pressure.</p>
+      </a>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const modeMeta = {
+    kredi: {
+      title:'Understand the monthly loan burden',
+      aside:'Combine principal, monthly interest, optional interest levies and upfront costs to estimate monthly payment and total cost. You can also switch to installment-plan or early-payoff mode.',
+      info:'Loan mode is selected. It combines loan type, monthly interest, term, optional interest levies, origination fee and insurance/other upfront costs.',
+      lead:'Compare a standard loan, an installment purchase and an approximate early-payoff scenario in one workflow. See monthly payment, total cost, interest burden and payment-to-income pressure.'
+    },
+    taksit: {
+      title:'Compare installment financing with the cash price',
+      aside:'Compare the financed amount, down payment, extra fees, monthly installment, total repayment and optional cash-price difference.',
+      info:'Installment mode is selected. It compares financed purchase cost, total repayment, optional cash-price difference and payment-to-income pressure.',
+      lead:'Evaluate monthly payment, total cost, cash-price difference and income pressure for an installment purchase.'
+    },
+    erken: {
+      title:'Estimate the effect of paying off early',
+      aside:'Use payments already made and the remaining term to estimate remaining principal, an approximate payoff amount and the difference versus scheduled remaining payments.',
+      info:'Early-payoff mode is selected. It estimates today’s payoff amount, compares it with remaining scheduled payments and summarizes the difference.',
+      lead:'Estimate payoff amount, remaining principal, remaining scheduled payments and net difference in one early-payoff workflow.'
+    }
+  };
+
+  const defaultsByType = (_type) => ({ bsmv:0, kkdf:0, feeRate:0 });
+
+  const state = { mode:'kredi', last:null, source:'manual' };
+  const STORAGE_KEY = 'hesapica_en_loan_calculator_v2';
+  const els = Object.fromEntries(Array.from(document.querySelectorAll('[id]')).map(el => [el.id, el]));
+  const moneyIds = ['principal','income','insurance','upfrontPayment','extraFee','compareCash','closeFee'];
+  const MAX_MONEY = 1000000000000;
+
+  const clamp = (v,min,max) => Math.min(max, Math.max(min, v));
+  const roundMoney = (v) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? Math.round((n + Number.EPSILON) * 100) / 100 : 0;
+  };
+  const parseLocalized = (val, kind = 'auto') => {
+    if(val == null) return null;
+    if(typeof val === 'number') return Number.isFinite(val) ? val : null;
+
+    let raw = String(val).trim().replace(/\s+/g,'');
+    if(!raw) return null;
+    // Accept plain numeric input in common English and pasted European number formats.
+    if(kind === 'money') raw = raw.replace(/^[\$€£¥₹]/,'').replace(/[\$€£¥₹]$/,'');
+    if(kind === 'decimal') raw = raw.replace(/^%/,'').replace(/%$/,'');
+    if(!raw) return null;
+
+    // Financial inputs reject letters, scientific notation and misplaced minus signs instead of silently coercing them.
+    if(!/^-?[0-9.,]+$/.test(raw)) return null;
+    const negative = raw.startsWith('-');
+    let s = negative ? raw.slice(1) : raw;
+    if(!s || !/\d/.test(s)) return null;
+
+    const dots = (s.match(/\./g) || []).length;
+    const commas = (s.match(/,/g) || []).length;
+
+    if(dots && commas){
+      const decimalSep = s.lastIndexOf(',') > s.lastIndexOf('.') ? ',' : '.';
+      const thousandsSep = decimalSep === ',' ? '.' : ',';
+
+      // The decimal separator may appear only once.
+      if((s.match(new RegExp('\\' + decimalSep,'g')) || []).length !== 1) return null;
+
+      const idx = s.lastIndexOf(decimalSep);
+      const intRaw = s.slice(0, idx);
+      const fracRaw = s.slice(idx + 1);
+      if(fracRaw && !/^\d+$/.test(fracRaw)) return null;
+
+      let intDigits;
+      if(intRaw.includes(thousandsSep)){
+        const groups = intRaw.split(thousandsSep);
+        if(!groups.length || !/^\d{1,3}$/.test(groups[0]) || groups.slice(1).some(g => !/^\d{3}$/.test(g))) return null;
+        intDigits = groups.join('');
+      } else {
+        if(intRaw && !/^\d+$/.test(intRaw)) return null;
+        intDigits = intRaw || '0';
+      }
+      s = intDigits + (fracRaw ? '.' + fracRaw : '');
+    } else if(dots || commas){
+      const sep = dots ? '.' : ',';
+      const count = dots || commas;
+      const parts = s.split(sep);
+
+      if(count > 1){
+        // Repeated separators in money fields are accepted only as valid thousands grouping. Repeated separators are rejected in rate fields.
+        if(kind !== 'money') return null;
+        if(!/^\d{1,3}$/.test(parts[0]) || parts.slice(1).some(g => !/^\d{3}$/.test(g))) return null;
+        s = parts.join('');
+      } else {
+        const left = parts[0] || '0';
+        const right = parts[1] || '';
+        if(!/^\d+$/.test(left) || (right && !/^\d+$/.test(right))) return null;
+        // Single-separator money input protects decimal values below 1 from being silently converted into thousands.
+        const looksThousands = right.length === 3 && !/^0+$/.test(left);
+        if(kind === 'money') s = looksThousands ? left + right : left + (right ? '.' + right : '');
+        else s = left + (right ? '.' + right : '');
+      }
+    } else if(!/^\d+$/.test(s)){
+      return null;
+    }
+
+    if(negative) s = '-' + s;
+    const n = Number(s);
+    return Number.isFinite(n) ? n : null;
+  };
+
+  const parseMoney = (val) => parseLocalized(val, 'money');
+  const parseDecimal = (val) => parseLocalized(val, 'decimal');
+  const parseIntegerStrict = (val, emptyAsZero = false) => {
+    if(val == null) return emptyAsZero ? 0 : NaN;
+    const raw = String(val).trim();
+    if(raw === '') return emptyAsZero ? 0 : NaN;
+    if(!/^-?\d+$/.test(raw)) return NaN;
+    const n = Number(raw);
+    return Number.isSafeInteger(n) ? n : NaN;
+  };
+  const fmtMoney = (v) => new Intl.NumberFormat('en-US',{style:'currency',currency:(els.currency?.value||'USD'),minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(v)||0);
+  const fmtPlain = (v,d=2) => (Number(v)||0).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const fmtPercent = (v,d=1) => (Number(v)||0).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}) + '%';
+  const fmtInt = (v) => (Number(v)||0).toLocaleString('en-US',{maximumFractionDigits:0});
+  const formatMoneyInput = (value) => {
+    const n = typeof value === 'number' ? value : parseMoney(value);
+    if(n == null || !Number.isFinite(n)) return '';
+    return n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2});
+  };
+  const formatDecimalInput = (value, digits = 2) => {
+    const n = parseDecimal(value);
+    if(n == null || !Number.isFinite(n)) return '';
+    return n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:digits});
+  };
+  const needLoanMaxMonths = (_principal) => 600; // retained for source parity; global version does not enforce country-specific term caps
+
+  function setMode(mode, push = true){
+    state.mode = mode;
+    document.querySelectorAll('.mode-tab').forEach(btn => {
+      const active = btn.dataset.mode === mode;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      btn.tabIndex = active ? 0 : -1;
+    });
+    document.querySelectorAll('[data-mode-only]').forEach(node => {
+      const allowedModes = (node.getAttribute('data-mode-only') || '').split(/\s+/).filter(Boolean);
+      const show = allowedModes.includes(mode);
+      node.hidden = !show;
+      const inputs = node.querySelectorAll('input,select,textarea');
+      inputs.forEach(input => {
+        if(show) input.removeAttribute('disabled');
+        else input.setAttribute('disabled','disabled');
+      });
+    });
+    els.heroAsideTitle.textContent = modeMeta[mode].title;
+    els.heroAsideText.textContent = modeMeta[mode].aside;
+    els.modeInfo.textContent = modeMeta[mode].info;
+    els.heroLead.textContent = modeMeta[mode].lead;
+    if(push){
+      const url = new URL(window.location.href);
+      url.searchParams.set('mod', mode);
+      history.replaceState({},'',url.pathname + url.search);
+    }
+    clearErrors();
+    renderEmpty();
+    autoCalculate();
+  }
+
+  function showFieldError(id, message){
+    const field = els[id]?.closest('.field');
+    if(!field) return;
+    field.classList.add('is-invalid');
+    const err = field.querySelector('.err');
+    if(err) err.textContent = message || 'Check this field.';
+  }
+
+  function clearErrors(){
+    document.querySelectorAll('.field').forEach(field => field.classList.remove('is-invalid'));
+    document.querySelectorAll('.field .err').forEach(err => err.textContent = '');
+    els.validationBox.classList.remove('show');
+    els.validationBox.textContent = 'Please complete the required fields.';
+  }
+
+  function setValidation(messages){
+    if(!messages.length){
+      els.validationBox.classList.remove('show');
+      return;
+    }
+    els.validationBox.innerHTML = messages.map(m => '• ' + m).join('<br>');
+    els.validationBox.classList.add('show');
+  }
+
+  function saveState(){
+    if(state.source === 'example') return;
+    const payload = { mode: state.mode };
+    Object.values(els).forEach(el => {
+      if(['INPUT','SELECT','TEXTAREA'].includes(el.tagName) && el.id){
+        payload[el.id] = el.value;
+      }
+    });
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); }catch(err){}
+  }
+
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return false;
+      const payload = JSON.parse(raw);
+      if(!payload || typeof payload !== 'object' || Array.isArray(payload)){
+        try{ localStorage.removeItem(STORAGE_KEY); }catch(_removeErr){}
+        return false;
+      }
+      if(payload.mode && modeMeta[payload.mode]) state.mode = payload.mode;
+      Object.entries(payload).forEach(([key,val]) => {
+        if(els[key] && ['INPUT','SELECT','TEXTAREA'].includes(els[key].tagName)) els[key].value = val;
+      });
+      return true;
+    }catch(err){
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(_removeErr){}
+      return false;
+    }
+  }
+
+  function buildCopyText(includeSource = true){
+    if(!state.last) return '';
+    return [
+      state.mode === 'kredi' ? 'Loan Calculator Result' : state.mode === 'taksit' ? 'Installment Plan Result' : 'Early Payoff Result',
+      '',
+      els.mainLabel.textContent + ': ' + els.mainValue.textContent,
+      `${els.mini1Label.textContent}: ${els.mini1Value.textContent}`,
+      `${els.mini2Label.textContent}: ${els.mini2Value.textContent}`,
+      `${els.mini3Label.textContent}: ${els.mini3Value.textContent}`,
+      `${els.mini4Label.textContent}: ${els.mini4Value.textContent}`,
+      `${els.mini5Label.textContent}: ${els.mini5Value.textContent}`,
+      `${els.mini6Label.textContent}: ${els.mini6Value.textContent}`,
+      '',
+      'Interpretation:',
+      els.commentText.textContent,
+      ...(includeSource ? ['', 'Source: https://hesapica.com/en/loan-calculator'] : [])
+    ].join('\n');
+  }
+
+  function fallbackCopy(text, successMessage = 'Result copied.'){
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    ta.style.pointerEvents = 'none';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    let ok = false;
+    try{ ok = document.execCommand('copy'); }
+    catch(err){ ok = false; }
+    finally{ document.body.removeChild(ta); }
+    alert(ok ? successMessage : 'Copy failed.');
+    return ok;
+  }
+
+  async function safeCopy(text, successMessage = 'Result copied.'){
+    if(navigator.clipboard && window.isSecureContext){
+      try{
+        await navigator.clipboard.writeText(text);
+        alert(successMessage);
+        return true;
+      }catch(_clipboardError){}
+    }
+    return fallbackCopy(text, successMessage);
+  }
+
+  async function copyResult(){
+    if(!state.last){ alert('Calculate a valid result first.'); return; }
+    await safeCopy(buildCopyText());
+  }
+
+  async function shareResult(){
+    if(!state.last){ alert('Calculate a valid result first.'); return; }
+    const url = window.location.href;
+    const data = { title: document.title, text: buildCopyText(false), url };
+    if(navigator.share){
+      try{
+        await navigator.share(data);
+        return;
+      }catch(error){
+        if(error && error.name === 'AbortError') return;
+      }
+    }
+    await safeCopy(buildCopyText(true), 'Share summary copied to the clipboard.');
+  }
+
+  function printResult(){
+    if(!state.last){ alert('Calculate a valid result before printing.'); return; }
+    window.print();
+  }
+
+  function renderEmpty(){
+    state.last = null;
+    els.statusTitle.textContent = 'Waiting for a result';
+    els.statusText.textContent = state.mode === 'erken'
+      ? 'Enter the remaining-loan details and any lender-provided payoff charge to see an approximate early-payoff result.'
+      : 'Complete the required fields to see the result here.';
+    els.statusBadge.textContent = 'Waiting for data';
+    els.statusBadge.className = 'badge';
+    els.highlightCard.classList.add('is-empty');
+    els.mainLabel.textContent = state.mode === 'erken' ? 'Approximate payoff amount' : 'Main result';
+    els.mainValue.textContent = '—';
+    els.mainValue.classList.add('empty-muted');
+    els.mainSub.textContent = 'The main result will appear here.';
+    for(let i=1;i<=6;i++){
+      els['mini'+i+'Label'].textContent = 'Detay ' + i;
+      els['mini'+i+'Value'].textContent = '—';
+      els['mini'+i+'Value'].classList.add('empty-muted');
+      els['mini'+i+'Sub'].textContent = 'Supporting detail';
+    }
+    els.scoreValue.textContent = '0';
+    els.scoreLabel.textContent = 'Waiting';
+    els.scoreLabel.className = 'pill';
+    els.scoreBar.style.width = '0%';
+    els.scoreExplain.textContent = 'The Hesapica scenario score summarizes cost, income pressure, interest burden or estimated payoff advantage. It is not a credit score or official financial rating.';
+    els.commentText.textContent = 'A short interpretation will appear here after calculation.';
+    els.scenarioLead.textContent = 'Small changes in rate or term can materially change total financing cost.';
+    els.scenarioGrid.innerHTML = '<div class="scenario-item"><strong>Waiting for calculation</strong><span>Comparison scenarios will appear here after calculation.</span></div>';
+  }
+
+  function scoreTone(score){
+    if(score >= 75) return ['Strong','good'];
+    if(score >= 55) return ['Balanced','warn'];
+    return ['Weak','bad'];
+  }
+
+  function setMini(n,label,value,sub){
+    els['mini'+n+'Label'].textContent = label;
+    els['mini'+n+'Value'].textContent = value;
+    els['mini'+n+'Value'].classList.remove('empty-muted');
+    els['mini'+n+'Sub'].textContent = sub;
+  }
+
+  function render(result, flash = true){
+    state.last = result;
+    const [scoreText, tone] = scoreTone(result.score);
+    els.statusTitle.textContent = result.statusTitle;
+    els.statusText.textContent = result.statusText;
+    els.statusBadge.textContent = result.badgeText || scoreText;
+    els.statusBadge.className = 'badge ' + (tone === 'good' ? 'success' : tone === 'warn' ? 'warning' : 'danger');
+    els.highlightCard.classList.remove('is-empty');
+    els.mainLabel.textContent = result.mainLabel;
+    els.mainValue.textContent = result.mainValue;
+    els.mainValue.classList.remove('empty-muted');
+    els.mainSub.textContent = result.mainSub;
+    result.mini.forEach((item, idx) => setMini(idx+1, item[0], item[1], item[2]));
+    els.scoreValue.textContent = String(result.score);
+    els.scoreLabel.textContent = scoreText;
+    els.scoreLabel.className = 'pill ' + tone;
+    els.scoreBar.style.width = clamp(result.score, 0, 100) + '%';
+    els.scoreExplain.textContent = result.scoreExplain;
+    els.commentText.textContent = result.comment;
+    els.scenarioLead.textContent = result.scenarioLead;
+    els.scenarioGrid.innerHTML = result.scenarios.map(item => `<div class="scenario-item"><strong>${item[0]} → ${item[1]}</strong><span>${item[2]}</span></div>`).join('');
+    if(flash){
+      els.resultArea.scrollIntoView({behavior:'smooth', block:'start'});
+      els.resultArea.classList.remove('result-flash');
+      void els.resultArea.offsetWidth;
+      els.resultArea.classList.add('result-flash');
+      setTimeout(() => els.resultArea.classList.remove('result-flash'), 1400);
+    }
+  }
+
+  function validateByMode(showErrors = false){
+    clearErrors();
+    const messages = [];
+    const add = (id, msg) => {
+      messages.push(msg);
+      if(showErrors) showFieldError(id, msg);
+    };
+
+    const principal = parseMoney(els.principal.value);
+    const rate = parseDecimal(els.rate.value);
+    const months = parseIntegerStrict(els.months.value);
+
+    if(!(principal > 0)) add('principal','Amount / principal must be greater than 0.');
+    if(Number.isFinite(principal) && principal > MAX_MONEY) add('principal','Amount / principal exceeds the supported safe numeric limit.');
+    if(!(Number.isFinite(rate) && rate >= 0)) add('rate','Rate must be 0 or greater.');
+    if(Number.isFinite(rate) && rate > 100) add('rate','Monthly rate cannot exceed 100%.');
+    if(!Number.isFinite(months)) add('months','Term must be a whole number of months.');
+    else if(months < 1) add('months','Term must be at least 1 month.');
+    if(Number.isFinite(months) && months > 600) add('months','Term cannot exceed 600 months.');
+
+    if(state.mode === 'kredi'){
+      const incomeRaw = els.income.value.trim();
+      const income = parseMoney(incomeRaw);
+      const bsmvRaw = els.bsmv.value.trim();
+      const kkdfRaw = els.kkdf.value.trim();
+      const feeRateRaw = els.feeRate.value.trim();
+      const insuranceRaw = els.insurance.value.trim();
+      const insuranceParsed = parseMoney(insuranceRaw);
+      const insurance = insuranceRaw === '' ? 0 : insuranceParsed;
+      const d = defaultsByType(els.loanType.value);
+      const data = {
+        principal, rate, months,
+        income: incomeRaw === '' ? null : income,
+        bsmv: bsmvRaw === '' ? d.bsmv : parseDecimal(bsmvRaw),
+        kkdf: kkdfRaw === '' ? d.kkdf : parseDecimal(kkdfRaw),
+        feeRate: feeRateRaw === '' ? d.feeRate : parseDecimal(feeRateRaw),
+        insurance
+      };
+      if(!(data.bsmv >= 0)) add('bsmv','Interest tax / levy cannot be negative.');
+      if(Number.isFinite(data.bsmv) && data.bsmv > 100) add('bsmv','Interest tax / levy cannot exceed 100%.');
+      if(!(data.kkdf >= 0)) add('kkdf','Additional interest levy cannot be negative.');
+      if(Number.isFinite(data.kkdf) && data.kkdf > 100) add('kkdf','Additional interest levy cannot exceed 100%.');
+      if(!(data.feeRate >= 0)) add('feeRate','Origination fee cannot be negative.');
+      if(Number.isFinite(data.feeRate) && data.feeRate > 100) add('feeRate','Origination fee cannot exceed 100%.'); else if(Number.isFinite(data.feeRate) && data.feeRate > 100){
+        add('feeRate',"Origination fee cannot exceed 100%.");
+      }
+      if(insuranceRaw !== '' && !Number.isFinite(insurance)) add('insurance','Insurance / other upfront cost must be a valid amount.');
+      else if(insurance < 0) add('insurance','Insurance / other upfront cost cannot be negative.');
+      else if(insurance > MAX_MONEY) add('insurance','Insurance / other upfront cost exceeds the supported safe limit.');
+      if(!(data.income == null || data.income > 0)) add('income','Income must be blank or greater than 0.');
+      else if(Number.isFinite(data.income) && data.income > MAX_MONEY) add('income','Income exceeds the supported safe limit.');
+      if(showErrors) setValidation(messages);
+      return { valid: messages.length === 0, data };
+    }
+
+    if(state.mode === 'taksit'){
+      const upfrontPaymentRaw = els.upfrontPayment.value.trim();
+      const extraFeeRaw = els.extraFee.value.trim();
+      const upfrontPaymentParsed = parseMoney(upfrontPaymentRaw);
+      const extraFeeParsed = parseMoney(extraFeeRaw);
+      const upfrontPayment = upfrontPaymentRaw === '' ? 0 : upfrontPaymentParsed;
+      const extraFee = extraFeeRaw === '' ? 0 : extraFeeParsed;
+      const compareCashRaw = els.compareCash.value.trim();
+      const incomeRaw = els.income.value.trim();
+      const compareCash = parseMoney(compareCashRaw);
+      const income = parseMoney(incomeRaw);
+      if(upfrontPaymentRaw !== '' && !Number.isFinite(upfrontPayment)) add('upfrontPayment','Down payment must be a valid amount.');
+      else if(upfrontPayment < 0) add('upfrontPayment','Down payment cannot be negative.');
+      else if(upfrontPayment > MAX_MONEY) add('upfrontPayment','Down payment exceeds the supported safe limit.');
+      if(Number.isFinite(principal) && principal > 0 && Number.isFinite(upfrontPayment) && upfrontPayment >= principal) add('upfrontPayment','Down payment must be less than the total purchase amount.');
+      if(extraFeeRaw !== '' && !Number.isFinite(extraFee)) add('extraFee','Extra fee must be a valid amount.');
+      else if(extraFee < 0) add('extraFee','Extra fee cannot be negative.');
+      else if(extraFee > MAX_MONEY) add('extraFee','Extra fee exceeds the supported safe limit.');
+      if(!(compareCashRaw === '' || (Number.isFinite(compareCash) && compareCash > 0))) add('compareCash','Cash price must be blank or greater than 0.');
+      else if(Number.isFinite(compareCash) && compareCash > MAX_MONEY) add('compareCash','Cash price exceeds the supported safe limit.');
+      if(!(incomeRaw === '' || (Number.isFinite(income) && income > 0))) add('income','Income must be blank or greater than 0.');
+      else if(Number.isFinite(income) && income > MAX_MONEY) add('income','Income exceeds the supported safe limit.');
+      const data = {
+        principal, rate, months, upfrontPayment, extraFee,
+        compareCash: compareCashRaw === '' ? null : compareCash, income: incomeRaw === '' ? null : income,
+        paymentType: els.paymentType.value || 'shopping'
+      };
+      if(showErrors) setValidation(messages);
+      return { valid: messages.length === 0, data };
+    }
+
+    if(state.mode === 'erken'){
+      const paidMonths = parseIntegerStrict(els.paidMonths.value);
+      const daysSincePayment = parseIntegerStrict(els.daysSincePayment.value, true);
+      const closeFeeRaw = els.closeFee.value.trim();
+      const closeFeeParsed = parseMoney(closeFeeRaw);
+      const closeFee = closeFeeRaw === '' ? 0 : closeFeeParsed;
+      const bsmvRaw = els.bsmv.value.trim();
+      const kkdfRaw = els.kkdf.value.trim();
+      const d = defaultsByType(els.loanType.value);
+      const bsmv = bsmvRaw === '' ? d.bsmv : parseDecimal(bsmvRaw);
+      const kkdf = kkdfRaw === '' ? d.kkdf : parseDecimal(kkdfRaw);
+      if(!Number.isFinite(paidMonths)) add('paidMonths','Payments already made must be a whole number.');
+      else if(paidMonths < 0) add('paidMonths','Payments already made must be 0 or greater.');
+      if(Number.isFinite(paidMonths) && Number.isFinite(months) && paidMonths >= months) add('paidMonths','For early payoff, payments already made must be less than the original term.');
+      if(!Number.isFinite(daysSincePayment)) add('daysSincePayment','Days since last payment must be a whole number.');
+      else if(daysSincePayment < 0 || daysSincePayment > 30) add('daysSincePayment','Days since last payment must be between 0 and 30.');
+      if(closeFeeRaw !== '' && !Number.isFinite(closeFee)) add('closeFee','Lender-provided extra charge must be a valid amount.');
+      else if(closeFee < 0) add('closeFee','Lender-provided extra charge cannot be negative.');
+      else if(closeFee > MAX_MONEY) add('closeFee','Lender-provided extra charge exceeds the supported safe limit.');
+      if(!(bsmv >= 0 && bsmv <= 100)) add('bsmv','Interest tax / levy must be between 0 and 100%.');
+      if(!(kkdf >= 0 && kkdf <= 100)) add('kkdf','Additional interest levy must be between 0 and 100%.');
+      const data = { principal, rate, months, paidMonths, daysSincePayment, closeFee, loanType: els.loanType.value, bsmv, kkdf };
+      if(showErrors) setValidation(messages);
+      return { valid: messages.length === 0, data };
+    }
+
+    return { valid:false, data:null };
+  }
+
+  function amortize(principal, baseRatePct, months, bsmvPct, kkdfPct){
+    const monthlyBaseRate = baseRatePct / 100;
+    const taxRate = (bsmvPct + kkdfPct) / 100;
+    const monthlyEffectiveRate = monthlyBaseRate * (1 + taxRate);
+    if(!(principal > 0) || !(months >= 1) || !Number.isFinite(monthlyEffectiveRate) || monthlyEffectiveRate < 0){
+      throw new Error('Invalid amortization input');
+    }
+
+    const annuityFactor = (rate, periods) => {
+      if(periods <= 0) return 0;
+      if(rate < 1e-12) return periods;
+      const factor = -Math.expm1(-periods * Math.log1p(rate)) / rate;
+      return Number.isFinite(factor) && factor > 0 ? factor : null;
+    };
+
+    const fullFactor = annuityFactor(monthlyEffectiveRate, months);
+    if(!(fullFactor > 0)) throw new Error('Payment could not be calculated');
+    const payment = principal / fullFactor;
+    if(!Number.isFinite(payment) || payment <= 0) throw new Error('Payment could not be calculated');
+
+    let balance = principal;
+    let totalInterest = 0;
+    let totalTax = 0;
+    const schedule = [];
+
+    for(let i=1;i<=months;i++){
+      const balanceBefore = balance;
+      const baseInterest = balanceBefore * monthlyBaseRate;
+      const taxOnInterest = baseInterest * taxRate;
+      const remainingPeriods = months - i;
+
+      let nextBalance;
+      if(remainingPeriods <= 0){
+        nextBalance = 0;
+      } else if(monthlyEffectiveRate < 1e-12){
+        nextBalance = Math.max(0, balanceBefore - payment);
+      } else {
+        const remainingFactor = annuityFactor(monthlyEffectiveRate, remainingPeriods);
+        if(!(remainingFactor >= 0)) throw new Error('Amortization schedule could not be calculated');
+        nextBalance = payment * remainingFactor;
+        if(!Number.isFinite(nextBalance)) throw new Error('Amortization schedule could not be calculated');
+        nextBalance = Math.min(balanceBefore, Math.max(0, nextBalance));
+      }
+
+      const principalPart = balanceBefore - nextBalance;
+      if(!Number.isFinite(principalPart) || principalPart < -0.01) throw new Error('Amortization schedule could not be calculated');
+
+      balance = nextBalance;
+      totalInterest += baseInterest;
+      totalTax += taxOnInterest;
+      schedule.push({no:i, installment:payment, principal:principalPart, interest:baseInterest, tax:taxOnInterest, balance});
+    }
+
+    const totalPaymentRounded = roundMoney(payment * months);
+    const totalTaxRounded = roundMoney(totalTax);
+    // Reconcile financial summary lines against the same rounded total to prevent floating-point residue from leaking into the interest summary.
+    const totalInterestRounded = roundMoney(Math.max(0, totalPaymentRounded - principal - totalTaxRounded));
+
+    return {
+      payment: roundMoney(payment),
+      totalPayment: totalPaymentRounded,
+      totalInterest: totalInterestRounded,
+      totalTax: totalTaxRounded,
+      schedule
+    };
+  }
+
+  function computeCredit(data){
+    const feeBase = roundMoney(data.principal * ((data.feeRate || 0)/100));
+    const feeBsmv = roundMoney(feeBase * ((data.bsmv || 0)/100));
+    const feeGross = roundMoney(feeBase + feeBsmv);
+    const calc = amortize(data.principal, data.rate || 0, data.months, data.bsmv || 0, data.kkdf || 0);
+    const upfrontCosts = roundMoney(feeGross + (data.insurance || 0));
+    const totalCost = roundMoney(calc.totalPayment + upfrontCosts);
+    const taxAndFeeVsAmount = data.principal > 0 ? ((calc.totalTax + upfrontCosts) / data.principal) * 100 : 0;
+    const incomeRatio = data.income ? (calc.payment / data.income) * 100 : null;
+    const score = Math.round(clamp(100 - taxAndFeeVsAmount * 1.9 - (incomeRatio == null ? 12 : incomeRatio * 1.2) - clamp((data.months/60)*15,0,15), 0, 100));
+    const altRate = amortize(data.principal, (data.rate || 0) + 0.5, data.months, data.bsmv || 0, data.kkdf || 0);
+    const creditScenarios = [];
+    const maxScenarioMonths = ['ihtiyac','diger'].includes(els.loanType.value) ? needLoanMaxMonths(data.principal) : 600;
+    [12, 24, 36].filter(term => term <= maxScenarioMonths).forEach(term => {
+      if(term !== data.months && creditScenarios.length < 2){
+        const alt = amortize(data.principal, data.rate || 0, term, data.bsmv || 0, data.kkdf || 0);
+        creditScenarios.push([`Same rate · ${term} months`, fmtMoney(alt.payment), term < data.months ? 'A shorter term raises the monthly payment but usually reduces total interest' : 'A longer term lowers the monthly payment but usually increases total financing cost']);
+      }
+    });
+    creditScenarios.push(['Rate +0.50 points', fmtMoney(altRate.payment), 'Even a small rate increase raises the monthly payment']);
+    const note = els.note.value.trim();
+    let comment = `Over ${fmtInt(data.months)} months, the estimated monthly payment is ${fmtMoney(calc.payment)}. Scheduled payments total ${fmtMoney(calc.totalPayment)}, while estimated total financing cost including modeled upfront costs is ${fmtMoney(totalCost)}. `;
+    if(incomeRatio != null){
+      if(incomeRatio >= 35) comment += `The monthly payment is ${fmtPercent(incomeRatio,1)} of entered net income, indicating high payment pressure. `;
+      else if(incomeRatio >= 20) comment += `The monthly payment is ${fmtPercent(incomeRatio,1)} of entered net income; the payment burden deserves close attention. `;
+      else comment += `The monthly payment is ${fmtPercent(incomeRatio,1)} of entered net income, a comparatively lighter payment burden. `;
+    } else {
+      comment += 'Income was not entered, so the score relies on cost and term rather than payment-to-income pressure. ';
+    }
+    if(taxAndFeeVsAmount >= 20) comment += 'Modeled levies and upfront costs are high relative to principal.';
+    else if(taxAndFeeVsAmount >= 8) comment += 'Modeled levies and upfront costs are noticeable relative to principal.';
+    else comment += 'Modeled levies and upfront costs are relatively limited compared with principal.';
+    if(note) comment += ' Note: ' + note + '.';
+    return {
+      score,
+      badgeText: taxAndFeeVsAmount >= 20 ? 'High cost load' : taxAndFeeVsAmount >= 8 ? 'Costs matter' : 'Calculated',
+      statusTitle:'Loan estimate ready',
+      statusText:'Monthly payment, total interest, optional financing levies and upfront costs were calculated together.',
+      mainLabel:'Monthly installment',
+      mainValue:fmtMoney(calc.payment),
+      mainSub:`Total financing cost ${fmtMoney(totalCost)} · Total interest ${fmtMoney(calc.totalInterest)}`,
+      mini:[
+        ['Scheduled payments', fmtMoney(calc.totalPayment), 'Sum of scheduled loan payments'],
+        ['Total interest', fmtMoney(calc.totalInterest), 'Base interest paid above principal'],
+        ['Interest levies', fmtMoney(calc.totalTax), 'Combined effect of the two optional levy rates'],
+        ['Upfront costs', fmtMoney(upfrontCosts), 'Origination fee, modeled primary levy on that fee and entered insurance/other costs'],
+        ['Total financing cost', fmtMoney(totalCost), 'Scheduled payments plus modeled upfront costs'],
+        ['Payment / income', incomeRatio == null ? '—' : fmtPercent(incomeRatio,1), incomeRatio == null ? 'Income not entered' : 'Monthly payment as a share of entered net income']
+      ],
+      scoreExplain:'This scenario score combines modeled levies/upfront costs, payment-to-income pressure when income is entered, and term length. It is not a creditworthiness score.',
+      comment,
+      scenarioLead:'For the same principal, small changes in term or monthly rate can materially change the payment and total financing cost.',
+      scenarios:creditScenarios
+    };
+  }
+
+  function computeInstallment(data){
+    const financedAmount = Math.max(0, data.principal - (data.upfrontPayment || 0));
+    const monthlyRate = (data.rate || 0) / 100;
+    let monthlyInstallment = 0;
+    if(data.months > 0){
+      if(monthlyRate === 0) monthlyInstallment = financedAmount / data.months;
+      else monthlyInstallment = financedAmount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -data.months));
+    }
+    monthlyInstallment = roundMoney(monthlyInstallment);
+    const installmentTotal = roundMoney(monthlyInstallment * data.months);
+    const grandTotal = roundMoney(installmentTotal + (data.upfrontPayment || 0) + (data.extraFee || 0));
+    const interestAmount = roundMoney(Math.max(0, installmentTotal - financedAmount));
+    const cashCompare = data.compareCash == null ? null : roundMoney(grandTotal - data.compareCash);
+    const incomeRate = data.income ? roundMoney((monthlyInstallment / data.income) * 100) : null;
+    const financingCost = roundMoney(interestAmount + (data.extraFee || 0));
+    const costLoad = data.principal > 0 ? (financingCost / data.principal) * 100 : 0;
+    const score = Math.round(clamp(100 - clamp(costLoad*1.8,0,60) - (incomeRate == null ? 12 : clamp(incomeRate*1.1,0,35)) - clamp((data.months/36)*18,0,18), 0, 100));
+    const shorterMonths = data.months > 3 ? data.months - 3 : null;
+    const longerMonths = data.months + 6;
+    const s1 = shorterMonths ? computeInstallmentInternal({...data, months: shorterMonths}) : null;
+    const s2 = computeInstallmentInternal({...data, months: longerMonths});
+    const s3 = computeInstallmentInternal({...data, rate: (data.rate || 0) + 0.5});
+    const installmentScenarios = [];
+    if(shorterMonths && s1) installmentScenarios.push([`${fmtInt(shorterMonths)} months`, fmtMoney(s1.monthlyInstallment), 'A shorter term raises the monthly payment but usually reduces total interest']);
+    installmentScenarios.push([`${fmtInt(longerMonths)} months`, fmtMoney(s2.monthlyInstallment), 'A longer term lowers the monthly payment but usually increases total financing cost']);
+    installmentScenarios.push(['Rate +0.50 points', fmtMoney(s3.monthlyInstallment), 'Even a small rate increase raises the monthly installment']);
+    const note = els.note.value.trim();
+    const paymentTypeLabels = {
+      shopping:'Purchase installment',
+      card:'Card installment',
+      credit:'Loan-like plan',
+      manual:'Custom plan'
+    };
+    const paymentTypeIntro = {
+      shopping:'Purchase installmentnde ',
+      card:'Card installmentnde ',
+      credit:'Loan-like planda ',
+      manual:'Custom planda '
+    };
+    let comment = `${paymentTypeIntro[data.paymentType] || ''}the estimated monthly installment is ${fmtMoney(monthlyInstallment)}. Total financed-purchase cost is ${fmtMoney(grandTotal)}, including ${fmtMoney(interestAmount)} of financing interest. `;
+    if(cashCompare != null){
+      if(cashCompare > 0) comment += `Compared with the entered cash price, the installment plan costs ${fmtMoney(cashCompare)} more. `;
+      else if(cashCompare < 0) comment += `Compared with the entered cash price, the installment total is ${fmtMoney(Math.abs(cashCompare))} lower. `;
+      else comment += 'The entered cash price and installment-plan total are the same. ';
+    }
+    if(incomeRate != null){
+      if(incomeRate >= 35) comment += `The monthly installment is ${fmtPercent(incomeRate,1)} of entered net income, indicating high payment pressure. `;
+      else if(incomeRate >= 20) comment += `The monthly installment is ${fmtPercent(incomeRate,1)} of entered net income; the burden deserves attention. `;
+      else comment += `The payment-to-income ratio is ${fmtPercent(incomeRate,1)}, a comparatively lighter burden. `;
+    }
+    if(note) comment += 'Note: ' + note + '.';
+    return {
+      score,
+      badgeText: score >= 75 ? 'Controlled' : score >= 55 ? 'Watch closely' : 'Heavy burden',
+      statusTitle:'Installment estimate ready',
+      statusText:`Monthly installment, total repayment, cash-price difference and payment pressure were calculated for ${paymentTypeLabels[data.paymentType] || 'this plan'}.`,
+      mainLabel:'Monthly installment',
+      mainValue:fmtMoney(monthlyInstallment),
+      mainSub:`Total cost ${fmtMoney(grandTotal)} · Financing interest ${fmtMoney(interestAmount)}`,
+      mini:[
+        ['Financed amount', fmtMoney(financedAmount), 'Purchase amount after the down payment'],
+        ['Total cost', fmtMoney(grandTotal), 'Installments, down payment and extra fees'],
+        ['Financing interest', fmtMoney(interestAmount), 'Interest embedded in the installment payments'],
+        ['Extra fee', fmtMoney(data.extraFee || 0), 'Entered service or financing charge'],
+        ['Cash-price difference', cashCompare == null ? '—' : fmtMoney(cashCompare), cashCompare == null ? 'Cash price not entered' : 'Positive means the installment plan costs more'],
+        ['Payment / income', incomeRate == null ? '—' : fmtPercent(incomeRate,1), incomeRate == null ? 'Income not entered' : 'Monthly installment as a share of entered net income']
+      ],
+      scoreExplain:'This scenario score combines financing-cost load, payment-to-income pressure when available and term length. It is a planning indicator, not an approval or credit score.',
+      comment,
+      scenarioLead:'A few months of term difference or a small rate change can materially change the total cost of an installment plan.',
+      scenarios:installmentScenarios
+    };
+  }
+
+  function computeInstallmentInternal(data){
+    const financedAmount = Math.max(0, data.principal - (data.upfrontPayment || 0));
+    const monthlyRate = (data.rate || 0) / 100;
+    let monthlyInstallment = 0;
+    if(data.months > 0){
+      if(monthlyRate === 0) monthlyInstallment = financedAmount / data.months;
+      else monthlyInstallment = financedAmount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -data.months));
+    }
+    monthlyInstallment = roundMoney(monthlyInstallment);
+    const installmentTotal = roundMoney(monthlyInstallment * data.months);
+    const grandTotal = roundMoney(installmentTotal + (data.upfrontPayment || 0) + (data.extraFee || 0));
+    return { monthlyInstallment, grandTotal };
+  }
+
+  function computeEarly(data){
+    const plan = amortize(data.principal, data.rate || 0, data.months, data.bsmv || 0, data.kkdf || 0);
+    const paid = clamp(data.paidMonths, 0, data.months);
+    const remainingMonths = Math.max(0, data.months - paid);
+    const remainingPrincipal = paid <= 0 ? roundMoney(data.principal) : paid >= data.months ? 0 : roundMoney(plan.schedule[paid - 1].balance);
+    const remainingRows = plan.schedule.slice(paid);
+    const remainingInstallments = roundMoney(remainingRows.reduce((sum,row)=>sum+row.installment,0));
+    const dayFraction = clamp(data.daysSincePayment || 0, 0, 30) / 30;
+    const accruedBaseInterest = roundMoney(remainingPrincipal * ((data.rate || 0) / 100) * dayFraction);
+    const accruedTax = roundMoney(accruedBaseInterest * (((data.bsmv || 0) + (data.kkdf || 0)) / 100));
+    const accruedTotal = roundMoney(accruedBaseInterest + accruedTax);
+    const closeAmount = roundMoney(remainingPrincipal + accruedTotal + (data.closeFee || 0));
+    const netDifference = roundMoney(remainingInstallments - closeAmount);
+    const interestAdvantage = roundMoney(Math.max(0, netDifference));
+    const savingRatio = remainingInstallments > 0 ? (interestAdvantage / remainingInstallments) * 100 : 0;
+    const feeRatio = remainingPrincipal > 0 ? ((data.closeFee || 0) / remainingPrincipal) * 100 : 0;
+    const termRatio = data.months > 0 ? (remainingMonths / data.months) * 100 : 0;
+    const score = Math.round(clamp(18 + Math.min(48, Math.max(0, savingRatio) * 2.1) + Math.min(32, termRatio * 0.34) - Math.min(25, feeRatio * 0.5) - (netDifference < 0 ? 18 : 0) - (remainingMonths <= 2 ? 12 : remainingMonths <= 4 ? 6 : 0), 0, 100));
+    const nextPaid = Math.min(data.months, paid + 3);
+    const nextPrincipal = nextPaid <= 0 ? data.principal : nextPaid >= data.months ? 0 : plan.schedule[nextPaid - 1].balance;
+    const next3Close = roundMoney(Math.max(0, nextPrincipal) + (data.closeFee || 0));
+    const note = els.note.value.trim();
+    let comment = `The approximate payoff amount today is ${fmtMoney(closeAmount)}. `;
+    comment += `This includes ${fmtMoney(remainingPrincipal)} of estimated remaining principal, ${fmtMoney(accruedTotal)} of modeled accrued interest/levies and ${fmtMoney(data.closeFee || 0)} of lender-provided extra charges entered by you. `;
+    comment += `Remaining scheduled payments total ${fmtMoney(remainingInstallments)}, making the estimated difference ${fmtMoney(netDifference)}. `;
+    if(netDifference > 0){ if(savingRatio >= 15 && remainingMonths >= 6) comment += 'The estimate shows meaningful potential savings from early payoff. '; else comment += 'The estimate suggests potential savings; verify them against your lender’s current official payoff quote. '; }
+    else comment += 'With these inputs, early payoff does not appear to create a positive estimated saving versus remaining scheduled payments. ';
+    if(note) comment += 'Note: ' + note + '.';
+    return {
+      score,
+      badgeText: netDifference > 0 ? (score >= 75 ? 'Strong avantaj' : 'Balanced avantaj') : 'Avantaj yok',
+      statusTitle:'Early-payoff estimate ready',
+      statusText:'Remaining principal, modeled accrued interest/levies, days since the last payment and any entered payoff charge were combined.',
+      mainLabel:'Approximate payoff amount',
+      mainValue:fmtMoney(closeAmount),
+      mainSub:`Remaining principal ${fmtMoney(remainingPrincipal)} · Accrued interest/levies ${fmtMoney(accruedTotal)} · Estimated difference ${fmtMoney(netDifference)}`,
+      mini:[
+        ['Monthly payment', fmtMoney(plan.payment), 'Estimated payment under the same modeled loan terms'],
+        ['Remaining principal', fmtMoney(remainingPrincipal), 'Estimated balance after payments already made'],
+        ['Remaining scheduled payments', fmtMoney(remainingInstallments), 'Total of remaining scheduled payments if the plan continues'],
+        ['Estimated difference', fmtMoney(netDifference), 'Positive means the estimate favors early payoff'],
+        ['Accrued interest + levies', fmtMoney(accruedTotal), `Approximation for ${fmtInt(data.daysSincePayment || 0)} days`],
+        ['Payoff-charge ratio', fmtPercent(feeRatio,1), 'Entered payoff charge as a share of remaining principal']
+      ],
+      scoreExplain:'This Hesapica scenario score summarizes estimated savings, remaining term and the entered payoff charge. It does not replace your lender’s official payoff quote.',
+      comment,
+      scenarioLead:'Actual payoff amounts can vary by payment date, contract terms, lender calculations and applicable fees or penalties.',
+      scenarios:[
+        ['Pay off today', fmtMoney(closeAmount), 'Approximate payoff using entered days and extra charge'],
+        ['After 3 more payments', fmtMoney(next3Close), 'Approximate balance after three more scheduled payments, excluding day-specific accrued interest'],
+        ['Without extra payoff charge', fmtMoney(remainingPrincipal + accruedTotal), 'Approximate amount without the entered lender charge']
+      ]
+    };
+  }
+
+  function fillExample(){
+    state.source = 'example';
+    if(state.mode === 'kredi'){
+      els.loanType.value = 'ihtiyac';
+      els.principal.value = '25,000';
+      els.rate.value = '1.25';
+      els.months.value = '24';
+      els.income.value = '6,000';
+      els.bsmv.value = '';
+      els.kkdf.value = '';
+      els.feeRate.value = '';
+      els.insurance.value = '350';
+      els.note.value = 'planning to start after payday';
+    } else if(state.mode === 'taksit'){
+      els.principal.value = '4,200';
+      els.rate.value = '1.10';
+      els.months.value = '12';
+      els.upfrontPayment.value = '420';
+      els.extraFee.value = '0';
+      els.compareCash.value = '3,900';
+      els.income.value = '6,000';
+      els.paymentType.value = 'shopping';
+      els.note.value = 'purchase financing scenario';
+    } else {
+      els.principal.value = '25,000';
+      els.rate.value = '1.20';
+      els.months.value = '24';
+      els.loanType.value = 'ihtiyac';
+      els.bsmv.value = '';
+      els.kkdf.value = '';
+      els.paidMonths.value = '8';
+      els.daysSincePayment.value = '10';
+      els.closeFee.value = '0';
+      els.note.value = 'considering payoff and refinancing at a lower rate';
+    }
+    clearErrors();
+    calculate(true);
+  }
+
+  function resetTool(){
+    state.source = 'manual';
+    document.querySelectorAll('input,textarea').forEach(el => el.value = '');
+    els.loanType.value = 'ihtiyac';
+    els.paymentType.value = 'shopping';
+    if(els.currency) els.currency.value = 'USD';
+    clearErrors();
+    renderEmpty();
+    try{ localStorage.removeItem(STORAGE_KEY); }catch(err){}
+  }
+
+  function calculate(flash = false){
+    const validation = validateByMode(flash);
+    if(!validation.valid){ renderEmpty(); return false; }
+    try{
+      let result;
+      if(state.mode === 'kredi') result = computeCredit(validation.data);
+      else if(state.mode === 'taksit') result = computeInstallment(validation.data);
+      else result = computeEarly(validation.data);
+      render(result, flash);
+      saveState();
+      return true;
+    }catch(err){
+      console.error('Calculation error:', err);
+      renderEmpty();
+      setValidation(['The calculation could not be produced from these inputs. Check the values and try again.']);
+      return false;
+    }
+  }
+
+  function hasEnoughData(){
+    const principal = parseMoney(els.principal.value);
+    const rate = parseDecimal(els.rate.value);
+    const months = parseIntegerStrict(els.months.value);
+    if(!(principal > 0) || !(Number.isFinite(rate) && rate >= 0) || !(months >= 1)) return false;
+    if(state.mode === 'erken'){
+      const paidMonths = parseIntegerStrict(els.paidMonths.value);
+      const daysSincePayment = parseIntegerStrict(els.daysSincePayment.value, true);
+      return Number.isFinite(paidMonths) && paidMonths >= 0 && Number.isFinite(daysSincePayment) && daysSincePayment >= 0 && daysSincePayment <= 30;
+    }
+    return true;
+  }
+
+  let debounceTimer;
+  function autoCalculate(){
+    clearTimeout(debounceTimer);
+    // When an input changes, clear the old result immediately so Copy / Share / Print cannot use stale output during the debounce window.
+    renderEmpty();
+    debounceTimer = setTimeout(() => {
+      if(hasEnoughData()) calculate(false);
+      else renderEmpty();
+    }, 200);
+  }
+
+  function updateModeDefaults(){
+    if(state.mode !== 'kredi') return;
+    if(els.bsmv.value.trim() || els.kkdf.value.trim() || els.feeRate.value.trim()) return;
+    // Optional levy and origination-fee fields may stay visually blank; blank values are modeled as 0% in the global version.
+  }
+
+  function initFormattedInputs(){
+    moneyIds.forEach(id => {
+      if(!els[id]) return;
+      els[id].addEventListener('focus', () => {
+        const raw = els[id].value.trim();
+        if(raw === '') return;
+        const n = parseMoney(raw);
+        if(n == null || !Number.isFinite(n)) return;
+        const plain = n.toLocaleString('en-US',{useGrouping:false,minimumFractionDigits:0,maximumFractionDigits:2});
+        els[id].value = plain;
+        try{
+          const end = els[id].value.length;
+          els[id].setSelectionRange(end, end);
+        }catch(err){}
+      });
+      els[id].addEventListener('input', () => {
+        state.source = 'manual';
+        autoCalculate();
+      });
+      els[id].addEventListener('blur', () => {
+        const raw = els[id].value.trim();
+        if(raw === '') els[id].value = '';
+        else {
+          const n = parseMoney(raw);
+          if(n != null && Number.isFinite(n)) els[id].value = formatMoneyInput(n);
+        }
+        saveState();
+      });
+    });
+    ['rate','bsmv','kkdf','feeRate'].forEach(id => {
+      if(!els[id]) return;
+      els[id].addEventListener('input', () => {
+        state.source = 'manual';
+        autoCalculate();
+      });
+      els[id].addEventListener('blur', () => {
+        const raw = els[id].value.trim();
+        if(raw === '') els[id].value = '';
+        else {
+          const n = parseDecimal(raw);
+          if(n != null && Number.isFinite(n)) els[id].value = formatDecimalInput(n, 4);
+        }
+        saveState();
+      });
+    });
+    ['months','paidMonths','daysSincePayment'].forEach(id => {
+      if(!els[id]) return;
+      els[id].addEventListener('input', () => {
+        state.source = 'manual';
+        autoCalculate();
+      });
+      els[id].addEventListener('blur', () => {
+        els[id].value = els[id].value.trim();
+        saveState();
+      });
+    });
+    ['loanType','paymentType','currency'].forEach(id => {
+      if(!els[id]) return;
+      els[id].addEventListener('change', () => {
+        state.source = 'manual';
+        if(id === 'loanType') updateModeDefaults();
+        autoCalculate();
+        saveState();
+      });
+    });
+    if(els.note){
+      els.note.addEventListener('input', () => { state.source = 'manual'; autoCalculate(); });
+      els.note.addEventListener('blur', saveState);
+    }
+    const tabs = Array.from(document.querySelectorAll('.mode-tab'));
+    tabs.forEach((btn, index) => {
+      btn.addEventListener('click', () => setMode(btn.dataset.mode, true));
+      btn.addEventListener('keydown', (event) => {
+        let targetIndex = null;
+        if(event.key === 'ArrowRight') targetIndex = (index + 1) % tabs.length;
+        else if(event.key === 'ArrowLeft') targetIndex = (index - 1 + tabs.length) % tabs.length;
+        else if(event.key === 'Home') targetIndex = 0;
+        else if(event.key === 'End') targetIndex = tabs.length - 1;
+        if(targetIndex != null){
+          event.preventDefault();
+          tabs[targetIndex].focus();
+          tabs[targetIndex].click();
+        }
+      });
+    });
+    els.calcBtn.addEventListener('click', () => calculate(true));
+    els.exampleBtn.addEventListener('click', fillExample);
+    els.resetBtn.addEventListener('click', resetTool);
+    els.copyBtn.addEventListener('click', copyResult);
+    els.shareBtn.addEventListener('click', shareResult);
+    els.printBtn.addEventListener('click', printResult);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const url = new URL(window.location.href);
+    const qp = (url.searchParams.get('mod') || url.searchParams.get('mode') || '').toLowerCase();
+    const alias = { erkenkapatma:'erken', erken_kapatma:'erken' };
+    const requestedMode = qp && (modeMeta[qp] || alias[qp]) ? (modeMeta[qp] ? qp : alias[qp]) : null;
+    loadState();
+    if(requestedMode) state.mode = requestedMode;
+    initFormattedInputs();
+    setMode(state.mode, false);
+    updateModeDefaults();
+    if(hasEnoughData()) calculate(false);
+    else renderEmpty();
+  });
+})();
+</script>
+
+
+<script src="../ads-slot-manager.js"></script>
+
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset data','clear data','reset','reset']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

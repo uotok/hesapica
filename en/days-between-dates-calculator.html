@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Days Between Dates Calculator: Days, Weeks &amp; Workdays | Hesapica</title>
+<meta content="Calculate the exact time between two dates in days, weeks, months, years, hours, minutes and seconds, with an estimated weekday count." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/en/days-between-dates-calculator" rel="canonical"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Days Between Dates Calculator: Days, Weeks &amp; Workdays | Hesapica" property="og:title"/>
+<meta content="Calculate the exact time between two dates in days, weeks, months, years, hours, minutes and seconds, with an estimated weekday count." property="og:description"/>
+<meta content="https://hesapica.com/en/days-between-dates-calculator" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — global online calculators" property="og:image:alt"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — global online calculators" name="twitter:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Days Between Dates Calculator: Days, Weeks &amp; Workdays | Hesapica" name="twitter:title"/>
+<meta content="Calculate the exact time between two dates in days, weeks, months, years, hours, minutes and seconds, with an estimated weekday count." name="twitter:description"/>
+<!-- Google Analytics 4 -->
+<style>
+    :root{
+      --primary:#4f46e5; --secondary:#7c3aed; --bg:#f6f8fc; --surface:#ffffff; --surface-soft:#eef2ff;
+      --text:#1f2937; --muted:#6b7280; --line:#e5e7eb; --good:#059669; --warn:#b45309; --bad:#dc2626;
+      --shadow:0 18px 48px rgba(79,70,229,.08); --radius-xl:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text);
+      background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 30%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit} button,input{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:10px;padding:22px 0 10px;color:var(--muted);font-size:14px}
+    .breadcrumb span{opacity:.6}
+    .hero{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:24px;padding:34px;border-radius:30px;
+      border:1px solid rgba(79,70,229,.10);background:linear-gradient(135deg, rgba(79,70,229,.08), rgba(124,58,237,.08));box-shadow:var(--shadow);
+    }
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 14px;font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.02em}
+    .hero p{margin:0 0 18px;color:#4b5563;font-size:17px;max-width:760px}
+    .chip-list{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{
+      min-height:100%;padding:24px;border-radius:24px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);
+      display:flex;flex-direction:column;justify-content:center
+    }
+    .hero-box .eyebrow{margin-bottom:8px;color:var(--secondary);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+    .hero-box strong{display:block;margin-bottom:8px;font-size:28px;line-height:1.15}
+    .hero-box p,.hero-box li{margin:0;font-size:15px;color:var(--muted)}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.08fr) 410px;gap:24px;align-items:start;margin-top:26px}
+    .card,.content-section,.faq-section,.related-section{
+      padding:28px;border-radius:var(--radius-xl);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)
+    }
+    .content-section,.faq-section,.related-section{margin-top:28px}
+    .card h2,.content-section h2,.faq-section h2,.related-section h2{margin:0 0 16px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:-4px 0 20px;color:var(--muted);font-size:15px}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .subhead{margin:22px 0 14px;font-size:18px;font-weight:900;color:var(--primary)}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input.input-error{border-color:#dc2626;background:#fff7f7}
+    .helper{margin-top:8px;color:var(--muted);font-size:13px}
+    .helper.error{color:#b91c1c;font-weight:700}
+    .field.has-error input{border-color:#dc2626;background:#fff7f7}
+    .field .field-error{display:none;margin-top:8px;color:#b91c1c;font-size:13px;font-weight:700}
+    .field.has-error .field-error{display:block}
+    .result-card.flash{box-shadow:0 0 0 4px rgba(79,70,229,.12), 0 18px 48px rgba(79,70,229,.16);animation:resultPulse .45s ease}
+    @keyframes resultPulse{0%{transform:translateY(0)}50%{transform:translateY(-2px)}100%{transform:translateY(0)}}
+    .action-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:0;cursor:pointer;font:inherit;transition:transform .18s ease;padding:14px 18px;border-radius:16px;font-size:15px;font-weight:800}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .validation-box{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}
+    .validation-box.show{display:block}
+
+    .result-card{
+      position:sticky;top:24px;padding:24px;border-radius:26px;border:1px solid rgba(79,70,229,.12);
+      background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%); box-shadow:0 18px 48px rgba(79,70,229,.10)
+    }
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:rgba(255,255,255,.82);margin-bottom:16px}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:20px;border-radius:22px;background:rgba(255,255,255,.82);border:1px solid rgba(79,70,229,.08);margin-bottom:16px}
+    .highlight-card .label{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .highlight-card .value{font-size:36px;line-height:1.08;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#9ca3af}
+    .highlight-card .subtext{color:#4b5563;font-size:15px}
+    .highlight-card.ready .value{color:var(--text)}
+
+    .score-card{padding:18px;border-radius:20px;background:#fff;border:1px solid rgba(79,70,229,.10);margin-bottom:16px}
+    .score-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+    .score-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .score-value{font-size:28px;font-weight:900;color:#9ca3af}
+    .score-card.ready .score-value{color:var(--text)}
+    .score-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .score-mini{padding:12px;border-radius:14px;background:#f8fafc;border:1px solid var(--line);min-width:0}
+    .score-mini .k{font-size:12px;color:var(--muted);font-weight:800;margin-bottom:6px}
+    .score-mini .v{font-size:18px;font-weight:900;color:#9ca3af}
+    .score-card.ready .score-mini .v{color:var(--text)}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px;align-items:stretch}
+    .health-card{padding:16px;border-radius:18px;background:rgba(255,255,255,.74);border:1px solid rgba(79,70,229,.08);display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:148px}
+    .health-card h3{margin:0 0 10px;font-size:16px;color:var(--primary);line-height:1.35}
+    .health-card .big{font-size:clamp(20px,2vw,24px);font-weight:900;letter-spacing:-.02em;color:#9ca3af;line-height:1.15;overflow-wrap:anywhere;word-break:break-word}
+    .health-card.ready .big{color:var(--text)}
+    .decision-card .big{font-size:clamp(18px,1.8vw,22px)}
+
+    .result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+    .result-item{padding:16px;border-radius:18px;background:rgba(255,255,255,.74);border:1px solid rgba(79,70,229,.08);min-width:0}
+    .result-item .k{color:var(--muted);font-size:13px;margin-bottom:6px;font-weight:700}
+    .result-item .v{font-size:22px;font-weight:800;line-height:1.2;color:#9ca3af;overflow-wrap:anywhere;word-break:break-word}
+    .result-item.ready .v{color:var(--text)}
+    .result-item .s{margin-top:4px;color:var(--muted);font-size:12px;line-height:1.4}
+
+    .bar-group{display:grid;gap:12px;margin-bottom:16px}
+    .bar-row .top{display:flex;justify-content:space-between;gap:12px;margin-bottom:6px;font-size:14px;font-weight:700;color:#4b5563}
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.9);overflow:hidden;border:1px solid rgba(79,70,229,.08)}
+    .bar > span{display:block;height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .35s ease}
+
+    .smart-note{padding:16px;border-radius:18px;background:rgba(255,255,255,.78);border:1px solid rgba(79,70,229,.08);color:#374151;font-size:15px}
+    .scenario-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+    .scenario-card{padding:16px;border-radius:18px;border:1px solid var(--line);background:#fcfcfd}
+    .scenario-card .k{font-size:13px;color:var(--muted);font-weight:800;margin-bottom:6px}
+    .scenario-card .v{font-size:22px;font-weight:900;margin-bottom:6px}
+    .scenario-card .s{font-size:13px;color:#4b5563}
+
+    .formula-box{margin-top:18px;padding:18px 20px;border-radius:20px;background:#f8f7ff;border:1px dashed rgba(79,70,229,.22);font-weight:800;color:#4338ca;font-size:18px}
+    .content-section p{margin:0 0 14px;color:#4b5563}
+    .content-section ul{margin:0;padding-left:20px;color:#4b5563}
+    .faq-item{border-top:1px solid #edf0f7;padding:18px 0}
+    .faq-item:first-of-type{border-top:0;padding-top:0}
+    .faq-item h3{margin:0 0 8px;font-size:18px}
+    .faq-item p{margin:0;color:#4b5563}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%,#8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+    .success{color:var(--good)} .danger{color:var(--bad)}
+    @media (max-width:1024px){.hero,.tool-layout{grid-template-columns:1fr}.related-grid,.score-grid,.scenario-grid,.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.health-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.result-card{position:static}}
+    @media (max-width:680px){.container{width:min(100% - 20px,100%)}.hero,.card,.content-section,.faq-section,.related-section,.result-card{padding:20px}.form-grid,.result-grid,.related-grid,.score-grid,.health-grid,.scenario-grid{grid-template-columns:1fr}.action-buttons .btn{width:100%}.highlight-card .value{font-size:30px}.health-card{min-height:auto}}
+  
+@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related-tools,.footer-note,.flow-hint{display:none!important}.hero,.card,.result-card,.status-card,.highlight-card,.mini-result{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.result-card{position:static!important}.container{width:100%!important}}
+</style>
+<meta content="Hesapica" property="og:site_name"/><meta content="https://hesapica.com/en/days-between-dates-calculator" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="../cookie-consent.css" rel="stylesheet"/>
+<!-- Measurement and advertising services load only according to user consent and on the live domain. -->
+<script src="../cookie-consent.js"></script>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="../ads-slot-manager.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<style id="hc-madde4-print-controls">
+@media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
+</style>
+<link href="https://hesapica.com/en/days-between-dates-calculator" hreflang="en" rel="alternate"/><link href="https://hesapica.com/iki-tarih-arasi-gun-hesaplama" hreflang="tr" rel="alternate"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Days Between Dates Calculator","url":"https://hesapica.com/en/days-between-dates-calculator","description":"Calculate the exact time between two dates in days, weeks, months, years, hours, minutes and seconds, with an estimated weekday count.","inLanguage":"en","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"English Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Date & Time","item":"https://hesapica.com/en/#date-time"},{"@type":"ListItem","position":3,"name":"Days Between Dates Calculator","item":"https://hesapica.com/en/days-between-dates-calculator"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I calculate without entering times?","acceptedAnswer":{"@type":"Answer","text":"Yes. Entering only the two dates is enough for the basic interval. If the time fields are blank, both dates are treated as 00:00:00."}},{"@type":"Question","name":"Is the weekday count an official business-day count?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator excludes Saturdays and Sundays to provide an approximate weekday count. Public holidays are not removed."}},{"@type":"Question","name":"Can the start and end date be the same?","acceptedAnswer":{"@type":"Answer","text":"Yes. The interval can be zero days. If times are entered, the calculator can still show an hours, minutes and seconds difference within the same date."}},{"@type":"Question","name":"What happens if the end date is before the start date?","acceptedAnswer":{"@type":"Answer","text":"The calculator shows a validation error. The end date/time must be the same as or later than the start date/time."}}]}</script><style id="hc-language-switch-standard">
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .breadcrumb{min-width:0}
+  .layout > *, .tool-layout > *{min-width:0}
+  .hc-language-switch{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;padding:5px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;box-shadow:0 8px 20px rgba(79,70,229,.10)}
+  .hc-language-switch::before{content:"🌐";margin:0 4px 0 6px;font-size:15px;line-height:1}
+  .hc-language-switch a,.hc-language-switch strong{min-height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;line-height:1;white-space:nowrap}
+  .hc-language-switch a{color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+  .hc-language-switch a:hover,.hc-language-switch a:focus-visible{background:#e0e7ff;border-color:#a5b4fc;transform:translateY(-1px);outline:none}
+  .hc-language-switch strong{color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 6px 14px rgba(79,70,229,.20)}
+  @media(max-width:760px){.topbar{align-items:stretch;flex-direction:column;gap:10px}.hc-language-switch{width:100%;justify-content:center;padding:6px}.hc-language-switch a,.hc-language-switch strong{flex:1 1 0;min-height:42px}}
+</style></head>
+<body>
+<noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;border-radius:16px;background:#fef2f2;color:#991b1b;font:600 14px/1.5 Inter,Arial,sans-serif;">This calculator requires JavaScript. Enable JavaScript in your browser to see the results.</div></noscript>
+<div class="container topbar"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="/en/">Home</a><span>/</span><a href="/en/#date-time">Date &amp; Time</a><span>/</span><strong>Days Between Dates Calculator</strong></nav><div aria-label="Language switch" class="hc-language-switch" role="group"><a href="/iki-tarih-arasi-gun-hesaplama" hreflang="tr" lang="tr" title="Open the Turkish version">TR · Türkçe</a><strong aria-current="page">EN · English</strong></div></div><main class="container">
+<section class="hero">
+<div>
+<span class="eyebrow-pill">Hesapica • Advanced Date Tool</span>
+<h1>Days Between Dates Calculator</h1>
+<p>Calculate the interval between a start and end date in days, weeks, months, years, hours, minutes, seconds and approximate weekdays. The calculator also includes clear DD.MM.YYYY input, empty-state handling, a duration score, quick interpretation and scenario analysis.</p>
+<div class="chip-list">
+<div class="chip">Total day difference</div>
+<div class="chip">Weekday estimate</div>
+<div class="chip">Duration Score</div>
+<div class="chip">Scenario analysis</div>
+</div>
+</div>
+<aside class="hero-box">
+<div class="eyebrow">Quick Calculation Logic</div>
+<strong>End date/time − start date/time = detailed duration</strong>
+<p>This tool describes the interval not only in days, but also in weeks, months, years, weekdays and an interpretation layer.</p>
+<ul>
+<li>Total days, hours, minutes and seconds</li>
+<li>Approximate months and years</li>
+<li>Weekday view</li>
+</ul>
+</aside>
+</section>
+<section class="tool-layout">
+<div class="card">
+<h2>Calculate Date Difference</h2>
+<p class="section-note">For basic use, enter the start and end dates. Optional times make the interval more precise down to hours, minutes and seconds. Results update automatically.</p>
+<div class="helper-box">
+<h3>Quick note</h3>
+<p>If the time fields are blank, 00:00:00 is used. The weekday count is an estimate that excludes weekends only; public holidays are not subtracted.</p>
+</div>
+<div class="form-grid">
+<div class="field" id="startDateField">
+<label for="startDate">Start date</label>
+<input aria-describedby="startDateHelper startDateError" aria-invalid="false" aria-required="true" autocomplete="off" id="startDate" inputmode="numeric" maxlength="10" placeholder="DD.MM.YYYY" required="" type="text"/>
+<div class="helper" id="startDateHelper">Example: 15.03.2024</div>
+<div class="field-error" id="startDateError" role="alert"></div>
+</div>
+<div class="field" id="endDateField">
+<label for="endDate">End date</label>
+<input aria-describedby="endDateHelper endDateError" aria-invalid="false" aria-required="true" autocomplete="off" id="endDate" inputmode="numeric" maxlength="10" placeholder="DD.MM.YYYY" required="" type="text"/>
+<div class="helper" id="endDateHelper">Example: 30.03.2026</div>
+<div class="field-error" id="endDateError" role="alert"></div>
+</div>
+<div class="field" id="startTimeField">
+<label for="startTime">Start time (optional)</label>
+<input aria-describedby="startTimeHelper startTimeError" aria-invalid="false" id="startTime" step="1" type="time"/>
+<div class="helper" id="startTimeHelper">Enter a time for second-level precision.</div>
+<div class="field-error" id="startTimeError" role="alert"></div>
+</div>
+<div class="field" id="endTimeField">
+<label for="endTime">End time (optional)</label>
+<input aria-describedby="endTimeHelper endTimeError" aria-invalid="false" id="endTime" step="1" type="time"/>
+<div class="helper" id="endTimeHelper">Leave blank to use 00:00:00.</div>
+<div class="field-error" id="endTimeError" role="alert"></div>
+</div>
+<div class="field full">
+<div class="helper">Enter dates in <strong>DD.MM.YYYY</strong> format. If you enter times, the result also includes hours, minutes and seconds.</div>
+</div>
+</div>
+<div aria-live="polite" class="validation-box" id="validationBox" role="alert"></div>
+<div class="action-buttons">
+<button class="btn btn-primary" onclick="calculateTool(true)" type="button">Calculate</button>
+<button class="btn btn-secondary" onclick="fillExample()" type="button">Example Data</button>
+<button class="btn btn-secondary" onclick="copyResult()" type="button">Copy Result</button>
+<button class="btn btn-ghost" onclick="shareResult()" type="button">Share</button>
+<button class="btn btn-ghost" onclick="setToday()" type="button">Set End to Today</button>
+<button class="btn btn-ghost" onclick="clearForm()" type="button">Reset Data</button>
+<button class="btn btn-ghost" onclick="printResult()" type="button">Print / PDF</button>
+</div>
+</div>
+<aside class="result-card">
+<div class="status-card">
+<div class="status-row">
+<div>
+<div class="status-title">Result status</div>
+<div class="status-text" id="statusText">Results appear automatically when valid start and end dates are entered.</div>
+</div>
+<span class="badge" id="statusBadge">Waiting for data</span>
+</div>
+</div>
+<div class="highlight-card" id="mainBox">
+<div class="label">Total Difference</div>
+<div class="value" id="mainResult">—</div>
+<div class="subtext" id="mainSubtext">The detailed interval will appear here after you enter two dates.</div>
+</div>
+<div class="score-card" id="scoreCard">
+<div class="score-top">
+<div class="score-title">Duration Score</div>
+<div class="score-value" id="durationScore">—</div>
+</div>
+<div class="score-grid">
+<div class="score-mini"><div class="k">Density</div><div class="v" id="scoreDensity">—</div></div>
+<div class="score-mini"><div class="k">Weekdays</div><div class="v" id="scoreWorkday">—</div></div>
+<div class="score-mini"><div class="k">Precision</div><div class="v" id="scoreFlex">—</div></div>
+</div>
+</div>
+<div class="health-grid">
+<div class="health-card" id="health1"><h3>Level</h3><div class="big" id="quickLevel">—</div></div>
+<div class="health-card" id="health2"><h3>Planning Pressure</h3><div class="big" id="quickRisk">—</div></div>
+<div class="health-card decision-card" id="health3"><h3>Guidance</h3><div class="big" id="quickDecision">—</div></div>
+</div>
+<div class="result-grid">
+<div class="result-item" id="item1">
+<div class="k">Total Weeks</div>
+<div class="v" id="totalWeeks">—</div>
+<div class="s" id="totalWeeksText">Waiting for data</div>
+</div>
+<div class="result-item" id="item2">
+<div class="k">Approx. Months</div>
+<div class="v" id="totalMonths">—</div>
+<div class="s" id="totalMonthsText">Waiting for data</div>
+</div>
+<div class="result-item" id="item3">
+<div class="k">Approx. Years</div>
+<div class="v" id="totalYears">—</div>
+<div class="s" id="totalYearsText">Waiting for data</div>
+</div>
+<div class="result-item" id="item4">
+<div class="k">Weekdays</div>
+<div class="v" id="workdays">—</div>
+<div class="s" id="workdaysText">Waiting for data</div>
+</div>
+<div class="result-item" id="item5">
+<div class="k">Total Hours</div>
+<div class="v" id="totalHours">—</div>
+<div class="s" id="totalHoursText">Waiting for data</div>
+</div>
+<div class="result-item" id="item6">
+<div class="k">Total Minutes</div>
+<div class="v" id="totalMinutes">—</div>
+<div class="s" id="totalMinutesText">Waiting for data</div>
+</div>
+<div class="result-item" id="item7">
+<div class="k">Total Seconds</div>
+<div class="v" id="totalSeconds">—</div>
+<div class="s" id="totalSecondsText">Waiting for data</div>
+</div>
+</div>
+<div class="bar-group">
+<div class="bar-row">
+<div class="top"><span>Weekday Share</span><span id="workdayRatioLabel">0%</span></div>
+<div class="bar"><span id="workdayBar"></span></div>
+</div>
+<div class="bar-row">
+<div class="top"><span>Position Within a 30.44-Day Month</span><span id="monthRatioLabel">0%</span></div>
+<div class="bar"><span id="monthBar"></span></div>
+</div>
+</div>
+<div class="smart-note" id="smartComment">No data yet. A short interpretation will appear here after calculation.</div>
+</aside>
+</section>
+<section class="card" style="margin-top:24px;">
+<h2>Scenario Analysis</h2>
+<p class="section-note">See how the total interval changes if the end date moves 7 days later or earlier.</p>
+<div class="scenario-grid">
+<div class="scenario-card">
+<div class="k">If the end date moves 7 days later</div>
+<div class="v" id="scenarioPlus">—</div>
+<div class="s" id="scenarioPlusText">Waiting for data</div>
+</div>
+<div class="scenario-card">
+<div class="k">If the end date moves 7 days earlier</div>
+<div class="v" id="scenarioMinus">—</div>
+<div class="s" id="scenarioMinusText">Waiting for data</div>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2>What does this calculator do?</h2>
+<p>The Days Between Dates Calculator shows the interval between a start and end date. In addition to total days, it presents weeks, approximate months and years, and an estimated weekday count.</p>
+<p>It is useful for delivery planning, due-date tracking, leave periods, project timing, and measuring elapsed time between two events down to hours, minutes and seconds.</p>
+<h2>How is the difference between two dates calculated?</h2>
+<p>The calculator subtracts the start date/time from the end date/time. If times are entered, the result is precise to the second. It then expresses the interval as weeks, approximate months and years, weekdays, and total time units.</p>
+<div class="formula-box">
+        Duration = End date/time − Start date/time
+        <br/>
+        Weekdays = Approximate days excluding Saturdays and Sundays
+      </div>
+</section>
+<section class="faq-section">
+<!-- HC_AD_SLOT:faq -->
+<div aria-label="Advertisement area" class="hc-ad-slot hc-ad-slot--faq">
+<ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="4903929326" data-full-width-responsive="true" style="display:block"></ins>
+</div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>Can I calculate without entering times?</h3>
+<p>Yes. Entering only the two dates is enough for the basic interval. If the time fields are blank, both dates are treated as 00:00:00.</p>
+</div>
+<div class="faq-item">
+<h3>Is the weekday count an official business-day count?</h3>
+<p>No. The calculator excludes Saturdays and Sundays to provide an approximate weekday count. Public holidays are not removed.</p>
+</div>
+<div class="faq-item">
+<h3>Can the start and end date be the same?</h3>
+<p>Yes. The interval can be zero days. If times are entered, the calculator can still show an hours, minutes and seconds difference within the same date.</p>
+</div>
+<div class="faq-item">
+<h3>What happens if the end date is before the start date?</h3>
+<p>The calculator shows a validation error. The end date/time must be the same as or later than the start date/time.</p>
+</div>
+</section>
+<section class="related-section">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/en/age-calculator"><span class="small">Related Tool</span><strong>Age Calculator</strong><p>Calculate age in years, months, days and detailed elapsed time from a birth date.</p></a>
+<a class="related-card" href="/en/countdown-calculator"><span class="small">Related Tool</span><strong>Countdown Calculator</strong><p>See how many days, hours, minutes and seconds remain until a target date.</p></a>
+<a class="related-card" href="/en/budget-calculator"><span class="small">Related Tool</span><strong>Budget Calculator</strong><p>Add a budget view to longer-term planning.</p></a>
+</div>
+</section>
+<div class="footer-note">Hesapica · This calculator is designed for quick date-difference estimates. For official business-day or holiday calculations, use the relevant organization’s calendar.</div>
+</main>
+<script>
+    const STORAGE_KEY = 'hesapica_en_days_between_dates_manual_v4';
+    const state = {
+      inputs: {},
+      results: null,
+      isValid: false,
+      isCalculated: false,
+      inputSource: 'manual',
+      touched: { startDate: false, endDate: false, startTime: false, endTime: false },
+      hasAttemptedSubmit: false
+    };
+
+    const startDateEl = document.getElementById('startDate');
+    const endDateEl = document.getElementById('endDate');
+    const startTimeEl = document.getElementById('startTime');
+    const endTimeEl = document.getElementById('endTime');
+    const validationBox = document.getElementById('validationBox');
+    const resultCardEl = document.querySelector('.result-card');
+    const helperEls = {
+      startDate: document.getElementById('startDateHelper'),
+      endDate: document.getElementById('endDateHelper'),
+      startTime: document.getElementById('startTimeHelper'),
+      endTime: document.getElementById('endTimeHelper')
+    };
+    const fieldEls = {
+      startDate: document.getElementById('startDateField'),
+      endDate: document.getElementById('endDateField'),
+      startTime: document.getElementById('startTimeField'),
+      endTime: document.getElementById('endTimeField')
+    };
+    const errorEls = {
+      startDate: document.getElementById('startDateError'),
+      endDate: document.getElementById('endDateError'),
+      startTime: document.getElementById('startTimeError'),
+      endTime: document.getElementById('endTimeError')
+    };
+    const inputEls = { startDate: startDateEl, endDate: endDateEl, startTime: startTimeEl, endTime: endTimeEl };
+    const defaultHelpers = {
+      startDate: 'Example: 15.03.2024',
+      endDate: 'Example: 30.03.2026',
+      startTime: 'Enter a time for second-level precision.',
+      endTime: 'Leave blank to use 00:00:00.'
+    };
+
+    function safeSetStorage(key, value) { try { localStorage.setItem(key, value); } catch (error) {} }
+    function safeGetStorage(key) { try { return localStorage.getItem(key); } catch (error) { return null; } }
+    function safeRemoveStorage(key) { try { localStorage.removeItem(key); } catch (error) {} }
+    function formatNumber(value, digits = 0) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return '0';
+      return new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: digits }).format(n);
+    }
+    function formatRatio(value) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return '0%';
+      return formatNumber(Math.max(0, Math.min(100, n)), 0) + '%';
+    }
+    function summarizeLargeNumber(value, unit) {
+      const n = Number(value);
+      if (!n) return 'Waiting for data';
+      if (n >= 1e9) return 'About ' + formatNumber(n / 1e9, 2) + ' billion ' + unit;
+      if (n >= 1e6) return 'About ' + formatNumber(n / 1e6, 2) + ' million ' + unit;
+      if (n >= 1e3) return 'About ' + formatNumber(n / 1e3, 2) + ' thousand ' + unit;
+      return formatNumber(n) + ' ' + unit;
+    }
+    function formatTRDate(date) {
+      return String(date.getDate()).padStart(2, '0') + '.' + String(date.getMonth() + 1).padStart(2, '0') + '.' + date.getFullYear();
+    }
+    function normalizeTimeString(value) {
+      if (!value) return '';
+      const t = value.trim();
+      if (!t) return '';
+      return /^\d{2}:\d{2}$/.test(t) ? t + ':00' : t;
+    }
+    function parseTRDate(rawValue) {
+      const value = (rawValue || '').trim();
+      if (!value) return { ok: false, empty: true };
+      let day, month, year;
+      let match = value.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      if (match) {
+        day = Number(match[1]);
+        month = Number(match[2]);
+        year = Number(match[3]);
+      } else {
+        match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!match) return { ok: false, error: 'Enter the date in DD.MM.YYYY format.' };
+        year = Number(match[1]);
+        month = Number(match[2]);
+        day = Number(match[3]);
+      }
+      const date = new Date(year, month - 1, day);
+      if (date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) {
+        return { ok: false, error: 'Enter a valid date.' };
+      }
+      return { ok: true, date, normalized: formatTRDate(date) };
+    }
+    function applyDateMask(input) {
+      let digits = input.value.replace(/\D/g, '').slice(0, 8);
+      let masked = '';
+      if (digits.length > 0) masked += digits.slice(0, 2);
+      if (digits.length >= 3) masked += '.' + digits.slice(2, 4);
+      else if (digits.length > 2) masked += '.' + digits.slice(2);
+      if (digits.length >= 5) masked += '.' + digits.slice(4, 8);
+      input.value = masked;
+    }
+    function normalizeDateInput(input) {
+      const parsed = parseTRDate(input.value);
+      if (parsed.ok) input.value = parsed.normalized;
+      return parsed;
+    }
+    function combineDateTime(dateStr, timeStr) {
+      const p = parseTRDate(dateStr);
+      if (!p.ok) return null;
+      const t = normalizeTimeString(timeStr) || '00:00:00';
+      const m = t.match(/^(\d{2}):(\d{2})(?::(\d{2}))?$/);
+      if (!m) return null;
+      const h = Number(m[1]);
+      const mi = Number(m[2]);
+      const s = Number(m[3] || '0');
+      if (h > 23 || mi > 59 || s > 59) return null;
+      return new Date(p.date.getFullYear(), p.date.getMonth(), p.date.getDate(), h, mi, s, 0);
+    }
+    function showValidation(message = '') {
+      if (!message) {
+        validationBox.classList.remove('show');
+        validationBox.textContent = '';
+        return;
+      }
+      validationBox.classList.add('show');
+      validationBox.textContent = message;
+    }
+    function resetHelpers() {
+      Object.keys(helperEls).forEach((key) => {
+        helperEls[key].textContent = defaultHelpers[key];
+        helperEls[key].classList.remove('error');
+      });
+    }
+    function clearFieldErrors() {
+      Object.keys(inputEls).forEach((key) => {
+        inputEls[key].classList.remove('input-error');
+        inputEls[key].setAttribute('aria-invalid', 'false');
+        fieldEls[key].classList.remove('has-error');
+        errorEls[key].textContent = '';
+      });
+      resetHelpers();
+    }
+    function shouldShowFieldError(fieldKey) {
+      return state.hasAttemptedSubmit || !!state.touched[fieldKey];
+    }
+    function setFieldError(fieldKey, message) {
+      if (!message || !shouldShowFieldError(fieldKey)) return;
+      inputEls[fieldKey].classList.add('input-error');
+      inputEls[fieldKey].setAttribute('aria-invalid', 'true');
+      fieldEls[fieldKey].classList.add('has-error');
+      errorEls[fieldKey].textContent = message;
+      if (helperEls[fieldKey]) {
+        helperEls[fieldKey].textContent = message;
+        helperEls[fieldKey].classList.add('error');
+      }
+    }
+    function readInputs() {
+      return {
+        startDate: startDateEl.value.trim(),
+        endDate: endDateEl.value.trim(),
+        startTime: startTimeEl.value.trim(),
+        endTime: endTimeEl.value.trim()
+      };
+    }
+    function countWorkdays(start, end) {
+      let count = 0;
+      const current = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+      const last = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+      while (current < last) {
+        const day = current.getDay();
+        if (day !== 0 && day !== 6) count++;
+        current.setDate(current.getDate() + 1);
+      }
+      return count;
+    }
+    function addMonthsAnchored(start, count) {
+      const baseYear = start.getFullYear();
+      const baseMonth = start.getMonth();
+      const baseDay = start.getDate();
+      const absoluteMonth = baseMonth + count;
+      const year = baseYear + Math.floor(absoluteMonth / 12);
+      const month = ((absoluteMonth % 12) + 12) % 12;
+      const lastDay = new Date(year, month + 1, 0).getDate();
+      return new Date(
+        year,
+        month,
+        Math.min(baseDay, lastDay),
+        start.getHours(),
+        start.getMinutes(),
+        start.getSeconds(),
+        start.getMilliseconds()
+      );
+    }
+    function addLocalDays(start, count) {
+      const date = new Date(start.getTime());
+      date.setDate(date.getDate() + count);
+      return date;
+    }
+    function diffYMDHMS(start, end) {
+      let wholeMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+      let anchor = addMonthsAnchored(start, wholeMonths);
+
+      while (anchor > end && wholeMonths > 0) {
+        wholeMonths -= 1;
+        anchor = addMonthsAnchored(start, wholeMonths);
+      }
+      while (addMonthsAnchored(start, wholeMonths + 1) <= end) {
+        wholeMonths += 1;
+        anchor = addMonthsAnchored(start, wholeMonths);
+      }
+
+      const years = Math.floor(wholeMonths / 12);
+      const months = wholeMonths % 12;
+      let cursor = anchor;
+      let days = 0;
+      while (days < 32) {
+        const next = addLocalDays(cursor, 1);
+        if (next <= end) {
+          cursor = next;
+          days += 1;
+        } else break;
+      }
+
+      let remainingMs = end - cursor;
+      const hours = Math.floor(remainingMs / 3600000);
+      remainingMs -= hours * 3600000;
+      const minutes = Math.floor(remainingMs / 60000);
+      remainingMs -= minutes * 60000;
+      const seconds = Math.floor(remainingMs / 1000);
+      return { years, months, days, hours, minutes, seconds };
+    }
+    function calculateDurationScore(totalDaysFloat, workdays, hasTimes) {
+      const totalDays = Math.max(0, totalDaysFloat);
+      const density = Math.max(0, Math.min(100, totalDays <= 7 ? 90 : totalDays <= 31 ? 75 : totalDays <= 180 ? 60 : 45));
+      const workdayScore = totalDays > 0 ? Math.max(0, Math.min(100, (workdays / totalDays) * 100)) : 0;
+      const flex = hasTimes ? 85 : 65;
+      return {
+        total: Math.round((density * 0.4) + (workdayScore * 0.35) + (flex * 0.25)),
+        density: Math.round(density),
+        workday: Math.round(workdayScore),
+        flex: Math.round(flex)
+      };
+    }
+    function scoreLabel(score) {
+      if (score >= 70) return { label: 'Clear', risk: 'Low', decision: 'Easy to plan', badge: 'good' };
+      if (score >= 40) return { label: 'Moderate', risk: 'Moderate', decision: 'Review', badge: 'warn' };
+      return { label: 'Tight', risk: 'High', decision: 'Use caution', badge: 'bad' };
+    }
+    function buildMainText(totalDaysFloat, totalHours, totalMinutes, totalSeconds) {
+      if (totalDaysFloat >= 1) return formatNumber(totalDaysFloat, 2) + ' days';
+      if (totalHours >= 1) return formatNumber(totalHours, 2) + ' hours';
+      if (totalMinutes >= 1) return formatNumber(totalMinutes, 2) + ' minutes';
+      return formatNumber(totalSeconds) + ' seconds';
+    }
+    function calculateScenarioText(baseSeconds) {
+      const daySeconds = 7 * 86400;
+      return { plus: Math.max(0, baseSeconds + daySeconds), minus: Math.max(0, baseSeconds - daySeconds) };
+    }
+    function calculateDuration(data) {
+      if (!data.startDate && !data.endDate && !data.startTime && !data.endTime) return { empty: true };
+      const sp = parseTRDate(data.startDate);
+      const ep = parseTRDate(data.endDate);
+      const fieldErrors = {};
+      if (!data.startDate) fieldErrors.startDate = 'Start date is required.';
+      if (!data.endDate) fieldErrors.endDate = 'End date is required.';
+      if (data.startDate && !sp.ok) fieldErrors.startDate = sp.error || 'Enter a valid date.';
+      if (data.endDate && !ep.ok) fieldErrors.endDate = ep.error || 'Enter a valid date.';
+      if (Object.keys(fieldErrors).length) {
+        const primary = fieldErrors.startDate || fieldErrors.endDate || 'Check the date fields.';
+        return { error: primary, fieldErrors };
+      }
+      const start = combineDateTime(sp.normalized, data.startTime);
+      const end = combineDateTime(ep.normalized, data.endTime);
+      if (!start || Number.isNaN(start.getTime())) return { error: 'The start date or time could not be read.', fieldErrors: { startDate: 'Check the start date.' } };
+      if (!end || Number.isNaN(end.getTime())) return { error: 'The end date or time could not be read.', fieldErrors: { endDate: 'Check the end date.' } };
+      if (end < start) return { error: 'The end date/time cannot be before the start date/time.', fieldErrors: { endDate: 'The end date/time must be the same as or later than the start date/time.' } };
+
+      const totalMs = end - start;
+      const totalSeconds = Math.floor(totalMs / 1000);
+      const totalMinutes = totalSeconds / 60;
+      const totalHours = totalSeconds / 3600;
+      const totalDaysFloat = totalSeconds / 86400;
+      const totalDays = Math.floor(totalDaysFloat);
+      const totalWeeks = totalDaysFloat / 7;
+      const totalMonths = totalDaysFloat / 30.4375;
+      const totalYears = totalDaysFloat / 365.25;
+      const workdays = countWorkdays(start, end);
+      const diff = diffYMDHMS(start, end);
+      const workdayRatio = totalDaysFloat > 0 ? Math.min(100, (workdays / totalDaysFloat) * 100) : 0;
+      const monthRatio = totalDaysFloat > 0 ? Math.min(100, ((totalDaysFloat % 30.4375) / 30.4375) * 100) : 0;
+      const hasTimes = !!(data.startTime || data.endTime);
+      const score = calculateDurationScore(totalDaysFloat, workdays, hasTimes);
+      const status = scoreLabel(score.total);
+      const scenario = calculateScenarioText(totalSeconds);
+
+      let comment = '';
+      if (!data.startTime && !data.endTime) comment += 'Because both time fields were blank, 00:00:00 was used for both dates. ';
+      if (totalSeconds === 0) comment += 'The selected start and end moments are the same, so the interval is 0 seconds.';
+      else if (totalDaysFloat < 1) comment += 'This is a short interval, so the hours, minutes and seconds view is especially useful.';
+      else if (totalDaysFloat <= 31) comment += 'This is a short-to-medium interval. Total days and weekdays may be the most useful planning views.';
+      else if (totalDaysFloat <= 180) comment += 'This is a medium-term interval. Read the weeks, approximate months and weekdays together.';
+      else comment += 'This is a long interval. Approximate months and years may be the most useful summary.';
+
+      return {
+        inputs: {
+          startDate: sp.normalized,
+          endDate: ep.normalized,
+          startTime: normalizeTimeString(data.startTime),
+          endTime: normalizeTimeString(data.endTime)
+        },
+        start,
+        end,
+        totalMs,
+        totalSeconds,
+        totalMinutes,
+        totalHours,
+        totalDays,
+        totalDaysFloat,
+        totalWeeks,
+        totalMonths,
+        totalYears,
+        workdays,
+        diff,
+        workdayRatio,
+        monthRatio,
+        hasTimes,
+        score,
+        status,
+        mainText: buildMainText(totalDaysFloat, totalHours, totalMinutes, totalSeconds),
+        detailText: diff.years + ' years ' + diff.months + ' months ' + diff.days + ' days ' + diff.hours + ' hours ' + diff.minutes + ' minutes ' + diff.seconds + ' seconds',
+        scenarioPlus: scenario.plus,
+        scenarioMinus: scenario.minus,
+        comment: comment.trim()
+      };
+    }
+    function setEmptyState() {
+      document.getElementById('statusText').textContent = 'Results appear automatically when valid start and end dates are entered.';
+      document.getElementById('statusBadge').textContent = 'Waiting for data';
+      document.getElementById('statusBadge').className = 'badge';
+      document.getElementById('mainResult').textContent = '—';
+      document.getElementById('mainSubtext').textContent = 'The detailed interval will appear here after you enter two dates.';
+      document.getElementById('mainResult').className = 'value';
+      document.getElementById('mainBox').classList.remove('ready');
+      document.getElementById('durationScore').textContent = '—';
+      document.getElementById('scoreDensity').textContent = '—';
+      document.getElementById('scoreWorkday').textContent = '—';
+      document.getElementById('scoreFlex').textContent = '—';
+      document.getElementById('scoreCard').classList.remove('ready');
+      document.getElementById('quickLevel').textContent = '—';
+      document.getElementById('quickRisk').textContent = '—';
+      document.getElementById('quickDecision').textContent = '—';
+      ['health1','health2','health3','item1','item2','item3','item4','item5','item6','item7'].forEach((id) => document.getElementById(id).classList.remove('ready'));
+      ['totalWeeks','totalMonths','totalYears','workdays','totalHours','totalMinutes','totalSeconds'].forEach((id) => { document.getElementById(id).textContent = '—'; });
+      ['totalWeeksText','totalMonthsText','totalYearsText','workdaysText','totalHoursText','totalMinutesText','totalSecondsText'].forEach((id) => { document.getElementById(id).textContent = 'Waiting for data'; });
+      document.getElementById('workdayRatioLabel').textContent = '0%';
+      document.getElementById('monthRatioLabel').textContent = '0%';
+      document.getElementById('workdayBar').style.width = '0%';
+      document.getElementById('monthBar').style.width = '0%';
+      document.getElementById('scenarioPlus').textContent = '—';
+      document.getElementById('scenarioPlusText').textContent = 'Waiting for data';
+      document.getElementById('scenarioMinus').textContent = '—';
+      document.getElementById('scenarioMinusText').textContent = 'Waiting for data';
+      document.getElementById('smartComment').textContent = 'No data yet. A short interpretation will appear here after calculation.';
+    }
+    function focusResultArea() {
+      resultCardEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      resultCardEl.classList.add('flash');
+      setTimeout(() => resultCardEl.classList.remove('flash'), 900);
+    }
+    function renderResult(result, shouldFocus = false) {
+      const status = result.status;
+      document.getElementById('statusText').textContent = 'The result was calculated automatically from the current inputs.';
+      document.getElementById('statusBadge').textContent = status.label;
+      document.getElementById('statusBadge').className = 'badge ' + status.badge;
+      document.getElementById('mainResult').textContent = result.mainText;
+      document.getElementById('mainResult').className = 'value';
+      document.getElementById('mainSubtext').textContent = 'Detailed difference: ' + result.detailText;
+      document.getElementById('mainBox').classList.add('ready');
+      document.getElementById('durationScore').textContent = result.score.total + '/100';
+      document.getElementById('scoreDensity').textContent = result.score.density;
+      document.getElementById('scoreWorkday').textContent = result.score.workday;
+      document.getElementById('scoreFlex').textContent = result.score.flex;
+      document.getElementById('scoreCard').classList.add('ready');
+      document.getElementById('quickLevel').textContent = status.label;
+      document.getElementById('quickRisk').textContent = status.risk;
+      document.getElementById('quickDecision').textContent = status.decision;
+      ['health1','health2','health3','item1','item2','item3','item4','item5','item6','item7'].forEach((id) => document.getElementById(id).classList.add('ready'));
+      document.getElementById('totalWeeks').textContent = formatNumber(result.totalWeeks, 2);
+      document.getElementById('totalWeeksText').textContent = 'About ' + formatNumber(result.totalWeeks, 2) + ' weeks';
+      document.getElementById('totalMonths').textContent = formatNumber(result.totalMonths, 2);
+      document.getElementById('totalMonthsText').textContent = 'About ' + formatNumber(result.totalMonths, 2) + ' months';
+      document.getElementById('totalYears').textContent = formatNumber(result.totalYears, 2);
+      document.getElementById('totalYearsText').textContent = 'About ' + formatNumber(result.totalYears, 2) + ' years';
+      document.getElementById('workdays').textContent = formatNumber(result.workdays);
+      document.getElementById('workdaysText').textContent = summarizeLargeNumber(result.workdays, 'weekdays');
+      document.getElementById('totalHours').textContent = formatNumber(result.totalHours, 2);
+      document.getElementById('totalHoursText').textContent = 'Total ' + formatNumber(result.totalHours, 2) + ' hours';
+      document.getElementById('totalMinutes').textContent = formatNumber(result.totalMinutes, 2);
+      document.getElementById('totalMinutesText').textContent = 'Total ' + formatNumber(result.totalMinutes, 2) + ' minutes';
+      document.getElementById('totalSeconds').textContent = formatNumber(result.totalSeconds);
+      document.getElementById('totalSecondsText').textContent = 'Total ' + formatNumber(result.totalSeconds) + ' seconds';
+      document.getElementById('workdayRatioLabel').textContent = formatRatio(result.workdayRatio);
+      document.getElementById('monthRatioLabel').textContent = formatRatio(result.monthRatio);
+      document.getElementById('workdayBar').style.width = Math.max(0, Math.min(100, result.workdayRatio)) + '%';
+      document.getElementById('monthBar').style.width = Math.max(0, Math.min(100, result.monthRatio)) + '%';
+      document.getElementById('scenarioPlus').textContent = formatNumber(result.scenarioPlus / 86400, 2) + ' days';
+      document.getElementById('scenarioPlusText').textContent = 'New total interval if the end moves 7 days later';
+      document.getElementById('scenarioMinus').textContent = formatNumber(result.scenarioMinus / 86400, 2) + ' days';
+      document.getElementById('scenarioMinusText').textContent = 'New total interval if the end moves 7 days earlier';
+      document.getElementById('smartComment').textContent = result.comment;
+      if (shouldFocus) focusResultArea();
+    }
+    function saveManualState() {
+      if (state.inputSource !== 'manual') return;
+      const hasAny = Object.values(state.inputs).some(Boolean);
+      if (!hasAny) return;
+      safeSetStorage(STORAGE_KEY, JSON.stringify({ source: 'manual', inputs: state.inputs }));
+    }
+    function focusFirstInvalidField(fieldErrors = {}) {
+      const order = ['startDate', 'endDate', 'startTime', 'endTime'];
+      const firstKey = order.find((key) => fieldErrors[key]);
+      if (firstKey && inputEls[firstKey]) inputEls[firstKey].focus();
+    }
+    function renderFieldErrors(fieldErrors = {}) {
+      Object.entries(fieldErrors).forEach(([fieldKey, message]) => setFieldError(fieldKey, message));
+    }
+    function calculateTool(forceFocus = false, submitIntent = false) {
+      if (submitIntent) state.hasAttemptedSubmit = true;
+      clearFieldErrors();
+      showValidation('');
+      state.inputs = readInputs();
+      const result = calculateDuration(state.inputs);
+      if (result.empty) {
+        state.results = null;
+        state.isValid = false;
+        state.isCalculated = false;
+        state.hasAttemptedSubmit = false;
+        setEmptyState();
+        saveManualState();
+        return;
+      }
+      if (result.error) {
+        state.results = null;
+        state.isValid = false;
+        state.isCalculated = false;
+        renderFieldErrors(result.fieldErrors || {});
+        const shouldShowMessage = state.hasAttemptedSubmit || Object.keys(result.fieldErrors || {}).some((key) => state.touched[key]);
+        if (shouldShowMessage) showValidation(result.error);
+        setEmptyState();
+        if (submitIntent) focusFirstInvalidField(result.fieldErrors || {});
+        saveManualState();
+        return;
+      }
+      if (result.inputs.startDate) startDateEl.value = result.inputs.startDate;
+      if (result.inputs.endDate) endDateEl.value = result.inputs.endDate;
+      if (typeof result.inputs.startTime === 'string') startTimeEl.value = result.inputs.startTime;
+      if (typeof result.inputs.endTime === 'string') endTimeEl.value = result.inputs.endTime;
+      state.inputs = result.inputs;
+      state.results = result;
+      state.isValid = true;
+      state.isCalculated = true;
+      renderResult(result, forceFocus);
+      saveManualState();
+    }
+    function debounce(fn, delay = 180) {
+      let timer = null;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+      };
+    }
+    const debouncedCalc = debounce(() => calculateTool(false, false), 180);
+    [startDateEl, endDateEl].forEach((el) => {
+      el.addEventListener('input', () => {
+        const iso = el.value.trim().match(/^\d{4}-\d{2}-\d{2}$/);
+        if (iso) { const parsed = parseTRDate(el.value); if (parsed.ok) el.value = parsed.normalized; }
+        else applyDateMask(el);
+        state.inputSource = 'manual';
+        state.touched[el.id] = true;
+        debouncedCalc();
+      });
+      el.addEventListener('blur', () => {
+        normalizeDateInput(el);
+        state.inputSource = 'manual';
+        state.touched[el.id] = true;
+        calculateTool(false, false);
+      });
+      el.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          normalizeDateInput(el);
+          state.inputSource = 'manual';
+          state.touched[el.id] = true;
+          calculateTool(true, true);
+        }
+      });
+      el.addEventListener('paste', () => {
+        setTimeout(() => {
+          const parsed = parseTRDate(el.value);
+          if (parsed.ok) el.value = parsed.normalized;
+          else applyDateMask(el);
+          state.inputSource = 'manual';
+          state.touched[el.id] = true;
+          calculateTool(false, false);
+        }, 0);
+      });
+    });
+    [startTimeEl, endTimeEl].forEach((el) => {
+      el.addEventListener('input', () => {
+        state.inputSource = 'manual';
+        state.touched[el.id] = true;
+        debouncedCalc();
+      });
+      el.addEventListener('change', () => {
+        state.inputSource = 'manual';
+        state.touched[el.id] = true;
+        calculateTool(false, false);
+      });
+      el.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          state.inputSource = 'manual';
+          state.touched[el.id] = true;
+          calculateTool(true, true);
+        }
+      });
+    });
+    function fillExample() {
+      state.inputSource = 'demo';
+      state.touched = { startDate: false, endDate: false, startTime: false, endTime: false };
+      state.hasAttemptedSubmit = false;
+      startDateEl.value = '01.01.2024';
+      startTimeEl.value = '09:15:30';
+      endDateEl.value = '30.03.2026';
+      endTimeEl.value = '18:45:15';
+      calculateTool(true, false);
+    }
+    function clearForm() {
+      state.inputSource = 'manual';
+      state.touched = { startDate: false, endDate: false, startTime: false, endTime: false };
+      state.hasAttemptedSubmit = false;
+      startDateEl.value = '';
+      endDateEl.value = '';
+      startTimeEl.value = '';
+      endTimeEl.value = '';
+      clearFieldErrors();
+      showValidation('');
+      state.results = null;
+      state.isValid = false;
+      state.isCalculated = false;
+      state.inputs = readInputs();
+      setEmptyState();
+      safeRemoveStorage(STORAGE_KEY);
+    }
+    function setToday() {
+      state.inputSource = 'manual';
+      const now = new Date();
+      state.touched.endDate = true;
+      state.touched.endTime = true;
+      endDateEl.value = formatTRDate(now);
+      endTimeEl.value = [String(now.getHours()).padStart(2, '0'), String(now.getMinutes()).padStart(2, '0'), String(now.getSeconds()).padStart(2, '0')].join(':');
+      calculateTool(true, false);
+    }
+    function buildCopyText() {
+      return [
+        'Days Between Dates Calculator Result',
+        'Total Difference: ' + document.getElementById('mainResult').textContent,
+        'Detailed Difference: ' + document.getElementById('mainSubtext').textContent.replace('Detailed difference: ', ''),
+        'Total Weeks: ' + document.getElementById('totalWeeks').textContent,
+        'Approx. Months: ' + document.getElementById('totalMonths').textContent,
+        'Approx. Years: ' + document.getElementById('totalYears').textContent,
+        'Weekdays: ' + document.getElementById('workdays').textContent,
+        'Total Hours: ' + document.getElementById('totalHours').textContent,
+        'Total Minutes: ' + document.getElementById('totalMinutes').textContent,
+        'Total Seconds: ' + document.getElementById('totalSeconds').textContent,
+        'Duration Score: ' + document.getElementById('durationScore').textContent
+      ].join('\n');
+    }
+    function fallbackCopyText(text) {
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      temp.setAttribute('readonly', '');
+      temp.style.position = 'absolute';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+      temp.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (error) { ok = false; }
+      document.body.removeChild(temp);
+      return ok;
+    }
+    function flashComment(message, fallback) {
+      const oldText = document.getElementById('smartComment').textContent;
+      document.getElementById('smartComment').textContent = message;
+      setTimeout(() => {
+        document.getElementById('smartComment').textContent = fallback || oldText;
+      }, 1800);
+    }
+    function printResult() {
+      if (!state.isCalculated || !state.results) { flashComment('Create a valid result before printing.'); return; }
+      window.print();
+    }
+
+    function copyResult() {
+      if (!state.isCalculated || !state.results) {
+        document.getElementById('smartComment').textContent = 'Enter valid dates and create a result first.';
+        return;
+      }
+      const text = buildCopyText();
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          flashComment('Result copied to the clipboard.');
+        }).catch(() => {
+          if (fallbackCopyText(text)) flashComment('Result copied to the clipboard.');
+          else alert('Copy failed.');
+        });
+        return;
+      }
+      if (fallbackCopyText(text)) flashComment('Result copied to the clipboard.');
+      else alert('Copy failed.');
+    }
+    async function shareResult() {
+      if (!state.isCalculated || !state.results) {
+        document.getElementById('smartComment').textContent = 'Enter valid dates and create a result before sharing.';
+        return;
+      }
+      const shareText = buildCopyText();
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: 'Days Between Dates Calculator', text: shareText, url: 'https://hesapica.com/en/days-between-dates-calculator' });
+          return;
+        } catch (error) {
+          if (error && error.name === 'AbortError') return;
+        }
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(shareText);
+          flashComment('Share summary copied to the clipboard.');
+          return;
+        } catch (error) {}
+      }
+      if (fallbackCopyText(shareText)) flashComment('Share summary copied to the clipboard.');
+      else alert('The share summary could not be copied.');
+    }
+    function loadManualState() {
+      try {
+        const raw = safeGetStorage(STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (!parsed || parsed.source !== 'manual' || !parsed.inputs) return;
+        startDateEl.value = parsed.inputs.startDate || '';
+        endDateEl.value = parsed.inputs.endDate || '';
+        startTimeEl.value = parsed.inputs.startTime || '';
+        endTimeEl.value = parsed.inputs.endTime || '';
+        state.inputSource = 'manual';
+        state.inputs = readInputs();
+        calculateTool(false, false);
+      } catch (error) {
+        safeRemoveStorage(STORAGE_KEY);
+      }
+    }
+
+    setEmptyState();
+    clearFieldErrors();
+    loadManualState();
+  </script>
+<script src="../ads-slot-manager.js"></script>
+<script id="hc-reset-scroll-standard">
+(() => {
+  const resetLabels = new Set(['reset data','clear data','clear','reset']);
+  const normalize = value => String(value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase('en-US');
+
+  document.querySelectorAll('button').forEach(button => {
+    if(button.id === 'timeClearBtn') return;
+    if(!resetLabels.has(normalize(button.textContent))) return;
+
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        let target = button.closest('form');
+        if(target && !target.matches('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')){
+          target = target.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card') || target;
+        }
+        target = target
+          || button.closest('.card,.panel,.input-card,.form-card,.calculator-card,.tool-card')
+          || document.querySelector('main');
+
+        if(target && typeof target.scrollIntoView === 'function'){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
