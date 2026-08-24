@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>İş Günü Hesaplama | İki Tarih Arası İş Günü | Hesapica</title>
+<meta content="İki tarih arasındaki iş gününü hesapla veya belirli sayıda iş günü sonrasını bul. Hafta sonları, ülke resmî tatilleri ve özel günler dahil gelişmiş iş günü hesabı." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="iş günü hesaplama, iki tarih arası iş günü, çalışma günü hesaplama, 30 iş günü sonrası, iş günü ekleme, resmi tatil hesaplama" name="keywords"/>
+<meta content="#4f46e5" name="theme-color"/>
+<link href="https://hesapica.com/is-gunu-hesaplama" rel="canonical"/>
+<link href="https://hesapica.com/is-gunu-hesaplama" hreflang="tr" rel="alternate"/>
+<link href="https://hesapica.com/en/business-days-calculator" hreflang="en" rel="alternate"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="ca-pub-4334681065822132" name="google-adsense-account"/>
+<meta content="website" property="og:type"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="İş Günü Hesaplama | İki Tarih Arası İş Günü | Hesapica" property="og:title"/>
+<meta content="İki tarih arasındaki iş gününü hesapla veya belirli sayıda iş günü sonrasını bul. Hafta sonları, ülke resmî tatilleri ve özel günler dahil gelişmiş iş günü hesabı." property="og:description"/>
+<meta content="https://hesapica.com/is-gunu-hesaplama" property="og:url"/>
+<meta content="https://hesapica.com/og-image.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Hesapica — İş günü, tarih ve planlama hesaplama aracı" property="og:image:alt"/>
+<meta content="https://hesapica.com/og-image.png" name="twitter:image"/>
+<meta content="Hesapica — İş günü, tarih ve planlama hesaplama aracı" name="twitter:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="İş Günü Hesaplama | İki Tarih Arası İş Günü | Hesapica" name="twitter:title"/>
+<meta content="İki tarih arasındaki iş gününü hesapla veya belirli sayıda iş günü sonrasını bul. Hafta sonları, ülke resmî tatilleri ve özel günler dahil gelişmiş iş günü hesabı." name="twitter:description"/>
+<!-- Google Analytics 4 -->
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"İki tarih arasında kaç iş günü olduğunu nasıl bulurum?","acceptedAnswer":{"@type":"Answer","text":"Başlangıç ve bitiş tarihlerini girin, dahil etme yöntemini seçin ve çalışma takviminizi belirleyin. Araç hafta sonlarını, seçili resmî tatilleri ve özel günleri çıkararak net iş günü sayısını verir."}},{"@type":"Question","name":"Resmî tatiller otomatik düşülüyor mu?","acceptedAnswer":{"@type":"Answer","text":"Evet. Türkiye için 2024–2033 resmî tam gün tatilleri yerel Diyanet takviminden; Nager.Holidays’in desteklediği 200+ diğer ülkede ulusal Public/Bank tatilleri Community API’nin mevcut yıl ve sonraki 5 yıl penceresinde alınır. Veri güvenle sağlanamazsa araç bunu açıkça bildirir ve tatilleri sessizce yok saymaz."}},{"@type":"Question","name":"Okul ara tatilleri iş gününden düşülür mü?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Okul ara tatilleri genel iş yeri kapanışı değildir. İhtiyacınız varsa ilgili günleri özel çalışılmayan gün olarak ekleyebilirsiniz."}},{"@type":"Question","name":"Hafta sonu Cumartesi ve Pazar olmak zorunda mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Haftanın yedi günü ayrı ayrı seçilebilir; böylece farklı ülke veya işletme çalışma düzenlerine uyarlanabilir."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://hesapica.com/"},{"@type":"ListItem","position":2,"name":"Günlük Hayat Hesapları","item":"https://hesapica.com/#gunluk"},{"@type":"ListItem","position":3,"name":"İş Günü Hesaplama","item":"https://hesapica.com/is-gunu-hesaplama"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"İş Günü Hesaplama | İki Tarih Arası İş Günü | Hesapica","url":"https://hesapica.com/is-gunu-hesaplama","inLanguage":"tr-TR","isPartOf":{"@id":"https://hesapica.com/#website"}}</script><style>
+    :root{
+      --primary:#4f46e5; --secondary:#7c3aed; --bg:#f6f8fc; --surface:#ffffff; --surface-soft:#eef2ff;
+      --text:#1f2937; --muted:#6b7280; --line:#e5e7eb; --good:#059669; --warn:#b45309; --bad:#dc2626;
+      --shadow:0 18px 48px rgba(79,70,229,.08); --radius-xl:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text);
+      background:radial-gradient(circle at top left, rgba(79,70,229,.08), transparent 30%),linear-gradient(180deg,#f8faff 0%, var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit} button,input{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px));margin:0 auto}
+    .breadcrumb{display:flex;flex-wrap:wrap;gap:10px;padding:22px 0 10px;color:var(--muted);font-size:14px}
+    .breadcrumb span{opacity:.6}
+    .hero{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:24px;padding:34px;border-radius:30px;
+      border:1px solid rgba(79,70,229,.10);background:linear-gradient(135deg, rgba(79,70,229,.08), rgba(124,58,237,.08));box-shadow:var(--shadow);
+    }
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(79,70,229,.14);color:var(--primary);font-size:13px;font-weight:800;margin-bottom:14px}
+    .hero h1{margin:0 0 14px;font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.02em}
+    .hero p{margin:0 0 18px;color:#4b5563;font-size:17px;max-width:760px}
+    .chip-list{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);color:#4338ca;font-size:14px;font-weight:700}
+    .hero-box{
+      min-height:100%;padding:24px;border-radius:24px;background:rgba(255,255,255,.92);border:1px solid rgba(79,70,229,.10);
+      display:flex;flex-direction:column;justify-content:center
+    }
+    .hero-box .eyebrow{margin-bottom:8px;color:var(--secondary);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+    .hero-box strong{display:block;margin-bottom:8px;font-size:28px;line-height:1.15}
+    .hero-box p,.hero-box li{margin:0;font-size:15px;color:var(--muted)}
+    .hero-box ul{margin:10px 0 0;padding-left:18px}
+
+    .tool-layout{display:grid;grid-template-columns:minmax(0,1.08fr) 410px;gap:24px;align-items:start;margin-top:26px}
+    .card,.content-section,.faq-section,.related-section{
+      padding:28px;border-radius:var(--radius-xl);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)
+    }
+    .content-section,.faq-section,.related-section{margin-top:28px}
+    .card h2,.content-section h2,.faq-section h2,.related-section h2{margin:0 0 16px;font-size:24px;letter-spacing:-.02em;color:var(--primary)}
+    .section-note{margin:-4px 0 20px;color:var(--muted);font-size:15px}
+    .helper-box{margin-bottom:18px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#fff,#faf8ff);border:1px dashed rgba(79,70,229,.22)}
+    .helper-box h3{margin:0 0 10px;font-size:18px;color:var(--primary)}
+    .helper-box p{margin:0;color:#374151;font-size:14.5px;line-height:1.65}
+    .subhead{margin:22px 0 14px;font-size:18px;font-weight:900;color:var(--primary)}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .field.full{grid-column:1 / -1}
+    label{display:block;margin-bottom:8px;font-size:15px;font-weight:800;color:#374151}
+    input{
+      width:100%;height:56px;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);
+      outline:none;font-size:18px;font-weight:600;transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+    input.input-error{border-color:#dc2626;background:#fff7f7}
+    .helper{margin-top:8px;color:var(--muted);font-size:13px}
+    .helper.error{color:#b91c1c;font-weight:700}
+    .field.has-error input{border-color:#dc2626;background:#fff7f7}
+    .field .field-error{display:none;margin-top:8px;color:#b91c1c;font-size:13px;font-weight:700}
+    .field.has-error .field-error{display:block}
+    .result-card.flash{box-shadow:0 0 0 4px rgba(79,70,229,.12), 0 18px 48px rgba(79,70,229,.16);animation:resultPulse .45s ease}
+    @keyframes resultPulse{0%{transform:translateY(0)}50%{transform:translateY(-2px)}100%{transform:translateY(0)}}
+    .action-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{border:0;cursor:pointer;font:inherit;transition:transform .18s ease;padding:14px 18px;border-radius:16px;font-size:15px;font-weight:800}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 14px 28px rgba(79,70,229,.22)}
+    .btn-secondary{background:#eef2ff;color:#4338ca}
+    .btn-ghost{background:#f8fafc;color:#374151;border:1px solid var(--line)}
+
+    .validation-box{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:14px;font-weight:700}
+    .validation-box.show{display:block}
+
+    .result-card{
+      position:sticky;top:24px;padding:24px;border-radius:26px;border:1px solid rgba(79,70,229,.12);
+      background:linear-gradient(180deg,#f8faff 0%, #eef2ff 100%); box-shadow:0 18px 48px rgba(79,70,229,.10)
+    }
+    .status-card{padding:18px 20px;border-radius:22px;border:1px solid rgba(79,70,229,.10);background:rgba(255,255,255,.82);margin-bottom:16px}
+    .status-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .status-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .status-text{margin-top:6px;font-size:14.5px;color:#374151;line-height:1.6}
+    .badge{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;border:1px solid rgba(79,70,229,.10);background:#fff;color:#4f46e5}
+    .badge.good{background:#ecfdf5;color:var(--good);border-color:#a7f3d0}
+    .badge.warn{background:#fff7ed;color:var(--warn);border-color:#fed7aa}
+    .badge.bad{background:#fef2f2;color:var(--bad);border-color:#fecaca}
+
+    .highlight-card{padding:20px;border-radius:22px;background:rgba(255,255,255,.82);border:1px solid rgba(79,70,229,.08);margin-bottom:16px}
+    .highlight-card .label{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .highlight-card .value{font-size:36px;line-height:1.08;font-weight:900;letter-spacing:-.03em;margin-bottom:10px;color:#9ca3af}
+    .highlight-card .subtext{color:#4b5563;font-size:15px}
+    .highlight-card.ready .value{color:var(--text)}
+
+    .score-card{padding:18px;border-radius:20px;background:#fff;border:1px solid rgba(79,70,229,.10);margin-bottom:16px}
+    .score-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+    .score-title{font-size:17px;font-weight:900;color:var(--primary)}
+    .score-value{font-size:28px;font-weight:900;color:#9ca3af}
+    .score-card.ready .score-value{color:var(--text)}
+    .score-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .score-mini{padding:12px;border-radius:14px;background:#f8fafc;border:1px solid var(--line);min-width:0}
+    .score-mini .k{font-size:12px;color:var(--muted);font-weight:800;margin-bottom:6px}
+    .score-mini .v{font-size:18px;font-weight:900;color:#9ca3af}
+    .score-card.ready .score-mini .v{color:var(--text)}
+
+    .health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px;align-items:stretch}
+    .health-card{padding:16px;border-radius:18px;background:rgba(255,255,255,.74);border:1px solid rgba(79,70,229,.08);display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:148px}
+    .health-card h3{margin:0 0 10px;font-size:16px;color:var(--primary);line-height:1.35}
+    .health-card .big{font-size:clamp(20px,2vw,24px);font-weight:900;letter-spacing:-.02em;color:#9ca3af;line-height:1.15;overflow-wrap:anywhere;word-break:break-word}
+    .health-card.ready .big{color:var(--text)}
+    .decision-card .big{font-size:clamp(18px,1.8vw,22px)}
+
+    .result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+    .result-item{padding:16px;border-radius:18px;background:rgba(255,255,255,.74);border:1px solid rgba(79,70,229,.08);min-width:0}
+    .result-item .k{color:var(--muted);font-size:13px;margin-bottom:6px;font-weight:700}
+    .result-item .v{font-size:22px;font-weight:800;line-height:1.2;color:#9ca3af;overflow-wrap:anywhere;word-break:break-word}
+    .result-item.ready .v{color:var(--text)}
+    .result-item .s{margin-top:4px;color:var(--muted);font-size:12px;line-height:1.4}
+
+    .bar-group{display:grid;gap:12px;margin-bottom:16px}
+    .bar-row .top{display:flex;justify-content:space-between;gap:12px;margin-bottom:6px;font-size:14px;font-weight:700;color:#4b5563}
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.9);overflow:hidden;border:1px solid rgba(79,70,229,.08)}
+    .bar > span{display:block;height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .35s ease}
+
+    .smart-note{padding:16px;border-radius:18px;background:rgba(255,255,255,.78);border:1px solid rgba(79,70,229,.08);color:#374151;font-size:15px}
+    .scenario-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+    .scenario-card{padding:16px;border-radius:18px;border:1px solid var(--line);background:#fcfcfd}
+    .scenario-card .k{font-size:13px;color:var(--muted);font-weight:800;margin-bottom:6px}
+    .scenario-card .v{font-size:22px;font-weight:900;margin-bottom:6px}
+    .scenario-card .s{font-size:13px;color:#4b5563}
+
+    .formula-box{margin-top:18px;padding:18px 20px;border-radius:20px;background:#f8f7ff;border:1px dashed rgba(79,70,229,.22);font-weight:800;color:#4338ca;font-size:18px}
+    .content-section p{margin:0 0 14px;color:#4b5563}
+    .content-section ul{margin:0;padding-left:20px;color:#4b5563}
+    .faq-item{border-top:1px solid #edf0f7;padding:18px 0}
+    .faq-item:first-of-type{border-top:0;padding-top:0}
+    .faq-item h3{margin:0 0 8px;font-size:18px}
+    .faq-item p{margin:0;color:#4b5563}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%,#8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}
+    .related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86}
+    .related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}
+    .related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .footer-note{padding:28px 0 36px;color:var(--muted);font-size:14px;text-align:center}
+    .success{color:var(--good)} .danger{color:var(--bad)}
+    @media (max-width:1024px){.hero,.tool-layout{grid-template-columns:1fr}.related-grid,.score-grid,.scenario-grid,.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.health-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.result-card{position:static}}
+    @media (max-width:680px){.container{width:min(100% - 20px,100%)}.hero,.card,.content-section,.faq-section,.related-section,.result-card{padding:20px}.form-grid,.result-grid,.related-grid,.score-grid,.health-grid,.scenario-grid{grid-template-columns:1fr}.action-buttons .btn{width:100%}.highlight-card .value{font-size:30px}.health-card{min-height:auto}}
+  
+@media print{body{background:#fff}.topbar,.actions,.hc-ad-slot,.related-tools,.footer-note,.flow-hint{display:none!important}.hero,.card,.result-card,.status-card,.highlight-card,.mini-result{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.result-card{position:static!important}.container{width:100%!important}}
+</style>
+<meta content="Hesapica" property="og:site_name"/><meta content="https://hesapica.com/is-gunu-hesaplama" name="twitter:url"/><meta content="@hesapica" name="twitter:site"/><link href="cookie-consent.css" rel="stylesheet"/>
+<!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
+<script src="cookie-consent.js"></script>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="ads-slot-manager.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<style id="hesapica-global-typography-standard">
+    :root{
+      --hc-font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --hc-type-body: 15.5px;
+      --hc-type-small: 14px;
+      --hc-type-label: 15px;
+      --hc-type-input: 18px;
+      --hc-type-button: 15px;
+      --hc-type-h1: clamp(2.125rem, 4vw, 3rem);
+      --hc-type-h2: clamp(1.5rem, 2.3vw, 1.75rem);
+      --hc-type-h3: 1.25rem;
+      --hc-type-card-title: 1.125rem;
+    }
+    html{font-size:16px}
+    body{
+      font-family:var(--hc-font-sans) !important;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    h1,
+    .hero h1{
+      font-size:var(--hc-type-h1) !important;
+      line-height:1.1 !important;
+      letter-spacing:-0.03em !important;
+      font-weight:800 !important;
+    }
+    h2,
+    .section h2,
+    .card h2,
+    .content-section h2,
+    .faq-section h2,
+    .related-section h2,
+    .section-title h2{
+      font-size:var(--hc-type-h2) !important;
+      line-height:1.2 !important;
+      letter-spacing:-0.02em !important;
+      font-weight:800 !important;
+    }
+    h3{
+      font-size:var(--hc-type-h3) !important;
+      line-height:1.3 !important;
+      font-weight:800 !important;
+    }
+    .card-title{
+      font-size:var(--hc-type-card-title) !important;
+      line-height:1.38 !important;
+      font-weight:800 !important;
+      letter-spacing:-0.01em !important;
+    }
+    p,
+    li,
+    .section-note,
+    .status-text,
+    .card-desc,
+    .hero p,
+    .comment-box,
+    .score-explain,
+    .metric-explain,
+    .mini-result .subline,
+    .health-card p,
+    .footer-brand p,
+    .search-box-help,
+    .search-status,
+    .footer-note,
+    .helper-box p,
+    .hero-box p,
+    .hero-box li,
+    .info-box p,
+    .faq-item p,
+    .accordion-card p{
+      font-size:var(--hc-type-body) !important;
+      line-height:1.7 !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3,
+    .summary-note{
+      font-size:var(--hc-type-label) !important;
+    }
+    label,
+    .form-title,
+    .subhead,
+    .highlight-label,
+    .hero-box .eyebrow,
+    .status-title,
+    .result-main .label,
+    .result-item .k,
+    .health-card h3{
+      font-weight:800 !important;
+    }
+    .hint,
+    .helper,
+    .field-error,
+    .error-text,
+    .reference-text,
+    .helper-box p + p{
+      font-size:var(--hc-type-small) !important;
+      line-height:1.6 !important;
+    }
+    input,
+    select,
+    textarea{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-input) !important;
+      font-weight:600 !important;
+    }
+    input::placeholder,
+    textarea::placeholder{
+      font-size:15px !important;
+    }
+    button,
+    .btn,
+    .toggle-btn,
+    .hero-cta,
+    .hero-secondary,
+    .all-categories-btn,
+    .category-chip,
+    .share-btn,
+    .search-clear,
+    .footer-legal-link,
+    .footer-pref-btn,
+    .time-picker-trigger,
+    .all-categories-close,
+    .category-panel-link,
+    .inline-chip,
+    .mode-btn{
+      font-family:var(--hc-font-sans) !important;
+      font-size:var(--hc-type-button) !important;
+      font-weight:700 !important;
+    }
+    @media (max-width:760px){
+      :root{
+        --hc-type-body:15px;
+        --hc-type-label:14.5px;
+        --hc-type-small:13.5px;
+        --hc-type-button:14.5px;
+        --hc-type-card-title:1.05rem;
+      }
+    }
+</style>
+<style id="hc-madde4-print-controls">
+@media print{button,input[type="button"],input[type="submit"],input[type="reset"],[role="button"],.actions,.action-bar,.action-buttons,.share-actions,.share-row{display:none!important}}
+</style>
+<link href="/language-switch.css" rel="stylesheet"/>
+
+<style id="business-days-extra-style">
+.mode-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.mode-btn{border:1px solid #d9def0;background:#fff;color:#4338ca;padding:11px 14px;border-radius:14px;cursor:pointer}.mode-btn[aria-selected="true"]{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-color:transparent}.mode-panel[hidden]{display:none!important}
+select,textarea{width:100%;border:1px solid #d9def0;border-radius:16px;padding:0 16px;background:#fff;color:var(--text);outline:none;transition:border-color .2s ease,box-shadow .2s ease}select{height:56px}textarea{min-height:96px;padding-top:14px;resize:vertical}select:focus,textarea:focus{border-color:rgba(79,70,229,.45);box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}.weekday-option{position:relative}.weekday-option input{position:absolute;opacity:0;pointer-events:none}.weekday-option span{display:flex;align-items:center;justify-content:center;min-height:46px;border:1px solid #d9def0;border-radius:13px;background:#fff;color:#4b5563;font-size:13px;font-weight:800;cursor:pointer}.weekday-option input:checked+span{border-color:#c7d2fe;background:#eef2ff;color:#4338ca}.weekday-option input:focus-visible+span{outline:3px solid rgba(79,70,229,.22);outline-offset:2px}
+.check-row{display:flex;gap:10px;align-items:flex-start;padding:14px;border:1px solid #e5e7eb;border-radius:16px;background:#f8fafc}.check-row input{width:20px;height:20px;margin-top:2px;accent-color:var(--primary)}.check-row label{margin:0;cursor:pointer}.check-row small{display:block;color:var(--muted);font-size:13px;font-weight:500;margin-top:3px}
+.custom-date-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}.custom-date-row input[type="date"]{height:56px}.custom-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.custom-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:13px;font-weight:800}.custom-chip button{border:0;background:transparent;color:#6d28d9;cursor:pointer;padding:0;font-weight:900}.data-status{margin-top:12px;padding:12px 14px;border-radius:14px;background:#f8fafc;border:1px solid #e5e7eb;color:#4b5563;font-size:13px}.data-status.good{background:#ecfdf5;border-color:#a7f3d0;color:#047857}.data-status.warn{background:#fff7ed;border-color:#fed7aa;color:#9a3412}.data-status.bad{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+.result-list{margin:0;padding-left:18px;color:#4b5563}.result-list li{margin:5px 0}.holiday-list{max-height:210px;overflow:auto;margin-top:10px;padding:12px 14px;border-radius:16px;background:#fff;border:1px solid #e5e7eb}.holiday-list.empty{color:#6b7280}.source-note{font-size:13px;color:#6b7280}.source-note a{color:#4338ca;text-decoration:underline}.inline-warning{margin-top:14px;padding:14px 16px;border-radius:16px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:14px}
+@media(max-width:760px){.weekdays{grid-template-columns:repeat(4,minmax(0,1fr))}.custom-date-row{grid-template-columns:1fr}.custom-date-row .btn{width:100%}}
+</style></head>
+<body><noscript><div style="max-width:1180px;margin:16px auto;padding:14px 16px;border:1px solid #fecaca;border-radius:16px;background:#fef2f2;color:#991b1b;font:600 14px/1.5 Inter,Arial,sans-serif;">Bu araç JavaScript ile çalışır. Hesaplama sonuçlarını görmek için tarayıcınızda JavaScript açık olmalıdır.</div></noscript>
+<main class="container">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Ana Sayfa</a><span>/</span><a href="/#gunluk">Günlük Hayat Hesapları</a><span>/</span><strong>İş Günü Hesaplama</strong><span aria-hidden="true">/</span><a aria-label="İngilizce sürümü aç" class="hc-language-link" href="/en/business-days-calculator" hreflang="en" lang="en" title="İngilizce sürümü aç"><span aria-hidden="true">🌐</span><span>EN · English</span></a></nav>
+<section class="hero"><div><span class="eyebrow-pill">Hesapica • İş ve Tarih Planlama</span><h1>İş Günü Hesaplama</h1><p>İki tarih arasında kaç iş günü olduğunu hesaplayın veya belirli sayıda iş günü sonrasını/öncesini bulun. Hafta sonlarını, seçilen ülkenin ulusal resmî tatillerini ve kendi eklediğiniz özel çalışılmayan günleri ayrı ayrı hesaba katın.</p><div class="chip-list"><div class="chip">İki tarih arası iş günü</div><div class="chip">İş günü ekle / çıkar</div><div class="chip">Ülke resmî tatilleri</div><div class="chip">Özel tatil günleri</div></div></div><aside class="hero-box"><div class="eyebrow">İş Günü Mantığı</div><strong>Takvim günleri − hafta sonları − tatiller = iş günleri</strong><p>Hafta sonu günlerini kendiniz belirleyebilir, ülke tatil takvimini açıp kapatabilir ve şirket/kurumunuza özel çalışılmayan günleri ekleyebilirsiniz.</p><ul><li>Başlangıç/bitiş dahil etme seçenekleri</li><li>İleri veya geri iş günü hesabı</li><li>Tatil ve hafta sonu dökümü</li></ul></aside></section>
+<section class="tool-layout"><form class="card" id="businessForm" novalidate=""><h2>İş Gününü Hesapla</h2><p class="section-note">Önce hesaplama türünü seçin. Ülke tatil takvimi seçiliyse araç yalnız ulusal <strong>Public/Bank</strong> tatillerini otomatik hariç tutar.</p>
+<div aria-label="Hesaplama türü" class="mode-tabs" role="tablist"><button aria-controls="betweenPanel" aria-selected="true" class="mode-btn" data-mode="between" id="betweenTab" role="tab" type="button">İki Tarih Arası</button><button aria-controls="addPanel" aria-selected="false" class="mode-btn" data-mode="add" id="addTab" role="tab" type="button">İş Günü Ekle / Çıkar</button></div>
+<div aria-labelledby="betweenTab" class="mode-panel" id="betweenPanel" role="tabpanel"><div class="form-grid"><div class="field" id="startDateField"><label for="startDate">Başlangıç tarihi</label><input aria-describedby="startDateHelper startDateError" autocomplete="off" id="startDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY"/><div class="helper" id="startDateHelper">Örnek: 01.09.2026</div><div class="field-error" id="startDateError" role="alert"></div></div><div class="field" id="endDateField"><label for="endDate">Bitiş tarihi</label><input aria-describedby="endDateHelper endDateError" autocomplete="off" id="endDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY"/><div class="helper" id="endDateHelper">Örnek: 30.09.2026</div><div class="field-error" id="endDateError" role="alert"></div></div><div class="field full"><label for="countingRule">Tarihleri sayma yöntemi</label><select id="countingRule"><option value="both">Başlangıç ve bitiş dahil</option><option value="excludeStart">Başlangıç hariç, bitiş dahil</option><option value="excludeEnd">Başlangıç dahil, bitiş hariç</option><option value="excludeBoth">İkisi de hariç</option></select><div class="helper">Aynı tarih seçilirse “ikisi dahil” yönteminde o gün iş günüyse sonuç 1 olabilir.</div></div></div></div>
+<div aria-labelledby="addTab" class="mode-panel" hidden="" id="addPanel" role="tabpanel"><div class="form-grid"><div class="field" id="baseDateField"><label for="baseDate">Başlangıç tarihi</label><input aria-describedby="baseDateHelper baseDateError" autocomplete="off" id="baseDate" inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY"/><div class="helper" id="baseDateHelper">Başlangıç günü sayılmaz; sonraki/önceki uygun iş gününden sayım başlar.</div><div class="field-error" id="baseDateError" role="alert"></div></div><div class="field" id="businessAmountField"><label for="businessAmount">İş günü sayısı</label><input aria-describedby="businessAmountHelper businessAmountError" id="businessAmount" inputmode="numeric" max="2500" min="1" placeholder="Örn. 30" step="1" type="number"/><div class="helper" id="businessAmountHelper">1–2.500 arasında tam sayı.</div><div class="field-error" id="businessAmountError" role="alert"></div></div><div class="field full"><label for="direction">Yön</label><select id="direction"><option value="forward">İleri — iş günü sonrası</option><option value="backward">Geri — iş günü öncesi</option></select></div></div></div>
+<h3 class="subhead">Çalışma takvimi</h3><div class="form-grid"><div class="field full"><label>Hafta sonu / çalışılmayan haftalık günler</label><div class="weekdays" id="weekendDays"><label class="weekday-option"><input type="checkbox" value="1"/><span>Pzt</span></label><label class="weekday-option"><input type="checkbox" value="2"/><span>Sal</span></label><label class="weekday-option"><input type="checkbox" value="3"/><span>Çar</span></label><label class="weekday-option"><input type="checkbox" value="4"/><span>Per</span></label><label class="weekday-option"><input type="checkbox" value="5"/><span>Cum</span></label><label class="weekday-option"><input checked="" type="checkbox" value="6"/><span>Cmt</span></label><label class="weekday-option"><input checked="" type="checkbox" value="0"/><span>Paz</span></label></div><div class="helper">Standart ayar Cumartesi + Pazar. Farklı çalışma haftaları için günleri değiştirebilirsiniz.</div></div><div class="field"><label for="country">Resmî tatil takvimi</label><select id="country"><option value="TR">Türkiye — yerel resmî takvim (2024–2033)</option><option value="">Ülke tatili kullanma — yalnız hafta sonu/özel günler</option><optgroup label="Avrupa"><option value="DE">Almanya</option><option value="AD">Andorra</option><option value="AL">Arnavutluk</option><option value="AT">Avusturya</option><option value="BY">Belarus</option><option value="BE">Belçika</option><option value="GB">Birleşik Krallık</option><option value="BA">Bosna-Hersek</option><option value="BG">Bulgaristan</option><option value="GI">Cebelitarık</option><option value="DK">Danimarka</option><option value="EE">Estonya</option><option value="FO">Faroe Adaları</option><option value="FI">Finlandiya</option><option value="FR">Fransa</option><option value="GG">Guernsey</option><option value="NL">Hollanda</option><option value="HR">Hırvatistan</option><option value="IE">İrlanda</option><option value="ES">İspanya</option><option value="SE">İsveç</option><option value="CH">İsviçre</option><option value="IT">İtalya</option><option value="IS">İzlanda</option><option value="JE">Jersey</option><option value="ME">Karadağ</option><option value="XK">Kosova</option><option value="MK">Kuzey Makedonya</option><option value="CY">Kıbrıs</option><option value="LV">Letonya</option><option value="LI">Liechtenstein</option><option value="LT">Litvanya</option><option value="LU">Lüksemburg</option><option value="HU">Macaristan</option><option value="MT">Malta</option><option value="IM">Man Adası</option><option value="MD">Moldova</option><option value="MC">Monako</option><option value="NO">Norveç</option><option value="PL">Polonya</option><option value="PT">Portekiz</option><option value="RO">Romanya</option><option value="RU">Rusya</option><option value="SM">San Marino</option><option value="SK">Slovakya</option><option value="SI">Slovenya</option><option value="SJ">Svalbard ve Jan Mayen</option><option value="RS">Sırbistan</option><option value="UA">Ukrayna</option><option value="VA">Vatikan</option><option value="AX">Åland Adaları</option><option value="CZ">Çekya</option></optgroup><optgroup label="Amerika"><option value="UM">ABD Küçük Harici Adaları</option><option value="VI">ABD Virjin Adaları</option><option value="US">Amerika Birleşik Devletleri</option><option value="AI">Anguilla</option><option value="AG">Antigua ve Barbuda</option><option value="AR">Arjantin</option><option value="AW">Aruba</option><option value="BS">Bahamalar</option><option value="BB">Barbados</option><option value="BZ">Belize</option><option value="BM">Bermuda</option><option value="BO">Bolivya</option><option value="BR">Brezilya</option><option value="VG">Britanya Virjin Adaları</option><option value="KY">Cayman Adaları</option><option value="CW">Curaçao</option><option value="DO">Dominik Cumhuriyeti</option><option value="DM">Dominika</option><option value="EC">Ekvador</option><option value="SV">El Salvador</option><option value="FK">Falkland Adaları</option><option value="GF">Fransız Guyanası</option><option value="GD">Grenada</option><option value="GL">Grönland</option><option value="GP">Guadeloupe</option><option value="GT">Guatemala</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HN">Honduras</option><option value="JM">Jamaika</option><option value="CA">Kanada</option><option value="BQ">Karayip Hollandası</option><option value="CO">Kolombiya</option><option value="CR">Kosta Rika</option><option value="CU">Küba</option><option value="MQ">Martinik</option><option value="MX">Meksika</option><option value="MS">Montserrat</option><option value="NI">Nikaragua</option><option value="PA">Panama</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PR">Porto Riko</option><option value="BL">Saint Barthelemy</option><option value="KN">Saint Kitts ve Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin</option><option value="PM">Saint Pierre ve Miquelon</option><option value="VC">Saint Vincent ve Grenadinler</option><option value="SX">Sint Maarten</option><option value="SR">Surinam</option><option value="TT">Trinidad ve Tobago</option><option value="TC">Turks ve Caicos Adaları</option><option value="UY">Uruguay</option><option value="VE">Venezuela</option><option value="CL">Şili</option></optgroup><optgroup label="Afrika"><option value="AO">Angola</option><option value="BJ">Benin</option><option value="BW">Botsvana</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="CV">Cabo Verde</option><option value="DZ">Cezayir</option><option value="DJ">Cibuti</option><option value="CI">Côte d’Ivoire</option><option value="GQ">Ekvator Ginesi</option><option value="ER">Eritre</option><option value="SZ">Esvatini</option><option value="ET">Etiyopya</option><option value="MA">Fas</option><option value="GA">Gabon</option><option value="GM">Gambiya</option><option value="GH">Gana</option><option value="GN">Gine</option><option value="GW">Gine-Bissau</option><option value="ZA">Güney Afrika</option><option value="SS">Güney Sudan</option><option value="CM">Kamerun</option><option value="KE">Kenya</option><option value="KM">Komorlar</option><option value="CG">Kongo - Brazavil</option><option value="CD">Kongo - Kinşasa</option><option value="LS">Lesotho</option><option value="LR">Liberya</option><option value="LY">Libya</option><option value="MG">Madagaskar</option><option value="MW">Malavi</option><option value="ML">Mali</option><option value="MR">Moritanya</option><option value="MZ">Mozambik</option><option value="EG">Mısır</option><option value="NA">Namibya</option><option value="NE">Nijer</option><option value="NG">Nijerya</option><option value="CF">Orta Afrika Cumhuriyeti</option><option value="RW">Ruanda</option><option value="SH">Saint Helena</option><option value="ST">Sao Tome ve Principe</option><option value="SN">Senegal</option><option value="SC">Seyşeller</option><option value="SL">Sierra Leone</option><option value="SO">Somali</option><option value="SD">Sudan</option><option value="TZ">Tanzanya</option><option value="TG">Togo</option><option value="TN">Tunus</option><option value="UG">Uganda</option><option value="ZM">Zambiya</option><option value="ZW">Zimbabve</option><option value="TD">Çad</option></optgroup><optgroup label="Asya"><option value="BH">Bahreyn</option><option value="BD">Bangladeş</option><option value="ID">Endonezya</option><option value="AM">Ermenistan</option><option value="PH">Filipinler</option><option value="KR">Güney Kore</option><option value="GE">Gürcistan</option><option value="IQ">Irak</option><option value="JP">Japonya</option><option value="KH">Kamboçya</option><option value="KZ">Kazakistan</option><option value="MN">Moğolistan</option><option value="SG">Singapur</option><option value="SY">Suriye</option><option value="VN">Vietnam</option><option value="YE">Yemen</option><option value="CN">Çin</option><option value="HK">Çin Hong Kong ÖİB</option></optgroup><optgroup label="Okyanusya"><option value="AU">Avustralya</option><option value="CX">Christmas Adası</option><option value="CC">Cocos (Keeling) Adaları</option><option value="CK">Cook Adaları</option><option value="PF">Fransız Polinezyası</option><option value="KI">Kiribati</option><option value="MP">Kuzey Mariana Adaları</option><option value="MH">Marshall Adaları</option><option value="FM">Mikronezya</option><option value="NR">Nauru</option><option value="NU">Niue</option><option value="NF">Norfolk Adası</option><option value="PW">Palau</option><option value="PG">Papua Yeni Gine</option><option value="PN">Pitcairn Adaları</option><option value="WS">Samoa</option><option value="SB">Solomon Adaları</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TV">Tuvalu</option><option value="VU">Vanuatu</option><option value="WF">Wallis ve Futuna</option><option value="NC">Yeni Kaledonya</option><option value="NZ">Yeni Zelanda</option></optgroup><optgroup label="Antarktika"><option value="AQ">Antarktika</option><option value="BV">Bouvet Adası</option><option value="TF">Fransız Güney Toprakları</option><option value="GS">Güney Georgia ve Güney Sandwich Adaları</option><option value="HM">Heard Adası ve McDonald Adaları</option></optgroup></select><div class="helper">Türkiye için yerel resmî takvim; diğer ülkelerde Nager.Holidays’in desteklediği 200+ ülkenin ulusal Public/Bank tatilleri kullanılır. Bölgesel/eyalet tatilleri otomatik sayılmaz.</div></div><div class="field"><div class="check-row"><input checked="" id="excludePublic" type="checkbox"/><label for="excludePublic">Resmî tatilleri hariç tut<small>Kapatırsanız ülke seçili olsa bile yalnız hafta sonu ve özel günler dikkate alınır.</small></label></div></div><div class="field full"><label for="customDate">Özel çalışılmayan gün ekle</label><div class="custom-date-row"><input id="customDate" type="date"/><button class="btn btn-secondary" id="addCustomBtn" type="button">Günü Ekle</button></div><div aria-live="polite" class="custom-list" id="customList"></div><div class="helper">Şirket tatili, bölgesel tatil veya isterseniz okul ara tatili gibi günleri buraya ekleyebilirsiniz.</div></div></div>
+<div aria-live="polite" class="data-status" id="holidayStatus">Türkiye ulusal resmî tatil takvimi, hesaplama sırasında ihtiyaç duyulan yıllar için yüklenir.</div><div class="inline-warning"><strong>Okul ve yarım gün notu:</strong> Okul ara tatilleri genel iş yeri kapanışı değildir. Arefe ve 28 Ekim gibi yarım günler de tam iş günü hesabında 0,5 olarak modellenmez. Gereken özel tam gün kapanışlarını manuel ekleyin.</div>
+<div aria-live="assertive" class="validation-box" id="validationBox" role="alert"></div><div class="action-buttons"><button class="btn btn-primary" type="submit">Sonucu Gör</button><button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button><button class="btn btn-secondary" id="copyBtn" type="button">Sonucu Kopyala</button><button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button><button class="btn btn-ghost" id="resetBtn" type="button">Verileri Sıfırla</button><button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button></div></form>
+<aside class="result-card" id="resultCard"><div class="status-card"><div class="status-row"><div><div class="status-title">Sonuç durumu</div><div class="status-text" id="statusText">Tarihleri girip hesaplama yaptığınızda sonuçlar burada görünür.</div></div><span class="badge" id="statusBadge">Veri bekleniyor</span></div></div><div class="highlight-card" id="mainBox"><div class="label" id="mainLabel">İş Günü</div><div class="value" id="mainResult">—</div><div class="subtext" id="mainSubtext">Hafta sonları ve seçili tatiller düşüldükten sonra net iş günü sayısı.</div></div><div class="result-grid"><div class="result-item" id="item1"><div class="k">Takvim Günü</div><div class="v" id="calendarDays">—</div><div class="s">Sayım yöntemine göre dahil edilen günler</div></div><div class="result-item" id="item2"><div class="k">Hafta Sonu</div><div class="v" id="weekendCount">—</div><div class="s">Haftalık çalışılmayan günler</div></div><div class="result-item" id="item3"><div class="k">Resmî Tatil</div><div class="v" id="publicHolidayCount">—</div><div class="s">İş gününe denk gelen ulusal tatiller</div></div><div class="result-item" id="item4"><div class="k">Özel Tatil</div><div class="v" id="customHolidayCount">—</div><div class="s">Kullanıcının eklediği günler</div></div><div class="result-item" id="item5"><div class="k">İş Haftası</div><div class="v" id="businessWeeks">—</div><div class="s">Seçili çalışma haftasına göre yaklaşık</div></div><div class="result-item" id="item6"><div class="k">Çalışma Oranı</div><div class="v" id="workRatio">—</div><div class="s">Dahil edilen takvim günleri içindeki iş günü payı</div></div></div><div class="smart-note" id="smartComment">Henüz hesaplama yapılmadı.</div><div class="holiday-list empty" id="holidayList">Hesaba giren resmî tatiller burada listelenir.</div></aside></section>
+<section class="content-section"><h2>İş günü nasıl hesaplanır?</h2><p>İş günü hesabı, seçilen tarih aralığındaki günlerden haftalık çalışılmayan günlerin ve istenirse ulusal resmî tatillerin çıkarılmasıyla yapılır. Hesapica ayrıca özel şirket tatilleri veya bölgesel kapanışlar için kendi tarihlerinizi eklemenize izin verir.</p><div class="formula-box">İş Günü = Dahil Edilen Takvim Günleri − Hafta Sonu Günleri − Resmî Tatiller − Özel Çalışılmayan Günler</div><h2>30 iş günü sonrası hangi tarih?</h2><p>“İş Günü Ekle / Çıkar” modunda başlangıç tarihi, iş günü sayısı ve yön seçilir. Başlangıç günü sayılmaz; sayaç seçilen çalışma takvimine uyan bir sonraki veya önceki iş gününden başlar.</p><h2>Resmî tatiller ve ara tatiller nasıl ele alınıyor?</h2><p>Türkiye için 2024–2033 resmî tatil günleri Diyanet’in 2429 sayılı kanuna göre yayımladığı takvimlerden yerel olarak kullanılır; Nager.Holidays’in desteklediği 200+ diğer ülkede araç ulusal Public/Bank tatillerini Community API’nin mevcut yıl ve sonraki 5 yıl penceresinde yükler. Bölgesel/eyalet tatilleri ve okul ara tatilleri iş dünyasında genel kapanış anlamına gelmediği için otomatik hariç tutulmaz; ilgili tam gün kapanışlarını “Özel çalışılmayan gün” alanıyla ekleyebilirsiniz. Arefe günleri ve 28 Ekim gibi yarım günler bu tam iş günü sayacında 0,5 gün olarak modellenmez.</p><p class="source-note">Türkiye 2024–2033 resmî tatilleri: Diyanet resmî tatil takvimleri. Diğer seçili ülkelerin tatil verisi: <a href="https://nagerholidays.com/api" rel="noopener noreferrer" target="_blank">Nager.Holidays API</a>. Türkiye resmî tatil yapısı 2429 sayılı Ulusal Bayram ve Genel Tatiller Hakkında Kanun çerçevesindedir. Kurumsal veya hukuki kesinlik gereken işlemlerde ilgili kurumun güncel takvimini doğrulayın.</p></section>
+<section class="faq-section"><!-- HC_AD_SLOT:faq --><div aria-label="Reklam alanı" class="hc-ad-slot hc-ad-slot--faq"><ins class="adsbygoogle" data-ad-client="ca-pub-4334681065822132" data-ad-format="auto" data-ad-slot="4903929326" data-full-width-responsive="true" style="display:block"></ins></div><h2>Sık Sorulan Sorular</h2><div class="faq-item"><h3>İki tarih arasında kaç iş günü olduğunu nasıl bulurum?</h3><p>Başlangıç ve bitiş tarihlerini girin, dahil etme yöntemini seçin ve çalışma takviminizi belirleyin. Araç hafta sonlarını, seçili resmî tatilleri ve özel günleri çıkararak net iş günü sayısını verir.</p></div><div class="faq-item"><h3>Resmî tatiller otomatik düşülüyor mu?</h3><p>Evet. Türkiye için 2024–2033 resmî tam gün tatilleri yerel Diyanet takviminden; Nager.Holidays’in desteklediği 200+ diğer ülkede ulusal Public/Bank tatilleri Community API’nin mevcut yıl ve sonraki 5 yıl penceresinde alınır. Veri güvenle sağlanamazsa araç bunu açıkça bildirir ve tatilleri sessizce yok saymaz.</p></div><div class="faq-item"><h3>Okul ara tatilleri iş gününden düşülür mü?</h3><p>Hayır. Okul ara tatilleri genel iş yeri kapanışı değildir. İhtiyacınız varsa ilgili günleri özel çalışılmayan gün olarak ekleyebilirsiniz.</p></div><div class="faq-item"><h3>Hafta sonu Cumartesi ve Pazar olmak zorunda mı?</h3><p>Hayır. Haftanın yedi günü ayrı ayrı seçilebilir; böylece farklı ülke veya işletme çalışma düzenlerine uyarlanabilir.</p></div></section>
+<section class="related-section"><h2>İlgili Araçlar</h2><div class="related-grid"><a class="related-card" href="/iki-tarih-arasi-gun-hesaplama"><span class="small">İlgili Araç</span><strong>İki Tarih Arası Gün</strong><p>Takvim günü ve ayrıntılı süre farkını hesaplayın.</p></a><a class="related-card" href="/geri-sayim-hesaplama"><span class="small">İlgili Araç</span><strong>Geri Sayım Hesaplama</strong><p>Belirli bir tarih ve saate ne kadar süre kaldığını görün.</p></a><a class="related-card" href="/yas-hesaplama"><span class="small">İlgili Araç</span><strong>Yaş Hesaplama</strong><p>Yaş veya iki olay arasındaki geçen süreyi ayrıntılı hesaplayın.</p></a></div></section><div class="footer-note">Hesapica · İş Günü Hesaplama. Resmî ve kurumsal işlemlerde ilgili kurumun güncel çalışma/tatil takvimi esas alınmalıdır.</div></main>
+<script>
+(()=>{
+'use strict';
+const LANG="tr";
+const T={"dateFormat":"Tarihi GG.AA.YYYY biçiminde girin.","yearRange":"Yıl 1900–2100 arasında olmalı.","invalidDate":"Geçerli bir takvim tarihi girin.","startRequired":"Başlangıç tarihi gerekli.","endRequired":"Bitiş tarihi gerekli.","baseRequired":"Başlangıç tarihi gerekli.","endBefore":"Bitiş tarihi başlangıç tarihinden önce olamaz.","amountInvalid":"İş günü sayısı 1–2.500 arasında tam sayı olmalı.","allWeekend":"Haftanın yedi gününü de çalışılmayan gün seçemezsiniz.","waitingText":"Tarihleri girip hesaplama yaptığınızda sonuçlar burada görünür.","waitingBadge":"Veri bekleniyor","businessDays":"İş Günü","targetDate":"Hedef Tarih","mainHelp":"Hafta sonları ve seçili tatiller düşüldükten sonra net sonuç.","noCalc":"Henüz hesaplama yapılmadı.","holidayEmpty":"Hesaba giren resmî tatiller burada listelenir.","noCustom":"Henüz özel çalışılmayan gün eklenmedi.","customLimit":"En fazla 60 özel çalışılmayan gün ekleyebilirsiniz.","removeDate":"Tarihi kaldır:","publicHoliday":"Resmî tatil","loadingHolidays":"Resmî tatil takvimi yükleniyor…","holidaysReady":"Tatil takvimi hazır ({n} kayıt).","trCoverage":"Türkiye resmî tatil otomatik takvimi 2024–2033 yıllarını kapsar. Bu aralığın dışındaki yıllarda resmî tatilleri kapatın veya özel günleri manuel ekleyin.","foreignCoverage":"Yurt dışı otomatik tatil verisi Nager.Holidays Community API’de {start}–{end} yılları için kullanılabilir. Bu aralığın dışında resmî tatilleri kapatın veya özel günleri manuel ekleyin.","holidaysDisabled":"Resmî tatil hariç tutma kapalı; hesap yalnız hafta sonu ve özel günleri kullanır.","noCountry":"Ülke tatil takvimi seçilmedi; hesap yalnız hafta sonu ve özel günleri kullanır.","holidaysFail":"Resmî tatil verisi alınamadı. Tatilleri sessizce yok saymamak için hesaplama durduruldu; “Resmî tatilleri hariç tut” seçeneğini kapatıp yalnız hafta sonu/özel günlerle devam edebilirsiniz.","readyText":"Hesaplama tamamlandı.","readyBadge":"Hazır","betweenSub":"{a} ile {b} arasındaki net iş günü sayısı.","addSub":"{n} iş günü {dir} hedef tarihi.","forward":"ileri","backward":"geri","smartBetween":"Sonuç: {b} iş günü. {w} haftalık çalışılmayan gün ve {h} tatil/özel gün iş günü hesabından çıkarıldı.","smartAdd":"{n} iş günü sayıldığında hedef tarih {d}.","noAffectingHoliday":"Bu hesaplamada iş gününe denk gelen ulusal resmî tatil yok.","holidayListTitle":"Hesaptan düşülen resmî tatiller","guardError":"Tarih aralığı güvenli hesaplama sınırını aştı.","genericError":"Hesaplama sırasında beklenmeyen bir hata oluştu.","initialHolidayStatus":"Türkiye ulusal resmî tatil takvimi, hesaplama sırasında ihtiyaç duyulan yıllar için yüklenir.","copyBetween":"İş Günü Hesaplama: {a} – {e} arasında {b} iş günü. Hafta sonu: {w}, resmî tatil: {h}, özel gün: {c}.","copyAdd":"İş Günü Hesaplama: {n} iş günü sonrası/öncesi hedef tarih {d}. Atlanan hafta sonu: {w}, resmî tatil: {h}, özel gün: {c}.","calculateFirst":"Önce geçerli bir hesaplama yapın.","copied":"Sonuç panoya kopyalandı.","copyFail":"Sonuç kopyalanamadı.","shareCopied":"Paylaşım özeti panoya kopyalandı.","shareTitle":"İş Günü Hesaplama | Hesapica"};
+const STORAGE_KEY=LANG==='tr'?'hesapica_is_gunu_v1':'hesapica_en_business_days_v1';
+const HOLIDAY_CACHE_PREFIX='hesapica_holiday_cache_v1_';
+const HOLIDAY_TTL=30*24*60*60*1000;
+const MAX_CUSTOM_DATES=60;
+const API_BASE='https://nagerholidays.com/api/v4/Holidays';
+const TR_RELIGIOUS_HOLIDAYS={"2024":["04-10|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","04-11|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","04-12|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","06-16|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","06-17|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","06-18|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","06-19|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2025":["03-30|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","03-31|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","04-01|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","06-06|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","06-07|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","06-08|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","06-09|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2026":["03-20|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","03-21|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","03-22|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","05-27|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","05-28|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","05-29|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","05-30|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2027":["03-09|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","03-10|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","03-11|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","05-16|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","05-17|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","05-18|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","05-19|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2028":["02-26|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","02-27|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","02-28|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","05-05|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","05-06|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","05-07|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","05-08|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2029":["02-14|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","02-15|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","02-16|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","04-24|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","04-25|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","04-26|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","04-27|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2030":["02-04|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","02-05|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","02-06|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","04-13|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","04-14|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","04-15|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","04-16|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2031":["01-24|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","01-25|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","01-26|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","04-02|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","04-03|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","04-04|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","04-05|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2032":["01-14|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","01-15|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","01-16|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","03-22|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","03-23|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","03-24|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","03-25|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4"],"2033":["01-02|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","01-03|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","01-04|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3","03-11|Kurban Bayramı 1. Gün|Eid al-Adha — Day 1","03-12|Kurban Bayramı 2. Gün|Eid al-Adha — Day 2","03-13|Kurban Bayramı 3. Gün|Eid al-Adha — Day 3","03-14|Kurban Bayramı 4. Gün|Eid al-Adha — Day 4","12-23|Ramazan Bayramı 1. Gün|Eid al-Fitr — Day 1","12-24|Ramazan Bayramı 2. Gün|Eid al-Fitr — Day 2","12-25|Ramazan Bayramı 3. Gün|Eid al-Fitr — Day 3"]};
+const TR_FIXED_HOLIDAYS=[['01-01','Yılbaşı','New Year’s Day'],['04-23','Ulusal Egemenlik ve Çocuk Bayramı','National Sovereignty and Children’s Day'],['05-01','Emek ve Dayanışma Günü','Labour and Solidarity Day'],['05-19','Atatürk’ü Anma, Gençlik ve Spor Bayramı','Commemoration of Atatürk, Youth and Sports Day'],['07-15','Demokrasi ve Millî Birlik Günü','Democracy and National Unity Day'],['08-30','Zafer Bayramı','Victory Day'],['10-29','Cumhuriyet Bayramı','Republic Day']];
+const $=id=>document.getElementById(id);
+const els={form:$('businessForm'),start:$('startDate'),end:$('endDate'),base:$('baseDate'),amount:$('businessAmount'),direction:$('direction'),counting:$('countingRule'),country:$('country'),excludePublic:$('excludePublic'),customDate:$('customDate'),customList:$('customList'),holidayStatus:$('holidayStatus'),validation:$('validationBox'),resultCard:$('resultCard'),statusText:$('statusText'),statusBadge:$('statusBadge'),mainBox:$('mainBox'),mainLabel:$('mainLabel'),mainResult:$('mainResult'),mainSubtext:$('mainSubtext'),calendarDays:$('calendarDays'),weekendCount:$('weekendCount'),publicHolidayCount:$('publicHolidayCount'),customHolidayCount:$('customHolidayCount'),businessWeeks:$('businessWeeks'),workRatio:$('workRatio'),smartComment:$('smartComment'),holidayList:$('holidayList')};
+let mode='between';let customDates=[];let lastResult=null;let busy=false;
+const holidayMemory=new Map();
+const pad=n=>String(n).padStart(2,'0');
+function iso(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
+function dateAtNoon(y,m,d){return new Date(y,m-1,d,12,0,0,0)}
+function addDays(d,n){const x=new Date(d.getFullYear(),d.getMonth(),d.getDate(),12);x.setDate(x.getDate()+n);return x}
+function formatDate(d){return new Intl.DateTimeFormat(LANG==='tr'?'tr-TR':'en-GB',{day:'2-digit',month:'2-digit',year:'numeric',weekday:'short'}).format(d)}
+function parseDate(value){const s=String(value||'').trim();if(!s)return{ok:false,empty:true};const m=s.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);if(!m)return{ok:false,error:T.dateFormat};const day=+m[1],month=+m[2],year=+m[3];if(year<1900||year>2100)return{ok:false,error:T.yearRange};const d=dateAtNoon(year,month,day);if(d.getFullYear()!==year||d.getMonth()!==month-1||d.getDate()!==day)return{ok:false,error:T.invalidDate};return{ok:true,date:d}}
+function maskDateInput(input){const digits=input.value.replace(/\D/g,'').slice(0,8);let out=digits;if(digits.length>2)out=digits.slice(0,2)+'.'+digits.slice(2);if(digits.length>4)out=digits.slice(0,2)+'.'+digits.slice(2,4)+'.'+digits.slice(4);input.value=out}
+function weekendSet(){return new Set([...document.querySelectorAll('#weekendDays input:checked')].map(x=>+x.value))}
+function setMode(next,focus=false,persist=true){mode=next==='add'?'add':'between';document.querySelectorAll('.mode-btn').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.mode===mode)));$('betweenPanel').hidden=mode!=='between';$('addPanel').hidden=mode!=='add';clearErrors();lastResult=null;setEmpty();if(focus)(mode==='between'?els.start:els.base).focus();if(persist){saveState();clearUrl();}}
+function setEmpty(){els.statusText.textContent=T.waitingText;els.statusBadge.textContent=T.waitingBadge;els.statusBadge.className='badge';els.mainLabel.textContent=mode==='between'?T.businessDays:T.targetDate;els.mainResult.textContent='—';els.mainSubtext.textContent=T.mainHelp;els.mainBox.classList.remove('ready');document.querySelectorAll('.result-item').forEach(x=>x.classList.remove('ready'));['calendarDays','weekendCount','publicHolidayCount','customHolidayCount','businessWeeks','workRatio'].forEach(k=>els[k].textContent='—');els.smartComment.textContent=T.noCalc;els.holidayList.textContent=T.holidayEmpty;els.holidayList.className='holiday-list empty'}
+function setError(msg,fieldId){els.validation.textContent=msg;els.validation.classList.add('show');if(fieldId){const field=$(fieldId+'Field');const input=$(fieldId);if(field){field.classList.add('has-error');if(input)input.setAttribute('aria-invalid','true');const e=$(fieldId+'Error');if(e)e.textContent=msg;}}}
+function clearErrors(){els.validation.textContent='';els.validation.classList.remove('show');['startDate','endDate','baseDate','businessAmount'].forEach(id=>{const f=$(id+'Field'),e=$(id+'Error'),i=$(id);if(f)f.classList.remove('has-error');if(e)e.textContent='';if(i)i.setAttribute('aria-invalid','false')})}
+function customSet(){return new Set(customDates)}
+function renderCustom(){els.customList.innerHTML='';if(!customDates.length){const span=document.createElement('span');span.className='helper';span.textContent=T.noCustom;els.customList.appendChild(span);return}customDates.slice().sort().forEach(v=>{const chip=document.createElement('span');chip.className='custom-chip';const txt=document.createElement('span');const [y,m,d]=v.split('-').map(Number);txt.textContent=formatDate(dateAtNoon(y,m,d));const btn=document.createElement('button');btn.type='button';btn.setAttribute('aria-label',T.removeDate+' '+txt.textContent);btn.textContent='×';btn.addEventListener('click',()=>{customDates=customDates.filter(x=>x!==v);renderCustom();markDirty();});chip.append(txt,btn);els.customList.appendChild(chip)})}
+function addCustom(){const v=els.customDate.value;if(!v)return;if(!/^\d{4}-\d{2}-\d{2}$/.test(v))return;if(!customDates.includes(v)){if(customDates.length>=MAX_CUSTOM_DATES){setError(T.customLimit);return}customDates.push(v)}customDates.sort();els.customDate.value='';renderCustom();markDirty()}
+function cacheRead(code,year){try{const raw=localStorage.getItem(HOLIDAY_CACHE_PREFIX+code+'_'+year);if(!raw)return null;const obj=JSON.parse(raw);if(!obj||!Array.isArray(obj.items)||!obj.savedAt)return null;return obj}catch(e){return null}}
+function cacheWrite(code,year,items){try{localStorage.setItem(HOLIDAY_CACHE_PREFIX+code+'_'+year,JSON.stringify({savedAt:Date.now(),items}))}catch(e){}}
+function foreignCoverageMessage(){const start=new Date().getFullYear(),end=start+5;return T.foreignCoverage.replace('{start}',String(start)).replace('{end}',String(end))}
+async function fetchYear(code,year){const key=code+'_'+year;if(holidayMemory.has(key))return holidayMemory.get(key);if(code==='TR'){if(!TR_RELIGIOUS_HOLIDAYS[year])throw new Error(T.trCoverage);const fixed=TR_FIXED_HOLIDAYS.map(([md,tr,en])=>({date:`${year}-${md}`,name:LANG==='tr'?tr:en}));const religious=TR_RELIGIOUS_HOLIDAYS[year].map(row=>{const [md,tr,en]=row.split('|');return{date:`${year}-${md}`,name:LANG==='tr'?tr:en}});const items=[...fixed,...religious];holidayMemory.set(key,items);return items}const currentYear=new Date().getFullYear();if(year<currentYear||year>currentYear+5)throw new Error(foreignCoverageMessage());const cached=cacheRead(code,year);if(cached&&Date.now()-cached.savedAt<=HOLIDAY_TTL){holidayMemory.set(key,cached.items);return cached.items}const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),6000);try{const r=await fetch(`${API_BASE}/${encodeURIComponent(code)}/${year}`,{signal:controller.signal,headers:{'Accept':'application/json'}});if(!r.ok)throw new Error('HTTP '+r.status);const data=await r.json();if(!Array.isArray(data))throw new Error('Invalid holiday response');const items=data.filter(h=>h&&typeof h.date==='string'&&h.nationalHoliday===true&&Array.isArray(h.holidayTypes)&&h.holidayTypes.some(t=>t==='Public'||t==='Bank')).map(h=>({date:h.date,name:String(h.name||T.publicHoliday)}));cacheWrite(code,year,items);holidayMemory.set(key,items);return items}catch(err){if(cached&&Array.isArray(cached.items)){holidayMemory.set(key,cached.items);return cached.items}throw err}finally{clearTimeout(timer)}}
+async function holidaysForYears(years){if(!els.excludePublic.checked){els.holidayStatus.textContent=T.holidaysDisabled;els.holidayStatus.className='data-status';return new Map()}if(!els.country.value){els.holidayStatus.textContent=T.noCountry;els.holidayStatus.className='data-status';return new Map()}els.holidayStatus.textContent=T.loadingHolidays;els.holidayStatus.className='data-status';try{const code=els.country.value;const arrays=await Promise.all([...new Set(years)].map(y=>fetchYear(code,y)));const map=new Map();arrays.flat().forEach(h=>{if(!map.has(h.date)){map.set(h.date,h.name)}else if(!map.get(h.date).includes(h.name)){map.set(h.date,map.get(h.date)+' / '+h.name)}});els.holidayStatus.textContent=T.holidaysReady.replace('{n}',String(map.size));els.holidayStatus.className='data-status good';return map}catch(e){const fm=foreignCoverageMessage();const msg=e&&(e.message===T.trCoverage||e.message===fm)?e.message:T.holidaysFail;els.holidayStatus.textContent=msg;els.holidayStatus.className='data-status bad';throw new Error(msg)} }
+function yearsBetween(a,b){const out=[];for(let y=a.getFullYear();y<=b.getFullYear();y++)out.push(y);return out}
+function workingDaysPerWeek(ws){return 7-ws.size}
+function classifyDate(d,ws,holidayMap,cs){const key=iso(d);if(ws.has(d.getDay()))return'weekend';if(holidayMap.has(key))return'public';if(cs.has(key))return'custom';return'business'}
+function countedRange(start,end,rule){let a=start,b=end;if(rule==='excludeStart'||rule==='excludeBoth')a=addDays(a,1);if(rule==='excludeEnd'||rule==='excludeBoth')b=addDays(b,-1);if(a>b)return[];const days=[];for(let d=a;d<=b;d=addDays(d,1))days.push(d);return days}
+function showResult(r){lastResult=r;els.statusText.textContent=T.readyText;els.statusBadge.textContent=T.readyBadge;els.statusBadge.className='badge good';els.mainBox.classList.add('ready');document.querySelectorAll('.result-item').forEach(x=>x.classList.add('ready'));if(r.mode==='between'){els.mainLabel.textContent=T.businessDays;els.mainResult.textContent=String(r.businessDays);els.mainSubtext.textContent=T.betweenSub.replace('{a}',formatDate(r.start)).replace('{b}',formatDate(r.end))}else{els.mainLabel.textContent=T.targetDate;els.mainResult.textContent=formatDate(r.target);els.mainSubtext.textContent=T.addSub.replace('{n}',String(r.amount)).replace('{dir}',r.direction==='forward'?T.forward:T.backward)}els.calendarDays.textContent=String(r.calendarDays);els.weekendCount.textContent=String(r.weekend);els.publicHolidayCount.textContent=String(r.public);els.customHolidayCount.textContent=String(r.custom);els.businessWeeks.textContent=(r.businessDays/Math.max(1,r.workdaysPerWeek)).toLocaleString(LANG==='tr'?'tr-TR':'en-US',{maximumFractionDigits:2});els.workRatio.textContent=(r.calendarDays?100*r.businessDays/r.calendarDays:0).toLocaleString(LANG==='tr'?'tr-TR':'en-US',{maximumFractionDigits:1})+'%';els.smartComment.textContent=r.mode==='between'?T.smartBetween.replace('{b}',String(r.businessDays)).replace('{w}',String(r.weekend)).replace('{h}',String(r.public+r.custom)):T.smartAdd.replace('{n}',String(r.amount)).replace('{d}',formatDate(r.target));renderHolidays(r.holidays);updateUrl();saveState();}
+function renderHolidays(list){els.holidayList.innerHTML='';if(!list.length){els.holidayList.textContent=T.noAffectingHoliday;els.holidayList.className='holiday-list empty';return}els.holidayList.className='holiday-list';const title=document.createElement('strong');title.textContent=T.holidayListTitle;els.holidayList.appendChild(title);const ul=document.createElement('ul');ul.className='result-list';list.forEach(h=>{const li=document.createElement('li');const [y,m,d]=h.date.split('-').map(Number);li.textContent=`${formatDate(dateAtNoon(y,m,d))} — ${h.name}`;ul.appendChild(li)});els.holidayList.appendChild(ul)}
+async function calculate(scroll=true){if(busy)return;clearErrors();lastResult=null;setEmpty();const ws=weekendSet();if(ws.size>=7){setError(T.allWeekend);return}busy=true;try{if(mode==='between'){const sp=parseDate(els.start.value),ep=parseDate(els.end.value);if(!sp.ok){setError(sp.error||T.startRequired,'startDate');return}if(!ep.ok){setError(ep.error||T.endRequired,'endDate');return}if(ep.date<sp.date){setError(T.endBefore,'endDate');return}const days=countedRange(sp.date,ep.date,els.counting.value);const holidayMap=await holidaysForYears(yearsBetween(sp.date,ep.date));const cs=customSet();let business=0,weekend=0,pub=0,custom=0;const affecting=[];for(const d of days){const c=classifyDate(d,ws,holidayMap,cs);if(c==='business')business++;else if(c==='weekend')weekend++;else if(c==='public'){pub++;affecting.push({date:iso(d),name:holidayMap.get(iso(d))})}else if(c==='custom')custom++}showResult({mode:'between',start:sp.date,end:ep.date,businessDays:business,calendarDays:days.length,weekend,public:pub,custom,holidays:affecting,workdaysPerWeek:workingDaysPerWeek(ws)})}else{const bp=parseDate(els.base.value);if(!bp.ok){setError(bp.error||T.baseRequired,'baseDate');return}const amount=Number(els.amount.value);if(!Number.isInteger(amount)||amount<1||amount>2500){setError(T.amountInvalid,'businessAmount');return}const sign=els.direction.value==='backward'?-1:1;const holidayMap=new Map();const loadedHolidayYears=new Set();const ensureHolidayYear=async year=>{if(loadedHolidayYears.has(year))return;const part=await holidaysForYears([year]);part.forEach((name,date)=>{if(!holidayMap.has(date))holidayMap.set(date,name);else if(!holidayMap.get(date).includes(name))holidayMap.set(date,holidayMap.get(date)+' / '+name)});loadedHolidayYears.add(year);if(els.excludePublic.checked&&els.country.value){els.holidayStatus.textContent=T.holidaysReady.replace('{n}',String(holidayMap.size));els.holidayStatus.className='data-status good'}};const cs=customSet();let cur=bp.date,count=0,calendar=0,weekend=0,pub=0,custom=0;const affecting=[];let guard=0;while(count<amount){if(++guard>20000)throw new Error(T.guardError);cur=addDays(cur,sign);calendar++;await ensureHolidayYear(cur.getFullYear());const c=classifyDate(cur,ws,holidayMap,cs);if(c==='business')count++;else if(c==='weekend')weekend++;else if(c==='public'){pub++;affecting.push({date:iso(cur),name:holidayMap.get(iso(cur))})}else if(c==='custom')custom++}showResult({mode:'add',target:cur,amount,direction:els.direction.value,businessDays:amount,calendarDays:calendar,weekend,public:pub,custom,holidays:affecting,workdaysPerWeek:workingDaysPerWeek(ws)})}}catch(e){setError(e&&e.message?e.message:T.genericError)}finally{busy=false;if(scroll&&lastResult)requestAnimationFrame(()=>els.resultCard.scrollIntoView({behavior:'smooth',block:'start'}))}}
+function saveState(){try{const data={version:1,mode,start:els.start.value,end:els.end.value,base:els.base.value,amount:els.amount.value,direction:els.direction.value,counting:els.counting.value,country:els.country.value,excludePublic:els.excludePublic.checked,weekend:[...weekendSet()],customDates};localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}catch(e){}}
+function markDirty(){saveState();if(lastResult){lastResult=null;setEmpty()}clearUrl()}
+function applyState(s){if(!s||s.version!==1)return false;els.start.value=s.start||'';els.end.value=s.end||'';els.base.value=s.base||'';els.amount.value=s.amount||'';els.direction.value=s.direction||'forward';els.counting.value=s.counting||'both';els.country.value=s.country??(LANG==='tr'?'TR':'');els.excludePublic.checked=s.excludePublic!==false;document.querySelectorAll('#weekendDays input').forEach(x=>x.checked=Array.isArray(s.weekend)?s.weekend.includes(+x.value):(+x.value===6||+x.value===0));customDates=Array.isArray(s.customDates)?s.customDates.filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)).slice(0,MAX_CUSTOM_DATES):[];renderCustom();setMode(s.mode||'between',false,false);return true}
+function stateFromUrl(){try{const p=new URLSearchParams(location.search);if(!p.size)return null;const rawWeekends=p.get('wk');const weekends=rawWeekends===null?[6,0]:[...new Set(rawWeekends.split(',').filter(x=>x!=='').map(Number).filter(n=>n>=0&&n<=6))];return{version:1,mode:p.get('mode')||'between',start:p.get('start')||'',end:p.get('end')||'',base:p.get('base')||'',amount:p.get('n')||'',direction:p.get('dir')||'forward',counting:p.get('count')||'both',country:(p.get('country')==='none'?'':(p.get('country')??(LANG==='tr'?'TR':''))),excludePublic:p.get('hol')!=='0',weekend:weekends,customDates:(p.get('custom')||'').split(',').filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)).slice(0,MAX_CUSTOM_DATES)}}catch(e){return null}}
+function updateUrl(){try{if(!history.replaceState||location.protocol==='about:')return;const p=new URLSearchParams();p.set('mode',mode);if(mode==='between'){p.set('start',els.start.value);p.set('end',els.end.value);p.set('count',els.counting.value)}else{p.set('base',els.base.value);p.set('n',els.amount.value);p.set('dir',els.direction.value)}p.set('country',els.country.value||'none');if(!els.excludePublic.checked)p.set('hol','0');p.set('wk',[...weekendSet()].sort().join(','));if(customDates.length)p.set('custom',customDates.join(','));history.replaceState(null,'',location.pathname+'?'+p.toString())}catch(e){}}
+function clearUrl(){try{if(history.replaceState&&location.protocol!=='about:')history.replaceState(null,'',location.pathname)}catch(e){}}
+function reset(){els.form.reset();document.querySelectorAll('#weekendDays input').forEach(x=>x.checked=(+x.value===6||+x.value===0));els.country.value=LANG==='tr'?'TR':'';els.excludePublic.checked=true;customDates=[];renderCustom();setMode('between',false,false);clearErrors();setEmpty();els.holidayStatus.textContent=T.initialHolidayStatus;els.holidayStatus.className='data-status';try{localStorage.removeItem(STORAGE_KEY)}catch(e){}clearUrl()}
+function example(){const today=new Date();const start=dateAtNoon(today.getFullYear(),today.getMonth()+1,today.getDate());const end=addDays(start,30);const fv=d=>`${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;if(mode==='between'){els.start.value=fv(start);els.end.value=fv(end);els.counting.value='both'}else{els.base.value=fv(start);els.amount.value='30';els.direction.value='forward'}calculate(true)}
+function summary(){if(!lastResult)return'';if(lastResult.mode==='between')return T.copyBetween.replace('{b}',String(lastResult.businessDays)).replace('{a}',formatDate(lastResult.start)).replace('{e}',formatDate(lastResult.end)).replace('{w}',String(lastResult.weekend)).replace('{h}',String(lastResult.public)).replace('{c}',String(lastResult.custom));return T.copyAdd.replace('{n}',String(lastResult.amount)).replace('{d}',formatDate(lastResult.target)).replace('{w}',String(lastResult.weekend)).replace('{h}',String(lastResult.public)).replace('{c}',String(lastResult.custom))}
+function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();return ok}
+async function copy(){const text=summary();if(!text){setError(T.calculateFirst);return}try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);els.statusText.textContent=T.copied;return}}catch(e){}els.statusText.textContent=fallbackCopy(text)?T.copied:T.copyFail}
+async function share(){const text=summary();if(!text){setError(T.calculateFirst);return}if(navigator.share){try{await navigator.share({title:T.shareTitle,text,url:location.href});return}catch(e){if(e&&e.name==='AbortError')return}}try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);els.statusText.textContent=T.shareCopied;return}}catch(e){}els.statusText.textContent=fallbackCopy(text)?T.shareCopied:T.copyFail}
+let holidayAutoRecalcPending=false,holidayAutoRecalcToken=0;
+function handleHolidayToggle(){const shouldRecalculate=!!lastResult||holidayAutoRecalcPending;markDirty();if(!shouldRecalculate)return;holidayAutoRecalcPending=true;const token=++holidayAutoRecalcToken;(async()=>{await new Promise(resolve=>setTimeout(resolve,80));while(busy)await new Promise(resolve=>setTimeout(resolve,25));if(token!==holidayAutoRecalcToken)return;await calculate(false);if(token===holidayAutoRecalcToken)holidayAutoRecalcPending=false;})()}
+function load(){let applied=false;const u=stateFromUrl();if(u)applied=applyState(u);if(!applied)try{const raw=localStorage.getItem(STORAGE_KEY);if(raw)applied=applyState(JSON.parse(raw))}catch(e){}if(!applied){els.country.value=LANG==='tr'?'TR':'';renderCustom();setMode('between',false,false)}els.holidayStatus.textContent=T.initialHolidayStatus;els.holidayStatus.className='data-status';setEmpty()}
+document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode,true)));[els.start,els.end,els.base].forEach(i=>i.addEventListener('input',()=>{maskDateInput(i);markDirty()}));[els.amount,els.direction,els.counting,els.country].forEach(i=>i.addEventListener('change',markDirty));els.excludePublic.addEventListener('change',handleHolidayToggle);document.querySelectorAll('#weekendDays input').forEach(i=>i.addEventListener('change',markDirty));$('addCustomBtn').addEventListener('click',addCustom);els.customDate.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();addCustom()}});els.form.addEventListener('submit',e=>{e.preventDefault();calculate(true)});$('exampleBtn').addEventListener('click',example);$('copyBtn').addEventListener('click',copy);$('shareBtn').addEventListener('click',share);$('resetBtn').addEventListener('click',reset);$('printBtn').addEventListener('click',()=>window.print());load();
+})();
+</script><script src="ads-slot-manager.js"></script><script id="hc-reset-scroll-standard">(()=>{const resetLabels=new Set(['verileri sıfırla','verileri temizle','temizle','sıfırla']);const normalize=value=>String(value||'').replace(/\s+/g,' ').trim().toLocaleLowerCase('tr-TR');document.querySelectorAll('button').forEach(button=>{if(!resetLabels.has(normalize(button.textContent)))return;button.addEventListener('click',()=>{requestAnimationFrame(()=>{let target=button.closest('form')||button.closest('.card')||document.querySelector('main');if(target&&typeof target.scrollIntoView==='function')target.scrollIntoView({behavior:'smooth',block:'start'});});});});})();</script></body>
+</html>
