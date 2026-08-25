@@ -2373,6 +2373,11 @@
 <div class="card-desc">İki tarih arasındaki iş gününü hesapla veya belirli sayıda iş günü sonrasını; hafta sonu, resmî tatil ve özel günlerle bul.</div>
 <div class="card-meta"><span class="tag live">Canlı</span><span>Tarih</span></div>
 </a>
+<a class="card searchable-card" href="/saat-sure-hesaplama">
+<div class="card-title">Saat ve Süre Hesaplama</div>
+<div class="card-desc">İki saat arasındaki süreyi bul, saat/dakika ekle veya çıkar, süre dönüştür ve mola sonrası net çalışma süresini hesapla.</div>
+<div class="card-meta"><span class="tag live">Canlı</span><span>Saat &amp; Süre</span></div>
+</a>
 
 <a class="card searchable-card" href="/geri-sayim-hesaplama">
 <div class="card-title">Geri Sayım Hesaplama</div>
@@ -2557,6 +2562,12 @@
       return title;
     }
 
+    function normalizeLocaleText(str) {
+      return (str || "")
+        .toLocaleLowerCase("tr-TR")
+        .normalize("NFC");
+    }
+
     function getSearchText(card) {
       const title = card.querySelector(".card-title")?.textContent || "";
       const meta = Array.from(card.querySelectorAll(".card-meta span"))
@@ -2565,6 +2576,54 @@
       const href = (card.getAttribute("href") || "").replace(/[\/\.-]/g, " ");
       const extra = card.dataset.search || "";
       return normalizeText([title, meta, href, extra].join(" "));
+    }
+
+    function getLocaleSearchText(card) {
+      const title = card.querySelector(".card-title")?.textContent || "";
+      const meta = Array.from(card.querySelectorAll(".card-meta span"))
+        .map(el => el.textContent)
+        .join(" ");
+      const extra = card.dataset.search || "";
+      return normalizeLocaleText([title, meta, extra].join(" "));
+    }
+
+    function getMatchScore(card, rawQuery, query) {
+      const title = card.querySelector(".card-title")?.textContent || "";
+      const meta = Array.from(card.querySelectorAll(".card-meta span"))
+        .map(el => el.textContent)
+        .join(" ");
+      const extra = card.dataset.search || "";
+      const href = (card.getAttribute("href") || "").replace(/[\/\.-]/g, " ");
+
+      const localeQuery = normalizeLocaleText(rawQuery);
+      const useLocalePrecision = /[çğıöşüÇĞİÖŞÜ]/.test(rawQuery);
+      const localeTitle = normalizeLocaleText(title);
+      const localeMeta = normalizeLocaleText([meta, extra].join(" "));
+      const normalizedTitle = normalizeText(title);
+      const normalizedMeta = normalizeText([meta, extra].join(" "));
+      const normalizedHref = normalizeText(href);
+
+      let score = 0;
+      if (useLocalePrecision && localeQuery) {
+        if (localeTitle === localeQuery) score = Math.max(score, 1000);
+        if (localeTitle.startsWith(`${localeQuery} `)) score = Math.max(score, 950);
+        if (localeTitle.startsWith(localeQuery)) score = Math.max(score, 900);
+        if (localeTitle.includes(` ${localeQuery} `)) score = Math.max(score, 850);
+        if (localeTitle.includes(localeQuery)) score = Math.max(score, 800);
+        if (localeMeta.includes(` ${localeQuery} `) || localeMeta.startsWith(`${localeQuery} `)) score = Math.max(score, 700);
+        if (localeMeta.includes(localeQuery)) score = Math.max(score, 650);
+      }
+
+      if (query) {
+        if (normalizedTitle === query) score = Math.max(score, 600);
+        if (normalizedTitle.startsWith(`${query} `)) score = Math.max(score, 575);
+        if (normalizedTitle.startsWith(query)) score = Math.max(score, 550);
+        if (normalizedTitle.includes(query)) score = Math.max(score, 500);
+        if (normalizedMeta.includes(query)) score = Math.max(score, 425);
+        if (normalizedHref.includes(query)) score = Math.max(score, 350);
+      }
+
+      return score;
     }
 
     function getCardMeta(card) {
@@ -2579,19 +2638,33 @@
       };
     }
 
-    function getUniqueMatches(query) {
-      const seen = new Set();
-      const matches = [];
+    function getUniqueMatches(query, rawQuery = "") {
+      const localeQuery = normalizeLocaleText(rawQuery);
+      const bestByKey = new Map();
 
-      cards.forEach(card => {
-        if (!getSearchText(card).includes(query)) return;
+      cards.forEach((card, index) => {
+        const localeMatch = localeQuery && getLocaleSearchText(card).includes(localeQuery);
+        const normalizedMatch = query && getSearchText(card).includes(query);
+        if (!localeMatch && !normalizedMatch) return;
+
         const key = getCardKey(card);
-        if (seen.has(key)) return;
-        seen.add(key);
-        matches.push(card);
+        const score = getMatchScore(card, rawQuery, query);
+        const previous = bestByKey.get(key);
+
+        if (!previous || score > previous.score) {
+          bestByKey.set(key, { card, score, index, localeMatch });
+        }
       });
 
-      return matches;
+      const ranked = Array.from(bestByKey.values());
+      const useLocalePrecision = /[çğıöşüÇĞİÖŞÜ]/.test(rawQuery);
+      const hasLocaleMatches = ranked.some(item => item.localeMatch);
+      const filtered = useLocalePrecision && hasLocaleMatches
+        ? ranked.filter(item => item.localeMatch)
+        : ranked;
+
+      filtered.sort((a, b) => b.score - a.score || a.index - b.index);
+      return filtered.map(item => item.card);
     }
 
     function updateToggleButton(section) {
@@ -2722,7 +2795,7 @@
       document.body.classList.add("search-active");
       clearSearchBtn.classList.add("show");
 
-      const matches = getUniqueMatches(query);
+      const matches = getUniqueMatches(query, rawQuery);
       const matchKeys = new Set(matches.map(getCardKey));
 
       cards.forEach(card => {
@@ -2753,7 +2826,7 @@
       const rawQuery = searchInput.value.trim();
       const query = normalizeText(rawQuery);
       if (!query) return;
-      const matches = getUniqueMatches(query);
+      const matches = getUniqueMatches(query, rawQuery);
       if (!matches.length) return;
       event.preventDefault();
       scrollToCard(matches[0]);

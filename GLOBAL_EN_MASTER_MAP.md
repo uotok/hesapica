@@ -4,14 +4,14 @@
 
 ## Architecture
 
-- Turkish site remains at `/` with 47 Turkish calculators.
+- Turkish site remains at `/` with 48 Turkish calculators.
 - Global English site lives under `/en/`.
-- Only country-independent tools are translated: **25 calculators**.
+- Only country-independent tools are translated: **26 calculators**.
 - Turkey-specific calculators are intentionally not exposed in English at this stage.
 - Each English calculator has a natural English slug, self-canonical URL, and reciprocal TR/EN hreflang with its real Turkish counterpart.
 - English calculator implementations follow the Turkish product standard: rich form/result layout, validation, presets/example/reset, detailed metrics/tables where useful, copy/share/print, state persistence, responsive behavior, FAQ/schema and related tools.
 
-## 25 Global Calculator Pairs
+## 26 Global Calculator Pairs
 
 | # | Turkish source | English title | English URL | Category |
 |---:|---|---|---|---|
@@ -40,6 +40,7 @@
 | 23 | `/yas-hesaplama` | Age Calculator | `/en/age-calculator` | Date & Time |
 | 24 | `/yatirim-getirisi-hesaplama` | Investment Return Calculator | `/en/investment-return-calculator` | Investing |
 | 25 | `/yuzde-hesaplama` | Percentage Calculator | `/en/percentage-calculator` | Math |
+| 26 | `/saat-sure-hesaplama` | Time Duration Calculator | `/en/time-duration-calculator` | Date & Time |
 
 ## Deliberately excluded from English
 
