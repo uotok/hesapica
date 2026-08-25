@@ -4,14 +4,14 @@
 
 ## Architecture
 
-- Turkish site remains at `/` with 49 Turkish calculators.
+- Turkish site remains at `/` with 54 Turkish calculators.
 - Global English site lives under `/en/`.
-- Only country-independent tools are translated: **27 calculators**.
+- Only country-independent tools are translated: **32 calculators**.
 - Turkey-specific calculators are intentionally not exposed in English at this stage.
 - Each English calculator has a natural English slug, self-canonical URL, and reciprocal TR/EN hreflang with its real Turkish counterpart.
 - English calculator implementations follow the Turkish product standard: rich form/result layout, validation, presets/example/reset, detailed metrics/tables where useful, copy/share/print, state persistence, responsive behavior, FAQ/schema and related tools.
 
-## 27 Global Calculator Pairs
+## 32 Global Calculator Pairs
 
 | # | Turkish source | English title | English URL | Category |
 |---:|---|---|---|---|
@@ -42,6 +42,11 @@
 | 25 | `/yuzde-hesaplama` | Percentage Calculator | `/en/percentage-calculator` | Math |
 | 26 | `/saat-sure-hesaplama` | Time Duration Calculator | `/en/time-duration-calculator` | Date & Time |
 | 27 | `/vucut-yag-orani-hesaplama` | Body Fat Calculator | `/en/body-fat-calculator` | Health |
+| 28 | `/gebelik-hesaplama` | Pregnancy Due Date Calculator | `/en/pregnancy-due-date-calculator` | Health |
+| 29 | `/yumurtlama-hesaplama` | Ovulation Calculator | `/en/ovulation-calculator` | Health |
+| 30 | `/adet-dongusu-hesaplama` | Period Calculator | `/en/period-calculator` | Health |
+| 31 | `/ev-alim-gucu-hesaplama` | Home Affordability Calculator | `/en/home-affordability-calculator` | Property |
+| 32 | `/bahsis-hesaplama` | Tip & Bill Split Calculator | `/en/tip-calculator` | Everyday |
 
 ## Deliberately excluded from English
 
