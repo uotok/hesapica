@@ -6,12 +6,12 @@
 
 - Turkish site remains at `/` with 54 Turkish calculators.
 - Global English site lives under `/en/`.
-- Only country-independent tools are translated: **32 calculators**.
+- Only country-independent tools are translated: **33 calculators**.
 - Turkey-specific calculators are intentionally not exposed in English at this stage.
 - Each English calculator has a natural English slug, self-canonical URL, and reciprocal TR/EN hreflang with its real Turkish counterpart.
 - English calculator implementations follow the Turkish product standard: rich form/result layout, validation, presets/example/reset, detailed metrics/tables where useful, copy/share/print, state persistence, responsive behavior, FAQ/schema and related tools.
 
-## 32 Global Calculator Pairs
+## 33 Global Calculator Pairs
 
 | # | Turkish source | English title | English URL | Category |
 |---:|---|---|---|---|
@@ -47,6 +47,8 @@
 | 30 | `/adet-dongusu-hesaplama` | Period Calculator | `/en/period-calculator` | Health |
 | 31 | `/ev-alim-gucu-hesaplama` | Home Affordability Calculator | `/en/home-affordability-calculator` | Property |
 | 32 | `/bahsis-hesaplama` | Tip & Bill Split Calculator | `/en/tip-calculator` | Everyday |
+
+| 33 | `/yukselen-burc-ve-gunes-burcu-hesaplama` | Rising Sign Calculator | `/en/rising-sign-calculator` | Astrology |
 
 ## Deliberately excluded from English
 
