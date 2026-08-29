@@ -4,14 +4,14 @@
 
 ## Architecture
 
-- Turkish site remains at `/` with 54 Turkish calculators.
+- Turkish site remains at `/` with 59 Turkish calculators.
 - Global English site lives under `/en/`.
-- Only country-independent tools are translated: **34 calculators**.
+- Only country-independent tools are translated: **38 calculators**.
 - Turkey-specific calculators are intentionally not exposed in English at this stage.
 - Each English calculator has a natural English slug, self-canonical URL, and reciprocal TR/EN hreflang with its real Turkish counterpart.
 - English calculator implementations follow the Turkish product standard: rich form/result layout, validation, presets/example/reset, detailed metrics/tables where useful, copy/share/print, state persistence, responsive behavior, FAQ/schema and related tools.
 
-## 34 Global Calculator Pairs
+## 38 Global Calculator Pairs
 
 | # | Turkish source | English title | English URL | Category |
 |---:|---|---|---|---|
@@ -50,6 +50,11 @@
 
 | 33 | `/yukselen-burc-ve-gunes-burcu-hesaplama` | Rising Sign Calculator | `/en/rising-sign-calculator` | Astrology |
 | 34 | `/gunluk-burc-yorumu` | Daily Horoscope | `/en/daily-horoscope` | Astrology |
+
+| 35 | `/finalde-kac-almaliyim` | Final Grade Calculator | `/en/final-grade-calculator` | Education |
+| 36 | `/saat-dilimi-donusturucu` | Time Zone Converter | `/en/time-zone-converter` | Date & Time |
+| 37 | `/birim-cevirici` | Unit Converter | `/en/unit-converter` | Math |
+| 38 | `/kosu-tempo-hesaplama` | Running Pace Calculator | `/en/running-pace-calculator` | Health |
 
 ## Deliberately excluded from English
 
