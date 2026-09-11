@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-09-10T17:08:27Z",
-  "updated_at_utc": "2026-09-10T17:08:27Z",
-  "generated_at_utc": "2026-09-10T17:08:27Z",
+  "updated_at": "2026-09-11T17:09:38Z",
+  "updated_at_utc": "2026-09-11T17:09:38Z",
+  "generated_at_utc": "2026-09-11T17:09:38Z",
   "source_priority": [
     "TCMB",
     "Truncgil"
   ],
   "source_updates": {
-    "tcmb": "10.09.2026",
-    "truncgil": "2026-09-10 20:08:01"
+    "tcmb": "11.09.2026",
+    "truncgil": "2026-09-11 20:09:01"
   },
   "notes": {
     "tr": "Bu dosya update_rates.py çalıştırıldığında kaynaklardan yeniden üretilir. Otomatik çalışma sıklığı sunucu/GitHub Actions zamanlayıcısına bağlıdır. Kurlar bilgilendirme amaçlıdır; kurumların işlem kurları ve makasları farklı olabilir.",
@@ -17,25 +17,25 @@
   },
   "rates_try": {
     "TRY": 1.0,
-    "USD": 48.4941,
-    "EUR": 56.4128,
-    "GBP": 65.8085,
-    "CHF": 59.9828,
-    "JPY": 0.316192,
-    "SAR": 12.915,
-    "AED": 13.2776,
-    "CAD": 35.1604,
-    "AUD": 35.0342,
-    "CNY": 7.2717,
-    "RUB": 0.57687,
-    "KWD": 159.0263,
-    "NOK": 5.2671,
-    "SEK": 5.0711,
-    "DKK": 7.5583,
-    "QAR": 13.3778,
-    "AZN": 28.6855,
-    "XAU": 6800.91,
-    "XAG": 100.34
+    "USD": 48.5178,
+    "EUR": 56.2766,
+    "GBP": 65.6621,
+    "CHF": 59.7087,
+    "JPY": 0.315598,
+    "SAR": 12.9198,
+    "AED": 13.2833,
+    "CAD": 35.0824,
+    "AUD": 34.8742,
+    "CNY": 7.2724,
+    "RUB": 0.57827,
+    "KWD": 159.104,
+    "NOK": 5.2305,
+    "SEK": 5.0311,
+    "DKK": 7.5404,
+    "QAR": 13.3843,
+    "AZN": 28.6995,
+    "XAU": 6819.33,
+    "XAG": 100.83
   },
   "rate_sources": {
     "TRY": "system",
