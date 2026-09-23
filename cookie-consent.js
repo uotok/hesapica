@@ -177,17 +177,24 @@
     document.head.appendChild(script);
   }
 
+  // Editorial/policy pages opt out of both manual and automatic AdSense ads.
+  // Analytics and stored user preferences remain independent of this page setting.
+  function adsEnabledOnPage(){
+    return !document.querySelector('meta[name="hesapica-ads"][content="off"]');
+  }
+
   function syncAdsenseRequestPause(){
     // AdSense'in resmi async tag kontrolü: script CMP/TCF için yüklü kalabilir,
     // ancak Hesapica marketing izni yokken hiçbir publisher ad request gönderilmez.
     window.adsbygoogle = window.adsbygoogle || [];
-    window.adsbygoogle.pauseAdRequests = currentPrefs.marketing ? 0 : 1;
+    window.adsbygoogle.pauseAdRequests = currentPrefs.marketing && adsEnabledOnPage() ? 0 : 1;
   }
 
   function loadAdsenseFramework(){
     if(!isLiveHost()) return;
 
     syncAdsenseRequestPause();
+    if(!adsEnabledOnPage()) return;
 
     const existing = findScriptBySrcPart('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
     if(existing){
