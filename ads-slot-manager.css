@@ -58,3 +58,6 @@ html[data-hc-environment="live"][data-cookie-marketing="granted"] .hc-ad-slot.hc
 @media print{
   .hc-ad-slot{display:none !important}
 }
+
+/* Extra content slots keep breathing room only when an ad is filled. */
+.hc-ad-slot--content.hc-ad-loaded{margin-block:32px}
