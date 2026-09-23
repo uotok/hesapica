@@ -7,9 +7,17 @@
   overflow:hidden;
 }
 
+/*
+ * Slot ilk paint'te kapalı kalır. Consent verilmiş olsa bile reklam yöneticisi
+ * slotu gerçekten "loaded" olarak işaretleyene kadar fiziksel alan ayırmayız.
+ * Böylece HTML'deki eski margin/padding kuralları ilk 0.5–1 saniyede boşluk
+ * oluşturamaz.
+ */
 html[data-hc-environment="live"][data-cookie-marketing="granted"]
-.hc-ad-slot:not([data-hc-ad-state="unfilled"]):not([data-hc-ad-state="timeout"]):not([data-hc-ad-state="missing-ad-unit"]):not([data-hc-ad-state="consent-denied"]){
-  display:block;
+.hc-ad-slot.hc-ad-loaded{
+  display:flex;
+  align-items:center;
+  justify-content:center;
   height:auto;
   min-height:0;
   opacity:1;
@@ -44,15 +52,6 @@ html[data-hc-environment="live"][data-cookie-marketing="granted"]
 html[data-hc-environment="live"][data-cookie-marketing="granted"]
 .hc-ad-slot[data-hc-ad-state="pending"] .adsbygoogle{
   min-height:0 !important;
-}
-
-html[data-hc-environment="live"][data-cookie-marketing="granted"] .hc-ad-slot.hc-ad-loaded{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:0;
-  opacity:1;
-  overflow:visible;
 }
 
 @media print{
