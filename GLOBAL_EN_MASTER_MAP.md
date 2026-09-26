@@ -55,6 +55,7 @@
 | 36 | `/saat-dilimi-donusturucu` | Time Zone Converter | `/en/time-zone-converter` | Date & Time |
 | 37 | `/birim-cevirici` | Unit Converter | `/en/unit-converter` | Math |
 | 38 | `/kosu-tempo-hesaplama` | Running Pace Calculator | `/en/running-pace-calculator` | Health |
+| 39 | `/metin-sifreleme` | Text Encryption & Decryption | `/en/text-encryption` | Utilities |
 
 ## Deliberately excluded from English
 
