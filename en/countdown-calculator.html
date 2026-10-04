@@ -87,33 +87,34 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
 .btn-ghost{background:#f8fafc;border:1px solid var(--line);color:#374151}
 
 .results{position:sticky;top:14px}
-.result-main{font-size:clamp(29px,4vw,38px);font-weight:900;letter-spacing:-.03em;color:#111827;overflow-wrap:anywhere}
-.result-status{margin:12px 0;padding:11px 12px;border-radius:12px;font-weight:800;background:#f8fafc;color:#475569}
+#resultsPanel h2{font-weight:700 !important}
+.result-main{font-size:clamp(27px,3.5vw,34px);font-weight:700;line-height:1.35;letter-spacing:-.015em;color:#1f2937;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.result-status{margin:12px 0;padding:11px 12px;border-radius:12px;font-weight:700;background:#f8fafc;color:#475569}
 .kpi{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
 .kpi-row{padding:12px;border:1px solid var(--line);border-radius:12px;background:#fcfcff}
-.kpi-row strong{display:block;color:#475569;font-size:13px;margin-bottom:5px}
-.kpi-row span{display:block;font-size:18px;font-weight:900;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.kpi-row strong{display:block;color:#475569;font-size:13px;font-weight:600;margin-bottom:5px}
+.kpi-row span{display:block;font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .detail-card{margin-top:12px;padding:14px;border:1px solid #dbe4ff;border-radius:14px;background:#f8faff;color:#374151}
-.detail-card strong{display:block;color:#312e81;margin-bottom:6px}
+.detail-card strong{display:block;color:#312e81;font-weight:700;margin-bottom:6px}
 
 .live-box{margin-top:14px;padding:16px;border-radius:18px;background:linear-gradient(135deg,#eef2ff,#faf5ff);border:1px solid #dbe4ff}
 .live-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
-.live-head strong{color:#312e81}
-.badge{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;background:#fff;border:1px solid #dbe4ff;color:#4338ca}
+.live-head strong{color:#312e81;font-weight:700}
+.badge{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;background:#fff;border:1px solid #dbe4ff;color:#4338ca}
 .badge.good{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
 .badge.warn{background:#fff7ed;border-color:#fed7aa;color:#b45309}
 .live-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .live-unit{text-align:center;padding:10px 6px;border-radius:13px;background:#fff;border:1px solid #e0e7ff}
-.live-unit b{display:block;font-size:24px;color:#312e81;line-height:1.1}
-.live-unit span{display:block;margin-top:4px;font-size:11px;color:#6b7280;font-weight:800;text-transform:uppercase}
+.live-unit b{display:block;font-size:24px;font-weight:700;color:#312e81;line-height:1.1}
+.live-unit span{display:block;margin-top:4px;font-size:11px;color:#6b7280;font-weight:700;text-transform:uppercase}
 .live-note{margin-top:10px;color:#526070;font-size:13px;line-height:1.55}
 
 .scenario-box{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff}
-.scenario-box strong{display:block;color:#312e81;margin-bottom:8px}
+.scenario-box strong{display:block;color:#312e81;font-weight:700;margin-bottom:8px}
 .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .scenario-item{padding:10px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc}
-.scenario-item .t{font-size:12px;color:#6366f1;font-weight:900}
-.scenario-item .v{margin-top:4px;font-size:14px;font-weight:900;overflow-wrap:anywhere}
+.scenario-item .t{font-size:12px;color:#6366f1;font-weight:700}
+.scenario-item .v{margin-top:4px;font-size:14px;font-weight:700;overflow-wrap:anywhere}
 .scenario-item .s{margin-top:3px;font-size:11px;color:#6b7280}
 
 .content-card{margin-top:18px}
@@ -405,6 +406,22 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
   }
 </style>
 
+
+<style id="hc-countdown-v5-enhancements">
+.quick-targets{margin:16px 0 18px;padding:14px;border:1px solid #e6e0ff;background:linear-gradient(180deg,#fbfaff,#f7f4ff);border-radius:16px}
+.quick-targets-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.quick-targets-head strong{font-size:15px;color:#35285b}.quick-targets-head span{font-size:12px;color:#6b7280;line-height:1.45;text-align:right}
+.quick-targets-grid{display:flex;flex-wrap:wrap;gap:8px}.quick-target-btn{border:1px solid #d8cff8;background:#fff;color:#4c357a;border-radius:999px;padding:9px 12px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:.18s ease}
+.quick-target-btn:hover{transform:translateY(-1px);border-color:#b9a8ee;box-shadow:0 5px 14px rgba(91,66,151,.10)}.quick-target-btn:focus-visible{outline:3px solid rgba(109,76,195,.22);outline-offset:2px}
+.result-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.result-tools .btn{padding:9px 12px;font-size:13px}
+.fullscreen-countdown{position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at top,#34235f 0,#1d1733 52%,#100d1e 100%);color:#fff;display:none;align-items:center;justify-content:center;padding:24px}
+.fullscreen-countdown.open{display:flex}.fullscreen-inner{width:min(980px,100%);text-align:center}.fullscreen-close{position:absolute;top:18px;right:18px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:10px 14px;font:inherit;font-weight:800;cursor:pointer}
+.fullscreen-kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:#cfc5ff;font-weight:800}.fullscreen-title{font-size:clamp(26px,5vw,52px);margin:10px 0 6px;line-height:1.12}.fullscreen-target{color:#dcd6f7;font-size:14px;margin-bottom:26px}.fullscreen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.fullscreen-unit{padding:22px 10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);backdrop-filter:blur(6px);border-radius:20px}.fullscreen-unit b{display:block;font-size:clamp(36px,8vw,88px);line-height:1;font-variant-numeric:tabular-nums}.fullscreen-unit span{display:block;margin-top:8px;color:#cfc9e9;font-weight:700}.fullscreen-note{margin-top:20px;color:#d9d4ef;font-size:13px}
+body.hc-fullscreen-open{overflow:hidden}
+@media(max-width:700px){.quick-targets-head{display:block}.quick-targets-head span{display:block;text-align:left;margin-top:4px}.quick-targets-grid{display:grid;grid-template-columns:1fr 1fr}.quick-target-btn{border-radius:12px}.fullscreen-grid{grid-template-columns:1fr 1fr}.fullscreen-unit{padding:16px 8px}.fullscreen-countdown{padding:16px}.fullscreen-close{top:10px;right:10px}}
+@media print{.quick-targets,.result-tools,.fullscreen-countdown{display:none!important}}
+</style>
+
 </head>
 <body>
 
@@ -430,6 +447,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
           <span class="chip">Month-end safe calculation</span>
           <span class="chip">Live seconds counter</span>
           <span class="chip">Shareable scenario</span>
+          <span class="chip">Quick targets</span>
+          <span class="chip">Full-screen timer</span>
         </div>
       </div>
       <aside class="hero-box">
@@ -454,6 +473,22 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
       <div class="info">
         The default reference is <strong>now</strong>, so the main result and live timer use the same starting point. Choose “Custom date & time” to compare two fixed moments.
       </div>
+
+
+      <section class="quick-targets" aria-labelledby="quickTargetsTitle">
+        <div class="quick-targets-head">
+          <strong id="quickTargetsTitle">Quick targets</strong>
+          <span>Choose a common target in one click, then fine-tune the date or time if needed.</span>
+        </div>
+        <div class="quick-targets-grid">
+          <button class="quick-target-btn" type="button" data-quick-target="plus1h">+1 hour</button>
+          <button class="quick-target-btn" type="button" data-quick-target="midnight">Midnight</button>
+          <button class="quick-target-btn" type="button" data-quick-target="morning">Tomorrow 8:00 AM</button>
+          <button class="quick-target-btn" type="button" data-quick-target="evening">Next 6:00 PM</button>
+          <button class="quick-target-btn" type="button" data-quick-target="2030">Next 8:30 PM</button>
+          <button class="quick-target-btn" type="button" data-quick-target="plus24h">+24 hours</button>
+        </div>
+      </section>
 
       <div class="grid">
         <div class="full">
@@ -540,6 +575,12 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
         <div class="live-note" id="liveNote">The timer starts when a valid target is entered.</div>
       </div>
 
+
+        <div class="result-tools" aria-label="Result tools">
+          <button class="btn btn-soft" id="fullscreenBtn" type="button">Full-screen timer</button>
+          <button class="btn btn-ghost" id="calendarBtn" type="button">Download calendar (.ics)</button>
+        </div>
+
       <div class="scenario-box">
         <strong>Compare target date ±1 day</strong>
         <div class="scenario-grid">
@@ -592,6 +633,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
       <li><strong>Hours until evening:</strong> enter the evening time you want to reach; if it has already passed, select the next appropriate date.</li>
     </ul>
     <p>The result shows both calendar components and exact total hours, minutes and seconds, so short everyday countdowns and longer event countdowns use the same consistent calculation.</p>
+  <p>The <strong>Quick targets</strong> section fills common short countdowns such as midnight, 8:00 AM, 6:00 PM and 8:30 PM in one click.</p>
   </section>
 
   <div class="hc-ad-slot hc-ad-slot--faq" aria-label="Advertisement">
@@ -625,6 +667,23 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
   </div>
 </main>
 
+
+<div class="fullscreen-countdown" id="fullscreenCountdown" role="dialog" aria-modal="true" aria-labelledby="fullscreenTitle" aria-hidden="true">
+  <button class="fullscreen-close" id="fullscreenCloseBtn" type="button" aria-label="Close full-screen countdown">Close ✕</button>
+  <div class="fullscreen-inner">
+    <div class="fullscreen-kicker">Hesapica live countdown</div>
+    <h2 class="fullscreen-title" id="fullscreenTitle">Countdown</h2>
+    <div class="fullscreen-target" id="fullscreenTarget">—</div>
+    <div class="fullscreen-grid">
+      <div class="fullscreen-unit"><b id="fsDays">—</b><span>Days</span></div>
+      <div class="fullscreen-unit"><b id="fsHours">—</b><span>Hours</span></div>
+      <div class="fullscreen-unit"><b id="fsMinutes">—</b><span>Minutes</span></div>
+      <div class="fullscreen-unit"><b id="fsSeconds">—</b><span>Seconds</span></div>
+    </div>
+    <div class="fullscreen-note" id="fullscreenNote">The target is displayed in your browser's local time.</div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 (() => {
@@ -632,7 +691,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
 
 const STORAGE_KEY='hesapica_en_countdown_v1';
 const STORAGE_MAX_AGE=90*24*60*60*1000;
-const SHARE_KEYS=['n','td','tt','m','rd','rt'];
+const SHARE_KEYS=['n','td','tt','m','rd','rt','ts','rts'];
 const $=id=>document.getElementById(id);
 
 const els={
@@ -642,6 +701,8 @@ const els={
   liveBadge:$('liveBadge'),liveDays:$('liveDays'),liveHours:$('liveHours'),liveMinutes:$('liveMinutes'),liveSeconds:$('liveSeconds'),liveNote:$('liveNote'),
   scenarioEarly:$('scenarioEarly'),scenarioBase:$('scenarioBase'),scenarioLate:$('scenarioLate'),
   scenarioEarlyNote:$('scenarioEarlyNote'),scenarioBaseNote:$('scenarioBaseNote'),scenarioLateNote:$('scenarioLateNote'),
+  fullscreen:$('fullscreenCountdown'),fullscreenTitle:$('fullscreenTitle'),fullscreenTarget:$('fullscreenTarget'),fullscreenNote:$('fullscreenNote'),
+  fsDays:$('fsDays'),fsHours:$('fsHours'),fsMinutes:$('fsMinutes'),fsSeconds:$('fsSeconds'),
   toast:$('toast')
 };
 
@@ -676,6 +737,31 @@ function formatDateTR(date){
 }
 function formatDateTimeTR(date){
   return date.toLocaleString('en-GB',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+
+function formatTimeInput(date){
+  return `${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}:${String(date.getSeconds()).padStart(2,'0')}`;
+}
+function nextClockTarget(hour,minute=0,second=0){
+  const now=new Date(),d=new Date(now.getFullYear(),now.getMonth(),now.getDate(),hour,minute,second,0);
+  if(d<=now)d.setDate(d.getDate()+1);
+  return d;
+}
+function setQuickTarget(kind){
+  const now=new Date();let target=null,label='';
+  if(kind==='plus1h'){target=new Date(now.getTime()+3600000);label="1 hour from now";}
+  else if(kind==='plus24h'){target=new Date(now.getTime()+86400000);label="24 hours from now";}
+  else if(kind==='midnight'){target=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0,0);label="Midnight";}
+  else if(kind==='morning'){target=nextClockTarget(8,0,0);label="Tomorrow 8:00 AM";}
+  else if(kind==='evening'){target=nextClockTarget(18,0,0);label="Next 6:00 PM";}
+  else if(kind==='2030'){target=nextClockTarget(20,30,0);label="Next 8:30 PM";}
+  if(!target)return;
+  clearScenarioParams();
+  els.targetDate.value=formatDateTR(target);
+  els.targetTime.value=formatTimeInput(target);
+  els.mode.value='now';els.referenceDate.value='';els.referenceTime.value='';updateReferenceUI();
+  if(!els.event.value.trim())els.event.value=label;
+  if(calculate(true)){scheduleSave();scrollToResult();showToast("Quick target selected: "+label);}
 }
 
 function parseDateParts(value){
@@ -890,13 +976,14 @@ function clearLive(){
 function renderLive(target,eventName=''){
   const ms=target-Date.now();
   if(ms<=0){
-    [els.liveDays,els.liveHours,els.liveMinutes,els.liveSeconds].forEach(x=>x.textContent='0');
+    [els.liveDays,els.liveHours,els.liveMinutes,els.liveSeconds,els.fsDays,els.fsHours,els.fsMinutes,els.fsSeconds].forEach(x=>{if(x)x.textContent='0';});
     els.liveBadge.textContent='Completed';els.liveBadge.className='badge good';
     els.liveNote.textContent=(eventName?`${eventName}: `:'')+`target time ${formatDateTimeTR(target)} has been reached.`;
     stopLive();return;
   }
   const x=splitLive(ms);
   els.liveDays.textContent=int(x.days);els.liveHours.textContent=int(x.hours);els.liveMinutes.textContent=int(x.minutes);els.liveSeconds.textContent=int(x.seconds);
+  if(els.fsDays){els.fsDays.textContent=int(x.days);els.fsHours.textContent=int(x.hours);els.fsMinutes.textContent=int(x.minutes);els.fsSeconds.textContent=int(x.seconds);}
   els.liveBadge.textContent='Live';els.liveBadge.className='badge warn';
   els.liveNote.textContent=(eventName?`${eventName}: `:'')+`counting down from the real current time to ${formatDateTimeTR(target)}.`;
 }
@@ -993,16 +1080,26 @@ function buildShareUrl(){
   const u=new URL(location.href);SHARE_KEYS.forEach(k=>u.searchParams.delete(k));
   const v=getStateInput();
   const pairs={n:v.eventName,td:v.targetDate,tt:v.targetTime,m:v.referenceMode};
-  if(v.referenceMode==='custom'){pairs.rd=v.referenceDate;pairs.rt=v.referenceTime;}
+  const target=combineDateTime(v.targetDate,v.targetTime);
+  if(target)pairs.ts=String(target.getTime());
+  if(v.referenceMode==='custom'){
+    pairs.rd=v.referenceDate;pairs.rt=v.referenceTime;
+    const ref=combineDateTime(v.referenceDate,v.referenceTime);if(ref)pairs.rts=String(ref.getTime());
+  }
   Object.entries(pairs).forEach(([k,val])=>{if(String(val||'')!=='')u.searchParams.set(k,String(val));});
   return u.toString();
 }
 function applyQueryState(){
   try{
-    const q=new URLSearchParams(location.search);if(!q.has('td'))return false;
+    const q=new URLSearchParams(location.search);if(!q.has('td')&&!q.has('ts'))return false;
+    let td=q.get('td')||'',tt=q.get('tt')||'',rd=q.get('rd')||'',rt=q.get('rt')||'';
+    const ts=Number(q.get('ts'));
+    if(Number.isFinite(ts)&&ts>0){const d=new Date(ts);td=formatDateTR(d);tt=formatTimeInput(d);}
+    const rts=Number(q.get('rts'));
+    if(Number.isFinite(rts)&&rts>0){const d=new Date(rts);rd=formatDateTR(d);rt=formatTimeInput(d);}
     applyValues({
-      eventName:q.get('n')||'',targetDate:q.get('td')||'',targetTime:q.get('tt')||'',
-      referenceMode:q.get('m')==='custom'?'custom':'now',referenceDate:q.get('rd')||'',referenceTime:q.get('rt')||''
+      eventName:q.get('n')||'',targetDate:td,targetTime:tt,
+      referenceMode:q.get('m')==='custom'?'custom':'now',referenceDate:rd,referenceTime:rt
     });
     return true;
   }catch{return false;}
@@ -1013,6 +1110,30 @@ function clearScenarioParams(){
     SHARE_KEYS.forEach(k=>{if(u.searchParams.has(k)){u.searchParams.delete(k);changed=true;}});
     if(changed)history.replaceState(null,'',u.pathname+u.search+u.hash);
   }catch{}
+}
+
+
+function openFullscreen(){
+  if(!lastResult&&!calculate(true)){showToast("Create a valid target first.");return;}
+  const {input,r}=lastResult;
+  els.fullscreenTitle.textContent=input.eventName||"Countdown";
+  els.fullscreenTarget.textContent=formatDateTimeTR(r.target);
+  els.fullscreen.classList.add('open');els.fullscreen.setAttribute('aria-hidden','false');document.body.classList.add('hc-fullscreen-open');
+  renderLive(r.target,input.eventName);$('fullscreenCloseBtn').focus();
+}
+function closeFullscreen(){
+  els.fullscreen.classList.remove('open');els.fullscreen.setAttribute('aria-hidden','true');document.body.classList.remove('hc-fullscreen-open');
+  $('fullscreenBtn').focus();
+}
+function icsEscape(v){return String(v||'').replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\r?\n/g,'\\n');}
+function icsUtc(date){return date.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');}
+function downloadCalendar(){
+  if(!lastResult&&!calculate(true)){showToast("Create a valid target first.");return;}
+  const {input,r}=lastResult,title=input.eventName||"Hesapica Countdown Target";
+  const uid=`${r.target.getTime()}-${Math.random().toString(36).slice(2)}@hesapica.com`;
+  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Hesapica//Countdown//EN','CALSCALE:GREGORIAN','BEGIN:VEVENT',`UID:${uid}`,`DTSTAMP:${icsUtc(new Date())}`,`DTSTART:${icsUtc(r.target)}`,`SUMMARY:${icsEscape(title)}`,`DESCRIPTION:${icsEscape("Hesapica countdown target"+'\n'+buildShareUrl())}`,'END:VEVENT','END:VCALENDAR'];
+  const blob=new Blob([lines.join('\r\n')],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='hesapica-countdown.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showToast("Calendar file created.");
 }
 
 function resultText(){
@@ -1044,6 +1165,13 @@ async function shareResult(){
   }
   try{await copyText(fullText);showToast('Share summary copied to the clipboard.');}catch{showToast('Sharing could not be completed.');}
 }
+
+document.querySelectorAll('[data-quick-target]').forEach(btn=>btn.addEventListener('click',()=>setQuickTarget(btn.dataset.quickTarget)));
+$('fullscreenBtn').addEventListener('click',openFullscreen);
+$('fullscreenCloseBtn').addEventListener('click',closeFullscreen);
+els.fullscreen.addEventListener('click',e=>{if(e.target===els.fullscreen)closeFullscreen();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&els.fullscreen.classList.contains('open'))closeFullscreen();});
+$('calendarBtn').addEventListener('click',downloadCalendar);
 
 els.form.addEventListener('submit',e=>{e.preventDefault();if(calculate(true))scrollToResult();});
 $('sampleBtn').addEventListener('click',fillExample);
