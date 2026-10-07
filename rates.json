@@ -1,15 +1,14 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-06T19:01:04Z",
-  "updated_at_utc": "2026-10-06T19:01:04Z",
-  "generated_at_utc": "2026-10-06T19:01:04Z",
+  "updated_at": "2026-10-07T19:29:17Z",
+  "updated_at_utc": "2026-10-07T19:29:17Z",
+  "generated_at_utc": "2026-10-07T19:29:17Z",
   "source_priority": [
-    "TCMB",
-    "Truncgil"
+    "TCMB"
   ],
   "source_updates": {
-    "tcmb": "06.10.2026",
-    "truncgil": "2026-10-06 22:01:01"
+    "tcmb": "07.10.2026",
+    "truncgil": null
   },
   "notes": {
     "tr": "Bu dosya update_rates.py çalıştırıldığında kaynaklardan yeniden üretilir. Otomatik çalışma sıklığı sunucu/GitHub Actions zamanlayıcısına bağlıdır. Kurlar bilgilendirme amaçlıdır; kurumların işlem kurları ve makasları farklı olabilir.",
@@ -17,25 +16,23 @@
   },
   "rates_try": {
     "TRY": 1.0,
-    "USD": 49.1802,
-    "EUR": 55.2847,
-    "GBP": 65.2432,
-    "CHF": 59.2811,
-    "JPY": 0.311724,
-    "SAR": 13.1021,
-    "AED": 13.4657,
-    "CAD": 34.5125,
-    "AUD": 34.3743,
-    "CNY": 7.3764,
-    "RUB": 0.57669,
-    "KWD": 160.4912,
-    "NOK": 5.1418,
-    "SEK": 4.9343,
-    "DKK": 7.4079,
-    "QAR": 13.568,
-    "AZN": 29.0914,
-    "XAU": 6602.7,
-    "XAG": 97.52
+    "USD": 49.1976,
+    "EUR": 55.0898,
+    "GBP": 65.2108,
+    "CHF": 59.2136,
+    "JPY": 0.311645,
+    "SAR": 13.1054,
+    "AED": 13.4701,
+    "CAD": 34.625,
+    "AUD": 34.3478,
+    "CNY": 7.379,
+    "RUB": 0.57865,
+    "KWD": 160.5479,
+    "NOK": 5.156,
+    "SEK": 4.9249,
+    "DKK": 7.3816,
+    "QAR": 13.573,
+    "AZN": 29.1017
   },
   "rate_sources": {
     "TRY": "system",
@@ -55,9 +52,7 @@
     "SEK": "TCMB",
     "DKK": "TCMB",
     "QAR": "TCMB",
-    "AZN": "TCMB",
-    "XAU": "Truncgil",
-    "XAG": "Truncgil"
+    "AZN": "TCMB"
   },
   "currency_meta": {
     "TRY": {
@@ -149,19 +144,9 @@
       "name_tr": "Azerbaycan Manatı",
       "name_en": "Azerbaijani Manat",
       "type": "currency"
-    },
-    "XAU": {
-      "name_tr": "Gram Altın",
-      "name_en": "Gold (Gram)",
-      "type": "metal"
-    },
-    "XAG": {
-      "name_tr": "Gümüş",
-      "name_en": "Silver",
-      "type": "metal"
     }
   },
-  "source_warnings": [
-    "Truncgil JPY ignored because its unit ratio was implausible"
+  "source_errors": [
+    "TRUNCGIL fetch failed: Unterminated string starting at: line 1 column 6843 (char 6842)"
   ]
 }
