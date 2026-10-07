@@ -1200,6 +1200,12 @@
         quickEls.value.textContent = result.signs.map(sign => `${sign.symbol} ${sign.name}`).join(" / ");
         quickEls.copy.textContent = "Bu tarih bir Güneş burcu geçişine yeterince yakın. Doğum saati ve saat dilimi bilinmeden tek burç söylemek güvenilir olmaz; aşağıdaki ayrıntılı hesapla kesinleştir.";
       }
+      requestAnimationFrame(() => {
+        quickEls.result.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+          block: "center"
+        });
+      });
     }
     function openDetailedFromQuick(){
       const parsed = parseDateParts(quickEls.date?.value || "");
