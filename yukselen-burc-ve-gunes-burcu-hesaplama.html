@@ -445,7 +445,7 @@
     .quick-sun-head h2{margin-bottom:6px}.quick-sun-head p{margin:0;color:#4b5563;font-size:15px;line-height:1.65;max-width:760px}
     .quick-sun-badge{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;padding:8px 11px;border-radius:999px;background:#eef2ff;border:1px solid rgba(79,70,229,.12);color:#4338ca;font-size:12.5px;font-weight:900}
     .quick-sun-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:18px;align-items:end}
-    .quick-sun-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}.quick-sun-actions .btn{min-height:56px}
+    .quick-sun-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}.quick-sun-actions .btn{min-height:56px}.quick-sun-actions a.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center}
     .quick-sun-result{margin-top:18px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,#f8faff,#f5f3ff);border:1px solid rgba(79,70,229,.14)}
     .quick-sun-result[hidden]{display:none}.quick-sun-result .result-kicker{font-size:12.5px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:#6366f1}
     .quick-sun-result .result-main{margin-top:4px;font-size:30px;font-weight:900;letter-spacing:-.025em;color:#1f2937}.quick-sun-result .result-copy{margin-top:7px;color:#4b5563;font-size:14.5px;line-height:1.65}
@@ -523,6 +523,7 @@
     <div class="quick-sun-actions">
       <button class="btn btn-primary" id="quickSunBtn" type="button">Güneş Burcumu Bul</button>
       <button class="btn btn-secondary" id="quickSunDetailsBtn" type="button">Yükseleni de Hesapla</button>
+      <a class="btn btn-secondary" href="https://hesapica.com/gunluk-burc-yorumu" id="quickDailyHoroscopeBtn">Günlük Burç Yorumunu Gör</a>
     </div>
   </div>
   <div class="quick-sun-result" id="quickSunResult" aria-live="polite" hidden>
@@ -997,6 +998,7 @@
       dateField: document.getElementById("quickSunDateField"),
       button: document.getElementById("quickSunBtn"),
       detailsButton: document.getElementById("quickSunDetailsBtn"),
+      dailyButton: document.getElementById("quickDailyHoroscopeBtn"),
       result: document.getElementById("quickSunResult"),
       kicker: document.getElementById("quickSunKicker"),
       value: document.getElementById("quickSunValue"),
@@ -1172,9 +1174,23 @@
       });
       return {stable: signs.length === 1, signs, middleLongitude:samples[1].longitude};
     }
+    const DAILY_HOROSCOPE_KEYS = ["aries","taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius","capricorn","aquarius","pisces"];
+    function todayIsoLocal(){
+      const now = new Date();
+      return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+    }
+    function setQuickDailyLink(sign){
+      if(!quickEls.dailyButton) return;
+      const base = "https://hesapica.com/gunluk-burc-yorumu";
+      if(!sign){ quickEls.dailyButton.href = base; return; }
+      const index = SIGNS.findIndex(item => item.name === sign.name);
+      const key = DAILY_HOROSCOPE_KEYS[index];
+      quickEls.dailyButton.href = key ? `${base}?sun=${encodeURIComponent(key)}&date=${todayIsoLocal()}` : base;
+    }
     function resetQuickSunResult(){
       quickEls.dateField?.classList.remove("has-error");
       if(quickEls.result){ quickEls.result.hidden = true; quickEls.result.classList.remove("is-warn"); }
+      setQuickDailyLink(null);
     }
     function runQuickSun(){
       if(!quickEls.date) return;
@@ -1194,11 +1210,13 @@
         quickEls.kicker.textContent = "Güneş burcun";
         quickEls.value.textContent = `${sign.symbol} ${sign.name}`;
         quickEls.copy.textContent = `Bu doğum tarihi için dünya çapındaki olası saat dilimi aralığı tarandığında Güneş aynı burçta kalıyor. Tarih tek başına güvenli bir hızlı sonuç veriyor.`;
+        setQuickDailyLink(sign);
       } else {
         quickEls.result.classList.add("is-warn");
         quickEls.kicker.textContent = "Burç sınırı — kesin saat gerekli";
         quickEls.value.textContent = result.signs.map(sign => `${sign.symbol} ${sign.name}`).join(" / ");
         quickEls.copy.textContent = "Bu tarih bir Güneş burcu geçişine yeterince yakın. Doğum saati ve saat dilimi bilinmeden tek burç söylemek güvenilir olmaz; aşağıdaki ayrıntılı hesapla kesinleştir.";
+        setQuickDailyLink(null);
       }
       requestAnimationFrame(() => {
         quickEls.result.scrollIntoView({
