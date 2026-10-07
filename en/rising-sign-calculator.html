@@ -51,7 +51,7 @@
 .quick-sun-head h2{margin-bottom:6px}.quick-sun-head p{margin:0;color:#4b5563;font-size:15px;line-height:1.65;max-width:760px}
 .quick-sun-badge{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;padding:8px 11px;border-radius:999px;background:#eef2ff;border:1px solid rgba(79,70,229,.12);color:#4338ca;font-size:12.5px;font-weight:900}
 .quick-sun-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:18px;align-items:end}
-.quick-sun-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}.quick-sun-actions .btn{min-height:56px}
+.quick-sun-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}.quick-sun-actions .btn{min-height:56px}.quick-sun-actions a.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center}
 .quick-sun-result{margin-top:18px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,#f8faff,#f5f3ff);border:1px solid rgba(79,70,229,.14)}
 .quick-sun-result[hidden]{display:none}.quick-sun-result .result-kicker{font-size:12.5px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:#6366f1}
 .quick-sun-result .result-main{margin-top:4px;font-size:30px;font-weight:900;letter-spacing:-.025em;color:#1f2937}.quick-sun-result .result-copy{margin-top:7px;color:#4b5563;font-size:14.5px;line-height:1.65}
@@ -97,7 +97,7 @@
 <div class="quick-sun-head"><div><h2 id="quickSunTitle">Quick Sun Sign Calculator</h2><p>If you only want your Sun Sign, your birth date is usually enough. If that calendar date can fall on different sides of a zodiac boundary depending on birth time and time zone, the tool shows both possibilities instead of guessing.</p></div><span class="quick-sun-badge">☀️ Fast date-only check</span></div>
 <div class="quick-sun-grid">
 <div class="field" id="quickSunDateField"><label for="quickSunDate">Birth date</label><input id="quickSunDate" type="text" inputmode="numeric" autocomplete="bday" placeholder="DD.MM.YYYY" maxlength="10" aria-describedby="quickSunDateHelp quickSunDateError"/><div class="help" id="quickSunDateHelp">Day · Month · Year. Dots are inserted automatically.</div><div class="field-error" id="quickSunDateError"></div></div>
-<div class="quick-sun-actions"><button type="button" class="btn btn-primary" id="quickSunBtn">Find My Sun Sign</button><button type="button" class="btn btn-soft" id="quickSunDetailsBtn">Calculate Rising Sign Too</button></div>
+<div class="quick-sun-actions"><button type="button" class="btn btn-primary" id="quickSunBtn">Find My Sun Sign</button><button type="button" class="btn btn-soft" id="quickSunDetailsBtn">Calculate Rising Sign Too</button><a class="btn btn-soft" href="https://hesapica.com/en/daily-horoscope" id="quickDailyHoroscopeBtn">See Your Daily Horoscope</a></div>
 </div>
 <div class="quick-sun-result" id="quickSunResult" aria-live="polite" hidden><div class="result-kicker" id="quickSunKicker">Sun Sign</div><div class="result-main" id="quickSunValue">—</div><div class="result-copy" id="quickSunCopy"></div></div>
 <p class="quick-sun-note">Note: this uses the Sun's tropical ecliptic longitude. Near a sign transition, exact birth time and time zone can change the result; in that case use the full calculator below.</p>
@@ -250,7 +250,7 @@ const els={
  exampleBtn:$("exampleBtn"),resetBtn:$("resetBtn"),copyBtn:$("copyBtn"),shareBtn:$("shareBtn"),printBtn:$("printBtn"),
  risingSymbol:$("risingSymbol"),risingName:$("risingName"),risingDegree:$("risingDegree"),status:$("status"),
  ascLongitude:$("ascLongitude"),signDegree:$("signDegree"),chartRuler:$("chartRuler"),sunSign:$("sunSign"),sunDegree:$("sunDegree"),
- quickSunDate:$("quickSunDate"),quickSunDateField:$("quickSunDateField"),quickSunDateError:$("quickSunDateError"),quickSunBtn:$("quickSunBtn"),quickSunDetailsBtn:$("quickSunDetailsBtn"),quickSunResult:$("quickSunResult"),quickSunKicker:$("quickSunKicker"),quickSunValue:$("quickSunValue"),quickSunCopy:$("quickSunCopy"),
+ quickSunDate:$("quickSunDate"),quickSunDateField:$("quickSunDateField"),quickSunDateError:$("quickSunDateError"),quickSunBtn:$("quickSunBtn"),quickSunDetailsBtn:$("quickSunDetailsBtn"),quickDailyHoroscopeBtn:$("quickDailyHoroscopeBtn"),quickSunResult:$("quickSunResult"),quickSunKicker:$("quickSunKicker"),quickSunValue:$("quickSunValue"),quickSunCopy:$("quickSunCopy"),
  resultZone:$("resultZone"),siderealTime:$("siderealTime"),readingText:$("readingText"),
  comboBadge:$("comboBadge"),comboSummary:$("comboSummary"),coreValue:$("coreValue"),coreText:$("coreText"),firstValue:$("firstValue"),firstText:$("firstText"),communicationValue:$("communicationValue"),communicationText:$("communicationText"),relationshipValue:$("relationshipValue"),relationshipText:$("relationshipText"),strengthsChips:$("strengthsChips"),cautionsChips:$("cautionsChips"),
  sensitivityCard:$("sensitivityCard"),sensitivityTitle:$("sensitivityTitle"),sensitivityRows:$("sensitivityRows"),toast:$("toast")
@@ -379,7 +379,16 @@ function quickSunCoverage(dateParts){
 }
 function clearQuickSunError(){els.quickSunDateField?.classList.remove("has-error");els.quickSunDate?.removeAttribute("aria-invalid");if(els.quickSunDateError)els.quickSunDateError.textContent=""}
 function setQuickSunError(message){els.quickSunDateField?.classList.add("has-error");els.quickSunDate?.setAttribute("aria-invalid","true");if(els.quickSunDateError)els.quickSunDateError.textContent=message}
-function resetQuickSunResult(){if(!els.quickSunResult)return;els.quickSunResult.hidden=true;els.quickSunResult.classList.remove("is-warn");els.quickSunKicker.textContent="Sun Sign";els.quickSunValue.textContent="—";els.quickSunCopy.textContent=""}
+const DAILY_HOROSCOPE_KEYS=["aries","taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius","capricorn","aquarius","pisces"];
+function todayIsoLocal(){const now=new Date();return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`}
+function setQuickDailyLink(sign){
+ if(!els.quickDailyHoroscopeBtn)return;
+ const base="https://hesapica.com/en/daily-horoscope";
+ if(!sign){els.quickDailyHoroscopeBtn.href=base;return}
+ const index=SIGNS.findIndex(item=>item.name===sign.name),key=DAILY_HOROSCOPE_KEYS[index];
+ els.quickDailyHoroscopeBtn.href=key?`${base}?sun=${encodeURIComponent(key)}&date=${todayIsoLocal()}`:base;
+}
+function resetQuickSunResult(){if(!els.quickSunResult)return;els.quickSunResult.hidden=true;els.quickSunResult.classList.remove("is-warn");els.quickSunKicker.textContent="Sun Sign";els.quickSunValue.textContent="—";els.quickSunCopy.textContent="";setQuickDailyLink(null)}
 function runQuickSun(){
  clearQuickSunError();resetQuickSunResult();
  const d=parseDate(els.quickSunDate.value);
@@ -389,9 +398,9 @@ function runQuickSun(){
  els.quickSunResult.hidden=false;
  requestAnimationFrame(()=>els.quickSunResult.scrollIntoView({behavior:smoothBehavior(),block:"center"}));
  if(signs.length===1){
-  const s=signs[0];els.quickSunKicker.textContent="Your Sun Sign";els.quickSunValue.textContent=`${s.symbol} ${s.name}`;els.quickSunCopy.textContent=`This calendar date remains in ${s.name} across the full worldwide civil-time window. For an exact Sun degree, use your birth time and place in the full calculator below.`;
+  const s=signs[0];els.quickSunKicker.textContent="Your Sun Sign";els.quickSunValue.textContent=`${s.symbol} ${s.name}`;els.quickSunCopy.textContent=`This calendar date remains in ${s.name} across the full worldwide civil-time window. For an exact Sun degree, use your birth time and place in the full calculator below.`;setQuickDailyLink(s);
  }else{
-  els.quickSunResult.classList.add("is-warn");els.quickSunKicker.textContent="Sign-boundary date";els.quickSunValue.textContent=signs.map(s=>`${s.symbol} ${s.name}`).join(" / ");els.quickSunCopy.textContent="Your birth date falls close enough to a Sun-sign transition that exact birth time and time zone are needed for one definite result. Use the full calculator below.";
+  els.quickSunResult.classList.add("is-warn");els.quickSunKicker.textContent="Sign-boundary date";els.quickSunValue.textContent=signs.map(s=>`${s.symbol} ${s.name}`).join(" / ");els.quickSunCopy.textContent="Your birth date falls close enough to a Sun-sign transition that exact birth time and time zone are needed for one definite result. Use the full calculator below.";setQuickDailyLink(null);
  }
 }
 function openFullCalculatorFromQuickSun(){
