@@ -65,14 +65,16 @@
     .comment-box{padding:16px 18px;border-radius:18px;background:#f9fafb;border:1px solid var(--line);color:#374151;font-size:16px;line-height:1.7}.details-card{margin-top:24px}.accordion-stack{display:grid;gap:14px} details.block{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px} details.block[open]{padding-bottom:20px} details.block summary{cursor:pointer;font-weight:900;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--primary)} details.block summary::-webkit-details-marker{display:none}.summary-note{font-size:13.5px;color:#6366f1;font-weight:700}.details-inner{margin-top:16px}
     .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff} table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:12px 10px;border-bottom:1px solid #edf0f7;text-align:left;vertical-align:top} th{font-size:13px;color:#4b5563;text-transform:uppercase;letter-spacing:.05em} td{color:var(--text);font-weight:700}
     .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.accordion-card details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px 18px}.accordion-card details+details{margin-top:12px}.accordion-card summary{cursor:pointer;font-weight:800;color:var(--primary)}.accordion-card p{margin:10px 0 0;color:#374151;font-size:14.5px;line-height:1.65}
-    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.related-card{display:block;padding:20px;border-radius:22px;background:linear-gradient(135deg,#5b4ff6 0%, #8b5cf6 100%);color:#fff;box-shadow:0 18px 32px rgba(91,79,246,.22)}.related-card .small{display:inline-block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.86;color:rgba(255,255,255,.86)}.related-card strong{display:block;margin-bottom:8px;font-size:20px;line-height:1.25}.related-card p{margin:0;font-size:14px;color:rgba(255,255,255,.88)}
 
     .field.error-state .hint{color:#991b1b}.field.error-state label{color:#991b1b}.error-text{display:none;margin-top:8px;font-size:14px;font-weight:700;line-height:1.5;color:#b91c1c}.field.error-state .error-text{display:block}.input-error{border-color:rgba(185,28,28,.55)!important;box-shadow:0 0 0 4px rgba(185,28,28,.10)!important;background:#fff7f7!important}
     .result-flash{animation:resultFlash 1.1s ease}
     @keyframes resultFlash{0%{box-shadow:0 0 0 0 rgba(79,70,229,.00), var(--shadow)}35%{box-shadow:0 0 0 8px rgba(79,70,229,.14), 0 18px 38px rgba(79,70,229,.18)}100%{box-shadow:var(--shadow)}}
 
-    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.hero,.card,.status-card,.highlight-card,details.block{padding:20px}.field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.hero h1{font-size:32px}.highlight-value{font-size:31px}details.block summary{align-items:flex-start;flex-direction:column}.summary-note{width:100%}}
+
+    .trip-planner{margin-top:24px}.trip-planner-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}.trip-planner-head p{margin:6px 0 0;color:#556274;font-size:14.5px;line-height:1.6}.trip-grid{display:grid;grid-template-columns:minmax(220px,.8fr) repeat(3,1fr);gap:14px;align-items:stretch}.trip-input-card,.trip-result-card{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px}.trip-input-card label{display:block;font-weight:800;margin-bottom:8px}.trip-result-card .label{font-size:12.5px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:.04em}.trip-result-card .value{margin-top:6px;font-size:22px;font-weight:800;color:var(--primary);line-height:1.2}.trip-result-card .sub{margin-top:6px;font-size:12.5px;color:#6b7280;line-height:1.45}.trip-chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.trip-chip{border:1px solid #d9ddff;background:#f6f7ff;color:#4338ca;border-radius:999px;padding:7px 10px;font:inherit;font-size:12.5px;font-weight:800;cursor:pointer}.trip-chip:hover,.trip-chip:focus-visible{background:#ecebff;outline:none}.trip-error{min-height:20px;margin-top:6px;font-size:13px;font-weight:700;color:#b91c1c}.trip-planner.is-waiting .trip-result-card .value{color:#9ca3af}
+    @media (max-width:1040px){.hero-grid,.tool-layout,.content-grid{grid-template-columns:1fr}.trip-grid{grid-template-columns:1fr 1fr}.results{position:static}.health-grid,.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.container{width:min(100% - 20px,100%)}.trip-grid{grid-template-columns:1fr}.trip-planner-head{flex-direction:column}.hero,.card,.status-card,.highlight-card,details.block{padding:20px}.field-grid,.toggle-grid,.health-grid,.related-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.mini-result,.status-row{flex-direction:column}.mini-result .value{text-align:left}.hero h1{font-size:32px}.highlight-value{font-size:31px}details.block summary{align-items:flex-start;flex-direction:column}.summary-note{width:100%}}
     @media print{body{background:#fff}.topbar,.input-card,.actions,.flow-hint,.hero-chips,.chip-row,.btn,.hc-ad-slot,.content-grid,.related-tools{display:none!important}.hero,.card,.status-card,.highlight-card,details.block{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}.result-column{width:100%!important}}
   
     .result-column,.details-card,.accordion-stack,details.block,.details-inner,.table-wrap{min-width:0;max-width:100%}
@@ -94,7 +96,7 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hesapica.com/en/"},{"@type":"ListItem","position":2,"name":"Cars","item":"https://hesapica.com/en/#cars"},{"@type":"ListItem","position":3,"name":"Cost per Kilometer Calculator","item":"https://hesapica.com/en/cost-per-kilometer-calculator"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I have to enter annual distance?","acceptedAnswer":{"@type":"Answer","text":"No. If annual distance is blank, the calculator multiplies monthly distance by 12."}},{"@type":"Question","name":"Why should I include fixed annual costs?","acceptedAnswer":{"@type":"Answer","text":"Insurance, vehicle tax, maintenance and other annual costs show the non-fuel portion of running the vehicle. Their cost per kilometer becomes more noticeable when annual distance is low."}},{"@type":"Question","name":"Should I include vehicle depreciation?","acceptedAnswer":{"@type":"Answer","text":"If you want a broader ownership-cost estimate, you can add estimated annual depreciation under “Other annual costs”. The calculator does not assume a depreciation amount because it varies widely by vehicle and market."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I have to enter annual distance?","acceptedAnswer":{"@type":"Answer","text":"No. If annual distance is blank, the calculator multiplies monthly distance by 12."}},{"@type":"Question","name":"Why should I include fixed annual costs?","acceptedAnswer":{"@type":"Answer","text":"Insurance, vehicle tax, maintenance and other annual costs show the non-fuel portion of running the vehicle. Their cost per kilometer becomes more noticeable when annual distance is low."}},{"@type":"Question","name":"Should I include vehicle depreciation?","acceptedAnswer":{"@type":"Answer","text":"If you want a broader ownership-cost estimate, enter your own estimate in the “Annual depreciation” field. The calculator does not assume a depreciation amount because it varies widely by vehicle and market."}}]}
 </script>
 <meta property="og:site_name" content="Hesapica"><meta name="twitter:url" content="https://hesapica.com/en/cost-per-kilometer-calculator"><meta name="twitter:site" content="@hesapica"><link href="../cookie-consent.css" rel="stylesheet"/>
 <!-- Google measurement and advertising services load only after user consent and on the live domain. -->
@@ -357,9 +359,9 @@
 <aside class="hero-box">
 <div class="eyebrow">Transparent calculation</div>
 <strong>Results use only the cost items you enter</strong>
-<p>If you want to include depreciation, financing, parking or other costs, add them to the “Other annual costs” field yourself.</p>
+<p>Enter depreciation in its dedicated field; financing, parking or other costs can be added under “Other annual costs”.</p>
 <ul>
-<li>Separate fuel and fixed-cost shares</li>
+<li>Separate fuel and non-fuel cost shares</li>
 <li>See 100 km and annual totals together</li>
 <li>Compare fuel, maintenance and usage changes</li>
 </ul>
@@ -377,7 +379,7 @@
 <p class="section-note">Either monthly or annual distance is enough. If annual distance is entered, it takes priority. Enter your real-world average fuel consumption in liters per 100 km.</p>
 <div class="helper-box">
 <h3>What is included?</h3>
-<p>Fuel cost is always calculated. In “Fuel + entered annual costs” mode, insurance, vehicle tax, maintenance and other annual costs are added. Depreciation and financing are not assumed automatically; add them under “Other annual costs” if you want to include them.</p>
+<p>Fuel cost is always calculated. In “Fuel + entered annual costs” mode, insurance, vehicle tax, maintenance, entered depreciation and other annual costs are added. Depreciation is not assumed automatically; financing and similar items can be added under “Other annual costs”.</p>
 </div>
 <form id="kmCostForm" novalidate>
 <div class="form-section">
@@ -452,9 +454,15 @@
 <div aria-live="polite" class="error-text" id="annualMaintenanceError"></div>
 </div>
 <div class="field fixed-cost-field">
+<label for="annualDepreciation">Annual depreciation <span style="font-weight:600;color:#6b7280">(optional)</span></label>
+<div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="annualDepreciationHint annualDepreciationError" autocomplete="off" class="with-prefix" id="annualDepreciation" inputmode="decimal" placeholder="e.g. 3,000" type="text"/></div>
+<div class="hint" id="annualDepreciationHint">Enter your own estimate of the vehicle's value loss over one year. No market value is assumed automatically.</div>
+<div aria-live="polite" class="error-text" id="annualDepreciationError"></div>
+</div>
+<div class="field fixed-cost-field">
 <label for="otherAnnualCosts">Other annual costs</label>
 <div class="input-wrap"><span class="prefix currency-prefix">$</span><input aria-describedby="otherAnnualCostsHint otherAnnualCostsError" autocomplete="off" class="with-prefix" id="otherAnnualCosts" inputmode="decimal" placeholder="e.g. 300" type="text"/></div>
-<div class="hint" id="otherAnnualCostsHint">Add inspections, parking, finance cost, estimated depreciation or any other annual cost you want to include.</div>
+<div class="hint" id="otherAnnualCostsHint">Add inspections, parking, finance cost or any other annual cost you want to include.</div>
 <div aria-live="polite" class="error-text" id="otherAnnualCostsError"></div>
 </div>
 </div>
@@ -504,13 +512,13 @@
 <div class="mini-result is-empty" id="mini3"><div class="label">Annual total cost</div><div class="value" id="annualCostResult">—</div></div>
 <div class="mini-result is-empty" id="mini4"><div class="label">Annual distance</div><div class="value" id="annualKmResult">—</div></div>
 <div class="mini-result is-empty" id="mini5"><div><div class="label">Annual fuel cost</div><div class="subline" id="fuelSubline">Based on consumption × fuel price</div></div><div class="value" id="annualFuelCostResult">—</div></div>
-<div class="mini-result is-empty" id="mini6"><div><div class="label">Annual fixed costs included</div><div class="subline" id="fixedSubline">Insurance + vehicle tax + maintenance + other</div></div><div class="value" id="annualFixedCostResult">—</div></div>
+<div class="mini-result is-empty" id="mini6"><div><div class="label">Annual non-fuel costs included</div><div class="subline" id="fixedSubline">Insurance + vehicle tax + maintenance + depreciation + other</div></div><div class="value" id="annualFixedCostResult">—</div></div>
 </div>
 <div class="card" style="padding:18px">
 <h2 style="font-size:20px;margin-bottom:14px;color:var(--primary)">Cost Breakdown</h2>
 <div class="health-grid">
 <div class="health-card"><h3>Fuel share</h3><div class="big" id="health1">—</div></div>
-<div class="health-card"><h3>Fixed-cost share</h3><div class="big" id="health2">—</div></div>
+<div class="health-card"><h3>Non-fuel cost share</h3><div class="big" id="health2">—</div></div>
 <div class="health-card"><h3>Consumption</h3><div aria-live="polite" class="big" id="health3">—</div></div>
 </div>
 </div>
@@ -533,18 +541,27 @@
 </details>
 </div>
 </section>
+<section class="card trip-planner is-waiting" id="tripPlanner">
+<div class="trip-planner-head"><div><h2 style="margin:0">Vehicle cost for a specific distance</h2><p>Apply the calculated cost per kilometer to any distance and see the fuel and non-fuel portions separately.</p></div><span class="badge" id="tripBadge">Calculate above first</span></div>
+<div class="trip-grid">
+<div class="trip-input-card"><label for="tripDistance">Total distance</label><div class="input-wrap"><input class="with-suffix" id="tripDistance" inputmode="decimal" placeholder="e.g. 250" type="text"/><span class="suffix">km</span></div><div class="trip-chip-row"><button class="trip-chip" type="button" onclick="setTripDistance(50)">50 km</button><button class="trip-chip" type="button" onclick="setTripDistance(100)">100 km</button><button class="trip-chip" type="button" onclick="setTripDistance(250)">250 km</button><button class="trip-chip" type="button" onclick="setTripDistance(500)">500 km</button></div><div class="trip-error" id="tripDistanceError"></div></div>
+<div class="trip-result-card"><div class="label">Total vehicle cost</div><div class="value" id="tripTotalCost">—</div><div class="sub">Fuel plus the per-kilometer share of the annual costs you included.</div></div>
+<div class="trip-result-card"><div class="label">Fuel cost</div><div class="value" id="tripFuelCost">—</div><div class="sub">The portion calculated from fuel consumption and fuel price.</div></div>
+<div class="trip-result-card"><div class="label">Non-fuel portion</div><div class="value" id="tripFixedCost">—</div><div class="sub">Insurance, tax, maintenance, depreciation and other entered annual costs allocated by distance.</div></div>
+</div>
+</section>
 <section class="content-grid">
 <div class="accordion-card">
 <h2>How is cost per kilometer calculated?</h2>
-<details open><summary>Core formula</summary><p>First, annual distance is determined. Annual fuel cost = annual distance × (L/100 km ÷ 100) × fuel price. In “Fuel + entered annual costs” mode, insurance, vehicle tax, maintenance and other costs are added. Cost per kilometer = annual total cost ÷ annual distance; cost per 100 km is that result × 100.</p></details>
-<details><summary>How is the monthly cost calculated?</summary><p>The monthly result is the annual total cost divided by 12. If annual distance is entered, it takes priority in the distance calculation.</p></details>
-<details><summary>Is this the same as total cost of ownership?</summary><p>No. The result includes only the cost items you enter. Add depreciation, finance interest, parking or other costs under “Other annual costs” if you want a broader ownership-cost estimate.</p></details>
+<details open><summary>Core formula</summary><p>First, annual distance is determined. Annual fuel cost = annual distance × (L/100 km ÷ 100) × fuel price. In “Fuel + entered annual costs” mode, insurance, vehicle tax, maintenance, optional depreciation and other costs are added. Cost per kilometer = annual total cost ÷ annual distance; cost per 100 km is that result × 100.</p></details>
+<details><summary>How is the monthly cost calculated?</summary><p>The monthly result is the annual total cost divided by 12. If annual distance is entered, it takes priority in the distance calculation.</p></details><details><summary>How do I estimate the cost of a specific trip or distance?</summary><p>After the main calculation, enter the total distance in “Vehicle cost for a specific distance.” The tool multiplies the calculated cost per kilometer by that distance and separates fuel from non-fuel cost.</p></details>
+<details><summary>Is this the same as total cost of ownership?</summary><p>No. The result includes only the cost items you enter. Depreciation now has its own optional field; finance interest, parking or other costs can be entered under “Other annual costs” for a broader ownership-cost estimate.</p></details>
 </div>
 <div class="accordion-card">
 <h2>Frequently Asked Questions</h2>
 <details open><summary>Do I have to enter annual distance?</summary><p>No. If annual distance is blank, the calculator multiplies monthly distance by 12.</p></details>
 <details><summary>Why should I include fixed annual costs?</summary><p>Insurance, vehicle tax, maintenance and other annual costs show the non-fuel portion of running the vehicle. Their cost per kilometer becomes more noticeable when annual distance is low.</p></details>
-<details><summary>Should I include vehicle depreciation?</summary><p>If you want a broader ownership-cost estimate, you can add estimated annual depreciation under “Other annual costs”. The calculator does not assume a depreciation amount because it varies widely by vehicle and market.</p></details>
+<details><summary>Should I include vehicle depreciation?</summary><p>If you want a broader ownership-cost estimate, enter your own estimate in the “Annual depreciation” field. The calculator does not assume a depreciation amount because it varies widely by vehicle and market.</p></details>
 </div>
 </section>
 <!-- HC_AD_SLOT:faq -->
@@ -563,11 +580,11 @@
 </section>
 </main>
 <script>
-    const STORAGE_KEY = 'hesapica-en-cost-per-km-v1';
-    const STORAGE_VERSION = 3;
-    const LEGACY_STORAGE_KEYS = [];
+    const STORAGE_KEY = 'hesapica-en-cost-per-km-v4';
+    const STORAGE_VERSION = 4;
+    const LEGACY_STORAGE_KEYS = ['hesapica-en-cost-per-km-v1'];
     const $ = (id) => document.getElementById(id);
-    const FIXED_COST_IDS = ['annualInsurance','annualTax','annualMaintenance','otherAnnualCosts'];
+    const FIXED_COST_IDS = ['annualInsurance','annualTax','annualMaintenance','annualDepreciation','otherAnnualCosts'];
     const TEXT_INPUT_IDS = ['monthlyKm','annualKmManual','consumption','fuelPrice', ...FIXED_COST_IDS];
     const els = {
       currencyCode: $('currencyCode'),
@@ -579,7 +596,9 @@
       annualInsurance: $('annualInsurance'),
       annualTax: $('annualTax'),
       annualMaintenance: $('annualMaintenance'),
-      otherAnnualCosts: $('otherAnnualCosts')
+      annualDepreciation: $('annualDepreciation'),
+      otherAnnualCosts: $('otherAnnualCosts'),
+      tripDistance: $('tripDistance')
     };
 
     const state = {
@@ -729,6 +748,7 @@
         annualInsurance: els.annualInsurance.value,
         annualTax: els.annualTax.value,
         annualMaintenance: els.annualMaintenance.value,
+        annualDepreciation: els.annualDepreciation.value,
         otherAnnualCosts: els.otherAnnualCosts.value
       };
     }
@@ -841,6 +861,7 @@
         annualInsurance: parseMoneyInput(raw.annualInsurance),
         annualTax: parseMoneyInput(raw.annualTax),
         annualMaintenance: parseMoneyInput(raw.annualMaintenance),
+        annualDepreciation: parseMoneyInput(raw.annualDepreciation),
         otherAnnualCosts: parseMoneyInput(raw.otherAnnualCosts)
       };
       state.inputs = data;
@@ -928,7 +949,8 @@
       ['per100KmResult','monthlyCostResult','annualCostResult','annualKmResult','annualFuelCostResult','annualFixedCostResult'].forEach(id => $(id).textContent='—');
       ['mini1','mini2','mini3','mini4','mini5','mini6'].forEach(id => $(id).classList.add('is-empty'));
       $('fuelSubline').textContent = 'Based on consumption × fuel price';
-      $('fixedSubline').textContent = 'Insurance + vehicle tax + maintenance + other';
+      $('fixedSubline').textContent = 'Insurance + vehicle tax + maintenance + depreciation + other';
+      resetTripPlanner(false);
       $('health1').textContent='—';
       $('health2').textContent='—';
       $('health3').textContent='—';
@@ -968,13 +990,14 @@
       $('annualFuelCostResult').textContent = money(result.annualFuelCost,2);
       $('annualFixedCostResult').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded' : money(result.includedFixedCost,2);
       $('fuelSubline').textContent = `${formatTR(d.consumption,3)} L/100 km × ${money(d.fuelPrice,2)}/L`;
-      $('fixedSubline').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded in this mode' : 'Insurance + vehicle tax + maintenance + other';
+      $('fixedSubline').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded in this mode' : 'Insurance + vehicle tax + maintenance + depreciation + other';
       ['mini1','mini2','mini3','mini4','mini5','mini6'].forEach(id => $(id).classList.remove('is-empty'));
       $('health1').textContent = pct(result.fuelShare,1);
       $('health2').textContent = d.fixedCostMode === 'fuelOnly' ? 'Excluded' : pct(result.fixedShare,1);
       $('health3').textContent = `${formatTR(d.consumption,2)} L`;
       $('commentBox').textContent = buildComment(result, d);
       renderScenarios(d, result);
+      updateTripPlanner();
       clearInputErrors();
       updateActionButtons(true);
     }
@@ -985,10 +1008,10 @@
         : 'Annual distance was estimated as monthly distance × 12.';
       let text = `${kmSource} At ${formatTR(r.annualKm,0)} km per year, fuel costs about ${money(r.annualFuelCost,2)} annually and ${money(r.fuelPerKm,2)} per km. `;
       if(d.fixedCostMode === 'fuelOnly'){
-        text += 'Fixed annual costs are excluded in this mode.';
+        text += 'Non-fuel annual costs are excluded in this mode.';
       }else{
-        text += `Entered annual fixed costs total ${money(r.includedFixedCost,2)} and account for ${pct(r.fixedShare,1)} of the annual cost. `;
-        text += 'Depreciation, financing or other items are included only if you enter them under “Other annual costs”.';
+        text += `Entered annual non-fuel costs total ${money(r.includedFixedCost,2)} and account for ${pct(r.fixedShare,1)} of the annual cost. `;
+        text += Number.isFinite(d.annualDepreciation) && d.annualDepreciation > 0 ? `${money(d.annualDepreciation,2)} of that amount was entered as depreciation.` : 'Depreciation is included only if you enter it in the “Annual depreciation” field.';
       }
       return text;
     }
@@ -1074,7 +1097,7 @@
       clearTimeout(debounceTimer);
       state.source = 'example';
       resetValidationState();
-      setScenarioValues({monthlyKm:'1200',annualKmManual:'',consumption:'6.8',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'900',annualTax:'600',annualMaintenance:'800',otherAnnualCosts:'300'});
+      setScenarioValues({monthlyKm:'1200',annualKmManual:'',consumption:'6.8',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'900',annualTax:'600',annualMaintenance:'800',annualDepreciation:'3000',otherAnnualCosts:'300'});
       clearChipActive();
       clearSavedState();
       validateAndCalc(false);
@@ -1088,10 +1111,10 @@
       clearChipActive();
       if(btn) btn.classList.add('active');
       const scenarios = {
-        economy:{monthlyKm:'1500',annualKmManual:'',consumption:'5.5',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'800',annualTax:'450',annualMaintenance:'650',otherAnnualCosts:'200'},
-        city:{monthlyKm:'1100',annualKmManual:'',consumption:'8.2',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'1000',annualTax:'650',annualMaintenance:'900',otherAnnualCosts:'300'},
-        high:{monthlyKm:'1400',annualKmManual:'',consumption:'10.5',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'1100',annualTax:'750',annualMaintenance:'1200',otherAnnualCosts:'400'},
-        fuelonly:{monthlyKm:'1200',annualKmManual:'',consumption:'6.8',fuelPrice:'1.60',fixedCostMode:'fuelOnly',annualInsurance:'',annualTax:'',annualMaintenance:'',otherAnnualCosts:''}
+        economy:{monthlyKm:'1500',annualKmManual:'',consumption:'5.5',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'800',annualTax:'450',annualMaintenance:'650',annualDepreciation:'2500',otherAnnualCosts:'200'},
+        city:{monthlyKm:'1100',annualKmManual:'',consumption:'8.2',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'1000',annualTax:'650',annualMaintenance:'900',annualDepreciation:'3500',otherAnnualCosts:'300'},
+        high:{monthlyKm:'1400',annualKmManual:'',consumption:'10.5',fuelPrice:'1.60',fixedCostMode:'include',annualInsurance:'1100',annualTax:'750',annualMaintenance:'1200',annualDepreciation:'4500',otherAnnualCosts:'400'},
+        fuelonly:{monthlyKm:'1200',annualKmManual:'',consumption:'6.8',fuelPrice:'1.60',fixedCostMode:'fuelOnly',annualInsurance:'',annualTax:'',annualMaintenance:'',annualDepreciation:'',otherAnnualCosts:''}
       };
       if(!scenarios[type]) return;
       setScenarioValues(scenarios[type]);
@@ -1112,6 +1135,8 @@
       clearTimeout(debounceTimer);
       resetValidationState();
       clearTextInputs();
+      if(els.tripDistance) els.tripDistance.value='';
+      resetTripPlanner(true);
       els.currencyCode.value='USD';
       updateCurrencyUI();
       els.fixedCostMode.value='include';
@@ -1120,6 +1145,52 @@
       clearSavedState();
       state.source = 'manual';
       setEmptyState();
+    }
+
+
+    function resetTripPlanner(clearInput=false){
+      if(clearInput && els.tripDistance) els.tripDistance.value='';
+      const planner=$('tripPlanner');
+      if(planner) planner.classList.add('is-waiting');
+      if($('tripBadge')) { $('tripBadge').textContent='Calculate above first'; $('tripBadge').className='badge'; }
+      if($('tripDistanceError')) $('tripDistanceError').textContent='';
+      ['tripTotalCost','tripFuelCost','tripFixedCost'].forEach(id=>{ if($(id)) $(id).textContent='—'; });
+    }
+
+    function updateTripPlanner(){
+      const planner=$('tripPlanner');
+      if(!planner || !els.tripDistance) return;
+      if(!state.isValid || !state.results){ resetTripPlanner(false); return; }
+      planner.classList.remove('is-waiting');
+      $('tripBadge').textContent='Ready'; $('tripBadge').className='badge good';
+      const raw=els.tripDistance.value.trim();
+      $('tripDistanceError').textContent='';
+      if(!raw){ ['tripTotalCost','tripFuelCost','tripFixedCost'].forEach(id=>$(id).textContent='—'); return; }
+      const distance=parseDecimalInput(raw);
+      if(!Number.isFinite(distance) || distance<=0 || distance>1000000){
+        $('tripDistanceError').textContent='Enter a valid distance greater than 0 and no more than 1,000,000 km.';
+        ['tripTotalCost','tripFuelCost','tripFixedCost'].forEach(id=>$(id).textContent='—');
+        return;
+      }
+      const r=state.results;
+      $('tripTotalCost').textContent=money(r.perKm*distance,2);
+      $('tripFuelCost').textContent=money(r.fuelPerKm*distance,2);
+      $('tripFixedCost').textContent=money(r.fixedPerKm*distance,2);
+    }
+
+    function setTripDistance(value){
+      if(!els.tripDistance) return;
+      els.tripDistance.value=formatTR(value,0);
+      updateTripPlanner();
+    }
+
+    if(els.tripDistance){
+      els.tripDistance.addEventListener('input', updateTripPlanner);
+      els.tripDistance.addEventListener('blur', ()=>{
+        const v=parseDecimalInput(els.tripDistance.value);
+        if(Number.isFinite(v) && v>0) els.tripDistance.value=formatTR(v,1);
+        updateTripPlanner();
+      });
     }
 
     function fallbackCopy(text){
@@ -1142,7 +1213,7 @@
     }
 
     function buildResultSummary(){
-      return `Cost per Kilometer Calculator Result\n\nCost per kilometer: ${$('mainResult').textContent}\nCost per 100 km: ${$('per100KmResult').textContent}\nAverage monthly cost: ${$('monthlyCostResult').textContent}\nAnnual total cost: ${$('annualCostResult').textContent}\nAnnual distance: ${$('annualKmResult').textContent}\nAnnual fuel cost: ${$('annualFuelCostResult').textContent}\nAnnual fixed costs included: ${$('annualFixedCostResult').textContent}\nFuel share: ${$('health1').textContent}\nFixed-cost share: ${$('health2').textContent}\nConsumption: ${$('health3').textContent}/100 km\n\nNote: ${$('commentBox').textContent}`;
+      return `Cost per Kilometer Calculator Result\n\nCost per kilometer: ${$('mainResult').textContent}\nCost per 100 km: ${$('per100KmResult').textContent}\nAverage monthly cost: ${$('monthlyCostResult').textContent}\nAnnual total cost: ${$('annualCostResult').textContent}\nAnnual distance: ${$('annualKmResult').textContent}\nAnnual fuel cost: ${$('annualFuelCostResult').textContent}\nAnnual non-fuel costs included: ${$('annualFixedCostResult').textContent}\nFuel share: ${$('health1').textContent}\nNon-fuel cost share: ${$('health2').textContent}\nConsumption: ${$('health3').textContent}/100 km\n\nNote: ${$('commentBox').textContent}`;
     }
 
     async function copyTextWithFallback(text, successMessage){
