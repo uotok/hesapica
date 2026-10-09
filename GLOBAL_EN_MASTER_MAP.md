@@ -4,14 +4,14 @@
 
 ## Architecture
 
-- Turkish site remains at `/` with 59 Turkish calculators.
+- Turkish site remains at `/` with 60 Turkish calculators.
 - Global English site lives under `/en/`.
-- Only country-independent tools are translated: **38 calculators**.
+- Only country-independent tools are translated: **39 calculators**.
 - Turkey-specific calculators are intentionally not exposed in English at this stage.
 - Each English calculator has a natural English slug, self-canonical URL, and reciprocal TR/EN hreflang with its real Turkish counterpart.
 - English calculator implementations follow the Turkish product standard: rich form/result layout, validation, presets/example/reset, detailed metrics/tables where useful, copy/share/print, state persistence, responsive behavior, FAQ/schema and related tools.
 
-## 38 Global Calculator Pairs
+## 39 Global Calculator Pairs
 
 | # | Turkish source | English title | English URL | Category |
 |---:|---|---|---|---|

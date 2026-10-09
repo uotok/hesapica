@@ -604,9 +604,9 @@
       max-width:1200px;
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
-      gap:22px;
-      align-items:stretch;
+      grid-template-columns:1fr;
+      gap:16px;
+      align-items:start;
     }
 
     .footer-brand{
@@ -669,8 +669,9 @@
 
     .footer-contact{
       display:grid;
+      grid-template-columns:1fr;
       gap:12px;
-      align-content:start;
+      align-items:start;
     }
 
     .footer-contact-head{
@@ -697,6 +698,7 @@
 
     .footer-links{
       display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:12px;
     }
 
@@ -1352,7 +1354,8 @@
     @media (max-width:1000px){
             .info-boxes{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr}
-      .footer-contact{justify-content:flex-start}
+      .footer-contact{grid-template-columns:1fr;justify-content:flex-start}
+      .footer-links{grid-template-columns:1fr}
     }
 
     @media (max-width:760px){
@@ -1536,7 +1539,7 @@
 {"@context":"https://schema.org","@type":"WebSite","name":"Hesapica","url":"https://hesapica.com/","inLanguage":"tr-TR","description":"Finans, vergi, emlak, araç, yatırım, sağlık, matematik ve günlük yaşam için Türkçe hesaplama ve karar destek araçları.","@id":"https://hesapica.com/#website","publisher":{"@id":"https://hesapica.com/#organization"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Hesapica","url":"https://hesapica.com/","email":"hesapicaofficial@gmail.com","sameAs":["https://x.com/hesapica","https://instagram.com/hesapicanoktacom"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"hesapicaofficial@gmail.com","availableLanguage":["Turkish"]}],"@id":"https://hesapica.com/#organization"}
+{"@context":"https://schema.org","@type":"Organization","name":"Hesapica","url":"https://hesapica.com/","email":"hesapica@hesapica.com","sameAs":["https://x.com/hesapica","https://instagram.com/hesapicanoktacom"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"hesapica@hesapica.com","availableLanguage":["Turkish"]}],"@id":"https://hesapica.com/#organization"}
 </script>
 <style id="google-adsense-performance-override">
     :root{
@@ -2533,7 +2536,7 @@
 <strong>Tüm hesaplama araçların için daha düzenli, daha güven veren bir ana merkez</strong>
 <p>Hesapica; finans, vergi, araç, fatura, emlak, yatırım, günlük yaşam ve özgün keşif hesaplamalarını tek yerde toplayan modern araç platformudur. Aktif araçları hızlıca bulman, güçlü kategorilere daha rahat geçmen ve karar destek odaklı sonuçlara ulaşman için sade ama güçlü bir yapı sunar.</p>
 <div class="footer-meta">
-<span class="footer-mini-pill">50+ aktif araç</span>
+<span class="footer-mini-pill">99 aktif araç</span>
 <span class="footer-mini-pill">Mobil uyumlu kullanım</span>
 <span class="footer-mini-pill">Sade ve hızlı gezinme</span>
 </div>
@@ -2563,7 +2566,7 @@
 <span class="footer-pill-value">@hesapicanoktacom</span>
 </span>
 </a>
-<a aria-label="Hesapica e-posta adresi" class="footer-pill email" href="mailto:hesapicaofficial@gmail.com">
+<a aria-label="Hesapica e-posta adresi" class="footer-pill email" href="mailto:hesapica@hesapica.com">
 <span aria-hidden="true" class="footer-icon">
 <svg aria-hidden="true" role="img" viewbox="0 0 64 48">
 <path d="M58 0H6a6 6 0 0 0-6 6v36a6 6 0 0 0 6 6h52a6 6 0 0 0 6-6V6a6 6 0 0 0-6-6Z" fill="#EA4335" opacity=".08"></path>
@@ -2575,7 +2578,7 @@
 </span>
 <span class="footer-pill-content">
 <span class="footer-pill-label">E-posta</span>
-<span class="footer-pill-value">hesapicaofficial@gmail.com</span>
+<span class="footer-pill-value">hesapica@hesapica.com</span>
 </span>
 </a>
 </div>
@@ -2589,6 +2592,7 @@
 <a class="footer-legal-link" href="/gizlilik-politikasi">Gizlilik Politikası</a>
 <a class="footer-legal-link" href="/cerez-politikasi">Çerez Politikası</a>
 <a class="footer-legal-link" href="/hakkimizda">Hakkımızda</a>
+<a class="footer-legal-link" href="/hesaplama-metodolojisi">Metodoloji ve Veri</a>
 <a class="footer-legal-link" href="/kullanim-sartlari">Kullanım Şartları</a>
 <button class="footer-pref-btn" data-open-cookie-preferences="" type="button">Çerez Tercihleri</button>
 </div>
