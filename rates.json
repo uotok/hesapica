@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-13T19:56:22Z",
-  "updated_at_utc": "2026-10-13T19:56:22Z",
-  "generated_at_utc": "2026-10-13T19:56:22Z",
+  "updated_at": "2026-10-14T18:09:11Z",
+  "updated_at_utc": "2026-10-14T18:09:11Z",
+  "generated_at_utc": "2026-10-14T18:09:11Z",
   "source_priority": [
     "TCMB"
   ],
   "source_updates": {
-    "tcmb": "13.10.2026",
+    "tcmb": "14.10.2026",
     "truncgil": null
   },
   "notes": {
@@ -16,23 +16,23 @@
   },
   "rates_try": {
     "TRY": 1.0,
-    "USD": 49.3681,
-    "EUR": 55.2121,
-    "GBP": 65.4596,
-    "CHF": 59.4142,
-    "JPY": 0.313004,
-    "SAR": 13.1448,
-    "AED": 13.5164,
-    "CAD": 34.6693,
-    "AUD": 34.4937,
-    "CNY": 7.4158,
-    "RUB": 0.59253,
-    "KWD": 161.0261,
-    "NOK": 5.181,
-    "SEK": 4.9585,
-    "DKK": 7.3973,
-    "QAR": 13.6191,
-    "AZN": 29.2026
+    "USD": 49.3929,
+    "EUR": 55.3027,
+    "GBP": 65.6314,
+    "CHF": 59.419,
+    "JPY": 0.312585,
+    "SAR": 13.1539,
+    "AED": 13.5232,
+    "CAD": 34.7976,
+    "AUD": 34.6933,
+    "CNY": 7.4213,
+    "RUB": 0.59128,
+    "KWD": 161.1853,
+    "NOK": 5.2162,
+    "SEK": 4.9792,
+    "DKK": 7.4096,
+    "QAR": 13.6269,
+    "AZN": 29.2172
   },
   "rate_sources": {
     "TRY": "system",
@@ -147,6 +147,6 @@
     }
   },
   "source_errors": [
-    "TRUNCGIL fetch failed: Expecting ',' delimiter: line 1 column 6809 (char 6808)"
+    "TRUNCGIL fetch failed: Request failed for https://finans.truncgil.com/v4/today.json: Remote end closed connection without response"
   ]
 }
