@@ -64,3 +64,28 @@ The remaining Turkish calculators are country-specific or rely on Turkey-specifi
 ## Source-of-truth rule
 
 For global pairs, the Turkish production tool is the reference for product depth and UX standard. English tools may use country-neutral formulas where the Turkish engine contains Turkey-specific taxes, fees or regulatory assumptions (for example loan/interest calculations), but they must not be simplified generic shells.
+
+
+## Pet Care — published bilingual content (24 October 2026 integration candidate)
+
+### Global calculator pairs
+| Turkish | English | Function |
+|---|---|---|
+| `/akvaryum-hacmi-hesaplama` | `/en/aquarium-volume-calculator` | Aquarium capacity and water change |
+| `/hayvan-yasi-yasam-evresi-hesaplama` | `/en/animal-age-life-stage-calculator` | Animal age and life stages |
+| `/evcil-hayvan-mama-miktari` | `/en/pet-food-portion-calculator` | Dog & cat energy / portion |
+| `/evcil-hayvan-mama-maliyeti` | `/en/pet-food-cost-calculator` | Food costs and comparison |
+
+### Pet Care hubs
+- `/evcil-hayvanlar` ↔ `/en/pet-care`
+
+### Bilingual species and care guides
+- `/akvaryum-baliklari-bakim-rehberi` ↔ `/en/aquarium-fish-care-guide`
+- `/bukalemun-bakim-rehberi` ↔ `/en/chameleon-care-guide`
+- `/gine-domuzu-bakim-rehberi` ↔ `/en/guinea-pig-care-guide`
+- `/hamster-bakim-rehberi` ↔ `/en/hamster-care-guide`
+- `/muhabbet-kusu-bakim-rehberi` ↔ `/en/budgerigar-care-guide`
+- `/sultan-papagani-bakim-rehberi` ↔ `/en/cockatiel-care-guide`
+- `/tavsan-bakim-rehberi` ↔ `/en/rabbit-care-guide`
+
+All Pet Care links are prepared in this candidate; publication is controlled by the repository owner.
