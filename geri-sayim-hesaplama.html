@@ -332,6 +332,31 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#dc2626;box-
 <link rel="stylesheet" href="/language-switch.css"/>
 
 <style id="hc-countdown-v5-enhancements">
+
+/* V25: live, intent-led shortcuts; isolated from existing calculator and ad styles. */
+.chips a.chip{display:inline-flex;align-items:center;background:#4338ca;color:#fff;font-weight:800;text-decoration:none}
+.chips a.chip:hover{background:#312e81}
+#instantAnswersTitle{scroll-margin-top:25px}
+.hero-box p > strong{display:inline;font-size:inherit;line-height:inherit;margin:0;color:inherit;font-weight:700}
+.instant-answers{margin:0 0 16px;padding:15px;border:1px solid #d9ddfa;border-radius:16px;background:linear-gradient(135deg,#eef2ff,#faf5ff)}
+.instant-answers h3{font-size:17px;margin:0 0 4px;color:#312e81}
+.instant-answers .instant-intro{margin:0 0 12px;font-size:13px;color:#526070;line-height:1.6}
+.instant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.instant-answer{width:100%;min-width:0;text-align:left;cursor:pointer;border:1px solid #d8dafa;border-radius:13px;background:#fff;padding:12px 13px;transition:border-color .18s,box-shadow .18s}
+.instant-answer:hover{border-color:#a5b4fc;box-shadow:0 5px 16px rgba(79,70,229,.10)}
+.instant-answer:focus-visible{outline:3px solid #a5b4fc;outline-offset:2px}
+.instant-answer .instant-label{display:block;font-size:13px;color:#475569;font-weight:700}
+.instant-answer .instant-value{display:block;font-size:clamp(16px,2vw,20px);font-weight:800;color:#312e81;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;line-height:1.35;margin:3px 0}
+.instant-answer .instant-hint{display:block;font-size:11px;color:#64748b}
+.clock-shortcut{display:grid;grid-template-columns:minmax(0,1fr) minmax(130px,170px) auto;gap:10px;align-items:end;margin-top:12px;padding-top:12px;border-top:1px solid #e0ddfb}
+.clock-shortcut label{margin:0 0 3px;font-size:13px;color:#312e81}
+.clock-shortcut .clock-explain{display:block;font-size:12px;color:#64748b;line-height:1.45}
+.clock-shortcut input{min-height:44px;padding:8px 10px;font-size:16px}
+.clock-shortcut button{min-height:44px;white-space:nowrap}
+@media(max-width:590px){.instant-grid{grid-template-columns:1fr 1fr}.instant-answer{padding:11px 9px}.instant-answer .instant-value{font-size:16px}.clock-shortcut{grid-template-columns:1fr 1fr}.clock-shortcut .clock-description{grid-column:1/-1}.clock-shortcut button{font-size:13px;padding:9px}}
+@media(max-width:345px){.instant-grid{grid-template-columns:1fr}.clock-shortcut{grid-template-columns:1fr}.clock-shortcut button{width:100%}}
+@media print{.instant-answers,.clock-shortcut{display:none!important}}
+
 .quick-targets{margin:16px 0 18px;padding:14px;border:1px solid #e6e0ff;background:linear-gradient(180deg,#fbfaff,#f7f4ff);border-radius:16px}
 .quick-targets-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
 .quick-targets-head strong{font-size:15px;color:#35285b}.quick-targets-head span{font-size:12px;color:#6b7280;line-height:1.45;text-align:right}
@@ -380,6 +405,7 @@ body.hc-fullscreen-open{overflow:hidden}
         <h1>Geri Sayım Hesaplama</h1>
         <p>Bir tarihe, yarına, sabaha veya akşama <strong>kaç gün ve saat kaldığını</strong> hesaplayın. Varsayılan olarak gerçek şu anı baz alın; isterseniz özel bir referans tarih belirleyin ve canlı geri sayımı saniyesine kadar izleyin.</p>
         <div class="chips">
+          <a class="chip" href="#instantAnswersTitle">Canlı saat yanıtları ↓</a>
           <span class="chip">Varsayılan referans: şu an</span>
           <span class="chip">Ay sonu güvenli hesap</span>
           <span class="chip">Canlı saniye sayacı</span>
@@ -413,6 +439,22 @@ body.hc-fullscreen-open{overflow:hidden}
       </div>
 
 
+      <section class="instant-answers" aria-labelledby="instantAnswersTitle">
+        <h3 id="instantAnswersTitle">Anlık yanıtlar: Şu anda ne kadar kaldı?</h3>
+        <p class="instant-intro">Saatler cihazınızın yerel saat dilimine göredir. Kartlara dokununca ilgili hedef, canlı geri sayımda açılır.</p>
+        <div class="instant-grid">
+          <button type="button" class="instant-answer" data-quick-target="midnight" aria-label="Yarına / gece yarısına: Her gün 00.00"><span class="instant-label">Yarına / gece yarısına</span><span class="instant-value" data-instant-value="midnight">Hesaplanıyor…</span><span class="instant-hint">Her gün 00.00</span></button>
+          <button type="button" class="instant-answer" data-quick-target="morning" aria-label="Sabah olmasına: Bir sonraki 08.00"><span class="instant-label">Sabah olmasına</span><span class="instant-value" data-instant-value="morning">Hesaplanıyor…</span><span class="instant-hint">Bir sonraki 08.00</span></button>
+          <button type="button" class="instant-answer" data-quick-target="evening" aria-label="Akşam olmasına: Bir sonraki 18.00"><span class="instant-label">Akşam olmasına</span><span class="instant-value" data-instant-value="evening">Hesaplanıyor…</span><span class="instant-hint">Bir sonraki 18.00</span></button>
+          <button type="button" class="instant-answer" data-quick-target="weekend" aria-label="Hafta sonuna: Bir sonraki cumartesi 00.00"><span class="instant-label">Hafta sonuna</span><span class="instant-value" data-instant-value="weekend">Hesaplanıyor…</span><span class="instant-hint">Bir sonraki cumartesi 00.00</span></button>
+        </div>
+        <div class="clock-shortcut">
+          <div class="clock-description"><label for="quickClockTime">Belirli bir saate kaç saat kaldı?</label><span class="clock-explain">Girdiğiniz saatin bir sonraki gerçekleşme anı seçilir.</span></div>
+          <input id="quickClockTime" type="time" value="18:00" step="60" aria-label="Belirli bir saate kaç saat kaldı?">
+          <button class="btn btn-primary" type="button" data-quick-target="customtime">Saate geri say</button>
+        </div>
+      </section>
+
       <section class="quick-targets" aria-labelledby="quickTargetsTitle">
         <div class="quick-targets-head">
           <strong id="quickTargetsTitle">Hızlı hedefler</strong>
@@ -420,11 +462,14 @@ body.hc-fullscreen-open{overflow:hidden}
         </div>
         <div class="quick-targets-grid">
           <button class="quick-target-btn" type="button" data-quick-target="plus1h">+1 saat</button>
+          <button class="quick-target-btn" type="button" data-quick-target="plus30m">+30 dakika</button>
           <button class="quick-target-btn" type="button" data-quick-target="midnight">Gece yarısı</button>
           <button class="quick-target-btn" type="button" data-quick-target="morning">Sabah 08:00</button>
           <button class="quick-target-btn" type="button" data-quick-target="evening">Akşam 18:00</button>
           <button class="quick-target-btn" type="button" data-quick-target="2030">Saat 20:30</button>
           <button class="quick-target-btn" type="button" data-quick-target="plus24h">+24 saat</button>
+          <button class="quick-target-btn" type="button" data-quick-target="monday">Pazartesi 00.00</button>
+          <button class="quick-target-btn" type="button" data-quick-target="weekend">Cumartesi 00.00</button>
         </div>
       </section>
 
@@ -576,6 +621,13 @@ body.hc-fullscreen-open{overflow:hidden}
 
   
 
+  <section class="card content-card" id="kisa-geri-sayim-rehberi">
+    <h2>Bir saate, pazartesiye ve hafta sonuna kaç saat kaldı?</h2>
+    <p><strong>Canlı anlık yanıtlar</strong> bölümünde yarına (00.00), bir sonraki 08.00'e, 18.00'e ve cumartesi başlangıcına kaç toplam saat kaldığını hemen görebilirsiniz. Her değer cihazınızın yerel saatine göre yenilenir.</p>
+    <p>Örneğin <strong>18.00'e kaç saat kaldı?</strong> sorusunda 18.00 henüz gelmediyse bugünkü 18.00, geçtiyse yarınki 18.00 hedeflenir. <strong>Pazartesiye kaç saat kaldı?</strong> veya <strong>hafta sonuna kaç saat kaldı?</strong> için ilgili hazır hedefi seçin. Hafta sonu başlangıcı bu araçta <strong>cumartesi 00.00</strong> kabul edilir.</p>
+    <p><strong>Sabah olmak</strong> herkes için aynı saati ifade etmeyebilir; 08.00 yalnızca hazır bir örnektir. "Belirli bir saate" alanına istediğiniz saati yazarak bu varsayımı değiştirebilirsiniz. Saat 00.00'ın gün sonu değil, bir sonraki günün başlangıcı olduğunu unutmayın.</p>
+  </section>
+
   <section class="card faq content-card">
     <h2>Sık sorulan sorular</h2>
     <details><summary>Yarına kaç saat kaldığını nasıl hesaplarım?</summary><p>Hedef tarih olarak yarını seçin. Yarının başlangıcına kadar saymak istiyorsanız hedef saati boş bırakabilir veya 00:00 olarak seçebilirsiniz. Araç kalan toplam saat, dakika ve saniyeyi gerçek şu ana göre hesaplar.</p></details>
@@ -683,21 +735,56 @@ function nextClockTarget(hour,minute=0,second=0){
   if(d<=now)d.setDate(d.getDate()+1);
   return d;
 }
+function nextWeekdayTarget(day){
+  const now=new Date();
+  let days=(day-now.getDay()+7)%7;
+  if(days===0)days=7;
+  return new Date(now.getFullYear(),now.getMonth(),now.getDate()+days,0,0,0,0);
+}
+function instantTarget(kind){
+  if(kind==='midnight'){const n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate()+1,0,0,0,0);}
+  if(kind==='morning')return nextClockTarget(8,0,0);
+  if(kind==='evening')return nextClockTarget(18,0,0);
+  if(kind==='weekend')return nextWeekdayTarget(6);
+  return null;
+}
+function updateInstantAnswers(){
+  if(document.hidden)return;
+  const now=Date.now();
+  document.querySelectorAll('[data-instant-value]').forEach(node=>{
+    const target=instantTarget(node.dataset.instantValue);
+    if(!target)return;
+    const sec=Math.max(0,Math.floor((target.getTime()-now)/1000));
+    const hours=Math.floor(sec/3600),minutes=Math.floor(sec%3600/60),seconds=sec%60;
+    node.textContent=`${int(hours)} saat · ${minutes} dk · ${seconds} sn`;
+  });
+}
 function setQuickTarget(kind){
   const now=new Date();let target=null,label='';
-  if(kind==='plus1h'){target=new Date(now.getTime()+3600000);label="1 saat sonrası";}
-  else if(kind==='plus24h'){target=new Date(now.getTime()+86400000);label="24 saat sonrası";}
-  else if(kind==='midnight'){target=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0,0);label="Gece yarısı";}
-  else if(kind==='morning'){target=nextClockTarget(8,0,0);label="Sabah 08:00";}
-  else if(kind==='evening'){target=nextClockTarget(18,0,0);label="Akşam 18:00";}
-  else if(kind==='2030'){target=nextClockTarget(20,30,0);label="Saat 20:30";}
+  if(kind==='plus1h'){target=new Date(now.getTime()+3600000);label='1 saat sonrası';}
+  else if(kind==='plus24h'){target=new Date(now.getTime()+86400000);label='24 saat sonrası';}
+  else if(kind==='plus30m'){target=new Date(now.getTime()+1800000);label='30 dakika sonrası';}
+  else if(kind==='midnight'){target=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0,0);label='Yarın 00.00 / gece yarısı';}
+  else if(kind==='morning'){target=nextClockTarget(8,0,0);label='Bir sonraki sabah 08.00';}
+  else if(kind==='evening'){target=nextClockTarget(18,0,0);label='Bir sonraki akşam 18.00';}
+  else if(kind==='2030'){target=nextClockTarget(20,30,0);label='Bir sonraki 20.30';}
+  else if(kind==='monday'){target=nextWeekdayTarget(1);label='Bir sonraki pazartesi 00.00';}
+  else if(kind==='weekend'){target=nextWeekdayTarget(6);label='Bir sonraki cumartesi 00.00';}
+  else if(kind==='customtime'){
+    const chosen=$('quickClockTime').value;
+    if(!/^\d{2}:\d{2}$/.test(chosen)){showToast('Lütfen geçerli bir saat seçin.');return;}
+    const [h,m]=chosen.split(':').map(Number);
+    if(h>23||m>59){showToast('Lütfen geçerli bir saat seçin.');return;}
+    target=nextClockTarget(h,m,0);label='Saat '+chosen;
+  }
   if(!target)return;
   clearScenarioParams();
   els.targetDate.value=formatDateTR(target);
   els.targetTime.value=formatTimeInput(target);
   els.mode.value='now';els.referenceDate.value='';els.referenceTime.value='';updateReferenceUI();
-  if(!els.event.value.trim())els.event.value=label;
-  if(calculate(true)){scheduleSave();scrollToResult();showToast("Hızlı hedef seçildi: "+label);}
+  // A new shortcut must not retain the title from a previously selected shortcut.
+  els.event.value=label;
+  if(calculate(true)){scheduleSave();scrollToResult();showToast('Hızlı hedef seçildi: '+label);}
 }
 
 function parseDateParts(value){
@@ -1102,6 +1189,10 @@ async function shareResult(){
   try{await copyText(fullText);showToast('Paylaşım özeti panoya kopyalandı.');}catch{showToast('Paylaşım gerçekleştirilemedi.');}
 }
 
+updateInstantAnswers();
+setInterval(updateInstantAnswers,1000);
+document.addEventListener('visibilitychange',updateInstantAnswers);
+window.addEventListener('focus',updateInstantAnswers);
 document.querySelectorAll('[data-quick-target]').forEach(btn=>btn.addEventListener('click',()=>setQuickTarget(btn.dataset.quickTarget)));
 $('fullscreenBtn').addEventListener('click',openFullscreen);
 $('fullscreenCloseBtn').addEventListener('click',closeFullscreen);
