@@ -82,6 +82,9 @@ input::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
 @media (max-width:720px){.container{width:min(1180px,calc(100% - 20px))}.hero,.card{padding:20px}.field-grid,.mini-grid,.related-tools-section .related-grid{grid-template-columns:1fr}.hero h1{font-size:30px}.mode-tabs{gap:8px}.mode-tab{flex:1 1 calc(50% - 8px);text-align:center}.actions .btn{flex:1 1 100%}.highlight-value{font-size:32px}.related-tools-section{padding:22px 20px}.related-tools-section h2{font-size:28px}.related-tools-section .related-card{min-height:0}}
 
 @media print{body{background:#fff}.topbar,.actions,.mode-tabs,.hc-ad-slot,.related-section,.faq-section,.footer-note{display:none!important}.hero,.card,.status-card,.highlight-card,.mini-result,.scorebox,.comment-card,.scenario-card{box-shadow:none!important;border:1px solid #d1d5db!important;break-inside:avoid}.tool-layout{grid-template-columns:1fr!important}.results{position:static!important}.container{width:100%!important}}
+
+/* Result actions remain visually unavailable until a valid result exists. */
+#copyBtn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;filter:grayscale(.25)}
 </style>
 <link href="cookie-consent.css" rel="stylesheet"/>
 <!-- Google ölçüm/reklam servisleri yalnız kullanıcı tercihi ve canlı alan adında yüklenir. -->
@@ -423,7 +426,7 @@ input::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
           <button class="btn btn-primary" id="calcBtn" type="button">Sonucu Gör</button>
           <button class="btn btn-secondary" id="exampleBtn" type="button">Örnek Veri</button>
           <button class="btn btn-ghost" id="resetBtn" type="button">Temizle</button>
-          <button class="btn btn-ghost" id="copyBtn" type="button">Sonucu Kopyala</button>
+          <button class="btn btn-ghost" id="copyBtn" type="button" disabled>Sonucu Kopyala</button>
           <button class="btn btn-ghost" id="shareBtn" type="button">Paylaş</button>
           <button class="btn btn-ghost" id="printBtn" type="button">Yazdır / PDF</button>
         </div>
@@ -847,6 +850,7 @@ input::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
 
   function renderEmpty(){
     state.last = null;
+    els.copyBtn.disabled = true;
     els.statusTitle.textContent = 'Sonuç bekleniyor';
     els.statusText.textContent = state.mode === 'erken'
       ? 'Kalan taksit ve kapama masrafı girildiğinde yaklaşık erken kapama görünümü burada oluşur.'
@@ -889,6 +893,7 @@ input::placeholder,textarea::placeholder{color:#9ca3af;font-size:15px}
 
   function render(result, flash = true){
     state.last = result;
+    els.copyBtn.disabled = false;
     const [scoreText, tone] = scoreTone(result.score);
     els.statusTitle.textContent = result.statusTitle;
     els.statusText.textContent = result.statusText;

@@ -261,6 +261,9 @@
 .related-card .small{color:rgba(255,255,255,.86)}
 .related-card p{color:rgba(255,255,255,.88)}
 
+
+/* Copy is available only when the current inputs have a valid calculated result. */
+#copyResultBtn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;filter:grayscale(.25)}
 </style>
 
 <script type="application/ld+json">
@@ -550,7 +553,7 @@
 <button class="btn btn-primary" onclick="calculateAll({ silent:false, forceValidation:true })" type="button">Sonucu Gör</button>
 <button class="btn btn-secondary" onclick="fillExample()" type="button">Hızlı dene (örnek veri)</button>
 <button class="btn btn-ghost" onclick="clearAllFields()" type="button">Temizle</button>
-<button class="btn btn-ghost" onclick="copyResults()" type="button">Sonucu Kopyala</button>
+<button class="btn btn-ghost" id="copyResultBtn" onclick="copyResults()" type="button" disabled>Sonucu Kopyala</button>
 <button class="btn btn-ghost" onclick="shareResults()" type="button">Paylaş</button>
 <button class="btn btn-ghost" onclick="hasValidResult()?window.print():pulseStatus('Yazdırmadan önce geçerli bir sonuç üret.','warn','Sonuç yok')" type="button">Yazdır / PDF</button>
 </div>
@@ -1106,6 +1109,7 @@
     }
 
     function resetOutputs(){
+      el('copyResultBtn').disabled = true;
       markMiniCardsEmpty(true);
       setStatus();
       setScoreBadge();
@@ -1470,6 +1474,7 @@ ${el('smartComment').textContent}`;
       el('smartComment').textContent =
         `${summaryLead} ${directionText} ${powerSentence} ${protectionSentence} Yıllık ortalama etki ${formatPercent(annualInflationPercentValue)} civarında hesaplandı.`;
 
+      el('copyResultBtn').disabled = false;
       if(state.lastInputMode === 'manual') saveManualState();
       if(!opts.silent) scrollToResults();
       return true;

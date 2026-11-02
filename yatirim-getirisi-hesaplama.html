@@ -1502,10 +1502,10 @@
 
     function formatPercent(value, digits = 1){
       if (!Number.isFinite(value)) return '—';
-      return '%' + new Intl.NumberFormat('tr-TR', {
+      return (value < 0 ? '-%' : '%') + new Intl.NumberFormat('tr-TR', {
         minimumFractionDigits: digits,
         maximumFractionDigits: digits
-      }).format(value);
+      }).format(Math.abs(value));
     }
 
     function formatNumber(value, digits = 2){
@@ -2385,10 +2385,10 @@
     }
 
     function formatPercent(value, digits = 1) {
-      return '%'+new Intl.NumberFormat('tr-TR', {
+      return (Number(value) < 0 ? '-%' : '%')+new Intl.NumberFormat('tr-TR', {
         minimumFractionDigits: digits,
         maximumFractionDigits: digits
-      }).format(Number(value) || 0);
+      }).format(Math.abs(Number(value) || 0));
     }
 
     function roundValue(value, type = 'money') {
